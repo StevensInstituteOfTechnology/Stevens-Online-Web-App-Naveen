@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
-import { BOOKING_URLS } from "@/config/constants";
+import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 import {
   ChevronDown,
   Menu,
@@ -1246,11 +1246,11 @@ export default function Layout({ children, currentPageName }) {
               <div className="mt-6 space-y-2 text-sm">
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>201.216.5000</span>
+                  <span>{CONTACT_INFO.PHONE_DISPLAY}</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>graduate@stevens.edu</span>
+                  <span>{CONTACT_INFO.EMAIL}</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <MapPin className="w-4 h-4" />
