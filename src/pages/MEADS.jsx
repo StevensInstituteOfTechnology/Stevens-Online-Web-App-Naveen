@@ -3,7 +3,7 @@ import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 
 const programData = {
-  code: 'msdse',
+  code: 'meads',
   // ==================================================================
   hero: {
     titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build What's Next."],
@@ -436,6 +436,6 @@ const programData = {
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
 };
 
-export default function MSDSE() {
+export default function MEADS() {
   return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
 }

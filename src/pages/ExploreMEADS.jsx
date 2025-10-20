@@ -1,8 +1,8 @@
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
-const ExploreMSDSE = () => {
-  const msdseData = {
+const ExploreMEADS = () => {
+  const meadsData = {
     // Hero Section
     heroTitle: "Earn Your M.Eng. in Applied Data Science Online.",
     programName: "Build What's Next.",
@@ -169,7 +169,7 @@ const ExploreMSDSE = () => {
     contactButtonText: "Contact Us"
   };
 
-  return <ExploreProgramPageTemplate {...msdseData} />;
+  return <ExploreProgramPageTemplate {...meadsData} />;
 };
 
-export default ExploreMSDSE;
+export default ExploreMEADS;
