@@ -11,7 +11,7 @@ export const events = [
     duration: 60,
     type: "webinar",
     status: "upcoming",
-    registration_url: "https://calendly.com/stevens-online/mba-info-session",
+    registration_url: "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled",
     program: "mba",
     presenter: {
       name: "Dr. Sarah Johnson",
@@ -34,7 +34,7 @@ export const events = [
     duration: 60,
     type: "webinar",
     status: "upcoming",
-    registration_url: "https://calendly.com/stevens-online/mscs-info-session",
+    registration_url: "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled",
     program: "mscs",
     presenter: {
       name: "Prof. Michael Chen",
@@ -57,7 +57,7 @@ export const events = [
     duration: 60,
     type: "webinar",
     status: "upcoming",
-    registration_url: "https://calendly.com/stevens-online/mem-info-session",
+    registration_url: "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled",
     program: "mem",
     presenter: {
       name: "Dr. Robert Martinez",

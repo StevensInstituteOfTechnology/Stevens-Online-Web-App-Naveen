@@ -387,7 +387,7 @@ const programData = {
         { title: "ASAP Application", featured: true, description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`, buttonText: "Apply Now", url: createPageUrl('ASAP'), buttonGrayOut: true }
       ],
       alertMessage: {
-          title:"Applications open October 20!",
+          title:"Applications open week of October 27th!",
           description: `<h3 class='text-xl my-4'>Ready to take the next step in your academic and professional journey?</h3><p class='mb-4'>Applications open soon—don&apos;t miss your chance to <strong>join a program designed to help you grow, lead, and make an impact.</strong></p>`      
       }
     },
@@ -397,9 +397,9 @@ const programData = {
       rows: [
         { 
           event: "Spring 2026", 
-          date: "October 14, 2025", 
+          date: "November 11 , 2025", 
           details: "Deposit Waiver* and Application Fee Waiver Available.",
-          priorityDate: "November 11, 2025",
+          priorityDate: "November 18, 2025",
           priorityDetails: "Application Fee Waiver Available and Early Application Review.",
           finalDate: "January 5, 2026",
           startDate: "January 20, 2026"

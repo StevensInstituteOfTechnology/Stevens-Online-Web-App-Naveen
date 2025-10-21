@@ -1053,7 +1053,7 @@ export default function Layout({ children, currentPageName }) {
 
               <div className="flex items-center gap-stevens-sm">
                 <a
-                  href="https://calendly.com/n3-stevens/30min"
+                  href={BOOKING_URLS.SCHEDULE_CALL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
