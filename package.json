@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx puppeteer browsers install chrome && vite build && node scripts/prerender.js",
+    "build": "npx puppeteer browsers install chrome && vite build && node scripts/generate-sitemap.js && node scripts/prerender.js",
     "build:spa": "vite build",
     "prerender": "node scripts/prerender.js",
+    "sitemap": "node scripts/generate-sitemap.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
