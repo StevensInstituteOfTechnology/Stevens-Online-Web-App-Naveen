@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://online.stevens.edu/sitemap.xml
