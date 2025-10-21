@@ -152,7 +152,7 @@ export default function Events() {
       title: 'Application Overview: Online MBA',
       length: '15 minutes',
       url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE',
-      image: '/assets/images/2-event.jpg'
+      image: '/assets/images/2-event.png'
     },
     {
       title: 'Application Walkthrough: Computer Science',
