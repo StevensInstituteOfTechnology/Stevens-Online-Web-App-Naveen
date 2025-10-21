@@ -1027,6 +1027,32 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden stevens-lg:flex items-center gap-stevens-md ml-stevens-lg">
             <div className="flex items-center gap-stevens-sm">
                 <a
+                  href="https://www.stevens.edu/"
+                  
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  
+                  onMouseEnter={() => {
+                    if (hoverTimeoutRef.current) {
+                      clearTimeout(hoverTimeoutRef.current);
+                    }
+                    setIsHoveringRedNav(true);
+                  }}
+                  onMouseLeave={() => {
+                    hoverTimeoutRef.current = setTimeout(() => {
+                      setIsHoveringRedNav(false);
+                    }, 100);
+                  }}
+                >
+                 
+                  <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary hover: font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
+                    STEVENS.EDU
+                  </Button>
+                </a>
+              </div>
+
+              <div className="flex items-center gap-stevens-sm">
+                <a
                   href="https://calendly.com/n3-stevens/30min"
                   target="_blank"
                   rel="noopener noreferrer"
