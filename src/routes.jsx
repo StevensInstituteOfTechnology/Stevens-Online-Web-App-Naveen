@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation, useParams } from "react-router-dom";
-import blogsData from "@/data/blogs.json";
+import "@/data/blogs.json";
 
 // Page imports
 import Home from "@/pages/Home";
@@ -11,9 +11,11 @@ import MBA from "@/pages/MBA";
 import MSCS from "@/pages/MSCS";
 import MEM from "@/pages/MEM";
 import MSDS from "@/pages/MSDS";
+import MEADS from "@/pages/MEADS";
 import ExploreMBA from "@/pages/ExploreMBA";
 import ExploreMEM from "@/pages/ExploreMEM";
 import ExploreMSDS from "@/pages/ExploreMSDS";
+import ExploreMEADS from "@/pages/ExploreMEADS";
 import ExploreMSCS from "@/pages/ExploreMSCS";
 import ExploreMSAI from "@/pages/ExploreMSAI";
 import ComparePrograms from "@/pages/ComparePrograms";
@@ -202,6 +204,16 @@ export const routes = [
     element: <Navigate to="/online-masters-data-science-msds/" replace />
   },
 
+  // MSDSE program
+  {
+    path: '/online-masters-engineering-applied-data-science/',
+    element: <MEADS />
+  },
+  {
+    path: '/MEADS',
+    element: <Navigate to="/online-masters-engineering-applied-data-science/" replace />
+  },
+
   // Compare Programs
   {
     path: '/compare-our-programs/',
@@ -288,8 +300,12 @@ export const routes = [
     element: <ExploreMEM />
   },
   {
-    path: '/explore/online-masters-data-science/',
+    path: '/explore/online-masters-applied-data-science/',
     element: <ExploreMSDS />
+  },
+  {
+    path: '/explore/online-masters-eng-applied-data-science/',
+    element: <ExploreMEADS />
   },
   {
     path: '/explore/online-masters-computer-science/',

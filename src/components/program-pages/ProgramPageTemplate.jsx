@@ -157,9 +157,12 @@ const WhatYoullLearnCarousel = ({ modules }) => {
                 
                 {/* Card Content */}
                 <div className="p-stevens-lg">
-                  <p className="text-stevens-gray-700 mb-stevens-lg leading-relaxed">
-                    {module.description}
-                  </p>
+                  {module.description && (
+                    <div 
+                      className="text-stevens-gray-700 mb-stevens-lg leading-relaxed prose max-w-none"
+                      dangerouslySetInnerHTML={{ __html: module.description }}
+                    />
+                  )}
                   
                   <div className="mb-stevens-md">
                     <p className="font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
@@ -492,7 +495,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         
         {whatYoullLearn && (
           <Section id="what-youll-learn" title={whatYoullLearn.title} bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current['what-youll-learn'] = el}>
-            {whatYoullLearn.description && <div className="prose max-w-none text-stevens-gray-900 leading-relaxed mb-10 text-center">{whatYoullLearn.description}</div>}
+            {whatYoullLearn.description && <div className="prose max-w-none text-stevens-gray-900 leading-relaxed mb-10 text-center" dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }} />}
             {whatYoullLearn.modules && whatYoullLearn.modules.length > 0 && (
               whatYoullLearn.variant === 'skillCards' 
                 ? <SkillCardsGrid modules={whatYoullLearn.modules} />
@@ -605,10 +608,10 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       <div className="h-px bg-stevens-primary/30 flex-1"></div>
                     </div>
                     <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
-                      Stevens Alumni Drive Innovation at Top Companies
+                      {topCompanies.title ? topCompanies.title : 'Stevens Alumni Drive Innovation at Top Companies'}
                     </h3>
                     <p className="text-stevens-gray-600 mb-stevens-lg max-w-2xl mx-auto text-stevens-sm stevens-md:text-stevens-base">
-                      Our graduates join leading organizations across technology, finance, healthcare, and consulting
+                      {topCompanies.description ? topCompanies.description : 'Our graduates join leading organizations across technology, finance, healthcare, and consulting'}
                     </p>
                     <div className="grid grid-cols-2 stevens-sm:grid-cols-3 stevens-md:grid-cols-4 stevens-lg:grid-cols-6 gap-stevens-sm stevens-md:gap-stevens-md items-center">
                       {career.topCompanies.map((company, index) =>
@@ -678,7 +681,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             <div className="max-w-stevens-content-max mx-auto">
               {/* Section Title */}
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-left uppercase tracking-tight">
-                Online {programData.code.toUpperCase()} Program Course Structure
+                {curriculum.title ? curriculum.title : `Online ${programData.code.toUpperCase()} Program Course Structure`}
               </h2>
               
               {/* Description */}
@@ -708,7 +711,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 {/* Tab Content */}
                 {Object.keys(curriculum.courseTabs).map(tabKey => (
                   <TabsContent key={tabKey} value={tabKey} className="mt-stevens-xl">
-                    <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-gray-900 [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-gray-900 [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-gray-700 [&_p]:leading-relaxed  [&_p]:pt-[20px]" dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}/>
+                    <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-gray-900 [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-gray-900 [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-gray-700 [&_p]:leading-relaxed [&_p]:mb-stevens-lg" dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}/>
                   </TabsContent>
                 ))}
               </Tabs>
@@ -743,8 +746,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         {faculty && (
           <Section id="faculty" title={faculty.title || "Meet the Faculty"} refProp={el => sectionRefs.current.faculty = el} container={false} paddingClassName="py-stevens-section-sm lg:py-stevens-section">
             {faculty.description && <p className="text-center text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto mb-stevens-xl px-stevens-md lg:px-stevens-lg">{faculty.description}</p>}
-            <div className="relative overflow-visible w-full">
-              <div className="flex justify-center overflow-x-auto space-x-stevens-sm stevens-md:space-x-stevens-lg pb-stevens-lg pt-stevens-sm snap-x snap-mandatory scrollbar-thin scrollbar-thumb-stevens-primary scrollbar-track-stevens-primary/10 px-stevens-md">
+            <div className="relative overflow-visible w-full max-w-[77rem] mx-auto">
+              <div className="flex overflow-x-auto space-x-stevens-sm stevens-md:space-x-stevens-lg pb-stevens-lg pt-stevens-sm snap-x snap-mandatory scrollbar-thin scrollbar-thumb-stevens-primary scrollbar-track-stevens-primary/10 px-stevens-md">
                 {faculty.members.map((member, i) => <FacultyCard key={i} member={member} />)}
               </div>
             </div>
@@ -825,27 +828,46 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         ) : admissions ? (
           <Section id="admissions" title="Choose Your Application Option" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.admissions = el}>
-            <div className={`grid ${admissions.options && admissions.options.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2'} gap-8`}>
+            <div className={`flex flex-wrap justify-center ${admissions.options && admissions.options.length === 1 ? 'max-w-2xl mx-auto' : ''} gap-8`}>
               {admissions.options && admissions.options.map((option, i) => (
-                <Card key={i} className={`shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
+                <Card key={i} className={`w-full md:w-[48%] shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle>{option.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="prose" dangerouslySetInnerHTML={{ __html: option.description }}/>
-                    <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
-                      <Button className="w-full btn-secondary mt-2">{option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/></Button>
-                    </a>
+                    {option.buttonText && !option.buttonGrayOut && (
+                      <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                        <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                          {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
+                        </div>
+                      </a>
+                    )}
                   </CardContent>
                 </Card>
               ))}
+              { admissions.alertMessage && (
+                <div className='w-full max-w-[75ch] mx-auto bg-stevens-maroon p-4 md:p-8 text-white border-2 border-stevens-maroon-dark rounded-md'>
+                  <div className='w-full '>
+                    <h3 className='text-xl md:text-2xl font-bold'>{admissions.alertMessage.title}</h3>
+                    <div className='py-4' dangerouslySetInnerHTML={{__html:admissions.alertMessage.description}}/>
+                    {admissions.alertMessage.url && (
+                      <a href={admissions.alertMessage.url} target="_blank" rel="noopener noreferrer">
+                      <div variant="outline" className="btn-outline-white text-white inline-block">{admissions.alertMessage.buttonText}</div>
+                    </a>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
             {admissions.consultation && (
               <div className="text-center mt-12">
                 <h3 className="text-xl font-semibold mb-2">{admissions.consultation.title}</h3>
-                <a href={admissions.consultation.url} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                  <Button variant="outline" className="btn-outline-maroon">{admissions.consultation.buttonText}</Button>
-                </a>
+                {admissions.consultation.url && (
+                  <a href={admissions.consultation.url} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="btn-outline-maroon">{admissions.consultation.buttonText}</Button>
+                  </a>
+                )}
               </div>
             )}
           </Section>
@@ -864,7 +886,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 <table className="w-full text-left border-collapse border border-gray-300">
                   <thead className="bg-gray-100">
                     <tr>
-                      {keyDates.headers.map((header, index) => (
+                      {keyDates.headers.map((header) => (
                         <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-primary border border-gray-300">
                           {header}
                         </th>
@@ -994,7 +1016,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="absolute inset-0">
                 <img 
                   src="/assets/images/accreditation.avif" 
-                  alt="AACSB Accreditation Badge for Stevens Institute of Technology" 
+                  alt="" 
                   className="w-full h-full object-cover opacity-30"
                   aria-hidden="true"
                 />

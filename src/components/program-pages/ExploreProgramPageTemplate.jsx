@@ -6,7 +6,7 @@ import PageHero from '../shared/PageHero';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import VideoPlayer from '../shared/VideoPlayer';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
-
+import { BOOKING_URLS } from '@/config/constants';
 const ExploreProgramPageTemplate = ({
   // Hero Section Props
   heroTitle,
@@ -583,7 +583,9 @@ const ExploreProgramPageTemplate = ({
               {contactDescription}
             </p>
             <a 
-              href="/request-information/"
+              href={BOOKING_URLS.SCHEDULE_CALL} 
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-stevens-outline bg-stevens-white text-stevens-primary hover:bg-stevens-gray-50 hover:text-stevens-maroon-dark px-stevens-lg rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal inline-block"
               onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
             >

@@ -1,13 +1,18 @@
 import { preview } from 'vite';
 import fs from 'fs/promises';
+import fsSync from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import blogsData from '../src/data/blogs.json' with { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
+
+// Load blogs data using fs.readFileSync for Node 18 compatibility
+const blogsData = JSON.parse(
+  fsSync.readFileSync(path.join(rootDir, 'src/data/blogs.json'), 'utf-8')
+);
 
 // Detect if we're in production (Vercel/CI) or local development
 const isProduction = process.env.VERCEL || process.env.CI;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
-import { BOOKING_URLS } from "@/config/constants";
+import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 import {
   ChevronDown,
   Menu,
@@ -43,6 +43,7 @@ const degreeProgramItems = [
   { name: "Online MBA", page: "online-mba/" },
   { name: "M.S. in Computer Science", page: "online-masters-computer-science-mscs/" },
   // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
+  { name: "M.Eng. in Applied Data Science", page: "online-masters-engineering-applied-data-science/" },
   { name: "M.S. in Engineering Management", page: "online-masters-engineering-management/" },
 ];
 
@@ -426,8 +427,6 @@ export default function Layout({ children, currentPageName }) {
               <div className="flex items-center space-x-stevens-md ">
                 <a
                   href="https://www.stevens.edu/corporate-relations"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
@@ -445,8 +444,6 @@ export default function Layout({ children, currentPageName }) {
                 </a>
                 <a
                   href="https://www.stevens.edu/development-alumni-engagement"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
@@ -483,8 +480,6 @@ export default function Layout({ children, currentPageName }) {
                 </a>
                 <a
                   href="https://www.stevens.edu/admission-aid/visit-stevens"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
@@ -502,8 +497,6 @@ export default function Layout({ children, currentPageName }) {
                 </a>
                 <a
                   href="https://www.stevens.edu/apply"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
@@ -521,8 +514,6 @@ export default function Layout({ children, currentPageName }) {
                 </a>
                 <a
                   href="https://www.stevens.edu/development-alumni-engagement/give-to-stevens"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
@@ -576,8 +567,6 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/hr"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-stevens-gray-900  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Faculty and Staff
@@ -586,8 +575,6 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/information-for-parents-and-families"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-stevens-gray-900 hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Parents and Families
@@ -597,8 +584,6 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/media-relations"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-stevens-gray-900  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Media
@@ -662,7 +647,7 @@ export default function Layout({ children, currentPageName }) {
                   <img
                     src="/assets/logos/Stevens-Wordmark-RGB_WHT.png"
                     alt="Stevens Institute of Technology Professional Education Logo" 
-                    className={`h-8 stevens-md:h-12 stevens-lg:h-16 w-auto transition-opacity duration-300 ${
+                    className={`h-12 stevens-md:h-16 w-[137px] transition-opacity duration-300 mobile-logo-height logo-responsive-width ${
                       isScrolled && !isHoveringRedNav
                         ? "opacity-100"
                         : "opacity-0"
@@ -681,6 +666,7 @@ export default function Layout({ children, currentPageName }) {
                       isActive("MBA") ||
                       isActive("MSCS") ||
                       // isActive("MSDS") || // Temporarily disabled
+                      isActive("MSDSE") ||
                       isActive("MEM") ||
                       isActive("ComparePrograms")
                         ? "text-stevens-white/80"
@@ -1042,8 +1028,10 @@ export default function Layout({ children, currentPageName }) {
             <div className="flex items-center gap-stevens-sm">
                 <a
                   href="https://www.stevens.edu/"
+                  
                   target="_blank"
                   rel="noopener noreferrer"
+                  
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
                       clearTimeout(hoverTimeoutRef.current);
@@ -1056,10 +1044,14 @@ export default function Layout({ children, currentPageName }) {
                     }, 100);
                   }}
                 >
+                 
                   <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary hover: font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
-                    Stevens.edu
+                    STEVENS.EDU
                   </Button>
                 </a>
+              </div>
+
+              <div className="flex items-center gap-stevens-sm">
                 <a
                   href={BOOKING_URLS.SCHEDULE_CALL}
                   target="_blank"
@@ -1280,11 +1272,11 @@ export default function Layout({ children, currentPageName }) {
               <div className="mt-6 space-y-2 text-sm">
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>201.216.5000</span>
+                  <span>{CONTACT_INFO.PHONE_DISPLAY}</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>graduate@stevens.edu</span>
+                  <span>{CONTACT_INFO.EMAIL}</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <MapPin className="w-4 h-4" />

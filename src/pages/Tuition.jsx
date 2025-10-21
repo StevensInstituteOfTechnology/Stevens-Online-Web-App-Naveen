@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Award, FileText, Phone, Mail, Building, ArrowRight, BookOpen, LinkIcon } from 'lucide-react';
+import { CONTACT_INFO } from '@/config/constants';
 
 const FinancialAidOption = ({ title, children }) => (
   <AccordionItem value={title}>
@@ -256,8 +257,8 @@ export default function Tuition() {
                      <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>
                      <li>Tuesday: 10 a.m.-5 p.m. ET</li>
                    </ul>
-                   <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> 201.216.3400</div>
-                   <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> financialaid@stevens.edu</div>
+                   <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.PHONE}</div>
+                   <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.EMAIL}</div>
                    <p className="text-sm">
                      Wesley J. Howe Center, First Floor<br/>
                      1 Castle Point Terrace<br/>
