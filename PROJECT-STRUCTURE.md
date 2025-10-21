@@ -447,6 +447,6 @@ const { slug } = useParams()
 
 ---
 
-**Last Updated**: January 2025
+**Last Updated**: October 2025
 **Version**: 0.0.0
 **Maintainer**: CPE Web Team
