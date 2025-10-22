@@ -383,8 +383,22 @@ const programData = {
 // ==================================================================
   admissions: {
       options: [
-        { title: "Standard Application", featured: false, description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`, buttonText: "Apply Now", url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP", buttonGrayOut: true },
-        { title: "ASAP Application", featured: true, description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`, buttonText: "Apply Now", url: createPageUrl('ASAP'), buttonGrayOut: true }
+        {
+          title: "Accelerated App",
+          featured: false,
+          description: `<p>
+            Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
+          </p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li><strong>Recommendation Letters:</strong> Not Required</li>
+            <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
+            <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
+          </ul>
+          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
+          buttonText: "Apply Now",
+          url: "https://online.stevens.edu/apply/accelerated",
+          buttonGrayOut: true
+        }
       ],
       alertMessage: {
           title:"Applications open week of October 27th!",

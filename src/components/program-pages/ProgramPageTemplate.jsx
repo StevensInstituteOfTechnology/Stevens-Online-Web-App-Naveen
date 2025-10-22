@@ -827,10 +827,10 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             </div>
           </Section>
         ) : admissions ? (
-          <Section id="admissions" title="Choose Your Application Option" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.admissions = el}>
-            <div className={`flex flex-wrap justify-center ${admissions.options && admissions.options.length === 1 ? 'max-w-2xl mx-auto' : ''} gap-8`}>
+          <Section id="admissions" title={admissions.options && admissions.options.length === 1 ? "Application Option" : "Choose Your Application Option"} bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.admissions = el}>
+            <div className={`flex flex-wrap justify-center ${admissions.options && admissions.options.length === 1 ? 'max-w-3xl mx-auto' : admissions.options && admissions.options.length === 2 ? 'max-w-6xl mx-auto' : ''} gap-8`}>
               {admissions.options && admissions.options.map((option, i) => (
-                <Card key={i} className={`w-full md:w-[48%] shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
+                <Card key={i} className={`w-full ${admissions.options.length === 1 ? '' : admissions.options.length === 2 ? 'md:w-[48%]' : 'md:w-[48%] lg:w-[31%]'} shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
                   <CardHeader>
                     <CardTitle>{option.title}</CardTitle>
                   </CardHeader>
