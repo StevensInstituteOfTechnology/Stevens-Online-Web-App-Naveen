@@ -387,14 +387,14 @@ const programData = {
           title: "Accelerated App",
           featured: false,
           description: `<p>
-            Fast-track your application with our new accelerated application for Spring &amp; Summer ‘26! Designed for busy professionals, the Accelerated App gets you started—no letters of recommendation required.
+            Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
           </p>
           <ul class="list-disc pl-5 mt-2 space-y-1">
-            <li>Bachelor’s degree (just upload a transcript copy)</li>
-            <li>Résumé or LinkedIn profile</li>
-            <li>Official transcript due within 1 year</li>
+            <li><strong>Recommendation Letters:</strong> Not Required</li>
+            <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
+            <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
           </ul>
-          <p class="text-sm text-stevens-gray-600 mt-2">Stevens may request additional documentation if needed. Decisions made in partnership with your academic department.</p>`,
+          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
           buttonText: "Apply Now",
           url: "https://online.stevens.edu/apply/accelerated",
           buttonGrayOut: true
