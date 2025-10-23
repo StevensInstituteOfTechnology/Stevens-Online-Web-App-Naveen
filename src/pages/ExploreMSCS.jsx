@@ -10,6 +10,8 @@ const ExploreMSCS = () => {
     heroSubtitle: "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $16K in scholarships available.",
     bgImage: "/assets/images/stevens-campus.png", // Placeholder
     programCode: "mscs",
+    useApplicationModal: true,
+    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "No. 1 in New Jersey", icon: Award },
       { text: "100% Online", icon: Globe },

@@ -9,7 +9,7 @@ const ExploreMEADS = () => {
     heroSubtitle: "Gain the skills to turn data into intelligent systems that power the future.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp", 
     programCode: "msdse",
-    secondaryCta: { label: 'Apply Now', href: '/accelerated-application' },
+    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
     // badges: [
     //   { text: "GMAT/GRE Not Required", icon: Award },
     //   { text: "100% Online", icon: Globe },

@@ -164,60 +164,6 @@ export const programs = [
       financialAid: true
     },
     created_date: "2024-01-03T00:00:00Z"
-  },
-  {
-    id: "msds",
-    code: "MSDS",
-    title: "M.S. in Data Science",
-    subtitle: "Math-based data science education",
-    description: "The Stevens Online Master's in Data Science program equips students with the technical, analytical and practical skills to accelerate careers in fintech, business intelligence, database management and more.",
-    features: [
-      "97% Employment Rate",
-      "100% Online",
-      "Math-based foundation",
-      "Industry-aligned curriculum",
-      "No CS background required"
-    ],
-    rankings: [
-      {
-        rank: "#10",
-        description: "Online Master's in Data Science program in the country",
-        source: "UniversityHQ (2023)"
-      },
-      {
-        rank: "7x",
-        description: "Winner of 21st Century Award for Best Practices in Distance Learning",
-        source: "United States Distance Learning Association"
-      }
-    ],
-    curriculum: {
-      credits: 30,
-      duration: "2 years or less",
-      format: "100% Online",
-      coursesPerTerm: "2"
-    },
-    admissions: {
-      requirements: [
-        "Bachelor's degree from accredited institution",
-        "Strong background in mathematics and statistics preferred",
-        "Professional experience in math, CS, tech or business preferred"
-      ],
-      deadlines: [
-        {
-          term: "Spring 2026",
-          earlySubmit: "2025-10-14",
-          prioritySubmit: "2025-11-11",
-          finalSubmit: "2026-01-05",
-          startDate: "2026-01-20"
-        }
-      ]
-    },
-    tuition: {
-      perCredit: 1850,
-      totalProgram: 55500,
-      financialAid: true
-    },
-    created_date: "2024-01-04T00:00:00Z"
   }
 ];
 
