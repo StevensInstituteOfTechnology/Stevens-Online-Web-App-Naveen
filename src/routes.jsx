@@ -5,6 +5,7 @@ import "@/data/blogs.json";
 // Page imports
 import Home from "@/pages/Home";
 import ASAP from "@/pages/ASAP";
+import AcceleratedApplication from "@/pages/AcceleratedApplication";
 import Tuition from "@/pages/Tuition";
 import RequestInfo from "@/pages/RequestInfo";
 import MBA from "@/pages/MBA";
@@ -134,6 +135,16 @@ export const routes = [
   {
     path: '/asap',
     element: <Navigate to="/ASAP/" replace />
+  },
+
+  // Accelerated Application page
+  {
+    path: '/accelerated-application/',
+    element: <AcceleratedApplication />
+  },
+  {
+    path: '/accelerated-application',
+    element: <Navigate to="/accelerated-application/" replace />
   },
 
   // Tuition pages

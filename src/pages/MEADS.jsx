@@ -396,8 +396,8 @@ const programData = {
           </ul>
           <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
           buttonText: "Apply Now",
-          url: "https://online.stevens.edu/apply/accelerated",
-          buttonGrayOut: true
+          url: "/accelerated-application",
+          buttonGrayOut: false
         }
       ],
       alertMessage: {
