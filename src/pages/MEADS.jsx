@@ -399,11 +399,7 @@ const programData = {
           url: "/accelerated-application",
           buttonGrayOut: false
         }
-      ],
-      alertMessage: {
-          title:"Applications open week of October 27th!",
-          description: `<h3 class='text-xl my-4'>Ready to take the next step in your academic and professional journey?</h3><p class='mb-4'>Applications open soon—don&apos;t miss your chance to <strong>join a program designed to help you grow, lead, and make an impact.</strong></p>`      
-      }
+      ]
     },
     // ==================================================================
     keyDates: {
