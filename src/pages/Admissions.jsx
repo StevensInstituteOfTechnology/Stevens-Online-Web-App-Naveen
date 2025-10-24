@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,8 +10,14 @@ import { createPageUrl } from '@/utils';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import ProgramCard from '../components/admissions/ProgramCard';
+import ProgramDetailModal from '../components/admissions/ProgramDetailModal';
+import { getAllPrograms } from '../data/programsData';
 
 export default function Admissions() {
+  const [selectedProgram, setSelectedProgram] = useState(null);
+  const programs = getAllPrograms();
+
   const keyDates = {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
     rows: [
@@ -27,34 +33,6 @@ export default function Admissions() {
     ],
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply."
   };
-
-  const applicationOptions = [
-    {
-      title: "Standard Application",
-      description: "Students complete the standard application and submit the following materials for review:",
-      requirements: [
-        "Bachelor's degree",
-        "Two letters of recommendation", 
-        "Statement of purpose",
-        "Academic transcripts",
-        "TOEFL/IELTS/Duolingo scores (required for international students)",
-        "Resume"
-      ],
-      buttonText: "Apply Now",
-      buttonLink: "https://gradadmissions.stevens.edu/apply/?pk=GRNP"
-    },
-    {
-      title: "ASAP Application",
-      description: "Students enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of 'B' or better in each. The credits earned from these courses are applied toward their degree.",
-      requirements: [
-        "Bachelor's degree required",
-        "No letters of recommendation required",
-        "To officially gain admission to the full program, students must submit official transcripts from all institutions where they have earned college credit before completing the courses"
-      ],
-      buttonText: "Enroll Now",
-      buttonLink: "https://gradadmissions.stevens.edu/apply/?pk=GRNP"
-    }
-  ];
 
   const faqs = [
     {
@@ -74,7 +52,6 @@ export default function Admissions() {
   const events = [
     {
       title: "On Demand Application Overview: Online MBA",
-      
       type: "Ongoing",
       duration: "18 minutes",
       url: "https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE?pg=2"
@@ -101,7 +78,7 @@ export default function Admissions() {
                 Stevens is technology driven. Our faculty are experts in their fields and experienced in industry. We deliver that expertise and experience to you. Stevens takes theory and links it to practical applications that have societal impact. That's the DNA at Stevens.
               </p>
               <p>
-                We offer multiple application options for students interested in our Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs, ensuring flexible entry points to match your needs and goals. Learn more below about application requirements for a multi-disciplinary, design-based, 100% online education from Stevens Institute of Technology.
+                We offer multiple application options for students interested in our graduate programs, ensuring flexible entry points to match your needs and goals. Learn more below about application requirements for a multi-disciplinary, design-based, 100% online education from Stevens Institute of Technology.
               </p>
             </div>
           </div>
@@ -171,175 +148,30 @@ export default function Admissions() {
         </div>
       </div>
 
-      {/* Admission to Our Programs */}
+      {/* Explore Our Programs - NEW DYNAMIC SECTION */}
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-              Admission to Our Programs
+              Explore Our Graduate Programs
             </h2>
             <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-              With a strong commitment to our nation's veterans, Stevens Institute of Technology is proud to participate in the Yellow Ribbon program and offer a suite of resources and support to active duty, veteran and dependent military communities.
+              Click on any program card below to view detailed information and application options specific to that program.
             </p>
           </div>
 
-          {/* Online MBA */}
-          <div className="mb-stevens-2xl">
-          <div className="text-center mb-stevens-xl">
-              <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-                Online MBA
-              </h3>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-                The Stevens Online MBA is an AACSB-accredited program that combines business knowledge with the technology and analytics necessary to excel in today's data-centric world.
-              </p>
-            </div>
-
-            <Card className="shadow-stevens-lg border-0 overflow-hidden max-w-3xl mx-auto bg-stevens-white">
-              <CardHeader className="bg-stevens-primary">
-                <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-white">Application Requirements</CardTitle>
-              </CardHeader>
-              <CardContent className="p-stevens-lg pt-stevens-lg">
-                <p className="text-stevens-gray-700 mb-stevens-lg">
-                Applicants to the Online MBA program are required to provide:
-                </p>
-                <ul className="space-y-stevens-sm mb-stevens-lg">
-                  <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Academic transcripts</span></li>
-                  <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Professional resume</span></li>
-                  <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Two letters of recommendation</span></li>
-                </ul>
-                <div className="flex gap-stevens-md">
-                  <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" className="flex-1" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
-                    <Button className="btn-stevens-primary w-full">
-                      Apply Now
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
-                  <Link to="/online-mba/" className="flex-1">
-                    <Button variant="outline" className="btn-outline-maroon w-full">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Online MEM */}
-          <div className="mb-stevens-2xl">
-            <div className="text-center mb-stevens-xl">
-              <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-                Online Master of Engineering in Engineering Management
-              </h3>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-                The Online MEM program prepares engineers for leadership roles by combining technical expertise with business management principles. Choose between standard and ASAP application options.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-stevens-xl max-w-5xl mx-auto">
-              {/* Standard Application */}
-              <Card className="shadow-stevens-lg border-0 overflow-hidden bg-stevens-white">
-                <CardHeader className="bg-stevens-primary">
-                  <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-white">Standard Application</CardTitle>
-                </CardHeader>
-                <CardContent className="p-stevens-lg pt-stevens-lg">
-                  <p className="text-stevens-gray-700 mb-stevens-lg">
-                    Students complete the standard application and submit the following materials for review:
-                  </p>
-                  <ul className="space-y-stevens-sm mb-stevens-lg">
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Bachelor's degree</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Two letters of recommendation</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Statement of purpose</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Academic transcripts</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Resume</span></li>
-                  </ul>
-                  <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
-                    <Button className="btn-stevens-primary w-full">Apply Now<ArrowRight className="w-4 h-4 ml-2" /></Button>
-                  </a>
-                </CardContent>
-              </Card>
-
-              {/* ASAP Application */}
-              <Card className="shadow-stevens-lg border-0 overflow-hidden bg-stevens-white">
-                <CardHeader className="bg-stevens-primary">
-                  <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-white">ASAP Application</CardTitle>
-                </CardHeader>
-                <CardContent className="p-stevens-lg pt-stevens-lg">
-                  <p className="text-stevens-gray-700 mb-stevens-lg">
-                    Students enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of "B" or better in each. The credits earned from these courses are applied toward their degree.
-                  </p>
-                  <ul className="space-y-stevens-sm mb-stevens-lg">
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Bachelor's degree required</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">No letters of recommendation required</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">To officially gain admission to the full program, students must submit official transcripts from all institutions where they have earned college credit before completing the courses</span></li>
-                  </ul>
-                  <Link to={createPageUrl("ASAP")}>
-                    <Button className="btn-stevens-primary w-full">Apply Now<ArrowRight className="w-4 h-4 ml-2" /></Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* MSCS and MEM Programs */}
-          <div className="mb-stevens-2xl">
-            <div className="text-center mb-stevens-xl">
-              <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-                Online M.S. in Computer Science
-              </h3>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-                The Online MSCS program offers two application options: standard and ASAP. The standard application is designed for students with strong academic, technical and professional backgrounds, while the ASAP application is ideal for students who can demonstrate their eligibility by successfully completing two trial courses.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-stevens-xl">
-              {/* Standard Application (static) */}
-              <Card className="shadow-stevens-lg border-0 overflow-hidden bg-stevens-white">
-                <CardHeader className="bg-stevens-primary">
-                  <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-white">Standard Application</CardTitle>
-                </CardHeader>
-                <CardContent className="p-stevens-lg pt-stevens-lg">
-                  <p className="text-stevens-gray-700 mb-stevens-lg">
-                    Students complete the standard application and submit the following materials for review:
-                  </p>
-                  <ul className="space-y-stevens-sm mb-stevens-lg">
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Bachelor's degree</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Two letters of recommendation</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Statement of purpose</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Academic transcripts</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">TOEFL/IELTS/Duolingo scores (required for international students)</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Resume</span></li>
-                  </ul>
-                  <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
-                    <Button className="btn-stevens-primary w-full">Apply Now<ArrowRight className="w-4 h-4 ml-2" /></Button>
-                  </a>
-                </CardContent>
-              </Card>
-
-              {/* ASAP Application (static) */}
-              <Card className="shadow-stevens-lg border-0 overflow-hidden bg-stevens-white">
-                <CardHeader className="bg-stevens-primary">
-                  <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-white">ASAP Application</CardTitle>
-                </CardHeader>
-                <CardContent className="p-stevens-lg pt-stevens-lg">
-                  <p className="text-stevens-gray-700 mb-stevens-lg">
-                    Students enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of "B" or better in each. The credits earned from these courses are applied toward their degree.
-                  </p>
-                  <ul className="space-y-stevens-sm mb-stevens-lg">
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">Bachelor's degree required</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">No letters of recommendation required</span></li>
-                    <li className="flex items-start gap-stevens-sm"><CheckCircle className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" /><span className="text-stevens-gray-700">To officially gain admission to the full program, students must submit official transcripts from all institutions where they have earned college credit before completing the courses</span></li>
-                  </ul>
-                  <Link to={createPageUrl("ASAP")}>
-                    <Button className="btn-stevens-primary w-full">Apply Now<ArrowRight className="w-4 h-4 ml-2" /></Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="grid stevens-md:grid-cols-2 gap-stevens-xl">
+            {programs.map((program, index) => (
+              <ProgramCard
+                key={program.id}
+                program={program}
+                onClick={() => setSelectedProgram(program)}
+              />
+            ))}
           </div>
 
           {/* Consultation CTA */}
-          <div className="border-t border-stevens-gray-200 py-stevens-xl">
+          <div className="border-t border-stevens-gray-200 py-stevens-xl mt-stevens-2xl">
             <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
               <div>
                 <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900">
@@ -351,7 +183,7 @@ export default function Admissions() {
               </div>
               <div className="stevens-md:text-right">
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
-                  <Button variant="outline" className="  text-stevens-primary px-stevens-xl py-stevens-md rounded-stevens-md">
+                  <Button variant="outline" className="text-stevens-primary px-stevens-xl py-stevens-md rounded-stevens-md">
                     Get In Touch
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -361,7 +193,6 @@ export default function Admissions() {
           </div>
         </div>
       </div>
-
 
       {/* Events */}
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
@@ -406,7 +237,6 @@ export default function Admissions() {
         </div>
       </div>
 
-
       {/* Admissions FAQ */}
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-100">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -433,8 +263,6 @@ export default function Admissions() {
         </div>
       </div>
 
-      
-
       {/* Request Information */}
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -447,13 +275,13 @@ export default function Admissions() {
                 <p className="text-stevens-lg text-stevens-white mb-stevens-lg">
                   Ready to take the next step? Get more information about our programs and start your application today.
                 </p>
-                <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
+                {/* <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
                   <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
                     <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary">
                       Apply Now
                     </Button>
                   </a>
-                </div>
+                </div> */}
               </div>
               <LeadCaptureForm 
                 programOfInterest=""
@@ -465,6 +293,13 @@ export default function Admissions() {
           </div>
         </div>
       </div>
+
+      {/* Program Detail Modal */}
+      <ProgramDetailModal
+        program={selectedProgram}
+        isOpen={!!selectedProgram}
+        onClose={() => setSelectedProgram(null)}
+      />
     </div>
   );
 }

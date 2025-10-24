@@ -11,6 +11,7 @@ import routes from "@/routes.jsx";
 const PAGES = {
   Home: "Home",
   ASAP: "ASAP",
+  AcceleratedApplication: "AcceleratedApplication",
   Tuition: "Tuition",
   RequestInfo: "RequestInfo",
   MBA: "MBA",
@@ -18,7 +19,6 @@ const PAGES = {
   MEM: "MEM",
   ExploreMBA: "ExploreMBA",
   ExploreMEM: "ExploreMEM",
-  ExploreMSDS: "ExploreMSDS",
   ExploreMSCS: "ExploreMSCS",
   ExploreMSAI: "ExploreMSAI",
   ComparePrograms: "ComparePrograms",

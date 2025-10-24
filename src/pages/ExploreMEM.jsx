@@ -10,6 +10,8 @@ const ExploreMEM = () => {
     heroSubtitle: "Advance your engineering career with leadership skills. Technical management program designed for engineers seeking executive roles.",
     bgImage: "/assets/images/1-mem-hero-scaled.webp",
     programCode: "mem",
+    useApplicationModal: true,
+    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "ABET Accredited", icon: Award },
       { text: "100% Online", icon: Globe },

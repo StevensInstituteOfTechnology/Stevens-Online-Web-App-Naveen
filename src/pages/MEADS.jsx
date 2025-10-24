@@ -10,7 +10,7 @@ const programData = {
     subtitle: "Gain the skills to turn data into intelligent systems that power the future.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    // secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
     // badges: [
     //   { text: "Industry-Ready Skills", icon: Award },
     //   { text: "Cutting-Edge Curriculum", icon: Star },
@@ -396,14 +396,10 @@ const programData = {
           </ul>
           <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
           buttonText: "Apply Now",
-          url: "https://online.stevens.edu/apply/accelerated",
-          buttonGrayOut: true
+          url: "/accelerated-application",
+          buttonGrayOut: false
         }
-      ],
-      alertMessage: {
-          title:"Applications open week of October 27th!",
-          description: `<h3 class='text-xl my-4'>Ready to take the next step in your academic and professional journey?</h3><p class='mb-4'>Applications open soon—don&apos;t miss your chance to <strong>join a program designed to help you grow, lead, and make an impact.</strong></p>`      
-      }
+      ]
     },
     // ==================================================================
     keyDates: {

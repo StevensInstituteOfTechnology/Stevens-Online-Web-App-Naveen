@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Check, Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import PageHero from '../shared/PageHero';
+import ApplicationModal from '../shared/ApplicationModal';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import VideoPlayer from '../shared/VideoPlayer';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
@@ -15,6 +16,9 @@ const ExploreProgramPageTemplate = ({
   bgImage,
   badges = [],
   programCode = '',
+  secondaryCta,
+  useApplicationModal = false,
+  traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
   
   // Statistics Props
   statistics,
@@ -76,6 +80,7 @@ const ExploreProgramPageTemplate = ({
   justLaunchedButtonLink = "#",
   justLaunchedImage = "/assets/images/stevens-campus.png"
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-stevens-white">
@@ -86,7 +91,8 @@ const ExploreProgramPageTemplate = ({
         bgImage={bgImage}
         badges={badges}
         primaryCta={{ label: 'Request Information', to: 'RequestInfo' }}
-        secondaryCta={{ label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' }}
+        secondaryCta={secondaryCta || { label: 'Apply Now', href: traditionalAppLink }}
+        useApplicationModal={useApplicationModal}
         rightContent={
           <div className="animate-in slide-in-from-right duration-700 delay-300 w-full flex justify-center lg:justify-end">
             <LeadCaptureForm 
@@ -594,6 +600,13 @@ const ExploreProgramPageTemplate = ({
           </motion.div>
         </div>
       </section>
+
+      {/* Application Modal */}
+      <ApplicationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        traditionalLink={traditionalAppLink}
+      />
     </div>
   );
 };

@@ -5,16 +5,15 @@ import "@/data/blogs.json";
 // Page imports
 import Home from "@/pages/Home";
 import ASAP from "@/pages/ASAP";
+import AcceleratedApplication from "@/pages/AcceleratedApplication";
 import Tuition from "@/pages/Tuition";
 import RequestInfo from "@/pages/RequestInfo";
 import MBA from "@/pages/MBA";
 import MSCS from "@/pages/MSCS";
 import MEM from "@/pages/MEM";
-import MSDS from "@/pages/MSDS";
 import MEADS from "@/pages/MEADS";
 import ExploreMBA from "@/pages/ExploreMBA";
 import ExploreMEM from "@/pages/ExploreMEM";
-import ExploreMSDS from "@/pages/ExploreMSDS";
 import ExploreMEADS from "@/pages/ExploreMEADS";
 import ExploreMSCS from "@/pages/ExploreMSCS";
 import ExploreMSAI from "@/pages/ExploreMSAI";
@@ -136,6 +135,16 @@ export const routes = [
     element: <Navigate to="/ASAP/" replace />
   },
 
+  // Accelerated Application page
+  {
+    path: '/accelerated-application/',
+    element: <AcceleratedApplication />
+  },
+  {
+    path: '/accelerated-application',
+    element: <Navigate to="/accelerated-application/" replace />
+  },
+
   // Tuition pages
   {
     path: '/tuition-and-financial-aid/',
@@ -192,16 +201,6 @@ export const routes = [
   {
     path: '/MEM',
     element: <Navigate to="/online-masters-engineering-management/" replace />
-  },
-
-  // MSDS program
-  {
-    path: '/online-masters-data-science-msds/',
-    element: <MSDS />
-  },
-  {
-    path: '/MSDS',
-    element: <Navigate to="/online-masters-data-science-msds/" replace />
   },
 
   // MSDSE program
@@ -298,10 +297,6 @@ export const routes = [
   {
     path: '/explore/online-masters-engineering-management/',
     element: <ExploreMEM />
-  },
-  {
-    path: '/explore/online-masters-applied-data-science/',
-    element: <ExploreMSDS />
   },
   {
     path: '/explore/online-masters-eng-applied-data-science/',

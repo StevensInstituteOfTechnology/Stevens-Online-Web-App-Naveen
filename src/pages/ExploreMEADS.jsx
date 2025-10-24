@@ -9,6 +9,7 @@ const ExploreMEADS = () => {
     heroSubtitle: "Gain the skills to turn data into intelligent systems that power the future.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp", 
     programCode: "msdse",
+    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
     // badges: [
     //   { text: "GMAT/GRE Not Required", icon: Award },
     //   { text: "100% Online", icon: Globe },
@@ -153,14 +154,14 @@ const ExploreMEADS = () => {
     
     // Just Launched Section
     justLaunchedBadge: "Just Launched",
-    justLaunchedTitle: "New Flexible Application Options",
+    justLaunchedTitle: "Accelerated Application Now Available",
     justLaunchedDescription: `
-      <p>We've introduced new application options designed to make enrollment more accessible. These options reduce prerequisite requirements and offer the opportunity to take trial courses.</p>
+      <p>Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. This streamlined process removes traditional barriers while maintaining Stevens' academic standards.</p>
       
-      <p>To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
+      <p>Get started immediately with no letters of recommendation required, upload unofficial transcripts, and submit your resume or LinkedIn profile. Official transcripts are due within one year of enrollment.</p>
     `,
-    justLaunchedButtonText: "Request Flexible App Info",
-    justLaunchedButtonLink: "#",
+    justLaunchedButtonText: "Apply Now",
+    justLaunchedButtonLink: "/accelerated-application",
     justLaunchedImage: "/assets/images/2-explore-mem.webp",
     
     // Contact
