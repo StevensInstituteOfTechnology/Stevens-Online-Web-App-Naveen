@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import fsSync from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { STATIC_ROUTES, TOPIC_CATEGORIES } from '../src/config/routes-config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,30 +31,8 @@ function categoryToSlug(category) {
 
 // Generate all routes (same as prerender.js)
 function generateRoutes() {
-  const staticRoutes = [
-    '/',
-    '/ASAP/',
-    '/tuition-and-financial-aid/',
-    '/online-mba/',
-    '/online-masters-computer-science-mscs/',
-    '/online-masters-engineering-management/',
-    '/online-masters-data-science-msds/',
-    '/online-masters-engineering-applied-data-science/', // MEADS
-    '/compare-our-programs/',
-    '/events/',
-    '/online-learning-experience/',
-    '/admissions/',
-    '/request-information/',
-    '/ProfessionalEducation',
-    '/Certificates',
-    '/TuitionOutcomes',
-    '/explore/online-mba/',
-    '/explore/online-masters-engineering-management/',
-    '/explore/online-masters-data-science/',
-    '/explore/online-masters-computer-science/',
-    '/explore/ai-masters-computer-science/',
-    '/page-not-found/',
-  ];
+  // Use centralized static routes from config
+  const staticRoutes = [...STATIC_ROUTES];
 
   // Blog routes
   const blogRoutes = ['/blog/'];
@@ -61,9 +40,8 @@ function generateRoutes() {
     blogRoutes.push(`/blog/${blog.id}/`);
   });
 
-  // Topic category routes
-  const topicCategories = ['engineering-essentials', 'mastering-computer-science', 'online-mba-success', 'uncategorized'];
-  const topicRoutes = topicCategories.map(topic => `/topics/${topic}/`);
+  // Topic category routes - use centralized categories
+  const topicRoutes = TOPIC_CATEGORIES.map(topic => `/topics/${topic}/`);
   
   blogsData.forEach(blog => {
     const categorySlug = categoryToSlug(blog.category);
