@@ -6,6 +6,12 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 
 const programData = {
   code: 'mba',
+  seo: {
+    title: 'Online MBA | Stevens Institute of Technology',
+    description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
+    ogImage: '/assets/images/1-omba-hero-scaled.webp',
+    url: '/online-mba/'
+  },
   hero: {
     titleLines: ['Earn Your MBA Online.', 'Build Your Career Anywhere.'],
     subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",

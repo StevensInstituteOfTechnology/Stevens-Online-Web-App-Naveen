@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Check, Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -6,6 +6,7 @@ import PageHero from '../shared/PageHero';
 import ApplicationModal from '../shared/ApplicationModal';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import VideoPlayer from '../shared/VideoPlayer';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { BOOKING_URLS } from '@/config/constants';
 const ExploreProgramPageTemplate = ({
@@ -16,6 +17,7 @@ const ExploreProgramPageTemplate = ({
   bgImage,
   badges = [],
   programCode = '',
+  seo,
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
@@ -81,6 +83,25 @@ const ExploreProgramPageTemplate = ({
   justLaunchedImage = "/assets/images/stevens-campus.png"
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Set SEO meta tags
+  useEffect(() => {
+    if (!seo) return;
+    
+    setPageTitle(seo.title);
+    setMetaDescription(seo.description);
+    setOpenGraphTags({
+      title: seo.title,
+      description: seo.description,
+      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+      url: buildCanonicalUrl(seo.url),
+      type: 'website'
+    });
+    
+    return () => {
+      setPageTitle('Stevens Online');
+    };
+  }, [seo]);
 
   return (
     <div className="min-h-screen bg-stevens-white">

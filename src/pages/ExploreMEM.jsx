@@ -10,6 +10,12 @@ const ExploreMEM = () => {
     heroSubtitle: "Advance your engineering career with leadership skills. Technical management program designed for engineers seeking executive roles.",
     bgImage: "/assets/images/1-mem-hero-scaled.webp",
     programCode: "mem",
+    seo: {
+      title: 'Online MEM in Engineering Management | Stevens',
+      description: 'Lead engineering teams with the 100% online MEM in Engineering Management from Stevens Institute of Technology. STEM-designated, flexible format, no GRE required.',
+      ogImage: '/assets/images/1-mem-hero-scaled.webp',
+      url: '/explore/online-masters-engineering-management/'
+    },
     useApplicationModal: true,
     secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [

@@ -10,7 +10,7 @@ import VideoPlayer from '../shared/VideoPlayer';
 import PageHero from '../shared/PageHero';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 // Section Component for consistent styling
@@ -229,9 +229,28 @@ const WhatYoullLearnCarousel = ({ modules }) => {
 };
 
 export default function ProgramPageTemplate({ programData, useApplicationModal = false }) {
-  const { code, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
+  const { code, seo, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
   const sectionRefs = useRef({});
   const [activeSection, setActiveSection] = useState('overview');
+
+  // Set SEO meta tags
+  useEffect(() => {
+    if (!seo) return;
+    
+    setPageTitle(seo.title);
+    setMetaDescription(seo.description);
+    setOpenGraphTags({
+      title: seo.title,
+      description: seo.description,
+      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+      url: buildCanonicalUrl(seo.url),
+      type: 'website'
+    });
+    
+    return () => {
+      setPageTitle('Stevens Online');
+    };
+  }, [seo]);
   
   // Handle collapsible course toggles (for MBA-style curriculum)
   useEffect(() => {
