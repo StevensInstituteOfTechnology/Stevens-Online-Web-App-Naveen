@@ -4,6 +4,12 @@ import { createPageUrl } from '@/utils';
 
 const programData = {
   code: 'meads',
+  seo: {
+    title: 'Online MS in Engineering - Applied Data Science | Stevens',
+    description: 'Earn your 100% online MS in Engineering – Applied Data Science from Stevens. Dive into AI, big data and analytics, advance your technical career.',
+    ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    url: '/online-masters-engineering-applied-data-science/'
+  },
   // ==================================================================
   hero: {
     titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build What's Next."],

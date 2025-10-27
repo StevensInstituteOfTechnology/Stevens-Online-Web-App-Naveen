@@ -9,6 +9,12 @@ const ExploreMEADS = () => {
     heroSubtitle: "Gain the skills to turn data into intelligent systems that power the future.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp", 
     programCode: "msdse",
+    seo: {
+      title: 'Online MS in Engineering - Applied Data Science | Stevens',
+      description: 'Earn your 100% online MS in Engineering – Applied Data Science from Stevens. Dive into AI, big data and analytics, advance your technical career.',
+      ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+      url: '/explore/online-masters-eng-applied-data-science/'
+    },
     secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
     // badges: [
     //   { text: "GMAT/GRE Not Required", icon: Award },

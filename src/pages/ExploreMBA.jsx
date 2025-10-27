@@ -10,6 +10,12 @@ const ExploreMBA = () => {
     heroSubtitle: "Master business strategy with cutting-edge technology and data analytics. AACSB-accredited program designed for working professionals.",
     bgImage: "/assets/images/1-omba-hero-scaled.webp",
     programCode: "mba",
+    seo: {
+      title: 'Online MBA | Stevens Institute of Technology',
+      description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
+      ogImage: '/assets/images/1-omba-hero-scaled.webp',
+      url: '/explore/online-mba/'
+    },
     badges: [
       { text: "AACSB Accredited", icon: Award },
       { text: "100% Online", icon: Globe },

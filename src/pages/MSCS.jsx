@@ -6,6 +6,12 @@ import { createPageUrl } from '@/utils';
 
 const programData = {
   code: 'mscs',
+  seo: {
+    title: "Online Master's in Computer Science | Stevens Institute of Technology",
+    description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
+    ogImage: '/assets/images/bg_program.webp',
+    url: '/online-masters-computer-science-mscs/'
+  },
   hero: {
     titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
     subtitle: "AI/ML, data, systems—top-tier, flexible, industry-aligned.",
