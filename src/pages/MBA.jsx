@@ -40,7 +40,7 @@ const programData = {
     title: "MBA Program Overview",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies — taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
     keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management"],
-    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management", "Sustainability Management"]
+    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management"]
   },
   videoSection: {
     title: "Discover Your Future at Stevens",
@@ -471,41 +471,6 @@ const programData = {
                     <button class="course-toggle" data-target="mgt619">MGT 619 Leading Across Projects (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="mgt619">
                       <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course focuses on key leadership skills for addressing the complex challenges posed by program management, highly-matrixed environments and cross-national collaborations Its purpose is to enhance individuals' abilities to develop others, strategically integrate efforts across groups, and drive change. The concepts presented are theory and research driven so that participants can deepen their conceptual understanding. At the same time, the course calls upon learners to address real-life challenges they face as program and or director-level leaders. Each session presents effective techniques and uses experiential exercises or assignments to provide plenty of practice. The course also requires participants to further transfer learning to their workplaces through focused development planning and coaching support.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Sustainability Management -->
-              <div>
-                <h5 class="font-stevens-bold text-stevens-xl text-stevens-primary mb-stevens-lg">Sustainability Management</h5>
-                <div class="space-y-stevens-md">
-                  <div class="course-item">
-                    <button class="course-toggle" data-target="sm510">SM 510 Perspectives in Environmental Management (3)<span class="course-arrow">▼</span></button>
-                    <div class="course-content hidden" id="sm510">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course addresses environmental management and its role in sustainability from multiple perspectives, including but not limited to that of a natural scientist, an engineer, a marketing manager, an economist, an environmental lawyer, and a policy maker. The course also introduces students to some of the many tools used by environmental managers, such as life cycle analysis, environmental audit, etc. Students will learn from the course instructor and invited subject matter experts, who will explain in a non-technical manner that is intended for adequate comprehension by students from diverse fields of study on how their respective disciplines contribute to proper management of our environment, thereby making our world more sustainable.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="course-item">
-                    <button class="course-toggle" data-target="sm530">SM 530 Sustainable Business Strategies (3)<span class="course-arrow">▼</span></button>
-                    <div class="course-content hidden" id="sm530">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-This course will focus on best practices and emerging trends in sustainable business management. Topics will include corporate social responsibility, sustainable business theories, green business models, value chain management, green marketing, triple bottom line reporting, benefit-cost analysis and sustainability metrics and reporting. Students will explore the relationship between business management and sustainability goals for a number of industrial sectors. The course will include case studies as a tool for assessing strategies, identifying opportunities for improvements and recommending future actions. Students will be introduced to commonly used sustainability reporting frameworks and will use them to evaluate objective-setting and progress towards green goals.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="course-item">
-                    <button class="course-toggle" data-target="sm587">SM 587 Environmental Law and Management (3)<span class="course-arrow">▼</span></button>
-                    <div class="course-content hidden" id="sm587">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">A survey of legal and regulatory approaches to environmental protection. Topics include: environmental ethics, National Environmental Policy Act, State and Federal environmental agencies; and the Clean Water Act, Safe Drinking Water Act, Superfund, Resource Recovery and Conservation Act, Right-to-Know, Environmental Cleanup Responsibility Act, and wetlands protection.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="course-item">
-                    <button class="course-toggle" data-target="sm531">SM 531 Sustainable Development (3)<span class="course-arrow">▼</span></button>
-                    <div class="course-content hidden" id="sm531">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course addresses issues of sustainable development at the local, regional and global scales. Topics include understanding of the definitions, history, current status and future outlook of sustainable development. Population dynamics, wealth distribution, principles of economic growth, social dimensions of sustainable growth (poverty, food security, health, education, social inclusion), biodiversity and ecosystem dynamics, climate change. Sustainable development stakeholders and their roles and responsibilities including individuals, advocacy groups, local, regional and country-level governing bodies, NGOs and corporations. Legal, policy and regulatory aspects of sustainable development. A systems view of sustainability and sustainable development including the concepts of global boundaries and resiliency.</p>
                     </div>
                   </div>
                 </div>
