@@ -19,6 +19,10 @@ import ExploreMSCS from "@/pages/ExploreMSCS";
 import ExploreMSAI from "@/pages/ExploreMSAI";
 import ComparePrograms from "@/pages/ComparePrograms";
 import Events from "@/pages/Events";
+import CertificateEnterpriseAI from "@/pages/CertificateEnterpriseAI";
+import CertificateAppliedDataScience from "@/pages/CertificateAppliedDataScience";
+import ExploreCertEnterpriseAI from "@/pages/ExploreCertEnterpriseAI";
+import ExploreCertAppliedDataScience from "@/pages/ExploreCertAppliedDataScience";
 import Blog from "@/pages/Blog";
 import EngineeringEssentials from "@/pages/EngineeringEssentials";
 import MasteringComputerScience from "@/pages/MasteringComputerScience";
@@ -213,6 +217,16 @@ export const routes = [
     element: <Navigate to="/online-masters-engineering-applied-data-science/" replace />
   },
 
+  // Certificate Programs
+  {
+    path: '/certificates/enterprise-ai/',
+    element: <CertificateEnterpriseAI />
+  },
+  {
+    path: '/certificates/applied-data-science-foundations/',
+    element: <CertificateAppliedDataScience />
+  },
+
   // Compare Programs
   {
     path: '/compare-our-programs/',
@@ -309,6 +323,16 @@ export const routes = [
   {
     path: '/explore/ai-masters-computer-science/',
     element: <ExploreMSAI />
+  },
+  
+  // Explore certificate pages
+  {
+    path: '/explore/certificates/enterprise-ai/',
+    element: <ExploreCertEnterpriseAI />
+  },
+  {
+    path: '/explore/certificates/applied-data-science-foundations/',
+    element: <ExploreCertAppliedDataScience />
   },
   
   // 404 Not Found page

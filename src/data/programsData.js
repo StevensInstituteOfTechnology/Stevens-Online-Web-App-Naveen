@@ -117,6 +117,62 @@ export const PROGRAMS_DATA = [
       credits: '30',
       format: '100% Online'
     }
+  },
+  {
+    id: 'cert-enterprise-ai',
+    code: 'cert-eai',
+    name: 'Professional Certificate in Enterprise AI',
+    shortName: 'Enterprise AI Certificate',
+    degree: 'Professional Certificate',
+    tagline: 'Build AI That Works at Work',
+    description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely—no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
+    image: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    highlights: [
+      '$5,250 Total Cost',
+      '9 Graduate Credits',
+      'Stackable to Masters',
+      'Aligns with Tuition Benefits'
+    ],
+    applicationConfig: {
+      type: 'direct',
+      link: '/accelerated-application/'
+    },
+    programPage: '/certificates/enterprise-ai/',
+    explorePage: '/explore/certificates/enterprise-ai/',
+    stats: {
+      cost: '$5,250',
+      duration: '8-16 weeks',
+      credits: '9',
+      format: '100% Online'
+    }
+  },
+  {
+    id: 'cert-ads-foundations',
+    code: 'cert-ads',
+    name: 'Professional Certificate in Applied Data Science Foundations',
+    shortName: 'Applied Data Science Foundations',
+    degree: 'Professional Certificate',
+    tagline: 'Your First Step Into Applied AI',
+    description: 'Master Python, SQL, and machine learning foundations in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable toward M.Eng. in Applied Data Science.',
+    image: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    highlights: [
+      '$5,250 Total Cost',
+      'AI-First Curriculum',
+      'Portfolio Projects',
+      'Stackable to MEADS'
+    ],
+    applicationConfig: {
+      type: 'direct',
+      link: '/accelerated-application/'
+    },
+    programPage: '/certificates/applied-data-science-foundations/',
+    explorePage: '/explore/certificates/applied-data-science-foundations/',
+    stats: {
+      cost: '$5,250',
+      duration: '16-20 weeks',
+      credits: '9',
+      format: '100% Online'
+    }
   }
 ];
 

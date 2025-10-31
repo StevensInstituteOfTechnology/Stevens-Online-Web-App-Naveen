@@ -47,6 +47,11 @@ const degreeProgramItems = [
   { name: "M.S. in Engineering Management", page: "online-masters-engineering-management/" },
 ];
 
+const certificateProgramItems = [
+  { name: "Enterprise AI Certificate", page: "certificates/enterprise-ai/" },
+  { name: "Applied Data Science Foundations", page: "certificates/applied-data-science-foundations/" },
+];
+
 const mainNavLinks = [
   // The "Degree Programs" and "Tuition & Admissions" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
@@ -64,12 +69,18 @@ const tuitionAdmissionsItems = [
 
 const mobileNavLinks = [
   {
-    name: "Degree Programs",
+    name: "Graduate Programs",
     isDropdown: true,
-    items: degreeProgramItems.concat({
-      name: "Compare All Programs",
-      page: "compare-our-programs/",
-    }),
+    items: degreeProgramItems,
+  },
+  {
+    name: "Certificate Programs",
+    isDropdown: true,
+    items: certificateProgramItems,
+  },
+  {
+    name: "Compare Programs",
+    page: "compare-our-programs/",
   },
   {
     name: "Tuition & Admissions",
@@ -695,7 +706,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${degreeDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-96 p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -717,13 +728,17 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    <div className="grid grid-cols-2 gap-stevens-md">
+                    <div className="grid grid-cols-3 gap-stevens-lg">
+                      {/* Section 1: Graduate Programs */}
                       <div className="flex flex-col space-y-1">
+                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
+                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Graduate Programs</span>
+                        </div>
                         {degreeProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-sm"
                               /*inline styles to prevent css injection overwriting from asap page */
                               style={{
                                 color: "#1f2937",
@@ -747,12 +762,49 @@ export default function Layout({ children, currentPageName }) {
                         </DropdownMenuItem>
                         ))}
                       </div>
+                      
+                      {/* Section 2: Certificate Programs */}
                       <div className="flex flex-col space-y-1">
+                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
+                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Certificate Programs</span>
+                        </div>
+                        {certificateProgramItems.map((item) => (
+                        <DropdownMenuItem key={item.name} asChild>
+                            <Link
+                              to={createPageUrl(item.page)}
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-sm"
+                              style={{
+                                color: "#1f2937",
+                                backgroundColor: "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.color = "#ffffff";
+                                e.target.style.backgroundColor = "#a32638";
+                                e.target.style.textDecoration = "underline";
+                                e.target.style.fontWeight = "700";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.color = "#1f2937";
+                                e.target.style.backgroundColor = "transparent";
+                                e.target.style.textDecoration = "none";
+                                e.target.style.fontWeight = "600";
+                              }}
+                            >
+                              {item.name}
+                            </Link>
+                        </DropdownMenuItem>
+                        ))}
+                      </div>
+                      
+                      {/* Section 3: Compare Programs */}
+                      <div className="flex flex-col space-y-1">
+                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
+                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Compare</span>
+                        </div>
                         <DropdownMenuItem asChild>
                           <Link
                             to="/compare-our-programs/"
-                            className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
-                            /*inline styles to prevent css injection overwriting from asap page */
+                            className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-sm"
                             style={{
                               color: "#1f2937",
                               backgroundColor: "transparent",
