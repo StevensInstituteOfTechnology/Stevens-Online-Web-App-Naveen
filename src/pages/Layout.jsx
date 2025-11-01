@@ -107,7 +107,10 @@ export default function Layout({ children, currentPageName }) {
   const degreeHoverTimeoutRef = React.useRef(null);
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
-
+  
+  // ASAP Banner continuous message
+  const bannerMessage = "Your Future Awaits | Secure Your Scholarship | Apply by November 20th Priority Deadline | Apply in Minutes";
+  
   React.useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
@@ -1133,66 +1136,38 @@ export default function Layout({ children, currentPageName }) {
           </div>
       </header>
       
-      {/* ASAP Banner */}
+      {/* ASAP Banner - Horizontal Scrolling Marquee */}
       {showASAPBanner && (
         <div
-          className={`bg-stevens-gray-400 text-stevens-primary py-3 px-stevens-md relative z-[9997] ${
+          className={`bg-stevens-gray-400 text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
-          } transition-all duration-stevens-normal`}
+          }`}
         >
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            {/* Full Alert on Large Screens */}
-            <div className="hidden lg:flex items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-4 h-4 flex-shrink-0" />
-              <div className="text-stevens-sm font-medium">
-                <strong>ASAP Application:</strong> Start with two courses & earn full admission based on your performance. No full degree commitment required! 
-                <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-2 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
-                </Link>
+          <Link
+            to={createPageUrl("accelerated-application/")}
+            className="block hover:bg-stevens-gray-300 transition-colors duration-stevens-normal"
+          >
+            <div className="flex items-center">
+              <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
+              <div className="flex-1 overflow-hidden">
+                <div className="inline-flex animate-marquee">
+                  <span className="text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-gray-900 whitespace-nowrap pr-12 underline hover:no-underline">
+                    {bannerMessage} • {bannerMessage} • {bannerMessage} • {bannerMessage}
+                  </span>
+                </div>
               </div>
             </div>
-            
-            {/* Condensed Alert on Medium Screens */}
-            <div className="hidden md:flex lg:hidden items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-4 h-4 flex-shrink-0" />
-              <div className="text-stevens-sm font-medium">
-                <strong>ASAP Application:</strong> Start with 2 courses & earn admission. 
-                <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-2 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
-                </Link>
-              </div>
-            </div>
-            
-            {/* Minimal Alert on Small Screens */}
-            <div className="flex md:hidden items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-3 h-3 flex-shrink-0" />
-              <div className="text-stevens-xs font-medium">
-                <strong>ASAP:</strong> 
-                <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-1 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
-                </Link>
-              </div>
-            </div>
-          </div>
+          </Link>
           <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setShowASAPBanner(false);
             }}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-primary hover:text-stevens-primary/80 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-gray-900 hover:text-stevens-gray-700 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
             aria-label="Close banner"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
       )}

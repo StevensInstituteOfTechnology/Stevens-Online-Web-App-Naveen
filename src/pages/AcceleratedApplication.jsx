@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check } from 'lucide-react';
+import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function AcceleratedApplicationPage() {
   useEffect(() => {
@@ -100,6 +101,33 @@ export default function AcceleratedApplicationPage() {
     "Faster application review process"
   ];
 
+  const eligiblePrograms = [
+    {
+      id: 'meads',
+      name: 'M.Eng. in Applied Data Science',
+      shortName: 'MEADS',
+      path: '/online-masters-engineering-applied-data-science/',
+      icon: GraduationCap,
+      description: 'Master data science and AI engineering'
+    },
+    {
+      id: 'cert-eai',
+      name: 'Professional Certificate in Enterprise AI',
+      shortName: 'Enterprise AI',
+      path: '/certificates/enterprise-ai/',
+      icon: Sparkles,
+      description: 'Build AI workflows from strategy to deployment'
+    },
+    {
+      id: 'cert-ads',
+      name: 'Professional Certificate in Applied Data Science Foundations',
+      shortName: 'Data Science Foundations',
+      path: '/certificates/applied-data-science-foundations/',
+      icon: Sparkles,
+      description: 'Master Python, SQL, and ML foundations'
+    }
+  ];
+
   return (
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero
@@ -107,6 +135,77 @@ export default function AcceleratedApplicationPage() {
         subtitle="Fast-Track Your Graduate Education at Stevens" 
         bgImage="/assets/images/asap-hero.avif"
       />
+
+      {/* Speed Emphasis Section */}
+      <div className="py-stevens-section-sm bg-gradient-to-br from-stevens-primary to-stevens-maroon-dark text-white">
+        <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg text-center">
+          <div className="flex items-center justify-center gap-stevens-sm mb-stevens-md">
+            <Zap className="w-8 h-8" />
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold">
+              Complete in Minutes, Not Hours
+            </h2>
+          </div>
+          <p className="text-stevens-xl mb-stevens-xl max-w-3xl mx-auto leading-relaxed">
+            Our streamlined application takes just <strong>5-10 minutes</strong> to complete. No letters of recommendation. No lengthy essays. Just your basics and you're done.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-stevens-lg max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
+              <Clock className="w-10 h-10 mx-auto mb-stevens-sm" />
+              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">5-10 Minutes</h3>
+              <p className="text-stevens-sm opacity-90">Quick application process</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
+              <FileCheck className="w-10 h-10 mx-auto mb-stevens-sm" />
+              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">Unofficial Transcripts</h3>
+              <p className="text-stevens-sm opacity-90">Get started immediately</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
+              <Zap className="w-10 h-10 mx-auto mb-stevens-sm" />
+              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">Fast Review</h3>
+              <p className="text-stevens-sm opacity-90">Hear back quickly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Eligible Programs Section */}
+      <div className="py-stevens-section bg-white">
+        <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
+          <div className="text-center mb-stevens-xl">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+              Eligible Programs
+            </h2>
+            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+              The Accelerated Application is available for the following programs. Choose your program and get started today.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
+            {eligiblePrograms.map((program) => (
+              <Link 
+                key={program.id}
+                to={program.path}
+                className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+              >
+                <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
+                <h3 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                  {program.shortName}
+                </h3>
+                <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                  {program.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm">
+            <p className="text-stevens-base text-stevens-gray-900">
+              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="py-stevens-section bg-stevens-gray-50">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">

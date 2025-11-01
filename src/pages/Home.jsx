@@ -218,20 +218,18 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-stevens-md animate-in slide-in-from-left duration-700 delay-400">
                 <Link to={createPageUrl("request-information/")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                  <button className="btn-stevens-primary ">
+                  <button className="btn-stevens-primary">
                     Request Information
                   </button>
                 </Link>
-                <a
-                  href="https://gradadmissions.stevens.edu/apply/?pk=GRNP"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={createPageUrl("admissions/") + "#explore-programs"}
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
-                  <button className="btn-stevens-outline text-stevens-white hover:bg-stevens-white hover:text-stevens-primary ">
+                  <button className="btn-stevens-secondary">
                     Apply Now
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">

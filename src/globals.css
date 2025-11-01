@@ -108,11 +108,29 @@
   }
 
   .btn-stevens-secondary {
-    @apply border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+    @apply bg-white border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
   }
 
   .btn-stevens-outline {
     @apply border border-stevens-gray-300 text-stevens-gray-700 hover:bg-stevens-gray-50 font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+  }
+
+  /* Marquee Animation for ASAP Banner */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 
   /* Stevens Form Styles - Improved Sizing */

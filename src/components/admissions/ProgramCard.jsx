@@ -1,21 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, GraduationCap } from 'lucide-react';
+import { ArrowRight, GraduationCap, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import ApplicationModal from '../shared/ApplicationModal';
 
 /**
  * ProgramCard - Beautiful card component for displaying program information
  * @param {Object} program - Program data object
- * @param {Function} onClick - Click handler to open program details
  */
-const ProgramCard = ({ program, onClick }) => {
+const ProgramCard = ({ program }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Determine application link based on config
+  const getApplicationLink = () => {
+    if (program.applicationConfig.type === 'direct') {
+      return program.applicationConfig.link;
+    } else if (program.applicationConfig.type === 'modal') {
+      return program.applicationConfig.standardLink;
+    }
+    return 'https://gradadmissions.stevens.edu/apply/?pk=GRNP';
+  };
+
+  const isInternalAppLink = program.applicationConfig.type === 'direct' && 
+    program.applicationConfig.link.startsWith('/');
+
   return (
+    <>
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
-      onClick={onClick}
-      className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-gray-200 hover:border-stevens-primary overflow-hidden cursor-pointer transition-all duration-stevens-normal"
+      className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-gray-200 hover:border-stevens-primary overflow-hidden transition-all duration-stevens-normal"
     >
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stevens-gray-100 to-stevens-gray-200">
@@ -83,15 +101,80 @@ const ProgramCard = ({ program, onClick }) => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-stevens-md pt-stevens-md border-t border-stevens-gray-200">
-          <button className="w-full flex items-center justify-center gap-stevens-sm text-stevens-primary hover:text-stevens-maroon-dark font-stevens-semibold text-stevens-sm transition-colors duration-stevens-normal group-hover:gap-stevens-md">
-            View Program Details
-            <ArrowRight className="w-4 h-4 transition-transform duration-stevens-normal group-hover:translate-x-1" />
-          </button>
+        {/* CTAs - Two Buttons */}
+        <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200 flex gap-stevens-sm">
+          {/* Explore Program Button - White bg, red text, red border */}
+          <Link
+            to={program.explorePage}
+            className="flex-1"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="w-full btn-stevens-secondary text-stevens-sm">
+              Explore
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </button>
+          </Link>
+
+          {/* Apply Now Button - Different behavior based on application type */}
+          {program.applicationConfig.type === 'modal' ? (
+            // Modal type (MSCS, MEM) - Opens modal to choose Standard vs ASAP
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsModalOpen(true);
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+              }}
+              className="flex-1 btn-stevens-primary text-stevens-sm"
+            >
+              Apply Now
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </button>
+          ) : isInternalAppLink ? (
+            // Internal link (MEADS, Certificates) - Direct link to accelerated app
+            <Link
+              to={getApplicationLink()}
+              className="flex-1"
+              onClick={(e) => {
+                e.stopPropagation();
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+              }}
+            >
+              <button className="w-full btn-stevens-primary text-stevens-sm">
+                Apply Now
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </button>
+            </Link>
+          ) : (
+            // External link (MBA) - Direct link to standard app
+            <a
+              href={getApplicationLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+              onClick={(e) => {
+                e.stopPropagation();
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+              }}
+            >
+              <button className="w-full btn-stevens-primary text-stevens-sm">
+                Apply Now
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
+
+    {/* Application Modal for MSCS and MEM - Rendered outside card */}
+    {program.applicationConfig.type === 'modal' && (
+      <ApplicationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        traditionalLink={program.applicationConfig.standardLink}
+      />
+    )}
+    </>
   );
 };
 

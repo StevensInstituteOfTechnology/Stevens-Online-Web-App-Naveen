@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle, Calendar, FileText, Users, Award, ArrowRight, PlayCircle, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import ProgramCard from '../components/admissions/ProgramCard';
-import ProgramDetailModal from '../components/admissions/ProgramDetailModal';
 import { getAllPrograms } from '../data/programsData';
 
 export default function Admissions() {
-  const [selectedProgram, setSelectedProgram] = useState(null);
   const programs = getAllPrograms();
+  const location = useLocation();
+
+  // Smooth scroll to explore-programs section if hash is present
+  useEffect(() => {
+    if (location.hash === '#explore-programs') {
+      setTimeout(() => {
+        const element = document.getElementById('explore-programs');
+        if (element) {
+          const yOffset = -100; // Offset for fixed header
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const keyDates = {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
@@ -149,23 +162,22 @@ export default function Admissions() {
       </div>
 
       {/* Explore Our Programs - NEW DYNAMIC SECTION */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+      <div id="explore-programs" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
               Explore Our Graduate Programs
             </h2>
             <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Click on any program card below to view detailed information and application options specific to that program.
+              Choose a program to explore or apply directly. Each program page provides detailed information about curriculum, career outcomes, and admission requirements.
             </p>
           </div>
 
-          <div className="grid stevens-md:grid-cols-2 gap-stevens-xl">
+          <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
             {programs.map((program, index) => (
               <ProgramCard
                 key={program.id}
                 program={program}
-                onClick={() => setSelectedProgram(program)}
               />
             ))}
           </div>
@@ -293,13 +305,6 @@ export default function Admissions() {
           </div>
         </div>
       </div>
-
-      {/* Program Detail Modal */}
-      <ProgramDetailModal
-        program={selectedProgram}
-        isOpen={!!selectedProgram}
-        onClose={() => setSelectedProgram(null)}
-      />
     </div>
   );
 }
