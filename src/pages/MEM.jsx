@@ -3,6 +3,7 @@ import React from 'react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { Globe, Check, Award } from 'lucide-react';
 import { createPageUrl } from '@/utils';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'mem',
@@ -348,8 +349,8 @@ const programData = {
         event: "Spring 2026", 
         date: "October 14, 2025", 
         details: "Deposit Waiver* and Application Fee Waiver Available.",
-        priorityDate: "November 11, 2025",
-        priorityDetails: "Application Fee Waiver Available and Early Application Review.",
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: "January 5, 2026",
         startDate: "January 20, 2026"
       }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, GraduationCap } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
@@ -112,7 +113,7 @@ const ExploreCertEnterpriseAI = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025"
+        date: KEY_DATES.PRIORITY_SUBMIT.date
       },
       {
         label: "Final Submit",

@@ -1,6 +1,7 @@
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'meads',
@@ -415,8 +416,8 @@ const programData = {
           event: "Spring 2026", 
           date: "November 11 , 2025", 
           details: "Deposit Waiver* and Application Fee Waiver Available.",
-          priorityDate: "November 18, 2025",
-          priorityDetails: "Application Fee Waiver Available and Early Application Review.",
+          priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+          priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
           finalDate: "January 5, 2026",
           startDate: "January 20, 2026"
         }

@@ -3,6 +3,7 @@ import {
   Globe, Award, Check, Briefcase, DollarSign, BrainCircuit, LineChart,
   Target, TrendingUp, Users } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'mba',
@@ -591,7 +592,7 @@ const programData = {
     term: "Spring 2026",
       rows: [
       { event: "Early Submit", date: "October 14, 2025" },
-      { event: "Priority Submit", date: "November 11, 2025" },
+      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
       { event: "Final Submit", date: "January 5, 2026" },
       { event: "Start of Classes", date: "January 20, 2026" }
     ]

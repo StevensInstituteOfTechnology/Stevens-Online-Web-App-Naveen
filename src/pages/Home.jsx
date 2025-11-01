@@ -35,6 +35,7 @@ import ProgramCard from "../components/shared/ProgramCard";
 import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import VideoPlayer from "../components/shared/VideoPlayer";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { KEY_DATES } from "@/config/constants";
 
 const StatItem = ({ value, label, icon: Icon }) => (
 <div className="text-center flex flex-col items-center justify-center">
@@ -640,11 +641,10 @@ export default function Home() {
                       </td>
                       <td className="p-4 align-top border border-gray-300">
                         <div className="font-bold text-gray-900">
-                          November 11, 2025
+                          {KEY_DATES.PRIORITY_SUBMIT.date}
                         </div>
                         <div className="text-stevens-gray-900 mt-1 text-stevens-sm">
-                          Application Fee Waiver Available and Early Application
-                          Review.
+                          {KEY_DATES.PRIORITY_SUBMIT.details}
                         </div>
                       </td>
                       <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">

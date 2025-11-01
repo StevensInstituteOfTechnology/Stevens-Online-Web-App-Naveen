@@ -3,6 +3,7 @@ import {
   Globe, Award, Check, Briefcase, DollarSign, GraduationCap, TrendingUp,
   Target, BookOpen, Users, Code, Database, LineChart } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'cert-ads',
@@ -213,7 +214,7 @@ const programData = {
     term: "Spring 2026",
       rows: [
       { event: "Early Submit", date: "October 14, 2025" },
-      { event: "Priority Submit", date: "November 11, 2025" },
+      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
       { event: "Final Submit", date: "January 5, 2026" },
       { event: "Start of Classes", date: "January 20, 2026" }
     ]
@@ -255,9 +256,9 @@ const programData = {
     title: "Meet Your Data Science Faculty",
     description: "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
     members: [
-      { name: "MA 574 Faculty", title: "Applied Mathematics", image: "/assets/avatars/mba-avatar/gary-lynn-stevens-faculty-683x1024.jpg" },
+      { name: "Upendra Prasad", title: "Senior Lecturer", image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif" },
       { name: "CS 563 Faculty", title: "Computer Science & Data Engineering", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.jpg" },
-      { name: "CS 559 Faculty", title: "Machine Learning & AI", image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.jpg" }
+      { name: "Ping Wang", title: "Assistant Professor", image: "/assets/avatars/certificate-ADS-avatar/pwang44.avif" }
     ]
   },
   faqs: [

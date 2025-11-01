@@ -8,7 +8,7 @@ import { CheckCircle, Calendar, FileText, Users, Award, ArrowRight, PlayCircle, 
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
-import { BOOKING_URLS } from '@/config/constants';
+import { BOOKING_URLS, KEY_DATES } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import ProgramCard from '../components/admissions/ProgramCard';
 import { getAllPrograms } from '../data/programsData';
@@ -38,8 +38,8 @@ export default function Admissions() {
         event: "Spring 2026",
         date: "October 14, 2025",
         details: "Deposit Waiver* and Application Fee Waiver Available.",
-        priorityDate: "November 11, 2025",
-        priorityDetails: "Application Fee Waiver Available and Early Application Review.",
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: "January 5, 2026",
         startDate: "January 20, 2026"
       }

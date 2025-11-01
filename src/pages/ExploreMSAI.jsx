@@ -1,4 +1,5 @@
 import React from 'react';
+import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
@@ -164,8 +165,8 @@ const ExploreMSAI = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025",
-        description: "Application Fee Waiver Available and Early Application Review."
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: KEY_DATES.PRIORITY_SUBMIT.details
       },
       {
         label: "Final Submit",

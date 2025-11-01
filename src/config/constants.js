@@ -19,3 +19,11 @@ export const CONTACT_INFO = {
     EMAIL_LINK: 'mailto:financialaid@stevens.edu'
   }
 };
+
+// Key Dates & Deadlines constants
+export const KEY_DATES = {
+  PRIORITY_SUBMIT: {
+    date: 'November 20, 2025',
+    details: 'Application Fee Waiver Available and Early Application Review.'
+  }
+};
