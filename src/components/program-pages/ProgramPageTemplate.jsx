@@ -557,10 +557,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {career.jobTitles.map((job, index) => {
-                          // Set different maximum values based on program type
-                          const maxSalary = programData.code.toLowerCase() === 'mem' ? 167740 : (programData.code.toLowerCase() === 'mba' ? 206420 : 171200);
+                        {(() => {
+                          // Calculate max salary from jobTitles array - highest salary will be 100% width
+                          const maxSalary = Math.max(...career.jobTitles.map(job => 
+                            parseFloat(job.salary.replace(/[$,]/g, ''))
+                          ));
                           
+                          return career.jobTitles.map((job, index) => {
                           return (
                             <TableRow 
                               key={job.title} 
@@ -600,7 +603,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                               </TableCell>
                         </TableRow>
                           );
-                        })}
+                          });
+                        })()}
                     </TableBody>
                   </Table>
                   </div>

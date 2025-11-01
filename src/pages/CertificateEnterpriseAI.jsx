@@ -9,13 +9,13 @@ const programData = {
   seo: {
     title: 'Professional Certificate in Enterprise AI | Stevens Institute of Technology',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows. $5,250 aligns with employer tuition benefits. Stackable to MBA and M.Eng.',
-    ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    ogImage: '/assets/images/certificate-enterpriseAI-1.avif',
     url: '/certificates/enterprise-ai/'
   },
   hero: {
     titleLines: ['Professional Certificate', 'in Enterprise AI'],
     subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow—no CS degree required.",
-    bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/certificate-enterpriseAI-1.avif",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply Now', href: '/accelerated-application/' },
     badges: [
@@ -42,14 +42,7 @@ const programData = {
     keySkills: ["AI Strategy & Governance", "Generative AI & Prompting", "Operational AI Workflows", "Business Process Automation", "AI Ethics & Risk Management"],
     concentrations: []
   },
-  videoSection: {
-    title: "Transform Your Career with AI Skills",
-    description: "Discover how Stevens' Enterprise AI Certificate prepares you to lead AI initiatives in your organization, from strategy to deployment.",
-    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
-    posterSrc: "/assets/videos/video-cover-2.avif",
-    showControls: true,
-    muted: true
-  },
+  
   rankings: [
   { ranking: "28%", description: "HIGHER PAY WITH AI SKILLS", source: "Professionals with AI skills earn approximately 28% more than those without, according to LinkedIn's Economic Graph data." },
   { ranking: "Top", description: "JOBS ON THE RISE 2025", source: "AI-related roles dominate LinkedIn's Jobs on the Rise list, with demand spanning beyond IT into business operations, marketing, and management." },
@@ -58,13 +51,13 @@ const programData = {
   career: {
     description: `<p class="mb-4">The demand for AI skills has exploded across industries. What was once confined to data science and engineering teams is now a critical capability for business professionals in every function—from marketing and operations to finance and HR.</p><p class="mb-4">Organizations are seeking professionals who can bridge the gap between AI potential and practical implementation. The Enterprise AI Certificate prepares you to be that bridge: someone who understands AI capabilities, can design proof-of-concept solutions, and knows how to operationalize AI workflows within existing business processes.</p><p>Whether you're looking to advance in your current role, pivot into an AI-adjacent position, or simply future-proof your career, this certificate provides the practical skills and graduate-level credential employers value.</p>`,
     jobTitles: [
-    { title: "AI Product Manager", employed: "Growing", salary: "$130,000+" },
-    { title: "Business Intelligence Analyst", employed: "High Demand", salary: "$85,000+" },
-    { title: "Operations Manager (AI)", employed: "Emerging", salary: "$105,000+" },
-    { title: "AI Strategy Consultant", employed: "High Growth", salary: "$120,000+" },
-    { title: "Digital Transformation Lead", employed: "In Demand", salary: "$115,000+" }],
+      { title: "AI Product Manager", employed: "Growing", salary: "$176,690" },
+      { title: "Business Intelligence Analyst", employed: "High Demand", salary: "$100,360" },
+      { title: "Operations Manager (AI)", employed: "Emerging", salary: "$125,590" },
+      { title: "AI Strategy Consultant", employed: "High Growth", salary: "$150,780" },
+      { title: "Digital Transformation Lead", employed: "In Demand", salary: "$149,370" }],
 
-    source: "Labor market data from LinkedIn Economic Graph and Lightcast, 2025.",
+    source: "Salary data shown are based on market research from sources such as LinkedIn Economic Graph and Lightcast (2025). Exact figures for emerging AI roles vary widely by industry, company size, and experience level.",
     topCompanies: ["Microsoft", "Google", "Amazon", "Deloitte", "Accenture", "IBM"]
   },
   whatYoullLearn: {
@@ -170,10 +163,7 @@ const programData = {
       }
     }
   },
-  studentSpotlight: {
-    name: "Future Enterprise AI Graduate",
-    quote: "The Enterprise AI Certificate provided exactly what I needed—practical skills I could apply immediately at work. Within weeks of completing PE 810, I had deployed my first AI workflow, and my team is already seeing the benefits."
-  },
+  
   commonJobTitles: {
     title: "Career Opportunities with AI Skills"
   },
@@ -234,7 +224,7 @@ const programData = {
           <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="https://stevens.edu/schedule-call" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call to Discuss Funding
           </a>
         </div>
@@ -243,19 +233,14 @@ const programData = {
       </div>
     `
   },
-  events: {
-    title: "Learn More About Enterprise AI",
-    description: "Join us for information sessions to learn more about the Enterprise AI Certificate, career opportunities in AI, and how to apply.",
-    fallbackText: "Check back soon for upcoming events about the Enterprise AI Certificate.",
-    items: []
-  },
+  
   faculty: {
     title: "Meet Your Enterprise AI Faculty",
     description: "Learn from faculty who are active researchers and practitioners in AI, business analytics, and process innovation.",
     members: [
-      { name: "Dr. Michael zur Muehlen", title: "Faculty, BIA 568", image: "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.jpg" },
-      { name: "Dr. Alkiviadis Vazacopoulos, Ph.D.", title: "Faculty, BIA 662 - Teaching Associate Professor", image: "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.jpg" },
-      { name: "Dr. Carlo Lipizzi", title: "Faculty, PE 810", image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.jpg" }
+      { name: "Michael zur Muehlen", title: "Associate Dean of Graduate Studies and Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/mmuehlen.avif" },
+      { name: "Alkiviadis Vazacopoulos", title: "Teaching Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/avazacop.avif" },
+      { name: "Carlo Lipizzi", title: "Teaching Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/carlo-lipizzi-stevens-faculty.jpg" }
     ]
   },
   faqs: [

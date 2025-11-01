@@ -9,13 +9,13 @@ const programData = {
   seo: {
     title: 'Professional Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
     description: 'Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.',
-    ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    ogImage: '/assets/images/certificate-ADS-1.webp',
     url: '/certificates/applied-data-science-foundations/'
   },
   hero: {
     titleLines: ['Applied Data Science', 'Foundations Certificate'],
     subtitle: "Build AI that works—Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
-    bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/certificate-ADS-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply Now', href: '/accelerated-application/' },
     badges: [
@@ -42,14 +42,7 @@ const programData = {
     keySkills: ["Python Programming", "SQL & Databases", "Machine Learning", "Data Pipelines", "AI Ethics & Explainability"],
     concentrations: []
   },
-  videoSection: {
-    title: "Build Your Data Science Career",
-    description: "Discover how Stevens' Applied Data Science Foundations Certificate prepares you for in-demand AI and analytics roles through hands-on, project-based learning.",
-    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
-    posterSrc: "/assets/videos/video-cover-2.avif",
-    showControls: true,
-    muted: true
-  },
+ 
   rankings: [
   { ranking: "$140K+", description: "MEDIAN ML ENGINEER SALARY", source: "Machine Learning Engineers earn a median salary of over $140,000 annually, with strong growth projected through 2033 (U.S. Bureau of Labor Statistics, 2025)." },
   { ranking: "Top 10", description: "FASTEST GROWING TECH SKILL", source: "Data science and AI skills consistently rank in the top 10 fastest-growing tech skills, with demand spanning all industries from healthcare to finance (LinkedIn Learning, 2025)." },
@@ -58,13 +51,13 @@ const programData = {
   career: {
     description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek—Python, SQL, ML frameworks—while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [
-    { title: "Data Analyst", employed: "High Demand", salary: "$75,000+" },
-    { title: "ML Engineer Associate", employed: "Growing", salary: "$95,000+" },
-    { title: "AI Solutions Specialist", employed: "Emerging", salary: "$105,000+" },
-    { title: "Business Intelligence Developer", employed: "In Demand", salary: "$85,000+" },
-    { title: "Applied Data Scientist", employed: "High Growth", salary: "$120,000+" }],
+    { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
+    { title: "ML Engineer Associate", employed: "Growing", salary: "$135,690" },
+    { title: "AI Solutions Specialist", employed: "Emerging", salary: "$132,480" },
+    { title: "Business Intelligence Developer", employed: "In Demand", salary: "$100,360" },
+    { title: "Applied Data Scientist", employed: "High Growth", salary: "$115,280" }],
 
-    source: "Labor market data from U.S. Bureau of Labor Statistics and Lightcast, 2025.",
+    source: "Salary data shown are based on market research from sources such as LinkedIn Economic Graph and Lightcast (2025). Exact figures for emerging AI roles vary widely by industry, company size, and experience level.",
     topCompanies: ["Google", "Amazon", "Microsoft", "IBM", "Meta", "Apple"]
   },
   whatYoullLearn: {
@@ -186,10 +179,7 @@ const programData = {
       }
     }
   },
-  studentSpotlight: {
-    name: "Future Data Science Graduate",
-    quote: "The Applied Data Science Foundations Certificate gave me exactly what I needed to transition into a data science role. The portfolio projects I built became the centerpiece of my job interviews, and I had multiple offers within weeks of graduating."
-  },
+  
   commonJobTitles: {
     title: "Career Paths in Data Science & AI"
   },
@@ -250,21 +240,17 @@ const programData = {
           <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="https://stevens.edu/schedule-call" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call About Funding Options
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually. Financial aid may be available for those who qualify.</p>
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition basStevens has extensive experience working with corporate tuition assistance programs. Our enrollment advisors can guide you through your company's reimbursement ed on 2025 rates. Tuition and fees are subject to change annually. Financial aid may be available for those who qualify.</p>
       </div>
     `
   },
-  events: {
-    title: "Learn More About Data Science",
-    description: "Join us for information sessions to learn more about the Applied Data Science Foundations Certificate, career opportunities in data science and AI, and how to apply.",
-    fallbackText: "Check back soon for upcoming events about the Applied Data Science Foundations Certificate.",
-    items: []
-  },
+  
+
   faculty: {
     title: "Meet Your Data Science Faculty",
     description: "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",

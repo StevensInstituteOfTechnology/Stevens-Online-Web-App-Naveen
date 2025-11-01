@@ -8,12 +8,12 @@ const ExploreCertAppliedDataScience = () => {
     heroTitle: "YOUR FIRST STEP INTO APPLIED AI",
     programName: "Applied Data Science Foundations Certificate",
     heroSubtitle: "Master Python, SQL, and machine learning in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable to M.Eng. in Applied Data Science.",
-    bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/explore-cert-ADS-1.jpg",
     programCode: "cert-ads",
     seo: {
       title: 'Professional Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
       description: 'Master Python, SQL, and ML in 9 graduate credits. Build AI-ready data pipelines and deploy machine learning models. $5,250 aligns with tuition benefits. Stackable to MEADS.',
-      ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+      ogImage: '/assets/images/explore-cert-ADS-1.jpg',
       url: '/explore/certificates/applied-data-science-foundations/'
     },
     badges: [
