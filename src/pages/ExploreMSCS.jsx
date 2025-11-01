@@ -17,7 +17,7 @@ const ExploreMSCS = () => {
       url: '/explore/online-masters-computer-science/'
     },
     useApplicationModal: true,
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "No. 1 in New Jersey", icon: Award },
       { text: "100% Online", icon: Globe },

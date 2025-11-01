@@ -30,7 +30,7 @@ export default function PageHero({
     if (!cta || !cta.label) return null;
     const className = variant === 'primary'
       ? 'btn-stevens-primary w-full sm:w-auto'
-      : 'btn-stevens-outline text-stevens-white hover:bg-stevens-white hover:text-stevens-primary w-full sm:w-auto';
+      : 'btn-stevens-secondary w-full sm:w-auto';
 
     // Determine conversion label based on variant and label
     const getConversionLabel = () => {

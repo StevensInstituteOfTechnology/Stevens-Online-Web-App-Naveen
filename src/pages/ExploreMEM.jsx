@@ -17,7 +17,7 @@ const ExploreMEM = () => {
       url: '/explore/online-masters-engineering-management/'
     },
     useApplicationModal: true,
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "ABET Accredited", icon: Award },
       { text: "100% Online", icon: Globe },

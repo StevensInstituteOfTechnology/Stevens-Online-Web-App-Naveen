@@ -17,7 +17,7 @@ const programData = {
     subtitle: "Build AI that works—Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
     bgImage: "/assets/images/certificate-ADS-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: '/accelerated-application/' },
+    secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
     badges: [
     { text: "100% Online", icon: Globe },
     { text: "Graduate Credit", icon: Award },

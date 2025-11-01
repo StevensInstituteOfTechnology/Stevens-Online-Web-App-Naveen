@@ -15,7 +15,7 @@ const ExploreMEADS = () => {
       ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
       url: '/explore/online-masters-eng-applied-data-science/'
     },
-    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
+    secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     // badges: [
     //   { text: "GMAT/GRE Not Required", icon: Award },
     //   { text: "100% Online", icon: Globe },

@@ -17,7 +17,7 @@ const programData = {
     subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
     bgImage: "/assets/images/1-omba-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
     { text: "100% Online", icon: Globe },
     { text: "AACSB Accredited", icon: Award },

@@ -17,7 +17,7 @@ const programData = {
     subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow—no CS degree required.",
     bgImage: "/assets/images/certificate-enterpriseAI-1.avif",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: '/accelerated-application/' },
+    secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
     badges: [
     { text: "100% Online", icon: Globe },
     { text: "Graduate Credit", icon: Award },

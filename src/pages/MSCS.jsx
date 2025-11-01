@@ -17,7 +17,7 @@ const programData = {
     subtitle: "AI/ML, data, systems—top-tier, flexible, industry-aligned.",
     bgImage: "/assets/images/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "99% Employment Rate", icon: Award },
       { text: "ASAP Application Available", icon: Check },

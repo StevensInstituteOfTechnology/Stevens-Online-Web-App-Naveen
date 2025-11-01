@@ -17,7 +17,7 @@ const programData = {
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
     bgImage: "/assets/images/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     
     badges: [
       { text: "100% Online", icon: Globe },

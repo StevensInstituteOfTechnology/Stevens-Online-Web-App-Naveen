@@ -227,7 +227,7 @@ export default function Home() {
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
                   <button className="btn-stevens-secondary">
-                    Apply Now
+                    Apply In Minutes
                   </button>
                 </Link>
               </div>

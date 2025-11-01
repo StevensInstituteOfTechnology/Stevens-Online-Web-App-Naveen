@@ -16,7 +16,7 @@ const programData = {
     subtitle: "Gain the skills to turn data into intelligent systems that power the future.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
+    secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     // badges: [
     //   { text: "Industry-Ready Skills", icon: Award },
     //   { text: "Cutting-Edge Curriculum", icon: Star },
