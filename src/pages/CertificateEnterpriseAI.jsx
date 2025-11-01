@@ -172,7 +172,7 @@ const programData = {
     title: "Where Stevens Alumni Work"
   },
   admissions: {
-    variant: 'combinedWithTuition',
+    variant: 'certificateWithDeadlines',
     requirements: `
       <div class="space-y-6">
         <div>
@@ -194,14 +194,20 @@ const programData = {
       </div>
     `
   },
-    keyDates: {
-    term: "Spring 2026",
-      rows: [
-      { event: "Early Submit", date: "October 14, 2025" },
-      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
-      { event: "Final Submit", date: "January 5, 2026" },
-      { event: "Start of Classes", date: "January 20, 2026" }
-    ]
+  keyDates: {
+    headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
+    rows: [
+      { 
+        event: "Spring 2026", 
+        date: "October 14, 2025", 
+        details: "Deposit Waiver* and Application Fee Waiver Available.",
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
+        finalDate: "January 5, 2026",
+        startDate: "January 20, 2026"
+      }
+    ],
+    footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
   },
   tuition: {
     cards: [

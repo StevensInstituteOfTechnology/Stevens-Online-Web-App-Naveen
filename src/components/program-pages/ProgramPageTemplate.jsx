@@ -312,15 +312,15 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
       { id: 'top-companies', label: 'Top Companies' },
       { id: 'curriculum', label: 'Curriculum' },
       { id: 'student-spotlight', label: 'Student Spotlight' },
-      { id: 'faculty', label: 'Faculty' },
-      { id: 'deadlines', label: 'Deadlines' },
-      { id: 'admissions', label: 'Admissions' },
-      { id: 'tuition', label: 'Tuition' },
+    { id: 'faculty', label: 'Faculty' },
+    { id: 'admissions', label: 'Admissions' },
+    { id: 'deadlines', label: 'Deadlines' },
+    { id: 'tuition', label: 'Tuition' },
       { id: 'events', label: 'Events' },
       { id: 'faqs', label: 'FAQs' },
       { id: 'accreditation', label: 'Accreditation' }
     ];
-    return items.filter(item => {
+    const filtered = items.filter(item => {
       switch(item.id) {
         case 'overview': return overview && (overview.description || (overview.keySkills && overview.keySkills.length > 0) || (overview.concentrations && overview.concentrations.length > 0));
         case 'video': return videoSection && videoSection.videoSrc;
@@ -333,7 +333,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         case 'student-spotlight': return studentSpotlight && (studentSpotlight.quote || studentSpotlight.author);
         case 'faculty': return faculty && (faculty.description || (faculty.members && faculty.members.length > 0));
         case 'deadlines': return keyDates && (keyDates.headers && keyDates.rows && keyDates.rows.length > 0);
-        case 'admissions': return admissions && (admissions.options && admissions.options.length > 0);
+        case 'admissions': return admissions && (admissions.options && admissions.options.length > 0) && !(admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines');
         case 'tuition': return tuition && (tuition.cards || tuition.description || (tuition.grants && tuition.grants.length > 0));
         case 'events': return events && (events.items && events.items.length > 0);
         case 'faqs': return faqs && faqs.length > 0;
@@ -341,6 +341,19 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         default: return true;
       }
     });
+    
+    // For certificate pages, ensure tuition (relabeled as Admissions) appears before deadlines
+    if (admissions?.variant === 'certificateWithDeadlines') {
+      const tuitionIndex = filtered.findIndex(item => item.id === 'tuition');
+      const deadlinesIndex = filtered.findIndex(item => item.id === 'deadlines');
+      if (tuitionIndex !== -1 && deadlinesIndex !== -1 && tuitionIndex > deadlinesIndex) {
+        const tuitionItem = filtered[tuitionIndex];
+        filtered.splice(tuitionIndex, 1);
+        filtered.splice(deadlinesIndex, 0, tuitionItem);
+      }
+    }
+    
+    return filtered;
   }, [overview, rankings, career, whatYoullLearn, commonJobTitles, topCompanies, curriculum, studentSpotlight, faculty, keyDates, admissions, tuition, events, faqs, accreditation]);
 
   useEffect(() => {
@@ -359,15 +372,27 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
     navItems.forEach(item => {
       const el = currentRefs[item.id];
       if (el) observer.observe(el);
+      
+      // For certificate pages, also observe admissions section when tuition button exists
+      if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+        const admissionsEl = currentRefs.admissions;
+        if (admissionsEl) observer.observe(admissionsEl);
+      }
     });
 
     return () => {
       navItems.forEach(item => {
         const el = currentRefs[item.id];
         if (el) observer.unobserve(el);
+        
+        // Unobserve admissions section for certificate pages
+        if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+          const admissionsEl = currentRefs.admissions;
+          if (admissionsEl) observer.unobserve(admissionsEl);
+        }
       });
     };
-  }, [navItems]);
+  }, [navItems, admissions]);
 
   if (!programData) return <div>Loading program data...</div>;
 
@@ -386,15 +411,29 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white/90 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal"></div>
               
               <div className="flex space-x-stevens-xs sm:space-x-stevens-sm md:space-x-stevens-md">
-              {navItems.map(item => (
-                <a 
-                  key={item.id} 
-                  href={`#${item.id}`}
-                    className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${activeSection === item.id ? 'border-stevens-primary text-stevens-primary' : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'}`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map(item => {
+                // When tuition is combined with admissions, redirect tuition link to admissions and change label
+                const isCombinedTuition = (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines'));
+                const href = isCombinedTuition 
+                  ? '#admissions' 
+                  : `#${item.id}`;
+                const label = isCombinedTuition 
+                  ? 'Admissions' 
+                  : item.label;
+                // When combined, highlight tuition button when admissions section is active
+                const isActive = isCombinedTuition 
+                  ? activeSection === 'admissions' 
+                  : activeSection === item.id;
+                return (
+                  <a 
+                    key={item.id} 
+                    href={href}
+                      className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${isActive ? 'border-stevens-primary text-stevens-primary' : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'}`}
+                  >
+                    {label}
+                  </a>
+                );
+              })}
               </div>
               
             </nav>
@@ -777,8 +816,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         )}
 
-        {admissions && admissions.variant === 'combinedWithTuition' && tuition && keyDates ? (
-          <Section bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
+        {admissions && (admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines') && tuition ? (
+          <Section id="admissions" bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
             <div className="grid lg:grid-cols-5 gap-stevens-2xl items-start">
               {/* Left Column - Admissions */}
               <div className="lg:col-span-3">
@@ -797,7 +836,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               
               {/* Right Column - Key Dates & Tuition */}
               <div className="lg:col-span-2">
-                {keyDates && (
+                {keyDates && admissions.variant !== 'certificateWithDeadlines' && (
                   <>
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">Key Dates & Deadlines</h2>
                     <Card className="rounded-stevens-md mb-stevens-xl">
@@ -896,7 +935,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         ) : null}
 
-        {keyDates && !(admissions?.variant === 'combinedWithTuition') && (
+        {keyDates && (!(admissions?.variant === 'combinedWithTuition') || admissions?.variant === 'certificateWithDeadlines') && (
           <Section id="deadlines" title="Key Dates & Deadlines" bgClassName="bg-stevens-gray-100" el="div" refProp={el => sectionRefs.current['deadlines'] = el}>
             <div className="text-center mb-stevens-xl">
               <p className="text-stevens-xl text-stevens-gray-900 max-w-3xl mx-auto">
@@ -954,7 +993,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         )}
         
-        {tuition && !(admissions?.variant === 'combinedWithTuition') && (
+        {tuition && !(admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines') && (
           <Section id="tuition" title="Tuition & Financial Aid" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.tuition = el}>
             {tuition.cards && tuition.cards.length > 0 && (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
