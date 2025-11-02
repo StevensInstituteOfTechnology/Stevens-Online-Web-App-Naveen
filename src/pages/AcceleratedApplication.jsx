@@ -105,7 +105,7 @@ export default function AcceleratedApplicationPage() {
     {
       id: 'meads',
       name: 'M.Eng. in Applied Data Science',
-      shortName: 'MEADS',
+      shortName: 'M.Eng. in Applied Data Science',
       path: '/online-masters-engineering-applied-data-science/',
       icon: GraduationCap,
       description: 'Master data science and AI engineering'
@@ -121,10 +121,10 @@ export default function AcceleratedApplicationPage() {
     {
       id: 'cert-ads',
       name: 'Professional Certificate in Applied Data Science Foundations',
-      shortName: 'Data Science Foundations',
+      shortName: 'Applied Data Science Foundations',
       path: '/certificates/applied-data-science-foundations/',
       icon: Sparkles,
-      description: 'Master Python, SQL, and ML foundations'
+      description: 'Master Python, SQL, and Data Science and AI foundations'
     }
   ];
 

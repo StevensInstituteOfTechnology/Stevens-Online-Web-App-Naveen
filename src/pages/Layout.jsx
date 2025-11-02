@@ -108,8 +108,12 @@ export default function Layout({ children, currentPageName }) {
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
   
-  // ASAP Banner continuous message
-  const bannerMessage = "Your Future Awaits | Secure Your Scholarship | Apply by November 20th Priority Deadline | Apply in Minutes";
+  // ASAP Banner continuous message with emphasis
+  const BannerMessage = () => (
+    <>
+      <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>November 20th Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
+    </>
+  );
   
   React.useEffect(() => {
     // Only run on client side
@@ -1150,9 +1154,18 @@ export default function Layout({ children, currentPageName }) {
             <div className="flex items-center">
               <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
               <div className="flex-1 overflow-hidden">
-                <div className="inline-flex animate-marquee">
-                  <span className="text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-gray-900 whitespace-nowrap pr-12 underline hover:no-underline">
-                    {bannerMessage} • {bannerMessage} • {bannerMessage} • {bannerMessage}
+                <div className="inline-flex animate-marquee gap-16">
+                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                    <BannerMessage />
+                  </span>
+                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                    <BannerMessage />
+                  </span>
+                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                    <BannerMessage />
+                  </span>
+                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                    <BannerMessage />
                   </span>
                 </div>
               </div>
