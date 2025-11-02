@@ -8,7 +8,7 @@ const ExploreCertEnterpriseAI = () => {
     // Hero Section
     heroTitle: "BUILD AI THAT WORKS AT WORK",
     programName: "Professional Certificate in Enterprise AI",
-    heroSubtitle: "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely—no CS background required. Stackable to MBA and M.Eng. in Applied Data Science.",
+    heroSubtitle: "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable to MBA and M.Eng. in Applied Data Science.",
     bgImage: "/assets/images/explore-cert-EAI-1.avif",
     programCode: "cert-eai",
     seo: {
@@ -51,11 +51,11 @@ const ExploreCertEnterpriseAI = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "PRACTICAL AI SKILLS FOR BUSINESS PROFESSIONALS",
     whyChooseStevensContent: `
-      <p>Most firms struggle to operationalize GenAI—governance, data quality, and KPIs remain major challenges. This certificate's progression from strategy to proof-of-concept to operational workflow mirrors what AI adoption leaders say is required to capture real value.</p>
+      <p>Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain major challenges. This certificate's progression from strategy to proof-of-concept to operational workflow mirrors what AI adoption leaders say is required to capture real value.</p>
       
       <p>Unlike theoretical courses or short bootcamps, this graduate-level certificate provides rigorous training in both the technical and strategic aspects of AI implementation. You'll learn from PhD faculty who are active in AI research and industry consulting, ensuring you gain cutting-edge knowledge that translates directly to workplace applications.</p>
       
-      <p>The certificate is designed for non-STEM and STEM professionals alike—no CS background required. Whether you're in product management, operations, marketing, HR, finance, or consulting, you'll learn to be an AI doer who can frame problems, build prototypes, and deploy solutions responsibly.</p>
+      <p>The certificate is designed for non-STEM and STEM professionals alike-no CS background required. Whether you're in product management, operations, marketing, HR, finance, or consulting, you'll learn to be an AI doer who can frame problems, build prototypes, and deploy solutions responsibly.</p>
     `,
     
     // Program Benefits
@@ -130,7 +130,7 @@ const ExploreCertEnterpriseAI = () => {
     faqs: [
       {
         question: "HOW IS THIS DIFFERENT FROM A BOOTCAMP?",
-        answer: "This is a graduate-level certificate with transcripted credit that stacks toward Stevens master's degrees. You'll gain governance and ethics rigor plus operational deliverables—not just demos. The curriculum is taught by PhD faculty with deep research and industry experience, and you'll earn credentials that employers recognize and value."
+        answer: "This is a graduate-level certificate with transcripted credit that stacks toward Stevens master's degrees. You'll gain governance and ethics rigor plus operational deliverables-not just demos. The curriculum is taught by PhD faculty with deep research and industry experience, and you'll earn credentials that employers recognize and value."
       },
       {
         question: "Do I need programming experience?",

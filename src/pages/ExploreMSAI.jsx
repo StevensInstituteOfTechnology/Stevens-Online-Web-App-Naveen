@@ -6,7 +6,7 @@ import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgr
 const ExploreMSAI = () => {
   const msaiData = {
     // Hero Section
-    heroTitle: "Master AI and Launch Your Computer Science Career — All Experience Levels Welcome!",
+    heroTitle: "Master AI and Launch Your Computer Science Career - All Experience Levels Welcome!",
     
     heroSubtitle: "Specialize in Artificial Intelligence and Machine Learning. 100% online program designed for aspiring AI professionals.",
     bgImage: "/assets/images/3-explore-msai.jpg", // Placeholder
@@ -79,7 +79,7 @@ const ExploreMSAI = () => {
     // newFall2025Benefits: [
     //   {
     //     icon: Globe,
-    //     text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+    //     text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
     //   },
     //   {
     //     icon: Target,
@@ -95,7 +95,7 @@ const ExploreMSAI = () => {
     //   },
     //   {
     //     icon: ThumbsUp,
-    //     text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+    //     text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
     //   }
     // ],
     // newFall2025Image: "/assets/images/stevens-campus.png", // Placeholder

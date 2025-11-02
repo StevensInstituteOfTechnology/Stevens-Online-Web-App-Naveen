@@ -65,7 +65,7 @@ const ExploreMEM = () => {
     newFall2025Benefits: [
       {
         icon: Globe,
-        text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+        text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
       },
       {
         icon: Target,
@@ -81,7 +81,7 @@ const ExploreMEM = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
     newFall2025Image: "/assets/images/1-explore-mem.webp",
@@ -100,7 +100,7 @@ const ExploreMEM = () => {
     
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
-    programBenefitsDescription: "The Stevens Online MEM is a technical leadership degree — built by engineers, for engineers — that blends systems thinking, project execution and organizational strategy. You'll gain the cross-functional fluency top employers demand while building deep technical expertise in data science, modeling and risk analysis.<br/><br/> We produce engineering leaders capable of creating, applying and managing technology to solve complex issues, invent new processes and products, build new enterprises and gain insights from their data.100% of 2023 MEM graduates landed jobs within 3 months at companies like BMW, Lockheed Martin, Goldman Sachs and Turner Construction.¹",
+    programBenefitsDescription: "The Stevens Online MEM is a technical leadership degree - built by engineers, for engineers - that blends systems thinking, project execution and organizational strategy. You'll gain the cross-functional fluency top employers demand while building deep technical expertise in data science, modeling and risk analysis.<br/><br/> We produce engineering leaders capable of creating, applying and managing technology to solve complex issues, invent new processes and products, build new enterprises and gain insights from their data.100% of 2023 MEM graduates landed jobs within 3 months at companies like BMW, Lockheed Martin, Goldman Sachs and Turner Construction.¹",
     programBenefitsImage: "/assets/images/3-explore-mem.webp",
     programBenefitsHighlights: [
       {

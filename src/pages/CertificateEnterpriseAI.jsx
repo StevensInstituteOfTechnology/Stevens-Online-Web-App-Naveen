@@ -15,7 +15,7 @@ const programData = {
   },
   hero: {
     titleLines: ['Professional Certificate', 'in Enterprise AI'],
-    subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow—no CS degree required.",
+    subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow-no CS degree required.",
     bgImage: "/assets/images/certificate-enterpriseAI-1.avif",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
@@ -39,7 +39,7 @@ const programData = {
   },
   overview: {
     title: "Certificate Overview",
-    description: `<p class="mb-4">Employers are hiring for "AI-fluent" business talent. AI roles top "Jobs on the Rise 2025," and AI skills carry a salary premium with ~28% higher pay. Over half of postings with AI skills are outside IT, demonstrating the broad demand for practical AI expertise across all business functions.</p><p class="mb-4">Most firms struggle to operationalize GenAI—governance, data quality, and KPIs remain critical challenges. This certificate's arc—<strong>strategy → POC → operational workflow</strong>—mirrors what adoption leaders say is required to capture value.</p><p>This short, stackable graduate credential turns managers, analysts, and product/ops professionals into responsible AI doers who can frame, prototype, and run small AI workflows safely, without needing a CS background. Upon completion, you'll earn 9 graduate credits that apply toward existing Stevens degrees including the MBA and M.Eng. in Applied Data Science.</p>`,
+    description: `<p class="mb-4">Employers are hiring for "AI-fluent" business talent. AI roles top "Jobs on the Rise 2025," and AI skills carry a salary premium with ~28% higher pay. Over half of postings with AI skills are outside IT, demonstrating the broad demand for practical AI expertise across all business functions.</p><p class="mb-4">Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain critical challenges. This certificate's arc-<strong>strategy → POC → operational workflow</strong>-mirrors what adoption leaders say is required to capture value.</p><p>This short, stackable graduate credential turns managers, analysts, and product/ops professionals into responsible AI doers who can frame, prototype, and run small AI workflows safely, without needing a CS background. Upon completion, you'll earn 9 graduate credits that apply toward existing Stevens degrees including the MBA and M.Eng. in Applied Data Science.</p>`,
     keySkills: ["AI Strategy & Governance", "Generative AI & Prompting", "Operational AI Workflows", "Business Process Automation", "AI Ethics & Risk Management"],
     concentrations: []
   },
@@ -50,7 +50,7 @@ const programData = {
   { ranking: "$5,250", description: "ALIGNS WITH TUITION BENEFITS", source: "The 9-credit certificate cost aligns perfectly with the IRS $5,250 tax-free employer tuition reimbursement limit, making it accessible for corporate-sponsored learners." }],
 
   career: {
-    description: `<p class="mb-4">The demand for AI skills has exploded across industries. What was once confined to data science and engineering teams is now a critical capability for business professionals in every function—from marketing and operations to finance and HR.</p><p class="mb-4">Organizations are seeking professionals who can bridge the gap between AI potential and practical implementation. The Enterprise AI Certificate prepares you to be that bridge: someone who understands AI capabilities, can design proof-of-concept solutions, and knows how to operationalize AI workflows within existing business processes.</p><p>Whether you're looking to advance in your current role, pivot into an AI-adjacent position, or simply future-proof your career, this certificate provides the practical skills and graduate-level credential employers value.</p>`,
+    description: `<p class="mb-4">The demand for AI skills has exploded across industries. What was once confined to data science and engineering teams is now a critical capability for business professionals in every function-from marketing and operations to finance and HR.</p><p class="mb-4">Organizations are seeking professionals who can bridge the gap between AI potential and practical implementation. The Enterprise AI Certificate prepares you to be that bridge: someone who understands AI capabilities, can design proof-of-concept solutions, and knows how to operationalize AI workflows within existing business processes.</p><p>Whether you're looking to advance in your current role, pivot into an AI-adjacent position, or simply future-proof your career, this certificate provides the practical skills and graduate-level credential employers value.</p>`,
     jobTitles: [
       { title: "AI Product Manager", employed: "Growing", salary: "$176,690" },
       { title: "Business Intelligence Analyst", employed: "High Demand", salary: "$100,360" },
@@ -110,7 +110,7 @@ const programData = {
     }
   },
   curriculum: {
-    description: "The Enterprise AI Certificate consists of three carefully sequenced courses (9 graduate credits total). You'll progress from understanding AI strategy and governance, to designing GenAI proof-of-concepts, to building operational AI workflows. The curriculum emphasizes practical application—every course includes hands-on projects that simulate real business challenges.",
+    description: "The Enterprise AI Certificate consists of three carefully sequenced courses (9 graduate credits total). You'll progress from understanding AI strategy and governance, to designing GenAI proof-of-concepts, to building operational AI workflows. The curriculum emphasizes practical application-every course includes hands-on projects that simulate real business challenges.",
     courseTabs: {
       foundations: {
           title: "Course Sequence",
@@ -181,7 +181,7 @@ const programData = {
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">PREREQUISITES</h4>
-          <p>None. The certificate is designed to be accessible to professionals from all backgrounds. No programming experience required—we'll teach you what you need to know.</p>
+          <p>None. The certificate is designed to be accessible to professionals from all backgrounds. No programming experience required-we'll teach you what you need to know.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">APPLICATION PROCESS</h4>
@@ -218,7 +218,7 @@ const programData = {
     description: `
       <div class="space-y-4">
         <p class="font-bold text-lg text-stevens-gray-900">Smart Investment in Your Future</p>
-        <p>At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
+        <p>At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-semibold text-stevens-gray-900 mb-2">💼 Corporate Tuition Assistance</p>
@@ -251,7 +251,7 @@ const programData = {
     ]
   },
   faqs: [
-  { q: "How is this different from a bootcamp?", a: "This is a graduate-level certificate with transcripted credit that stacks toward Stevens master's degrees. You'll gain governance/ethics rigor and operational deliverables—not just demos. The curriculum is taught by PhD faculty with deep research and industry experience." },
+  { q: "How is this different from a bootcamp?", a: "This is a graduate-level certificate with transcripted credit that stacks toward Stevens master's degrees. You'll gain governance/ethics rigor and operational deliverables-not just demos. The curriculum is taught by PhD faculty with deep research and industry experience." },
   { q: "Do I need programming experience?", a: "No. The certificate is designed to be accessible to professionals from all backgrounds. In PE 810, you'll use AI copilots to help write code, with template-first labs that scaffold your learning." },
   { q: "Will this help with tuition reimbursement?", a: "Often yes. The $5,250 total cost aligns with the IRS tax-free employer benefit limit that many companies offer. Our enrollment team can help you navigate your specific company's reimbursement process." },
   { q: "Can these credits count toward a master's degree?", a: "Yes. All 9 credits are stackable toward existing Stevens graduate programs including the MBA and M.Eng. in Applied Data Science, subject to Registrar approval." },

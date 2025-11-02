@@ -15,7 +15,7 @@ const programData = {
   },
   hero: {
     titleLines: ['Applied Data Science', 'Foundations Certificate'],
-    subtitle: "Build AI that works—Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
+    subtitle: "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
     bgImage: "/assets/images/certificate-ADS-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
@@ -39,7 +39,7 @@ const programData = {
   },
   overview: {
     title: "Certificate Overview",
-    description: `<p class="mb-4">This certificate is designed to launch your career in applied AI and data science. In today's data-driven economy, organizations need professionals who can build and deploy machine learning solutions—not just analyze data, but create AI-powered systems that solve real business problems.</p><p class="mb-4">The Applied Data Science Foundations certificate provides an <strong>AI-first, project-driven curriculum</strong> where you'll master Python, SQL, and machine learning through hands-on work with real datasets. Each course delivers a portfolio artifact tied to an AI/ML use case, ensuring you graduate with tangible evidence of your capabilities.</p><p>Whether you're pivoting into data science, upskilling for AI roles, or preparing for further graduate study, this certificate provides the technical foundation and graduate-level credential that employers value. All 9 credits stack toward Stevens' M.Eng. in Applied Data Science, giving you a clear pathway to continue your education.</p>`,
+    description: `<p class="mb-4">This certificate is designed to launch your career in applied AI and data science. In today's data-driven economy, organizations need professionals who can build and deploy machine learning solutions-not just analyze data, but create AI-powered systems that solve real business problems.</p><p class="mb-4">The Applied Data Science Foundations certificate provides an <strong>AI-first, project-driven curriculum</strong> where you'll master Python, SQL, and machine learning through hands-on work with real datasets. Each course delivers a portfolio artifact tied to an AI/ML use case, ensuring you graduate with tangible evidence of your capabilities.</p><p>Whether you're pivoting into data science, upskilling for AI roles, or preparing for further graduate study, this certificate provides the technical foundation and graduate-level credential that employers value. All 9 credits stack toward Stevens' M.Eng. in Applied Data Science, giving you a clear pathway to continue your education.</p>`,
     keySkills: ["Python Programming", "SQL & Databases", "Machine Learning", "Data Pipelines", "AI Ethics & Explainability"],
     concentrations: []
   },
@@ -50,7 +50,7 @@ const programData = {
   { ranking: "$5,250", description: "ALIGNS WITH TUITION BENEFITS", source: "The 9-credit certificate cost aligns perfectly with the IRS $5,250 tax-free employer tuition reimbursement limit, making it accessible for corporate-sponsored learners." }],
 
   career: {
-    description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek—Python, SQL, ML frameworks—while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
+    description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek-Python, SQL, ML frameworks-while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [
     { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
     { title: "ML Engineer Associate", employed: "Growing", salary: "$135,690" },
@@ -101,7 +101,7 @@ const programData = {
   whyStevens: {
     variant: 'splitWithVideo',
     title: "Why Choose Stevens for Data Science?",
-    description: `<p>Stevens Institute of Technology is ranked among the top institutions for data science and AI education. Located in the heart of the New York metropolitan area, Stevens combines world-class faculty expertise with strong industry connections.</p><p>This certificate emphasizes applied learning—you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Our faculty are active researchers and practitioners who bring cutting-edge insights directly into the classroom.</p><p>Plus, the certificate is fully stackable toward our M.Eng. in Applied Data Science (MEADS), giving you flexibility to test the waters and continue toward a full master's degree if desired.</p>`,
+    description: `<p>Stevens Institute of Technology is ranked among the top institutions for data science and AI education. Located in the heart of the New York metropolitan area, Stevens combines world-class faculty expertise with strong industry connections.</p><p>This certificate emphasizes applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Our faculty are active researchers and practitioners who bring cutting-edge insights directly into the classroom.</p><p>Plus, the certificate is fully stackable toward our M.Eng. in Applied Data Science (MEADS), giving you flexibility to test the waters and continue toward a full master's degree if desired.</p>`,
     video: {
       src: "/assets/videos/Stevens Online MBA - 2.mp4",
       poster: "/assets/videos/video-cover-2.avif",
@@ -144,7 +144,7 @@ const programData = {
                     <li>Responsible AI data prep (bias, fairness, transparency)</li>
                   </ol>
                 </p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Build an end-to-end AI-ready pipeline—from raw data to training dataset—then publish results to a Streamlit app</p>
+                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Build an end-to-end AI-ready pipeline-from raw data to training dataset-then publish results to a Streamlit app</p>
               </div>
             </div>
             
@@ -197,7 +197,7 @@ const programData = {
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">PREREQUISITES</h4>
-          <p>No formal prerequisites. However, basic comfort with quantitative reasoning is helpful. We'll teach you the programming and mathematical concepts you need—no prior coding experience required.</p>
+          <p>No formal prerequisites. However, basic comfort with quantitative reasoning is helpful. We'll teach you the programming and mathematical concepts you need-no prior coding experience required.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">APPLICATION PROCESS</h4>
@@ -234,11 +234,11 @@ const programData = {
     description: `
       <div class="space-y-4">
         <p class="font-bold text-lg text-stevens-gray-900">Invest in Your Data Science Future</p>
-        <p>At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically aligned with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal choice if your company offers tuition assistance.</p>
+        <p>At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically aligned with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal choice if your company offers tuition assistance.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-semibold text-stevens-gray-900 mb-2">💼 Employer Tuition Reimbursement</p>
-          <p class="text-stevens-sm">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit—potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
+          <p class="text-stevens-sm">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit-potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
         </div>
         
         <p class="text-stevens-sm">Stevens has extensive experience working with corporate tuition assistance programs. Our enrollment advisors can guide you through your company's reimbursement process and help you maximize available funding opportunities.</p>
@@ -273,7 +273,7 @@ const programData = {
   { q: "Will this help with tuition reimbursement?", a: "Yes. The $5,250 total cost aligns with the IRS tax-free employer benefit limit that many companies offer. Our enrollment team can help you navigate your company's specific reimbursement process." },
   { q: "Can these credits count toward a master's degree?", a: "Yes. All 9 credits are fully stackable toward Stevens' M.Eng. in Applied Data Science (MEADS), subject to Registrar approval. This gives you a clear pathway from certificate to master's degree." },
   { q: "What tools and technologies will I use?", a: "You'll work with industry-standard tools including Python (pandas, NumPy, scikit-learn), SQL (PostgreSQL), Jupyter notebooks, Git/GitHub, cloud platforms, and visualization tools like Streamlit and Matplotlib." },
-  { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree—something bootcamps cannot offer." }],
+  { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer." }],
 
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`
 };

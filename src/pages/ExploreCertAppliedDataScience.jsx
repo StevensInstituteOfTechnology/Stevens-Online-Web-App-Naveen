@@ -43,7 +43,7 @@ const ExploreCertAppliedDataScience = () => {
       {
         number: "3 Projects",
         label: "Portfolio Artifacts",
-        description: "Build three production-ready projects: data pipeline, ML model deployment, and AI-powered dashboard—tangible proof of your capabilities."
+        description: "Build three production-ready projects: data pipeline, ML model deployment, and AI-powered dashboard-tangible proof of your capabilities."
       }
     ],
     
@@ -51,16 +51,16 @@ const ExploreCertAppliedDataScience = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "PRACTICAL AI & DATA SCIENCE EDUCATION",
     whyChooseStevensContent: `
-      <p>This certificate focuses on applied learning—you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Every course is AI-enhanced, meaning you'll learn to use AI copilots responsibly to boost your productivity while building deep technical understanding.</p>
+      <p>This certificate focuses on applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Every course is AI-enhanced, meaning you'll learn to use AI copilots responsibly to boost your productivity while building deep technical understanding.</p>
       
       <p>Stevens Institute of Technology brings 150+ years of engineering excellence to data science education. Located in the New York metropolitan area, Stevens combines world-class faculty with strong industry connections, ensuring your education reflects current industry practices and emerging technologies.</p>
       
-      <p>The certificate bridges the gap between pure data analysis and enterprise AI deployment. You'll learn not just how AI systems work, but how to build them—from data wrangling to model deployment to explainability and ethics.</p>
+      <p>The certificate bridges the gap between pure data analysis and enterprise AI deployment. You'll learn not just how AI systems work, but how to build them-from data wrangling to model deployment to explainability and ethics.</p>
     `,
     
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
-    programBenefitsDescription: "Organizations need professionals who can do more than analyze data—they need people who can build and deploy AI systems. This certificate provides the practical, project-driven foundation for careers in applied data science, machine learning engineering, and AI analytics.<br/><br/>With credit-bearing courses that stack toward the M.Eng. in Applied Data Science (MEADS), you can test your interest in data science while earning credentials that count toward a full master's degree.",
+    programBenefitsDescription: "Organizations need professionals who can do more than analyze data-they need people who can build and deploy AI systems. This certificate provides the practical, project-driven foundation for careers in applied data science, machine learning engineering, and AI analytics.<br/><br/>With credit-bearing courses that stack toward the M.Eng. in Applied Data Science (MEADS), you can test your interest in data science while earning credentials that count toward a full master's degree.",
     programBenefitsImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
     programBenefitsHighlights: [
       {
@@ -73,7 +73,7 @@ const ExploreCertAppliedDataScience = () => {
       },
       {
         title: "AI-Enhanced Learning",
-        description: "Work with AI copilots (LLMs) for debugging and code generation while learning the fundamentals. This mirrors how modern data scientists work—using AI as a productivity multiplier."
+        description: "Work with AI copilots (LLMs) for debugging and code generation while learning the fundamentals. This mirrors how modern data scientists work-using AI as a productivity multiplier."
       },
       {
         title: "Graduate Credit That Stacks",
@@ -150,7 +150,7 @@ const ExploreCertAppliedDataScience = () => {
       },
       {
         question: "How is this different from online courses or bootcamps?",
-        answer: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty who are active researchers, work on complex projects that mirror real-world challenges, and earn credentials that stack toward a master's degree—something bootcamps and MOOCs cannot offer."
+        answer: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty who are active researchers, work on complex projects that mirror real-world challenges, and earn credentials that stack toward a master's degree-something bootcamps and MOOCs cannot offer."
       },
       {
         question: "What can I do with this certificate?",

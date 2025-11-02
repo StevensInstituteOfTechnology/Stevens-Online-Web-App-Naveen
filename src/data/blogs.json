@@ -60,7 +60,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“Conversely, my academic work has enhanced my consulting practice by keeping me at the forefront of emerging methodologies and research. The time spent developing courses and mentoring students has helped me refine my ability to explain complex concepts to diverse audiences — a valuable skill when working with clients who may not have technical backgrounds.",
+          "text": "“Conversely, my academic work has enhanced my consulting practice by keeping me at the forefront of emerging methodologies and research. The time spent developing courses and mentoring students has helped me refine my ability to explain complex concepts to diverse audiences - a valuable skill when working with clients who may not have technical backgrounds.",
           "links": [],
           "bold": []
         },
@@ -124,13 +124,13 @@
         },
         {
           "type": "paragraph",
-          "text": "“Third, I emphasize the importance of interdisciplinary thinking. Business analytics sits at the intersection of multiple fields — statistics, computer science, business strategy and domain expertise. I encourage mentees to develop T-shaped skills, which involve deep expertise in core analytics while maintaining breadth across related domains.",
+          "text": "“Third, I emphasize the importance of interdisciplinary thinking. Business analytics sits at the intersection of multiple fields - statistics, computer science, business strategy and domain expertise. I encourage mentees to develop T-shaped skills, which involve deep expertise in core analytics while maintaining breadth across related domains.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "“Ultimately, I firmly believe in cultivating both technical and interpersonal skills. The most successful analytics professionals aren’t just skilled with data — they can effectively communicate insights, collaborate across teams and influence decision-makers. I create opportunities for mentees to practice translating complex findings into business recommendations and presenting to diverse audiences.",
+          "text": "“Ultimately, I firmly believe in cultivating both technical and interpersonal skills. The most successful analytics professionals aren’t just skilled with data - they can effectively communicate insights, collaborate across teams and influence decision-makers. I create opportunities for mentees to practice translating complex findings into business recommendations and presenting to diverse audiences.",
           "links": [],
           "bold": []
         },
@@ -244,7 +244,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“A particularly memorable project in the early 2000s was working on the NFL scheduling problem. The challenge involved scheduling 256 games over a 17-week season while satisfying hundreds of constraints — from stadium availability and travel considerations to competitive balance and broadcast requirements. The combinatorial explosion of possible schedules made this problem notoriously difficult. Our branch-and-bound implementations initially struggled with the problem size, requiring sophisticated branching strategies and valid inequalities to effectively prune the search tree. We developed specialized symmetry-breaking constraints and heuristics to accelerate the branch-and-bound process toward feasible solutions.",
+          "text": "“A particularly memorable project in the early 2000s was working on the NFL scheduling problem. The challenge involved scheduling 256 games over a 17-week season while satisfying hundreds of constraints - from stadium availability and travel considerations to competitive balance and broadcast requirements. The combinatorial explosion of possible schedules made this problem notoriously difficult. Our branch-and-bound implementations initially struggled with the problem size, requiring sophisticated branching strategies and valid inequalities to effectively prune the search tree. We developed specialized symmetry-breaking constraints and heuristics to accelerate the branch-and-bound process toward feasible solutions.",
           "links": [],
           "bold": []
         },
@@ -256,7 +256,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“Perhaps most interesting was watching the evolution from batch optimization to real-time decision systems. Early models ran overnight, providing next-day recommendations. Today’s systems optimize decisions in milliseconds — enabling dynamic pricing, real-time fraud detection and personalized marketing optimization.",
+          "text": "“Perhaps most interesting was watching the evolution from batch optimization to real-time decision systems. Early models ran overnight, providing next-day recommendations. Today’s systems optimize decisions in milliseconds - enabling dynamic pricing, real-time fraud detection and personalized marketing optimization.",
           "links": [],
           "bold": []
         },
@@ -611,7 +611,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Some observers — Nickelfox, for one — see AI as a fount of opportunity for engineering managers: “By tapping into the predictive capabilities of AI, engineering professionals can make data-driven decisions, allocate resources more effectively, and significantly boost operational efficiency. The result? Faster project completion, reduced costs, and superior outcomes.”",
+          "text": "Some observers - Nickelfox, for one - see AI as a fount of opportunity for engineering managers: “By tapping into the predictive capabilities of AI, engineering professionals can make data-driven decisions, allocate resources more effectively, and significantly boost operational efficiency. The result? Faster project completion, reduced costs, and superior outcomes.”",
           "links": [
             {
               "text": "Nickelfox",
@@ -1255,7 +1255,7 @@
         },
         {
           "type": "paragraph",
-          "text": "It takes formal education — 90 percent of data scientists have advanced degrees — plus practical experience. It also involves continuous self-study, because data science is a rapidly evolving field. Automation, Natural Language Processing, intelligent machines and Federated Learning are just the latest advancements in a discipline defined by disruptive technology. Even seasoned data analysts may have trouble bridging the skills gap, contributing to a shortage of Big Data talent.",
+          "text": "It takes formal education - 90 percent of data scientists have advanced degrees - plus practical experience. It also involves continuous self-study, because data science is a rapidly evolving field. Automation, Natural Language Processing, intelligent machines and Federated Learning are just the latest advancements in a discipline defined by disruptive technology. Even seasoned data analysts may have trouble bridging the skills gap, contributing to a shortage of Big Data talent.",
           "links": [
             {
               "text": "90 percent of data scientists have advanced degrees",
@@ -1382,7 +1382,7 @@
               ]
             },
             {
-              "text": "Probability Theory is a branch of mathematics dealing with uncertainty and statistical inference. Data scientists use concepts borrowed from Probability Theory — such as combinatorial probability, cumulative distribution functions, conditional distributions and independence, and the Central Limit Theorem — to analyze random events and make predictions about the likelihood of future outcomes. Students in this course learn to analyze data that is hard to scrutinize using traditional deductive analysis.",
+              "text": "Probability Theory is a branch of mathematics dealing with uncertainty and statistical inference. Data scientists use concepts borrowed from Probability Theory - such as combinatorial probability, cumulative distribution functions, conditional distributions and independence, and the Central Limit Theorem - to analyze random events and make predictions about the likelihood of future outcomes. Students in this course learn to analyze data that is hard to scrutinize using traditional deductive analysis.",
               "links": [],
               "bold": [
                 "Probability Theory"
@@ -1431,7 +1431,7 @@
               ]
             },
             {
-              "text": "Natural Language Processing (NLP) is an innovation in machine learning that allows data scientists to use unstructured information — like written text and spoken conversations — that doesn’t fit neatly into traditional relational databases. NLP scrutinizes hard-to-manipulate data by training computers to recognize the deeper meaning of phrases, sentiments and tone. NLP has already made it possible to leverage the data in emails, videos, customer service logs, web searches and more. As more industries find ways to leverage natural language processing, data scientists need to know NLP to remain relevant.",
+              "text": "Natural Language Processing (NLP) is an innovation in machine learning that allows data scientists to use unstructured information - like written text and spoken conversations - that doesn’t fit neatly into traditional relational databases. NLP scrutinizes hard-to-manipulate data by training computers to recognize the deeper meaning of phrases, sentiments and tone. NLP has already made it possible to leverage the data in emails, videos, customer service logs, web searches and more. As more industries find ways to leverage natural language processing, data scientists need to know NLP to remain relevant.",
               "links": [],
               "bold": [
                 "Natural Language Processing"
@@ -1445,7 +1445,7 @@
               ]
             },
             {
-              "text": "Time Series Analysis teaches students how data points are indexed in chronological order and added to sequences in equally spaced intervals — and how they’re applied in finance, economics, the physical sciences and the social sciences. There are different tools and methods for analyzing time series data because it can behave in ways that violate conventional statistics. Students learn about the scope and applications of time series analysis and exploratory data analysis methods in this course. They also explore specific topics related to time series analysis in different fields, like the unit-root problem in economics and forecasting and testing for market efficiency in finance.",
+              "text": "Time Series Analysis teaches students how data points are indexed in chronological order and added to sequences in equally spaced intervals - and how they’re applied in finance, economics, the physical sciences and the social sciences. There are different tools and methods for analyzing time series data because it can behave in ways that violate conventional statistics. Students learn about the scope and applications of time series analysis and exploratory data analysis methods in this course. They also explore specific topics related to time series analysis in different fields, like the unit-root problem in economics and forecasting and testing for market efficiency in finance.",
               "links": [],
               "bold": [
                 "Time Series Analysis"
@@ -1467,7 +1467,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Competition for open data science positions is fierce. More highly trained data scientists exist today than when LinkedIn reported in 2018 that 150,000 jobs for data scientists would go unfilled. The master’s has become the entry-level data science degree, and employers expect to see an MSDS on your resume as proof positive that you have the hard and soft skills to turn information into actionable insights. Bachelor’s degrees, boot camps, certificate programs and MOOC sequences are no longer sufficient to break into this field — especially now that innovations like Natural Language Processing, intelligent machines and Federated Learning are rapidly changing the data science landscape.",
+          "text": "Competition for open data science positions is fierce. More highly trained data scientists exist today than when LinkedIn reported in 2018 that 150,000 jobs for data scientists would go unfilled. The master’s has become the entry-level data science degree, and employers expect to see an MSDS on your resume as proof positive that you have the hard and soft skills to turn information into actionable insights. Bachelor’s degrees, boot camps, certificate programs and MOOC sequences are no longer sufficient to break into this field - especially now that innovations like Natural Language Processing, intelligent machines and Federated Learning are rapidly changing the data science landscape.",
           "links": [],
           "bold": [
             "150,000 jobs for data scientists would go unfilled"
@@ -1480,7 +1480,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The Charles V. Schaefer, Jr. School of Engineering & Science’s online MSDS lets highly motivated professionals study and complete assignments from anywhere — and at almost any time. Stevens students complete just 1.5 hours of synchronous (live) class work per week per course. The rest of their time is spent in asynchronous (self-paced) courses and doing homework, research and project work, allowing them to fulfill the core MSDS requirements while working full-time — maximizing the ROI of the MS in Data Science tuition.",
+          "text": "The Charles V. Schaefer, Jr. School of Engineering & Science’s online MSDS lets highly motivated professionals study and complete assignments from anywhere - and at almost any time. Stevens students complete just 1.5 hours of synchronous (live) class work per week per course. The rest of their time is spent in asynchronous (self-paced) courses and doing homework, research and project work, allowing them to fulfill the core MSDS requirements while working full-time - maximizing the ROI of the MS in Data Science tuition.",
           "links": [
             {
               "text": "online MSDS",
@@ -1978,7 +1978,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“I was involved in many aspects of the software, adding features and improving efficiency. I led a large team developing software for the network management of ATM, Frame Relay and IP networks — and later, for cloud computing. So I was also an architect in software development.",
+          "text": "“I was involved in many aspects of the software, adding features and improving efficiency. I led a large team developing software for the network management of ATM, Frame Relay and IP networks - and later, for cloud computing. So I was also an architect in software development.",
           "links": [],
           "bold": []
         },
@@ -2025,7 +2025,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“Hardware is hard. It’s very, very detail-oriented, and there are so many things involved. Too many software developers lack a proper understanding of where their software runs. If a task is written as a subroutine, does it run in the main part of the memory — the static part, which is pretty fast — or does it run in the dynamic part, which is slower?",
+          "text": "“Hardware is hard. It’s very, very detail-oriented, and there are so many things involved. Too many software developers lack a proper understanding of where their software runs. If a task is written as a subroutine, does it run in the main part of the memory - the static part, which is pretty fast - or does it run in the dynamic part, which is slower?",
           "links": [],
           "bold": []
         },
@@ -2037,7 +2037,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“Many factors influence programming choices — especially the relationship between how hardware works and how software is designed. If you need to access a massive data set, that can’t reside in the main memory of a computer. It’s going to be sitting out on a network, or on a disk. If it’s on a disk, retrieving it takes time. How do you access it efficiently? What would be the proper block size to import the data?“Then there are differences in how programming languages are implemented. Java, for instance, is not implemented the same way as C — and that has consequences. In some situations, you don’t want a high-level language; you should use C instead. Not all languages are created equal.”",
+          "text": "“Many factors influence programming choices - especially the relationship between how hardware works and how software is designed. If you need to access a massive data set, that can’t reside in the main memory of a computer. It’s going to be sitting out on a network, or on a disk. If it’s on a disk, retrieving it takes time. How do you access it efficiently? What would be the proper block size to import the data?“Then there are differences in how programming languages are implemented. Java, for instance, is not implemented the same way as C - and that has consequences. In some situations, you don’t want a high-level language; you should use C instead. Not all languages are created equal.”",
           "links": [],
           "bold": []
         },
@@ -2048,7 +2048,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“I don’t think we have anything better than nature in terms of optimization. The way water flows, the way streams are created, the paths they create — there is so much optimization in the natural world. Computing often faces bottlenecks that can slow processes down. Nature frequently offers a great solution. Nature understands better than we do.”",
+          "text": "“I don’t think we have anything better than nature in terms of optimization. The way water flows, the way streams are created, the paths they create - there is so much optimization in the natural world. Computing often faces bottlenecks that can slow processes down. Nature frequently offers a great solution. Nature understands better than we do.”",
           "links": [],
           "bold": []
         },
@@ -2060,25 +2060,25 @@
         },
         {
           "type": "paragraph",
-          "text": "“When we map data into an array, collisions occur. That’s similar to the collision of the cuckoo bird colliding its own egg with others. So, what we do instead is create two arrays of different sizes. First, we try to insert data into the first array. If it fits there — if it hashes properly — great. But if that spot is already occupied, we insert the new element and move the displaced element to the second array. Surprisingly, this proves to be a much more efficient way of accomplishing the goal than pulling data by brute force.",
+          "text": "“When we map data into an array, collisions occur. That’s similar to the collision of the cuckoo bird colliding its own egg with others. So, what we do instead is create two arrays of different sizes. First, we try to insert data into the first array. If it fits there - if it hashes properly - great. But if that spot is already occupied, we insert the new element and move the displaced element to the second array. Surprisingly, this proves to be a much more efficient way of accomplishing the goal than pulling data by brute force.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "“Another example: ants. When ants leave their nest, they mark the ground as they move. That’s how they find their way back.“When they leave the nest, they start looking at the different paths in front of them, and they choose the path that is traveled most, because that’s the one most likely to lead to food. When more ants go one way, food is usually the reason. That’s why you see so many ants traveling along the same trail. There’s no broadcasting, no internet — just markings on the ground.",
+          "text": "“Another example: ants. When ants leave their nest, they mark the ground as they move. That’s how they find their way back.“When they leave the nest, they start looking at the different paths in front of them, and they choose the path that is traveled most, because that’s the one most likely to lead to food. When more ants go one way, food is usually the reason. That’s why you see so many ants traveling along the same trail. There’s no broadcasting, no internet - just markings on the ground.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "“So the algorithm is: take the most-traveled road. Computers can apply the same principle to problems that don’t have polynomial-time solutions. It’s an approach that yields an estimate rather than a perfect answer — but without the ant colony optimization algorithm, these processes would take significantly longer. It’s very effective in route optimizations and solving scheduling problems, and it helps make machine learning more efficient.",
+          "text": "“So the algorithm is: take the most-traveled road. Computers can apply the same principle to problems that don’t have polynomial-time solutions. It’s an approach that yields an estimate rather than a perfect answer - but without the ant colony optimization algorithm, these processes would take significantly longer. It’s very effective in route optimizations and solving scheduling problems, and it helps make machine learning more efficient.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "“Nature is the source of a lot of optimizations. If we learn from those, we can actually solve some of our problems. We can follow nature’s example — imitate it  — rather than following models and applying problem-solving approaches.”",
+          "text": "“Nature is the source of a lot of optimizations. If we learn from those, we can actually solve some of our problems. We can follow nature’s example - imitate it  - rather than following models and applying problem-solving approaches.”",
           "links": [],
           "bold": []
         },
@@ -2169,8 +2169,8 @@
     {
       "id": "c-suite-executives-top-msds-grads-business",
       "title": "C-Suite Executives: The Value MSDS Grads Brings to Business",
-      "subtitle": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field — which, in this digital era, means practically every profession.",
-      "excerpt": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field — which, in this digital era, means practically every profession.",
+      "subtitle": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field - which, in this digital era, means practically every profession.",
+      "excerpt": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field - which, in this digital era, means practically every profession.",
       "featured_image_url": "/assets/blogs/uncategorized/c-suite-executives-the-value-msds-grads-brings-to-business/image.png",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -2187,13 +2187,13 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field — which, in this digital era, means practically every profession.",
+          "text": "C-Suite Executives: Once, all roads led to Rome. These days, it seems they all lead to careers in data science. The big data deluge of the twenty-first century has created opportunities for strategic data analysis in every digitized field - which, in this digital era, means practically every profession.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Prokrym saw the master’s as an opportunity to broaden his career prospects. He also loves the exposure to new, innovative data analytics approaches. And, he appreciates how quickly students can complete the program — in just 20 months, for those who take two classes per semester.",
+          "text": "Prokrym saw the master’s as an opportunity to broaden his career prospects. He also loves the exposure to new, innovative data analytics approaches. And, he appreciates how quickly students can complete the program - in just 20 months, for those who take two classes per semester.",
           "links": [],
           "bold": []
         },
@@ -2204,7 +2204,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In the long term, probably, although I’m keeping an open mind. I would 100 percent enjoy working in the medical field again doing some sort of biological or genetic data — anything like that would be in my wheelhouse. That said, Stevens is in Hoboken, right across the river from New York City, and it has strong ties to the finance sector.",
+          "text": "In the long term, probably, although I’m keeping an open mind. I would 100 percent enjoy working in the medical field again doing some sort of biological or genetic data - anything like that would be in my wheelhouse. That said, Stevens is in Hoboken, right across the river from New York City, and it has strong ties to the finance sector.",
           "links": [],
           "bold": []
         },
@@ -2244,7 +2244,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In data science, you can lean into any of three strengths. You can stress the machine modeling part and get further into creating algorithms. Or, you can develop your business analytical skills on the data presentation side — become a professional data storyteller, in a sense, dashboarding data to make it accessible to your company. Your third option is to become a data engineer, collecting data, setting up processes for your company and building the schemas for how your data is collected and stored. As we reach the point at which companies have so much data in their warehouses, it becomes crucial to set up those structures and allocate data intelligently from day one.",
+          "text": "In data science, you can lean into any of three strengths. You can stress the machine modeling part and get further into creating algorithms. Or, you can develop your business analytical skills on the data presentation side - become a professional data storyteller, in a sense, dashboarding data to make it accessible to your company. Your third option is to become a data engineer, collecting data, setting up processes for your company and building the schemas for how your data is collected and stored. As we reach the point at which companies have so much data in their warehouses, it becomes crucial to set up those structures and allocate data intelligently from day one.",
           "links": [],
           "bold": []
         },
@@ -2312,7 +2312,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Anyone coming into this program should prepare to face complex problems. Sure, some weeks, you’ll pick things up really quickly and everything will click. Then the next week, you’ll come across something that really challenges you — maybe central limit theorem or something like that. It’s essential to your success to understand these foundational concepts. You can’t just breeze through.",
+          "text": "Anyone coming into this program should prepare to face complex problems. Sure, some weeks, you’ll pick things up really quickly and everything will click. Then the next week, you’ll come across something that really challenges you - maybe central limit theorem or something like that. It’s essential to your success to understand these foundational concepts. You can’t just breeze through.",
           "links": [],
           "bold": []
         },
@@ -2438,14 +2438,14 @@
         },
         {
           "type": "paragraph",
-          "text": "I found that coding bootcamps are 90% front-end focused and 10% back-end focused. I wasn’t aware of how little time they would spend on computer science fundamentals. That seems to be the plague of most boot camps — they create a lot of front-end software engineers who are oblivious to the glacier under the water, so to speak, of computer science concepts. It left me wanting more.",
+          "text": "I found that coding bootcamps are 90% front-end focused and 10% back-end focused. I wasn’t aware of how little time they would spend on computer science fundamentals. That seems to be the plague of most boot camps - they create a lot of front-end software engineers who are oblivious to the glacier under the water, so to speak, of computer science concepts. It left me wanting more.",
           "links": [],
           "bold": []
         },
       
         {
           "type": "paragraph",
-          "text": "But I wasn’t interested in hitting pause on my career, especially during the pandemic. Most people who go into a coding bootcamp are looking to go from zero to 100 — to get an entry-level junior front-end developer position right away. If that’s the goal, then bootcamps are great. But if you want to understand computer science fundamentals, if you’re going to make a career out of it and you want to be serious about it, then I think you can’t compare the value of a CS degree to a boot camp career-wise.",
+          "text": "But I wasn’t interested in hitting pause on my career, especially during the pandemic. Most people who go into a coding bootcamp are looking to go from zero to 100 - to get an entry-level junior front-end developer position right away. If that’s the goal, then bootcamps are great. But if you want to understand computer science fundamentals, if you’re going to make a career out of it and you want to be serious about it, then I think you can’t compare the value of a CS degree to a boot camp career-wise.",
           "links": [
             {
               "text": "value of a CS degree",
@@ -2531,7 +2531,7 @@
         },
         {
           "type": "paragraph",
-          "text": "It surprised me that most of my classmates are not from New Jersey. A good amount of my classmates are from other states. Some don’t come from too far away — states like Connecticut or Pennsylvania — but others are from Texas or Michigan. Though maybe it’s not surprising how far-reaching the program is because those I spoke with who weren’t from the tri-state area said they had just found this program independently in their research.",
+          "text": "It surprised me that most of my classmates are not from New Jersey. A good amount of my classmates are from other states. Some don’t come from too far away - states like Connecticut or Pennsylvania - but others are from Texas or Michigan. Though maybe it’s not surprising how far-reaching the program is because those I spoke with who weren’t from the tri-state area said they had just found this program independently in their research.",
           "links": [],
           "bold": []
         },
@@ -2647,7 +2647,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You’re probably more familiar with AI programs than you may realize—ChatGPT is an example you’ve certainly heard of. Still in its infancy, its potential is remarkably exciting as it continues to be refined and researched. The fact ChatGPT can already write code is a testament to what AI will truly be capable of one day.",
+          "text": "You’re probably more familiar with AI programs than you may realize-ChatGPT is an example you’ve certainly heard of. Still in its infancy, its potential is remarkably exciting as it continues to be refined and researched. The fact ChatGPT can already write code is a testament to what AI will truly be capable of one day.",
           "links": [],
           "bold": []
         },
@@ -2682,7 +2682,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Machine learning has a range of purposes including image recognition, identifying financial trends and aiding in medical care. It can be trained to do mundane tasks as well, like batch processing or data sorting and cleanup. With enough input and patience, it can become immensely powerful—and a key part of creating AI as a whole.",
+          "text": "Machine learning has a range of purposes including image recognition, identifying financial trends and aiding in medical care. It can be trained to do mundane tasks as well, like batch processing or data sorting and cleanup. With enough input and patience, it can become immensely powerful-and a key part of creating AI as a whole.",
           "links": [],
           "bold": []
         },
@@ -2717,7 +2717,7 @@
         },
         {
           "type": "paragraph",
-          "text": "We’ve already discussed one critical component—machine learning. Beyond that, development is a combination of mathematics and learning to mimic our own brains and consciousness. This complexity is why working in the field requires expertise in many different areas.",
+          "text": "We’ve already discussed one critical component-machine learning. Beyond that, development is a combination of mathematics and learning to mimic our own brains and consciousness. This complexity is why working in the field requires expertise in many different areas.",
           "links": [],
           "bold": []
         },
@@ -2987,7 +2987,7 @@
         },
         {
           "type": "paragraph",
-          "text": "I would tell them to be prepared to study — especially if they don’t have a programming background. I think that was one thing that caught me off guard. It’s not that you can’t earn an MS in Computer Science without a CS background, but you have to create a schedule that works for you since the material can get overwhelming. It’s like learning any other new language. You have to start with the basics and take it one step at a time. It’s okay if you don’t understand everything right away. The more you look at the material, the better you’ll understand it.",
+          "text": "I would tell them to be prepared to study - especially if they don’t have a programming background. I think that was one thing that caught me off guard. It’s not that you can’t earn an MS in Computer Science without a CS background, but you have to create a schedule that works for you since the material can get overwhelming. It’s like learning any other new language. You have to start with the basics and take it one step at a time. It’s okay if you don’t understand everything right away. The more you look at the material, the better you’ll understand it.",
           "links": [],
           "bold": []
         },
@@ -3343,7 +3343,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens’ future-forward computer science curriculum supports a wide variety of computer science careers so graduates can switch gears as technology evolves. The MS in Computer Science program’s required courses build upon advanced skills useful in diverse computer science subfields and across multiple industries. Beyond developing their technical expertise, Stevens’ MSCS interactive coursework helps students refine the soft skills—like problem-solving, critical thinking and written and verbal communication—required to thrive in the real world. At the graduate level, StevensOnline computer science courses cover the following subjects.",
+          "text": "Stevens’ future-forward computer science curriculum supports a wide variety of computer science careers so graduates can switch gears as technology evolves. The MS in Computer Science program’s required courses build upon advanced skills useful in diverse computer science subfields and across multiple industries. Beyond developing their technical expertise, Stevens’ MSCS interactive coursework helps students refine the soft skills-like problem-solving, critical thinking and written and verbal communication-required to thrive in the real world. At the graduate level, StevensOnline computer science courses cover the following subjects.",
           "links": [
             {
               "text": "computer science careers",
@@ -3368,7 +3368,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Java is an object-oriented programming language created in the 1990s for embedded network applications. However, its relative simplicity led to long-term popularity, and it’s still used widely for internet and general-purpose applications today. This class in the Traditional MSCS course sequence introduces students with little or no programming experience to concepts like program structure in general and Java syntax, data types, flow control, classes, methods and objects, arrays, exception handling, APIs and recursion. Passing this first-year computer programming course prepares students for what’s to come — both in the program and in their computer science careers. Java is one of the most famous programming languages globally, used for everything from server-side development, mobile game development, application development and enterprise web development.",
+          "text": "Java is an object-oriented programming language created in the 1990s for embedded network applications. However, its relative simplicity led to long-term popularity, and it’s still used widely for internet and general-purpose applications today. This class in the Traditional MSCS course sequence introduces students with little or no programming experience to concepts like program structure in general and Java syntax, data types, flow control, classes, methods and objects, arrays, exception handling, APIs and recursion. Passing this first-year computer programming course prepares students for what’s to come - both in the program and in their computer science careers. Java is one of the most famous programming languages globally, used for everything from server-side development, mobile game development, application development and enterprise web development.",
           "links": [],
           "bold": []
         },
@@ -3456,7 +3456,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The applications of mobile computing are expanding, as are the challenges inherent in disconnected mobile computing. Computer science professionals have to understand how systems for mobile devices are designed and implemented and how issues of trust, privacy, and cybersecurity come into play when location-aware or context-aware systems are on the cloud. This course reviews the fundamentals of mobile systems and applications and how they relate to services in the cloud—both of which are important considering how quickly mobile and cloud-based systems are replacing traditional networked systems.",
+          "text": "The applications of mobile computing are expanding, as are the challenges inherent in disconnected mobile computing. Computer science professionals have to understand how systems for mobile devices are designed and implemented and how issues of trust, privacy, and cybersecurity come into play when location-aware or context-aware systems are on the cloud. This course reviews the fundamentals of mobile systems and applications and how they relate to services in the cloud-both of which are important considering how quickly mobile and cloud-based systems are replacing traditional networked systems.",
           "links": [],
           "bold": []
         },
@@ -3734,7 +3734,7 @@
         },
         {
           "type": "paragraph",
-          "text": "There was no compromise. There was no flexibility. There was only one way of doing—the way it’s always been done before.",
+          "text": "There was no compromise. There was no flexibility. There was only one way of doing-the way it’s always been done before.",
           "links": [],
           "bold": []
         },
@@ -3757,7 +3757,7 @@
         },
         {
           "type": "paragraph",
-          "text": "One of the hurdles students encounter in higher education is being able to attend in person. This could be because of logistical reasons, such as living in another state. Or their schedules couldn’t accommodate commuting to classes. There are also financial impacts of learning on campus—and with online learning many of those are mitigated.",
+          "text": "One of the hurdles students encounter in higher education is being able to attend in person. This could be because of logistical reasons, such as living in another state. Or their schedules couldn’t accommodate commuting to classes. There are also financial impacts of learning on campus-and with online learning many of those are mitigated.",
           "links": [],
           "bold": []
         },
@@ -4050,7 +4050,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Healthcare data is growing faster than any other type of data. It currently constitutes 30% of all the data in the world and could rise to 36% by 2025. The healthcare industry needs data scientists to help process a mountain of information to inform data-driven decisions. If you are a current healthcare employee — whether you work in an administrative section or a medical department — you can leverage your current healthcare knowledge to launch a career in data analysis.",
+          "text": "Healthcare data is growing faster than any other type of data. It currently constitutes 30% of all the data in the world and could rise to 36% by 2025. The healthcare industry needs data scientists to help process a mountain of information to inform data-driven decisions. If you are a current healthcare employee - whether you work in an administrative section or a medical department - you can leverage your current healthcare knowledge to launch a career in data analysis.",
           "links": [
             {
               "text": "30% of all the data in the world",
@@ -4083,7 +4083,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Practically every research or investigative process that involves data needs data scientists to help organize and analyze information. Your STEM skills — including research abilities, analytics, technical proficiencies, and experience — can well serve your data science career in any field.",
+          "text": "Practically every research or investigative process that involves data needs data scientists to help organize and analyze information. Your STEM skills - including research abilities, analytics, technical proficiencies, and experience - can well serve your data science career in any field.",
           "links": [],
           "bold": []
         },
@@ -4755,7 +4755,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“Applied Machine Learning” helps students understand how to design machine learning algorithms and systems that automatically learn, improve and accumulate knowledge with experience — a required skill when working with AI. By designing their own algorithms, students learn how to apply them to solve real-world problems.",
+          "text": "“Applied Machine Learning” helps students understand how to design machine learning algorithms and systems that automatically learn, improve and accumulate knowledge with experience - a required skill when working with AI. By designing their own algorithms, students learn how to apply them to solve real-world problems.",
           "links": [],
           "bold": []
         },
@@ -4937,7 +4937,7 @@
         },
         {
           "type": "paragraph",
-          "text": "If it happens they are eligible to take part in employer tuition reimbursement programs, that is just an extra incentive—and not a particularly big one. Employer-sponsored tuition reimbursements are often capped at $5,250 annually because tuition assistance above that amount is taxable as income.",
+          "text": "If it happens they are eligible to take part in employer tuition reimbursement programs, that is just an extra incentive-and not a particularly big one. Employer-sponsored tuition reimbursements are often capped at $5,250 annually because tuition assistance above that amount is taxable as income.",
           "links": [],
           "bold": []
         },
@@ -5112,7 +5112,7 @@
         },
         {
           "type": "paragraph",
-          "text": "There is nothing inherently wrong with pursuing education for education’s sake. Data science is an exciting field — and an evolving one, which means there will always be something new to learn. Moreover, data science is a discipline that requires a great deal of curiosity and creativity in addition to technical knowledge. One Kaggle survey found that 70 percent of data scientists who pursued on-campus and online master’s degrees did so not for the diploma or the salary boost but to “gain more knowledge.” If your primary motivation to pursue an MSDS is the desire to learn as much as you can about it, lean into that. The Kaggle report concluded that passionate interest in data science and the desire to learn more are probably the best reasons to pursue a master’s in this field.",
+          "text": "There is nothing inherently wrong with pursuing education for education’s sake. Data science is an exciting field - and an evolving one, which means there will always be something new to learn. Moreover, data science is a discipline that requires a great deal of curiosity and creativity in addition to technical knowledge. One Kaggle survey found that 70 percent of data scientists who pursued on-campus and online master’s degrees did so not for the diploma or the salary boost but to “gain more knowledge.” If your primary motivation to pursue an MSDS is the desire to learn as much as you can about it, lean into that. The Kaggle report concluded that passionate interest in data science and the desire to learn more are probably the best reasons to pursue a master’s in this field.",
           "links": [
             {
               "text": "there will always be something new to learn",
@@ -5209,7 +5209,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Today, engineers in the six major branches of engineering continue to approach problems from a perspective that combines science and creativity. Growth in numerous industries, from healthcare to agriculture to aerospace, depends upon engineers’ work. And those engineers depend upon leaders—people who can guide strategy, facilitate the development cycle, and synthesize organizational behavior to drive innovation. That’s what engineering managers do.",
+          "text": "Today, engineers in the six major branches of engineering continue to approach problems from a perspective that combines science and creativity. Growth in numerous industries, from healthcare to agriculture to aerospace, depends upon engineers’ work. And those engineers depend upon leaders-people who can guide strategy, facilitate the development cycle, and synthesize organizational behavior to drive innovation. That’s what engineering managers do.",
           "links": [],
           "bold": []
         },
@@ -5259,7 +5259,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Financial management coursework in engineering management graduate programs covers cost-effective decision-making. For example, one of the online courses in Stevens’ M.Eng.EM program — Engineering Economics and Cost Analysis — includes a historical overview of the management accounting process, statistical cost estimation and cost allocation, among other topics. In it, engineers learn to manage money wisely in technical organizations.",
+          "text": "Financial management coursework in engineering management graduate programs covers cost-effective decision-making. For example, one of the online courses in Stevens’ M.Eng.EM program - Engineering Economics and Cost Analysis - includes a historical overview of the management accounting process, statistical cost estimation and cost allocation, among other topics. In it, engineers learn to manage money wisely in technical organizations.",
           "links": [],
           "bold": []
         },
@@ -5392,7 +5392,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You should be able to articulate why you want to study and achieve an engineering management degree — and why you want to study engineering management at the institution to which you are applying. It may help if your personal statements highlig ht faculty, research or alumni. If you are interested in a specific program because you read an article about the research faculty are doing, mention that. Explain which specific engineering management courses stand out to you as potentially useful in your current role. You should also be able to clearly articulate your own career goals through your statement of purpose or in interviews.",
+          "text": "You should be able to articulate why you want to study and achieve an engineering management degree - and why you want to study engineering management at the institution to which you are applying. It may help if your personal statements highlig ht faculty, research or alumni. If you are interested in a specific program because you read an article about the research faculty are doing, mention that. Explain which specific engineering management courses stand out to you as potentially useful in your current role. You should also be able to clearly articulate your own career goals through your statement of purpose or in interviews.",
           "links": [],
           "bold": []
         },
@@ -5438,7 +5438,7 @@
         },
         {
           "type": "paragraph",
-          "text": "If you plan to take the GRE or GMAT, you will need time to prepare for the exam. In the course of pursuing admissions for an engineering management degree, obtaining official transcripts from your undergraduate degree studies can take longer than expected — especially since some institutions will only send transcripts via mail. And you should give your recommendation writers plenty of lead time so that they can complete your letter between their professional obligations. Importantly, getting an early start ensures you have enough time to write a compelling, thorough statement of purpose and put it through multiple rounds of edits.",
+          "text": "If you plan to take the GRE or GMAT, you will need time to prepare for the exam. In the course of pursuing admissions for an engineering management degree, obtaining official transcripts from your undergraduate degree studies can take longer than expected - especially since some institutions will only send transcripts via mail. And you should give your recommendation writers plenty of lead time so that they can complete your letter between their professional obligations. Importantly, getting an early start ensures you have enough time to write a compelling, thorough statement of purpose and put it through multiple rounds of edits.",
           "links": [],
           "bold": []
         },
@@ -5827,7 +5827,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The career impact of this degree is hard to predict because the MBA is so broadly applicable, especially when considering the comparison of engineering management vs. MBA. One Graduate Management Admission Council found that demand for MBA graduates among corporate recruiters is high — 91% of recruiters planned to hire MBA holders in 2021, and median salaries clocked in at about $115,000. However, that figure varies by field. According to one National Association of Colleges and Employers salary survey, recent MBA graduates who specialize in strategy, engineering, science or general management earn about $85,000 to $100,000. MBA graduates who work in healthcare or human resources management may earn considerably less.",
+          "text": "The career impact of this degree is hard to predict because the MBA is so broadly applicable, especially when considering the comparison of engineering management vs. MBA. One Graduate Management Admission Council found that demand for MBA graduates among corporate recruiters is high - 91% of recruiters planned to hire MBA holders in 2021, and median salaries clocked in at about $115,000. However, that figure varies by field. According to one National Association of Colleges and Employers salary survey, recent MBA graduates who specialize in strategy, engineering, science or general management earn about $85,000 to $100,000. MBA graduates who work in healthcare or human resources management may earn considerably less.",
           "links": [
             {
               "text": "demand for MBA graduates among corporate recruiters is high",
@@ -5904,7 +5904,7 @@
         },
         {
           "type": "paragraph",
-          "text": "When looking at what is right for you in a comparison of engineering management vs. MBA, only you can assess your career goals and determine which degree best aligns with your interests, aptitudes and ambitions. Do not make the mistake of choosing an MBA program over an engineering management master’s program simply because you assume the former is the more recognizable degree. Increased demand for technical skills in management — and management skills in tech — has enhanced the visibility, reputation and value of master’s in engineering management programs.",
+          "text": "When looking at what is right for you in a comparison of engineering management vs. MBA, only you can assess your career goals and determine which degree best aligns with your interests, aptitudes and ambitions. Do not make the mistake of choosing an MBA program over an engineering management master’s program simply because you assume the former is the more recognizable degree. Increased demand for technical skills in management - and management skills in tech - has enhanced the visibility, reputation and value of master’s in engineering management programs.",
           "links": [],
           "bold": []
         },
@@ -6510,7 +6510,7 @@
         },
         {
           "type": "paragraph",
-          "text": "If you’re interested in a career in engineering management, earning an advanced degree — like the Stevens Online MEM — can help you gain the skills needed to reach your goal. To start your journey, review the Stevens Online MEM degree admissions requirements, request an application walk-through, or start your application now.",
+          "text": "If you’re interested in a career in engineering management, earning an advanced degree - like the Stevens Online MEM - can help you gain the skills needed to reach your goal. To start your journey, review the Stevens Online MEM degree admissions requirements, request an application walk-through, or start your application now.",
           "links": [
             {
               "text": "Stevens Online MEM",
@@ -6635,7 +6635,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Pursuing an engineering management master’s degree is the first step in a longer journey. There are many on-campus and online master of engineering management programs in the United States — each with a distinct focus. Some prioritize business management courses or engineering project management. Others, including Stevens’ online engineering technology management master’s degree program, provide students with a strong understanding of the technology involved in engineering projects and the management process through which the technology is applied.",
+          "text": "Pursuing an engineering management master’s degree is the first step in a longer journey. There are many on-campus and online master of engineering management programs in the United States - each with a distinct focus. Some prioritize business management courses or engineering project management. Others, including Stevens’ online engineering technology management master’s degree program, provide students with a strong understanding of the technology involved in engineering projects and the management process through which the technology is applied.",
           "links": [],
           "bold": []
         },
@@ -6653,7 +6653,7 @@
         },
         {
           "type": "paragraph",
-          "text": "General graduate programs in management prepare graduate students for a wide range of jobs in the business world and do not require that applicants have technical work experience. In contrast, engineering management degree programs are better suited to technical professionals preparing to lead the teams that design and build machines, software and structures. Engineering management jobs exist in many technology based sectors — StevensOnline graduates have titles such as architectural and engineering manager, process engineer, industrial production manager and technical manager.",
+          "text": "General graduate programs in management prepare graduate students for a wide range of jobs in the business world and do not require that applicants have technical work experience. In contrast, engineering management degree programs are better suited to technical professionals preparing to lead the teams that design and build machines, software and structures. Engineering management jobs exist in many technology based sectors - StevensOnline graduates have titles such as architectural and engineering manager, process engineer, industrial production manager and technical manager.",
           "links": [],
           "bold": []
         },
@@ -6687,7 +6687,7 @@
         },
         {
           "type": "paragraph",
-          "text": "MBA and other graduate programs in management draw applicants from a vast pool of undergraduate majors and career paths. However, most Master of Business Administration candidates want to study the “business of business” and entrepreneurship in general terms because they want career versatility. Very few MBA candidates — only 10% by some estimations — come from engineering backgrounds, while nearly 50% have business undergraduate degrees. Technology-focused engineering management master’s programs meet the needs of engineers committed to advancing in engineering technology.",
+          "text": "MBA and other graduate programs in management draw applicants from a vast pool of undergraduate majors and career paths. However, most Master of Business Administration candidates want to study the “business of business” and entrepreneurship in general terms because they want career versatility. Very few MBA candidates - only 10% by some estimations - come from engineering backgrounds, while nearly 50% have business undergraduate degrees. Technology-focused engineering management master’s programs meet the needs of engineers committed to advancing in engineering technology.",
           "links": [],
           "bold": []
         },
@@ -6767,7 +6767,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Engineering managers must be familiar with the breadth of technical skills necessary to engineer products, processes and systems — and how to scrutinize related data for insights. StevensOnline MEM candidates learn how to use computational tools for project coordination and management in Project Management of Complex Systems.",
+          "text": "Engineering managers must be familiar with the breadth of technical skills necessary to engineer products, processes and systems - and how to scrutinize related data for insights. StevensOnline MEM candidates learn how to use computational tools for project coordination and management in Project Management of Complex Systems.",
           "links": [],
           "bold": []
         },
@@ -6778,13 +6778,13 @@
         },
         {
           "type": "paragraph",
-          "text": "“As an engineering manager, you need to be able to gather context and understand the challenges your team is facing at a technical level,” writes Shopify senior engineering manager Hasitha Pathiraja on Medium. “Doing this requires keeping your technical skills up to date.” One increasingly critical management skill is programming — typically in Python, one of the most useful programming languages for extracting insights from data.",
+          "text": "“As an engineering manager, you need to be able to gather context and understand the challenges your team is facing at a technical level,” writes Shopify senior engineering manager Hasitha Pathiraja on Medium. “Doing this requires keeping your technical skills up to date.” One increasingly critical management skill is programming - typically in Python, one of the most useful programming languages for extracting insights from data.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Advanced engineering management degree programs like the StevensOnline MEM build on programming fundamentals, teaching students to leverage programming in managerial roles — e.g., to sort, visualize and analyze data with code as part of strategic decision-making — in courses such as Informatics for Engineering Technology Management and Data Analysis and Visualization Techniques for Decision Making.",
+          "text": "Advanced engineering management degree programs like the StevensOnline MEM build on programming fundamentals, teaching students to leverage programming in managerial roles - e.g., to sort, visualize and analyze data with code as part of strategic decision-making - in courses such as Informatics for Engineering Technology Management and Data Analysis and Visualization Techniques for Decision Making.",
           "links": [],
           "bold": []
         },
@@ -7052,7 +7052,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Whether you’re an aspiring or experienced computer scientist, earning an advanced degree can improve your employment prospects and boost your income. According to the BLS, STEM professionals — including systems administrators, web developers and information security analysts — with master’s degrees typically earn higher annual incomes than their counterparts holding only bachelor’s degrees, with pay differentials ranging from 18 to 26%, depending on the field.",
+          "text": "Whether you’re an aspiring or experienced computer scientist, earning an advanced degree can improve your employment prospects and boost your income. According to the BLS, STEM professionals - including systems administrators, web developers and information security analysts - with master’s degrees typically earn higher annual incomes than their counterparts holding only bachelor’s degrees, with pay differentials ranging from 18 to 26%, depending on the field.",
           "links": [
             {
               "text": "higher annual incomes",
@@ -7699,7 +7699,7 @@
         },
         {
           "type": "paragraph",
-          "text": "On top of that, we are incredibly proud of the success of our alumni. Our program graduates have gone on to work as engineering managers at companies like BMW, Goldman Sachs, IBM and more. We truly believe our program opens doors and the stats confirm that—100% of MEM graduates in the Class of 2021 accepted job offers within three months of graduating. (Based on data from 63% of spring 2021 graduates who attended full time.)",
+          "text": "On top of that, we are incredibly proud of the success of our alumni. Our program graduates have gone on to work as engineering managers at companies like BMW, Goldman Sachs, IBM and more. We truly believe our program opens doors and the stats confirm that-100% of MEM graduates in the Class of 2021 accepted job offers within three months of graduating. (Based on data from 63% of spring 2021 graduates who attended full time.)",
           "links": [
             {
               "text": "BMW, Goldman Sachs, IBM and more",
@@ -7837,7 +7837,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Technical depth — the depth of knowledge and expertise a person possesses in a specific technological area — enables  computer science professionals to make informed decisions, solve complex challenges and drive innovation. Computer science professionals benefit from technical depth because it allows them to be precise and efficient, lends them subject matter authority and endows them with problem-solving mastery in specific realms. Technical depth balanced with breadth of knowledge across multiple areas of technology permits computer science professionals to quickly learn and adapt to new technologies while developing a broader perspective that can transform them into versatile problem-solvers.",
+          "text": "Technical depth - the depth of knowledge and expertise a person possesses in a specific technological area - enables  computer science professionals to make informed decisions, solve complex challenges and drive innovation. Computer science professionals benefit from technical depth because it allows them to be precise and efficient, lends them subject matter authority and endows them with problem-solving mastery in specific realms. Technical depth balanced with breadth of knowledge across multiple areas of technology permits computer science professionals to quickly learn and adapt to new technologies while developing a broader perspective that can transform them into versatile problem-solvers.",
           "links": [
             {
               "text": "Technical depth",
@@ -8316,7 +8316,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Data analytics experts extract valuable insights from large datasets. By employing advanced analytical techniques—such as data mining, statistical analysis and predictive modeling—they uncover meaningful patterns and trends that drive business growth, optimize processes and enhance operational efficiency.",
+          "text": "Data analytics experts extract valuable insights from large datasets. By employing advanced analytical techniques-such as data mining, statistical analysis and predictive modeling-they uncover meaningful patterns and trends that drive business growth, optimize processes and enhance operational efficiency.",
           "links": [],
           "bold": []
         },
@@ -9319,7 +9319,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Look for opportunities to feature your academic achievements, leadership experience, and extracurricular involvement. Review your record for successes you can include — such as an above-average GPA or awards you’ve received — that demonstrate your dedication and capability. Emphasize professional roles or specific projects that showcase your leadership abilities and organizational contributions. Include extracurricular activities and internships that illustrate your character and ability to balance multiple responsibilities.",
+          "text": "Look for opportunities to feature your academic achievements, leadership experience, and extracurricular involvement. Review your record for successes you can include - such as an above-average GPA or awards you’ve received - that demonstrate your dedication and capability. Emphasize professional roles or specific projects that showcase your leadership abilities and organizational contributions. Include extracurricular activities and internships that illustrate your character and ability to balance multiple responsibilities.",
           "links": [],
           "bold": []
         },
@@ -9606,7 +9606,7 @@
               ]
             },
             {
-              "text": "Big data: Big data—large, complex datasets from various sources—can provide new insights to help businesses make strategic decisions for long-term success",
+              "text": "Big data: Big data-large, complex datasets from various sources-can provide new insights to help businesses make strategic decisions for long-term success",
               "links": [],
               "bold": [
                 "Big data:"
@@ -9911,7 +9911,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The program targets three areas. One is the foundations of management: things like project management, financial management — the skills you need to manage any problem or project. The second is data. When you work in complex environments, you need to rely on data. We teach students how to handle data and organize, represent, and draw insights from it.",
+          "text": "The program targets three areas. One is the foundations of management: things like project management, financial management - the skills you need to manage any problem or project. The second is data. When you work in complex environments, you need to rely on data. We teach students how to handle data and organize, represent, and draw insights from it.",
           "links": [],
           "bold": []
         },
@@ -9963,7 +9963,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Now, if you are directing a Pixar movie, you need different skills, and some of them have to be technology-related because technology is an essential component. You need to know the refresh rate of screens, the rendering efficiency of the machines you use, and which software works best to extrapolate images. You need traditional management skills — budgeting, people management, all of that — but on top of that, there’s a technical component you don’t need for live-action movies. That’s why you get an engineering management degree instead of an MBA.",
+          "text": "Now, if you are directing a Pixar movie, you need different skills, and some of them have to be technology-related because technology is an essential component. You need to know the refresh rate of screens, the rendering efficiency of the machines you use, and which software works best to extrapolate images. You need traditional management skills - budgeting, people management, all of that - but on top of that, there’s a technical component you don’t need for live-action movies. That’s why you get an engineering management degree instead of an MBA.",
           "links": [],
           "bold": []
         },
@@ -10015,7 +10015,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The combination of the two — computing power and data — that’s what’s driving progress. Everything we do now in our daily lives is digitally coded with TCP IP, the same protocol we use for the internet. That’s the game-changer in AI. The algorithms are not really that much different than the ones we used in 1986.",
+          "text": "The combination of the two - computing power and data - that’s what’s driving progress. Everything we do now in our daily lives is digitally coded with TCP IP, the same protocol we use for the internet. That’s the game-changer in AI. The algorithms are not really that much different than the ones we used in 1986.",
           "links": [],
           "bold": []
         },
@@ -10491,7 +10491,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Financial literacy also helps leaders spot and manage financial risks. Using accounting metrics — such as profitability and debt-to-equity ratios — leaders can assess how well the company is performing and develop informed strategies for improvement. Tracking these metrics also helps them recognize opportunities and potential risks, enabling them to take the necessary actions to mitigate liabilities and maximize profits. Financial literacy equips leaders to optimize performance, lower risks and contribute to an organization’s success.",
+          "text": "Financial literacy also helps leaders spot and manage financial risks. Using accounting metrics - such as profitability and debt-to-equity ratios - leaders can assess how well the company is performing and develop informed strategies for improvement. Tracking these metrics also helps them recognize opportunities and potential risks, enabling them to take the necessary actions to mitigate liabilities and maximize profits. Financial literacy equips leaders to optimize performance, lower risks and contribute to an organization’s success.",
           "links": [],
           "bold": []
         },
@@ -10730,7 +10730,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The first two traits go hand in hand—confidence and resilience. The nature of the job means you have to make rules as you go. Confidence allows you to be certain of the decisions you make. Pursuing an advanced MBA program helps you understand the distinction between informed decision and following a hunch.",
+          "text": "The first two traits go hand in hand-confidence and resilience. The nature of the job means you have to make rules as you go. Confidence allows you to be certain of the decisions you make. Pursuing an advanced MBA program helps you understand the distinction between informed decision and following a hunch.",
           "links": [],
           "bold": []
         },
@@ -10892,8 +10892,8 @@
     {
       "id": "online-computer-science-degree-mscs",
       "title": "Online Computer Science Degree: Stevens Welcomes Varying Levels of Experience",
-      "subtitle": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses — one in Java programming, the other in data structures — to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
-      "excerpt": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses — one in Java programming, the other in data structures — to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
+      "subtitle": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses - one in Java programming, the other in data structures - to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
+      "excerpt": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses - one in Java programming, the other in data structures - to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
       "featured_image_url": "/assets/blogs/mastering-computer-science/online-computer-science-degree-stevens-welcomes-varying-levels-of-experience/image.png",
       "category": "Mastering Computer Science",
       "author": "Stevens Online",
@@ -10910,7 +10910,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses — one in Java programming, the other in data structures — to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
+          "text": "Kelly was encouraged to apply because he knew Stevens welcomed graduate students with bachelor’s degrees outside the computer science disciplines. The school offers two foundational courses - one in Java programming, the other in data structures - to bring non-computer science majors up to speed before they begin graduate work. According to Kelly, these courses do “a really good job… of catching you up quickly.”",
           "links": [],
           "bold": []
         },
@@ -11341,7 +11341,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Job outlook and earning potential can help guide your choices, though predicting your prospects is easier if you are leaning toward Master of Science in Data Science (MSDS) vs Master of Science in Computer Science (MSCS). Different data science job titles don’t necessarily correlate with varying demand or pay scales — unless you look at salaries for manager-level or executive-level roles, which trend higher. The average data scientist earns about $116,000 with a master’s degree, which is very close to the typical salaries data engineer, data visualization developer and decision scientist report on sites such as Indeed. Job growth across data science roles will likely be strong over the next decade, which means a data science master’s degree is a wise investment.",
+          "text": "Job outlook and earning potential can help guide your choices, though predicting your prospects is easier if you are leaning toward Master of Science in Data Science (MSDS) vs Master of Science in Computer Science (MSCS). Different data science job titles don’t necessarily correlate with varying demand or pay scales - unless you look at salaries for manager-level or executive-level roles, which trend higher. The average data scientist earns about $116,000 with a master’s degree, which is very close to the typical salaries data engineer, data visualization developer and decision scientist report on sites such as Indeed. Job growth across data science roles will likely be strong over the next decade, which means a data science master’s degree is a wise investment.",
           "links": [],
           "bold": []
         },
@@ -11436,7 +11436,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The computer science job outlook released annually by the U.S. Bureau of Labor Statistics (BLS) and other sources won’t tell you much about your career prospects unless your goal is to become a computer or information research scientist. The BLS predicts that employers will create 5,000 new jobs for computer scientists in the coming decade, 8,000 jobs for network architects and nearly 50,000 for information systems managers. Demand for software developers will skyrocket, and employment across computer-focused careers — a category that includes data science — will grow much faster than average.",
+          "text": "The computer science job outlook released annually by the U.S. Bureau of Labor Statistics (BLS) and other sources won’t tell you much about your career prospects unless your goal is to become a computer or information research scientist. The BLS predicts that employers will create 5,000 new jobs for computer scientists in the coming decade, 8,000 jobs for network architects and nearly 50,000 for information systems managers. Demand for software developers will skyrocket, and employment across computer-focused careers - a category that includes data science - will grow much faster than average.",
           "links": [
             {
               "text": "new jobs for computer scientists",
@@ -11538,7 +11538,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The online Master’s in Data Science program, on the other hand, attracts students with experience in advanced mathematics, computer science and data analytics. They want to launch careers in data science — a field in which the master’s is the entry-level degree — or in specialty areas related to machine learning and AI. MSDS candidates typically enter the program with skills and knowledge related to:",
+          "text": "The online Master’s in Data Science program, on the other hand, attracts students with experience in advanced mathematics, computer science and data analytics. They want to launch careers in data science - a field in which the master’s is the entry-level degree - or in specialty areas related to machine learning and AI. MSDS candidates typically enter the program with skills and knowledge related to:",
           "links": [],
           "bold": []
         },
@@ -11800,7 +11800,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Once you’ve compared data science vs. computer science and chosen your path, Stevens makes it easier to earn your degree. The Schaefer School of Engineering & Science offers both the MSCS and the MSDS entirely online. Whether you choose computer science or data science, you’ll get the qualifications required to advance without taking a leave of absence from your current job — or even taking time off work. A master’s degree from Stevens can also help land one of the few, highly coveted remote computer science or data science jobs that often go to candidates with advanced degrees from schools with a reputation for excellence.",
+          "text": "Once you’ve compared data science vs. computer science and chosen your path, Stevens makes it easier to earn your degree. The Schaefer School of Engineering & Science offers both the MSCS and the MSDS entirely online. Whether you choose computer science or data science, you’ll get the qualifications required to advance without taking a leave of absence from your current job - or even taking time off work. A master’s degree from Stevens can also help land one of the few, highly coveted remote computer science or data science jobs that often go to candidates with advanced degrees from schools with a reputation for excellence.",
           "links": [],
           "bold": []
         },
@@ -12034,7 +12034,7 @@
         },
         {
           "type": "paragraph",
-          "text": "I’ve completed a couple of projects that involved splitting the class up—usually in half. We meet outside of the lecture time on Zoom, which builds community. The smaller class size also opens the floor to conversations that you don’t usually have in a larger lecture environment. The online learning experience is more personalized.",
+          "text": "I’ve completed a couple of projects that involved splitting the class up-usually in half. We meet outside of the lecture time on Zoom, which builds community. The smaller class size also opens the floor to conversations that you don’t usually have in a larger lecture environment. The online learning experience is more personalized.",
           "links": [
             {
               "text": "online learning experience",
@@ -12228,7 +12228,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The School of Systems and Enterprises’ 100 percent online programs are geared toward motivated learners looking for a high-quality, rigorous educational experience that happens to offer added flexibility. They do not want to sacrifice access to world-class faculty or career resources to study remotely — or give up opportunities for advancement to enroll in a full-time graduate degree program.",
+          "text": "The School of Systems and Enterprises’ 100 percent online programs are geared toward motivated learners looking for a high-quality, rigorous educational experience that happens to offer added flexibility. They do not want to sacrifice access to world-class faculty or career resources to study remotely - or give up opportunities for advancement to enroll in a full-time graduate degree program.",
           "links": [
             {
               "text": "world-class faculty",
@@ -12257,7 +12257,7 @@
         },
         {
           "type": "paragraph",
-          "text": "M.Eng.EM applicants apply using the Stevens Institute of Technology’s online application for graduate study. Gathering the engineering management requirements for application materials — two letters of recommendation, unofficial transcripts from bachelor’s degree and graduate programs attended and TOEFL/IELTS/DUOLINGO scores for international applicants — plus the optional items can be an overwhelming experience. Stevens doesn’t require applicants to submit materials in a single sitting, however. The application portal saves all information and materials in real time, and the university only reviews completed applications. Applicants can add new information or make changes to their applications as many times as necessary before finalizing their applications  to fulfill the engineering management requirements.",
+          "text": "M.Eng.EM applicants apply using the Stevens Institute of Technology’s online application for graduate study. Gathering the engineering management requirements for application materials - two letters of recommendation, unofficial transcripts from bachelor’s degree and graduate programs attended and TOEFL/IELTS/DUOLINGO scores for international applicants - plus the optional items can be an overwhelming experience. Stevens doesn’t require applicants to submit materials in a single sitting, however. The application portal saves all information and materials in real time, and the university only reviews completed applications. Applicants can add new information or make changes to their applications as many times as necessary before finalizing their applications  to fulfill the engineering management requirements.",
           "links": [],
           "bold": []
         },
@@ -12292,7 +12292,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Understanding the differences between these application submission deadlines is the key to choosing the right one. For example, an applicant who submits engineering management requirements by the Early Submit deadline may be eligible for more tuition assistance — provided they can put together a polished application in just a few weeks — because the pool of available funds is larger. Another applicant might increase their chances of acceptance by aiming for the Final Submit deadline, which gives them more time to put together a compelling application.",
+          "text": "Understanding the differences between these application submission deadlines is the key to choosing the right one. For example, an applicant who submits engineering management requirements by the Early Submit deadline may be eligible for more tuition assistance - provided they can put together a polished application in just a few weeks - because the pool of available funds is larger. Another applicant might increase their chances of acceptance by aiming for the Final Submit deadline, which gives them more time to put together a compelling application.",
           "links": [],
           "bold": []
         },
@@ -12327,7 +12327,7 @@
         },
         {
           "type": "paragraph",
-          "text": "StevensOnline M.Eng.EM candidates choose between two program specializations — Managerial Analytics and Supply Chain and Logistics Management — and take elective courses based on their selected tracks. Students enrolled in the Managerial Analytics track take “Data Analysis and Visualization Techniques for Decision Making,” “Data Science and Knowledge Discovery in Engineering Management,” and “Multi-Agent Socio-Technical Systems” plus the core engineering management courses to fulfill engineering management requirements. Students enrolled in the Supply Chain and Logistics Management track take the same core M.Eng. in Engineering Management classes plus “System Supportability and Logistics,” “Integrated Supply Chain Management,” and “Forecasting and Demand Modeling Systems.”",
+          "text": "StevensOnline M.Eng.EM candidates choose between two program specializations - Managerial Analytics and Supply Chain and Logistics Management - and take elective courses based on their selected tracks. Students enrolled in the Managerial Analytics track take “Data Analysis and Visualization Techniques for Decision Making,” “Data Science and Knowledge Discovery in Engineering Management,” and “Multi-Agent Socio-Technical Systems” plus the core engineering management courses to fulfill engineering management requirements. Students enrolled in the Supply Chain and Logistics Management track take the same core M.Eng. in Engineering Management classes plus “System Supportability and Logistics,” “Integrated Supply Chain Management,” and “Forecasting and Demand Modeling Systems.”",
           "links": [],
           "bold": []
         },
@@ -12563,7 +12563,7 @@
               "bold": []
             },
             {
-              "text": "Assistant Professor Alparslan Emrah Bayrak is an expert in human-computer collaboration. His research focuses on bridging human cognition and computational methods to develop collaborative architectures — a concept he integrates into his classes.",
+              "text": "Assistant Professor Alparslan Emrah Bayrak is an expert in human-computer collaboration. His research focuses on bridging human cognition and computational methods to develop collaborative architectures - a concept he integrates into his classes.",
               "links": [
                 {
                   "text": "Alparslan Emrah Bayrak",
@@ -12690,7 +12690,7 @@
     },
     {
       "id": "online-mscs-develops-skills-required-for-remote-computer-science-jobs",
-      "title": "Remote Work in Tech Is the Norm — For Those Qualified to Do It",
+      "title": "Remote Work in Tech Is the Norm - For Those Qualified to Do It",
       "subtitle": "The technology sector embraced remote work long before Covid-19 shuttered offices in 2020. Companies in this space had the digital infrastructure to manage distributed teams years earlier and recognized that having generous remote work policies let them court top global talent. Amazon, Intuit, Dell and Adobe topped lists of companies with remote jobs back in 2018. Since then, many high-profile technology firms, including Twitter, Square, Facebook and Shopify, have instituted generous work-from-home policies.",
       "excerpt": "The technology sector embraced remote work long before Covid-19 shuttered offices in 2020. Companies in this space had the digital infrastructure to manage distributed teams years earlier and recognized that having generous remote work policies let them court top global talent. Amazon, Intuit, Dell and Adobe topped lists of companies with remote jobs back in 2018. Since then, many high-profile technology firms, including Twitter, Square, Facebook and Shopify, have instituted generous work-from-home policies.",
       "featured_image_url": "/assets/blogs/mastering-computer-science/remote-work-in-tech-is-the-norm-for-those-qualified-to-do-it/online-mscs-skills-for-computer-science.jpg",
@@ -12717,7 +12717,7 @@
         },
         {
           "type": "paragraph",
-          "text": "However, there has always been a distinct hierarchical divide between employees with the freedom to work remotely and those required to work on-site. Senior-level employees have the latitude to work from home. Lower-level workers are subject to restrictive work-from-home policies — when they’re allowed to work from home at all. It comes down to trust. Tech firms and companies in other sectors let computer science professionals work from home only when they can be sure those employees will deliver as much value off-site as they do in the office.",
+          "text": "However, there has always been a distinct hierarchical divide between employees with the freedom to work remotely and those required to work on-site. Senior-level employees have the latitude to work from home. Lower-level workers are subject to restrictive work-from-home policies - when they’re allowed to work from home at all. It comes down to trust. Tech firms and companies in other sectors let computer science professionals work from home only when they can be sure those employees will deliver as much value off-site as they do in the office.",
           "links": [],
           "bold": []
         },
@@ -12812,7 +12812,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The fact that you earned your MSCS online can be an additional point in your favor when negotiating with employers for more flexibility. Graduate students who complete computer science degree programs online tend to be highly driven and self-disciplined, with excellent problem-solving, collaboration and communication skills — all traits associated with success in remote working environments.",
+          "text": "The fact that you earned your MSCS online can be an additional point in your favor when negotiating with employers for more flexibility. Graduate students who complete computer science degree programs online tend to be highly driven and self-disciplined, with excellent problem-solving, collaboration and communication skills - all traits associated with success in remote working environments.",
           "links": [],
           "bold": []
         },
@@ -13075,7 +13075,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Data scientists help organizations make the most of the information they collect by identifying existing trends and using historical and real-time data to predict what’s to come. Salaries in the field are high — about $96,000 on average — and much of the work data scientists do (e.g., building data products) isn’t collaborative. Tech companies such as Amazon, Netflix and Noom are known for employing remote data scientists, but experienced data scientists can often negotiate for flex work in other fields.",
+          "text": "Data scientists help organizations make the most of the information they collect by identifying existing trends and using historical and real-time data to predict what’s to come. Salaries in the field are high - about $96,000 on average - and much of the work data scientists do (e.g., building data products) isn’t collaborative. Tech companies such as Amazon, Netflix and Noom are known for employing remote data scientists, but experienced data scientists can often negotiate for flex work in other fields.",
           "links": [
             {
               "text": "about $96,000 on average",
@@ -13093,7 +13093,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Remote DBA jobs are relatively common and organizations will likely create more of them as they migrate their data from on-site servers to the cloud. Database professionals handle management, warehousing and architecture, and need to know SQL plus how to navigate specific database servers from Oracle, Postgres and Mysql. Average DBA salaries range from $70,000 to more than $100,000, but remote database administrators at companies like KForce and Robert Half International can earn more — especially if they have analysis and reporting skills.",
+          "text": "Remote DBA jobs are relatively common and organizations will likely create more of them as they migrate their data from on-site servers to the cloud. Database professionals handle management, warehousing and architecture, and need to know SQL plus how to navigate specific database servers from Oracle, Postgres and Mysql. Average DBA salaries range from $70,000 to more than $100,000, but remote database administrators at companies like KForce and Robert Half International can earn more - especially if they have analysis and reporting skills.",
           "links": [
             {
               "text": "more than $100,000",
@@ -13361,8 +13361,8 @@
     {
       "id": "origins-of-engineering-management-mem-degree",
       "title": "The Origins of Engineering Management and the MEM Degree",
-      "subtitle": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging — as they have continually over years, decades and centuries — the need for technical leaders with business and project management expertise increases.",
-      "excerpt": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging — as they have continually over years, decades and centuries — the need for technical leaders with business and project management expertise increases.",
+      "subtitle": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging - as they have continually over years, decades and centuries - the need for technical leaders with business and project management expertise increases.",
+      "excerpt": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging - as they have continually over years, decades and centuries - the need for technical leaders with business and project management expertise increases.",
       "featured_image_url": "/assets/blogs/engineering_essentials/the-origins-of-engineering-management-and-the-mem-degree/origins-engineering-management-stevens-article.jpeg",
       "category": "Engineering Management",
       "author": "Stevens Online",
@@ -13379,7 +13379,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging — as they have continually over years, decades and centuries — the need for technical leaders with business and project management expertise increases.",
+          "text": "According to the American Society of Engineering Management (ASEM), engineering management is the “art and science of planning, organizing, allocating resources, and directing and controlling activities that have a technological or systems component.” As engineering projects grow more complex and challenging - as they have continually over years, decades and centuries - the need for technical leaders with business and project management expertise increases.",
           "links": [
             {
               "text": "American Society of Engineering Management (ASEM)",
@@ -13577,7 +13577,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In the ever-evolving engineering management landscape, success demands specialized training that goes beyond the scope of a general business management education. Engineers looking to transition into leadership roles need to hone the business and data-driven decision-making skills required to use systems thinking. Managers lacking an engineering background need to understand the technical dimensions of engineering projects — or risk another Boeing 787 failure.",
+          "text": "In the ever-evolving engineering management landscape, success demands specialized training that goes beyond the scope of a general business management education. Engineers looking to transition into leadership roles need to hone the business and data-driven decision-making skills required to use systems thinking. Managers lacking an engineering background need to understand the technical dimensions of engineering projects - or risk another Boeing 787 failure.",
           "links": [],
           "bold": []
         },
@@ -13771,7 +13771,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The median salary is currently $100,920 and the field is expected to grow 36% between now and 2031 (National Bureau of Labor Statistics, 2023). These indicators alone testify that the field is hot right now and all signs point to it only becoming more significant. If there was ever a time to pursue a master’s in data science, it would be now.All the innovations that have improved the field, and the momentum they’re generating, have led to career opportunities blossoming across all sectors. Having access to performance-enhancing insights helps people who manufacture keychains all the way to individuals running for the highest office in this country. It cannot be understated how powerful this career has become—and that it’s applicable across all industries, regardless of output.",
+          "text": "The median salary is currently $100,920 and the field is expected to grow 36% between now and 2031 (National Bureau of Labor Statistics, 2023). These indicators alone testify that the field is hot right now and all signs point to it only becoming more significant. If there was ever a time to pursue a master’s in data science, it would be now.All the innovations that have improved the field, and the momentum they’re generating, have led to career opportunities blossoming across all sectors. Having access to performance-enhancing insights helps people who manufacture keychains all the way to individuals running for the highest office in this country. It cannot be understated how powerful this career has become-and that it’s applicable across all industries, regardless of output.",
           "links": [],
           "bold": []
         },
@@ -13783,7 +13783,7 @@
         },
         {
           "type": "paragraph",
-          "text": "With all these applications for the field, there’s another positive result—demand. This helps keep salaries competitive. However, the popularity of data science means more people are also entering the field, making open positions as competitive as the salary. As time goes on it will be more and more critical to have key differentiators on your resume to pursue the best roles available.",
+          "text": "With all these applications for the field, there’s another positive result-demand. This helps keep salaries competitive. However, the popularity of data science means more people are also entering the field, making open positions as competitive as the salary. As time goes on it will be more and more critical to have key differentiators on your resume to pursue the best roles available.",
           "links": [],
           "bold": []
         },
@@ -13924,8 +13924,8 @@
     {
       "id": "prepare-for-remote-computer-science-jobs-with-an-mscs",
       "title": "Does an Online MSCS Degree Prepare Graduates for Remote Computer Science Jobs?",
-      "subtitle": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion—over one-third—of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
-      "excerpt": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion—over one-third—of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
+      "subtitle": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion-over one-third-of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
+      "excerpt": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion-over one-third-of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
       "featured_image_url": "/assets/blogs/mastering-computer-science/does-an-online-mscs-degree-prepare-graduates-for-remote-computer-science-jobs/stv-mscs-blog-prepare-for-remote-computer-science-jobs-with-an-mscs.png",
       "category": "Mastering Computer Science",
       "author": "Stevens Online",
@@ -13942,7 +13942,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion—over one-third—of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
+          "text": "Work from home exploded during the COVID-19 pandemic; the remote workforce jumped from 7% before the pandemic to 55% in October 2020. Today, a significant portion-over one-third-of employed adults who can work remotely are doing so. Given their preference, more would: Over 90 percent of employees worldwide prefer remote work.",
           "links": [
             {
               "text": "jumped from 7% before the pandemic to 55% in October 2020",
@@ -13957,7 +13957,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Remote work is most common in professional, scientific, and technical services; the information industry; and finance and insurance. Any job that consists mainly of independent work at a computer is a candidate for remote work. That’s why tech-focused professions — like computer science — are among the most conducive to working from home.",
+          "text": "Remote work is most common in professional, scientific, and technical services; the information industry; and finance and insurance. Any job that consists mainly of independent work at a computer is a candidate for remote work. That’s why tech-focused professions - like computer science - are among the most conducive to working from home.",
           "links": [
             {
               "text": "Remote work is most common",
@@ -14327,8 +14327,8 @@
     {
       "id": "real-life-data-science-masters-degree",
       "title": "Real Life Careers with a Data Science Master’s Degree",
-      "subtitle": "It’s often said data is the new oil. It can be an incredible boon to any company—as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
-      "excerpt": "It’s often said data is the new oil. It can be an incredible boon to any company—as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
+      "subtitle": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
+      "excerpt": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
       "featured_image_url": "/assets/blogs/uncategorized/real-life-careers-with-a-data-science-masters-degree/Noodle_Stevens_May2023-2055-min-1024x683.jpg",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -14345,7 +14345,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "It’s often said data is the new oil. It can be an incredible boon to any company—as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
+          "text": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
           "links": [],
           "bold": []
         },
@@ -14368,7 +14368,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Many data scientists go into industries people would expect—research, corporate business, analytics, etc. However, the applications of a Data Science Master’s Degree are much more robust than people initially think. To paint a better picture of what data science looks like, we’ve compiled a list of careers that offer engaging, challenging and rewarding full time professional experiences.",
+          "text": "Many data scientists go into industries people would expect-research, corporate business, analytics, etc. However, the applications of a Data Science Master’s Degree are much more robust than people initially think. To paint a better picture of what data science looks like, we’ve compiled a list of careers that offer engaging, challenging and rewarding full time professional experiences.",
           "links": [
             {
               "text": "the applications of a Data Science Master’s Degree are much more robust than people initially think",
@@ -14384,13 +14384,13 @@
         },
         {
           "type": "paragraph",
-          "text": "Content moves us—it makes us laugh, cry, smile, cheer and gasp. To many, this is the golden age of entertainment. And it’s no surprise: As technology has become more sophisticated, it’s paved the way for data scientists to make the content we consume stronger than ever.",
+          "text": "Content moves us-it makes us laugh, cry, smile, cheer and gasp. To many, this is the golden age of entertainment. And it’s no surprise: As technology has become more sophisticated, it’s paved the way for data scientists to make the content we consume stronger than ever.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "By mastering foundational mathematics and statistical methods, data scientists can help implement artificial intelligence-powered algorithms to customize the experience for every user on streaming services, in social media, and other entertainment channels. And the consumption data tracked by the platforms is remarkably powerful—even helping identify trends that provide decision-makers the analysis they need to shape the future of film, tv and more.",
+          "text": "By mastering foundational mathematics and statistical methods, data scientists can help implement artificial intelligence-powered algorithms to customize the experience for every user on streaming services, in social media, and other entertainment channels. And the consumption data tracked by the platforms is remarkably powerful-even helping identify trends that provide decision-makers the analysis they need to shape the future of film, tv and more.",
           "links": [],
           "bold": []
         },
@@ -14407,7 +14407,7 @@
         },
         {
           "type": "paragraph",
-          "text": "An MSDS gives students exposure to cognitive computing, machine learning, natural language processing and other relevant tools they need in order to thrive in the role. Training systems to mimic how humans think is a critical tool in bridging technology and user experience and is one of the focuses of a study in a Data Science Master’s Degree. What users ask for isn’t always what they actually want—and applying data science to make sense of their journey can help transform searches to deliver the key information they were looking for.",
+          "text": "An MSDS gives students exposure to cognitive computing, machine learning, natural language processing and other relevant tools they need in order to thrive in the role. Training systems to mimic how humans think is a critical tool in bridging technology and user experience and is one of the focuses of a study in a Data Science Master’s Degree. What users ask for isn’t always what they actually want-and applying data science to make sense of their journey can help transform searches to deliver the key information they were looking for.",
           "links": [],
           "bold": []
         },
@@ -14418,7 +14418,7 @@
         },
         {
           "type": "paragraph",
-          "text": "With the Internet as vast as it is, online shopping would be a nightmare without the hard work of data scientists. It can be tough enough to find what we’re looking for in a real life store, let alone online where the options are seemingly infinite. Understanding shoppers’ needs, tastes and trends goes a long way to making the shopping experience smooth—and translating interest into sales.",
+          "text": "With the Internet as vast as it is, online shopping would be a nightmare without the hard work of data scientists. It can be tough enough to find what we’re looking for in a real life store, let alone online where the options are seemingly infinite. Understanding shoppers’ needs, tastes and trends goes a long way to making the shopping experience smooth-and translating interest into sales.",
           "links": [],
           "bold": []
         },
@@ -14452,7 +14452,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The world of finance is changing every day. Managing money is more complex than ever, but those who can evolve with technological innovations are able to make the best financial decisions—and reap the benefits. With people’s livelihoods at stake, a talented data scientist is a must for any company operating in this field.",
+          "text": "The world of finance is changing every day. Managing money is more complex than ever, but those who can evolve with technological innovations are able to make the best financial decisions-and reap the benefits. With people’s livelihoods at stake, a talented data scientist is a must for any company operating in this field.",
           "links": [],
           "bold": []
         },
@@ -14498,7 +14498,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In today’s connected age, our data is being gathered unlike ever before. This presents an incredible opportunity across all industries to transform numbers into actionable insights. Those with an MS in data science have found imperative roles in a wide range of fields, helping guide decision makers to redefine their business—and sometimes the industry as a whole.",
+          "text": "In today’s connected age, our data is being gathered unlike ever before. This presents an incredible opportunity across all industries to transform numbers into actionable insights. Those with an MS in data science have found imperative roles in a wide range of fields, helping guide decision makers to redefine their business-and sometimes the industry as a whole.",
           "links": [
             {
               "text": "MS in data science",
@@ -14559,8 +14559,8 @@
     {
       "id": "remote-computer-jobs-online-msds-grads",
       "title": "Remote Computer Jobs: Why Online MSDS Graduates Thrive",
-      "subtitle": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements — provided they have the right skills and qualifications.",
-      "excerpt": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements — provided they have the right skills and qualifications.",
+      "subtitle": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements - provided they have the right skills and qualifications.",
+      "excerpt": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements - provided they have the right skills and qualifications.",
       "featured_image_url": "/assets/blogs/uncategorized/remote-computer-jobs-why-online-msds-graduates-thrive/image.png",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -14577,13 +14577,13 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements — provided they have the right skills and qualifications.",
+          "text": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements - provided they have the right skills and qualifications.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Arguably the most desirable remote data science jobs — 100 percent flexible, 100 percent WFH roles — have always gone to highly educated, highly experienced applicants with competitive educational and professional backgrounds. Employers typically require that candidates for remote and flex positions have a master’s degree, at minimum, plus a proven track record of using data to deliver robust insights. They want to be sure that data scientists on distributed teams have the skillsets and expertise necessary to provide value from day one.",
+          "text": "Arguably the most desirable remote data science jobs - 100 percent flexible, 100 percent WFH roles - have always gone to highly educated, highly experienced applicants with competitive educational and professional backgrounds. Employers typically require that candidates for remote and flex positions have a master’s degree, at minimum, plus a proven track record of using data to deliver robust insights. They want to be sure that data scientists on distributed teams have the skillsets and expertise necessary to provide value from day one.",
           "links": [
             {
               "text": "competitive educational",
@@ -14596,7 +14596,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The outlook for remote work in data science is bright and largely unaffected by emerging post-Covid return-to-work plans, but capitalizing on expanding distributed work opportunities — and high salaries — in data science requires more than a passing knowledge of Python and MATLAB. The Stevens Online Master of Science in Data Science (MSDS) exists to give data science professionals the experience and mastery employers are looking for in their distributed talent. Think of it as a key that can unlock a world of remote data science work.",
+          "text": "The outlook for remote work in data science is bright and largely unaffected by emerging post-Covid return-to-work plans, but capitalizing on expanding distributed work opportunities - and high salaries - in data science requires more than a passing knowledge of Python and MATLAB. The Stevens Online Master of Science in Data Science (MSDS) exists to give data science professionals the experience and mastery employers are looking for in their distributed talent. Think of it as a key that can unlock a world of remote data science work.",
           "links": [
             {
               "text": "Stevens Online Master of Science in Data Science",
@@ -14787,7 +14787,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Employers want to know that their remote data scientists have the tech skills and domain knowledge to deliver value while off-site and the expertise they need to work independently. Setting the bar high is among the ways companies ensure they’re getting the best return on their investment when hiring remote workers and employment data suggests a master’s in data science increases your chances of landing a flexible working arrangement. According to the 2019 American Time Use Survey, “among workers age 25 and over, those with an advanced degree were more likely to work at home than were persons with lower levels of educational attainment — 42 percent of those with an advanced degree performed some work at home.”",
+          "text": "Employers want to know that their remote data scientists have the tech skills and domain knowledge to deliver value while off-site and the expertise they need to work independently. Setting the bar high is among the ways companies ensure they’re getting the best return on their investment when hiring remote workers and employment data suggests a master’s in data science increases your chances of landing a flexible working arrangement. According to the 2019 American Time Use Survey, “among workers age 25 and over, those with an advanced degree were more likely to work at home than were persons with lower levels of educational attainment - 42 percent of those with an advanced degree performed some work at home.”",
           "links": [
             {
               "text": "master’s in data science",
@@ -14810,7 +14810,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Six-figure salaries in data science are typical, but that doesn’t mean early career professionals with a bachelor’s degree make $100,000 while working from home. The average data science salary falls somewhere between $96,000 and $130,000 per year — a range that includes self-reported income from both recent MSDS graduates and experienced data scientists in managerial roles earning $200,000 or more. The highest-paying data science job is arguably chief data officer ($176,000), though some companies pay cloud data architects and data science managers just as much.",
+          "text": "Six-figure salaries in data science are typical, but that doesn’t mean early career professionals with a bachelor’s degree make $100,000 while working from home. The average data science salary falls somewhere between $96,000 and $130,000 per year - a range that includes self-reported income from both recent MSDS graduates and experienced data scientists in managerial roles earning $200,000 or more. The highest-paying data science job is arguably chief data officer ($176,000), though some companies pay cloud data architects and data science managers just as much.",
           "links": [
             {
               "text": "$96,000",
@@ -14833,7 +14833,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Various factors influence how much data scientists earn. Roles that involve leading projects or interfacing with clients pay more — jobs that are sometimes harder to do remotely. Engineering and infrastructure development roles sometimes pay less but are easier to do offsite. The big tech firms almost always pay their data science teams more than small companies, government agencies and organizations in other fields do. Fortunately, data science seems largely immune to the trend of paying remote workers less than their in-office counterparts.",
+          "text": "Various factors influence how much data scientists earn. Roles that involve leading projects or interfacing with clients pay more - jobs that are sometimes harder to do remotely. Engineering and infrastructure development roles sometimes pay less but are easier to do offsite. The big tech firms almost always pay their data science teams more than small companies, government agencies and organizations in other fields do. Fortunately, data science seems largely immune to the trend of paying remote workers less than their in-office counterparts.",
           "links": [],
           "bold": []
         },
@@ -14991,7 +14991,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Keep in mind, too, that “work-from-home” policies and “work-from-anywhere” policies can be very different. Some employers want workers to be accessible when necessary and hire local talent even when positions are technically remote. According to FlexJobs, 95 percent of remote job listings include some location requirement (e.g., same city, state or time zone). Many stipulate that employees must be available during local business hours or able to work on-site when needed. Work-from-anywhere or fully untethered positions are much rarer and much harder to get. Can you work remotely for a Seattle-based company if you live in Atlanta (or elsewhere)? Maybe — if you (and your future employer) are flexible.",
+          "text": "Keep in mind, too, that “work-from-home” policies and “work-from-anywhere” policies can be very different. Some employers want workers to be accessible when necessary and hire local talent even when positions are technically remote. According to FlexJobs, 95 percent of remote job listings include some location requirement (e.g., same city, state or time zone). Many stipulate that employees must be available during local business hours or able to work on-site when needed. Work-from-anywhere or fully untethered positions are much rarer and much harder to get. Can you work remotely for a Seattle-based company if you live in Atlanta (or elsewhere)? Maybe - if you (and your future employer) are flexible.",
           "links": [
             {
               "text": "include some location requirement",
@@ -15014,7 +15014,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Data applications architects design the data collection, storage and analysis systems that drive data science. When data science teams have a dedicated applications architect, these data science professionals typically earn about $116,000. Some companies expect data scientists and data engineers — or even ETL developers and business analysts — to handle applications architecture in addition to responsibilities related to data collection and analysis.",
+          "text": "Data applications architects design the data collection, storage and analysis systems that drive data science. When data science teams have a dedicated applications architect, these data science professionals typically earn about $116,000. Some companies expect data scientists and data engineers - or even ETL developers and business analysts - to handle applications architecture in addition to responsibilities related to data collection and analysis.",
           "links": [
             {
               "text": "earn about $116,000",
@@ -15050,7 +15050,7 @@
         },
         {
           "type": "paragraph",
-          "text": "How business analysts and data scientists differ depends on whom you ask, and the responsibilities associated with the two roles can overlap significantly. In general, however, employers don’t expect business analysts or data analysts to have the same coding, mathematical modeling or machine learning skills common among data scientists — or advanced degrees. Senior data analysts earn about $82,000 and can advance into mid-level and senior data scientist roles after earning an MSDS.",
+          "text": "How business analysts and data scientists differ depends on whom you ask, and the responsibilities associated with the two roles can overlap significantly. In general, however, employers don’t expect business analysts or data analysts to have the same coding, mathematical modeling or machine learning skills common among data scientists - or advanced degrees. Senior data analysts earn about $82,000 and can advance into mid-level and senior data scientist roles after earning an MSDS.",
           "links": [
             {
               "text": "earn about $82,000",
@@ -15145,7 +15145,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Machine learning engineers earn a lot — close to $113,000, on average — to use data collected and cleaned by data scientists to develop learning algorithms that teach Artificial Intelligence systems to identify functional patterns. Professionals in this role need strong programming and statistics skills and to be comfortable working with complex machine learning systems.",
+          "text": "Machine learning engineers earn a lot - close to $113,000, on average - to use data collected and cleaned by data scientists to develop learning algorithms that teach Artificial Intelligence systems to identify functional patterns. Professionals in this role need strong programming and statistics skills and to be comfortable working with complex machine learning systems.",
           "links": [
             {
               "text": "close to $113,000",
@@ -15431,7 +15431,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Threats to cybersecurity are constantly evolving due to technological advances and the growing sophistication of cyber threats. Consequently, computer scientists — particularly software developers and designers — require ongoing education, certification, and community engagement to remain current with the latest principles.",
+          "text": "Threats to cybersecurity are constantly evolving due to technological advances and the growing sophistication of cyber threats. Consequently, computer scientists - particularly software developers and designers - require ongoing education, certification, and community engagement to remain current with the latest principles.",
           "links": [],
           "bold": []
         },
@@ -15981,7 +15981,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The ASAP Application also offers a flexible entry point into the online MEM — a program built for engineers ready to step into leadership roles.",
+          "text": "The ASAP Application also offers a flexible entry point into the online MEM - a program built for engineers ready to step into leadership roles.",
           "links": [
             {
               "text": "the online MEM",
@@ -16362,7 +16362,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The MSCS curriculum — taught by faculty that includes National Science Foundation (NSF) CAREER winners and researchers who consult with companies Microsoft, IBM, Google, Bell Labs, and other top industry firms — aligns with the latest industry needs and trends. Students develop in-demand skills in software development, web programming, mobile systems and applications, human-computer interaction, and enterprise software design. Stevens online MSCS students also take courses that develop proficiency in leading industry tools, including Java, Python, and C++, cloud computing, and machine learning.",
+          "text": "The MSCS curriculum - taught by faculty that includes National Science Foundation (NSF) CAREER winners and researchers who consult with companies Microsoft, IBM, Google, Bell Labs, and other top industry firms - aligns with the latest industry needs and trends. Students develop in-demand skills in software development, web programming, mobile systems and applications, human-computer interaction, and enterprise software design. Stevens online MSCS students also take courses that develop proficiency in leading industry tools, including Java, Python, and C++, cloud computing, and machine learning.",
           "links": [
             {
               "text": "taught by faculty",
@@ -16510,7 +16510,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Machine learning — a subset of AI — allows systems to learn and improve autonomously. This technology is used across industries to process and analyze large amounts of data faster and to automate repetitive tasks.",
+          "text": "Machine learning - a subset of AI - allows systems to learn and improve autonomously. This technology is used across industries to process and analyze large amounts of data faster and to automate repetitive tasks.",
           "links": [
             {
               "text": "Machine learning",
@@ -16840,7 +16840,7 @@
         },
         {
           "type": "paragraph",
-          "text": "According to GMAC data, more than 90 percent of business recruiters planned to hire MBAs in 2021 — at a median salary of $115,000. That’s 77% higher than the average salary of bachelor’s degree holders, which can translate into $3 million in additional earnings over the course of one’s career.",
+          "text": "According to GMAC data, more than 90 percent of business recruiters planned to hire MBAs in 2021 - at a median salary of $115,000. That’s 77% higher than the average salary of bachelor’s degree holders, which can translate into $3 million in additional earnings over the course of one’s career.",
           "links": [
             {
               "text": "planned to hire MBAs in 2021",
@@ -16952,7 +16952,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Your funding application process starts with connecting with the appropriate people within your place of employment — the HR team — and ensuring that you are clear on the company’s eligibility and application requirements, as well as any obligations you must adhere to post-graduation. The employer tuition assistance application process typically involves completing relevant paperwork, adhering to deadlines set out by your chosen university and submitting all relevant documentation to your internal HR department.",
+          "text": "Your funding application process starts with connecting with the appropriate people within your place of employment - the HR team - and ensuring that you are clear on the company’s eligibility and application requirements, as well as any obligations you must adhere to post-graduation. The employer tuition assistance application process typically involves completing relevant paperwork, adhering to deadlines set out by your chosen university and submitting all relevant documentation to your internal HR department.",
           "links": [],
           "bold": []
         },
@@ -17329,7 +17329,7 @@
         
         {
           "type": "paragraph",
-          "text": "While some engineering managers may feel strong-armed into adopting sustainable practices, they soon discover that their initial forays into planet- and people-driven SCM produce unexpected results. Sustainable supply chain management can, for example, reduce overhead and increase profitability when environmental improvements reduce resource usage and waste along the supply chain, lowering the cost of manufacturing processes. Organizations that commit to working with diverse, environmentally conscious vendors who use natural resources wisely may also have a competitive advantage — especially if their target demographic is Millennials. Research shows this group is willing to pay more for products produced and sold by companies that share their values.",
+          "text": "While some engineering managers may feel strong-armed into adopting sustainable practices, they soon discover that their initial forays into planet- and people-driven SCM produce unexpected results. Sustainable supply chain management can, for example, reduce overhead and increase profitability when environmental improvements reduce resource usage and waste along the supply chain, lowering the cost of manufacturing processes. Organizations that commit to working with diverse, environmentally conscious vendors who use natural resources wisely may also have a competitive advantage - especially if their target demographic is Millennials. Research shows this group is willing to pay more for products produced and sold by companies that share their values.",
           "links": [],
           "bold": [
             "reduce overhead and increase profitability"
@@ -17441,7 +17441,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Every organization shares a portion of its supply chain with competitors, which means they can increase their influence through strategic sustainability partnerships. Partnering with competitors to develop best practices in supply chain management and pressure suppliers to abide by them can streamline SSCM implementation. Additionally, this willingness to collaborate — particularly when it comes to advancing sustainability goals and protecting the environment — can also enhance an organization’s reputation with the public and regulating bodies.",
+          "text": "Every organization shares a portion of its supply chain with competitors, which means they can increase their influence through strategic sustainability partnerships. Partnering with competitors to develop best practices in supply chain management and pressure suppliers to abide by them can streamline SSCM implementation. Additionally, this willingness to collaborate - particularly when it comes to advancing sustainability goals and protecting the environment - can also enhance an organization’s reputation with the public and regulating bodies.",
           "links": [],
           "bold": []
         },
@@ -17488,7 +17488,7 @@
         },
         {
           "type": "paragraph",
-          "text": "When vendors share an organization’s values, they may make a concerted effort to work with subcontractors who already meet specific sustainability requirements or agree to participate in sustainability programs. But lower-tier vendors may not have the resources or knowledge to conform to environmental and social responsibility requirements — or any incentives to either comply with a sustainable business code of conduct or meet less formal sustainability standards. Audit programs can help but sometimes the best approach involves totally redesigning upper-level supply chains with environmental management or corporate social responsibility in mind.",
+          "text": "When vendors share an organization’s values, they may make a concerted effort to work with subcontractors who already meet specific sustainability requirements or agree to participate in sustainability programs. But lower-tier vendors may not have the resources or knowledge to conform to environmental and social responsibility requirements - or any incentives to either comply with a sustainable business code of conduct or meet less formal sustainability standards. Audit programs can help but sometimes the best approach involves totally redesigning upper-level supply chains with environmental management or corporate social responsibility in mind.",
           "links": [],
           "bold": []
         },
@@ -17500,7 +17500,7 @@
         
         {
           "type": "paragraph",
-          "text": "Taught by Stevens’ world-class educators and groundbreaking researchers, the Master of Engineering in Engineering Management with a focus on supply chain management is an interdisciplinary, cross-industry degree because it has to be. Engineering leaders need both a deep understanding of the technology involved in engineering projects and the management processes through which organizations utilize technology. Fostering sustainability in supply chains requires an amalgamation of management, operations and engineering competencies — all of which students hone in a flexible, online program that takes, on average, one and a half years to complete.",
+          "text": "Taught by Stevens’ world-class educators and groundbreaking researchers, the Master of Engineering in Engineering Management with a focus on supply chain management is an interdisciplinary, cross-industry degree because it has to be. Engineering leaders need both a deep understanding of the technology involved in engineering projects and the management processes through which organizations utilize technology. Fostering sustainability in supply chains requires an amalgamation of management, operations and engineering competencies - all of which students hone in a flexible, online program that takes, on average, one and a half years to complete.",
           "links": [
             {
               "text": "world-class educators and groundbreaking researchers",
@@ -17937,7 +17937,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Plenty of evidence suggests there is still room for the field to grow — and room for new data scientists, statistical analysis experts and data engineering professionals. According to research conducted by Seagate and IDC, organizations only use 32% of the data they collect. Nearly 99% of firms surveyed by NewVantage Partners want to leverage the power of data but cannot find the talent they need. MicroStrategy’s 2020 Global State of Enterprise Analytics Report found that only 57% of enterprise organizations currently use data to drive strategy or change. And according to some research, the global data science market will grow at a compound annual rate of nearly 27% from now until 2027.",
+          "text": "Plenty of evidence suggests there is still room for the field to grow - and room for new data scientists, statistical analysis experts and data engineering professionals. According to research conducted by Seagate and IDC, organizations only use 32% of the data they collect. Nearly 99% of firms surveyed by NewVantage Partners want to leverage the power of data but cannot find the talent they need. MicroStrategy’s 2020 Global State of Enterprise Analytics Report found that only 57% of enterprise organizations currently use data to drive strategy or change. And according to some research, the global data science market will grow at a compound annual rate of nearly 27% from now until 2027.",
           "links": [
             {
               "text": "research conducted by Seagate and IDC",
@@ -17983,7 +17983,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Data science is not oversaturated. The myth that the field is saturated — or close to it — likely stems not from an abundance of advanced analytics talent but from the exponential growth in interest in the data science field.",
+          "text": "Data science is not oversaturated. The myth that the field is saturated - or close to it - likely stems not from an abundance of advanced analytics talent but from the exponential growth in interest in the data science field.",
           "links": [],
           "bold": []
         },
@@ -18142,7 +18142,7 @@
         },
         {
           "type": "paragraph",
-          "text": "That’s because algorithms can’t see the bigger picture. Sales and customer service teams utilize data mining — a process that is increasingly powered by AI — to observe and predict consumer behavior and spending. Data mining can optimize marketing campaigns, increase ROI and provide analyses that drive reports for the company’s future. But relying too heavily on data mining without human oversight is risky. Consider the case of Zillow Offers, an arm of the familiar online real estate marketplace. It used Big Data to estimate how much homes were worth and how much Zillow could make flipping them but failed to adjust its estimates when the COVID-19 pandemic drove the cost of materials through the roof. A human data scientist would know that any real estate data gathered in or around 2020 would be rife with abnormalities.",
+          "text": "That’s because algorithms can’t see the bigger picture. Sales and customer service teams utilize data mining - a process that is increasingly powered by AI - to observe and predict consumer behavior and spending. Data mining can optimize marketing campaigns, increase ROI and provide analyses that drive reports for the company’s future. But relying too heavily on data mining without human oversight is risky. Consider the case of Zillow Offers, an arm of the familiar online real estate marketplace. It used Big Data to estimate how much homes were worth and how much Zillow could make flipping them but failed to adjust its estimates when the COVID-19 pandemic drove the cost of materials through the roof. A human data scientist would know that any real estate data gathered in or around 2020 would be rife with abnormalities.",
           "links": [
             {
               "text": "the case of Zillow Offers",
@@ -18155,7 +18155,7 @@
         },
         {
           "type": "paragraph",
-          "text": "As data scientist Michael Li, founder of The Data Incubator, wrote on TechCrunch, “real-world data are notoriously dirty and many assumptions have to be made to bridge the gap between the data we have and the business or policy questions we are seeking to address. These assumptions [are] highly dependent on real-world knowledge and business context.” In BDO Digital’s recent survey of middle-market executives, 42% of executives anticipated job roles would be re-imagined due to automation — not eliminated.",
+          "text": "As data scientist Michael Li, founder of The Data Incubator, wrote on TechCrunch, “real-world data are notoriously dirty and many assumptions have to be made to bridge the gap between the data we have and the business or policy questions we are seeking to address. These assumptions [are] highly dependent on real-world knowledge and business context.” In BDO Digital’s recent survey of middle-market executives, 42% of executives anticipated job roles would be re-imagined due to automation - not eliminated.",
           "links": [
             {
               "text": "wrote on TechCrunch",
@@ -18178,7 +18178,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Headlines declaring that data science is dead or data science will die soon — or that data scientists will become obsolete — ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
+          "text": "Headlines declaring that data science is dead or data science will die soon - or that data scientists will become obsolete - ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
           "links": [
             {
               "text": "data science will die soon",
@@ -18205,7 +18205,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Cindi Howson, Chief Data Strategy Officer of ThoughtSpot, writes that “the mismatch of expectation and reality will cause data science to lose its luster.” This suggests the enthusiasm for data science and the demand for data scientists can continue to grow unabated, provided professionals in the field deliver insights that drive quantifiable enhancements. Pragmatism is clearly more useful than hype in data science, as are leading-edge data science skills, advanced mathematical skills and highly developed computational skills — everything covered in the coursework in degree programs such as Stevens’ 100% online M.S. in Data Science.",
+          "text": "Cindi Howson, Chief Data Strategy Officer of ThoughtSpot, writes that “the mismatch of expectation and reality will cause data science to lose its luster.” This suggests the enthusiasm for data science and the demand for data scientists can continue to grow unabated, provided professionals in the field deliver insights that drive quantifiable enhancements. Pragmatism is clearly more useful than hype in data science, as are leading-edge data science skills, advanced mathematical skills and highly developed computational skills - everything covered in the coursework in degree programs such as Stevens’ 100% online M.S. in Data Science.",
           "links": [
             {
               "text": "cause data science to lose its luster",
@@ -18350,7 +18350,7 @@
         },
         {
           "type": "paragraph",
-          "text": "So what is it? Artificial intelligence, a field that is experiencing significant advancements with data science trends, is the pursuit of making a computer mimic the human brain. Natural language processing falls into this category. You’re probably more familiar with AI models than you may realize—ChatGPT is an example that’s truly having its moment in the spotlight.",
+          "text": "So what is it? Artificial intelligence, a field that is experiencing significant advancements with data science trends, is the pursuit of making a computer mimic the human brain. Natural language processing falls into this category. You’re probably more familiar with AI models than you may realize-ChatGPT is an example that’s truly having its moment in the spotlight.",
           "links": [],
           "bold": []
         },
@@ -18367,7 +18367,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Machine learning has the latitude to make discoveries with the goal of exceeding what we can hardcode ourselves. It can be used for a range of purposes including image recognition, identifying financial trends and aiding in medical care. Even if it’s used for something that may seem mundane, it is still remarkable and powerful. Machine learning can clean and prepare data—making more time for analysis by eliminating repetitive tasks.",
+          "text": "Machine learning has the latitude to make discoveries with the goal of exceeding what we can hardcode ourselves. It can be used for a range of purposes including image recognition, identifying financial trends and aiding in medical care. Even if it’s used for something that may seem mundane, it is still remarkable and powerful. Machine learning can clean and prepare data-making more time for analysis by eliminating repetitive tasks.",
           "links": [],
           "bold": []
         },
@@ -18378,7 +18378,7 @@
         },
         {
           "type": "paragraph",
-          "text": "More and more services are offering storage and processing solutions through cloud-based applications and data centers. This data science trend allows companies to take advantage of data science without needing to invest in expensive, technology-based infrastructure. This makes data-driven success more accessible than ever—and increases the demand for those with analytics skills.",
+          "text": "More and more services are offering storage and processing solutions through cloud-based applications and data centers. This data science trend allows companies to take advantage of data science without needing to invest in expensive, technology-based infrastructure. This makes data-driven success more accessible than ever-and increases the demand for those with analytics skills.",
           "links": [],
           "bold": []
         },
@@ -18491,7 +18491,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In the field of data science, it’s all about what you know AND who you know. Upon graduation, we aim to prepare you with both. And it’s not just talk—our alumni have gone on to work at companies like Amazon, Bank of America and Disney Streaming Services.",
+          "text": "In the field of data science, it’s all about what you know AND who you know. Upon graduation, we aim to prepare you with both. And it’s not just talk-our alumni have gone on to work at companies like Amazon, Bank of America and Disney Streaming Services.",
           "links": [
             {
               "text": "Amazon, Bank of America and Disney Streaming Services",
@@ -18563,8 +18563,8 @@
     {
       "id": "the-true-benefits-for-online-mba-graduates",
       "title": "The True Benefits for Online MBA Graduates",
-      "subtitle": "A Master’s in Business Administration is an impressive achievement on anyone’s resume—and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
-      "excerpt": "A Master’s in Business Administration is an impressive achievement on anyone’s resume—and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
+      "subtitle": "A Master’s in Business Administration is an impressive achievement on anyone’s resume-and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
+      "excerpt": "A Master’s in Business Administration is an impressive achievement on anyone’s resume-and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
       "featured_image_url": "/assets/blogs/online-mba-success/the-true-benefits-for-online-mba-graduates/Noodle_Stevens_May2023-1663-min-1024x683.jpg",
       "category": "Online MBA Success",
       "author": "Stevens Online",
@@ -18581,7 +18581,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "A Master’s in Business Administration is an impressive achievement on anyone’s resume—and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
+          "text": "A Master’s in Business Administration is an impressive achievement on anyone’s resume-and the strength of that advanced degree, even though it is earned online, depends on the institution. But when done right, it’s an invaluable asset for online MBA graduates as they search for jobs.",
           "links": [],
           "bold": []
         },
@@ -18593,7 +18593,7 @@
        
         {
           "type": "paragraph",
-          "text": "Unlocking Skills that Transform Your GrowthOne of the other most powerful aspects of an MBA are the skills learned as part of the program. It’s often said “it’s a journey, not a destination.” When it comes to advanced degrees, that’s absolutely true. Our coursework teaches, develops and sharpens skills that elevate your  resume—and these problem solving benefits manifest on day one of class.",
+          "text": "Unlocking Skills that Transform Your GrowthOne of the other most powerful aspects of an MBA are the skills learned as part of the program. It’s often said “it’s a journey, not a destination.” When it comes to advanced degrees, that’s absolutely true. Our coursework teaches, develops and sharpens skills that elevate your  resume-and these problem solving benefits manifest on day one of class.",
           "links": [],
           "bold": [
             "Unlocking Skills that Transform Your Growth"
@@ -18840,7 +18840,7 @@
         },
         {
           "type": "paragraph",
-          "text": "We don’t know what we don’t know. That’s where an Operations Research Analyst comes in. By evaluating businesses, they can identify problems and develop project plans which offer solutions—even for problems companies didn’t even realize they had.",
+          "text": "We don’t know what we don’t know. That’s where an Operations Research Analyst comes in. By evaluating businesses, they can identify problems and develop project plans which offer solutions-even for problems companies didn’t even realize they had.",
           "links": [],
           "bold": []
         },
@@ -18870,7 +18870,7 @@
         },
         {
           "type": "paragraph",
-          "text": "When enrolling in an MBA program, it’s much more than receiving a diploma at the end. The coursework develops and nurtures skills every step of the way. Grads that are armed with a whole new set of tools have an advantage in the workplace—whether they’re looking to accelerate their career or pivot into a new one.Stevens takes pride in the fact we prepare our graduates for life beyond the classroom. We’ve structured the Online MBA degree program to benefit all careers by developing critical skills in our graduates. The fact that speaks to this louder than the awards we have won is that 100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.* And we’re just as proud of the successful leaders our students become once they’ve finished their higher education journey.",
+          "text": "When enrolling in an MBA program, it’s much more than receiving a diploma at the end. The coursework develops and nurtures skills every step of the way. Grads that are armed with a whole new set of tools have an advantage in the workplace-whether they’re looking to accelerate their career or pivot into a new one.Stevens takes pride in the fact we prepare our graduates for life beyond the classroom. We’ve structured the Online MBA degree program to benefit all careers by developing critical skills in our graduates. The fact that speaks to this louder than the awards we have won is that 100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.* And we’re just as proud of the successful leaders our students become once they’ve finished their higher education journey.",
           "links": [
             {
               "text": "Online MBA degree program",
@@ -18935,8 +18935,8 @@
     {
       "id": "top-best-data-science-programs",
       "title": "The People that Drive Value for the Best Data Science Master’s Programs?",
-      "subtitle": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees — suggesting a discipline with high respect for formal education — but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
-      "excerpt": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees — suggesting a discipline with high respect for formal education — but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+      "subtitle": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+      "excerpt": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
       "featured_image_url": "/assets/blogs/uncategorized/the-people-that-drive-value-for-the-best-data-science-masters-programs/image.png",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -18953,7 +18953,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees — suggesting a discipline with high respect for formal education — but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+          "text": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
           "links": [
             {
               "text": "Master of Science in Data Science",
@@ -19051,7 +19051,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens attracts professionals who already have significant computer science, analytics and data science experience, which means the university’s global alumni network is substantial. Students who connect and work together after graduation can accomplish great things — especially given the postgraduate support alumni receive. Graduates of the part-time, online data science program receive the same job counseling, networking assistance and support as full-time students studying on campus. Online Master of Science in Data Science graduates can join the same alumni groups, connect with potential employers, meet with career advisors, and participate in events and workshops that provide new chances to make valuable professional connections.",
+          "text": "Stevens attracts professionals who already have significant computer science, analytics and data science experience, which means the university’s global alumni network is substantial. Students who connect and work together after graduation can accomplish great things - especially given the postgraduate support alumni receive. Graduates of the part-time, online data science program receive the same job counseling, networking assistance and support as full-time students studying on campus. Online Master of Science in Data Science graduates can join the same alumni groups, connect with potential employers, meet with career advisors, and participate in events and workshops that provide new chances to make valuable professional connections.",
           "links": [
             {
               "text": "postgraduate support",
@@ -19785,7 +19785,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Today’s job market demands professionals with high levels of skill and expertise. You’ll develop both in an MBA program. Because technology pervades every aspect of modern business, a program with a tech focus — like the Stevens online MBA — can prepare you for leadership and executive roles throughout the business world.",
+          "text": "Today’s job market demands professionals with high levels of skill and expertise. You’ll develop both in an MBA program. Because technology pervades every aspect of modern business, a program with a tech focus - like the Stevens online MBA - can prepare you for leadership and executive roles throughout the business world.",
           "links": [],
           "bold": []
         },
@@ -19857,8 +19857,8 @@
     {
       "id": "top-online-master-engineering-curriculum",
       "title": "Engineering Curriculum: How Dr. Alparslan Emrah Bayrak’s Elevates Education",
-      "subtitle": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures — a concept he integrates into his classes.",
-      "excerpt": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures — a concept he integrates into his classes.",
+      "subtitle": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures - a concept he integrates into his classes.",
+      "excerpt": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures - a concept he integrates into his classes.",
       "featured_image_url": "/assets/blogs/engineering_essentials/engineering-curriculum-how-dr-alparslan-emrah-bayraks-elevates-education/image.png",
       "category": "Engineering Management",
       "author": "Stevens Online",
@@ -19875,7 +19875,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures — a concept he integrates into his classes.",
+          "text": "Dr. Bayrak sees the overall value of the intelligent systems that are increasingly a part of everyday life but believes the most sophisticated smart systems still require human input to reach their full potential. His research focuses on bridging human cognition and computational methods to develop collaborative architectures - a concept he integrates into his classes.",
           "links": [],
           "bold": []
         },
@@ -19921,7 +19921,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Think about an autonomous car. If you don’t trust the system, it will be very uncomfortable for you to sit in that car. We need to know what people feel and want to see in an autonomous vehicle. Do they want to see precisely the same settings as in manual cars? Do they want to see different settings? How can we design intelligent systems in ways that work with people? Computers can do certain things better than humans, but they are not perfect, and we are not perfect either. We have complementary skillsets. If we team up — humans and systems — we can be excellent team members.",
+          "text": "Think about an autonomous car. If you don’t trust the system, it will be very uncomfortable for you to sit in that car. We need to know what people feel and want to see in an autonomous vehicle. Do they want to see precisely the same settings as in manual cars? Do they want to see different settings? How can we design intelligent systems in ways that work with people? Computers can do certain things better than humans, but they are not perfect, and we are not perfect either. We have complementary skillsets. If we team up - humans and systems - we can be excellent team members.",
           "links": [],
           "bold": []
         },
@@ -20220,7 +20220,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Another intervention focused on “value-relevance” — asking students to indicate important values and write about how taking the course reflects and reinforces what is most important to them. Overall, these strategies had little to no effect. Students still typically stop taking MOOC courses after their first year.",
+          "text": "Another intervention focused on “value-relevance” - asking students to indicate important values and write about how taking the course reflects and reinforces what is most important to them. Overall, these strategies had little to no effect. Students still typically stop taking MOOC courses after their first year.",
           "links": [
             {
               "text": "typically stop taking MOOC courses",
@@ -20316,7 +20316,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Also unlike MOOC courses, in the Stevens Online M.S. in Computer Science program, you have the opportunity to forge close ties with your fellow students because you will engage with them frequently — in class and online study groups — and over a long duration. These connections with your peers can add significantly to your professional network and benefit your life and career for years to come.",
+          "text": "Also unlike MOOC courses, in the Stevens Online M.S. in Computer Science program, you have the opportunity to forge close ties with your fellow students because you will engage with them frequently - in class and online study groups - and over a long duration. These connections with your peers can add significantly to your professional network and benefit your life and career for years to come.",
           "links": [],
           "bold": []
         },
@@ -20447,7 +20447,7 @@
         
         {
           "type": "paragraph",
-          "text": "Later, I moved into software development. I developed software for mobile systems and provisioning systems. At that point, I started to miss teaching — I am an educator. Friends told me there was a great opportunity at Stevens, so I joined. At this point, I’ve taught most of the courses in the program.",
+          "text": "Later, I moved into software development. I developed software for mobile systems and provisioning systems. At that point, I started to miss teaching - I am an educator. Friends told me there was a great opportunity at Stevens, so I joined. At this point, I’ve taught most of the courses in the program.",
           "links": [],
           "bold": []
         },
@@ -20458,7 +20458,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Years ago, we used to post content online and students would go read it. We didn’t really interact with students that much unless they came to office hours. But it’s evolved, and now there’s quite a bit of facetime — an hour and a half each week in each course. Teleconferencing apps make that possible. To me, there’s no difference between sitting in a live classroom and sitting on Zoom. I get to know students, I answer their questions in class and in meetings. Students are involved in a very interactive way even though they are not physically sitting in front of us.",
+          "text": "Years ago, we used to post content online and students would go read it. We didn’t really interact with students that much unless they came to office hours. But it’s evolved, and now there’s quite a bit of facetime - an hour and a half each week in each course. Teleconferencing apps make that possible. To me, there’s no difference between sitting in a live classroom and sitting on Zoom. I get to know students, I answer their questions in class and in meetings. Students are involved in a very interactive way even though they are not physically sitting in front of us.",
           "links": [],
           "bold": []
         },
@@ -20487,7 +20487,7 @@
         },
         {
           "type": "paragraph",
-          "text": "One set of videos approaches the elevator algorithm from different angles. Students have to figure out: What are we trying to optimize? Are we trying to save energy? Get people to the floor they want to get to as fast as possible? Should it be first-come, first-served, or should we factor in the direction of the elevator? It’s a complex problem. You have to look at the pattern of movement of people, not just who is going where but how many people are waiting on each floor, and at what time. In the morning, there’s a lot of traffic from the lobby to offices. At noon, there’s a lot of traffic to and from the cafeteria. The algorithm has to become a learning machine, so now this lesson in algorithms also becomes a lesson in the importance of machine learning and artificial intelligence. It turns out this problem is NP-complete, so it’s not solvable in the way we might want to solve it. But we can solve it by learning from ants, looking at how they find food and bring it to their nest — which brings us back to learning from nature. The videos teach all this, tie it all together in an engaging and memorable way.",
+          "text": "One set of videos approaches the elevator algorithm from different angles. Students have to figure out: What are we trying to optimize? Are we trying to save energy? Get people to the floor they want to get to as fast as possible? Should it be first-come, first-served, or should we factor in the direction of the elevator? It’s a complex problem. You have to look at the pattern of movement of people, not just who is going where but how many people are waiting on each floor, and at what time. In the morning, there’s a lot of traffic from the lobby to offices. At noon, there’s a lot of traffic to and from the cafeteria. The algorithm has to become a learning machine, so now this lesson in algorithms also becomes a lesson in the importance of machine learning and artificial intelligence. It turns out this problem is NP-complete, so it’s not solvable in the way we might want to solve it. But we can solve it by learning from ants, looking at how they find food and bring it to their nest - which brings us back to learning from nature. The videos teach all this, tie it all together in an engaging and memorable way.",
           "links": [],
           "bold": []
         },
@@ -20499,7 +20499,7 @@
         },
         {
           "type": "paragraph",
-          "text": "We are in a new era. We used to try to solve problems for computers, but we’re past that. Modern computers are fast; we don’t need to worry about optimizing them further. People keep talking about big O notation, and yes, it’s important to make things more efficient, but the big goal of algorithms is to make our lives easier — problem-solving for human satisfaction. People sometimes worry that computers will take over, but they don’t need to be afraid of that. If we program them the way we want, they will do the things we want.",
+          "text": "We are in a new era. We used to try to solve problems for computers, but we’re past that. Modern computers are fast; we don’t need to worry about optimizing them further. People keep talking about big O notation, and yes, it’s important to make things more efficient, but the big goal of algorithms is to make our lives easier - problem-solving for human satisfaction. People sometimes worry that computers will take over, but they don’t need to be afraid of that. If we program them the way we want, they will do the things we want.",
           "links": [],
           "bold": []
         },
@@ -20539,7 +20539,7 @@
         },
         {
           "type": "paragraph",
-          "text": "What you learn in a certificate program can be pretty superficial. You study, you pass an exam — you don’t have to go deep. In earning a master’s-level computer science degree, you spend four or five courses learning fundamentals that have remained the same since the inception of the computer. Take computer architecture. You have to know it. Once you do, you don’t expect the machine to do the impossible. You know what it can do, what it can’t do, that it’s not a magic box. I teach students what a tortuous process the computer takes to add two numbers. When you learn that, you know what computers can do and cannot do in terms of network, parallelism, and creating a distributed system. You learn all of that so you can use them properly.",
+          "text": "What you learn in a certificate program can be pretty superficial. You study, you pass an exam - you don’t have to go deep. In earning a master’s-level computer science degree, you spend four or five courses learning fundamentals that have remained the same since the inception of the computer. Take computer architecture. You have to know it. Once you do, you don’t expect the machine to do the impossible. You know what it can do, what it can’t do, that it’s not a magic box. I teach students what a tortuous process the computer takes to add two numbers. When you learn that, you know what computers can do and cannot do in terms of network, parallelism, and creating a distributed system. You learn all of that so you can use them properly.",
           "links": [],
           "bold": []
         },
@@ -21138,7 +21138,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Traditional corporate roles are probably the go-to MBA careers people think of. Management positions, chief financial officers, consultants, sales managers, project management—these are all common pursuits. Healthcare is another popular field, with the degree developing skills needed to navigate financial, operational and strategic decisions.",
+          "text": "Traditional corporate roles are probably the go-to MBA careers people think of. Management positions, chief financial officers, consultants, sales managers, project management-these are all common pursuits. Healthcare is another popular field, with the degree developing skills needed to navigate financial, operational and strategic decisions.",
           "links": [],
           "bold": []
         },
@@ -21248,8 +21248,8 @@
     {
       "id": "your-data-science-resume",
       "title": "Your Data Science Resume and Why You Need a Master’s Degree",
-      "subtitle": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data — we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
-      "excerpt": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data — we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
+      "subtitle": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data - we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
+      "excerpt": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data - we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
       "featured_image_url": "/assets/blogs/uncategorized/your-data-science-resume-and-why-you-need-a-masters-degree/image.png",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -21266,13 +21266,13 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data — we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
+          "text": "The idea that people can glean a lot from data is nothing new. After all, we learn from experience and the missteps and successes of others. What is relatively new is our access to massive quantities of data - we now quantify, log, store and analyze those experiences, missteps and successes, as well as information related to just about everything people do. When is comes to building your data science resume, these new disciplines will often set you apart.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "“Digital transformation is not about the evolution of devices (though they will evolve); it is about the integration of intelligent data into everything that we do,” write the authors of an IDC whitepaper on digital transformation and increases in global data volume. Nearly everything we do, from shopping to relaxing to working, is now tracked, monitored and analyzed for insights into human behavior. Data scientists are responsible for how that information is gathered, measured, and used. More data means more data scientists — the Bureau of Labor Statistics projects that employment of data scientists will grow 36% through 2031, much faster than the average for all occupations.",
+          "text": "“Digital transformation is not about the evolution of devices (though they will evolve); it is about the integration of intelligent data into everything that we do,” write the authors of an IDC whitepaper on digital transformation and increases in global data volume. Nearly everything we do, from shopping to relaxing to working, is now tracked, monitored and analyzed for insights into human behavior. Data scientists are responsible for how that information is gathered, measured, and used. More data means more data scientists - the Bureau of Labor Statistics projects that employment of data scientists will grow 36% through 2031, much faster than the average for all occupations.",
           "links": [],
           "bold": []
         },
@@ -21295,7 +21295,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Data scientist Ram Thilak offers another way to consider data science’s multidisciplinary nature: its history. Beginning in the 1950s, mathematicians, engineers, computer hobbyists and academics were researching the applications of computing technologies. At the same time, Thilak writes, industries were beginning to adopt management strategies that would make workflows more efficient — strategies that included data collection. These two areas of activity evolved separately through the decades as computer use spread and organizations leaned more heavily on statistics in decision making. With the creation of the internet, however, the disciplines merged. Business and “computer folks,” as Thilak calls them, came together with united interests, and modern data science was born.",
+          "text": "Data scientist Ram Thilak offers another way to consider data science’s multidisciplinary nature: its history. Beginning in the 1950s, mathematicians, engineers, computer hobbyists and academics were researching the applications of computing technologies. At the same time, Thilak writes, industries were beginning to adopt management strategies that would make workflows more efficient - strategies that included data collection. These two areas of activity evolved separately through the decades as computer use spread and organizations leaned more heavily on statistics in decision making. With the creation of the internet, however, the disciplines merged. Business and “computer folks,” as Thilak calls them, came together with united interests, and modern data science was born.",
           "links": [
             {
               "text": "its history",
@@ -21317,7 +21317,7 @@
         },
         {
           "type": "paragraph",
-          "text": "For a long time, few organizations had access to technology capable of capturing or analyzing large, evolving datasets. Analysts could only work with neatly categorizable data. Today’s data landscape is very different. The technology needed to work with Big Data is widely accessible and data science — as a technical skill and a management strategy — is institutionalized. Growth in the discipline has been rapid. In 2019, postings for data scientists on Indeed rose by 256% over the previous year.",
+          "text": "For a long time, few organizations had access to technology capable of capturing or analyzing large, evolving datasets. Analysts could only work with neatly categorizable data. Today’s data landscape is very different. The technology needed to work with Big Data is widely accessible and data science - as a technical skill and a management strategy - is institutionalized. Growth in the discipline has been rapid. In 2019, postings for data scientists on Indeed rose by 256% over the previous year.",
           "links": [
             {
               "text": "is institutionalized",
@@ -21343,7 +21343,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The use of metadata and leading-edge data science tools are among the technical skills taught in MSDS programs. At Stevens, aspiring data scientists work with IBM’s Blue Mix and Google’s TensorFlow to develop applications that use AI and machine learning — “deep learning” — in entirely new business application areas.",
+          "text": "The use of metadata and leading-edge data science tools are among the technical skills taught in MSDS programs. At Stevens, aspiring data scientists work with IBM’s Blue Mix and Google’s TensorFlow to develop applications that use AI and machine learning - “deep learning” - in entirely new business application areas.",
           "links": [],
           "bold": []
         },
@@ -21453,7 +21453,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The evolution of Big Data collection, computer processing and AI coupled with the business demand for data-driven insights has created an employment rife with opportunity for those qualified to take advantage of it. Now may be the best time for aspiring data professionals — whether already working in the discipline or interested in moving to a new industry — to build your data science resume and pursue career development in a graduate program.",
+          "text": "The evolution of Big Data collection, computer processing and AI coupled with the business demand for data-driven insights has created an employment rife with opportunity for those qualified to take advantage of it. Now may be the best time for aspiring data professionals - whether already working in the discipline or interested in moving to a new industry - to build your data science resume and pursue career development in a graduate program.",
           "links": [],
           "bold": []
         },

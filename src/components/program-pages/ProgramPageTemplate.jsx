@@ -800,7 +800,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <blockquote className="text-stevens-2xl leading-snug italic text-stevens-gray-900 mb-stevens-md">
                   "{studentSpotlight.quote}"
                 </blockquote>
-              <cite className="not-italic font-stevens-semibold text-stevens-gray-600">— {studentSpotlight.name}</cite>
+              <cite className="not-italic font-stevens-semibold text-stevens-gray-600">- {studentSpotlight.name}</cite>
             </div>
           </Section>
         )}

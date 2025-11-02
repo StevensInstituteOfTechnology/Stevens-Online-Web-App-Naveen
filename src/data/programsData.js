@@ -125,7 +125,7 @@ export const PROGRAMS_DATA = [
     shortName: 'Enterprise AI Certificate',
     degree: 'Professional Certificate',
     tagline: 'Build AI That Works at Work',
-    description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely—no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
+    description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
     image: '/assets/images/stevens-manhattan-skyline-ds.webp',
     highlights: [
       '$5,250 Total Cost',

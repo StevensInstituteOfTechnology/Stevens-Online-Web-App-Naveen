@@ -582,7 +582,7 @@ export default function Home() {
               economy through flexible, accessible, and industry-relevant online
               programs."
             </blockquote>
-            <cite className="not-italic font-stevens-semibold text-stevens-white">— Arshad Saiyed</cite>
+            <cite className="not-italic font-stevens-semibold text-stevens-white">- Arshad Saiyed</cite>
             <br />
             <cite className="not-italic font-stevens-semibold text-stevens-white">
               Chief Online Learning Officer and Dean of the College of Professional Education

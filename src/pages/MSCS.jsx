@@ -15,7 +15,7 @@ const programData = {
   },
   hero: {
     titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
-    subtitle: "AI/ML, data, systems—top-tier, flexible, industry-aligned.",
+    subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
     bgImage: "/assets/images/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
@@ -78,7 +78,7 @@ const programData = {
         <li>Computer research scientists (26% growth in employment by 2033)¹</li>
       </ul>
       <p class="mb-4">The exceptional skill set MSCS graduates possess helps them secure premier tech jobs as computer scientists at companies such as Google and Meta, which can pay around $300,000.²</p>
-      <p class="mb-4">Many remote work opportunities are available in computer science, but emerging tech hubs and traditional business hubs are also significant employers in the field. For instance, more than 119,000 software developers are employed in the New York City metropolitan area, where Stevens is located. Top tech hubs like San Francisco, San Jose and Seattle are home to leading employers — and offer average developer salaries as high as $211,450.³</p>
+      <p class="mb-4">Many remote work opportunities are available in computer science, but emerging tech hubs and traditional business hubs are also significant employers in the field. For instance, more than 119,000 software developers are employed in the New York City metropolitan area, where Stevens is located. Top tech hubs like San Francisco, San Jose and Seattle are home to leading employers - and offer average developer salaries as high as $211,450.³</p>
       <p>Our diverse curriculum and specialized offerings equip students with the sought-after skills needed to thrive in their chosen fields. This degree prepares graduates with skills in computer science, Python, Amazon Web Services, automation and software engineering and opens doors to other organizations outside of tech, such as Bank of America and JPMorgan Chase, both of which have employed Stevens MSCS alumni.</p>
     `,
     jobTitles: [
@@ -445,7 +445,7 @@ The objective of this course is to give students a basic grounding in designing 
                 <div class="course-item">
                   <button class="course-toggle" data-target="bia500">BIA 500 Business Analytics: Data, Models & Decisions (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="bia500">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Many managerial decisions — regardless of their functional orientation — are increasingly based on analysis using quantitative models from the discipline of management science. Management science tools, techniques and concepts (e.g., data, models and software programs) have dramatically changed the way businesses operate in manufacturing, service operations, marketing, transportation and finance. Business Analytics explores data-driven methods that are used to analyze and solve complex business problems. Students will acquire analytical skills in building, applying and evaluating various models with hands-on computer applications. Topics include descriptive statistics, time-series analysis, regression models, decision analysis, Monte Carlo simulation, and optimization models.</p>
+                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Many managerial decisions - regardless of their functional orientation - are increasingly based on analysis using quantitative models from the discipline of management science. Management science tools, techniques and concepts (e.g., data, models and software programs) have dramatically changed the way businesses operate in manufacturing, service operations, marketing, transportation and finance. Business Analytics explores data-driven methods that are used to analyze and solve complex business problems. Students will acquire analytical skills in building, applying and evaluating various models with hands-on computer applications. Topics include descriptive statistics, time-series analysis, regression models, decision analysis, Monte Carlo simulation, and optimization models.</p>
                   </div>
                 </div>
                 

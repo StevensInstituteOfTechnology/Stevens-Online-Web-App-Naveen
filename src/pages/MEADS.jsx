@@ -147,7 +147,7 @@ const programData = {
   // ==================================================================
   topCompanies: {
     title: "Industries Hiring Stevens Graduates",
-    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032—more than seven times faster than the average for all occupations.",
+    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032-more than seven times faster than the average for all occupations.",
     companies: [
       "Technology",
       "Finance",
@@ -167,7 +167,7 @@ const programData = {
         title: "Mathematics & Foundations",
         description: "<p>Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>",
         skills: [
-          "Apply concepts from multivariable calculus and linear algebra—such as vector spaces, eigenvalues, and matrix decompositions—to model and analyze data",
+          "Apply concepts from multivariable calculus and linear algebra-such as vector spaces, eigenvalues, and matrix decompositions-to model and analyze data",
           "Use optimization and numerical methods to solve applied data science problems",
           "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data"
         ]
@@ -183,7 +183,7 @@ const programData = {
       },
       {
         title: "Machine Learning & AI",
-        description:"Students explore the principles and applications of machine learning and artificial intelligence—from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
+        description:"Students explore the principles and applications of machine learning and artificial intelligence-from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
         skills: [
           "Apply core machine learning methods such as regression, classification, clustering, and dimensionality reduction using Python libraries",
           "Design and train neural networks and deep learning architectures including CNNs, RNNs, and attention-based models",
@@ -205,7 +205,7 @@ const programData = {
         description: "Students apply analytical techniques to real-world business challenges in marketing, operations, and digital contexts. The coursework emphasizes data-driven strategy, governance, and decision-making.",
         skills: [
           "Conduct marketing and operational analytics to model customer behavior, optimize campaigns, and measure business performance",
-          "Apply web and text mining techniques—including scraping, clustering, and recommender systems—to extract insights from large-scale data sources",
+          "Apply web and text mining techniques-including scraping, clustering, and recommender systems-to extract insights from large-scale data sources",
           "Implement data governance, security, and risk management practices to ensure trustworthy analytics across enterprise environments",
         ]
       }
@@ -238,7 +238,7 @@ const programData = {
         content: `
           <div class="space-y-stevens-lg">
             <div>
-              <h4 class="course-section-header">TERM 1 — Foundations of Data Science</h4>
+              <h4 class="course-section-header">TERM 1 - Foundations of Data Science</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse501">MA 574: Foundational Mathematics for Data Science<span class="course-arrow">▼</span></button>
@@ -264,7 +264,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 2 — Applied Analytics</h4>
+              <h4 class="course-section-header">Term 2 - Applied Analytics</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse520">CS 559: Machine Learning<span class="course-arrow">▼</span></button>
@@ -290,7 +290,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 3 — Advanced AI and Big Data</h4>
+              <h4 class="course-section-header">Term 3 - Advanced AI and Big Data</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse540">CS 583: Deep Learning<span class="course-arrow">▼</span></button>
@@ -316,7 +316,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 4 — Visualization and Strategy</h4>
+              <h4 class="course-section-header">Term 4 - Visualization and Strategy</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse560">FA 550: Data Visualization Applications<span class="course-arrow">▼</span></button>
@@ -328,7 +328,7 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse570">BIA 568: Management of AI Technologies<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="dse570">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries—such as autonomous transportation, fraud detection, and machine translation—while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.</p>
+                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries-such as autonomous transportation, fraud detection, and machine translation-while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.</p>
                   </div>
                 </div>
 
@@ -342,7 +342,7 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse574">Capstone Project<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="dse574">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Apply data science to a real-world challenge. In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes—ranging from optimizing supply chains to developing predictive health systems.</p>
+                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Apply data science to a real-world challenge. In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.</p>
                   </div>
                 </div>
               </div>
@@ -359,7 +359,7 @@ const programData = {
             <div>
               <h4 class="course-section-header">Apply Data Science to a Real-World Challenge</h4>
               <div class="space-y-stevens-md">
-                <p>In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes—ranging from optimizing supply chains to developing predictive health systems.</p>
+                <p>In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.</p>
                 
                 <h5><strong>Sample Project Topics:</strong></h5>
                 <ul class='list-disc pl-5'>

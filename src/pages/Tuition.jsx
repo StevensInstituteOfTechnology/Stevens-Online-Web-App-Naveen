@@ -184,7 +184,7 @@ export default function Tuition() {
                <h3 className="font-display text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <FinancialAidOption title="Dean’s Merit Scholar Program">
-                  <p>Students in the Online MSCS and MEM programs may be eligible for up to $10,000 in scholarship support, while those in the Online MBA program may qualify for up to $25,000 — both based on academic merit. Contact your enrollment advisor to learn more about eligibility.</p>
+                  <p>Students in the Online MSCS and MEM programs may be eligible for up to $10,000 in scholarship support, while those in the Online MBA program may qualify for up to $25,000 - both based on academic merit. Contact your enrollment advisor to learn more about eligibility.</p>
                 </FinancialAidOption>
                 <FinancialAidOption title="Direct Unsubsidized Loans">
                   <p>Direct Unsubsidized Loans do not require you to demonstrate financial need to be eligible for the loan. The Direct Unsubsidized Loan for graduate students has a fixed interest rate. The interest on the loan begins to accrue as soon as Stevens receives the first funds. Visit the Federal Aid for Graduate Students page for more information.</p>

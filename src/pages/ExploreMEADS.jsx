@@ -139,7 +139,7 @@ const ExploreMEADS = () => {
     newFall2025Benefits: [
       {
         icon: Globe,
-        text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+        text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
       },
       {
         icon: Target,
@@ -155,7 +155,7 @@ const ExploreMEADS = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
     newFall2025Image: "/assets/images/1-explore-mem.webp",

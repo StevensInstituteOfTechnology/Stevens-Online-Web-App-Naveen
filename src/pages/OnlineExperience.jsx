@@ -73,7 +73,7 @@ export default function OnlineExperience() {
               Experienced Faculty
             </h2>
             <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Our faculty members are not just educators—they are industry leaders, researchers, and innovators who bring real-world expertise to the classroom. They contribute to cutting-edge research, healthcare advancements, critical thinking, and innovation that shapes the future of technology and business.
+              Our faculty members are not just educators-they are industry leaders, researchers, and innovators who bring real-world expertise to the classroom. They contribute to cutting-edge research, healthcare advancements, critical thinking, and innovation that shapes the future of technology and business.
             </p>
           </div>
           
