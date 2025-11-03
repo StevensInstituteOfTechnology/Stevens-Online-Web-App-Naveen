@@ -115,6 +115,11 @@ export default function Layout({ children, currentPageName }) {
     </>
   );
   
+  // Mobile banner message - simplified version
+  const MobileBannerMessage = () => (
+    <strong className="text-stevens-primary">Apply in Minutes →</strong>
+  );
+  
   React.useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
@@ -1151,10 +1156,17 @@ export default function Layout({ children, currentPageName }) {
             to={createPageUrl("accelerated-application/")}
             className="block transition-colors duration-stevens-normal"
           >
-            <div className="flex items-center  xl:max-w-screen-2xl mx-auto">
+            <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
               <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
               <div className="flex-1 overflow-hidden">
-                <div className="inline-flex animate-marquee gap-16 ">
+                {/* Mobile version - only show "Apply in Minutes →" */}
+                <div className="md:hidden flex items-center justify-center">
+                  <span className="asap-banner-text text-stevens-base whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <MobileBannerMessage />
+                  </span>
+                </div>
+                {/* Desktop version - full marquee */}
+                <div className="hidden md:inline-flex animate-marquee gap-16">
                   <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
