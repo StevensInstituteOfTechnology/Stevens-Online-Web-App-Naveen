@@ -11,30 +11,32 @@ const questions = [
   id: 1,
   question: "What is your primary career goal right now?",
   answers: [
-  { text: "Lead technical teams & projects", points: { mem: 3, mba: 1, mscs: 1, certs: 0 } },
-  { text: "Build innovative software & systems", points: { mscs: 3, mem: 1, mba: 0, certs: 1 } },
-  { text: "Master the business side of technology", points: { mba: 3, mem: 1, mscs: 0, certs: 0 } },
-  { text: "Gain a specific new skill", points: { certs: 3, mscs: 1, mba: 0, mem: 0 } }]
+  { text: "Lead technical teams & projects", points: { mem: 3, mba: 1, mscs: 1, meads: 1, 'cert-eai': 0, 'cert-ads': 0 } },
+  { text: "Build innovative software & systems", points: { mscs: 3, mem: 1, mba: 0, meads: 2, 'cert-eai': 0, 'cert-ads': 1 } },
+  { text: "Master the business side of technology", points: { mba: 3, mem: 1, mscs: 0, meads: 0, 'cert-eai': 2, 'cert-ads': 0 } },
+  { text: "Master data science & AI", points: { meads: 3, mscs: 2, mba: 0, mem: 0, 'cert-eai': 1, 'cert-ads': 2 } },
+  { text: "Gain a specific AI or data skill quickly", points: { 'cert-eai': 3, 'cert-ads': 3, meads: 1, mscs: 1, mba: 0, mem: 0 } }]
 
 },
 {
   id: 2,
   question: "What is your current professional or educational background in?",
   answers: [
-  { text: "Engineering/Technical", points: { mem: 2, mscs: 2, mba: 1, certs: 1 } },
-  { text: "Computer Science/Software", points: { mscs: 3, mem: 1, mba: 1, certs: 2 } },
-  { text: "Business/Management", points: { mba: 3, mem: 2, mscs: 0, certs: 1 } },
-  { text: "Something else", points: { certs: 2, mba: 1, mem: 1, mscs: 1 } }]
+  { text: "Engineering/Technical", points: { mem: 2, mscs: 2, mba: 1, meads: 2, 'cert-eai': 1, 'cert-ads': 1 } },
+  { text: "Computer Science/Software", points: { mscs: 3, mem: 1, mba: 1, meads: 2, 'cert-eai': 1, 'cert-ads': 2 } },
+  { text: "Business/Management", points: { mba: 3, mem: 2, mscs: 0, meads: 0, 'cert-eai': 2, 'cert-ads': 0 } },
+  { text: "Data/Analytics", points: { meads: 3, mscs: 2, mba: 1, mem: 1, 'cert-eai': 2, 'cert-ads': 3 } },
+  { text: "Something else", points: { 'cert-eai': 2, 'cert-ads': 2, mba: 1, mem: 1, mscs: 1, meads: 1 } }]
 
 },
 {
   id: 3,
   question: "How many years of professional experience do you have?",
   answers: [
-  { text: "0-2 Years", points: { mscs: 2, certs: 2, mba: 0, mem: 1 } },
-  { text: "3-5 Years", points: { mscs: 2, mem: 2, mba: 1, certs: 1 } },
-  { text: "6-10 Years", points: { mba: 2, mem: 3, mscs: 1, certs: 1 } },
-  { text: "10+ Years", points: { mba: 3, mem: 2, mscs: 1, certs: 1 } }]
+  { text: "0-2 Years", points: { mscs: 2, 'cert-ads': 2, mba: 0, mem: 1, meads: 2, 'cert-eai': 1 } },
+  { text: "3-5 Years", points: { mscs: 2, mem: 2, mba: 1, meads: 2, 'cert-eai': 2, 'cert-ads': 1 } },
+  { text: "6-10 Years", points: { mba: 2, mem: 3, mscs: 1, meads: 1, 'cert-eai': 2, 'cert-ads': 1 } },
+  { text: "10+ Years", points: { mba: 3, mem: 2, mscs: 1, meads: 1, 'cert-eai': 2, 'cert-ads': 1 } }]
 
 }];
 
@@ -43,7 +45,9 @@ const programPageMap = {
   mba: 'MBA',
   mscs: 'MSCS',
   mem: 'MEM',
-  certs: 'Certificates'
+  meads: 'online-masters-engineering-applied-data-science/',
+  'cert-eai': 'certificates/enterprise-ai/',
+  'cert-ads': 'certificates/applied-data-science-foundations/'
 };
 
 function ProgramReadinessAssessment({ onComplete }) {
@@ -65,7 +69,7 @@ function ProgramReadinessAssessment({ onComplete }) {
   };
 
   const calculateResults = (finalAnswers) => {
-    const scores = { mba: 0, mscs: 0, mem: 0, certs: 0 };
+    const scores = { mba: 0, mscs: 0, mem: 0, meads: 0, 'cert-eai': 0, 'cert-ads': 0 };
 
     questions.forEach((question) => {
       const answerIndex = finalAnswers[question.id];
@@ -127,10 +131,22 @@ function ProgramReadinessAssessment({ onComplete }) {
                 <p className="text-stevens-gray-600">Great for technical professionals ready to lead teams and projects.</p>
               </div>
             }
-            {showResults.topProgram === 'certs' &&
+            {showResults.topProgram === 'meads' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Certificates & Short Courses</h3>
-                <p className="text-stevens-gray-600">Perfect for gaining specific skills quickly with flexible learning.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.Eng. in Applied Data Science</h3>
+                <p className="text-stevens-gray-600">Perfect for mastering data science, AI engineering, and machine learning.</p>
+              </div>
+            }
+            {showResults.topProgram === 'cert-eai' &&
+            <div className="animate-in slide-in-from-bottom duration-300">
+                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Professional Certificate in Enterprise AI</h3>
+                <p className="text-stevens-gray-600">Ideal for business professionals who need to implement AI workflows quickly.</p>
+              </div>
+            }
+            {showResults.topProgram === 'cert-ads' &&
+            <div className="animate-in slide-in-from-bottom duration-300">
+                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Applied Data Science Foundations Certificate</h3>
+                <p className="text-stevens-gray-600">Perfect for launching your data science career with Python, SQL, and ML skills.</p>
               </div>
             }
           </div>

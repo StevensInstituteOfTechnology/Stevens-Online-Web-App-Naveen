@@ -21,6 +21,7 @@ const ExploreProgramPageTemplate = ({
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
+  heroBottomContent, // New prop for pricing cards in hero
   
   // Statistics Props
   statistics,
@@ -114,6 +115,7 @@ const ExploreProgramPageTemplate = ({
         primaryCta={{ label: 'Request Information', to: 'RequestInfo' }}
         secondaryCta={secondaryCta || { label: 'Apply In Minutes', href: traditionalAppLink }}
         useApplicationModal={useApplicationModal}
+        bottomContent={heroBottomContent}
         rightContent={
           <div className="animate-in slide-in-from-right duration-700 delay-300 w-full flex justify-center lg:justify-end">
             <LeadCaptureForm 

@@ -213,31 +213,34 @@ const programData = {
   tuition: {
     cards: [
       { value: "$5,250", label: "Total Certificate Cost" }, 
-      { value: "$583", label: "Per Credit" }, 
-      { value: "$60", label: "Application Fee" }
+      { value: "$583", label: "Per Credit" }
     ],
     description: `
       <div class="space-y-4">
         <p class="font-bold text-lg text-stevens-gray-900">Smart Investment in Your Future</p>
-        <p>At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
+        <p>At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-semibold text-stevens-gray-900 mb-2">💼 Corporate Tuition Assistance</p>
           <p class="text-stevens-sm">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
         </div>
         
-        <p class="text-stevens-sm">Stevens works with hundreds of corporate partners to facilitate tuition benefits. Our enrollment team can help you navigate your company's reimbursement process and ensure you maximize available funding.</p>
+        <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💰 Financial Aid & Funding Options</p>
+          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
+          <p class="text-stevens-sm">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
+        </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
           <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
           <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
-            Schedule a Call to Discuss Funding
+            Schedule a Call for Funding Details
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually. Financial aid may be available for those who qualify.</p>
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },

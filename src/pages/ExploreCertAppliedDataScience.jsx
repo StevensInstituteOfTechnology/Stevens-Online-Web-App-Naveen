@@ -2,6 +2,7 @@ import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, TrendingUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 
 const ExploreCertAppliedDataScience = () => {
   const certData = {
@@ -164,7 +165,13 @@ const ExploreCertAppliedDataScience = () => {
     contactButtonText: "Request Information"
   };
 
-  return <ExploreProgramPageTemplate {...certData} />;
+  return <ExploreProgramPageTemplate 
+    {...certData}
+    heroBottomContent={<CertificateTuitionCardsHero cards={[
+      { value: "$5,250", label: "Total Certificate Cost" },
+      { value: "$583", label: "Per Credit" }
+    ]} />}
+  />;
 };
 
 export default ExploreCertAppliedDataScience;

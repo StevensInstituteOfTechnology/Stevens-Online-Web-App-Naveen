@@ -224,8 +224,7 @@ const programData = {
   tuition: {
     cards: [
       { value: "$5,250", label: "Total Certificate Cost" }, 
-      { value: "$583", label: "Per Credit" }, 
-      { value: "$60", label: "Application Fee" }
+      { value: "$583", label: "Per Credit" }
     ],
     description: `
       <div class="space-y-4">
@@ -237,18 +236,22 @@ const programData = {
           <p class="text-stevens-sm">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit-potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
         </div>
         
-        <p class="text-stevens-sm">Stevens has extensive experience working with corporate tuition assistance programs. Our enrollment advisors can guide you through your company's reimbursement process and help you maximize available funding opportunities.</p>
+        <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💰 Financial Aid & Funding Options</p>
+          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
+          <p class="text-stevens-sm">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
+        </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
           <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
           <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
-            Schedule a Call About Funding Options
+            Schedule a Call for Funding Details
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition basStevens has extensive experience working with corporate tuition assistance programs. Our enrollment advisors can guide you through your company's reimbursement ed on 2025 rates. Tuition and fees are subject to change annually. Financial aid may be available for those who qualify.</p>
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },

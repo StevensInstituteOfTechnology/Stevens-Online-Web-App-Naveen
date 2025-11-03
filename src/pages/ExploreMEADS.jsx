@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { KEY_DATES } from '@/config/constants';
 
 const ExploreMEADS = () => {
@@ -91,6 +92,10 @@ const ExploreMEADS = () => {
         label: "GMAT/GRE"
       },
       {
+        value: "$24,000",
+        label: "Total Cost"
+      },
+      {
         value: "30",
         label: "Credits"
       },
@@ -178,7 +183,13 @@ const ExploreMEADS = () => {
     contactButtonText: "Contact Us"
   };
 
-  return <ExploreProgramPageTemplate {...meadsData} />;
+  return <ExploreProgramPageTemplate 
+    {...meadsData} 
+    heroBottomContent={<CertificateTuitionCardsHero cards={[
+      { value: "$800", label: "Per Credit" },
+      { value: "$24,000", label: "Total Program Cost" }
+    ]} />}
+  />;
 };
 
 export default ExploreMEADS;

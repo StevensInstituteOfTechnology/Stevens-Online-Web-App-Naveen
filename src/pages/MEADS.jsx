@@ -1,4 +1,5 @@
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
@@ -426,13 +427,36 @@ const programData = {
     },
     // ==================================================================
     tuition: {
-      cards: [],
-      description: `<h3 class="font-bold text-xl mb-4">New for 2025: Up to $16,708 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p>`,
-      grants: [
-          { title: "Aspire Grant (for standard applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
-          { title: "Pathway Grant (for ASAP applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
-          { title: "Dean’s Merit Scholar Program", description: "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more." }
-      ]
+      cards: [
+        { value: "$800", label: "Per Credit" },
+        { value: "$24,000", label: "Total Program Cost" }
+      ],
+      description: `
+        <h3 class="font-bold text-xl mb-4">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
+        <p class="mb-4">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution. Stevens' tuition is competitively priced compared to similar programs, many of which exceed $40,000-$50,000.</p>
+        
+        <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💡 Strong Return on Investment</p>
+          <p class="text-stevens-sm">Data science professionals earn a median salary of $130,000+, with machine learning engineers earning even more. Your Stevens degree typically pays for itself within the first 1-2 years of graduation through increased earning potential.</p>
+        </div>
+        
+        <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💼 Financial Aid & Funding Options</p>
+          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable. Many students receive funding support to reduce their out-of-pocket costs.</p>
+          <p class="text-stevens-sm">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+            Request Information
+          </a>
+          <a href="https://stevens.edu/schedule-call" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+            Schedule a Call for Funding Details
+          </a>
+        </div>
+        
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
+      `
     },
     // ==================================================================
     events: {
@@ -454,5 +478,11 @@ const programData = {
 };
 
 export default function MEADS() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  // Add pricing cards to hero section
+  const heroWithPricing = {
+    ...programData.hero,
+    bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+  };
+  
+  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />;
 }
