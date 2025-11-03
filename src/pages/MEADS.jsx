@@ -414,7 +414,7 @@ const programData = {
       rows: [
         { 
           event: "Spring 2026", 
-          date: "November 11 , 2025", 
+          date: "November 20 , 2025", 
           details: "Deposit Waiver* and Application Fee Waiver Available.",
           priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
           priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
