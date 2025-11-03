@@ -62,7 +62,7 @@ const ExploreCertAppliedDataScience = () => {
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
     programBenefitsDescription: "Organizations need professionals who can do more than analyze data-they need people who can build and deploy AI systems. This certificate provides the practical, project-driven foundation for careers in applied data science, machine learning engineering, and AI analytics.<br/><br/>With credit-bearing courses that stack toward the M.Eng. in Applied Data Science (MEADS), you can test your interest in data science while earning credentials that count toward a full master's degree.",
-    programBenefitsImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
+    programBenefitsImage: "/assets/images/explore-cert-ADS-3.jpg",
     programBenefitsHighlights: [
       {
         title: "AI-First, Job-Ready Skills",
@@ -130,7 +130,7 @@ const ExploreCertAppliedDataScience = () => {
     // FAQ
     faqs: [
       {
-        question: "DO I NEED PROGRAMMING EXPERIENCE?",
+        question: "Do I need programming experience?",
         answer: "No. The certificate is designed to take you from fundamentals to applied ML. We start with the basics in each course and scaffold your learning with templates, AI copilots, and extensive lab support. Basic comfort with quantitative reasoning is helpful, but we'll teach you everything you need to know about programming."
       },
       {

@@ -11,7 +11,7 @@ export default function CertificateTuitionCardsHero({ cards }) {
   }
 
   return (
-    <div className="w-full grid grid-cols-3 gap-1 sm:gap-stevens-sm text-center">
+    <div className="w-full grid grid-cols-2 gap-12  md:gap-12 text-center">
       {cards.map((card) => (
         <Card 
           key={card.label} 
