@@ -45,13 +45,22 @@ const RankingCard = ({ ranking, description, source, note }) => (
 // Faculty Card Component
 const FacultyCard = ({ member }) => {
   const { name, title, image } = member;
+  const hasImage = image && image.trim() !== '';
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+  
   return (
     <div className="text-center snap-center flex-shrink-0 w-[180px] stevens-md:w-[220px]">
-    <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg"/>
-    <h4 className="font-stevens-semibold text-stevens-lg text-stevens-gray-900">{name}</h4>
-    <p className="text-stevens-sm text-stevens-primary">{title}</p>
-  </div>
-);
+      {hasImage ? (
+        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg"/>
+      ) : (
+        <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-primary flex items-center justify-center shadow-stevens-lg">
+          <span className="text-stevens-white font-stevens-bold text-stevens-2xl">{initials}</span>
+        </div>
+      )}
+      <h4 className="font-stevens-semibold text-stevens-lg text-stevens-gray-900">{name}</h4>
+      <p className="text-stevens-sm text-stevens-primary">{title}</p>
+    </div>
+  );
 };
 
 // What You'll Learn - Skill Cards Variant (for MBA)

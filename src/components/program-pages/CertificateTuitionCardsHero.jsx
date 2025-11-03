@@ -24,13 +24,13 @@ export default function CertificateTuitionCardsHero({ cards }) {
           <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none rounded-stevens-md sm:rounded-stevens-lg" style={{ zIndex: 1 }}></div>
           {/* Top layer: Price */}
           <div className="flex items-center justify-center py-0.5 sm:py-1 relative" style={{ zIndex: 2 }}>
-            <p className="font-stevens-display text-xs sm:text-stevens-lg stevens-md:text-stevens-3xl font-stevens-bold text-white whitespace-nowrap" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.9)' }}>
+            <p className="font-stevens-display text-xs sm:text-stevens-lg stevens-md:text-stevens-3xl font-stevens-bold text-white whitespace-nowrap" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
               {card.value}
             </p>
           </div>
           {/* Bottom layer: Label */}
           <div className="flex items-center justify-center py-0.5 sm:py-1 relative" style={{ zIndex: 2 }}>
-            <p className="text-[10px] sm:text-stevens-xs stevens-md:text-stevens-sm text-white font-medium leading-tight" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+            <p className="text-[10px] sm:text-stevens-xs stevens-md:text-stevens-sm text-white font-medium leading-tight" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
               {card.label}
             </p>
           </div>

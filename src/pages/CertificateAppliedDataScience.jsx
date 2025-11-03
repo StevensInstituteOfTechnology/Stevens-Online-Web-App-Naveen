@@ -100,15 +100,10 @@ const programData = {
 
   },
   whyStevens: {
-    variant: 'splitWithVideo',
+   
     title: "Why Choose Stevens for Data Science?",
     description: `<p>Stevens Institute of Technology is ranked among the top institutions for data science and AI education. Located in the heart of the New York metropolitan area, Stevens combines world-class faculty expertise with strong industry connections.</p><p>This certificate emphasizes applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Our faculty are active researchers and practitioners who bring cutting-edge insights directly into the classroom.</p><p>Plus, the certificate is fully stackable toward our M.Eng. in Applied Data Science (MEADS), giving you flexibility to test the waters and continue toward a full master's degree if desired.</p>`,
-    video: {
-      src: "/assets/videos/Stevens Online MBA - 2.mp4",
-      poster: "/assets/videos/video-cover-2.avif",
-      title: "",
-      caption: "Hear from Stevens students about their data science journey"
-    }
+    
   },
   curriculum: {
     description: "The Applied Data Science Foundations Certificate consists of three courses (9 graduate credits total) designed to take you from mathematical foundations to deploying machine learning models. You'll learn industry-standard tools including Python, pandas, scikit-learn, SQL, and cloud data platforms. Every course includes hands-on labs with AI-enhanced learning tools.",
@@ -265,7 +260,7 @@ const programData = {
     members: [
       { name: "Upendra Prasad", title: "Senior Lecturer", image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif" },
       { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/certificate-ADS-avatar/skim2.jpg" },
-      { name: "Ping Wang", title: "Assistant Professor", image: "/assets/avatars/certificate-ADS-avatar/pwang44.avif" }
+      { name: "David Landaeta", title: "", image: "" }
     ]
   },
   faqs: [
