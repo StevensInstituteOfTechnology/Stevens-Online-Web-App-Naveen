@@ -118,16 +118,16 @@ const programData = {
               <div class="course-item">
                 <button class="course-toggle" data-target="ma574">MA 574 – Applied Math for Data Science (3 credits)<span class="course-arrow">▼</span></button>
                 <div class="course-content hidden" id="ma574">
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Mathematical foundations for machine learning and AI optimization</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Master linear algebra, matrix operations, calculus, and optimization through code-driven labs. Every concept is connected to how it powers machine learning.</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> Vectors/matrices, SVD, eigen decomposition, gradient descent, convex optimization, PCA, regression</p>
+                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> AI-aligned mathematical foundations for machine learning and AI optimization. Less theorem-heavy, more AI-application focused—every concept connected to how it powers machine learning.</p>
+                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Master linear algebra, matrix operations, calculus, and optimization through code-driven labs. Every concept is connected to how it powers machine learning, framed around ML loss functions and neural optimization.</p>
+                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> Vectors/matrices, SVD, eigen decomposition, gradient descent, convex optimization (framed around ML loss functions and neural optimization), PCA, regression</p>
                   <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Labs:</strong> Implement PCA, regression, and optimization in Python; explore how matrix calculus and gradients drive AI models</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Train and interpret a simple ML model with AI insight report</p>
+                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Train and interpret a simple ML model (PCA + regression) with an AI insight report</p>
                 </div>
               </div>
             
             <div class="course-item">
-              <button class="course-toggle" data-target="cs563">CS 563 – Python and Databases (3 credits)<span class="course-arrow">▼</span></button>
+              <button class="course-toggle" data-target="cs563">CS 563 – Python and Databases for AI Workflows (3 credits)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="cs563">
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Building the data backbone for AI through Python and SQL</p>
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Master Python for data science (pandas, NumPy, scikit-learn); design SQL databases for ML feature stores; build ETL/ELT pipelines that transform raw data into AI-ready datasets.</p>
@@ -140,16 +140,16 @@ const programData = {
                     <li>Responsible AI data prep (bias, fairness, transparency)</li>
                   </ol>
                 </p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Build an end-to-end AI-ready pipeline-from raw data to training dataset-then publish results to a Streamlit app</p>
+                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Build an end-to-end AI-ready pipeline—from raw data to training dataset—then publish results to a simple Streamlit app</p>
               </div>
             </div>
             
             <div class="course-item">
-              <button class="course-toggle" data-target="cs559">CS 559 – Machine Learning: Fundamentals & Applications (3 credits)<span class="course-arrow">▼</span></button>
+              <button class="course-toggle" data-target="cs559">CS 559 – Machine Learning: Fundamentals & Applied AI (3 credits)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="cs559">
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Translating ML theory into applied AI systems</p>
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Build and evaluate machine learning models using industry-standard frameworks. Learn regression, classification, ensembles, clustering, and neural network fundamentals. Master AI explainability (SHAP/LIME), ethics, and bias mitigation.</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> Supervised learning (regression/classification), unsupervised learning, ensemble methods, neural network primer, embeddings, feature engineering, explainability, ethics and bias</p>
+                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> Supervised learning (regression/classification), unsupervised learning, ensemble methods, neural network primer, embeddings, feature pipelines, AI explainability (SHAP/LIME), ethics, and bias mitigation</p>
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Practice:</strong> Applied labs with real datasets, explainability exercises, peer-reviewed AI deployment memos</p>
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Project:</strong> Build and evaluate an AI solution (e.g., sentiment analysis or fraud detection) with reproducible code and stakeholder narrative</p>
               </div>
@@ -157,9 +157,17 @@ const programData = {
           </div>
           
           <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-xl">
+            <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">Recommended Sequence</h5>
+            <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
+              <strong>MA 574 → CS 563 → CS 559</strong><br/>
+              This sequence builds your skills progressively: mathematical foundations → data pipelines → ML deployment. Each course prepares you for the next phase, ensuring you can confidently build and deploy AI-powered workflows.
+            </p>
+          </div>
+          
+          <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-md">
             <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">AI-Enhanced Learning</h5>
             <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-              All courses include AI-assisted labs with LLMs for debugging and reflection. You'll learn how to use AI copilots responsibly to enhance your productivity while building deep technical understanding.
+              All courses include AI-assisted labs with LLMs for debugging and reflection. You'll learn how to use AI copilots responsibly to enhance your productivity while building deep technical understanding. Optional advanced track includes introduction to vector databases and embeddings for applied AI.
             </p>
           </div>
           
@@ -272,7 +280,8 @@ const programData = {
   { q: "Will this help with tuition reimbursement?", a: "Yes. The $5,250 total cost aligns with the IRS tax-free employer benefit limit that many companies offer. Our enrollment team can help you navigate your company's specific reimbursement process." },
   { q: "Can these credits count toward a master's degree?", a: "Yes. All 9 credits are fully stackable toward Stevens' M.Eng. in Applied Data Science (MEADS), subject to Registrar approval. This gives you a clear pathway from certificate to master's degree." },
   { q: "What tools and technologies will I use?", a: "You'll work with industry-standard tools including Python (pandas, NumPy, scikit-learn), SQL (PostgreSQL), Jupyter notebooks, Git/GitHub, cloud platforms, and visualization tools like Streamlit and Matplotlib." },
-  { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer." }],
+  { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer." },
+  { q: "What can I do with this certificate?", a: "Graduates are prepared for roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, Business Intelligence Developer, and Applied Data Scientist. The three portfolio projects you build demonstrate your capabilities to employers and serve as talking points in job interviews." }],
 
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`
 };
