@@ -1017,7 +1017,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         {tuition && !(admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines') && (
           <Section id="tuition" title="Tuition & Financial Aid" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.tuition = el}>
             {tuition.cards && tuition.cards.length > 0 && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
                 {tuition.cards.map((card, i) => (
                   <Card key={i} className="shadow-md">
                     <CardHeader>

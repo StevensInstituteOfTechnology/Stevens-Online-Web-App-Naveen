@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 
 /**
  * Tuition Cards Component for Certificate Page Hero Section
- * Displays three tuition cards in a horizontal grid for the PageHero bottomContent
+ * Displays tuition cards in a 2-column grid for the PageHero bottomContent
  */
 export default function CertificateTuitionCardsHero({ cards }) {
   if (!cards || cards.length === 0) {
