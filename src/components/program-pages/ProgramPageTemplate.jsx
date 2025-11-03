@@ -869,13 +869,19 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     {tuition.cards && tuition.cards.length > 0 && (
                       <div className="grid grid-cols-1 stevens-sm:grid-cols-3 gap-stevens-md text-center">
                         {tuition.cards.map((card) => (
-                          <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md">
-                            <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary break-words">
-                              {card.value}
-                            </p>
-                            <p className="text-stevens-xs stevens-sm:text-stevens-sm text-stevens-gray-600 mt-stevens-xs">
-                              {card.label}
-                            </p>
+                          <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full">
+                            {/* Top layer: Price */}
+                            <div className="flex-1 flex items-center justify-center min-h-[60%]">
+                              <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary whitespace-nowrap">
+                                {card.value}
+                              </p>
+                            </div>
+                            {/* Bottom layer: Label */}
+                            <div className="flex-1 flex items-center justify-center min-h-[40%] pt-stevens-md">
+                              <p className="text-stevens-xs  mb-stevens-md stevens-sm:text-stevens-sm text-stevens-gray-600">
+                                {card.label}
+                              </p>
+                            </div>
                           </Card>
                         ))}
                       </div>

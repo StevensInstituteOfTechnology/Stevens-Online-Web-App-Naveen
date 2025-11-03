@@ -3,6 +3,7 @@ import {
   Globe, Award, Check, Briefcase, DollarSign, GraduationCap, TrendingUp,
   Target, BookOpen, Users, BrainCircuit } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { KEY_DATES } from '@/config/constants';
 
 const programData = {
@@ -212,7 +213,7 @@ const programData = {
   tuition: {
     cards: [
       { value: "$5,250", label: "Total Certificate Cost" }, 
-      { value: "~$583", label: "Per Credit" }, 
+      { value: "$583", label: "Per Credit" }, 
       { value: "$60", label: "Application Fee" }
     ],
     description: `
@@ -261,6 +262,12 @@ const programData = {
 };
 
 export default function CertificateEnterpriseAIPage() {
-  return <ProgramPageTemplate programData={programData} />;
+  // Add bottomContent to hero for certificate pages
+  const heroWithTuitionCards = {
+    ...programData.hero,
+    bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+  };
+  
+  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />;
 }
 

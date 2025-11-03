@@ -19,7 +19,8 @@ export default function PageHero({
   primaryCta, // { label, to? | href? }
   secondaryCta, // { label, to? | href? | useModal? }
   useApplicationModal = false, // New prop for MSCS/MEM pages
-  rightContent // Content to display on the right side
+  rightContent, // Content to display on the right side
+  bottomContent // Content to display at the bottom of left column
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const lines = Array.isArray(titleLines) && titleLines.length > 0
@@ -150,6 +151,13 @@ export default function PageHero({
                     </Badge>
                   );
                 })}
+              </div>
+            )}
+
+            {/* Bottom content - appears below left column content */}
+            {bottomContent && (
+              <div className="mt-stevens-xl">
+                {bottomContent}
               </div>
             )}
           </div>
