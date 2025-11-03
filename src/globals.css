@@ -133,6 +133,11 @@
     animation-play-state: paused;
   }
 
+  /* ASAP Banner text hover shadow effect */
+  .asap-banner-text:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
   /* Stevens Form Styles - Improved Sizing */
   .form-stevens-input {
     @apply w-full px-stevens-md py-stevens-md border border-stevens-gray-200 rounded-stevens-md focus:ring-2 focus:ring-stevens-primary/20 focus:border-stevens-primary transition-colors duration-stevens-fast bg-stevens-white placeholder:text-stevens-gray-400 min-h-[44px];

@@ -867,7 +867,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <>
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">Tuition</h2>
                     {tuition.cards && tuition.cards.length > 0 && (
-                      <div className="grid grid-cols-1 stevens-sm:grid-cols-3 gap-stevens-md text-center">
+                      <div className="grid grid-cols-3 gap-stevens-md text-center">
                         {tuition.cards.map((card) => (
                           <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full">
                             {/* Top layer: Price */}

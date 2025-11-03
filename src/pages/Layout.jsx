@@ -1149,22 +1149,22 @@ export default function Layout({ children, currentPageName }) {
         >
           <Link
             to={createPageUrl("accelerated-application/")}
-            className="block hover:bg-stevens-gray-300 transition-colors duration-stevens-normal"
+            className="block transition-colors duration-stevens-normal"
           >
-            <div className="flex items-center">
+            <div className="flex items-center  xl:max-w-screen-2xl mx-auto">
               <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
               <div className="flex-1 overflow-hidden">
-                <div className="inline-flex animate-marquee gap-16">
-                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                <div className="inline-flex animate-marquee gap-16 ">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
                 </div>
