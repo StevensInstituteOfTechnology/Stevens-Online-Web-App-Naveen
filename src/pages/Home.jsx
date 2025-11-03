@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Program } from "@/api/entities";
 import { Event } from "@/api/entities";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,6 @@ import { motion } from "framer-motion";
 
 import LeadCaptureForm from "../components/forms/LeadCaptureForm";
 import ProgramCard from "../components/shared/ProgramCard";
-import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import VideoPlayer from "../components/shared/VideoPlayer";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { KEY_DATES } from "@/config/constants";
@@ -145,7 +144,6 @@ export default function Home() {
   const [events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
-  const [showAssessment, setShowAssessment] = useState(true); // State for showing assessment or lead form
 
   // Application Support Events (reuse same content as Events page)
   const supportEvents = [
@@ -189,13 +187,6 @@ export default function Home() {
     loadData();
   }, []);
 
-  const handleAssessmentComplete = useCallback((results) => {
-    // Handle assessment completion - could trigger additional actions
-    console.log("Assessment completed:", results);
-    // Optionally, you might want to show the LeadCaptureForm or redirect after assessment
-    // setShowAssessment(false); // Example: Switch to lead form after assessment
-  }, []);
-
   return (
     <div className="font-sans bg-white">
       {/* Hero Section */}
@@ -234,33 +225,7 @@ export default function Home() {
               </div>
             </div>
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
-              {showAssessment ? (
-              <div>
-                  <ProgramReadinessAssessment
-                    onComplete={handleAssessmentComplete}
-                  />
-                  <div className="text-center mt-4">
-                    <Button
-                    className="bg-stevens-primary hover:bg-stevens-primary-dark text-white text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-                      onClick={() => setShowAssessment(false)}
-                    >
-                      Skip Assessment - Request Info Instead
-                    </Button>
-                  </div>
-                </div>
-              ) : (
-              <div>
-                  <LeadCaptureForm sourcePage="home" />
-                  <div className="text-center mt-4">
-                    <Button
-                    className="bg-stevens-primary hover:bg-stevens-primary-dark text-white text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-                      onClick={() => setShowAssessment(true)}
-                    >
-                      Take Program Assessment Instead
-                    </Button>
-                  </div>
-                </div>
-              )}
+              <LeadCaptureForm sourcePage="home" />
             </div>
           </div>
         </div>

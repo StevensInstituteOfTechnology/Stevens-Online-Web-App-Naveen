@@ -133,7 +133,7 @@ export default function AcceleratedApplicationPage() {
       <PageHero
         title="Accelerated Application"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
-        bgImage="/assets/images/asap-hero.avif"
+        bgImage="/assets/images/AcceleratedApplication-3.jpg"
       />
 
       {/* Speed Emphasis Section */}
@@ -421,6 +421,30 @@ export default function AcceleratedApplicationPage() {
                       }
 
                       /* ===== BUTTON STYLING - END ===== */
+                      
+                      /* ===== TEST STYLING FOR "Personal Information" LABEL ===== */
+                      
+                      /* Target the "Personal Information" header label */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header .form_label,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
+                        color: #a32638 !important; /* Stevens red color */
+                        font-size: 1.25rem !important; /* Larger font size */
+                        font-weight: 700 !important; /* Bold */
+                        text-transform: uppercase !important; /* Uppercase */
+                        letter-spacing: 0.05em !important; /* Spacing between letters */
+                        
+                        text-align: center !important; /* Center the text */
+                        margin-bottom: 1.25rem !important; /* Space below */
+                        background: transparent !important; /* Remove gray background */
+                        background-color: transparent !important; /* Remove gray background color */
+                      }
+                      
+                      /* Remove gray background from parent container */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header {
+                        background: transparent !important;
+                        background-color: transparent !important;
+                      }
                       
                       /* Mobile responsive - Tablet */
                       @media (max-width: 1024px) {

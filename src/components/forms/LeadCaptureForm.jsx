@@ -419,6 +419,22 @@ export default function LeadCaptureForm({
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button + button {
               margin-left: 1rem !important;
             }
+
+            /* ===== STYLING FOR "GRE/GMAT Not Required" LABEL ===== */
+            
+            /* Target the "GRE/GMAT Not Required" text */
+            #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 #form_question_35db045c-d1d1-428c-86fe-55fd24c44d88 .form_label,
+            #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form_p .form_label {
+              color: #a32638 !important; /* Stevens red color */
+              font-size: 1rem !important; /* Font size */
+              font-weight: 700 !important; /* Bold */
+              text-transform: uppercase !important; /* Uppercase */
+              letter-spacing: 0.05em !important; /* Spacing between letters */
+              padding: 0.5rem 0 !important; /* Add some vertical padding */
+              text-align: center !important; /* Center the text */
+              margin-bottom: 1rem !important; /* Space below */
+              margin-top: 1rem !important;
+            }
           `}</style>
           
           <div className="bg-stevens-white text-stevens-gray-900">

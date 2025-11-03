@@ -228,7 +228,7 @@ const programData = {
   tuition: {
     cards: [
       { value: "$5,250", label: "Total Certificate Cost" }, 
-      { value: "~$583", label: "Per Credit" }, 
+      { value: "$583", label: "Per Credit" }, 
       { value: "$60", label: "Application Fee" }
     ],
     description: `
@@ -263,7 +263,7 @@ const programData = {
     description: "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
     members: [
       { name: "Upendra Prasad", title: "Senior Lecturer", image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif" },
-      { name: "CS 563 Faculty", title: "Computer Science & Data Engineering", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.jpg" },
+      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/certificate-ADS-avatar/skim2.jpg" },
       { name: "Ping Wang", title: "Assistant Professor", image: "/assets/avatars/certificate-ADS-avatar/pwang44.avif" }
     ]
   },

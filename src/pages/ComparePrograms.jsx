@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PageHero from "../components/shared/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URLS } from "@/config/constants";
+import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
 export default function ComparePrograms() {
   const PROGRAM_OPTIONS = [
@@ -87,11 +89,23 @@ export default function ComparePrograms() {
     }
   };
 
+  const handleAssessmentComplete = useCallback((results) => {
+    // Handle assessment completion - could trigger additional actions
+    console.log("Assessment completed:", results);
+    // Optionally, you might want to show the LeadCaptureForm or redirect after assessment
+  }, []);
+
   return (
     <div>
-      <PageHero title="Compare Our Programs" subtitle="Find your path" 
-      
-      bgImage="/assets/images/compare-hero.jpg"
+      <PageHero 
+        title="Compare Our Programs" 
+        subtitle="Find your path" 
+        bgImage="/assets/images/compare-hero.jpg"
+        rightContent={
+          <ProgramReadinessAssessment
+            onComplete={handleAssessmentComplete}
+          />
+        }
       />
 
       {/* Select Programs to Compare */}
