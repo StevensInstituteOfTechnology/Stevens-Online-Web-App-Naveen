@@ -156,30 +156,7 @@ const programData = {
             </div>
           </div>
           
-          <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-xl">
-            <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">Recommended Sequence</h5>
-            <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-              <strong>MA 574 → CS 563 → CS 559</strong><br/>
-              This sequence builds your skills progressively: mathematical foundations → data pipelines → ML deployment. Each course prepares you for the next phase, ensuring you can confidently build and deploy AI-powered workflows.
-            </p>
-          </div>
           
-          <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-md">
-            <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">AI-Enhanced Learning</h5>
-            <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-              All courses include AI-assisted labs with LLMs for debugging and reflection. You'll learn how to use AI copilots responsibly to enhance your productivity while building deep technical understanding. Optional advanced track includes introduction to vector databases and embeddings for applied AI.
-            </p>
-          </div>
-          
-          <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-md">
-            <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">Portfolio Artifacts</h5>
-            <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-              <strong>Three Portfolio Projects:</strong><br/>
-              • MA 574: PCA + regression model with convergence analysis<br/>
-              • CS 563: ETL pipeline → AI dashboard<br/>
-              • CS 559: Production-ready ML model with interpretability report
-            </p>
-          </div>
         `
       }
     }
