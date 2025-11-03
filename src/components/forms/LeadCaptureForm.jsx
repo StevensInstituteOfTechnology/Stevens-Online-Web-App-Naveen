@@ -14,12 +14,12 @@ export default function LeadCaptureForm({
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Prevent duplicate script loading
-    if (document.getElementById('stevens-inquiry-form-script')) return;
+    // Only run on client side
+    if (typeof document === 'undefined') return;
     
     // Create the script element
     const script = document.createElement('script');
-    script.id = 'stevens-inquiry-form-script';
+    script.id = `stevens-inquiry-form-script-${sourcePage}-${Date.now()}`;
     script.async = true;
     
     // Build the script URL with current page parameters
@@ -68,9 +68,13 @@ export default function LeadCaptureForm({
     
     // Cleanup function
     return () => {
-      const existingScript = document.getElementById('stevens-inquiry-form-script');
-      if (existingScript) {
-        existingScript.remove();
+      if (script && script.parentNode) {
+        script.remove();
+      }
+      // Also clean up the form container
+      const formContainer = document.getElementById('form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532');
+      if (formContainer) {
+        formContainer.innerHTML = '';
       }
     };
   }, [sourcePage, programOfInterest]);
