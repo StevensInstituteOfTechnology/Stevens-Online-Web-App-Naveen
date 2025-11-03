@@ -164,7 +164,7 @@ const ExploreProgramPageTemplate = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-stevens-2xl items-center">
+            <div className={`grid grid-cols-1 ${whyChooseStevensVideo ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-stevens-2xl items-center`}>
               {/* Left Column - Text Content on Desktop, Video on Mobile */}
               <div className="space-y-stevens-lg lg:order-1 order-2">
                 <h2 className="font-stevens-display text-stevens-lg text-stevens-gray-600 uppercase tracking-wide">
@@ -184,16 +184,18 @@ const ExploreProgramPageTemplate = ({
               </div>
 
               {/* Right Column - Video Player on Desktop, Text on Mobile */}
-              <div className="relative lg:order-2 order-1">
-                <VideoPlayer
-                  src={whyChooseStevensVideo}
-                  poster={whyChooseStevensVideoCover}
-                  title="Why Choose Stevens"
-                  description="Learn about Stevens Institute of Technology's career-aligned curriculum"
-                  className="w-full"
-                  showControls={true}
-                />
-              </div>
+              {whyChooseStevensVideo && (
+                <div className="relative lg:order-2 order-1">
+                  <VideoPlayer
+                    src={whyChooseStevensVideo}
+                    poster={whyChooseStevensVideoCover}
+                    title="Why Choose Stevens"
+                    description="Learn about Stevens Institute of Technology's career-aligned curriculum"
+                    className="w-full"
+                    showControls={true}
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

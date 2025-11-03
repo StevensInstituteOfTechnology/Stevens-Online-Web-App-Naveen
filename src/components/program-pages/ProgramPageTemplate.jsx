@@ -740,7 +740,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="bg-stevens-primary text-stevens-white py-16 rounded-stevens-lg">
                 <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
                   <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-lg text-stevens-white">{whyStevens.title}</h2>
-                  <div className="prose prose-invert max-w-none mx-auto text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
+                  <div className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
                 </div>
               </div>
             )}

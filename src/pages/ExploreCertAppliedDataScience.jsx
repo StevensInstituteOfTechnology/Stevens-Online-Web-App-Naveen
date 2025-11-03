@@ -167,6 +167,8 @@ const ExploreCertAppliedDataScience = () => {
 
   return <ExploreProgramPageTemplate 
     {...certData}
+    whyChooseStevensVideo={null}
+    whyChooseStevensVideoCover={null}
     heroBottomContent={<CertificateTuitionCardsHero cards={[
       { value: "$5,250", label: "Total Certificate Cost" },
       { value: "$583", label: "Per Credit" }

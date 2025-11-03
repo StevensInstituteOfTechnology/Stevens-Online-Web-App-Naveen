@@ -36,7 +36,7 @@ const programData = {
     { value: "Portfolio", label: "Projects", icon: Briefcase }],
 
     termStartDate: "SPRING 2026: January 20, 2026",
-    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-20 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
+    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-20 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
   },
   overview: {
     title: "Certificate Overview",
@@ -214,17 +214,17 @@ const programData = {
     description: `
       <div class="space-y-4">
         <p class="font-bold text-lg text-stevens-gray-900">Invest in Your Data Science Future</p>
-        <p>At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically aligned with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal choice if your company offers tuition assistance.</p>
+        <p class="text-left">At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically aligned with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal choice if your company offers tuition assistance.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-semibold text-stevens-gray-900 mb-2">💼 Employer Tuition Reimbursement</p>
-          <p class="text-stevens-sm">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit-potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
+          <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit-potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-semibold text-stevens-gray-900 mb-2">💰 Financial Aid & Funding Options</p>
-          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
-          <p class="text-stevens-sm">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
+          <p class="text-stevens-sm mb-3 text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
+          <p class="text-stevens-sm text-left">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
