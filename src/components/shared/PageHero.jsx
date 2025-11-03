@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { createPageUrl } from '@/utils';
 import ApplicationModal from './ApplicationModal';
+import RequestInfoModal from './RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 /**
@@ -19,10 +20,14 @@ export default function PageHero({
   primaryCta, // { label, to? | href? }
   secondaryCta, // { label, to? | href? | useModal? }
   useApplicationModal = false, // New prop for MSCS/MEM pages
+  useRequestInfoModal = false, // New prop to open Request Info in modal
+  requestInfoProgramCode = '', // Program code for Request Info modal
+  requestInfoSourcePage = 'unknown', // Source page for tracking
   rightContent, // Content to display on the right side
   bottomContent // Content to display at the bottom of left column
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
+  const [isRequestInfoModalOpen, setIsRequestInfoModalOpen] = useState(false);
   const lines = Array.isArray(titleLines) && titleLines.length > 0
     ? titleLines
     : (title ? [title] : []);
@@ -51,13 +56,28 @@ export default function PageHero({
       }
     };
 
+    // If this is the primary CTA and useRequestInfoModal is true, trigger modal instead
+    if (variant === 'primary' && useRequestInfoModal) {
+      return (
+        <button 
+          onClick={() => {
+            handleClick();
+            setIsRequestInfoModalOpen(true);
+          }}
+          className={className}
+        >
+          {cta.label}
+        </button>
+      );
+    }
+
     // If this is the secondary CTA and useApplicationModal is true, trigger modal instead
     if (variant === 'secondary' && useApplicationModal && cta.href) {
       return (
         <button 
           onClick={() => {
             handleClick();
-            setIsModalOpen(true);
+            setIsApplicationModalOpen(true);
           }}
           className={className}
         >
@@ -182,9 +202,19 @@ export default function PageHero({
       {/* Application Modal */}
       {useApplicationModal && secondaryCta?.href && (
         <ApplicationModal 
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          isOpen={isApplicationModalOpen}
+          onClose={() => setIsApplicationModalOpen(false)}
           traditionalLink={secondaryCta.href}
+        />
+      )}
+
+      {/* Request Info Modal */}
+      {useRequestInfoModal && (
+        <RequestInfoModal 
+          isOpen={isRequestInfoModalOpen}
+          onClose={() => setIsRequestInfoModalOpen(false)}
+          sourcePage={requestInfoSourcePage}
+          programOfInterest={requestInfoProgramCode}
         />
       )}
     </section>

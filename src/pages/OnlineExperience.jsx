@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent } from '@/components/ui/card';
 import { Laptop, Users, LifeBuoy, Library, ArrowRight } from 'lucide-react';
@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
+import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 export default function OnlineExperience() {
+  const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [
     {
       icon: Laptop,
@@ -187,14 +189,27 @@ export default function OnlineExperience() {
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
                   <Button className="btn-secondary px-8 py-3 text-lg">Schedule a Call</Button>
                 </a>
-                 <Link to={createPageUrl("RequestInfo")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                    <Button variant="outline" className="btn-outline-maroon px-8 py-3 text-lg">
-                        Request Information
-                    </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="btn-outline-maroon px-8 py-3 text-lg"
+                  onClick={() => {
+                    trackConversion(CONVERSION_LABELS.REQUEST_INFO);
+                    setShowRequestInfoModal(true);
+                  }}
+                >
+                  Request Information
+                </Button>
            </div>
         </div>
       </div>
+
+      {/* Request Info Modal */}
+      <RequestInfoModal 
+        isOpen={showRequestInfoModal}
+        onClose={() => setShowRequestInfoModal(false)}
+        sourcePage="online_experience_page"
+        programOfInterest=""
+      />
     </div>
   );
 }

@@ -7,15 +7,15 @@ import { KEY_DATES } from '@/config/constants';
 const programData = {
   code: 'meads',
   seo: {
-    title: 'Online MS in Engineering - Applied Data Science | Stevens',
-    description: 'Earn your 100% online MS in Engineering – Applied Data Science from Stevens. Dive into AI, big data and analytics, advance your technical career.',
+    title: 'Online M.Eng. in Applied Data Science - AI & Machine Learning | Stevens',
+    description: 'Master AI, machine learning, and LLMs. Build and deploy production ML systems. $24,000 for 30 credits. 100% online from top-ranked Stevens.',
     ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
     url: '/online-masters-engineering-applied-data-science/'
   },
   // ==================================================================
   hero: {
-    titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build What's Next."],
-    subtitle: "Gain the skills to turn data into intelligent systems that power the future.",
+    titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build AI-Powered Systems."],
+    subtitle: "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
@@ -29,23 +29,26 @@ const programData = {
   overview: {
     title: "Program Overview",
     description: `
-      <p>Data science is transforming every industry, from finance and healthcare to energy, logistics, and media. The M.Eng. in Applied Data Science from Stevens builds the technical, analytical, and ethical skills required to lead in this data-driven world.</p>
+      <p>The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
       
-      <p class='my-5'>Through a curriculum grounded in engineering rigor and real-world application, students master data integration, big data systems, AI model design, and interactive visualization. Coursework combines hands-on projects, case studies, and research-based learning to deliver technical depth with professional relevance.</p>
+      <p class='my-5'>Through a curriculum grounded in engineering rigor and real-world application, you'll master <strong>AI model design, LLM fine-tuning, MLOps, and scalable data architectures</strong>. Learn to build end-to-end AI solutions: from data pipelines and feature engineering to model deployment and monitoring in production environments.</p>
+      
+      <p class='my-5'>This program bridges engineering precision with AI-driven innovation. You'll work with cutting-edge tools—PyTorch, TensorFlow, Hugging Face, cloud AI platforms—and learn to operationalize AI responsibly with ethics, explainability, and governance built in.</p>
       
       <h3 class='text-lg'><strong>Program at a Glance:</strong></h3>
 
       <ul class='my-5'>
         <li><strong>Format: 100% Online</strong></li>
         <li><strong>Duration: Approximately 2 years (30 credits)</strong></li>
+        <li><strong>Focus: Applied AI, Machine Learning, LLMs & MLOps</strong></li>
         <li><strong>Accreditation: Middle States Commission on Higher Education</strong></li>
       </ul>
       
     `,
     keySkills: [
-      "Machine Learning Engineering", "Data Pipeline Design", "Cloud Architecture", "Distributed Systems", 
-      "MLOps", "Big Data Processing", "Software Engineering", "System Design",
-      "Python", "Java", "Spark", "Kubernetes", "Docker", "AWS"
+      "Machine Learning Engineering", "LLM Fine-Tuning & Deployment", "AI Model Design", "MLOps & Model Monitoring",
+      "Data Pipeline Engineering", "Cloud AI Architecture", "Distributed Systems", "AI Ethics & Explainability",
+      "Python", "PyTorch", "TensorFlow", "Hugging Face", "Spark", "Kubernetes", "Docker", "AWS"
     ]
   },
   // ==================================================================
@@ -433,7 +436,7 @@ const programData = {
       ],
       description: `
         <h3 class="font-bold text-xl mb-4">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
-        <p class="mb-4">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution. Stevens' tuition is competitively priced compared to similar programs, many of which exceed $40,000-$50,000.</p>
+        <p class="mb-4">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
           <p class="font-semibold text-stevens-gray-900 mb-2">💡 Strong Return on Investment</p>

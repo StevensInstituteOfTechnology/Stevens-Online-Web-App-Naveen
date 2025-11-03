@@ -237,7 +237,7 @@ const WhatYoullLearnCarousel = ({ modules }) => {
   );
 };
 
-export default function ProgramPageTemplate({ programData, useApplicationModal = false }) {
+export default function ProgramPageTemplate({ programData, useApplicationModal = false, useRequestInfoModal = true }) {
   const { code, seo, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
   const sectionRefs = useRef({});
   const [activeSection, setActiveSection] = useState('overview');
@@ -407,7 +407,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
 
   return (
     <div className="bg-stevens-gray-50 font-stevens-body">
-      <PageHero {...hero} useApplicationModal={useApplicationModal}/>
+      <PageHero 
+        {...hero} 
+        useApplicationModal={useApplicationModal}
+        useRequestInfoModal={useRequestInfoModal}
+        requestInfoProgramCode={code}
+        requestInfoSourcePage={`${code}_program_page`}
+      />
 
       {navItems.length > 0 && (
         <div className="sticky top-[63px] bg-stevens-white/90 backdrop-blur-sm z-[9990] shadow-stevens-md">

@@ -32,7 +32,9 @@ import { motion } from "framer-motion";
 
 import LeadCaptureForm from "../components/forms/LeadCaptureForm";
 import ProgramCard from "../components/shared/ProgramCard";
+import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import VideoPlayer from "../components/shared/VideoPlayer";
+import RequestInfoModal from "../components/shared/RequestInfoModal";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { KEY_DATES } from "@/config/constants";
 
@@ -144,6 +146,8 @@ export default function Home() {
   const [events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
+  const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
+  const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
 
   // Application Support Events (reuse same content as Events page)
   const supportEvents = [
@@ -209,17 +213,12 @@ export default function Home() {
                 ambition.
               </p>
               <div className="flex flex-col sm:flex-row gap-stevens-md animate-in slide-in-from-left duration-700 delay-400">
-                <Link to={createPageUrl("request-information/")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                  <button className="btn-stevens-primary">
-                    Request Information
-                  </button>
-                </Link>
                 <Link
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
-                  <button className="btn-stevens-secondary">
-                    Apply In Minutes
+                  <button className="btn-stevens-primary">
+                    Explore Programs & Apply in Minutes
                   </button>
                 </Link>
               </div>
@@ -821,6 +820,14 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Request Info Modal */}
+      <RequestInfoModal 
+        isOpen={showRequestInfoModal}
+        onClose={() => setShowRequestInfoModal(false)}
+        sourcePage="homepage"
+        programOfInterest=""
+      />
     </div>
   );
 }

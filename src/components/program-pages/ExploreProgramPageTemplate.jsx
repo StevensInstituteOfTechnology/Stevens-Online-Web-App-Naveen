@@ -21,6 +21,7 @@ const ExploreProgramPageTemplate = ({
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
+  useRequestInfoModal = true, // Default to true - use modal for Request Info
   heroBottomContent, // New prop for pricing cards in hero
   
   // Statistics Props
@@ -115,6 +116,9 @@ const ExploreProgramPageTemplate = ({
         primaryCta={{ label: 'Request Information', to: 'RequestInfo' }}
         secondaryCta={secondaryCta || { label: 'Apply In Minutes', href: traditionalAppLink }}
         useApplicationModal={useApplicationModal}
+        useRequestInfoModal={useRequestInfoModal}
+        requestInfoProgramCode={programCode}
+        requestInfoSourcePage={`explore_${programCode}_page`}
         bottomContent={heroBottomContent}
         rightContent={
           <div className="animate-in slide-in-from-right duration-700 delay-300 w-full flex justify-center lg:justify-end">
