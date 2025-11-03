@@ -145,9 +145,19 @@ export default function PageHero({
                 {badges.map((badge, index) => {
                   const Icon = badge.icon;
                   return (
-                    <Badge key={index} variant="outline" className="text-white border-white/50 bg-white/10 text-stevens-base py-stevens-xs px-stevens-sm rounded-stevens-md" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.8)' }}>
-                      {Icon && <Icon className="w-4 h-4 mr-2" />}
-                      {badge.text}
+                    <Badge 
+                      key={index} 
+                      variant="outline" 
+                      className="text-white border-white/60 bg-white/20 backdrop-blur-md text-stevens-base py-stevens-xs px-stevens-sm rounded-stevens-lg cursor-pointer relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                      style={{ 
+                        textShadow: '0 1px 3px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.8)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                      }}
+                    >
+                      {/* Magnifying glass highlight effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none rounded-stevens-lg" style={{ zIndex: 1 }}></div>
+                      {Icon && <Icon className="w-4 h-4 mr-2 relative" style={{ zIndex: 2 }} />}
+                      <span className="relative" style={{ zIndex: 2 }}>{badge.text}</span>
                     </Badge>
                   );
                 })}
