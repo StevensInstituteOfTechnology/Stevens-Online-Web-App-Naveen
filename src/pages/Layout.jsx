@@ -47,6 +47,11 @@ const degreeProgramItems = [
   { name: "M.S. in Engineering Management", page: "online-masters-engineering-management/" },
 ];
 
+const certificateProgramItems = [
+  { name: "Enterprise AI Certificate", page: "certificates/enterprise-ai/" },
+  { name: "Applied Data Science Foundations", page: "certificates/applied-data-science-foundations/" },
+];
+
 const mainNavLinks = [
   // The "Degree Programs" and "Tuition & Admissions" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
@@ -64,12 +69,18 @@ const tuitionAdmissionsItems = [
 
 const mobileNavLinks = [
   {
-    name: "Degree Programs",
+    name: "Graduate Programs",
     isDropdown: true,
-    items: degreeProgramItems.concat({
-      name: "Compare All Programs",
+    items: degreeProgramItems,
+  },
+  {
+    name: "Certificate Programs",
+    isDropdown: true,
+    items: certificateProgramItems,
+  },
+  {
+    name: "Compare Programs",
       page: "compare-our-programs/",
-    }),
   },
   {
     name: "Tuition & Admissions",
@@ -96,6 +107,18 @@ export default function Layout({ children, currentPageName }) {
   const degreeHoverTimeoutRef = React.useRef(null);
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
+  
+  // ASAP Banner continuous message with emphasis
+  const BannerMessage = () => (
+    <>
+      <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>November 20th Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
+    </>
+  );
+  
+  // Mobile banner message - simplified version
+  const MobileBannerMessage = () => (
+    <strong className="text-stevens-primary">Apply in Minutes →</strong>
+  );
 
   React.useEffect(() => {
     // Only run on client side
@@ -191,8 +214,8 @@ export default function Layout({ children, currentPageName }) {
           z-index: inherit !important;
         }
         
-        /* Ensure buttons and links remain clickable */
-        button, a, [role="button"] {
+        /* Ensure buttons, links, and form elements remain clickable */
+        button, a, [role="button"], input, select, textarea, label, [role="dialog"], [role="dialog"] * {
           pointer-events: auto !important;
         }
         
@@ -695,7 +718,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${degreeDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-96 p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -717,13 +740,17 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    <div className="grid grid-cols-2 gap-stevens-md">
-                      <div className="flex flex-col space-y-1">
+                    <div className="grid grid-cols-3 gap-stevens-xl">
+                      {/* Section 1: Graduate Programs */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Graduate Programs</span>
+                        </div>
                         {degreeProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               /*inline styles to prevent css injection overwriting from asap page */
                               style={{
                                 color: "#1f2937",
@@ -747,12 +774,49 @@ export default function Layout({ children, currentPageName }) {
                         </DropdownMenuItem>
                         ))}
                       </div>
-                      <div className="flex flex-col space-y-1">
+                      
+                      {/* Section 2: Certificate Programs */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Certificate Programs</span>
+                        </div>
+                        {certificateProgramItems.map((item) => (
+                        <DropdownMenuItem key={item.name} asChild>
+                            <Link
+                              to={createPageUrl(item.page)}
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              style={{
+                                color: "#1f2937",
+                                backgroundColor: "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.color = "#ffffff";
+                                e.target.style.backgroundColor = "#a32638";
+                                e.target.style.textDecoration = "underline";
+                                e.target.style.fontWeight = "700";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.color = "#1f2937";
+                                e.target.style.backgroundColor = "transparent";
+                                e.target.style.textDecoration = "none";
+                                e.target.style.fontWeight = "600";
+                              }}
+                            >
+                              {item.name}
+                            </Link>
+                        </DropdownMenuItem>
+                        ))}
+                      </div>
+                      
+                      {/* Section 3: Compare Programs */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
+                        </div>
                         <DropdownMenuItem asChild>
                           <Link
                             to="/compare-our-programs/"
-                            className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
-                            /*inline styles to prevent css injection overwriting from asap page */
+                            className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
                             style={{
                               color: "#1f2937",
                               backgroundColor: "transparent",
@@ -1081,66 +1145,54 @@ export default function Layout({ children, currentPageName }) {
           </div>
       </header>
       
-      {/* ASAP Banner */}
+      {/* ASAP Banner - Horizontal Scrolling Marquee */}
       {showASAPBanner && (
         <div
-          className={`bg-stevens-gray-400 text-stevens-primary py-3 px-stevens-md relative z-[9997] ${
+          className={`bg-stevens-gray-400 text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
-          } transition-all duration-stevens-normal`}
+          }`}
         >
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            {/* Full Alert on Large Screens */}
-            <div className="hidden lg:flex items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-4 h-4 flex-shrink-0" />
-              <div className="text-stevens-sm font-medium">
-                <strong>ASAP Application:</strong> Start with two courses & earn full admission based on your performance. No full degree commitment required! 
                 <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-2 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
-                </Link>
+            to={createPageUrl("accelerated-application/")}
+            className="block transition-colors duration-stevens-normal"
+          >
+            <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
+              <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
+              <div className="flex-1 overflow-hidden">
+                {/* Mobile version - only show "Apply in Minutes →" */}
+                <div className="md:hidden flex items-center justify-center">
+                  <span className="asap-banner-text text-stevens-base whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <MobileBannerMessage />
+                  </span>
+              </div>
+                {/* Desktop version - full marquee */}
+                <div className="hidden md:inline-flex animate-marquee gap-16">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <BannerMessage />
+                  </span>
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <BannerMessage />
+                  </span>
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <BannerMessage />
+                  </span>
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                    <BannerMessage />
+                  </span>
+            </div>
               </div>
             </div>
-            
-            {/* Condensed Alert on Medium Screens */}
-            <div className="hidden md:flex lg:hidden items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-4 h-4 flex-shrink-0" />
-              <div className="text-stevens-sm font-medium">
-                <strong>ASAP Application:</strong> Start with 2 courses & earn admission. 
-                <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-2 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
                 </Link>
-              </div>
-            </div>
-            
-            {/* Minimal Alert on Small Screens */}
-            <div className="flex md:hidden items-center justify-center gap-stevens-sm text-center">
-              <BookOpen className="w-3 h-3 flex-shrink-0" />
-              <div className="text-stevens-xs font-medium">
-                <strong>ASAP:</strong> 
-                <Link
-                  to={createPageUrl("ASAP/")}
-                  className="ml-1 underline hover:no-underline font-semibold transition-opacity duration-stevens-fast hover:opacity-80"
-                >
-                  Learn More →
-                </Link>
-              </div>
-            </div>
-          </div>
           <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setShowASAPBanner(false);
             }}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-primary hover:text-stevens-primary/80 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-gray-900 hover:text-stevens-gray-700 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
             aria-label="Close banner"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Program } from "@/api/entities";
 import { Event } from "@/api/entities";
 import { Button } from "@/components/ui/button";
@@ -34,7 +34,9 @@ import LeadCaptureForm from "../components/forms/LeadCaptureForm";
 import ProgramCard from "../components/shared/ProgramCard";
 import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import VideoPlayer from "../components/shared/VideoPlayer";
+import RequestInfoModal from "../components/shared/RequestInfoModal";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { KEY_DATES } from "@/config/constants";
 
 const StatItem = ({ value, label, icon: Icon }) => (
 <div className="text-center flex flex-col items-center justify-center">
@@ -144,7 +146,8 @@ export default function Home() {
   const [events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
-  const [showAssessment, setShowAssessment] = useState(true); // State for showing assessment or lead form
+  const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
+  const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
 
   // Application Support Events (reuse same content as Events page)
   const supportEvents = [
@@ -188,13 +191,6 @@ export default function Home() {
     loadData();
   }, []);
 
-  const handleAssessmentComplete = useCallback((results) => {
-    // Handle assessment completion - could trigger additional actions
-    console.log("Assessment completed:", results);
-    // Optionally, you might want to show the LeadCaptureForm or redirect after assessment
-    // setShowAssessment(false); // Example: Switch to lead form after assessment
-  }, []);
-
   return (
     <div className="font-sans bg-white">
       {/* Hero Section */}
@@ -207,61 +203,28 @@ export default function Home() {
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 Advance Your Career with a World-Class Online Degree from
                 Stevens
               </h1>
-              <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700">
+              <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
                 Our programs are designed for busy professionals ready to lead
                 in the tech-driven world. Let's find the perfect fit for your
                 ambition.
               </p>
               <div className="flex flex-col sm:flex-row gap-stevens-md animate-in slide-in-from-left duration-700 delay-400">
-                <Link to={createPageUrl("request-information/")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                  <button className="btn-stevens-primary ">
-                    Request Information
-                  </button>
-                </Link>
-                <a
-                  href="https://gradadmissions.stevens.edu/apply/?pk=GRNP"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={createPageUrl("admissions/") + "#explore-programs"}
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
-                  <button className="btn-stevens-outline text-stevens-white hover:bg-stevens-white hover:text-stevens-primary ">
-                    Apply Now
+                  <button className="btn-stevens-primary">
+                    Explore Programs & Apply in Minutes
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
-              {showAssessment ? (
-              <div>
-                  <ProgramReadinessAssessment
-                    onComplete={handleAssessmentComplete}
-                  />
-                  <div className="text-center mt-4">
-                    <Button
-                    className="bg-stevens-primary hover:bg-stevens-primary-dark text-white text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-                      onClick={() => setShowAssessment(false)}
-                    >
-                      Skip Assessment - Request Info Instead
-                    </Button>
-                  </div>
-                </div>
-              ) : (
-              <div>
                   <LeadCaptureForm sourcePage="home" />
-                  <div className="text-center mt-4">
-                    <Button
-                    className="bg-stevens-primary hover:bg-stevens-primary-dark text-white text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-                      onClick={() => setShowAssessment(true)}
-                    >
-                      Take Program Assessment Instead
-                    </Button>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -583,7 +546,7 @@ export default function Home() {
               economy through flexible, accessible, and industry-relevant online
               programs."
             </blockquote>
-            <cite className="not-italic font-stevens-semibold text-stevens-white">— Arshad Saiyed</cite>
+            <cite className="not-italic font-stevens-semibold text-stevens-white">- Arshad Saiyed</cite>
             <br />
             <cite className="not-italic font-stevens-semibold text-stevens-white">
               Chief Online Learning Officer and Dean of the College of Professional Education
@@ -642,11 +605,10 @@ export default function Home() {
                       </td>
                       <td className="p-4 align-top border border-gray-300">
                         <div className="font-bold text-gray-900">
-                          November 11, 2025
+                          {KEY_DATES.PRIORITY_SUBMIT.date}
                         </div>
                         <div className="text-stevens-gray-900 mt-1 text-stevens-sm">
-                          Application Fee Waiver Available and Early Application
-                          Review.
+                          {KEY_DATES.PRIORITY_SUBMIT.details}
                         </div>
                       </td>
                       <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
@@ -858,6 +820,14 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Request Info Modal */}
+      <RequestInfoModal 
+        isOpen={showRequestInfoModal}
+        onClose={() => setShowRequestInfoModal(false)}
+        sourcePage="homepage"
+        programOfInterest=""
+      />
     </div>
   );
 }

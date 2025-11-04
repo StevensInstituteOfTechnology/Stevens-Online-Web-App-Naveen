@@ -45,13 +45,22 @@ const RankingCard = ({ ranking, description, source, note }) => (
 // Faculty Card Component
 const FacultyCard = ({ member }) => {
   const { name, title, image } = member;
+  const hasImage = image && image.trim() !== '';
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+  
   return (
     <div className="text-center snap-center flex-shrink-0 w-[180px] stevens-md:w-[220px]">
-    <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg"/>
-    <h4 className="font-stevens-semibold text-stevens-lg text-stevens-gray-900">{name}</h4>
-    <p className="text-stevens-sm text-stevens-primary">{title}</p>
-  </div>
-);
+      {hasImage ? (
+        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg"/>
+      ) : (
+        <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-primary flex items-center justify-center shadow-stevens-lg">
+          <span className="text-stevens-white font-stevens-bold text-stevens-2xl">{initials}</span>
+        </div>
+      )}
+      <h4 className="font-stevens-semibold text-stevens-lg text-stevens-gray-900">{name}</h4>
+      <p className="text-stevens-sm text-stevens-primary">{title}</p>
+    </div>
+  );
 };
 
 // What You'll Learn - Skill Cards Variant (for MBA)
@@ -228,7 +237,7 @@ const WhatYoullLearnCarousel = ({ modules }) => {
   );
 };
 
-export default function ProgramPageTemplate({ programData, useApplicationModal = false }) {
+export default function ProgramPageTemplate({ programData, useApplicationModal = false, useRequestInfoModal = true }) {
   const { code, seo, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
   const sectionRefs = useRef({});
   const [activeSection, setActiveSection] = useState('overview');
@@ -312,15 +321,15 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
       { id: 'top-companies', label: 'Top Companies' },
       { id: 'curriculum', label: 'Curriculum' },
       { id: 'student-spotlight', label: 'Student Spotlight' },
-      { id: 'faculty', label: 'Faculty' },
-      { id: 'deadlines', label: 'Deadlines' },
-      { id: 'admissions', label: 'Admissions' },
-      { id: 'tuition', label: 'Tuition' },
+    { id: 'faculty', label: 'Faculty' },
+    { id: 'admissions', label: 'Admissions' },
+    { id: 'deadlines', label: 'Deadlines' },
+    { id: 'tuition', label: 'Tuition' },
       { id: 'events', label: 'Events' },
       { id: 'faqs', label: 'FAQs' },
       { id: 'accreditation', label: 'Accreditation' }
     ];
-    return items.filter(item => {
+    const filtered = items.filter(item => {
       switch(item.id) {
         case 'overview': return overview && (overview.description || (overview.keySkills && overview.keySkills.length > 0) || (overview.concentrations && overview.concentrations.length > 0));
         case 'video': return videoSection && videoSection.videoSrc;
@@ -333,7 +342,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         case 'student-spotlight': return studentSpotlight && (studentSpotlight.quote || studentSpotlight.author);
         case 'faculty': return faculty && (faculty.description || (faculty.members && faculty.members.length > 0));
         case 'deadlines': return keyDates && (keyDates.headers && keyDates.rows && keyDates.rows.length > 0);
-        case 'admissions': return admissions && (admissions.options && admissions.options.length > 0);
+        case 'admissions': return admissions && (admissions.options && admissions.options.length > 0) && !(admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines');
         case 'tuition': return tuition && (tuition.cards || tuition.description || (tuition.grants && tuition.grants.length > 0));
         case 'events': return events && (events.items && events.items.length > 0);
         case 'faqs': return faqs && faqs.length > 0;
@@ -341,6 +350,19 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         default: return true;
       }
     });
+    
+    // For certificate pages, ensure tuition (relabeled as Admissions) appears before deadlines
+    if (admissions?.variant === 'certificateWithDeadlines') {
+      const tuitionIndex = filtered.findIndex(item => item.id === 'tuition');
+      const deadlinesIndex = filtered.findIndex(item => item.id === 'deadlines');
+      if (tuitionIndex !== -1 && deadlinesIndex !== -1 && tuitionIndex > deadlinesIndex) {
+        const tuitionItem = filtered[tuitionIndex];
+        filtered.splice(tuitionIndex, 1);
+        filtered.splice(deadlinesIndex, 0, tuitionItem);
+      }
+    }
+    
+    return filtered;
   }, [overview, rankings, career, whatYoullLearn, commonJobTitles, topCompanies, curriculum, studentSpotlight, faculty, keyDates, admissions, tuition, events, faqs, accreditation]);
 
   useEffect(() => {
@@ -359,21 +381,39 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
     navItems.forEach(item => {
       const el = currentRefs[item.id];
       if (el) observer.observe(el);
+      
+      // For certificate pages, also observe admissions section when tuition button exists
+      if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+        const admissionsEl = currentRefs.admissions;
+        if (admissionsEl) observer.observe(admissionsEl);
+      }
     });
 
     return () => {
       navItems.forEach(item => {
         const el = currentRefs[item.id];
         if (el) observer.unobserve(el);
+        
+        // Unobserve admissions section for certificate pages
+        if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+          const admissionsEl = currentRefs.admissions;
+          if (admissionsEl) observer.unobserve(admissionsEl);
+        }
       });
     };
-  }, [navItems]);
+  }, [navItems, admissions]);
 
   if (!programData) return <div>Loading program data...</div>;
 
   return (
     <div className="bg-stevens-gray-50 font-stevens-body">
-      <PageHero {...hero} useApplicationModal={useApplicationModal}/>
+      <PageHero 
+        {...hero} 
+        useApplicationModal={useApplicationModal}
+        useRequestInfoModal={useRequestInfoModal}
+        requestInfoProgramCode={code}
+        requestInfoSourcePage={`${code}_program_page`}
+      />
 
       {navItems.length > 0 && (
         <div className="sticky top-[63px] bg-stevens-white/90 backdrop-blur-sm z-[9990] shadow-stevens-md">
@@ -386,15 +426,29 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white/90 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal"></div>
               
               <div className="flex space-x-stevens-xs sm:space-x-stevens-sm md:space-x-stevens-md">
-              {navItems.map(item => (
-                <a 
-                  key={item.id} 
-                  href={`#${item.id}`}
-                    className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${activeSection === item.id ? 'border-stevens-primary text-stevens-primary' : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'}`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map(item => {
+                // When tuition is combined with admissions, redirect tuition link to admissions and change label
+                const isCombinedTuition = (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines'));
+                const href = isCombinedTuition 
+                  ? '#admissions' 
+                  : `#${item.id}`;
+                const label = isCombinedTuition 
+                  ? 'Admissions' 
+                  : item.label;
+                // When combined, highlight tuition button when admissions section is active
+                const isActive = isCombinedTuition 
+                  ? activeSection === 'admissions' 
+                  : activeSection === item.id;
+                return (
+                  <a 
+                    key={item.id} 
+                    href={href}
+                      className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${isActive ? 'border-stevens-primary text-stevens-primary' : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'}`}
+                  >
+                    {label}
+                  </a>
+                );
+              })}
               </div>
               
             </nav>
@@ -557,10 +611,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {career.jobTitles.map((job, index) => {
-                          // Set different maximum values based on program type
-                          const maxSalary = programData.code.toLowerCase() === 'mem' ? 167740 : (programData.code.toLowerCase() === 'mba' ? 206420 : 171200);
+                        {(() => {
+                          // Calculate max salary from jobTitles array - highest salary will be 100% width
+                          const maxSalary = Math.max(...career.jobTitles.map(job => 
+                            parseFloat(job.salary.replace(/[$,]/g, ''))
+                          ));
                           
+                          return career.jobTitles.map((job, index) => {
                           return (
                             <TableRow 
                               key={job.title} 
@@ -600,7 +657,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                               </TableCell>
                         </TableRow>
                           );
-                        })}
+                          });
+                        })()}
                     </TableBody>
                   </Table>
                   </div>
@@ -688,7 +746,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="bg-stevens-primary text-stevens-white py-16 rounded-stevens-lg">
                 <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
                   <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-lg text-stevens-white">{whyStevens.title}</h2>
-                  <div className="prose prose-invert max-w-none mx-auto text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
+                  <div className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
                 </div>
               </div>
             )}
@@ -757,7 +815,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <blockquote className="text-stevens-2xl leading-snug italic text-stevens-gray-900 mb-stevens-md">
                   "{studentSpotlight.quote}"
                 </blockquote>
-              <cite className="not-italic font-stevens-semibold text-stevens-gray-600">— {studentSpotlight.name}</cite>
+              <cite className="not-italic font-stevens-semibold text-stevens-gray-600">- {studentSpotlight.name}</cite>
             </div>
           </Section>
         )}
@@ -773,8 +831,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         )}
 
-        {admissions && admissions.variant === 'combinedWithTuition' && tuition && keyDates ? (
-          <Section bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
+        {admissions && (admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines') && tuition ? (
+          <Section id="admissions" bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
             <div className="grid lg:grid-cols-5 gap-stevens-2xl items-start">
               {/* Left Column - Admissions */}
               <div className="lg:col-span-3">
@@ -793,7 +851,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               
               {/* Right Column - Key Dates & Tuition */}
               <div className="lg:col-span-2">
-                {keyDates && (
+                {keyDates && admissions.variant !== 'certificateWithDeadlines' && (
                   <>
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">Key Dates & Deadlines</h2>
                     <Card className="rounded-stevens-md mb-stevens-xl">
@@ -824,15 +882,21 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <>
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">Tuition</h2>
                     {tuition.cards && tuition.cards.length > 0 && (
-                      <div className="grid grid-cols-1 stevens-sm:grid-cols-3 gap-stevens-md text-center">
+                      <div className="grid grid-cols-2 gap-stevens-md text-center">
                         {tuition.cards.map((card) => (
-                          <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md">
-                            <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary break-words">
-                              {card.value}
-                            </p>
-                            <p className="text-stevens-xs stevens-sm:text-stevens-sm text-stevens-gray-600 mt-stevens-xs">
-                              {card.label}
-                            </p>
+                          <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full">
+                            {/* Top layer: Price */}
+                            <div className="flex-1 flex items-center justify-center min-h-[60%]">
+                              <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary whitespace-nowrap">
+                                {card.value}
+                              </p>
+                            </div>
+                            {/* Bottom layer: Label */}
+                            <div className="flex-1 flex items-center justify-center min-h-[40%] pt-stevens-md">
+                              <p className="text-stevens-xs  mb-stevens-md stevens-sm:text-stevens-sm text-stevens-gray-600">
+                                {card.label}
+                              </p>
+                            </div>
                           </Card>
                         ))}
                       </div>
@@ -892,7 +956,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         ) : null}
 
-        {keyDates && !(admissions?.variant === 'combinedWithTuition') && (
+        {keyDates && (!(admissions?.variant === 'combinedWithTuition') || admissions?.variant === 'certificateWithDeadlines') && (
           <Section id="deadlines" title="Key Dates & Deadlines" bgClassName="bg-stevens-gray-100" el="div" refProp={el => sectionRefs.current['deadlines'] = el}>
             <div className="text-center mb-stevens-xl">
               <p className="text-stevens-xl text-stevens-gray-900 max-w-3xl mx-auto">
@@ -950,10 +1014,10 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         )}
         
-        {tuition && !(admissions?.variant === 'combinedWithTuition') && (
+        {tuition && !(admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines') && (
           <Section id="tuition" title="Tuition & Financial Aid" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.tuition = el}>
             {tuition.cards && tuition.cards.length > 0 && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
                 {tuition.cards.map((card, i) => (
                   <Card key={i} className="shadow-md">
                     <CardHeader>

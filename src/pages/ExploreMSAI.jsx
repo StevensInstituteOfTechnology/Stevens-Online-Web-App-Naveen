@@ -1,11 +1,12 @@
 import React from 'react';
+import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
 const ExploreMSAI = () => {
   const msaiData = {
     // Hero Section
-    heroTitle: "Master AI and Launch Your Computer Science Career — All Experience Levels Welcome!",
+    heroTitle: "Master AI and Launch Your Computer Science Career - All Experience Levels Welcome!",
     
     heroSubtitle: "Specialize in Artificial Intelligence and Machine Learning. 100% online program designed for aspiring AI professionals.",
     bgImage: "/assets/images/3-explore-msai.jpg", // Placeholder
@@ -78,7 +79,7 @@ const ExploreMSAI = () => {
     // newFall2025Benefits: [
     //   {
     //     icon: Globe,
-    //     text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+    //     text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
     //   },
     //   {
     //     icon: Target,
@@ -94,7 +95,7 @@ const ExploreMSAI = () => {
     //   },
     //   {
     //     icon: ThumbsUp,
-    //     text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+    //     text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
     //   }
     // ],
     // newFall2025Image: "/assets/images/stevens-campus.png", // Placeholder
@@ -164,8 +165,8 @@ const ExploreMSAI = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025",
-        description: "Application Fee Waiver Available and Early Application Review."
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: KEY_DATES.PRIORITY_SUBMIT.details
       },
       {
         label: "Final Submit",
@@ -213,9 +214,9 @@ const ExploreMSAI = () => {
     ],
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Science in Computer Science program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online Master of Science in Artificial Intelligence program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...msaiData} />;

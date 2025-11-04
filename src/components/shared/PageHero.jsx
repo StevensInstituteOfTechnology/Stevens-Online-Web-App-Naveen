@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { createPageUrl } from '@/utils';
 import ApplicationModal from './ApplicationModal';
+import RequestInfoModal from './RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 /**
@@ -19,9 +20,14 @@ export default function PageHero({
   primaryCta, // { label, to? | href? }
   secondaryCta, // { label, to? | href? | useModal? }
   useApplicationModal = false, // New prop for MSCS/MEM pages
-  rightContent // Content to display on the right side
+  useRequestInfoModal = false, // New prop to open Request Info in modal
+  requestInfoProgramCode = '', // Program code for Request Info modal
+  requestInfoSourcePage = 'unknown', // Source page for tracking
+  rightContent, // Content to display on the right side
+  bottomContent // Content to display at the bottom of left column
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
+  const [isRequestInfoModalOpen, setIsRequestInfoModalOpen] = useState(false);
   const lines = Array.isArray(titleLines) && titleLines.length > 0
     ? titleLines
     : (title ? [title] : []);
@@ -30,7 +36,7 @@ export default function PageHero({
     if (!cta || !cta.label) return null;
     const className = variant === 'primary'
       ? 'btn-stevens-primary w-full sm:w-auto'
-      : 'btn-stevens-outline text-stevens-white hover:bg-stevens-white hover:text-stevens-primary w-full sm:w-auto';
+      : 'btn-stevens-secondary w-full sm:w-auto';
 
     // Determine conversion label based on variant and label
     const getConversionLabel = () => {
@@ -50,13 +56,28 @@ export default function PageHero({
       }
     };
 
+    // If this is the primary CTA and useRequestInfoModal is true, trigger modal instead
+    if (variant === 'primary' && useRequestInfoModal) {
+      return (
+        <button 
+          onClick={() => {
+            handleClick();
+            setIsRequestInfoModalOpen(true);
+          }}
+          className={className}
+        >
+          {cta.label}
+        </button>
+      );
+    }
+
     // If this is the secondary CTA and useApplicationModal is true, trigger modal instead
     if (variant === 'secondary' && useApplicationModal && cta.href) {
       return (
         <button 
           onClick={() => {
             handleClick();
-            setIsModalOpen(true);
+            setIsApplicationModalOpen(true);
           }}
           className={className}
         >
@@ -100,7 +121,7 @@ export default function PageHero({
 
       <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
         {breadcrumbs && (
-          <div className="mb-stevens-md text-stevens-sm text-stevens-gray-300">
+          <div className="mb-stevens-md text-stevens-sm text-stevens-gray-300" style={{ textShadow: '0 0.5px 1px rgba(0, 0, 0, 0.5)' }}>
             {breadcrumbs.map((crumb, index) => (
               <span key={index}>
                 {index > 0 && ' / '}
@@ -115,19 +136,19 @@ export default function PageHero({
             {lines.length > 0 ? (
               <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 {lines.map((line, idx) => (
-                  <h1 key={idx} className="font-display font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  <h1 key={idx} className="font-display font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                     {line}
                   </h1>
                 ))}
               </div>
             ) : (
-              <h1 className="font-stevens-display text-stevens-4xl stevens-md:text-stevens-5xl font-bold">
+              <h1 className="font-stevens-display text-stevens-4xl stevens-md:text-stevens-5xl font-bold" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 {title}
               </h1>
             )}
 
             {subtitle && (
-              <p className="mt-stevens-lg text-base sm:text-lg md:text-xl text-gray-200 mb-6 md:mb-8 max-w-xl">
+              <p className="mt-stevens-lg text-base sm:text-lg md:text-xl text-gray-200 mb-6 md:mb-8 max-w-xl" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
                 {subtitle}
               </p>
             )}
@@ -144,12 +165,29 @@ export default function PageHero({
                 {badges.map((badge, index) => {
                   const Icon = badge.icon;
                   return (
-                    <Badge key={index} variant="outline" className="text-white border-white/50 bg-white/10 text-stevens-base py-stevens-xs px-stevens-sm rounded-stevens-md">
-                      {Icon && <Icon className="w-4 h-4 mr-2" />}
-                      {badge.text}
+                    <Badge 
+                      key={index} 
+                      variant="outline" 
+                      className="text-white border-white/60 bg-white/20 backdrop-blur-md text-stevens-base py-stevens-xs px-stevens-sm rounded-stevens-lg cursor-pointer relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                      style={{ 
+                        textShadow: '0 1px 3px rgba(0, 0, 0, 0.7), 0 0 2px rgba(0, 0, 0, 0.8)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                      }}
+                    >
+                      {/* Magnifying glass highlight effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none rounded-stevens-lg" style={{ zIndex: 1 }}></div>
+                      {Icon && <Icon className="w-4 h-4 mr-2 relative" style={{ zIndex: 2 }} />}
+                      <span className="relative" style={{ zIndex: 2 }}>{badge.text}</span>
                     </Badge>
                   );
                 })}
+              </div>
+            )}
+
+            {/* Bottom content - appears below left column content */}
+            {bottomContent && (
+              <div className="mt-stevens-xl">
+                {bottomContent}
               </div>
             )}
           </div>
@@ -164,9 +202,19 @@ export default function PageHero({
       {/* Application Modal */}
       {useApplicationModal && secondaryCta?.href && (
         <ApplicationModal 
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          isOpen={isApplicationModalOpen}
+          onClose={() => setIsApplicationModalOpen(false)}
           traditionalLink={secondaryCta.href}
+        />
+      )}
+
+      {/* Request Info Modal */}
+      {useRequestInfoModal && (
+        <RequestInfoModal 
+          isOpen={isRequestInfoModalOpen}
+          onClose={() => setIsRequestInfoModalOpen(false)}
+          sourcePage={requestInfoSourcePage}
+          programOfInterest={requestInfoProgramCode}
         />
       )}
     </section>

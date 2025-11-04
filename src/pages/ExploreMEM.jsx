@@ -1,4 +1,5 @@
 import React from 'react';
+import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
@@ -17,7 +18,7 @@ const ExploreMEM = () => {
       url: '/explore/online-masters-engineering-management/'
     },
     useApplicationModal: true,
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "ABET Accredited", icon: Award },
       { text: "100% Online", icon: Globe },
@@ -64,7 +65,7 @@ const ExploreMEM = () => {
     newFall2025Benefits: [
       {
         icon: Globe,
-        text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+        text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
       },
       {
         icon: Target,
@@ -80,7 +81,7 @@ const ExploreMEM = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
     newFall2025Image: "/assets/images/1-explore-mem.webp",
@@ -99,7 +100,7 @@ const ExploreMEM = () => {
     
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
-    programBenefitsDescription: "The Stevens Online MEM is a technical leadership degree — built by engineers, for engineers — that blends systems thinking, project execution and organizational strategy. You'll gain the cross-functional fluency top employers demand while building deep technical expertise in data science, modeling and risk analysis.<br/><br/> We produce engineering leaders capable of creating, applying and managing technology to solve complex issues, invent new processes and products, build new enterprises and gain insights from their data.100% of 2023 MEM graduates landed jobs within 3 months at companies like BMW, Lockheed Martin, Goldman Sachs and Turner Construction.¹",
+    programBenefitsDescription: "The Stevens Online MEM is a technical leadership degree - built by engineers, for engineers - that blends systems thinking, project execution and organizational strategy. You'll gain the cross-functional fluency top employers demand while building deep technical expertise in data science, modeling and risk analysis.<br/><br/> We produce engineering leaders capable of creating, applying and managing technology to solve complex issues, invent new processes and products, build new enterprises and gain insights from their data.100% of 2023 MEM graduates landed jobs within 3 months at companies like BMW, Lockheed Martin, Goldman Sachs and Turner Construction.¹",
     programBenefitsImage: "/assets/images/3-explore-mem.webp",
     programBenefitsHighlights: [
       {
@@ -146,8 +147,8 @@ const ExploreMEM = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025",
-        description: "Application Fee Waiver Available and Early Application Review."
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: KEY_DATES.PRIORITY_SUBMIT.details
       },
       {
         label: "Final Submit",
@@ -161,9 +162,9 @@ const ExploreMEM = () => {
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply. Contact admissions for more information.",
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Engineering in Engineering Management program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online Master of Engineering in Engineering Management program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...memData} />;

@@ -17,6 +17,8 @@ export const STATIC_ROUTES = [
   '/online-masters-computer-science-mscs/',
   '/online-masters-engineering-management/',
   '/online-masters-engineering-applied-data-science/', // MEADS
+  '/certificates/enterprise-ai/',
+  '/certificates/applied-data-science-foundations/',
   '/compare-our-programs/',
   '/events/',
   '/online-learning-experience/',
@@ -30,6 +32,8 @@ export const STATIC_ROUTES = [
   '/explore/online-masters-computer-science/',
   '/explore/online-masters-eng-applied-data-science/', // MEADS Explore
   '/explore/ai-masters-computer-science/',
+  '/explore/certificates/enterprise-ai/',
+  '/explore/certificates/applied-data-science-foundations/',
   '/page-not-found/',
 ];
 

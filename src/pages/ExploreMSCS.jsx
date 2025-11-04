@@ -1,4 +1,5 @@
 import React from 'react';
+import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp, Code } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 
@@ -17,7 +18,7 @@ const ExploreMSCS = () => {
       url: '/explore/online-masters-computer-science/'
     },
     useApplicationModal: true,
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
       { text: "No. 1 in New Jersey", icon: Award },
       { text: "100% Online", icon: Globe },
@@ -29,7 +30,7 @@ const ExploreMSCS = () => {
       {
         number: "99%",
         label: "Employment",
-        description: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.¹ Our graduates land roles at companies like Amazon, JPMorgan Chase, PwC and Google — a testament to the real-world value and ROI of your Stevens education."
+        description: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.¹ Our graduates land roles at companies like Amazon, JPMorgan Chase, PwC and Google - a testament to the real-world value and ROI of your Stevens education."
       },
       {
         number: "No. 1",
@@ -50,7 +51,7 @@ const ExploreMSCS = () => {
     whyChooseStevensContent: `
       <p><strong>STEVENS GRADS LAND JOBS AT GOOGLE, BANK OF AMERICA, JPMORGAN CHASE</strong></p>
       
-      <p>Computer science jobs are projected to grow 26% by 2033, according to the U.S. Bureau of Labor Statistics — more than five times the national average. In an increasingly connected world, you will learn in-demand computer science skills with the support of experienced faculty who consult for industry giants like Google, IBM, Bell Labs and Microsoft, and graduate with a competitive edge to meet the critical needs of an expanding job sector across various industries.</p>
+      <p>Computer science jobs are projected to grow 26% by 2033, according to the U.S. Bureau of Labor Statistics - more than five times the national average. In an increasingly connected world, you will learn in-demand computer science skills with the support of experienced faculty who consult for industry giants like Google, IBM, Bell Labs and Microsoft, and graduate with a competitive edge to meet the critical needs of an expanding job sector across various industries.</p>
     `,
     whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
     whyChooseStevensVideoCover: "/assets/videos/video-cover-1.avif", // Placeholder
@@ -66,7 +67,7 @@ const ExploreMSCS = () => {
     newFall2025Benefits: [
       {
         icon: Globe,
-        text: "NO LIVE CLASS SESSIONS — LEARN ON YOUR OWN TIME"
+        text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME"
       },
       {
         icon: Target,
@@ -82,7 +83,7 @@ const ExploreMSCS = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP — NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
     newFall2025Image: "/assets/images/stevens-campus.png", // Placeholder
@@ -114,7 +115,7 @@ const ExploreMSCS = () => {
       },
       {
         title: "Problem-solving focus:",
-        description: "Not just writing code — solving complex problems"
+        description: "Not just writing code - solving complex problems"
       },
       {
         title: "Leadership skills:",
@@ -135,7 +136,7 @@ const ExploreMSCS = () => {
       },
       {
         title: "Renowned Program Faculty",
-        description: "The computer science faculty includes active researchers who have built secure systems for federal agencies and led engineering at IBM and AT&T Labs. Now they'll teach you how to think like a builder — and a strategist."
+        description: "The computer science faculty includes active researchers who have built secure systems for federal agencies and led engineering at IBM and AT&T Labs. Now they'll teach you how to think like a builder - and a strategist."
       }
     ],
     
@@ -169,8 +170,8 @@ const ExploreMSCS = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025",
-        description: "Application Fee Waiver Available and Early Application Review."
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: KEY_DATES.PRIORITY_SUBMIT.details
       },
       {
         label: "Final Submit",
@@ -186,9 +187,9 @@ const ExploreMSCS = () => {
     
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Science in Computer Science program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online Master of Science in Computer Science program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...mscsData} />;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Globe, Star } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { KEY_DATES } from '@/config/constants';
 
 const ExploreMBA = () => {
   const mbaData = {
@@ -115,7 +116,7 @@ const ExploreMBA = () => {
       },
       {
         label: "Priority Submit", 
-        date: "November 11, 2025"
+        date: KEY_DATES.PRIORITY_SUBMIT.date
       },
       {
         label: "Final Submit",
@@ -157,9 +158,9 @@ const ExploreMBA = () => {
     ],
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online MBA program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online MBA program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...mbaData} />;

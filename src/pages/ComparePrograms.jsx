@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PageHero from "../components/shared/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URLS } from "@/config/constants";
+import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
 export default function ComparePrograms() {
   const PROGRAM_OPTIONS = [
     { label: "MBA", value: "mba" },
     { label: "M.S. in Computer Science", value: "mscs" },
-    { label: "Master of Engineering in Engineering Management", value: "mem" },
+    { label: "M.Eng. in Engineering Management", value: "mem" },
+    { label: "M.Eng. in Applied Data Science", value: "meads" },
+    { label: "Enterprise AI Certificate", value: "cert-eai" },
+    { label: "Applied Data Science Foundations Certificate", value: "cert-ads" },
   ];
 
   const [left, setLeft] = useState("mba");
@@ -67,6 +72,36 @@ export default function ComparePrograms() {
       curriculum:
         "Students take coursework built on three pillars: management for engineers, data science and management, and engineering modeling and risk analysis.",
     },
+    meads: {
+      name: "M.Eng. in Applied Data Science",
+      degreeLevel: "Master's",
+      programLength: "2 years**",
+      programStart: "Spring, Summer, Fall",
+      cost: "$24,000*",
+      creditHours: "30 credits",
+      curriculum:
+        "Master data science and AI engineering through hands-on projects. Curriculum bridges engineering precision with AI-driven innovation, covering data pipelines, machine learning, and AI deployment.",
+    },
+    'cert-eai': {
+      name: "Professional Certificate in Enterprise AI",
+      degreeLevel: "Professional Certificate",
+      programLength: "8-16 weeks**",
+      programStart: "Spring 2026",
+      cost: "$5,250*",
+      creditHours: "9 credits",
+      curriculum:
+        "Learn to frame, prototype, and deploy AI workflows safely. Progress from AI strategy and governance to GenAI proof-of-concepts to operational workflow deployment.",
+    },
+    'cert-ads': {
+      name: "Applied Data Science Foundations Certificate",
+      degreeLevel: "Professional Certificate",
+      programLength: "16-20 weeks**",
+      programStart: "Spring 2026",
+      cost: "$5,250*",
+      creditHours: "9 credits",
+      curriculum:
+        "Master Python, SQL, and machine learning foundations through hands-on, project-based learning. Build AI-ready data pipelines and deploy ML models with real-world applications.",
+    },
   };
 
   const FIELDS = [
@@ -87,11 +122,23 @@ export default function ComparePrograms() {
     }
   };
 
+  const handleAssessmentComplete = useCallback((results) => {
+    // Handle assessment completion - could trigger additional actions
+    console.log("Assessment completed:", results);
+    // Optionally, you might want to show the LeadCaptureForm or redirect after assessment
+  }, []);
+
   return (
     <div>
-      <PageHero title="Compare Our Programs" subtitle="Find your path" 
-      
-      bgImage="/assets/images/compare-hero.jpg"
+      <PageHero 
+        title="Compare Our Programs" 
+        subtitle="Find your path" 
+        bgImage="/assets/images/compare-hero.jpg"
+        rightContent={
+          <ProgramReadinessAssessment
+            onComplete={handleAssessmentComplete}
+          />
+        }
       />
 
       {/* Select Programs to Compare */}

@@ -21,6 +21,8 @@ const ExploreProgramPageTemplate = ({
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
+  useRequestInfoModal = true, // Default to true - use modal for Request Info
+  heroBottomContent, // New prop for pricing cards in hero
   
   // Statistics Props
   statistics,
@@ -111,11 +113,15 @@ const ExploreProgramPageTemplate = ({
         subtitle={heroSubtitle}
         bgImage={bgImage}
         badges={badges}
-        primaryCta={{ label: 'Request Information', to: 'RequestInfo' }}
-        secondaryCta={secondaryCta || { label: 'Apply Now', href: traditionalAppLink }}
+        primaryCta={null}
+        secondaryCta={secondaryCta || { label: 'Apply In Minutes', href: traditionalAppLink }}
         useApplicationModal={useApplicationModal}
+        useRequestInfoModal={useRequestInfoModal}
+        requestInfoProgramCode={programCode}
+        requestInfoSourcePage={`explore_${programCode}_page`}
+        bottomContent={heroBottomContent}
         rightContent={
-          <div className="animate-in slide-in-from-right duration-700 delay-300 w-full flex justify-center lg:justify-end">
+          <div className="w-full flex justify-center lg:justify-end">
             <LeadCaptureForm 
               title="Request Information"
               subtitle="Get detailed program information and connect with an enrollment advisor."
@@ -162,7 +168,7 @@ const ExploreProgramPageTemplate = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-stevens-2xl items-center">
+            <div className={`grid grid-cols-1 ${whyChooseStevensVideo ? 'lg:grid-cols-2' : 'lg:grid-cols-1'} gap-stevens-2xl items-center`}>
               {/* Left Column - Text Content on Desktop, Video on Mobile */}
               <div className="space-y-stevens-lg lg:order-1 order-2">
                 <h2 className="font-stevens-display text-stevens-lg text-stevens-gray-600 uppercase tracking-wide">
@@ -182,6 +188,7 @@ const ExploreProgramPageTemplate = ({
               </div>
 
               {/* Right Column - Video Player on Desktop, Text on Mobile */}
+              {whyChooseStevensVideo && (
               <div className="relative lg:order-2 order-1">
                 <VideoPlayer
                   src={whyChooseStevensVideo}
@@ -192,6 +199,7 @@ const ExploreProgramPageTemplate = ({
                   showControls={true}
                 />
               </div>
+              )}
             </div>
           </motion.div>
         </div>

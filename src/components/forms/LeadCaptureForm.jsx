@@ -14,12 +14,12 @@ export default function LeadCaptureForm({
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Prevent duplicate script loading
-    if (document.getElementById('stevens-inquiry-form-script')) return;
+    // Only run on client side
+    if (typeof document === 'undefined') return;
     
     // Create the script element
     const script = document.createElement('script');
-    script.id = 'stevens-inquiry-form-script';
+    script.id = `stevens-inquiry-form-script-${sourcePage}-${Date.now()}`;
     script.async = true;
     
     // Build the script URL with current page parameters
@@ -68,18 +68,22 @@ export default function LeadCaptureForm({
     
     // Cleanup function
     return () => {
-      const existingScript = document.getElementById('stevens-inquiry-form-script');
-      if (existingScript) {
-        existingScript.remove();
+      if (script && script.parentNode) {
+        script.remove();
+      }
+      // Also clean up the form container
+      const formContainer = document.getElementById('form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532');
+      if (formContainer) {
+        formContainer.innerHTML = '';
       }
     };
   }, [sourcePage, programOfInterest]);
 
   const FormCard = (
-    <Card className="w-full max-w-xs sm:max-w-sm mx-auto shadow-stevens-xl rounded-stevens-lg overflow-hidden">
-      <CardHeader className="flex flex-col space-y-stevens-xs p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white">
-        <CardTitle className="text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold mt-stevens-xs">{title}</CardTitle>
-        {subtitle && <p className="text-stevens-sm stevens-md:text-stevens-base text-stevens-white/90">{subtitle}</p>}
+    <Card className="w-full max-w-sm sm:max-w-md mx-auto shadow-stevens-xl rounded-stevens-lg overflow-hidden">
+      <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white rounded-t-stevens-lg">
+        <CardTitle className="text-base sm:text-stevens-lg md:text-stevens-xl font-stevens-bold leading-tight">{title}</CardTitle>
+        {subtitle && <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">{subtitle}</p>}
       </CardHeader>
       <CardContent className="bg-stevens-white p-0">
         <div className="relative">
@@ -95,6 +99,7 @@ export default function LeadCaptureForm({
               position: relative !important;
               z-index: 1 !important;
               font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+              pointer-events: auto !important;
             }
             
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 * {
@@ -111,13 +116,14 @@ export default function LeadCaptureForm({
               z-index: 1 !important;
               position: relative !important;
               border-radius: 0 0 8px 8px !important;
+              pointer-events: auto !important;
             }
             
             /* Form container */
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 form {
               width: 100% !important;
               max-width: 100% !important;
-              padding: 3rem !important;
+              padding: 1.5rem !important;
               background: #ffffff !important;
               border-radius: 0 !important;
             }
@@ -133,10 +139,13 @@ export default function LeadCaptureForm({
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label {
               color: #1f2937 !important;
               font-weight: 400 !important;
-              font-size: 14px !important;
-              margin-bottom: 0.375rem !important;
+              font-size: 13px !important;
+              margin-bottom: 0.25rem !important;
               display: block !important;
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+              line-height: 1.4 !important;
+              pointer-events: auto !important;
+              cursor: default !important;
             }
             
             /* Input fields styling */
@@ -155,6 +164,8 @@ export default function LeadCaptureForm({
               transition: all 0.15s ease-in-out !important;
               outline: none !important;
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+              pointer-events: auto !important;
+              cursor: text !important;
             }
             
             /* Input focus states */
@@ -191,7 +202,7 @@ export default function LeadCaptureForm({
               letter-spacing: 0.025em !important;
               width: 100% !important;
               margin-top: 0.75rem !important;
-              
+              pointer-events: auto !important;
             }
             
             /* Submit button hover */
@@ -225,15 +236,17 @@ export default function LeadCaptureForm({
               width: 1.25rem !important;
               height: 1.25rem !important;
               margin-right: 0.5rem !important;
+              pointer-events: auto !important;
+              cursor: pointer !important;
             }
             
             /* Privacy text styling */
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .privacy-text,
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 small {
-              font-size: 13px !important;
+              font-size: 11px !important;
               color: #6b7280 !important;
-              line-height: 1.5 !important;
-              margin-top: 1rem !important;
+              line-height: 1.4 !important;
+              margin-top: 0.75rem !important;
             }
             
             /* Link styling */
@@ -250,7 +263,7 @@ export default function LeadCaptureForm({
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form-group,
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .field-group,
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 > div {
-              margin-bottom: 0.75rem !important;
+              margin-bottom: 0.625rem !important;
             }
             
             /* Remove excessive top margins/padding */
@@ -313,11 +326,16 @@ export default function LeadCaptureForm({
             
             @media (max-width: 768px) {
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 {
-                font-size: 13px !important;
+                font-size: 12px !important;
               }
               
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 form {
-                padding: 1.25rem !important;
+                padding: 1rem !important;
+              }
+              
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label {
+                font-size: 12px !important;
+                margin-bottom: 0.25rem !important;
               }
               
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"],
@@ -326,19 +344,30 @@ export default function LeadCaptureForm({
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 select,
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 textarea {
                 font-size: 16px !important;
-                padding: 0.625rem !important;
+                padding: 0.5rem 0.625rem !important;
               }
               
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="submit"],
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="submit"] {
-                padding: 0.75rem 1.25rem !important;
-                font-size: 14px !important;
+                padding: 0.625rem 1rem !important;
+                font-size: 13px !important;
+              }
+              
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form-group,
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .field-group,
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 > div {
+                margin-bottom: 0.5rem !important;
               }
             }
             
             @media (max-width: 480px) {
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 form {
-                padding: 1rem !important;
+                padding: 0.875rem !important;
+              }
+              
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label {
+                font-size: 11px !important;
+                margin-bottom: 0.25rem !important;
               }
               
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"],
@@ -352,8 +381,19 @@ export default function LeadCaptureForm({
               
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="submit"],
               #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="submit"] {
-                padding: 0.75rem 1rem !important;
-                font-size: 13px !important;
+                padding: 0.625rem 0.875rem !important;
+                font-size: 12px !important;
+              }
+              
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form-group,
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .field-group,
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 > div {
+                margin-bottom: 0.5rem !important;
+              }
+              
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 small,
+              #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .privacy-text {
+                font-size: 10px !important;
               }
             }
             
@@ -418,6 +458,22 @@ export default function LeadCaptureForm({
 
             #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button + button {
               margin-left: 1rem !important;
+            }
+
+            /* ===== STYLING FOR "GRE/GMAT Not Required" LABEL ===== */
+            
+            /* Target the "GRE/GMAT Not Required" text */
+            #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 #form_question_35db045c-d1d1-428c-86fe-55fd24c44d88 .form_label,
+            #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form_p .form_label {
+              color: #a32638 !important; /* Stevens red color */
+              font-size: 1rem !important; /* Font size */
+              font-weight: 700 !important; /* Bold */
+              text-transform: uppercase !important; /* Uppercase */
+              letter-spacing: 0.05em !important; /* Spacing between letters */
+              padding: 0.5rem 0 !important; /* Add some vertical padding */
+              text-align: center !important; /* Center the text */
+              margin-bottom: 1rem !important; /* Space below */
+              margin-top: 1rem !important;
             }
           `}</style>
           

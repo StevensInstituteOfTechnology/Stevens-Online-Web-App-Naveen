@@ -3,6 +3,7 @@ import React from 'react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { Globe, Check, Award } from 'lucide-react';
 import { createPageUrl } from '@/utils';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'mem',
@@ -17,7 +18,7 @@ const programData = {
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
     bgImage: "/assets/images/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     
     badges: [
       { text: "100% Online", icon: Globe },
@@ -348,8 +349,8 @@ const programData = {
         event: "Spring 2026", 
         date: "October 14, 2025", 
         details: "Deposit Waiver* and Application Fee Waiver Available.",
-        priorityDate: "November 11, 2025",
-        priorityDetails: "Application Fee Waiver Available and Early Application Review.",
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: "January 5, 2026",
         startDate: "January 20, 2026"
       }

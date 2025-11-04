@@ -3,6 +3,7 @@ import {
   Globe, Award, Check, Briefcase, DollarSign, BrainCircuit, LineChart,
   Target, TrendingUp, Users } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'mba',
@@ -17,7 +18,7 @@ const programData = {
     subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
     bgImage: "/assets/images/1-omba-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
     { text: "100% Online", icon: Globe },
     { text: "AACSB Accredited", icon: Award },
@@ -38,7 +39,7 @@ const programData = {
   },
   overview: {
     title: "MBA Program Overview",
-    description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies — taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
+    description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
     keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management"],
     concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management"]
   },
@@ -62,7 +63,7 @@ const programData = {
   { note: "2", text: "Based on the cost of a four-year bachelor's degree program." }],
 
   career: {
-    description: `<p class="mb-4">The Stevens Online MBA program prepares you for many leadership roles in companies based in New York City and other business hubs across the country. According to 2025 data from the U.S. Bureau of Labor Statistics, NYC is one of the top-paying regions for management professionals — financial managers in the greater metropolitan area, for instance, earn over $247,000 annually. It's also the region hiring the greatest number of management professionals — the area employs over 187,000 general and operations managers.</p><p class="mb-4">The outlook for management positions is very positive. Some, like financial managers, are projected to grow much faster than average. Employment of financial managers is forecast to grow by 17% by 2033 (with around 75,100 job openings each year). Others, like sales managers, are also projected to grow faster than the national average over the next decade. An Online MBA from Stevens provides students with transferable skills valuable in any industry and prepares them for professional success throughout their careers.</p><p>According to data from the labor market analytics experts at Lightcast, a skills gap exists among MBA occupations, resulting in a demand for graduates with finance, accounting, project management, auditing and data analysis skills. Our comprehensive curriculum and specialized concentrations focus on these essential and highly sought-after skills, preparing you for professional success in your chosen field.</p>`,
+    description: `<p class="mb-4">The Stevens Online MBA program prepares you for many leadership roles in companies based in New York City and other business hubs across the country. According to 2025 data from the U.S. Bureau of Labor Statistics, NYC is one of the top-paying regions for management professionals - financial managers in the greater metropolitan area, for instance, earn over $247,000 annually. It's also the region hiring the greatest number of management professionals - the area employs over 187,000 general and operations managers.</p><p class="mb-4">The outlook for management positions is very positive. Some, like financial managers, are projected to grow much faster than average. Employment of financial managers is forecast to grow by 17% by 2033 (with around 75,100 job openings each year). Others, like sales managers, are also projected to grow faster than the national average over the next decade. An Online MBA from Stevens provides students with transferable skills valuable in any industry and prepares them for professional success throughout their careers.</p><p>According to data from the labor market analytics experts at Lightcast, a skills gap exists among MBA occupations, resulting in a demand for graduates with finance, accounting, project management, auditing and data analysis skills. Our comprehensive curriculum and specialized concentrations focus on these essential and highly sought-after skills, preparing you for professional success in your chosen field.</p>`,
     jobTitles: [
     { title: "Chief Executive", employed: "211,230", salary: "$206,420" },
     { title: "Financial Manager", employed: "837,100", salary: "$161,700" },
@@ -76,7 +77,7 @@ const programData = {
   whatYoullLearn: {
     variant: 'skillCards',
     title: "A Skill Set Designed for Impact",
-    description: "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills — broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
+    description: "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills - broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
     modules: [
     {
       title: "Financial Management",
@@ -126,7 +127,7 @@ const programData = {
     }
   },
   curriculum: {
-    description: "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics — equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
+    description: "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
     courseTabs: {
       foundations: {
           title: "Foundational Courses",
@@ -152,7 +153,7 @@ const programData = {
             <div class="course-item">
               <button class="course-toggle" data-target="mgt506">MGT 506 Economics for Managers (3)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="mgt506">
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course introduces managers to the essence of business economics — the theories, concepts and ideas that form the economist's tool kit encompassing both the microeconomic and macroeconomic environments. Microeconomic topics include demand and supply, elasticity, consumer choice, production, cost, profit maximization, market structure, and game theory while the macroeconomic topics will be GDP, inflation, unemployment, aggregate demand, aggregate supply, fiscal and monetary policies. In addition, the basic concepts in international trade and finance will be discussed.</p>
+                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course introduces managers to the essence of business economics - the theories, concepts and ideas that form the economist's tool kit encompassing both the microeconomic and macroeconomic environments. Microeconomic topics include demand and supply, elasticity, consumer choice, production, cost, profit maximization, market structure, and game theory while the macroeconomic topics will be GDP, inflation, unemployment, aggregate demand, aggregate supply, fiscal and monetary policies. In addition, the basic concepts in international trade and finance will be discussed.</p>
               </div>
             </div>
           </div>
@@ -257,7 +258,7 @@ const programData = {
                   <div class="course-item">
                     <button class="course-toggle" data-target="bia658">BIA 658 Social Network Analytics (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="bia658">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course focuses on network concepts, including graph-theoretic fundamentals, centrality, cohesion, affiliations, equivalence and roles, as well as design issues, including data sampling and hypothesis testing. Another focus of this course is on marketing applications of social network analysis — in particular, the use of knowledge about network properties and behavior, such as hubs and paths, the robustness of the network, and information cascades — to better broadcast products and search targets.</p>
+                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course focuses on network concepts, including graph-theoretic fundamentals, centrality, cohesion, affiliations, equivalence and roles, as well as design issues, including data sampling and hypothesis testing. Another focus of this course is on marketing applications of social network analysis - in particular, the use of knowledge about network properties and behavior, such as hubs and paths, the robustness of the network, and information cascades - to better broadcast products and search targets.</p>
                     </div>
                   </div>
                   
@@ -591,7 +592,7 @@ const programData = {
     term: "Spring 2026",
       rows: [
       { event: "Early Submit", date: "October 14, 2025" },
-      { event: "Priority Submit", date: "November 11, 2025" },
+      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
       { event: "Final Submit", date: "January 5, 2026" },
       { event: "Start of Classes", date: "January 20, 2026" }
     ]

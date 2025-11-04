@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { DollarSign, TrendingUp, Award, Banknote, ArrowRight } from 'lucide-react';
+import RequestInfoModal from '../components/shared/RequestInfoModal';
+import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 export default function TuitionOutcomes() {
+  const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
 
   const roiPoints = [
   {
@@ -94,12 +97,27 @@ export default function TuitionOutcomes() {
                 <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
                     <Button className="btn-secondary px-8 py-3 text-lg">Apply Now</Button>
                 </a>
-                <Link to={createPageUrl("RequestInfo")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                    <Button variant="outline" className="btn-outline-maroon px-8 py-3 text-lg">Request Information</Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="btn-outline-maroon px-8 py-3 text-lg"
+                  onClick={() => {
+                    trackConversion(CONVERSION_LABELS.REQUEST_INFO);
+                    setShowRequestInfoModal(true);
+                  }}
+                >
+                  Request Information
+                </Button>
            </div>
         </div>
       </div>
+
+      {/* Request Info Modal */}
+      <RequestInfoModal 
+        isOpen={showRequestInfoModal}
+        onClose={() => setShowRequestInfoModal(false)}
+        sourcePage="tuition_outcomes_page"
+        programOfInterest=""
+      />
     </div>);
 
 }

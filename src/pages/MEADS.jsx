@@ -1,22 +1,24 @@
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
+import { KEY_DATES } from '@/config/constants';
 
 const programData = {
   code: 'meads',
   seo: {
-    title: 'Online MS in Engineering - Applied Data Science | Stevens',
-    description: 'Earn your 100% online MS in Engineering – Applied Data Science from Stevens. Dive into AI, big data and analytics, advance your technical career.',
+    title: 'Online M.Eng. in Applied Data Science - AI & Machine Learning | Stevens',
+    description: 'Master AI, machine learning, and LLMs. Build and deploy production ML systems. $24,000 for 30 credits. 100% online from top-ranked Stevens.',
     ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
     url: '/online-masters-engineering-applied-data-science/'
   },
   // ==================================================================
   hero: {
-    titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build What's Next."],
-    subtitle: "Gain the skills to turn data into intelligent systems that power the future.",
+    titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build AI-Powered Systems."],
+    subtitle: "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply Now', to: 'accelerated-application' },
+    secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     // badges: [
     //   { text: "Industry-Ready Skills", icon: Award },
     //   { text: "Cutting-Edge Curriculum", icon: Star },
@@ -27,23 +29,26 @@ const programData = {
   overview: {
     title: "Program Overview",
     description: `
-      <p>Data science is transforming every industry, from finance and healthcare to energy, logistics, and media. The M.Eng. in Applied Data Science from Stevens builds the technical, analytical, and ethical skills required to lead in this data-driven world.</p>
+      <p>The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
       
-      <p class='my-5'>Through a curriculum grounded in engineering rigor and real-world application, students master data integration, big data systems, AI model design, and interactive visualization. Coursework combines hands-on projects, case studies, and research-based learning to deliver technical depth with professional relevance.</p>
+      <p class='my-5'>Through a curriculum grounded in engineering rigor and real-world application, you'll master <strong>AI model design, LLM fine-tuning, MLOps, and scalable data architectures</strong>. Learn to build end-to-end AI solutions: from data pipelines and feature engineering to model deployment and monitoring in production environments.</p>
+      
+      <p class='my-5'>This program bridges engineering precision with AI-driven innovation. You'll work with cutting-edge tools—PyTorch, TensorFlow, Hugging Face, cloud AI platforms—and learn to operationalize AI responsibly with ethics, explainability, and governance built in.</p>
       
       <h3 class='text-lg'><strong>Program at a Glance:</strong></h3>
 
       <ul class='my-5'>
         <li><strong>Format: 100% Online</strong></li>
         <li><strong>Duration: Approximately 2 years (30 credits)</strong></li>
+        <li><strong>Focus: Applied AI, Machine Learning, LLMs & MLOps</strong></li>
         <li><strong>Accreditation: Middle States Commission on Higher Education</strong></li>
       </ul>
       
     `,
     keySkills: [
-      "Machine Learning Engineering", "Data Pipeline Design", "Cloud Architecture", "Distributed Systems", 
-      "MLOps", "Big Data Processing", "Software Engineering", "System Design",
-      "Python", "Java", "Spark", "Kubernetes", "Docker", "AWS"
+      "Machine Learning Engineering", "LLM Fine-Tuning & Deployment", "AI Model Design", "MLOps & Model Monitoring",
+      "Data Pipeline Engineering", "Cloud AI Architecture", "Distributed Systems", "AI Ethics & Explainability",
+      "Python", "PyTorch", "TensorFlow", "Hugging Face", "Spark", "Kubernetes", "Docker", "AWS"
     ]
   },
   // ==================================================================
@@ -146,7 +151,7 @@ const programData = {
   // ==================================================================
   topCompanies: {
     title: "Industries Hiring Stevens Graduates",
-    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032—more than seven times faster than the average for all occupations.",
+    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032-more than seven times faster than the average for all occupations.",
     companies: [
       "Technology",
       "Finance",
@@ -166,7 +171,7 @@ const programData = {
         title: "Mathematics & Foundations",
         description: "<p>Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>",
         skills: [
-          "Apply concepts from multivariable calculus and linear algebra—such as vector spaces, eigenvalues, and matrix decompositions—to model and analyze data",
+          "Apply concepts from multivariable calculus and linear algebra-such as vector spaces, eigenvalues, and matrix decompositions-to model and analyze data",
           "Use optimization and numerical methods to solve applied data science problems",
           "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data"
         ]
@@ -182,7 +187,7 @@ const programData = {
       },
       {
         title: "Machine Learning & AI",
-        description:"Students explore the principles and applications of machine learning and artificial intelligence—from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
+        description:"Students explore the principles and applications of machine learning and artificial intelligence-from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
         skills: [
           "Apply core machine learning methods such as regression, classification, clustering, and dimensionality reduction using Python libraries",
           "Design and train neural networks and deep learning architectures including CNNs, RNNs, and attention-based models",
@@ -204,7 +209,7 @@ const programData = {
         description: "Students apply analytical techniques to real-world business challenges in marketing, operations, and digital contexts. The coursework emphasizes data-driven strategy, governance, and decision-making.",
         skills: [
           "Conduct marketing and operational analytics to model customer behavior, optimize campaigns, and measure business performance",
-          "Apply web and text mining techniques—including scraping, clustering, and recommender systems—to extract insights from large-scale data sources",
+          "Apply web and text mining techniques-including scraping, clustering, and recommender systems-to extract insights from large-scale data sources",
           "Implement data governance, security, and risk management practices to ensure trustworthy analytics across enterprise environments",
         ]
       }
@@ -237,7 +242,7 @@ const programData = {
         content: `
           <div class="space-y-stevens-lg">
             <div>
-              <h4 class="course-section-header">TERM 1 — Foundations of Data Science</h4>
+              <h4 class="course-section-header">TERM 1 - Foundations of Data Science</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse501">MA 574: Foundational Mathematics for Data Science<span class="course-arrow">▼</span></button>
@@ -263,7 +268,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 2 — Applied Analytics</h4>
+              <h4 class="course-section-header">Term 2 - Applied Analytics</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse520">CS 559: Machine Learning<span class="course-arrow">▼</span></button>
@@ -289,7 +294,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 3 — Advanced AI and Big Data</h4>
+              <h4 class="course-section-header">Term 3 - Advanced AI and Big Data</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse540">CS 583: Deep Learning<span class="course-arrow">▼</span></button>
@@ -315,7 +320,7 @@ const programData = {
             </div>
             
             <div>
-              <h4 class="course-section-header">Term 4 — Visualization and Strategy</h4>
+              <h4 class="course-section-header">Term 4 - Visualization and Strategy</h4>
               <div class="space-y-stevens-md">
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse560">FA 550: Data Visualization Applications<span class="course-arrow">▼</span></button>
@@ -327,7 +332,7 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse570">BIA 568: Management of AI Technologies<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="dse570">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries—such as autonomous transportation, fraud detection, and machine translation—while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.</p>
+                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries-such as autonomous transportation, fraud detection, and machine translation-while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.</p>
                   </div>
                 </div>
 
@@ -341,7 +346,7 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="dse574">Capstone Project<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="dse574">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Apply data science to a real-world challenge. In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes—ranging from optimizing supply chains to developing predictive health systems.</p>
+                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Apply data science to a real-world challenge. In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.</p>
                   </div>
                 </div>
               </div>
@@ -358,7 +363,7 @@ const programData = {
             <div>
               <h4 class="course-section-header">Apply Data Science to a Real-World Challenge</h4>
               <div class="space-y-stevens-md">
-                <p>In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes—ranging from optimizing supply chains to developing predictive health systems.</p>
+                <p>In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.</p>
                 
                 <h5><strong>Sample Project Topics:</strong></h5>
                 <ul class='list-disc pl-5'>
@@ -413,10 +418,10 @@ const programData = {
       rows: [
         { 
           event: "Spring 2026", 
-          date: "November 11 , 2025", 
+          date: "November 20 , 2025", 
           details: "Deposit Waiver* and Application Fee Waiver Available.",
-          priorityDate: "November 18, 2025",
-          priorityDetails: "Application Fee Waiver Available and Early Application Review.",
+          priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+          priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
           finalDate: "January 5, 2026",
           startDate: "January 20, 2026"
         }
@@ -425,13 +430,36 @@ const programData = {
     },
     // ==================================================================
     tuition: {
-      cards: [],
-      description: `<h3 class="font-bold text-xl mb-4">New for 2025: Up to $16,708 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p>`,
-      grants: [
-          { title: "Aspire Grant (for standard applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
-          { title: "Pathway Grant (for ASAP applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
-          { title: "Dean’s Merit Scholar Program", description: "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more." }
-      ]
+      cards: [
+        { value: "$800", label: "Per Credit" },
+        { value: "$24,000", label: "Total Program Cost" }
+      ],
+      description: `
+        <h3 class="font-bold text-xl mb-4">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
+        <p class="mb-4">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
+        
+        <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💡 Strong Return on Investment</p>
+          <p class="text-stevens-sm">Data science professionals earn a median salary of $130,000+, with machine learning engineers earning even more. Your Stevens degree typically pays for itself within the first 1-2 years of graduation through increased earning potential.</p>
+        </div>
+        
+        <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
+          <p class="font-semibold text-stevens-gray-900 mb-2">💼 Financial Aid & Funding Options</p>
+          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable. Many students receive funding support to reduce their out-of-pocket costs.</p>
+          <p class="text-stevens-sm">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+            Request Information
+          </a>
+          <a href="https://stevens.edu/schedule-call" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+            Schedule a Call for Funding Details
+          </a>
+        </div>
+        
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
+      `
     },
     // ==================================================================
     events: {
@@ -453,5 +481,11 @@ const programData = {
 };
 
 export default function MEADS() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  // Add pricing cards to hero section
+  const heroWithPricing = {
+    ...programData.hero,
+    bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+  };
+  
+  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />;
 }

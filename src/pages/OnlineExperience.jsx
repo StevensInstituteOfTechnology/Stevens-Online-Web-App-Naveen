@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent } from '@/components/ui/card';
 import { Laptop, Users, LifeBuoy, Library, ArrowRight } from 'lucide-react';
@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
+import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
 export default function OnlineExperience() {
+  const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [
     {
       icon: Laptop,
@@ -40,115 +42,74 @@ export default function OnlineExperience() {
         bgImage="/assets/images/1-online-learning-hero-scaled.webp"
       />
       
-      {/* Welcome to Stevens Section */}
-      <div className="py-20 bg-stevens-white">
-        <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-xl text-center">
-              Welcome to Stevens
-            </h2>
-            <div className="prose prose-lg max-w-none text-stevens-gray-700 leading-relaxed space-y-stevens-lg">
-              <p>
-                Thank you for your interest in Stevens Institute of Technology online graduate programs. We're excited to be considered in your search for a graduate program that fits your career goals and professional lifestyle.
-              </p>
-              <p>
-                Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world.
-              </p>
-              <p>
-                From our nationally recognized stature (the U.S. Distance Learning Association awarded Stevens the 21st Century Award for Best Practices in Distance Learning), to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.
-              </p>
-              <p>
-                Whether you are familiar with Stevens or discovering our programs for the first time, welcome to Stevens Institute of Technology.
-              </p>
-            </div>
-          </div>
+      {/* Welcome Message from Dean Arshad */}
+      <div className="py-20 bg-stevens-gray-50">
+        <div className="max-w-5xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
+          <Card className="shadow-stevens-2xl border border-stevens-gray-200 rounded-stevens-lg overflow-hidden">
+            <CardContent className="p-0">
+              {/* Header with Dean's Photo and Title */}
+              <div className="bg-gradient-to-r from-gray-600 to-red-800 text-white p-stevens-lg stevens-md:p-stevens-xl">
+                <div className="flex flex-col stevens-md:flex-row items-center gap-stevens-lg">
+                  <img
+                    src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                    alt="Arshad Saiyed, Chief Online Learning Officer and Dean"
+                    className="w-32 h-32 stevens-md:w-40 stevens-md:h-40 rounded-full object-cover border-4 border-white shadow-stevens-xl"
+                  />
+                  <div className="text-center stevens-md:text-left">
+                    <h2 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold mb-stevens-xs">
+                      Arshad Saiyed
+                    </h2>
+                    <p className="text-stevens-base stevens-md:text-stevens-lg font-stevens-medium text-white/90">
+                      Chief Online Learning Officer and Dean of the College of Professional Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Letter Content */}
+              <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
+                <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
+                  Welcome Message from the Chief Online Learning Officer and Dean, College of Professional Education
+                </h3>
+                
+                <div className="prose prose-lg max-w-none text-stevens-gray-700 leading-relaxed space-y-stevens-md">
+                  <p>
+                    Welcome to Stevens Online. For more than 150 years, Stevens Institute of Technology has been at the forefront of innovation, shaping the future through technology, research, and education. Stevens is consistently ranked among the nation's top universities for return on investment, reflecting both the quality and long-term value of a Stevens education.
+                  </p>
+                  <p>
+                    That same commitment to excellence defines our online learning experience. Stevens Online offers rigorous, engaging, and flexible programs designed by expert faculty, industry-aligned, and focused on real-world application. Our students learn alongside professionals from across the world, gaining skills that are immediately relevant to their careers and preparing them to lead in a rapidly changing environment.
+                  </p>
+                  <p>
+                    Building on this strong foundation, Stevens has created a new College of Professional Education to expand access to high-impact, technology-driven education for working professionals and corporate partners.
+                  </p>
+                  <p>
+                    I invite you to explore our programs and experience how Stevens continues to set the standard for excellence and innovation in online learning and professional education.
+                  </p>
+                </div>
+
+                {/* Signature */}
+                <div className="mt-stevens-xl">
+                  <img
+                    src="/assets/images/arshad-signature.png"
+                    alt="Arshad Saiyed Signature"
+                    className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
+                  />
+                  <p className="font-stevens-semibold text-stevens-gray-900">
+                    Arshad Saiyed
+                  </p>
+                  <p className="text-stevens-sm text-stevens-gray-600">
+                    Chief Online Learning Officer and Dean<br />
+                    College of Professional Education <br />
+                    Stevens Institute of Technology
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
       
-      {/* Experienced Faculty Section */}
-      <div className="py-20 bg-stevens-gray-100">
-        <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-              Experienced Faculty
-            </h2>
-            <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Our faculty members are not just educators—they are industry leaders, researchers, and innovators who bring real-world expertise to the classroom. They contribute to cutting-edge research, healthcare advancements, critical thinking, and innovation that shapes the future of technology and business.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-stevens-xl">
-            {/* Faculty Member 1 */}
-            <div className="text-center">
-              <div className="mb-stevens-lg">
-                <img 
-                  src="/assets/avatars/online-experience-avatar/shudong-hao-stevens-faculty.jpeg" 
-                  alt="Shudong Hao, Online MSCS Program Director / Assoc. Chair of Graduate Studies at Stevens Institute of Technology"
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-stevens-white shadow-stevens-lg"
-                />
-              </div>
-              <h3 className="font-stevens-bold text-stevens-xl text-stevens-gray-900 mb-stevens-sm">
-                Shudong Hao
-              </h3>
-              <p className="text-stevens-primary font-stevens-semibold mb-stevens-md">
-                Online MSCS Program Director / Assoc. Chair of Graduate Studies
-              </p>
-              <a 
-                href="https://www.stevens.edu/profile/shao14" 
-                className="text-stevens-primary hover:text-stevens-maroon-dark font-stevens-medium transition-colors duration-stevens-normal"
-              >
-                Read More
-              </a>
-            </div>
-            
-            {/* Faculty Member 2 */}
-            <div className="text-center">
-              <div className="mb-stevens-lg">
-                <img 
-                  src="/assets/avatars/online-experience-avatar/brian-rothschild-stevens-institute-omba-faculty.jpg" 
-                  alt="Brian Rothschild, Online MBA Program Director at Stevens Institute of Technology"
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-stevens-white shadow-stevens-lg"
-                />
-              </div>
-              <h3 className="font-stevens-bold text-stevens-xl text-stevens-gray-900 mb-stevens-sm">
-                Brian Rothschild
-              </h3>
-              <p className="text-stevens-primary font-stevens-semibold mb-stevens-md">
-                Online MBA Program Director
-              </p>
-              <a 
-                href="https://www.stevens.edu/school-business/faculty" 
-                className="text-stevens-primary hover:text-stevens-maroon-dark font-stevens-medium transition-colors duration-stevens-normal"
-              >
-                Read More
-              </a>
-            </div>
-            
-            {/* Faculty Member 3 */}
-            <div className="text-center">
-              <div className="mb-stevens-lg">
-                <img 
-                  src="/assets/avatars/online-experience-avatar/carlo-lipizzi-stevens-faculty.jpg" 
-                  alt="Carlo Lipizzi, MEM Program Director and Professor at Stevens Institute of Technology"
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-stevens-white shadow-stevens-lg"
-                />
-              </div>
-              <h3 className="font-stevens-bold text-stevens-xl text-stevens-gray-900 mb-stevens-sm">
-                Carlo Lipizzi
-              </h3>
-              <p className="text-stevens-primary font-stevens-semibold mb-stevens-md">
-                MEM Program Director and Professor
-              </p>
-              <a 
-                href="https://www.stevens.edu/profile/clipizzi" 
-                className="text-stevens-primary hover:text-stevens-maroon-dark font-stevens-medium transition-colors duration-stevens-normal"
-              >
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+
       
       <div className="py-20 bg-stevens-gray-100">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
@@ -187,14 +148,27 @@ export default function OnlineExperience() {
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
                   <Button className="btn-secondary px-8 py-3 text-lg">Schedule a Call</Button>
                 </a>
-                 <Link to={createPageUrl("RequestInfo")} onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}>
-                    <Button variant="outline" className="btn-outline-maroon px-8 py-3 text-lg">
+                <Button 
+                  variant="outline" 
+                  className="btn-outline-maroon px-8 py-3 text-lg"
+                  onClick={() => {
+                    trackConversion(CONVERSION_LABELS.REQUEST_INFO);
+                    setShowRequestInfoModal(true);
+                  }}
+                >
                         Request Information
                     </Button>
-                </Link>
            </div>
         </div>
       </div>
+
+      {/* Request Info Modal */}
+      <RequestInfoModal 
+        isOpen={showRequestInfoModal}
+        onClose={() => setShowRequestInfoModal(false)}
+        sourcePage="online_experience_page"
+        programOfInterest=""
+      />
     </div>
   );
 }

@@ -53,24 +53,24 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
 
   return (
     <div 
-      className="fixed inset-0 z-[99999] flex items-center justify-center p-stevens-sm bg-black/60 animate-in fade-in duration-300 overflow-y-auto"
+      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
       onClick={onClose}
     >
-      <div 
-        className="relative w-full max-w-2xl my-stevens-md bg-stevens-white rounded-stevens-lg shadow-stevens-2xl overflow-hidden animate-in zoom-in-95 duration-300"
-        onClick={(e) => e.stopPropagation()}
-      >
-        
+      <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
+        <div 
+          className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header */}
+          <div className="bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+            <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center leading-tight">
+              Select the application option that works best for you
+            </h2>
+          </div>
 
-        {/* Header */}
-        <div className="bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-stevens-md py-stevens-sm">
-          <h2 className="font-stevens-display text-stevens-lg stevens-md:text-stevens-xl font-stevens-bold text-center">
-            Select the application option that works best for you
-          </h2>
-        </div>
-
-        {/* Content */}
-        <div className="grid stevens-md:grid-cols-2 gap-stevens-md p-stevens-md">
+          {/* Content */}
+          <div className="p-stevens-sm sm:p-stevens-md">
+            <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
           {/* Standard Application */}
           <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
             <div className="flex items-start gap-stevens-sm mb-stevens-sm">
@@ -148,19 +148,21 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
               Start ASAP Application
             </Link>
           </div>
-        </div>
+          </div>
+          </div>
 
-        {/* Footer */}
-        <div className="bg-stevens-gray-50 px-stevens-md py-stevens-sm border-t border-stevens-gray-200">
-          <p className="text-stevens-xs text-stevens-gray-600 text-center mb-stevens-sm">
-            Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Contact our admissions team</a>
-          </p>
-          <button
-            onClick={onClose}
-            className="w-full px-stevens-md py-stevens-sm rounded-stevens-md border-2 border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 font-stevens-semibold hover:bg-stevens-gray-100 transition-colors duration-stevens-normal"
-          >
-            Close
-          </button>
+          {/* Footer */}
+          <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
+            <p className="text-[10px] sm:text-stevens-xs text-stevens-gray-600 text-center mb-2 sm:mb-stevens-sm leading-tight">
+              Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Contact our admissions team</a>
+            </p>
+            <button
+              onClick={onClose}
+              className="w-full px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm text-xs sm:text-stevens-sm rounded-stevens-md border-2 border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 font-stevens-semibold hover:bg-stevens-gray-100 transition-colors duration-stevens-normal"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
