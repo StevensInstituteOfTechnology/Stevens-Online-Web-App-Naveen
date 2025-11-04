@@ -260,17 +260,25 @@ export default function Layout({ children, currentPageName }) {
           pointer-events: auto !important;
         }
         
+        /* Search suggestions protection - allow absolute positioning relative to input */
+        [data-search-suggestions="true"] {
+          z-index: 10001 !important;
+          position: absolute !important;
+          pointer-events: auto !important;
+        }
+        
         [data-radix-popper-content-wrapper] *,
         [data-radix-dropdown-menu-content] *,
         [role="menu"] *,
-        .dropdown-content * {
+        .dropdown-content *,
+        [data-search-suggestions="true"] * {
           pointer-events: auto !important;
           z-index: inherit !important;
         }
         
         
         /* Reset external script z-index interference */
-        *:not(header):not(header *):not([class*="z-[9"]):not([data-radix-popper-content-wrapper]):not([data-radix-dropdown-menu-content]):not([role="menu"]) {
+        *:not(header):not(header *):not([class*="z-[9"]):not([data-radix-popper-content-wrapper]):not([data-radix-dropdown-menu-content]):not([role="menu"]):not([data-search-suggestions="true"]) {
           z-index: auto !important;
         }
       `;

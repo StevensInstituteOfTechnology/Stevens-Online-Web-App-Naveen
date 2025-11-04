@@ -4,17 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle, Calendar, FileText, Users, Award, ArrowRight, PlayCircle, Clock } from 'lucide-react';
+import { ArrowRight, PlayCircle, Clock } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS, KEY_DATES } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
-import ProgramCard from '../components/admissions/ProgramCard';
-import { getAllPrograms } from '../data/programsData';
+import ProgramFilterGrid from '../components/admissions/ProgramFilterGrid';
 
 export default function Admissions() {
-  const programs = getAllPrograms();
   const location = useLocation();
 
   // Smooth scroll to explore-programs section if hash is present
@@ -173,14 +170,7 @@ export default function Admissions() {
             </p>
           </div>
 
-          <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
-            {programs.map((program, index) => (
-              <ProgramCard
-                key={program.id}
-                program={program}
-              />
-            ))}
-          </div>
+          <ProgramFilterGrid />
 
           {/* Consultation CTA */}
           <div className="border-t border-stevens-gray-200 py-stevens-xl mt-stevens-2xl">

@@ -51,12 +51,7 @@ const ProgramCard = ({ program }) => {
           </div>
         </div>
 
-        {/* Hover Arrow */}
-        <div className="absolute bottom-stevens-md right-stevens-md opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal">
-          <div className="bg-stevens-white text-stevens-primary p-stevens-sm rounded-full">
-            <ArrowRight className="w-5 h-5" />
-          </div>
-        </div>
+        
       </div>
 
       {/* Content Section */}

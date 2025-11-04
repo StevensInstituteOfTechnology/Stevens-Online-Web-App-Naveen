@@ -24,6 +24,7 @@ export const PROGRAMS_DATA = [
       modalOptions: ['standard', 'asap'],
       standardLink: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
+    asapAvailable: true,
     programPage: '/online-masters-computer-science-mscs/',
     explorePage: '/explore/online-masters-computer-science/',
     stats: {
@@ -53,6 +54,7 @@ export const PROGRAMS_DATA = [
       modalOptions: ['standard', 'asap'],
       standardLink: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
+    asapAvailable: true,
     programPage: '/online-masters-engineering-management/',
     explorePage: '/explore/online-masters-engineering-management/',
     stats: {
@@ -81,6 +83,7 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
+    asapAvailable: false,
     programPage: '/online-mba/',
     explorePage: '/explore/online-mba/',
     stats: {
@@ -109,6 +112,7 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application'
     },
+    asapAvailable: true,
     programPage: '/online-masters-engineering-applied-data-science/',
     explorePage: '/explore/online-masters-eng-applied-data-science/',
     stats: {
@@ -123,10 +127,10 @@ export const PROGRAMS_DATA = [
     code: 'cert-eai',
     name: 'Professional Graduate Certificate in Enterprise AI',
     shortName: 'Enterprise AI Certificate',
-    degree: 'Professional Graduate Certificate',
+    degree: 'Certificate',
     tagline: 'Build AI That Works at Work',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
-    image: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    image: '/assets/images/certificate-enterpriseAI-1.avif',
     highlights: [
       '$5,250 Total Cost',
       '9 Graduate Credits',
@@ -137,6 +141,7 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application/'
     },
+    asapAvailable: true,
     programPage: '/certificates/enterprise-ai/',
     explorePage: '/explore/certificates/enterprise-ai/',
     stats: {
@@ -151,10 +156,10 @@ export const PROGRAMS_DATA = [
     code: 'cert-ads',
     name: 'Professional Graduate Certificate in Applied Data Science Foundations',
     shortName: 'Applied Data Science Foundations',
-    degree: 'Professional Graduate Certificate',
+    degree: 'Certificate',
     tagline: 'Your First Step Into Applied AI',
     description: 'Master Python, SQL, and machine learning foundations in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable toward M.Eng. in Applied Data Science.',
-    image: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    image: '/assets/images/certificate-ADS-1.webp',
     highlights: [
       '$5,250 Total Cost',
       'AI-First Curriculum',
@@ -165,6 +170,7 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application/'
     },
+    asapAvailable: true,
     programPage: '/certificates/applied-data-science-foundations/',
     explorePage: '/explore/certificates/applied-data-science-foundations/',
     stats: {
