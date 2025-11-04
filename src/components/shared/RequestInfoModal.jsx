@@ -61,23 +61,24 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
           className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button - Fixed to modal */}
-          <button
-            onClick={onClose}
-            className="sticky top-2 sm:top-4 right-2 sm:right-4 float-right z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+          
 
           {/* Header */}
-          <div className="bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+          <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
             <h2 className="font-stevens-display text-lg sm:text-stevens-xl md:text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
               Request Information
             </h2>
             <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
               Take the next step in your career journey
             </p>
+            {/* Close Button - Fixed to modal */}
+          <button
+            onClick={onClose}
+            className="absolute top-2 right-2  z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
+            aria-label="Close modal"
+          >
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
           </div>
 
           {/* Content */}
