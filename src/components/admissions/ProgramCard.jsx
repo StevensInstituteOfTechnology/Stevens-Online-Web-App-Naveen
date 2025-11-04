@@ -159,7 +159,7 @@ const ProgramCard = ({ program }) => {
               <button className="w-full btn-stevens-primary text-stevens-sm">
                 Apply Now
                 <ExternalLink className="w-4 h-4 ml-1" />
-              </button>
+          </button>
             </a>
           )}
         </div>

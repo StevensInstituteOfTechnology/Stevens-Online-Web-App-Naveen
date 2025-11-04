@@ -224,7 +224,7 @@ export default function Home() {
               </div>
             </div>
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
-              <LeadCaptureForm sourcePage="home" />
+                  <LeadCaptureForm sourcePage="home" />
             </div>
           </div>
         </div>

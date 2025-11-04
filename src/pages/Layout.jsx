@@ -214,8 +214,8 @@ export default function Layout({ children, currentPageName }) {
           z-index: inherit !important;
         }
         
-        /* Ensure buttons and links remain clickable */
-        button, a, [role="button"] {
+        /* Ensure buttons, links, and form elements remain clickable */
+        button, a, [role="button"], input, select, textarea, label, [role="dialog"], [role="dialog"] * {
           pointer-events: auto !important;
         }
         
@@ -740,17 +740,17 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    <div className="grid grid-cols-3 gap-stevens-lg">
+                    <div className="grid grid-cols-3 gap-stevens-xl">
                       {/* Section 1: Graduate Programs */}
-                      <div className="flex flex-col space-y-1">
-                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
-                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Graduate Programs</span>
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Graduate Programs</span>
                         </div>
                         {degreeProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-sm"
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               /*inline styles to prevent css injection overwriting from asap page */
                               style={{
                                 color: "#1f2937",
@@ -776,15 +776,15 @@ export default function Layout({ children, currentPageName }) {
                       </div>
                       
                       {/* Section 2: Certificate Programs */}
-                      <div className="flex flex-col space-y-1">
-                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
-                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Certificate Programs</span>
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Certificate Programs</span>
                         </div>
                         {certificateProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-sm"
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               style={{
                                 color: "#1f2937",
                                 backgroundColor: "transparent",
@@ -809,14 +809,14 @@ export default function Layout({ children, currentPageName }) {
                       </div>
                       
                       {/* Section 3: Compare Programs */}
-                      <div className="flex flex-col space-y-1">
-                        <div className="px-stevens-sm pb-stevens-xs mb-stevens-xs border-b border-stevens-gray-200">
-                          <span className="text-stevens-xs font-stevens-bold text-stevens-gray-600 uppercase tracking-wider">Compare</span>
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
                         </div>
                         <DropdownMenuItem asChild>
                           <Link
                             to="/compare-our-programs/"
-                            className="font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-sm"
+                            className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
                             style={{
                               color: "#1f2937",
                               backgroundColor: "transparent",

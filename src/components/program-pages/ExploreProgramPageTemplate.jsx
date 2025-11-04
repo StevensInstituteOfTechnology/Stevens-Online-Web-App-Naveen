@@ -113,7 +113,7 @@ const ExploreProgramPageTemplate = ({
         subtitle={heroSubtitle}
         bgImage={bgImage}
         badges={badges}
-        primaryCta={{ label: 'Request Information', to: 'RequestInfo' }}
+        primaryCta={null}
         secondaryCta={secondaryCta || { label: 'Apply In Minutes', href: traditionalAppLink }}
         useApplicationModal={useApplicationModal}
         useRequestInfoModal={useRequestInfoModal}
@@ -189,16 +189,16 @@ const ExploreProgramPageTemplate = ({
 
               {/* Right Column - Video Player on Desktop, Text on Mobile */}
               {whyChooseStevensVideo && (
-                <div className="relative lg:order-2 order-1">
-                  <VideoPlayer
-                    src={whyChooseStevensVideo}
-                    poster={whyChooseStevensVideoCover}
-                    title="Why Choose Stevens"
-                    description="Learn about Stevens Institute of Technology's career-aligned curriculum"
-                    className="w-full"
-                    showControls={true}
-                  />
-                </div>
+              <div className="relative lg:order-2 order-1">
+                <VideoPlayer
+                  src={whyChooseStevensVideo}
+                  poster={whyChooseStevensVideoCover}
+                  title="Why Choose Stevens"
+                  description="Learn about Stevens Institute of Technology's career-aligned curriculum"
+                  className="w-full"
+                  showControls={true}
+                />
+              </div>
               )}
             </div>
           </motion.div>
