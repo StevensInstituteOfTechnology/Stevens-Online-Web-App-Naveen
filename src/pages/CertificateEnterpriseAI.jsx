@@ -9,13 +9,13 @@ import { KEY_DATES } from '@/config/constants';
 const programData = {
   code: 'cert-eai',
   seo: {
-    title: 'Professional Certificate in Enterprise AI | Stevens Institute of Technology',
+    title: 'Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows. $5,250 aligns with employer tuition benefits. Stackable to MBA and M.Eng.',
     ogImage: '/assets/images/certificate-enterpriseAI-1.avif',
     url: '/certificates/enterprise-ai/'
   },
   hero: {
-    titleLines: ['Professional Certificate', 'in Enterprise AI'],
+    titleLines: ['Professional Graduate Certificate', 'in Enterprise AI'],
     subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow-no CS degree required.",
     bgImage: "/assets/images/certificate-enterpriseAI-1.avif",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
@@ -262,7 +262,7 @@ const programData = {
   { q: "What's the time commitment?", a: "Each course typically runs 8 weeks with online asynchronous content plus weekly live sessions. Expect 8-12 hours per week per course. You can take courses sequentially or back-to-back depending on availability." },
   { q: "What will I be able to do after completing the certificate?", a: "You'll be able to: evaluate AI platforms and vendors, design GenAI proof-of-concepts with clear business value, build and deploy operational AI workflows with proper guardrails, and communicate AI strategies and results to stakeholders. These are the exact skills organizations need to move from AI experimentation to real value capture." }],
 
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Certificate in Enterprise AI awards graduate credit that appears on your official Stevens transcript.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Enterprise AI awards graduate credit that appears on your official Stevens transcript.`
 };
 
 export default function CertificateEnterpriseAIPage() {

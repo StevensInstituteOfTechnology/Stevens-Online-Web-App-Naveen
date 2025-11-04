@@ -152,7 +152,7 @@ export default function ProfessionalEducation() {
                 </div>
                 <CardTitle className="font-stevens-display text-2xl text-stevens-gray-900 mb-3">Public Learner</CardTitle>
                 <p className="text-stevens-gray-600 leading-relaxed">
-                  Open to everyone. Enroll in any course and earn a professional certificate recognized by the industry.
+                  Open to everyone. Enroll in any course and earn a Professional Graduate Certificate recognized by the industry.
                 </p>
               </CardHeader>
               <CardContent className="text-center pt-0">

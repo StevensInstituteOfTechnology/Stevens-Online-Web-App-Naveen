@@ -121,9 +121,9 @@ export const PROGRAMS_DATA = [
   {
     id: 'cert-enterprise-ai',
     code: 'cert-eai',
-    name: 'Professional Certificate in Enterprise AI',
+    name: 'Professional Graduate Certificate in Enterprise AI',
     shortName: 'Enterprise AI Certificate',
-    degree: 'Professional Certificate',
+    degree: 'Professional Graduate Certificate',
     tagline: 'Build AI That Works at Work',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
     image: '/assets/images/stevens-manhattan-skyline-ds.webp',
@@ -149,9 +149,9 @@ export const PROGRAMS_DATA = [
   {
     id: 'cert-ads-foundations',
     code: 'cert-ads',
-    name: 'Professional Certificate in Applied Data Science Foundations',
+    name: 'Professional Graduate Certificate in Applied Data Science Foundations',
     shortName: 'Applied Data Science Foundations',
-    degree: 'Professional Certificate',
+    degree: 'Professional Graduate Certificate',
     tagline: 'Your First Step Into Applied AI',
     description: 'Master Python, SQL, and machine learning foundations in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable toward M.Eng. in Applied Data Science.',
     image: '/assets/images/stevens-manhattan-skyline-ds.webp',

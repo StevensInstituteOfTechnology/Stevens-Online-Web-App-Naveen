@@ -112,7 +112,7 @@ export default function AcceleratedApplicationPage() {
     },
     {
       id: 'cert-eai',
-      name: 'Professional Certificate in Enterprise AI',
+      name: 'Professional Graduate Certificate in Enterprise AI',
       shortName: 'Enterprise AI',
       path: '/certificates/enterprise-ai/',
       icon: Sparkles,
@@ -120,7 +120,7 @@ export default function AcceleratedApplicationPage() {
     },
     {
       id: 'cert-ads',
-      name: 'Professional Certificate in Applied Data Science Foundations',
+      name: 'Professional Graduate Certificate in Applied Data Science Foundations',
       shortName: 'Applied Data Science Foundations',
       path: '/certificates/applied-data-science-foundations/',
       icon: Sparkles,

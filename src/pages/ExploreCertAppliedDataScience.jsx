@@ -14,7 +14,7 @@ const ExploreCertAppliedDataScience = () => {
     programCode: "cert-ads",
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     seo: {
-      title: 'Professional Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
+      title: 'Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
       description: 'Master Python, SQL, and ML in 9 graduate credits. Build AI-ready data pipelines and deploy machine learning models. $5,250 aligns with tuition benefits. Stackable to MEADS.',
       ogImage: '/assets/images/explore-cert-ADS-1.jpg',
       url: '/explore/certificates/applied-data-science-foundations/'

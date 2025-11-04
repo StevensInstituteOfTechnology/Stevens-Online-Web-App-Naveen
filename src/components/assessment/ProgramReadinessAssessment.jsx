@@ -139,7 +139,7 @@ function ProgramReadinessAssessment({ onComplete }) {
             }
             {showResults.topProgram === 'cert-eai' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Professional Certificate in Enterprise AI</h3>
+                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Professional Graduate Certificate in Enterprise AI</h3>
                 <p className="text-stevens-gray-600">Ideal for business professionals who need to implement AI workflows quickly.</p>
               </div>
             }
