@@ -80,7 +80,7 @@ const mobileNavLinks = [
   },
   {
     name: "Compare Programs",
-    page: "compare-our-programs/",
+      page: "compare-our-programs/",
   },
   {
     name: "Tuition & Admissions",
@@ -119,7 +119,7 @@ export default function Layout({ children, currentPageName }) {
   const MobileBannerMessage = () => (
     <strong className="text-stevens-primary">Apply in Minutes →</strong>
   );
-  
+
   React.useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
@@ -1152,7 +1152,7 @@ export default function Layout({ children, currentPageName }) {
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
         >
-          <Link
+                <Link
             to={createPageUrl("accelerated-application/")}
             className="block transition-colors duration-stevens-normal"
           >
@@ -1164,7 +1164,7 @@ export default function Layout({ children, currentPageName }) {
                   <span className="asap-banner-text text-stevens-base whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <MobileBannerMessage />
                   </span>
-                </div>
+              </div>
                 {/* Desktop version - full marquee */}
                 <div className="hidden md:inline-flex animate-marquee gap-16">
                   <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
@@ -1179,10 +1179,10 @@ export default function Layout({ children, currentPageName }) {
                   <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                </div>
+            </div>
               </div>
             </div>
-          </Link>
+                </Link>
           <button
             onClick={(e) => {
               e.preventDefault();

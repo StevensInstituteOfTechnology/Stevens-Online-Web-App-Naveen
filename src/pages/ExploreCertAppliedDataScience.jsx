@@ -161,9 +161,9 @@ const ExploreCertAppliedDataScience = () => {
     ],
     
     // Contact
-    contactTitle: "Ready to Start Your Data Science Journey?",
-    contactDescription: "Request more information to learn about the Applied Data Science Foundations Certificate and how it can launch your career in AI and data science.",
-    contactButtonText: "Request Information"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the Applied Data Science Foundations Certificate program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate 

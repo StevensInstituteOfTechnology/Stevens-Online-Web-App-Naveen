@@ -162,9 +162,9 @@ const ExploreMEM = () => {
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply. Contact admissions for more information.",
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Engineering in Engineering Management program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online Master of Engineering in Engineering Management program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...memData} />;

@@ -121,7 +121,7 @@ const ExploreProgramPageTemplate = ({
         requestInfoSourcePage={`explore_${programCode}_page`}
         bottomContent={heroBottomContent}
         rightContent={
-          <div className="animate-in slide-in-from-right duration-700 delay-300 w-full flex justify-center lg:justify-end">
+          <div className="w-full flex justify-center lg:justify-end">
             <LeadCaptureForm 
               title="Request Information"
               subtitle="Get detailed program information and connect with an enrollment advisor."

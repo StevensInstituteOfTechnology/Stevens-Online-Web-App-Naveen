@@ -157,9 +157,9 @@ const ExploreCertEnterpriseAI = () => {
     ],
     
     // Contact
-    contactTitle: "Ready to Launch Your AI Career?",
-    contactDescription: "Request more information to learn about the Enterprise AI Certificate and how it can transform your career in the age of AI.",
-    contactButtonText: "Request Information"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the Enterprise AI Certificate program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate 

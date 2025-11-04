@@ -178,9 +178,9 @@ const ExploreMEADS = () => {
     justLaunchedImage: "/assets/images/2-explore-mem.webp",
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Engineering in Applied Data Science program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the M.Eng. in Applied Data Science program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate 

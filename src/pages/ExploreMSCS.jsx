@@ -187,9 +187,9 @@ const ExploreMSCS = () => {
     
     
     // Contact
-    contactTitle: "Want to Learn More?",
-    contactDescription: "Request more information to learn about the upcoming cohort of the Online Master of Science in Computer Science program.",
-    contactButtonText: "Contact Us"
+    contactTitle: "Ready to Take the Next Step?",
+    contactDescription: "Schedule a call with our admissions team to discuss your goals and learn about the upcoming cohort of the Online Master of Science in Computer Science program.",
+    contactButtonText: "Schedule a Call"
   };
 
   return <ExploreProgramPageTemplate {...mscsData} />;
