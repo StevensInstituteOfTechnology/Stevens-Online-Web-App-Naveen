@@ -9,7 +9,7 @@ import { KEY_DATES } from '@/config/constants';
 const programData = {
   code: 'cert-ads',
   seo: {
-    title: 'Professional Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
+    title: 'Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
     description: 'Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.',
     ogImage: '/assets/images/certificate-ADS-1.webp',
     url: '/certificates/applied-data-science-foundations/'
@@ -260,7 +260,7 @@ const programData = {
   { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer." },
   { q: "What can I do with this certificate?", a: "Graduates are prepared for roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, Business Intelligence Developer, and Applied Data Scientist. The three portfolio projects you build demonstrate your capabilities to employers and serve as talking points in job interviews." }],
 
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`
 };
 
 export default function CertificateAppliedDataSciencePage() {

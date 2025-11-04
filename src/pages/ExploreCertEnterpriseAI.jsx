@@ -8,13 +8,13 @@ const ExploreCertEnterpriseAI = () => {
   const certData = {
     // Hero Section
     heroTitle: "BUILD AI THAT WORKS AT WORK",
-    programName: "Professional Certificate in Enterprise AI",
+    programName: "Professional Graduate Certificate in Enterprise AI",
     heroSubtitle: "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable to MBA and M.Eng. in Applied Data Science.",
     bgImage: "/assets/images/explore-cert-EAI-1.avif",
     programCode: "cert-eai",
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     seo: {
-      title: 'Professional Certificate in Enterprise AI | Stevens Institute of Technology',
+      title: 'Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology',
       description: 'Launch your AI career in 9 graduate credits. Build AI workflows from strategy to deployment. $5,250 aligns with employer tuition benefits. Stackable to masters degrees.',
       ogImage: '/assets/images/explore-cert-EAI-1.avif',
       url: '/explore/certificates/enterprise-ai/'

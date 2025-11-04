@@ -83,8 +83,8 @@ export default function ComparePrograms() {
         "Master data science and AI engineering through hands-on projects. Curriculum bridges engineering precision with AI-driven innovation, covering data pipelines, machine learning, and AI deployment.",
     },
     'cert-eai': {
-      name: "Professional Certificate in Enterprise AI",
-      degreeLevel: "Professional Certificate",
+      name: "Professional Graduate Certificate in Enterprise AI",
+      degreeLevel: "Professional Graduate Certificate",
       programLength: "8-16 weeks**",
       programStart: "Spring 2026",
       cost: "$5,250*",
@@ -94,7 +94,7 @@ export default function ComparePrograms() {
     },
     'cert-ads': {
       name: "Applied Data Science Foundations Certificate",
-      degreeLevel: "Professional Certificate",
+      degreeLevel: "Professional Graduate Certificate",
       programLength: "16-20 weeks**",
       programStart: "Spring 2026",
       cost: "$5,250*",

@@ -69,7 +69,6 @@ export default function OnlineExperience() {
               {/* Letter Content */}
               <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
                 <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
-                  Welcome Message from the Chief Online Learning Officer and Dean, College of Professional Education
                 </h3>
                 
                 <div className="prose prose-lg max-w-none text-stevens-gray-700 leading-relaxed space-y-stevens-md">
