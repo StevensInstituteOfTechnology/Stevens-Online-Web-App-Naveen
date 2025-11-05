@@ -24,7 +24,6 @@ export const PROGRAMS_DATA = [
       modalOptions: ['standard', 'asap'],
       standardLink: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
-    asapAvailable: true,
     programPage: '/online-masters-computer-science-mscs/',
     explorePage: '/explore/online-masters-computer-science/',
     stats: {
@@ -54,7 +53,6 @@ export const PROGRAMS_DATA = [
       modalOptions: ['standard', 'asap'],
       standardLink: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
-    asapAvailable: true,
     programPage: '/online-masters-engineering-management/',
     explorePage: '/explore/online-masters-engineering-management/',
     stats: {
@@ -83,7 +81,6 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
     },
-    asapAvailable: false,
     programPage: '/online-mba/',
     explorePage: '/explore/online-mba/',
     stats: {
@@ -112,7 +109,6 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application'
     },
-    asapAvailable: true,
     programPage: '/online-masters-engineering-applied-data-science/',
     explorePage: '/explore/online-masters-eng-applied-data-science/',
     stats: {
@@ -141,7 +137,6 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application/'
     },
-    asapAvailable: true,
     programPage: '/certificates/enterprise-ai/',
     explorePage: '/explore/certificates/enterprise-ai/',
     stats: {
@@ -170,7 +165,6 @@ export const PROGRAMS_DATA = [
       type: 'direct',
       link: '/accelerated-application/'
     },
-    asapAvailable: true,
     programPage: '/certificates/applied-data-science-foundations/',
     explorePage: '/explore/certificates/applied-data-science-foundations/',
     stats: {

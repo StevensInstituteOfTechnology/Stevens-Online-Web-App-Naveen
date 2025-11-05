@@ -16,7 +16,6 @@ export default function ProgramFilterGrid() {
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [graduateChecked, setGraduateChecked] = useState(true);
   const [certificateChecked, setCertificateChecked] = useState(true);
-  const [asapOnlyChecked, setAsapOnlyChecked] = useState(false);
   
   const searchInputRef = useRef(null);
   const suggestionsRef = useRef(null);
@@ -110,11 +109,6 @@ export default function ProgramFilterGrid() {
       filtered = [];
     }
 
-    // ASAP filter
-    if (asapOnlyChecked) {
-      filtered = filtered.filter(program => program.asapAvailable === true);
-    }
-
     // Search filter
     if (debouncedSearchQuery) {
       filtered = filtered.filter(program => 
@@ -138,7 +132,6 @@ export default function ProgramFilterGrid() {
     allPrograms,
     graduateChecked,
     certificateChecked,
-    asapOnlyChecked,
     debouncedSearchQuery,
     selectedProgram
   ]);
@@ -285,20 +278,6 @@ export default function ProgramFilterGrid() {
               className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
             >
               Certificate
-            </Label>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Checkbox
-              id="asap"
-              checked={asapOnlyChecked}
-              onCheckedChange={(checked) => setAsapOnlyChecked(checked)}
-            />
-            <Label
-              htmlFor="asap"
-              className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
-            >
-              Show only programs with ASAP application
             </Label>
           </div>
         </div>

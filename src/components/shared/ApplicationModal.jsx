@@ -71,35 +71,6 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
           {/* Content */}
           <div className="p-stevens-sm sm:p-stevens-md">
             <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
-          {/* Standard Application */}
-          <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
-            <div className="flex items-start gap-stevens-sm mb-stevens-sm">
-              <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md group-hover:bg-stevens-primary/10 transition-colors duration-stevens-normal">
-                <ExternalLink className="w-5 h-5 text-stevens-gray-700 group-hover:text-stevens-primary transition-colors duration-stevens-normal" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
-                  Standard Application
-                </h3>
-                <p className="text-stevens-xs text-stevens-gray-600">
-                  Standard graduate application process
-                </p>
-              </div>
-            </div>
-
-            <p className="text-stevens-sm text-stevens-gray-700 mb-stevens-md leading-relaxed">
-              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
-            </p>
-
-            <a 
-              href={traditionalLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
-            >
-              Standard Application
-            </a>
-          </div>
 
           {/* ASAP Application - Featured */}
           <div className="bg-gradient-to-br from-stevens-primary/5 to-stevens-primary/10 border-2 border-stevens-primary rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
@@ -148,6 +119,37 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
               Start ASAP Application
             </Link>
           </div>
+          {/* Standard Application */}
+          <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
+            <div className="flex items-start gap-stevens-sm mb-stevens-sm">
+              <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md group-hover:bg-stevens-primary/10 transition-colors duration-stevens-normal">
+                <ExternalLink className="w-5 h-5 text-stevens-gray-700 group-hover:text-stevens-primary transition-colors duration-stevens-normal" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
+                  Standard Application
+                </h3>
+                <p className="text-stevens-xs text-stevens-gray-600">
+                  Standard graduate application process
+                </p>
+              </div>
+            </div>
+
+            <p className="text-stevens-sm text-stevens-gray-700 mb-stevens-md leading-relaxed">
+              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
+            </p>
+
+            <a 
+              href={traditionalLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
+            >
+              Standard Application
+            </a>
+          </div>
+
+          
           </div>
           </div>
 
