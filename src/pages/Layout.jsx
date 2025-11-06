@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
 import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 import {
@@ -92,7 +92,6 @@ const mobileNavLinks = [
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();
-  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [showBackToTop, setShowBackToTop] = React.useState(false);
   const [showASAPBanner, setShowASAPBanner] = React.useState(true);
@@ -131,47 +130,14 @@ export default function Layout({ children, currentPageName }) {
       return { type: 'external', url: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' };
     }
     
-    // Non-program pages -> Admissions with explore-programs hash
-    return { type: 'hash', url: createPageUrl('admissions/'), hash: 'explore-programs' };
-  };
-
-  const handleBannerClick = (e) => {
-    const redirect = getBannerRedirect();
-    
-    if (redirect.type === 'hash') {
-      e.preventDefault();
-      if (location.pathname === redirect.url || location.pathname === redirect.url.replace(/\/$/, '')) {
-        // Already on admissions page, just scroll
-        const element = document.getElementById(redirect.hash);
-        if (element) {
-          const yOffset = -100;
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      } else {
-        // Navigate to admissions page with hash
-        navigate(`${redirect.url}#${redirect.hash}`);
-        // Scroll after navigation
-        setTimeout(() => {
-          const element = document.getElementById(redirect.hash);
-          if (element) {
-            const yOffset = -100;
-            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          }
-        }, 100);
-      }
-    }
-    // External links will be handled by anchor tag naturally
-    // Internal links will be handled by Link component
+    // Non-program pages -> Accelerated application page
+    return { type: 'internal', url: createPageUrl('accelerated-application/') };
   };
 
   const redirect = getBannerRedirect();
-  const BannerLink = redirect.type === 'external' || redirect.type === 'hash' ? 'a' : Link;
+  const BannerLink = redirect.type === 'external' ? 'a' : Link;
   const bannerProps = redirect.type === 'external' 
     ? { href: redirect.url, target: '_blank', rel: 'noopener noreferrer' }
-    : redirect.type === 'hash'
-    ? { href: `${redirect.url}#${redirect.hash}`, onClick: handleBannerClick }
     : { to: redirect.url };
 
   // ASAP Banner continuous message with emphasis
