@@ -4,6 +4,9 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mscs',
@@ -613,5 +616,26 @@ The objective of this course is to give students a basic grounding in designing 
 
 
 export default function MSCSPage() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mscs',
+    additionalData: {
+      program_name: 'Master of Science in Computer Science',
+      has_video: true,
+      has_rfi_modal: true,
+      has_application_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MSCS">
+      <ProgramContextProvider 
+        programCode="mscs"
+        programName="Master of Science in Computer Science"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

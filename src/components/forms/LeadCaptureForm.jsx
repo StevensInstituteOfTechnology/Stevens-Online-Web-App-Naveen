@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { trackEvent } from "@/utils/analytics/vercelTracking";
+import { useProgramContext } from "@/contexts/analytics/ProgramContext";
 
 export default function LeadCaptureForm({
   title = "Request Information",
@@ -12,8 +14,18 @@ export default function LeadCaptureForm({
   triggerLabel = "Request Info"
 }) {
   const [open, setOpen] = useState(false);
+  const programContext = useProgramContext();
+  const effectiveProgramCode = programOfInterest || programContext?.programCode || 'unknown';
 
   useEffect(() => {
+    // Track form view
+    trackEvent('rfi_form_viewed', {
+      form_name: 'request_info',
+      source_page: sourcePage,
+      program_code: effectiveProgramCode,
+      form_type: useModal ? 'modal' : 'embedded'
+    });
+
     // Only run on client side
     if (typeof document === 'undefined') return;
     
@@ -36,11 +48,29 @@ export default function LeadCaptureForm({
     
     // Track form submission when iframe loads successfully and user submits
     script.onload = () => {
+      // Track form loaded successfully
+      trackEvent('rfi_form_loaded', {
+        form_name: 'request_info',
+        source_page: sourcePage,
+        program_code: effectiveProgramCode,
+        load_time_ms: Date.now() - script.dataset.loadStart
+      });
+
       // Listen for messages from the iframe (if available)
       const handleMessage = (event) => {
         // Check if message is from Stevens form and indicates success
         if (event.data && (event.data.type === 'form-submit' || event.data.status === 'success')) {
+          // GTM tracking
           trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
+          
+          // Vercel tracking with full context
+          trackEvent('rfi_form_submitted', {
+            form_name: 'request_info',
+            source_page: sourcePage,
+            program_code: effectiveProgramCode,
+            submission_method: 'iframe_message',
+            is_conversion: true
+          });
         }
       };
       window.addEventListener('message', handleMessage);
@@ -54,13 +84,26 @@ export default function LeadCaptureForm({
             form.addEventListener('submit', () => {
               // Track after a short delay to ensure submission went through
               setTimeout(() => {
+                // GTM tracking
                 trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
+                
+                // Vercel tracking
+                trackEvent('rfi_form_submitted', {
+                  form_name: 'request_info',
+                  source_page: sourcePage,
+                  program_code: effectiveProgramCode,
+                  submission_method: 'form_submit',
+                  is_conversion: true
+                });
               }, 500);
             });
           });
         }
       }, 2000);
     };
+    
+    // Track script load start time
+    script.dataset.loadStart = Date.now().toString();
     
     // Insert the script
     const firstScript = document.getElementsByTagName('script')[0];

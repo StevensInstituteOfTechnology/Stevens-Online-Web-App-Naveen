@@ -10,8 +10,17 @@ import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS, KEY_DATES } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import ProgramFilterGrid from '../components/admissions/ProgramFilterGrid';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function Admissions() {
+  usePageTracking({
+    pageType: 'admissions',
+    additionalData: {
+      page_name: 'Admissions Hub'
+    }
+  });
+
   const location = useLocation();
 
   // Smooth scroll to explore-programs section if hash is present
@@ -69,8 +78,9 @@ export default function Admissions() {
   ];
 
   return (
-    <div>
-      <PageHero 
+    <PageContextProvider pageType="admissions" pageName="Admissions">
+      <div>
+        <PageHero 
         title="We Put Our Strengths Behind Your Career"
         subtitle="Admissions"
         bgImage="/assets/images/1-hero-admissions-scaled.webp"
@@ -295,6 +305,7 @@ export default function Admissions() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </PageContextProvider>
   );
 }

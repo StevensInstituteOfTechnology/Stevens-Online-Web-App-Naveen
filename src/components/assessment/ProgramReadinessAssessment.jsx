@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 const questions = [
 {
@@ -54,10 +55,31 @@ function ProgramReadinessAssessment({ onComplete }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
+  const quizStartTime = useState(() => Date.now())[0];
+  
+  // Track quiz start on mount
+  useEffect(() => {
+    trackEvent('quiz_started', {
+      quiz_name: 'program_readiness',
+      total_questions: questions.length
+    });
+  }, []);
 
   const handleAnswerSelect = (questionId, answerIndex) => {
     const newAnswers = { ...answers, [questionId]: answerIndex };
     setAnswers(newAnswers);
+    
+    // Track answer selection
+    const question = questions.find(q => q.id === questionId);
+    const answer = question?.answers[answerIndex];
+    trackEvent(`quiz_q${questionId}_answered`, {
+      quiz_name: 'program_readiness',
+      question_id: questionId,
+      question_text: question?.question,
+      answer_text: answer?.text,
+      question_number: questionId,
+      total_questions: questions.length
+    });
 
     setTimeout(() => {
       if (currentStep < questions.length - 1) {
@@ -84,6 +106,23 @@ function ProgramReadinessAssessment({ onComplete }) {
     const topProgram = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
     setShowResults({ topProgram, scores });
+    
+    // Track quiz completion
+    const timeToComplete = Math.floor((Date.now() - quizStartTime) / 1000);
+    trackEvent('quiz_completed', {
+      quiz_name: 'program_readiness',
+      recommended_program: topProgram,
+      recommended_program_score: scores[topProgram],
+      all_scores: scores,
+      questions_answered: Object.keys(finalAnswers).length,
+      time_to_complete_seconds: timeToComplete
+    });
+    
+    trackEvent('quiz_results_viewed', {
+      quiz_name: 'program_readiness',
+      recommended_program: topProgram
+    });
+    
     if (onComplete) {
       onComplete({ topProgram, scores });
     }

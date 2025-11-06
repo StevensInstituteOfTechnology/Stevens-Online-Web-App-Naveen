@@ -8,8 +8,19 @@ import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function OnlineExperience() {
+  usePageTracking({
+    pageType: 'content',
+    additionalData: {
+      page_name: 'Online Experience',
+      has_dean_letter: true,
+      has_rfi_modal: true
+    }
+  });
+
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [
     {
@@ -35,8 +46,9 @@ export default function OnlineExperience() {
   ];
 
   return (
-    <div>
-      <PageHero 
+    <PageContextProvider pageType="content" pageName="OnlineExperience">
+      <div>
+        <PageHero 
         title="Online Education"
         subtitle="A premier, technology-driven education, delivered with flexibility."
         bgImage="/assets/images/1-online-learning-hero-scaled.webp"
@@ -168,6 +180,7 @@ export default function OnlineExperience() {
         sourcePage="online_experience_page"
         programOfInterest=""
       />
-    </div>
+      </div>
+    </PageContextProvider>
   );
 }

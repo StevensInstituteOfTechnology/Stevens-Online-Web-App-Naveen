@@ -37,6 +37,8 @@ import VideoPlayer from "../components/shared/VideoPlayer";
 import RequestInfoModal from "../components/shared/RequestInfoModal";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { KEY_DATES } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const StatItem = ({ value, label, icon: Icon }) => (
 <div className="text-center flex flex-col items-center justify-center">
@@ -142,6 +144,16 @@ const AnimatedSection = ({ children, className, delay = 0 }) => {
 };
 
 export default function Home() {
+  usePageTracking({
+    pageType: 'home',
+    additionalData: {
+      page_name: 'Homepage',
+      has_embedded_form: true,
+      has_quiz: true,
+      has_video: true
+    }
+  });
+
   const [programs, setPrograms] = useState([]);
   const [events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
@@ -192,9 +204,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-sans bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white overflow-hidden">
+    <PageContextProvider pageType="home" pageName="Homepage">
+      <div className="font-sans bg-white">
+        {/* Hero Section */}
+        <section className="relative bg-gray-900 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{ backgroundImage: "url('/assets/images/HEADER-0865.jpg')" }}
@@ -828,6 +841,7 @@ export default function Home() {
         sourcePage="homepage"
         programOfInterest=""
       />
-    </div>
+      </div>
+    </PageContextProvider>
   );
 }

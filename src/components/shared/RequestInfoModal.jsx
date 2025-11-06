@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { X } from 'lucide-react';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**
  * RequestInfoModal - Modal wrapper for LeadCaptureForm
@@ -11,13 +12,32 @@ import LeadCaptureForm from '../forms/LeadCaptureForm';
  */
 export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '' }) {
   const [mountKey, setMountKey] = useState(0);
+  const modalOpenTime = useRef(null);
 
   // Force remount of LeadCaptureForm when modal opens to ensure script loads
   useEffect(() => {
     if (isOpen) {
       setMountKey(prev => prev + 1);
+      modalOpenTime.current = Date.now();
+      
+      // Track modal open
+      trackEvent('rfi_modal_opened', {
+        modal_name: 'request_info',
+        source_page: sourcePage,
+        program_code: programOfInterest || 'general'
+      });
+    } else if (modalOpenTime.current) {
+      // Track modal close
+      const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
+      trackEvent('rfi_modal_closed', {
+        modal_name: 'request_info',
+        source_page: sourcePage,
+        program_code: programOfInterest || 'general',
+        time_open_seconds: timeOpen
+      });
+      modalOpenTime.current = null;
     }
-  }, [isOpen]);
+  }, [isOpen, sourcePage, programOfInterest]);
 
   // Lock body scroll when modal is open
   useEffect(() => {

@@ -2,8 +2,19 @@ import React, { useEffect, useRef } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function ASAPPage() {
+  usePageTracking({
+    pageType: 'application',
+    additionalData: {
+      page_name: 'ASAP Application',
+      application_type: 'asap',
+      has_embedded_form: true
+    }
+  });
+
   useEffect(() => {
     // Only run on client side
     if (typeof document === 'undefined') return;
@@ -100,8 +111,9 @@ export default function ASAPPage() {
 
 
   return (
-    <div className="bg-stevens-gray-50 font-stevens-body">
-      <PageHero
+    <PageContextProvider pageType="application" pageName="ASAP">
+      <div className="bg-stevens-gray-50 font-stevens-body">
+        <PageHero
         title="ASAP Application"
         subtitle="Your Fast Track to a Master's Degree at Stevens" 
         // bgImage={<img src="/assets/images/asap-hero.avif" alt="ASAP Application" />}  
@@ -263,6 +275,7 @@ export default function ASAPPage() {
           </div>
         </div>
       </div>
-    </div>);
-
+      </div>
+    </PageContextProvider>
+  );
 }

@@ -7,8 +7,18 @@ import { createPageUrl } from "@/utils";
 import { DollarSign, TrendingUp, Award, Banknote, ArrowRight } from 'lucide-react';
 import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function TuitionOutcomes() {
+  usePageTracking({
+    pageType: 'content',
+    additionalData: {
+      page_name: 'Tuition & Career Outcomes',
+      has_rfi_modal: true
+    }
+  });
+
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
 
   const roiPoints = [
@@ -30,9 +40,10 @@ export default function TuitionOutcomes() {
 
 
   return (
-    <div>
-      <PageHero
-        title="Tuition & Career Outcomes"
+    <PageContextProvider pageType="content" pageName="TuitionOutcomes">
+      <div>
+        <PageHero
+          title="Tuition & Career Outcomes"
         subtitle="An investment in a Stevens degree is an investment in your future." />
 
       
@@ -118,6 +129,7 @@ export default function TuitionOutcomes() {
         sourcePage="tuition_outcomes_page"
         programOfInterest=""
       />
-    </div>);
-
+      </div>
+    </PageContextProvider>
+  );
 }

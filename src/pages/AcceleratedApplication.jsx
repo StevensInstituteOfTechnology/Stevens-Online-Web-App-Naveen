@@ -3,8 +3,19 @@ import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function AcceleratedApplicationPage() {
+  usePageTracking({
+    pageType: 'application',
+    additionalData: {
+      page_name: 'Accelerated Application',
+      application_type: 'accelerated',
+      has_embedded_form: true
+    }
+  });
+
   useEffect(() => {
     // Only run on client side
     if (typeof document === 'undefined') return;
@@ -129,8 +140,9 @@ export default function AcceleratedApplicationPage() {
   ];
 
   return (
-    <div className="bg-stevens-gray-50 font-stevens-body">
-      <PageHero
+    <PageContextProvider pageType="application" pageName="AcceleratedApplication">
+      <div className="bg-stevens-gray-50 font-stevens-body">
+        <PageHero
         title="Accelerated Application"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
         bgImage="/assets/images/AcceleratedApplication-3.jpg"
@@ -502,6 +514,7 @@ export default function AcceleratedApplicationPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </PageContextProvider>
   );
 }

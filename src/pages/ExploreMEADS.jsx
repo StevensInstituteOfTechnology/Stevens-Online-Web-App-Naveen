@@ -3,8 +3,21 @@ import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-rea
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMEADS = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'meads',
+    additionalData: {
+      program_name: 'Master of Engineering in Applied Data Science',
+      has_embedded_form: true,
+      has_pricing_cards: true
+    }
+  });
+  
   const meadsData = {
     // Hero Section
     heroTitle: "Master AI & Machine Learning Engineering.",
@@ -183,13 +196,23 @@ const ExploreMEADS = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate 
-    {...meadsData} 
-    heroBottomContent={<CertificateTuitionCardsHero cards={[
-      { value: "$800", label: "Per Credit" },
-      { value: "$24,000", label: "Total Program Cost" }
-    ]} />}
-  />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMEADS">
+      <ProgramContextProvider 
+        programCode="meads"
+        programName="Master of Engineering in Applied Data Science"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate 
+          {...meadsData} 
+          heroBottomContent={<CertificateTuitionCardsHero cards={[
+            { value: "$800", label: "Per Credit" },
+            { value: "$24,000", label: "Total Program Cost" }
+          ]} />}
+        />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMEADS;

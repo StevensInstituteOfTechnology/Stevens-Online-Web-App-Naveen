@@ -2,8 +2,22 @@ import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp, Code } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMSCS = () => {
+  // Automatic page tracking with context
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'mscs',
+    additionalData: {
+      program_name: 'Master of Science in Computer Science',
+      has_embedded_form: true,
+      has_application_modal: true
+    }
+  });
+  
   const mscsData = {
     // Hero Section
     heroTitle: "Build What's Next in Tech. All Experience Levels Welcome.",
@@ -192,7 +206,17 @@ const ExploreMSCS = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate {...mscsData} />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMSCS">
+      <ProgramContextProvider 
+        programCode="mscs" 
+        programName="Master of Science in Computer Science"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate {...mscsData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMSCS;
