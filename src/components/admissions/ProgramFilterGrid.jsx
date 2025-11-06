@@ -263,7 +263,7 @@ export default function ProgramFilterGrid() {
               htmlFor="graduate"
               className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
             >
-              Graduate
+              Masters
             </Label>
           </div>
 
@@ -277,7 +277,7 @@ export default function ProgramFilterGrid() {
               htmlFor="certificate"
               className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
             >
-              Certificate
+              Certificates
             </Label>
           </div>
         </div>

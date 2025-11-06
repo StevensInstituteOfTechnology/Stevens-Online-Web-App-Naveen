@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
 import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 import {
@@ -92,6 +92,7 @@ const mobileNavLinks = [
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [showBackToTop, setShowBackToTop] = React.useState(false);
   const [showASAPBanner, setShowASAPBanner] = React.useState(true);
@@ -108,6 +109,71 @@ export default function Layout({ children, currentPageName }) {
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
   
+  // Determine banner redirect based on current page
+  const getBannerRedirect = () => {
+    const pathname = location.pathname.toLowerCase();
+    
+    // MSCS or MEM (including explore pages) -> ASAP application
+    if (pathname.includes('online-masters-computer-science') || 
+        pathname.includes('online-masters-engineering-management')) {
+      return { type: 'internal', url: createPageUrl('ASAP/') };
+    }
+    
+    // MEADS or Certificates (including explore pages) -> Accelerated application
+    if (pathname.includes('online-masters-engineering-applied-data-science') ||
+        pathname.includes('online-masters-eng-applied-data-science') ||
+        pathname.includes('certificates/')) {
+      return { type: 'internal', url: createPageUrl('accelerated-application/') };
+    }
+    
+    // MBA (including explore pages) -> External Stevens application
+    if (pathname.includes('online-mba')) {
+      return { type: 'external', url: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' };
+    }
+    
+    // Non-program pages -> Admissions with explore-programs hash
+    return { type: 'hash', url: createPageUrl('admissions/'), hash: 'explore-programs' };
+  };
+
+  const handleBannerClick = (e) => {
+    const redirect = getBannerRedirect();
+    
+    if (redirect.type === 'hash') {
+      e.preventDefault();
+      if (location.pathname === redirect.url || location.pathname === redirect.url.replace(/\/$/, '')) {
+        // Already on admissions page, just scroll
+        const element = document.getElementById(redirect.hash);
+        if (element) {
+          const yOffset = -100;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      } else {
+        // Navigate to admissions page with hash
+        navigate(`${redirect.url}#${redirect.hash}`);
+        // Scroll after navigation
+        setTimeout(() => {
+          const element = document.getElementById(redirect.hash);
+          if (element) {
+            const yOffset = -100;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+    // External links will be handled by anchor tag naturally
+    // Internal links will be handled by Link component
+  };
+
+  const redirect = getBannerRedirect();
+  const BannerLink = redirect.type === 'external' || redirect.type === 'hash' ? 'a' : Link;
+  const bannerProps = redirect.type === 'external' 
+    ? { href: redirect.url, target: '_blank', rel: 'noopener noreferrer' }
+    : redirect.type === 'hash'
+    ? { href: `${redirect.url}#${redirect.hash}`, onClick: handleBannerClick }
+    : { to: redirect.url };
+
   // ASAP Banner continuous message with emphasis
   const BannerMessage = () => (
     <>
@@ -1160,8 +1226,8 @@ export default function Layout({ children, currentPageName }) {
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
         >
-                <Link
-            to={createPageUrl("accelerated-application/")}
+                <BannerLink
+            {...bannerProps}
             className="block transition-colors duration-stevens-normal"
           >
             <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
@@ -1190,7 +1256,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
               </div>
             </div>
-                </Link>
+                </BannerLink>
           <button
             onClick={(e) => {
               e.preventDefault();
