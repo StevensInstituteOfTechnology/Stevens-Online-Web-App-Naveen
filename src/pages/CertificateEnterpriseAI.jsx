@@ -221,12 +221,12 @@ const programData = {
         <p class="text-left">At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-semibold text-stevens-gray-900 mb-2">💼 Corporate Tuition Assistance</p>
+          <p class="font-semibold text-stevens-gray-900 mb-2">Corporate Tuition Assistance</p>
           <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-semibold text-stevens-gray-900 mb-2">💰 Financial Aid & Funding Options</p>
+          <p class="font-semibold text-stevens-gray-900 mb-2">Financial Aid & Funding Options</p>
           <p class="text-stevens-sm mb-3 text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
           <p class="text-stevens-sm text-left">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
         </div>
