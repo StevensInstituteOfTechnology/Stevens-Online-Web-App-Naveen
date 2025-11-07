@@ -108,7 +108,7 @@ const ExploreMEM = () => {
       <p>To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
     `,
     justLaunchedButtonText: "Request Flexible App Info",
-    justLaunchedButtonLink: "#",
+    justLaunchedButtonLink: "/request-information/",
     justLaunchedImage: "/assets/images/2-explore-mem.webp",
     
     // Program Benefits

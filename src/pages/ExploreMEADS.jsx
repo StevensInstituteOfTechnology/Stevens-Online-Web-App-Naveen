@@ -187,7 +187,7 @@ const ExploreMEADS = () => {
       <p>Get started immediately with no letters of recommendation required, upload unofficial transcripts, and submit your resume or LinkedIn profile. Official transcripts are due within one year of enrollment.</p>
     `,
     justLaunchedButtonText: "Apply Now",
-    justLaunchedButtonLink: "/accelerated-application",
+    justLaunchedButtonLink: "/accelerated-application/",
     justLaunchedImage: "/assets/images/2-explore-mem.webp",
     
     // Contact

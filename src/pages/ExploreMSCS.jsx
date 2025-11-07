@@ -100,7 +100,7 @@ const ExploreMSCS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
-    newFall2025Image: "/assets/images/stevens-campus.png", // Placeholder
+    newFall2025Image: "/assets/images/1-explore-mem.webp", // Placeholder
     
     // Just Launched Section
     justLaunchedBadge: "JUST LAUNCHED",
@@ -111,7 +111,7 @@ const ExploreMSCS = () => {
       <p>To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
     `,
     justLaunchedButtonText: "Request Flexible App Info",
-    justLaunchedButtonLink: "#",
+    justLaunchedButtonLink: "/request-information/",
     justLaunchedImage: "/assets/images/3-explore-mscs.webp", 
     
     // Program Benefits
