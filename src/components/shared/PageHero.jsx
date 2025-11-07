@@ -5,6 +5,7 @@ import { createPageUrl } from '@/utils';
 import ApplicationModal from './ApplicationModal';
 import RequestInfoModal from './RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**
  * Program-style hero with background image, multi-line title, subtitle and CTAs.
@@ -87,16 +88,76 @@ export default function PageHero({
     }
 
     if (cta.to) {
-      const to = typeof cta.to === 'string' ? createPageUrl(cta.to) : createPageUrl(String(cta.to));
+      let to = typeof cta.to === 'string' ? createPageUrl(cta.to) : createPageUrl(String(cta.to));
+      
+      // If linking to accelerated-application, add program code
+      const isAcceleratedApp = to.includes('accelerated-application');
+      if (isAcceleratedApp && requestInfoProgramCode) {
+        to += `?program=${requestInfoProgramCode}`;
+      }
+      
       return (
-        <Link to={to} onClick={handleClick}>
+        <Link 
+          to={to} 
+          onClick={(e) => {
+            // Store program code for accelerated application
+            if (isAcceleratedApp && requestInfoProgramCode) {
+              sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
+            }
+            
+            // Track apply button click with program code
+            if (variant === 'secondary' && cta.label.toLowerCase().includes('apply')) {
+              trackEvent('apply_button_clicked', {
+                program_code: requestInfoProgramCode || 'unknown',
+                button_location: 'hero',
+                application_type: isAcceleratedApp ? 'accelerated' : 'other',
+                button_text: cta.label
+              });
+            }
+            
+            handleClick();
+          }}
+        >
           <button className={className}>{cta.label}</button>
         </Link>
       );
     }
     if (cta.href) {
+      let href = cta.href;
+      
+      // If linking to accelerated-application, add program code
+      const isAcceleratedApp = href.includes('accelerated-application');
+      const isInternal = !href.startsWith('http');
+      
+      if (isAcceleratedApp && requestInfoProgramCode && isInternal) {
+        href += `?program=${requestInfoProgramCode}`;
+      }
+      
       return (
-        <a href={cta.href} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+        <a 
+          href={href} 
+          target={isInternal ? "_self" : "_blank"} 
+          rel={isInternal ? "" : "noopener noreferrer"} 
+          onClick={(e) => {
+            // Store program code for accelerated application
+            if (isAcceleratedApp && requestInfoProgramCode && isInternal) {
+              sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
+            }
+            
+            // Track apply button click with program code
+            if (variant === 'secondary' && cta.label.toLowerCase().includes('apply')) {
+              trackEvent('apply_button_clicked', {
+                program_code: requestInfoProgramCode || 'unknown',
+                button_location: 'hero',
+                application_type: isAcceleratedApp ? 'accelerated' : (isInternal ? 'other' : 'standard'),
+                button_text: cta.label,
+                destination: href
+              });
+            }
+            
+            handleClick();
+          }}
+        >
           <button className={className}>{cta.label}</button>
         </a>
       );

@@ -24,7 +24,7 @@ const ExploreMEADS = () => {
     programName: "Build What's Next.",
     heroSubtitle: "Train LLMs, deploy production ML systems, and lead AI initiatives. Engineering-first curriculum for the AI age.",
     bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp", 
-    programCode: "msdse",
+    programCode: "meads",
     seo: {
       title: 'Online M.Eng. in Applied Data Science - AI & ML | Stevens',
       description: 'Master AI engineering, machine learning, and LLMs. Build production ML systems. $24,000 for 30 credits. 100% online from Stevens.',

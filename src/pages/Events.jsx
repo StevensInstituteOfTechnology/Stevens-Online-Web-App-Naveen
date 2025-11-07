@@ -182,10 +182,10 @@ export default function Events() {
 
   return (
     <PageContextProvider pageType="content" pageName="Events">
-      <div>
-        <PageHero
-          title="Stevens Institute of Technology"
-          subtitle="Virtual Events"
+    <div>
+      <PageHero
+        title="Stevens Institute of Technology"
+        subtitle="Virtual Events"
         bgImage="/assets/images/1-event-scaled.webp"
       />
 
@@ -323,7 +323,7 @@ export default function Events() {
           </a>
         </div>
       </div>
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

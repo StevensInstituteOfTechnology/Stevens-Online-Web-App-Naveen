@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -56,13 +56,17 @@ function ProgramReadinessAssessment({ onComplete }) {
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
   const quizStartTime = useState(() => Date.now())[0];
+  const hasTrackedStart = useRef(false);
   
-  // Track quiz start on mount
+  // Track quiz start on mount (protected against StrictMode)
   useEffect(() => {
-    trackEvent('quiz_started', {
-      quiz_name: 'program_readiness',
-      total_questions: questions.length
-    });
+    if (!hasTrackedStart.current) {
+      trackEvent('quiz_started', {
+        quiz_name: 'program_readiness',
+        total_questions: questions.length
+      });
+      hasTrackedStart.current = true;
+    }
   }, []);
 
   const handleAnswerSelect = (questionId, answerIndex) => {

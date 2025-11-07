@@ -13,6 +13,7 @@ import { trackEvent } from '@/utils/analytics/vercelTracking';
 export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '' }) {
   const [mountKey, setMountKey] = useState(0);
   const modalOpenTime = useRef(null);
+  const hasTrackedOpen = useRef(false);
 
   // Force remount of LeadCaptureForm when modal opens to ensure script loads
   useEffect(() => {
@@ -20,12 +21,15 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
       setMountKey(prev => prev + 1);
       modalOpenTime.current = Date.now();
       
-      // Track modal open
-      trackEvent('rfi_modal_opened', {
-        modal_name: 'request_info',
-        source_page: sourcePage,
-        program_code: programOfInterest || 'general'
-      });
+      // Track modal open (only once per open)
+      if (!hasTrackedOpen.current) {
+        trackEvent('rfi_modal_opened', {
+          modal_name: 'request_info',
+          source_page: sourcePage,
+          program_code: programOfInterest || 'general'
+        });
+        hasTrackedOpen.current = true;
+      }
     } else if (modalOpenTime.current) {
       // Track modal close
       const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
@@ -36,6 +40,7 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
         time_open_seconds: timeOpen
       });
       modalOpenTime.current = null;
+      hasTrackedOpen.current = false; // Reset for next open
     }
   }, [isOpen, sourcePage, programOfInterest]);
 

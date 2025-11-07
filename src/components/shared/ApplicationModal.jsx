@@ -15,17 +15,23 @@ import { useProgramContext } from '@/contexts/analytics/ProgramContext';
 export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
   const modalOpenTime = useRef(null);
   const programContext = useProgramContext();
+  const hasTrackedOpen = useRef(false);
   
   // Track modal open/close
   useEffect(() => {
     if (isOpen) {
       modalOpenTime.current = Date.now();
       
-      trackEvent('application_modal_opened', {
-        modal_name: 'application_options',
-        program_code: programContext?.programCode || 'unknown',
-        options_shown: ['standard', 'asap']
-      });
+      // Track modal open (only once per open)
+      if (!hasTrackedOpen.current) {
+        trackEvent('application_modal_opened', {
+          modal_name: 'application_options',
+          program_code: programContext?.programCode || 'unknown',
+          options_shown: 'standard,asap',
+          options_count: 2
+        });
+        hasTrackedOpen.current = true;
+      }
     } else if (modalOpenTime.current) {
       const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
       trackEvent('application_modal_closed', {
@@ -34,6 +40,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
         time_open_seconds: timeOpen
       });
       modalOpenTime.current = null;
+      hasTrackedOpen.current = false; // Reset for next open
     }
   }, [isOpen, programContext]);
   
@@ -138,9 +145,13 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             </div>
 
             <Link 
-              to={createPageUrl('ASAP')}
+              to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
               className="btn-stevens-primary w-full text-center inline-block"
               onClick={() => {
+                // Store program in sessionStorage for persistence
+                sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
+                sessionStorage.setItem('asap_application_source', 'modal');
+                
                 trackConversion(CONVERSION_LABELS.APPLY_NOW);
                 trackEvent('application_option_selected', {
                   option: 'asap',

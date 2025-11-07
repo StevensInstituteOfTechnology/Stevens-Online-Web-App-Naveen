@@ -12,68 +12,49 @@ export const MAIN_FUNNEL = {
   stages: [
     {
       stage: 1,
-      name: 'Landing',
+      name: 'Page View',
       events: ['page_view'],
-      description: 'User lands on any page',
+      description: 'User views any page',
       expectedDuration: 0,
       exitActions: ['bounce', 'navigate_away']
     },
     {
       stage: 2,
-      name: 'Awareness',
-      events: [
-        'program_page_viewed',
-        'explore_page_viewed',
-        'admissions_page_viewed',
-        'homepage_viewed'
-      ],
-      description: 'User views program information',
-      expectedDuration: 60,
-      exitActions: ['bounce', 'navigate_to_external']
-    },
-    {
-      stage: 3,
       name: 'Engagement',
       events: [
-        'video_played',
-        'curriculum_viewed',
-        'tuition_viewed',
         'scroll_depth_50',
-        'faq_opened',
-        'multiple_programs_viewed'
+        'scroll_depth_75',
+        'scroll_depth_100',
+        'rfi_form_viewed'
       ],
-      description: 'User engages with content',
+      description: 'User engages with content (scrolls or views form)',
       expectedDuration: 180,
       exitActions: ['page_exit', 'tab_close']
     },
     {
-      stage: 4,
+      stage: 3,
       name: 'Consideration',
       events: [
-        'compare_programs_viewed',
         'quiz_started',
-        'pricing_viewed',
-        'faculty_viewed',
-        'outcomes_viewed'
+        'quiz_completed',
+        'rfi_form_loaded'
       ],
-      description: 'User evaluating options',
+      description: 'User evaluating options (takes quiz or loads form)',
       expectedDuration: 300,
       exitActions: ['session_end', 'return_later']
     },
     {
-      stage: 5,
+      stage: 4,
       name: 'Interest',
       events: [
-        'rfi_form_viewed',
-        'rfi_modal_opened',
-        'schedule_call_clicked'
+        'rfi_modal_opened'
       ],
-      description: 'User shows active interest',
+      description: 'User shows active interest (opens RFI modal)',
       expectedDuration: 120,
       exitActions: ['form_abandoned', 'modal_closed']
     },
     {
-      stage: 6,
+      stage: 5,
       name: 'Lead Capture',
       events: [
         'rfi_form_submitted',
@@ -86,40 +67,36 @@ export const MAIN_FUNNEL = {
       exitActions: ['form_error']
     },
     {
-      stage: 7,
+      stage: 6,
       name: 'Application Intent',
       events: [
         'apply_button_clicked',
-        'application_modal_opened',
-        'application_page_viewed'
+        'application_modal_opened'
       ],
       description: 'User initiates application',
       expectedDuration: 60,
       exitActions: ['modal_closed', 'navigate_away']
     },
     {
-      stage: 8,
+      stage: 7,
       name: 'Application Started',
       events: [
-        'application_form_started',
-        'accelerated_app_started',
-        'asap_app_started',
-        'standard_app_redirected'
+        'application_option_selected'
       ],
-      description: 'User begins application process',
+      description: 'User selects application type (ASAP/Standard/Accelerated)',
       expectedDuration: 600,
       isConversion: true,
       conversionValue: 'application_started',
       exitActions: ['application_abandoned']
     },
     {
-      stage: 9,
+      stage: 8,
       name: 'Application Submitted',
       events: [
-        'application_submitted',
-        'application_completed'
+        'asap_application_submitted',
+        'accelerated_application_submitted'
       ],
-      description: 'User completes application',
+      description: 'User completes application form',
       expectedDuration: 0,
       isConversion: true,
       conversionValue: 'application',
@@ -129,13 +106,12 @@ export const MAIN_FUNNEL = {
   
   // Target conversion rates between stages
   benchmarks: {
-    landing_to_awareness: 0.70,
-    awareness_to_engagement: 0.50,
-    engagement_to_consideration: 0.40,
-    consideration_to_interest: 0.30,
-    interest_to_lead: 0.20,
-    lead_to_intent: 0.15,
-    intent_to_started: 0.10,
+    pageview_to_engagement: 0.70,
+    engagement_to_consideration: 0.50,
+    consideration_to_interest: 0.40,
+    interest_to_lead: 0.30,
+    lead_to_intent: 0.50,
+    intent_to_started: 0.80,
     started_to_submitted: 0.60
   }
 };

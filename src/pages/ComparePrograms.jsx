@@ -140,8 +140,8 @@ export default function ComparePrograms() {
 
   return (
     <PageContextProvider pageType="comparison" pageName="ComparePrograms">
-      <div>
-        <PageHero 
+    <div>
+      <PageHero 
         title="Compare Our Programs" 
         subtitle="Find your path" 
         bgImage="/assets/images/compare-hero.jpg"
@@ -344,7 +344,7 @@ export default function ComparePrograms() {
           </a>
         </div>
       </section>
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

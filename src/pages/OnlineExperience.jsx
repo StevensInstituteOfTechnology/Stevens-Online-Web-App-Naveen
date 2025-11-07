@@ -47,8 +47,8 @@ export default function OnlineExperience() {
 
   return (
     <PageContextProvider pageType="content" pageName="OnlineExperience">
-      <div>
-        <PageHero 
+    <div>
+      <PageHero 
         title="Online Education"
         subtitle="A premier, technology-driven education, delivered with flexibility."
         bgImage="/assets/images/1-online-learning-hero-scaled.webp"
@@ -70,14 +70,14 @@ export default function OnlineExperience() {
                   <div className="text-center stevens-md:text-left">
                     <h2 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold mb-stevens-xs">
                       Arshad Saiyed
-                    </h2>
+            </h2>
                     <p className="text-stevens-base stevens-md:text-stevens-lg font-stevens-medium text-white/90">
                       Chief Online Learning Officer and Dean of the College of Professional Education
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+              </p>
+            </div>
+          </div>
+        </div>
+      
               {/* Letter Content */}
               <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
                 <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
@@ -95,25 +95,25 @@ export default function OnlineExperience() {
                   </p>
                   <p>
                     I invite you to explore our programs and experience how Stevens continues to set the standard for excellence and innovation in online learning and professional education.
-                  </p>
-                </div>
-
+            </p>
+          </div>
+          
                 {/* Signature */}
                 <div className="mt-stevens-xl">
-                  <img
+                <img 
                     src="/assets/images/arshad-signature.png"
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />
                   <p className="font-stevens-semibold text-stevens-gray-900">
                     Arshad Saiyed
-                  </p>
+              </p>
                   <p className="text-stevens-sm text-stevens-gray-600">
                     Chief Online Learning Officer and Dean<br />
                     College of Professional Education <br />
                     Stevens Institute of Technology
                   </p>
-                </div>
+            </div>
               </div>
             </CardContent>
           </Card>
@@ -180,7 +180,7 @@ export default function OnlineExperience() {
         sourcePage="online_experience_page"
         programOfInterest=""
       />
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

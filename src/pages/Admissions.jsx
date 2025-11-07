@@ -79,8 +79,8 @@ export default function Admissions() {
 
   return (
     <PageContextProvider pageType="admissions" pageName="Admissions">
-      <div>
-        <PageHero 
+    <div>
+      <PageHero 
         title="We Put Our Strengths Behind Your Career"
         subtitle="Admissions"
         bgImage="/assets/images/1-hero-admissions-scaled.webp"
@@ -305,7 +305,7 @@ export default function Admissions() {
           </div>
         </div>
       </div>
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

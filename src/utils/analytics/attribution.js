@@ -137,8 +137,8 @@ export class AttributionTracker {
       // Time-decay weighted (last touchpoint gets most credit)
       primary_attribution_source: this.getTimeDecaySource(),
       
-      // All touchpoints for detailed analysis
-      touchpoint_journey: this.touchpoints
+      // All touchpoints as JSON string (Vercel doesn't accept arrays)
+      touchpoint_journey_json: JSON.stringify(this.touchpoints)
     };
   }
   

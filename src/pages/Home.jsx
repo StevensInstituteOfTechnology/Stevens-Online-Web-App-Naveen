@@ -205,9 +205,9 @@ export default function Home() {
 
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
-      <div className="font-sans bg-white">
-        {/* Hero Section */}
-        <section className="relative bg-gray-900 text-white overflow-hidden">
+    <div className="font-sans bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-gray-900 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{ backgroundImage: "url('/assets/images/HEADER-0865.jpg')" }}
@@ -841,7 +841,7 @@ export default function Home() {
         sourcePage="homepage"
         programOfInterest=""
       />
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

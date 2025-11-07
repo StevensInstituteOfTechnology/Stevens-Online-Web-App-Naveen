@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
@@ -16,15 +16,19 @@ export default function LeadCaptureForm({
   const [open, setOpen] = useState(false);
   const programContext = useProgramContext();
   const effectiveProgramCode = programOfInterest || programContext?.programCode || 'unknown';
+  const hasTrackedView = useRef(false); // Prevent double tracking in StrictMode
 
   useEffect(() => {
-    // Track form view
-    trackEvent('rfi_form_viewed', {
-      form_name: 'request_info',
-      source_page: sourcePage,
-      program_code: effectiveProgramCode,
-      form_type: useModal ? 'modal' : 'embedded'
-    });
+    // Track form view (only once)
+    if (!hasTrackedView.current) {
+      trackEvent('rfi_form_viewed', {
+        form_name: 'request_info',
+        source_page: sourcePage,
+        program_code: effectiveProgramCode,
+        form_type: useModal ? 'modal' : 'embedded'
+      });
+      hasTrackedView.current = true;
+    }
 
     // Only run on client side
     if (typeof document === 'undefined') return;

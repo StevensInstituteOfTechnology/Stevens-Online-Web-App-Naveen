@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 export default function AcceleratedApplicationPage() {
+  // Get program code from URL or sessionStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  const programCode = urlParams.get('program') || 
+                      sessionStorage.getItem('accelerated_application_program') ||
+                      'meads'; // default to MEADS
+  const formSubmittedRef = useRef(false); // Prevent double tracking
+
   usePageTracking({
     pageType: 'application',
+    programCode: programCode,
     additionalData: {
       page_name: 'Accelerated Application',
       application_type: 'accelerated',
-      has_embedded_form: true
+      has_embedded_form: true,
+      program_code: programCode
     }
   });
 
@@ -41,11 +51,44 @@ export default function AcceleratedApplicationPage() {
     document.body.appendChild(scriptContainer);
     scriptContainer.appendChild(script);
     
+    // Add form submission tracking
+    const submitHandlers = [];
+    script.onload = () => {
+      setTimeout(() => {
+        const formContainer = document.getElementById('form_89080626-7bc4-4c48-9437-fd47479d7371');
+        if (formContainer) {
+          const forms = formContainer.querySelectorAll('form');
+          forms.forEach(form => {
+            const submitHandler = () => {
+              if (!formSubmittedRef.current) {
+                formSubmittedRef.current = true;
+                setTimeout(() => {
+                  trackEvent('accelerated_application_submitted', {
+                    form_name: 'accelerated_application',
+                    program_code: programCode,
+                    application_type: 'accelerated',
+                    is_conversion: true
+                  });
+                }, 500);
+              }
+            };
+            form.addEventListener('submit', submitHandler);
+            submitHandlers.push({ form, handler: submitHandler });
+          });
+        }
+      }, 2000);
+    };
+    
     return () => {
+      // Clean up event listeners
+      submitHandlers.forEach(({ form, handler }) => {
+        form.removeEventListener('submit', handler);
+      });
+      
       const container = document.getElementById('external-script-container-accelerated');
       if (container) document.body.removeChild(container);
     };
-  }, []);
+  }, [programCode]);
 
   // Continuous protection against external script interference
   useEffect(() => {
@@ -141,8 +184,8 @@ export default function AcceleratedApplicationPage() {
 
   return (
     <PageContextProvider pageType="application" pageName="AcceleratedApplication">
-      <div className="bg-stevens-gray-50 font-stevens-body">
-        <PageHero
+    <div className="bg-stevens-gray-50 font-stevens-body">
+      <PageHero
         title="Accelerated Application"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
         bgImage="/assets/images/AcceleratedApplication-3.jpg"
@@ -514,7 +557,7 @@ export default function AcceleratedApplicationPage() {
           </div>
         </div>
       </div>
-      </div>
+    </div>
     </PageContextProvider>
   );
 }

@@ -41,9 +41,9 @@ export default function TuitionOutcomes() {
 
   return (
     <PageContextProvider pageType="content" pageName="TuitionOutcomes">
-      <div>
-        <PageHero
-          title="Tuition & Career Outcomes"
+    <div>
+      <PageHero
+        title="Tuition & Career Outcomes"
         subtitle="An investment in a Stevens degree is an investment in your future." />
 
       

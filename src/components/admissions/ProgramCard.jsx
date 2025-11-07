@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import ApplicationModal from '../shared/ApplicationModal';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**
  * ProgramCard - Beautiful card component for displaying program information
@@ -118,6 +119,13 @@ const ProgramCard = ({ program }) => {
                 e.stopPropagation();
                 setIsModalOpen(true);
                 trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('apply_button_clicked', {
+                  program_code: program.code,
+                  program_name: program.shortName,
+                  button_location: 'admissions_card',
+                  application_type: 'modal',
+                  modal_options: 'standard,asap'
+                });
               }}
               className="flex-1 btn-stevens-primary text-stevens-sm"
             >
@@ -127,11 +135,19 @@ const ProgramCard = ({ program }) => {
           ) : isInternalAppLink ? (
             // Internal link (MEADS, Certificates) - Direct link to accelerated app
             <Link
-              to={getApplicationLink()}
+              to={getApplicationLink() + `?program=${program.code}`}
               className="flex-1"
               onClick={(e) => {
                 e.stopPropagation();
+                sessionStorage.setItem('accelerated_application_program', program.code);
                 trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('apply_button_clicked', {
+                  program_code: program.code,
+                  program_name: program.shortName,
+                  button_location: 'admissions_card',
+                  application_type: 'accelerated',
+                  destination: getApplicationLink()
+                });
               }}
             >
               <button className="w-full btn-stevens-primary text-stevens-sm">
@@ -149,6 +165,14 @@ const ProgramCard = ({ program }) => {
               onClick={(e) => {
                 e.stopPropagation();
                 trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('apply_button_clicked', {
+                  program_code: program.code,
+                  program_name: program.shortName,
+                  button_location: 'admissions_card',
+                  application_type: 'standard',
+                  destination: getApplicationLink(),
+                  is_external: true
+                });
               }}
             >
               <button className="w-full btn-stevens-primary text-stevens-sm">
