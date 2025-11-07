@@ -9,6 +9,7 @@ import { Check, Star, Award, Globe, GraduationCap, ArrowRight, User, ExternalLin
 import VideoPlayer from '../shared/VideoPlayer';
 import PageHero from '../shared/PageHero';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
+import TopCompaniesSection from '../shared/TopCompaniesSection';
 import { Link } from 'react-router-dom';
 import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
@@ -674,34 +675,11 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
 
         {topCompanies && (
           <Section id="top-companies" title={topCompanies.title} bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current['top-companies'] = el}>
-            
-            {career.topCompanies && career.topCompanies.length > 0 && (
-              <div className="mt-stevens-xl">
-                <div className="bg-gradient-to-br from-stevens-primary/5 via-stevens-gray-50 to-stevens-secondary/5 rounded-stevens-md p-stevens-lg stevens-md:p-stevens-xl border border-stevens-gray-200 shadow-stevens-lg">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-stevens-sm mb-stevens-sm">
-                      <div className="h-px bg-stevens-primary/30 flex-1"></div>
-                      <div className="w-3 h-3 bg-stevens-primary rounded-full"></div>
-                      <div className="h-px bg-stevens-primary/30 flex-1"></div>
-                    </div>
-                    <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
-                      {topCompanies.title ? topCompanies.title : 'Stevens Alumni Drive Innovation at Top Companies'}
-                    </h3>
-                    <p className="text-stevens-gray-600 mb-stevens-lg max-w-2xl mx-auto text-stevens-sm stevens-md:text-stevens-base">
-                      {topCompanies.description ? topCompanies.description : 'Our graduates join leading organizations across technology, finance, healthcare, and consulting'}
-                    </p>
-                    <div className="grid grid-cols-2 stevens-sm:grid-cols-3 stevens-md:grid-cols-4 stevens-lg:grid-cols-6 gap-stevens-sm stevens-md:gap-stevens-md items-center">
-                      {career.topCompanies.map((company, index) =>
-                      <div key={company} className="group bg-stevens-white rounded-stevens-md p-stevens-sm stevens-md:p-stevens-md shadow-stevens-sm hover:shadow-stevens-lg hover:-translate-y-1 transition-all duration-stevens-normal border border-stevens-gray-100 hover:border-stevens-primary/20">
-                          <p className="font-stevens-semibold text-stevens-gray-900 text-center text-stevens-xs stevens-sm:text-stevens-sm stevens-md:text-stevens-base group-hover:text-stevens-primary transition-colors duration-stevens-normal">{company}</p>
-                        </div>
-                      )}
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            )}
+            <TopCompaniesSection
+              title={topCompanies.title || 'Stevens Alumni Drive Innovation at Top Companies'}
+              description={topCompanies.description || 'Our graduates join leading organizations across technology, finance, healthcare, and consulting'}
+              companies={topCompanies.companies || career?.topCompanies || []}
+            />
           </Section>
         )}
 

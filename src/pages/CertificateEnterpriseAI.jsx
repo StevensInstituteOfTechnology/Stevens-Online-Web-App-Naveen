@@ -173,7 +173,40 @@ const programData = {
     title: "Career Opportunities with AI Skills"
   },
   topCompanies: {
-    title: "Where Stevens Alumni Work"
+    title: "Where Stevens Alumni Work",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    companies: [
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Google",
+        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Ecommerce"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      }
+    ]
   },
   admissions: {
     variant: 'certificateWithDeadlines',

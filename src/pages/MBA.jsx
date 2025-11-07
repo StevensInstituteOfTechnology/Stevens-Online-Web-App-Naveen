@@ -75,7 +75,7 @@ const programData = {
     { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
 
     source: "U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Microsoft", "Verizon", "Cisco", "American Express", "Millenium", "L3Harris"]
+    topCompanies: ["Microsoft", "Verizon", "Cisco", "American Express", "Deloitte", "Accenture"]
   },
   whatYoullLearn: {
     variant: 'skillCards',
@@ -565,7 +565,40 @@ const programData = {
     title: "Common Job Titles for MBA Graduates"
   },
   topCompanies: {
-    title: "Top Companies Hiring Stevens Alumni"
+    title: "Top Companies Hiring Stevens Alumni",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    companies: [
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Verizon",
+        logo: "/assets/company_logo/Verizon_2024.svg.png",
+        industry: "Telecommunications"
+      },
+      {
+        name: "Cisco",
+        logo: "/assets/company_logo/Cisco_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "American Express",
+        logo: "/assets/company_logo/American_Express_logo_(2018).svg.png",
+        industry: "Finance"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      }
+    ]
   },
   admissions: {
     variant: 'combinedWithTuition',

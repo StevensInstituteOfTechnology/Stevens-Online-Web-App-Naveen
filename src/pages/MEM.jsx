@@ -174,7 +174,38 @@ const programData = {
   topCompanies: {
     title: "Stevens Alumni Drive Innovation at Top Companies",
     description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
-    companies: ["BMW", "Goldman Sachs", "Lockheed Martin", "Exxon", "IBM", "UPS"]
+    companies: [
+      {
+        name: "BMW",
+        logo: "/assets/company_logo/BMW.svg.png",
+        industry: "Manufacturing"
+      },
+      {
+        name: "Goldman Sachs",
+        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.svg.png",
+        industry: "Finance"
+      },
+      {
+        name: "Lockheed Martin",
+        logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+        industry: "Aerospace & Defense"
+      },
+      {
+        name: "Exxon",
+        logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+        industry: "Energy"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "UPS",
+        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.svg.png",
+        industry: "Logistics"
+      }
+    ]
   },
   whyStevens: {
     title: "Why Choose an Online MEM from Stevens?",

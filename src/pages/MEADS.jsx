@@ -126,13 +126,12 @@ const programData = {
     //   { title: "Principal Engineer - Data", salary: "$195,000" }
     // ],
     topCompanies: [
-      "Technology",
-      "Finance",
-      "Healthcare",
-      "Energy",
-      "Manufacturing",
-      "Consulting",
-      "Government",
+      "Microsoft",
+      "Google",
+      "Amazon",
+      "Deloitte",
+      "Accenture",
+      "IBM"
     ],
     // source: "Glassdoor and LinkedIn, 2024"
   },
@@ -154,16 +153,39 @@ const programData = {
   // },
   // ==================================================================
   topCompanies: {
-    title: "Industries Hiring Stevens Graduates",
-    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032-more than seven times faster than the average for all occupations.",
+    title: "Where Stevens Alumni Work",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
-      "Technology",
-      "Finance",
-      "Healthcare",
-      "Energy",
-      "Manufacturing",
-      "Consulting",
-      "Government",
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Google",
+        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Technology"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      }
     ]
   },
 // ==================================================================
