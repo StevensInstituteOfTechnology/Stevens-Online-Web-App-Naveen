@@ -1,8 +1,12 @@
+import React from 'react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'meads',
@@ -481,11 +485,32 @@ const programData = {
 };
 
 export default function MEADS() {
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'meads',
+    additionalData: {
+      program_name: 'Master of Engineering in Applied Data Science',
+      has_video: true,
+      has_rfi_modal: true,
+      has_pricing_cards: true
+    }
+  });
+
   // Add pricing cards to hero section
   const heroWithPricing = {
     ...programData.hero,
     bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
   };
   
-  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />;
+  return (
+    <PageContextProvider pageType="program" pageName="MEADS">
+      <ProgramContextProvider 
+        programCode="meads"
+        programName="Master of Engineering in Applied Data Science"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

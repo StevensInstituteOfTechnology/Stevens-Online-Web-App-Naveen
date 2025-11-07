@@ -4,6 +4,9 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 import { Globe, Check, Award } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mem',
@@ -387,5 +390,26 @@ const programData = {
 };
 
 export default function MEMPage() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mem',
+    additionalData: {
+      program_name: 'Master of Engineering in Engineering Management',
+      has_video: true,
+      has_rfi_modal: true,
+      has_application_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MEM">
+      <ProgramContextProvider 
+        programCode="mem"
+        programName="Master of Engineering in Engineering Management"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

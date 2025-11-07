@@ -2,8 +2,29 @@ import React, { useEffect, useRef } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 export default function ASAPPage() {
+  // Get program code from URL or sessionStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  const programCode = urlParams.get('program') || 
+                      sessionStorage.getItem('asap_application_program') ||
+                      'unknown';
+  const formSubmittedRef = useRef(false); // Prevent double tracking
+
+  usePageTracking({
+    pageType: 'application',
+    programCode: programCode,
+    additionalData: {
+      page_name: 'ASAP Application',
+      application_type: 'asap',
+      has_embedded_form: true,
+      program_code: programCode
+    }
+  });
+
   useEffect(() => {
     // Only run on client side
     if (typeof document === 'undefined') return;
@@ -29,11 +50,44 @@ export default function ASAPPage() {
     document.body.appendChild(scriptContainer);
     scriptContainer.appendChild(script);
     
+    // Add form submission tracking
+    const submitHandlers = [];
+    script.onload = () => {
+      setTimeout(() => {
+        const formContainer = document.getElementById('form_9268876a-a7c7-484d-a41e-7d0cb4c5613c');
+        if (formContainer) {
+          const forms = formContainer.querySelectorAll('form');
+          forms.forEach(form => {
+            const submitHandler = () => {
+              if (!formSubmittedRef.current) {
+                formSubmittedRef.current = true;
+                setTimeout(() => {
+                  trackEvent('asap_application_submitted', {
+                    form_name: 'asap_application',
+                    program_code: programCode,
+                    application_type: 'asap',
+                    is_conversion: true
+                  });
+                }, 500);
+              }
+            };
+            form.addEventListener('submit', submitHandler);
+            submitHandlers.push({ form, handler: submitHandler });
+          });
+        }
+      }, 2000);
+    };
+    
     return () => {
+      // Clean up event listeners
+      submitHandlers.forEach(({ form, handler }) => {
+        form.removeEventListener('submit', handler);
+      });
+      
       const container = document.getElementById('external-script-container');
       if (container) document.body.removeChild(container);
     };
-  }, []);
+  }, [programCode]);
 
   // Continuous protection against external script interference
   useEffect(() => {
@@ -100,6 +154,7 @@ export default function ASAPPage() {
 
 
   return (
+    <PageContextProvider pageType="application" pageName="ASAP">
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero
         title="ASAP Application"
@@ -263,6 +318,7 @@ export default function ASAPPage() {
           </div>
         </div>
       </div>
-    </div>);
-
+      </div>
+    </PageContextProvider>
+  );
 }

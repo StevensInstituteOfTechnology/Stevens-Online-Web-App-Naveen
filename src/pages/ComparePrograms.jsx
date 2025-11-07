@@ -5,8 +5,18 @@ import { Button } from "@/components/ui/button";
 import { BOOKING_URLS } from "@/config/constants";
 import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 export default function ComparePrograms() {
+  usePageTracking({
+    pageType: 'comparison',
+    additionalData: {
+      page_name: 'Compare Programs',
+      has_quiz: true
+    }
+  });
+
   const PROGRAM_OPTIONS = [
     { label: "MBA", value: "mba" },
     { label: "M.S. in Computer Science", value: "mscs" },
@@ -129,6 +139,7 @@ export default function ComparePrograms() {
   }, []);
 
   return (
+    <PageContextProvider pageType="comparison" pageName="ComparePrograms">
     <div>
       <PageHero 
         title="Compare Our Programs" 
@@ -334,5 +345,6 @@ export default function ComparePrograms() {
         </div>
       </section>
     </div>
+    </PageContextProvider>
   );
 }

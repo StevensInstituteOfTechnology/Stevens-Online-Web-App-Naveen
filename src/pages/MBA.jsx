@@ -4,6 +4,9 @@ import {
   Target, TrendingUp, Users } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mba',
@@ -672,5 +675,25 @@ const programData = {
 };
 
 export default function MBAPage() {
-  return <ProgramPageTemplate programData={programData} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mba',
+    additionalData: {
+      program_name: 'Master of Business Administration',
+      has_video: true,
+      has_rfi_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MBA">
+      <ProgramContextProvider 
+        programCode="mba"
+        programName="Master of Business Administration"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

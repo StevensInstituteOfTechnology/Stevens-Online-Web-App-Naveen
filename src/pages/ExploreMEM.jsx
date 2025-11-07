@@ -2,8 +2,21 @@ import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMEM = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'mem',
+    additionalData: {
+      program_name: 'Master of Engineering in Engineering Management',
+      has_embedded_form: true,
+      has_application_modal: true
+    }
+  });
+  
   const memData = {
     // Hero Section
     heroTitle: "Built for Engineers Who Want to Lead",
@@ -167,7 +180,17 @@ const ExploreMEM = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate {...memData} />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMEM">
+      <ProgramContextProvider 
+        programCode="mem"
+        programName="Master of Engineering in Engineering Management"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate {...memData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMEM;

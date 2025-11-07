@@ -2,8 +2,20 @@ import React from 'react';
 import { Award, Globe, Star } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMBA = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'mba',
+    additionalData: {
+      program_name: 'Master of Business Administration',
+      has_embedded_form: true
+    }
+  });
+  
   const mbaData = {
     // Hero Section
     heroTitle: "TECHNOLOGY ISN'T JUST IN OUR DNA. IT DEFINES OUR MBA.",
@@ -163,7 +175,17 @@ const ExploreMBA = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate {...mbaData} />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMBA">
+      <ProgramContextProvider 
+        programCode="mba"
+        programName="Master of Business Administration"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate {...mbaData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMBA;

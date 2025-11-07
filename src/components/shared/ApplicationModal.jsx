@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ExternalLink, Zap, Check } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { useProgramContext } from '@/contexts/analytics/ProgramContext';
 
 /**
  * ApplicationModal - Shows two application options for MEM and MSCS pages
@@ -11,6 +13,37 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
  * Option 2: ASAP Application (redirect to ASAP page)
  */
 export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
+  const modalOpenTime = useRef(null);
+  const programContext = useProgramContext();
+  const hasTrackedOpen = useRef(false);
+  
+  // Track modal open/close
+  useEffect(() => {
+    if (isOpen) {
+      modalOpenTime.current = Date.now();
+      
+      // Track modal open (only once per open)
+      if (!hasTrackedOpen.current) {
+        trackEvent('application_modal_opened', {
+          modal_name: 'application_options',
+          program_code: programContext?.programCode || 'unknown',
+          options_shown: 'standard,asap',
+          options_count: 2
+        });
+        hasTrackedOpen.current = true;
+      }
+    } else if (modalOpenTime.current) {
+      const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
+      trackEvent('application_modal_closed', {
+        modal_name: 'application_options',
+        program_code: programContext?.programCode || 'unknown',
+        time_open_seconds: timeOpen
+      });
+      modalOpenTime.current = null;
+      hasTrackedOpen.current = false; // Reset for next open
+    }
+  }, [isOpen, programContext]);
+  
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -112,9 +145,21 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             </div>
 
             <Link 
-              to={createPageUrl('ASAP')}
+              to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
               className="btn-stevens-primary w-full text-center inline-block"
-              onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
+              onClick={() => {
+                // Store program in sessionStorage for persistence
+                sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
+                sessionStorage.setItem('asap_application_source', 'modal');
+                
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('application_option_selected', {
+                  option: 'asap',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  is_conversion: true
+                });
+              }}
             >
               Start ASAP Application
             </Link>
@@ -144,6 +189,15 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
+              onClick={() => {
+                trackEvent('application_option_selected', {
+                  option: 'standard',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  destination_url: traditionalLink,
+                  is_conversion: true
+                });
+              }}
             >
               Standard Application
             </a>

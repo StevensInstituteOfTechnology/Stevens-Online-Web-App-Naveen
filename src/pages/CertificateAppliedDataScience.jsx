@@ -5,6 +5,9 @@ import {
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'cert-ads',
@@ -264,12 +267,33 @@ const programData = {
 };
 
 export default function CertificateAppliedDataSciencePage() {
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'cert-ads',
+    additionalData: {
+      program_name: 'Professional Graduate Certificate in Applied Data Science Foundations',
+      has_rfi_modal: true,
+      has_pricing_cards: true,
+      program_type: 'certificate'
+    }
+  });
+
   // Add bottomContent to hero for certificate pages
   const heroWithTuitionCards = {
     ...programData.hero,
     bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
   };
   
-  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />;
+  return (
+    <PageContextProvider pageType="program" pageName="CertificateAppliedDataScience">
+      <ProgramContextProvider 
+        programCode="cert-ads"
+        programName="Professional Graduate Certificate in Applied Data Science Foundations"
+        programType="certificate"
+      >
+        <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }
 
