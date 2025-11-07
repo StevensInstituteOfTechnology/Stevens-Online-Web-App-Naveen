@@ -107,19 +107,20 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
           </div>
 
           {/* Content */}
-          <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-gray-50">
+          <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
             <LeadCaptureForm 
               key={`request-info-${mountKey}`}
               title="Get Program Details"
               subtitle="An admissions advisor will contact you shortly."
               sourcePage={sourcePage}
               programOfInterest={programOfInterest}
+              hideHeader={true}
             />
           </div>
 
           {/* Footer */}
           <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
-            <p className="text-[10px] sm:text-stevens-xs text-stevens-gray-600 text-center leading-tight">
+            <p className="text-stevens-xs sm:text-stevens-sm text-stevens-gray-600 text-center leading-tight">
               Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our admissions team.
             </p>
           </div>
