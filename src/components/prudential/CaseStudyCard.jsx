@@ -25,12 +25,12 @@ const CaseStudyCard = ({ study }) => {
           <div className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-3">
             {study.industry}
           </div>
-          <h3 className="text-xl font-bold mb-2">{study.title}</h3>
+          <h3 className="text-xl font-bold mb-2 text-white">{study.title}</h3>
         </div>
 
         {/* Scenario */}
         <div className="mb-4">
-          <div className="text-sm font-semibold text-slate-300 mb-2">CHALLENGE</div>
+          <div className="text-sm font-semibold text-white mb-2">CHALLENGE</div>
           <p className="text-sm text-slate-100 leading-relaxed">
             {study.scenario}
           </p>
@@ -38,7 +38,7 @@ const CaseStudyCard = ({ study }) => {
 
         {/* Intervention */}
         <div className="mb-4">
-          <div className="text-sm font-semibold text-slate-300 mb-2">SOLUTION</div>
+          <div className="text-sm font-semibold text-white mb-2">SOLUTION</div>
           <p className="text-sm text-slate-100 leading-relaxed">
             {study.intervention}
           </p>
@@ -46,7 +46,7 @@ const CaseStudyCard = ({ study }) => {
 
         {/* Metrics */}
         <div className="mb-4">
-          <div className="text-sm font-semibold text-slate-300 mb-3">OUTCOMES</div>
+          <div className="text-sm font-semibold text-white mb-3">OUTCOMES</div>
           <div className="grid grid-cols-2 gap-3">
             {study.outcome.metrics.map((metric, idx) => (
               <div
@@ -55,7 +55,7 @@ const CaseStudyCard = ({ study }) => {
               >
                 <div className="flex items-center gap-2 mb-1">
                   {getTrendIcon(metric.trend)}
-                  <span className="text-lg font-bold">{metric.value}</span>
+                  <span className="text-lg font-bold text-white">{metric.value}</span>
                 </div>
                 <div className="text-xs text-slate-100">{metric.label}</div>
               </div>
@@ -69,7 +69,7 @@ const CaseStudyCard = ({ study }) => {
           <p className="text-sm italic text-slate-100 mb-2">
             "{study.outcome.quote}"
           </p>
-          <p className="text-xs text-slate-300">— {study.outcome.role}</p>
+          <p className="text-xs text-slate-100">— {study.outcome.role}</p>
         </div>
       </div>
     </motion.div>

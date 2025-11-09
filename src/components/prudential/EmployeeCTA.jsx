@@ -20,8 +20,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
               <User className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold">For Employees</h3>
-              <p className="text-slate-400 text-sm">Build your skills, advance your career</p>
+              <h3 className="text-2xl font-bold text-white">For Employees</h3>
+              <p className="text-slate-100 text-sm">Build your skills, advance your career</p>
             </div>
           </div>
 
@@ -29,8 +29,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Tuition Benefits</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Tuition Benefits</div>
+                <p className="text-sm text-slate-100">
                   Eligible courses may be covered by Prudential's tuition reimbursement program
                 </p>
               </div>
@@ -38,8 +38,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Flexible Scheduling</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Flexible Scheduling</div>
+                <p className="text-sm text-slate-100">
                   Live online and asynchronous options fit your work schedule
                 </p>
               </div>
@@ -47,8 +47,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Career Advancement</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Career Advancement</div>
+                <p className="text-sm text-slate-100">
                   Stackable credentials toward certificates and graduate degrees
                 </p>
               </div>
@@ -58,7 +58,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
           <div className="space-y-3">
             <button
               onClick={() => setShowTuitionInfo(true)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-all duration-200 font-semibold text-lg"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-all duration-200 font-semibold text-lg text-white"
             >
               <DollarSign className="w-5 h-5" />
               Check Tuition Benefits
@@ -66,7 +66,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             </button>
             <button
               onClick={() => alert('Advisor scheduling feature coming soon!')}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 transition-all duration-200 font-semibold"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 transition-all duration-200 font-semibold text-white shadow-md"
+              style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)' }}
             >
               <Phone className="w-5 h-5" />
               Talk to an Advisor
@@ -74,12 +75,12 @@ const EmployeeCTA = ({ pathItems = [] }) => {
           </div>
 
           {pathItems.length > 0 && (
-            <div className="mt-6 p-4 rounded-lg bg-slate-700/5 border border-slate-600/10">
-              <div className="text-sm font-semibold mb-2">Your Learning Path</div>
+            <div className="mt-6 p-4 rounded-lg bg-slate-700/10 border border-slate-600/20 shadow-lg" style={{ boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)' }}>
+              <div className="text-sm font-semibold mb-2 text-white">Your Learning Path</div>
               <div className="text-2xl font-bold text-blue-400">
                 {pathItems.length} {pathItems.length === 1 ? 'course' : 'courses'}
               </div>
-              <div className="text-sm text-slate-400">
+              <div className="text-sm text-slate-100">
                 ~{Math.ceil(pathItems.reduce((sum, p) => sum + (parseInt(p.duration) || 6), 0) / 1.5)} weeks total
               </div>
             </div>
@@ -101,10 +102,10 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                 <DollarSign className="w-8 h-8 text-green-400" />
                 <div>
                   <div className="text-2xl font-bold">$5,250 / Year</div>
-                  <div className="text-sm text-slate-400">IRS Tax-Free Tuition Benefit</div>
+                  <div className="text-sm text-slate-100">IRS Tax-Free Tuition Benefit</div>
                 </div>
               </div>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-slate-100">
                 Prudential offers up to $5,250 per year in tax-free tuition reimbursement for approved programs. 
                 Many Stevens courses are designed to align with this benefit.
               </p>
@@ -119,8 +120,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                     1
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Select Your Courses</div>
-                    <p className="text-sm text-slate-400">
+                    <div className="font-semibold mb-1 text-white">Select Your Courses</div>
+                    <p className="text-sm text-slate-100">
                       Choose programs from your personalized path that fit your career goals
                     </p>
                   </div>
@@ -130,8 +131,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                     2
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Get Manager Approval</div>
-                    <p className="text-sm text-slate-400">
+                    <div className="font-semibold mb-1 text-white">Get Manager Approval</div>
+                    <p className="text-sm text-slate-100">
                       Submit through Prudential's tuition benefit portal for approval
                     </p>
                   </div>
@@ -141,8 +142,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                     3
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Enroll & Learn</div>
-                    <p className="text-sm text-slate-400">
+                    <div className="font-semibold mb-1 text-white">Enroll & Learn</div>
+                    <p className="text-sm text-slate-100">
                       Complete your courses with Stevens' expert faculty and hands-on projects
                     </p>
                   </div>
@@ -152,8 +153,8 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                     4
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Get Reimbursed</div>
-                    <p className="text-sm text-slate-400">
+                    <div className="font-semibold mb-1 text-white">Get Reimbursed</div>
+                    <p className="text-sm text-slate-100">
                       Submit grades and receipts for reimbursement upon successful completion
                     </p>
                   </div>
@@ -196,13 +197,13 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowTuitionInfo(false)}
-                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200 text-white"
               >
                 Close
               </button>
               <button
                 onClick={() => alert('Application portal link coming soon!')}
-                className="flex-1 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold transition-all duration-200 text-white"
               >
                 Start Application
               </button>

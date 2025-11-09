@@ -33,8 +33,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <Users className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold">For Leaders & L&D</h3>
-              <p className="text-slate-400 text-sm">Design your team's upskilling journey</p>
+              <h3 className="text-2xl font-bold text-white">For Leaders & L&D</h3>
+              <p className="text-slate-100 text-sm">Design your team's upskilling journey</p>
             </div>
           </div>
 
@@ -42,8 +42,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Private Cohorts</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Private Cohorts</div>
+                <p className="text-sm text-slate-100">
                   Dedicated groups with custom schedules and Prudential-specific case studies
                 </p>
               </div>
@@ -51,8 +51,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Manager Dashboards</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Manager Dashboards</div>
+                <p className="text-sm text-slate-100">
                   Track progress, approvals, skills verified, and completion rates
                 </p>
               </div>
@@ -60,8 +60,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-semibold mb-1">Governance & Reporting</div>
-                <p className="text-sm text-slate-400">
+                <div className="font-semibold mb-1 text-white">Governance & Reporting</div>
+                <p className="text-sm text-slate-100">
                   Compliance documentation, audit trails, and ROI metrics
                 </p>
               </div>
@@ -71,7 +71,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
           <div className="space-y-3">
             <button
               onClick={() => setShowWizard(true)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark transition-all duration-200 font-semibold text-lg"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark transition-all duration-200 font-semibold text-lg text-white"
             >
               <Calendar className="w-5 h-5" />
               Design Your Cohort
@@ -79,7 +79,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
             </button>
             <button
               onClick={() => alert('Sample SOW download feature coming soon!')}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 transition-all duration-200 font-semibold"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 transition-all duration-200 font-semibold text-white shadow-md"
+              style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)' }}
             >
               <FileText className="w-5 h-5" />
               Get Sample SOW
@@ -87,12 +88,12 @@ const LeaderCTA = ({ pathItems = [] }) => {
           </div>
 
           {pathItems.length > 0 && (
-            <div className="mt-6 p-4 rounded-lg bg-slate-700/5 border border-slate-600/10">
-              <div className="text-sm font-semibold mb-2">Your Selection</div>
+            <div className="mt-6 p-4 rounded-lg bg-slate-700/10 border border-slate-600/20 shadow-lg" style={{ boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)' }}>
+              <div className="text-sm font-semibold mb-2 text-white">Your Selection</div>
               <div className="text-2xl font-bold text-stevens-maroon">
                 {pathItems.length} {pathItems.length === 1 ? 'program' : 'programs'}
               </div>
-              <div className="text-sm text-slate-400">
+              <div className="text-sm text-slate-100">
                 {pathItems.reduce((sum, p) => sum + (p.credits || 0), 0)} total credits
               </div>
             </div>
@@ -167,8 +168,8 @@ const LeaderCTA = ({ pathItems = [] }) => {
 
             {pathItems.length > 0 && (
               <div className="p-4 rounded-lg bg-stevens-maroon/10 border border-stevens-maroon/30">
-                <div className="font-semibold mb-2">Selected Programs ({pathItems.length})</div>
-                <div className="text-sm text-slate-400">
+                <div className="font-semibold mb-2 text-white">Selected Programs ({pathItems.length})</div>
+                <div className="text-sm text-slate-100">
                   {pathItems.slice(0, 3).map(p => p.title).join(', ')}
                   {pathItems.length > 3 && ` and ${pathItems.length - 3} more`}
                 </div>
@@ -179,13 +180,13 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <button
                 type="button"
                 onClick={() => setShowWizard(false)}
-                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200 text-white"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark font-semibold transition-all duration-200"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark font-semibold transition-all duration-200 text-white"
               >
                 <FileText className="w-5 h-5" />
                 Generate SOW Draft

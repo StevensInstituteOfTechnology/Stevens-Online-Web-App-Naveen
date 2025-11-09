@@ -35,6 +35,12 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
   const [selectedFormat, setSelectedFormat] = useState(null);
   const [generatedPath, setGeneratedPath] = useState(null);
 
+  // Format domain name for display
+  const formatDomain = (domain) => {
+    if (domain === 'ai') return 'AI';
+    return domain.charAt(0).toUpperCase() + domain.slice(1);
+  };
+
   const handleGeneratePath = () => {
     if (!selectedRole || !selectedLevel || !selectedFormat) return;
 
@@ -95,8 +101,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
         viewport={{ once: true }}
         className="mb-8 text-center"
       >
-        <h2 className="text-4xl font-bold mb-4">Build Your Learning Path</h2>
-        <p className="text-xl text-slate-300">
+        <h2 className="text-4xl font-bold mb-4 text-white">Build Your Learning Path</h2>
+        <p className="text-xl text-slate-100">
           Configure a personalized pathway in 3 steps
         </p>
       </motion.div>
@@ -138,8 +144,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                   <User className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Select Your Role</h3>
-                  <p className="text-slate-300">Choose the role that best matches your team</p>
+                  <h3 className="text-2xl font-bold text-white">Select Your Role</h3>
+                  <p className="text-slate-100">Choose the role that best matches your team</p>
                 </div>
               </div>
 
@@ -154,8 +160,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                         : 'border-slate-600 bg-slate-700/80 hover:border-slate-500 hover:bg-slate-700/60'
                     }`}
                   >
-                    <div className="font-semibold mb-1">{role.label}</div>
-                    <div className="text-sm text-slate-400 capitalize">{role.domain}</div>
+                    <div className="font-semibold mb-1 text-white">{role.label}</div>
+                    <div className="text-sm text-slate-200">{formatDomain(role.domain)}</div>
                   </button>
                 ))}
               </div>
@@ -175,8 +181,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Choose Starting Level</h3>
-                  <p className="text-slate-300">Select based on current expertise</p>
+                  <h3 className="text-2xl font-bold text-white">Choose Starting Level</h3>
+                  <p className="text-slate-100">Select based on current expertise</p>
                 </div>
               </div>
 
@@ -192,13 +198,13 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                     }`}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <div className="font-bold text-lg capitalize">{level}</div>
+                      <div className="font-bold text-lg capitalize text-white">{level}</div>
                       <div className={`w-3 h-3 rounded-full ${
                         level === 'foundation' ? 'bg-green-400' :
                         level === 'practitioner' ? 'bg-yellow-400' : 'bg-blue-400'
                       }`} />
                     </div>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-200">
                       {level === 'foundation' && 'Build fundamental skills and knowledge'}
                       {level === 'practitioner' && 'Apply skills to real-world scenarios'}
                       {level === 'expert' && 'Master advanced concepts and lead initiatives'}
@@ -222,8 +228,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                   <Calendar className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Select Format</h3>
-                  <p className="text-slate-300">How would you like to learn?</p>
+                  <h3 className="text-2xl font-bold text-white">Select Format</h3>
+                  <p className="text-slate-100">How would you like to learn?</p>
                 </div>
               </div>
 
@@ -238,8 +244,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                         : 'border-slate-600 bg-slate-700/80 hover:border-slate-500 hover:bg-slate-700/60'
                     }`}
                   >
-                    <div className="font-bold text-lg mb-2">{format.label}</div>
-                    <p className="text-sm text-slate-400 mb-3">{format.description}</p>
+                    <div className="font-bold text-lg mb-2 text-white">{format.label}</div>
+                    <p className="text-sm text-slate-200 mb-3">{format.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {format.features.map((feature, idx) => (
                         <div
@@ -266,8 +272,8 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
             >
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold mb-1">Your Personalized Path</h3>
-                  <p className="text-slate-300">
+                  <h3 className="text-2xl font-bold mb-1 text-white">Your Personalized Path</h3>
+                  <p className="text-slate-100">
                     {generatedPath.role.label} • {generatedPath.level}
                   </p>
                 </div>
@@ -283,38 +289,38 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
               {/* Summary Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="p-4 rounded-lg bg-slate-700/70 border border-slate-600/50">
-                  <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+                  <div className="flex items-center gap-2 text-sm text-slate-200 mb-1">
                     <Clock className="w-4 h-4" />
                     Duration
                   </div>
-                  <div className="text-xl font-bold">{generatedPath.timeline}</div>
+                  <div className="text-xl font-bold text-white">{generatedPath.timeline}</div>
                 </div>
                 <div className="p-4 rounded-lg bg-slate-700/70 border border-slate-600/50">
-                  <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+                  <div className="flex items-center gap-2 text-sm text-slate-200 mb-1">
                     <Award className="w-4 h-4" />
                     Credits
                   </div>
-                  <div className="text-xl font-bold">{generatedPath.credits}</div>
+                  <div className="text-xl font-bold text-white">{generatedPath.credits}</div>
                 </div>
                 <div className="p-4 rounded-lg bg-slate-700/70 border border-slate-600/50">
-                  <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+                  <div className="flex items-center gap-2 text-sm text-slate-200 mb-1">
                     <TrendingUp className="w-4 h-4" />
                     Study Hours
                   </div>
-                  <div className="text-xl font-bold">{generatedPath.studyHours}</div>
+                  <div className="text-xl font-bold text-white">{generatedPath.studyHours}</div>
                 </div>
                 <div className="p-4 rounded-lg bg-slate-700/70 border border-slate-600/50">
-                  <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+                  <div className="flex items-center gap-2 text-sm text-slate-200 mb-1">
                     <GraduationCap className="w-4 h-4" />
                     Programs
                   </div>
-                  <div className="text-xl font-bold">{generatedPath.programs.length}</div>
+                  <div className="text-xl font-bold text-white">{generatedPath.programs.length}</div>
                 </div>
               </div>
 
               {/* Program List */}
               <div className="mb-6">
-                <h4 className="font-bold mb-3">Recommended Programs</h4>
+                <h4 className="font-bold mb-3 text-white">Recommended Programs</h4>
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
                   {generatedPath.programs.map((program, idx) => (
                     <div
@@ -324,18 +330,18 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-grow">
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="text-xs font-semibold text-slate-400">
+                            <span className="text-xs font-semibold text-slate-300">
                               {idx + 1}.
                             </span>
-                            <span className="font-semibold">{program.title}</span>
+                            <span className="font-semibold text-white">{program.title}</span>
                           </div>
-                          <div className="text-sm text-slate-400">
+                          <div className="text-sm text-slate-200">
                             {program.duration} • {program.credits} credits
                           </div>
                         </div>
                         <button
                           onClick={() => onAddToPath(program)}
-                          className="px-3 py-1 rounded bg-stevens-maroon hover:bg-stevens-maroon-dark transition-colors text-sm font-semibold whitespace-nowrap"
+                          className="px-3 py-1 rounded bg-stevens-maroon hover:bg-stevens-maroon-dark transition-colors text-sm font-semibold whitespace-nowrap text-white"
                         >
                           Add
                         </button>
@@ -349,9 +355,9 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
               <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/20 mb-6">
                 <div className="flex items-center gap-2 mb-2">
                   <TrendingUp className="w-5 h-5 text-purple-400" />
-                  <span className="font-bold">Next Level</span>
+                  <span className="font-bold text-white">Next Level</span>
                 </div>
-                <p className="text-sm text-slate-300">
+                <p className="text-sm text-slate-100">
                   After completing this path, advance to{' '}
                   <span className="font-semibold text-white capitalize">{generatedPath.nextStep}</span>
                 </p>
@@ -364,7 +370,7 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                     // Mock PDF export
                     alert('PDF export feature coming soon! This will generate a detailed pathway plan with syllabi, timelines, and pricing.');
                   }}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 border border-slate-600 font-semibold transition-all duration-200"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 border border-slate-600 font-semibold transition-all duration-200 text-white"
                 >
                   <Download className="w-5 h-5" />
                   Export PDF
@@ -373,7 +379,7 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                   onClick={() => {
                     generatedPath.programs.forEach(p => onAddToPath(p));
                   }}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#A32638] hover:bg-[#8B1F2E] font-semibold transition-all duration-200"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#A32638] hover:bg-[#8B1F2E] font-semibold transition-all duration-200 text-white"
                 >
                   <Check className="w-5 h-5" />
                   Add All to Path
@@ -389,7 +395,7 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
             <button
               onClick={handleBack}
               disabled={step === 1}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-white ${
                 step === 1
                   ? 'opacity-50 cursor-not-allowed bg-slate-700/50'
                   : 'bg-slate-700 hover:bg-slate-600'
@@ -405,7 +411,7 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                 (step === 2 && !selectedLevel) ||
                 (step === 3 && !selectedFormat)
               }
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-white ${
                 ((step === 1 && !selectedRole) ||
                   (step === 2 && !selectedLevel) ||
                   (step === 3 && !selectedFormat))

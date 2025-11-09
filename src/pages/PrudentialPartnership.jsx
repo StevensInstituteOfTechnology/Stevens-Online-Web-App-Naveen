@@ -318,13 +318,17 @@ const PrudentialPartnership = () => {
 
               {/* Badge */}
               <motion.div 
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-stevens-maroon/10 border border-stevens-maroon/30 mb-10"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stevens-maroon/40 border-2 border-stevens-maroon/70 mb-10 backdrop-blur-md shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
+                style={{ 
+                  boxShadow: '0 4px 16px rgba(163, 38, 56, 0.4), 0 0 0 1px rgba(163, 38, 56, 0.2)',
+                  background: 'linear-gradient(135deg, rgba(163, 38, 56, 0.5) 0%, rgba(163, 38, 56, 0.3) 100%)'
+                }}
               >
-                <Award className="w-4 h-4 text-stevens-maroon" />
-                <span className="text-sm font-medium text-white">Corporate Learning Partnership</span>
+                <Award className="w-4 h-4 text-white" />
+                <span className="text-sm font-bold text-white">Corporate Learning Partnership</span>
               </motion.div>
 
               {/* Headline - Pure White, No Gradient */}
@@ -478,7 +482,7 @@ const PrudentialPartnership = () => {
               {statsConfig.map((stat, idx) => (
                 <motion.div
                   key={stat.label}
-                  className="relative group"
+                  className="relative group h-full"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -492,7 +496,7 @@ const PrudentialPartnership = () => {
                   />
                   
                   <div 
-                    className="relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 group-hover:border-transparent p-7 transition-all duration-300"
+                    className="relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 group-hover:border-transparent p-7 transition-all duration-300 h-full flex flex-col"
                     style={{
                       boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)'
                     }}
@@ -502,7 +506,7 @@ const PrudentialPartnership = () => {
                       <span className="text-[#A32638]">{stat.suffix}</span>
                     </div>
                     <p className="text-sm text-white font-bold mb-2">{stat.label}</p>
-                    <p className="text-xs text-gray-100 leading-relaxed">{stat.description}</p>
+                    <p className="text-xs text-gray-100 leading-relaxed flex-grow">{stat.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -524,7 +528,7 @@ const PrudentialPartnership = () => {
               {featureCards.map((feature, idx) => (
                 <motion.div
                   key={feature.label}
-                  className="relative group"
+                  className="relative group h-full"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -532,7 +536,7 @@ const PrudentialPartnership = () => {
                   whileHover={shouldReduceMotion ? {} : { y: -6 }}
                 >
                   <div 
-                    className="relative rounded-2xl bg-gray-900 border border-gray-800 group-hover:border-gray-700 p-10 text-center transition-all duration-300"
+                    className="relative rounded-2xl bg-gray-900 border border-gray-800 group-hover:border-gray-700 p-10 text-center transition-all duration-300 h-full flex flex-col"
                     style={{
                       boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
                       background: 'linear-gradient(135deg, rgba(17, 24, 39, 1) 0%, rgba(31, 41, 55, 1) 100%)'
@@ -555,7 +559,7 @@ const PrudentialPartnership = () => {
                       />
                     </div>
                     <h3 className="text-white font-bold text-xl mb-3">{feature.label}</h3>
-                    <p className="text-gray-100 text-sm leading-relaxed font-medium">{feature.desc}</p>
+                    <p className="text-gray-100 text-sm leading-relaxed font-medium flex-grow">{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}

@@ -30,7 +30,7 @@ const ProgramRails = ({ selectedRole, selectedLevel, onAddToPath, pathItems }) =
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
     draggable: true,
     loop: false,
     skipSnaps: false,
-    slidesToScroll: 1
+    slidesToScroll: 2
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -175,42 +175,17 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
 
       {/* Carousel Container - Netflix Style with Overflow */}
       <div 
-        className="relative group"
+        className="relative group w-full overflow-hidden"
         ref={containerRef}
         onKeyDown={handleKeyDown}
         tabIndex={0}
         role="group"
         aria-label={`${rail.title} carousel. Use arrow keys to navigate.`}
       >
-        {/* Navigation Arrows - Always Visible */}
-        {canScrollPrev && (
-          <motion.button
-            onClick={scrollPrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 rounded-full bg-slate-800/95 hover:bg-slate-700 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white shadow-lg"
-            whileTap={{ scale: 0.9 }}
-            aria-label={`Previous ${rail.title} programs`}
-            aria-controls={`rail-${rail.id}`}
-          >
-            <ChevronLeft className="w-6 h-6" aria-hidden="true" />
-          </motion.button>
-        )}
-
-        {canScrollNext && (
-          <motion.button
-            onClick={scrollNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 rounded-full bg-slate-800/95 hover:bg-slate-700 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white shadow-lg"
-            whileTap={{ scale: 0.9 }}
-            aria-label={`Next ${rail.title} programs`}
-            aria-controls={`rail-${rail.id}`}
-          >
-            <ChevronRight className="w-6 h-6" aria-hidden="true" />
-          </motion.button>
-        )}
-
         {/* Embla Viewport - Netflix Style with Expansion Space */}
         <div 
           id={`rail-${rail.id}`}
-          className="overflow-hidden py-6" 
+          className="overflow-hidden py-6 w-full relative z-0" 
           ref={emblaRef}
           role="list"
         >
@@ -232,6 +207,40 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
             ))}
           </div>
         </div>
+
+        {/* Left Navigation Arrow - Netflix Style Gradient */}
+        {canScrollPrev && (
+          <motion.button
+            onClick={scrollPrev}
+            className="absolute left-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
+            style={{
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+            }}
+            whileHover={!shouldReduceMotion ? { scale: 1.05 } : {}}
+            whileTap={{ scale: 0.95 }}
+            aria-label={`Previous ${rail.title} programs`}
+            aria-controls={`rail-${rail.id}`}
+          >
+            <ChevronLeft className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
+          </motion.button>
+        )}
+
+        {/* Right Navigation Arrow - Netflix Style Gradient */}
+        {canScrollNext && (
+          <motion.button
+            onClick={scrollNext}
+            className="absolute right-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
+            style={{
+              background: 'linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+            }}
+            whileHover={!shouldReduceMotion ? { scale: 1.05 } : {}}
+            whileTap={{ scale: 0.95 }}
+            aria-label={`Next ${rail.title} programs`}
+            aria-controls={`rail-${rail.id}`}
+          >
+            <ChevronRight className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
+          </motion.button>
+        )}
 
       </div>
     </motion.section>

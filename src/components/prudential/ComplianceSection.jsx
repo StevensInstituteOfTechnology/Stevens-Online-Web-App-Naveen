@@ -24,7 +24,7 @@ const ComplianceSection = () => {
           <Shield className="w-5 h-5 text-blue-400" />
           <span className="text-sm font-semibold text-blue-300">Compliance & Governance</span>
         </div>
-        <h2 className="text-4xl font-bold mb-4">Built for Regulated Industries</h2>
+        <h2 className="text-4xl font-bold mb-4 text-white">Built for Regulated Industries</h2>
         <p className="text-xl text-slate-100 max-w-3xl mx-auto">
           Our curriculum aligns with critical frameworks for financial services and enterprise compliance
         </p>
@@ -53,8 +53,8 @@ const ComplianceSection = () => {
                       </div>
                       <CheckCircle className="w-5 h-5 text-green-400" />
                     </div>
-                    <h3 className="text-lg font-bold mb-2">{standard.name}</h3>
-                    <p className="text-sm text-slate-300 line-clamp-2">
+                    <h3 className="text-lg font-bold mb-2 text-white">{standard.name}</h3>
+                    <p className="text-sm text-slate-100 line-clamp-2">
                       {standard.description}
                     </p>
                   </button>
@@ -78,14 +78,14 @@ const ComplianceSection = () => {
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex-grow">
-            <h3 className="text-2xl font-bold mb-2">Evidence Kit for Audit Readiness</h3>
+            <h3 className="text-2xl font-bold mb-2 text-white">Evidence Kit for Audit Readiness</h3>
             <p className="text-slate-100">
               Sample syllabi, assessment rubrics, attendance reporting, and compliance mapping documentation
             </p>
           </div>
           <button
             onClick={() => alert('Evidence kit download feature coming soon!')}
-            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark transition-colors font-semibold whitespace-nowrap"
+            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark transition-colors font-semibold whitespace-nowrap text-white"
           >
             <Download className="w-5 h-5" />
             Download Evidence Kit
