@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Clock, Award, Check, Plus, BookOpen, Shield 
+  Clock, Award, Check, Plus, BookOpen, Shield, X
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +10,7 @@ import { COMPLIANCE_STANDARDS } from '@/data/prudential-pathways';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { trackProgramModalOpen, trackAddToPath } from '@/utils/prudentialAnalytics';
 
-const ProgramCard = ({ program, onAddToPath, isInPath }) => {
+const ProgramCard = ({ program, onAddToPath, isInPath, onRemoveFromPath }) => {
   const [showSyllabus, setShowSyllabus] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
@@ -19,9 +19,13 @@ const ProgramCard = ({ program, onAddToPath, isInPath }) => {
     return COMPLIANCE_STANDARDS.find(s => s.id === standardId);
   };
 
-  const handleAddToPath = () => {
-    trackAddToPath(program.id);
-    onAddToPath(program);
+  const handleTogglePath = () => {
+    if (isInPath && onRemoveFromPath) {
+      onRemoveFromPath(program.id);
+    } else {
+      trackAddToPath(program.id);
+      onAddToPath(program);
+    }
   };
 
   const handleOpenModal = () => {
@@ -151,15 +155,14 @@ const ProgramCard = ({ program, onAddToPath, isInPath }) => {
               Details
             </motion.button>
             <motion.button
-              onClick={handleAddToPath}
-              disabled={isInPath}
+              onClick={handleTogglePath}
               className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-md text-xs font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white ${
                 isInPath 
-                  ? 'bg-emerald-600 text-white cursor-default' 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer' 
                   : 'bg-[#A32638] hover:bg-[#8B1F2E] text-white'
               }`}
-              whileTap={!isInPath ? { scale: 0.95 } : {}}
-              aria-label={isInPath ? `${program.title} already in path` : `Add ${program.title} to path`}
+              whileTap={{ scale: 0.95 }}
+              aria-label={isInPath ? `Remove ${program.title} from path` : `Add ${program.title} to path`}
             >
               {isInPath ? (
                 <>
@@ -283,23 +286,22 @@ const ProgramCard = ({ program, onAddToPath, isInPath }) => {
             <div className="flex gap-3 pt-2">
               <motion.button
                 onClick={() => {
-                  handleAddToPath();
+                  handleTogglePath();
                   setShowSyllabus(false);
                 }}
-                disabled={isInPath}
                 className={`flex-1 flex items-center justify-center gap-2 px-5 py-4 rounded-lg font-bold text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 ${
                   isInPath 
-                    ? 'bg-emerald-600 cursor-default' 
+                    ? 'bg-blue-600 hover:bg-blue-700' 
                     : 'bg-[#A32638] hover:bg-[#8B1F2E]'
                 }`}
-                whileHover={!isInPath && !shouldReduceMotion ? { y: -1 } : {}}
-                whileTap={!isInPath && !shouldReduceMotion ? { scale: 0.98 } : {}}
-                aria-label={isInPath ? 'Program already added to path' : 'Add program to path and close'}
+                whileHover={!shouldReduceMotion ? { y: -1 } : {}}
+                whileTap={!shouldReduceMotion ? { scale: 0.98 } : {}}
+                aria-label={isInPath ? 'Remove program from path and close' : 'Add program to path and close'}
               >
                 {isInPath ? (
                   <>
-                    <Check className="w-5 h-5" aria-hidden="true" />
-                    Added to Path
+                    <X className="w-5 h-5" aria-hidden="true" />
+                    Remove from Path
                   </>
                 ) : (
                   <>
@@ -346,6 +348,7 @@ ProgramCard.propTypes = {
   }).isRequired,
   onAddToPath: PropTypes.func.isRequired,
   isInPath: PropTypes.bool,
+  onRemoveFromPath: PropTypes.func,
 };
 
 ProgramCard.defaultProps = {

@@ -340,10 +340,28 @@ const PathwayConfigurator = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
                           </div>
                         </div>
                         <button
-                          onClick={() => onAddToPath(program)}
-                          className="px-3 py-1 rounded bg-stevens-maroon hover:bg-stevens-maroon-dark transition-colors text-sm font-semibold whitespace-nowrap text-white"
+                          onClick={() => {
+                            const isInPath = pathItems.some(p => p.id === program.id);
+                            if (isInPath && onRemoveFromPath) {
+                              onRemoveFromPath(program.id);
+                            } else {
+                              onAddToPath(program);
+                            }
+                          }}
+                          className={`px-3 py-1 rounded transition-colors text-sm font-semibold whitespace-nowrap text-white ${
+                            pathItems.some(p => p.id === program.id)
+                              ? 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
+                              : 'bg-stevens-maroon hover:bg-stevens-maroon-dark'
+                          }`}
                         >
-                          Add
+                          {pathItems.some(p => p.id === program.id) ? (
+                            <>
+                              <Check className="w-3 h-3 inline mr-1" />
+                              Added
+                            </>
+                          ) : (
+                            'Add'
+                          )}
                         </button>
                       </div>
                     </div>

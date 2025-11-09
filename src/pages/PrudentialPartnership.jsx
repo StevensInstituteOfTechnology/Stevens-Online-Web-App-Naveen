@@ -582,6 +582,7 @@ const PrudentialPartnership = () => {
               selectedLevel={selectedLevel}
               onAddToPath={addToPath}
               pathItems={pathItems}
+              onRemoveFromPath={removeFromPath}
             />
           </Suspense>
         </motion.section>
@@ -727,7 +728,7 @@ const PrudentialPartnership = () => {
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             onClick={() => scrollToSection('configurator')}
-            className="fixed bottom-24 right-6 bg-stevens-maroon hover:bg-stevens-maroon-dark text-white px-6 py-3 rounded-full shadow-2xl transition-all duration-200 hover:scale-105 z-[9997] flex items-center gap-2"
+            className="fixed bottom-40 right-6 bg-stevens-maroon hover:bg-stevens-maroon-dark text-white px-6 py-3 rounded-full shadow-2xl transition-all duration-200 hover:scale-105 z-[9997] flex items-center gap-2"
             aria-label={`View learning path with ${pathItems.length} programs`}
           >
             <TrendingUp className="w-5 h-5" />

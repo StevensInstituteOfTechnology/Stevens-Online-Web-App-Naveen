@@ -7,7 +7,7 @@ import { PRUDENTIAL_DATA, getRecommendedPrograms } from '@/data/prudential-pathw
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { trackRailView } from '@/utils/prudentialAnalytics';
 
-const ProgramRails = ({ selectedRole, selectedLevel, onAddToPath, pathItems }) => {
+const ProgramRails = ({ selectedRole, selectedLevel, onAddToPath, pathItems, onRemoveFromPath }) => {
   const [activeRail, setActiveRail] = useState('recommended');
   const shouldReduceMotion = useReducedMotion();
 
@@ -56,6 +56,7 @@ const ProgramRails = ({ selectedRole, selectedLevel, onAddToPath, pathItems }) =
             isActive={activeRail === rail.id}
             onSetActive={() => setActiveRail(rail.id)}
             shouldReduceMotion={shouldReduceMotion}
+            onRemoveFromPath={onRemoveFromPath}
           />
         ))}
       </div>
@@ -63,7 +64,7 @@ const ProgramRails = ({ selectedRole, selectedLevel, onAddToPath, pathItems }) =
   );
 };
 
-const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActive, shouldReduceMotion }) => {
+const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActive, shouldReduceMotion, onRemoveFromPath }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -202,6 +203,7 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
                   program={program}
                   onAddToPath={onAddToPath}
                   isInPath={pathItems.some(p => p.id === program.id)}
+                  onRemoveFromPath={onRemoveFromPath}
                 />
               </div>
             ))}

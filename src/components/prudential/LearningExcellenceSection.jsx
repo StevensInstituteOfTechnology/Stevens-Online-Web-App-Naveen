@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Award, TrendingUp, Users, Lightbulb, Cpu, Globe,
+  Award, TrendingUp, Users, Lightbulb, Cpu,
   BookOpen, Check, Play, ChevronRight, Target, FlaskConical
 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -94,10 +94,10 @@ const LearningExcellenceSection = () => {
   ];
 
   const partnerships = [
-    { name: 'WorldQuant', logo: null, description: 'Quantitative finance & data science' },
-    { name: 'AWS', logo: null, description: 'Cloud infrastructure & security' },
-    { name: 'IBM', logo: null, description: 'AI & enterprise solutions' },
-    { name: 'Databricks', logo: null, description: 'Unified analytics platform' }
+    { name: 'WorldQuant', logo: '/assets/company_logo/WQU_logo_color.png', description: 'Quantitative finance & data science' },
+    { name: 'AWS', logo: '/assets/company_logo/Amazon_Web_Services_Logo.svg.png', description: 'Cloud infrastructure & security' },
+    { name: 'IBM', logo: '/assets/company_logo/IBM_logo.svg.png', description: 'AI & enterprise solutions' },
+    { name: 'Databricks', logo: '/assets/company_logo/Databricks-logo.svg.png', description: 'Unified analytics platform' }
   ];
 
   return (
@@ -240,13 +240,37 @@ const LearningExcellenceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-slate-800/80 border border-slate-600/40 text-center hover:border-slate-500/60 transition-all duration-300 hover:bg-slate-700/80"
+              className="group p-6 rounded-xl bg-slate-300 border border-slate-400 text-center hover:border-slate-500 transition-all duration-300 hover:shadow-xl hover:bg-slate-200 hover:scale-105 -translate-y-1 hover:translate-y-0 flex flex-col items-center justify-center min-h-[180px]"
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <Globe className="w-8 h-8 text-slate-200" />
+              {/* Company Logo */}
+              <div className="mb-4 flex items-center justify-center h-16 md:h-20 w-full">
+                {partner.logo ? (
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain grayscale-0 opacity-100 transition-all duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                      // Hide image and show placeholder on error
+                      e.target.style.display = 'none';
+                      const placeholder = e.target.parentElement.querySelector('.logo-placeholder');
+                      if (placeholder) placeholder.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                {/* Placeholder logo - shown when no logo or image fails */}
+                <div 
+                  className="logo-placeholder w-full h-full items-center justify-center bg-gray-100 rounded-lg"
+                  style={{ display: partner.logo ? 'none' : 'flex' }}
+                >
+                  <div className="text-gray-400 font-bold text-xl md:text-2xl">
+                    {partner.name.substring(0, 2).toUpperCase()}
+                  </div>
+                </div>
               </div>
-              <div className="font-bold mb-2 text-white">{partner.name}</div>
-              <div className="text-sm text-slate-100">{partner.description}</div>
+
+              {/* Company Name */}
+              <div className="font-bold mb-2 text-stevens-maroon group-hover:text-stevens-maroon-dark transition-colors duration-300">{partner.name}</div>
+              <div className="text-sm text-gray-600">{partner.description}</div>
             </motion.div>
           ))}
         </div>
