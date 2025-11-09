@@ -10,7 +10,7 @@ import { COMPLIANCE_STANDARDS } from '@/data/prudential-pathways';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { trackProgramModalOpen, trackAddToPath } from '@/utils/prudentialAnalytics';
 
-const ProgramCard = ({ program, onAddToPath, isInPath, onRemoveFromPath }) => {
+const ProgramCard = ({ program, onAddToPath, isInPath = false, onRemoveFromPath }) => {
   const [showSyllabus, setShowSyllabus] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
@@ -349,8 +349,4 @@ ProgramCard.propTypes = {
   onAddToPath: PropTypes.func.isRequired,
   isInPath: PropTypes.bool,
   onRemoveFromPath: PropTypes.func,
-};
-
-ProgramCard.defaultProps = {
-  isInPath: false,
 };

@@ -17,6 +17,7 @@ import {
 // Lazy load heavy components for better performance
 const ProgramRails = lazy(() => import('@/components/prudential/ProgramRails'));
 const PathwayConfigurator = lazy(() => import('@/components/prudential/PathwayConfigurator'));
+const PathwayBuilder = lazy(() => import('@/components/prudential/PathwayBuilder'));
 const ComplianceSection = lazy(() => import('@/components/prudential/ComplianceSection'));
 const CaseStudyCard = lazy(() => import('@/components/prudential/CaseStudyCard'));
 const LeaderCTA = lazy(() => import('@/components/prudential/LeaderCTA'));
@@ -673,6 +674,24 @@ const PrudentialPartnership = () => {
         >
           <Suspense fallback={<LoadingSection />}>
             <PathwayConfigurator 
+              onAddToPath={addToPath}
+              pathItems={pathItems}
+              onRemoveFromPath={removeFromPath}
+            />
+          </Suspense>
+        </motion.section>
+
+        {/* New Pathway Builder - Enhanced Version */}
+        <motion.section 
+          id="pathway-builder" 
+          className="py-20 bg-slate-800/30"
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={shouldReduceMotion ? { duration: 0.01 } : { duration: 0.7 }}
+        >
+          <Suspense fallback={<LoadingSection />}>
+            <PathwayBuilder 
               onAddToPath={addToPath}
               pathItems={pathItems}
               onRemoveFromPath={removeFromPath}
