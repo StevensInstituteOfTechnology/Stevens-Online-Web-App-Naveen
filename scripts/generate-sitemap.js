@@ -29,6 +29,11 @@ function categoryToSlug(category) {
   return categoryMap[category] || 'uncategorized';
 }
 
+// Routes to exclude from sitemap (private/partner pages)
+const EXCLUDED_ROUTES = [
+  '/partnerships/prudential/' // Private partner page, not for public indexing
+];
+
 // Generate all routes (same as prerender.js)
 function generateRoutes() {
   // Use centralized static routes from config
@@ -48,7 +53,9 @@ function generateRoutes() {
     topicRoutes.push(`/topics/${categorySlug}/${blog.id}/`);
   });
 
-  return [...staticRoutes, ...blogRoutes, ...topicRoutes];
+  // Combine all routes and filter out excluded ones
+  const allRoutes = [...staticRoutes, ...blogRoutes, ...topicRoutes];
+  return allRoutes.filter(route => !EXCLUDED_ROUTES.includes(route));
 }
 
 // Determine priority based on URL

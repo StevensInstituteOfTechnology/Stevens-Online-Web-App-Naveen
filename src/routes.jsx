@@ -34,6 +34,9 @@ import OnlineExperience from "@/pages/OnlineExperience";
 import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import Admissions from "@/pages/Admissions";
 import NotFound from "@/pages/NotFound";
+import PrudentialPartnership from "@/pages/PrudentialPartnership";
+import Layout from "@/pages/Layout";
+// import PrudentialPartnershipSimple from "@/pages/PrudentialPartnershipSimple";
 
 // Redirect component for blog detail pages without trailing slash
 function BlogNoSlashRedirect() {
@@ -335,9 +338,24 @@ export const routes = [
     element: <ExploreCertAppliedDataScience />
   },
   
+  // Prudential Partnership (with standard layout)
+  // Support both with and without trailing slash
+  {
+    path: '/partnerships/prudential',
+    element: <Layout currentPageName="Partnership"><PrudentialPartnership /></Layout>
+  },
+  {
+    path: '/partnerships/prudential/',
+    element: <Layout currentPageName="Partnership"><PrudentialPartnership /></Layout>
+  },
+  
   // 404 Not Found page
   {
     path: '/page-not-found/',
+    element: <NotFound />
+  },
+  {
+    path: '/page-not-found',
     element: <NotFound />
   },
   

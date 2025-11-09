@@ -58,6 +58,19 @@ function _getCurrentPage(url) {
   return pageName || 'Home';
 }
 
+// Routes that should not use the Layout wrapper (standalone pages)
+const STANDALONE_ROUTES = ['/partnerships/prudential/', '/partnerships/prudential'];
+
+// Check if a path should be standalone
+function isStandalonePath(path) {
+  // Remove trailing slash for comparison
+  const normalizedPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  return STANDALONE_ROUTES.some(route => {
+    const normalizedRoute = route.endsWith('/') ? route.slice(0, -1) : route;
+    return normalizedPath === normalizedRoute;
+  });
+}
+
 // Create a wrapper component that uses useLocation inside the Router context
 function PagesContent() {
   const location = useLocation();
@@ -70,6 +83,21 @@ function PagesContent() {
     }
   }, [location.pathname]);
 
+  // Check if current path is standalone
+  const isStandalone = isStandalonePath(location.pathname);
+
+  // Render standalone pages without Layout
+  if (isStandalone) {
+    return (
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={route.path || index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    );
+  }
+
+  // Render normal pages with Layout
   return (
     <Layout currentPageName={currentPage}>
       <Routes>

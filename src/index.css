@@ -156,3 +156,42 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Prudential Partnership Enterprise Animations */
+
+/* Smooth Transitions for Interactive Elements */
+@layer utilities {
+  /* Focus Ring Utility */
+  .focus-ring-enterprise {
+    @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-950;
+  }
+  
+  /* Diagonal Sheen for Static Depth */
+  .diagonal-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .diagonal-sheen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+  
+  .diagonal-sheen:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

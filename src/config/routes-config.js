@@ -34,6 +34,7 @@ export const STATIC_ROUTES = [
   '/explore/ai-masters-computer-science/',
   '/explore/certificates/enterprise-ai/',
   '/explore/certificates/applied-data-science-foundations/',
+  '/partnerships/prudential/', // Prudential partnership page
   '/page-not-found/',
 ];
 
