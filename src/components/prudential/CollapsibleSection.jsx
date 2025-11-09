@@ -72,7 +72,7 @@ const CollapsibleSection = ({
         aria-expanded={isOpen}
         aria-controls={`collapsible-content-${id}`}
         id={`collapsible-header-${id}`}
-        className={`w-full flex items-center justify-between py-5 px-6 backdrop-blur-xl bg-white/[0.12] hover:bg-white/[0.20] rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-stevens-maroon focus:ring-offset-2 focus:ring-offset-gray-900 border border-white/20 hover:border-white/30 ${headerClassName}`}
+        className={`w-full flex items-center justify-between py-5 px-6 backdrop-blur-xl bg-slate-800/90 hover:bg-slate-700/90 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 border border-slate-600/40 hover:border-slate-500/60 ${headerClassName}`}
         whileHover={{ scale: 1.005 }}
         whileTap={{ scale: 0.995 }}
       >
@@ -89,7 +89,7 @@ const CollapsibleSection = ({
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
           className="flex-shrink-0 ml-4"
         >
-          <ChevronDown className="w-5 h-5 text-white" aria-hidden="true" />
+          <ChevronDown className="w-5 h-5 text-slate-200" aria-hidden="true" />
         </motion.div>
       </motion.button>
 

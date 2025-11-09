@@ -55,6 +55,7 @@ const ProgramCard = ({ program, onAddToPath, isInPath }) => {
       <motion.div
         whileHover={shouldReduceMotion ? {} : { 
           y: -4,
+          zIndex: 10,
           transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }
         }}
         transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}

@@ -114,7 +114,7 @@ const LearningExcellenceSection = () => {
           <span className="text-sm font-semibold">The Stevens Advantage</span>
         </div>
         <h2 className="text-4xl font-bold mb-4">Best-in-Class Online Learning</h2>
-        <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+        <p className="text-xl text-slate-200 max-w-3xl mx-auto">
           Experiential, AI-enabled, and market-aligned — delivering transformational outcomes for corporate learners
         </p>
       </motion.div>
@@ -133,23 +133,23 @@ const LearningExcellenceSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="p-6 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 text-center"
+            className="p-6 rounded-xl bg-gradient-to-br from-slate-800/95 to-slate-700/95 backdrop-blur-lg border border-slate-600/40 text-center"
           >
             <div className="text-4xl font-bold text-stevens-maroon mb-2">{stat.value}</div>
             <div className="font-semibold mb-1">{stat.label}</div>
-            <div className="text-sm text-gray-100">{stat.sublabel}</div>
+            <div className="text-sm text-slate-200">{stat.sublabel}</div>
           </motion.div>
         ))}
       </motion.div>
 
       {/* Tabbed Dimensions */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8 bg-white/10 p-1 rounded-lg">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8 bg-slate-800/90 p-1 rounded-lg">
           {dimensions.map((dim) => (
             <TabsTrigger
               key={dim.id}
               value={dim.id}
-              className="flex items-center gap-2 data-[state=active]:bg-stevens-maroon data-[state=active]:text-white transition-all duration-200 rounded-md text-sm"
+              className="flex items-center gap-2 data-[state=active]:bg-[#A32638] data-[state=active]:text-white transition-all duration-200 rounded-md text-sm hover:bg-slate-700/80"
             >
               <dim.icon className="w-4 h-4" />
               <span className="hidden md:inline">{dim.label}</span>
@@ -163,35 +163,35 @@ const LearningExcellenceSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid md:grid-cols-2 gap-8 p-8 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10"
+              className="grid md:grid-cols-2 gap-8 p-8 rounded-xl bg-gradient-to-br from-slate-800/95 to-slate-700/95 backdrop-blur-lg border border-slate-600/40"
             >
               {/* Content */}
               <div className="space-y-6">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-lg bg-stevens-maroon/20 flex items-center justify-center">
-                      <dim.icon className="w-6 h-6 text-stevens-maroon" />
+                    <div className="w-12 h-12 rounded-lg bg-[#A32638]/20 flex items-center justify-center">
+                      <dim.icon className="w-6 h-6 text-[#A32638]" />
                     </div>
                     <h3 className="text-2xl font-bold">{dim.title}</h3>
                   </div>
-                  <p className="text-gray-100 leading-relaxed">{dim.description}</p>
+                  <p className="text-slate-200 leading-relaxed">{dim.description}</p>
                 </div>
 
                 <div className="space-y-3">
                   {dim.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-100">{feature}</span>
+                      <span className="text-slate-200">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Stat */}
-                <div className="p-4 rounded-lg bg-stevens-maroon/10 border border-stevens-maroon/30">
-                  <div className="text-3xl font-bold text-stevens-maroon mb-1">
+                <div className="p-4 rounded-lg bg-[#A32638]/10 border border-[#A32638]/30">
+                  <div className="text-3xl font-bold text-[#A32638] mb-1">
                     {dim.stat.value}
                   </div>
-                  <div className="text-sm text-gray-100">{dim.stat.label}</div>
+                  <div className="text-sm text-slate-200">{dim.stat.label}</div>
                 </div>
               </div>
 
@@ -202,7 +202,7 @@ const LearningExcellenceSection = () => {
                   alt={dim.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/25 backdrop-blur-sm hover:bg-white/35 transition-colors font-semibold text-sm">
                     <Play className="w-4 h-4" />
@@ -224,7 +224,7 @@ const LearningExcellenceSection = () => {
       >
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-2">Powered by Industry Partnerships</h3>
-          <p className="text-gray-100">Co-designed with leading employers and technology providers</p>
+          <p className="text-slate-200">Co-designed with leading employers and technology providers</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
@@ -235,13 +235,13 @@ const LearningExcellenceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-white/10 border border-white/20 text-center hover:border-white/30 transition-all duration-300 hover:bg-white/15"
+              className="p-6 rounded-xl bg-slate-800/80 border border-slate-600/40 text-center hover:border-slate-500/60 transition-all duration-300 hover:bg-slate-700/80"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-                <Globe className="w-8 h-8 text-gray-300" />
+                <Globe className="w-8 h-8 text-slate-300" />
               </div>
               <div className="font-bold mb-2">{partner.name}</div>
-              <div className="text-sm text-gray-100">{partner.description}</div>
+              <div className="text-sm text-slate-200">{partner.description}</div>
             </motion.div>
           ))}
         </div>
@@ -255,12 +255,12 @@ const LearningExcellenceSection = () => {
         className="mt-12 p-8 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-center"
       >
         <h3 className="text-2xl font-bold mb-4">Want to see our learning methodology in action?</h3>
-        <p className="text-gray-100 mb-6 max-w-2xl mx-auto">
+        <p className="text-slate-200 mb-6 max-w-2xl mx-auto">
           Schedule a demo to experience our AI-powered labs, see sample projects, and explore the tools your team will use
         </p>
         <button
           onClick={() => alert('Demo scheduling feature coming soon!')}
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-stevens-maroon hover:bg-stevens-maroon-dark transition-all duration-200 font-semibold text-lg"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#A32638] hover:bg-[#8B1F2E] transition-all duration-200 font-semibold text-lg"
         >
           Schedule a Demo
           <ChevronRight className="w-5 h-5" />

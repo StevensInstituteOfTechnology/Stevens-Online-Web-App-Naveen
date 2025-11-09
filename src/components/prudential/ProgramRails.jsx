@@ -68,7 +68,10 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
     align: 'start',
     containScroll: 'trimSnaps',
     dragFree: true,
-    loop: false
+    draggable: true,
+    loop: false,
+    skipSnaps: false,
+    slidesToScroll: 1
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -179,32 +182,30 @@ const RailSection = ({ rail, index, onAddToPath, pathItems, isActive, onSetActiv
         role="group"
         aria-label={`${rail.title} carousel. Use arrow keys to navigate.`}
       >
-        {/* Netflix-Style Navigation Arrows - Appear on Container Hover */}
-        <div className="absolute inset-0 pointer-events-none">
-          {canScrollPrev && (
-            <motion.button
-              onClick={scrollPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-full bg-gradient-to-r from-slate-900/80 to-transparent hover:from-slate-900/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white pointer-events-auto"
-              whileTap={{ scale: 0.9 }}
-              aria-label={`Previous ${rail.title} programs`}
-              aria-controls={`rail-${rail.id}`}
-            >
-              <ChevronLeft className="w-10 h-10" aria-hidden="true" />
-            </motion.button>
-          )}
+        {/* Navigation Arrows - Always Visible */}
+        {canScrollPrev && (
+          <motion.button
+            onClick={scrollPrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 rounded-full bg-slate-800/95 hover:bg-slate-700 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white shadow-lg"
+            whileTap={{ scale: 0.9 }}
+            aria-label={`Previous ${rail.title} programs`}
+            aria-controls={`rail-${rail.id}`}
+          >
+            <ChevronLeft className="w-6 h-6" aria-hidden="true" />
+          </motion.button>
+        )}
 
-          {canScrollNext && (
-            <motion.button
-              onClick={scrollNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-full bg-gradient-to-l from-slate-900/80 to-transparent hover:from-slate-900/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white pointer-events-auto"
-              whileTap={{ scale: 0.9 }}
-              aria-label={`Next ${rail.title} programs`}
-              aria-controls={`rail-${rail.id}`}
-            >
-              <ChevronRight className="w-10 h-10" aria-hidden="true" />
-            </motion.button>
-          )}
-        </div>
+        {canScrollNext && (
+          <motion.button
+            onClick={scrollNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-50 w-10 h-10 rounded-full bg-slate-800/95 hover:bg-slate-700 flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white text-white shadow-lg"
+            whileTap={{ scale: 0.9 }}
+            aria-label={`Next ${rail.title} programs`}
+            aria-controls={`rail-${rail.id}`}
+          >
+            <ChevronRight className="w-6 h-6" aria-hidden="true" />
+          </motion.button>
+        )}
 
         {/* Embla Viewport - Netflix Style with Expansion Space */}
         <div 

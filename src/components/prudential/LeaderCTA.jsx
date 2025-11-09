@@ -34,7 +34,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
             </div>
             <div>
               <h3 className="text-2xl font-bold">For Leaders & L&D</h3>
-              <p className="text-gray-400 text-sm">Design your team's upskilling journey</p>
+              <p className="text-slate-400 text-sm">Design your team's upskilling journey</p>
             </div>
           </div>
 
@@ -43,7 +43,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Private Cohorts</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Dedicated groups with custom schedules and Prudential-specific case studies
                 </p>
               </div>
@@ -52,7 +52,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Manager Dashboards</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Track progress, approvals, skills verified, and completion rates
                 </p>
               </div>
@@ -61,7 +61,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Governance & Reporting</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Compliance documentation, audit trails, and ROI metrics
                 </p>
               </div>
@@ -79,7 +79,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
             </button>
             <button
               onClick={() => alert('Sample SOW download feature coming soon!')}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-all duration-200 font-semibold"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 transition-all duration-200 font-semibold"
             >
               <FileText className="w-5 h-5" />
               Get Sample SOW
@@ -87,12 +87,12 @@ const LeaderCTA = ({ pathItems = [] }) => {
           </div>
 
           {pathItems.length > 0 && (
-            <div className="mt-6 p-4 rounded-lg bg-white/5 border border-white/10">
+            <div className="mt-6 p-4 rounded-lg bg-slate-700/5 border border-slate-600/10">
               <div className="text-sm font-semibold mb-2">Your Selection</div>
               <div className="text-2xl font-bold text-stevens-maroon">
                 {pathItems.length} {pathItems.length === 1 ? 'program' : 'programs'}
               </div>
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-slate-400">
                 {pathItems.reduce((sum, p) => sum + (p.credits || 0), 0)} total credits
               </div>
             </div>
@@ -102,7 +102,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
 
       {/* Cohort Design Wizard */}
       <Dialog open={showWizard} onOpenChange={setShowWizard}>
-        <DialogContent className="max-w-2xl bg-gray-900 text-white border-gray-700">
+        <DialogContent className="max-w-2xl bg-slate-800 text-white border-slate-600">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Design Your Cohort</DialogTitle>
           </DialogHeader>
@@ -116,7 +116,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
                 type="number"
                 value={formData.headcount}
                 onChange={(e) => setFormData({ ...formData, headcount: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-stevens-maroon focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/10 border border-slate-600/20 focus:border-[#A32638] focus:outline-none transition-colors"
                 placeholder="e.g., 25"
                 required
               />
@@ -130,7 +130,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
                 type="date"
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-stevens-maroon focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/10 border border-slate-600/20 focus:border-[#A32638] focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -143,7 +143,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
                 type="text"
                 value={formData.businessUnit}
                 onChange={(e) => setFormData({ ...formData, businessUnit: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-stevens-maroon focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/10 border border-slate-600/20 focus:border-[#A32638] focus:outline-none transition-colors"
                 placeholder="e.g., Cloud Security Engineering"
                 required
               />
@@ -156,7 +156,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <select
                 value={formData.priority}
                 onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-stevens-maroon focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/10 border border-slate-600/20 focus:border-[#A32638] focus:outline-none transition-colors"
               >
                 <option value="cybersecurity">Cybersecurity</option>
                 <option value="ai">AI Engineering & Management</option>
@@ -168,7 +168,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
             {pathItems.length > 0 && (
               <div className="p-4 rounded-lg bg-stevens-maroon/10 border border-stevens-maroon/30">
                 <div className="font-semibold mb-2">Selected Programs ({pathItems.length})</div>
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-slate-400">
                   {pathItems.slice(0, 3).map(p => p.title).join(', ')}
                   {pathItems.length > 3 && ` and ${pathItems.length - 3} more`}
                 </div>
@@ -179,7 +179,7 @@ const LeaderCTA = ({ pathItems = [] }) => {
               <button
                 type="button"
                 onClick={() => setShowWizard(false)}
-                className="flex-1 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 font-semibold transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200"
               >
                 Cancel
               </button>

@@ -21,7 +21,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             </div>
             <div>
               <h3 className="text-2xl font-bold">For Employees</h3>
-              <p className="text-gray-400 text-sm">Build your skills, advance your career</p>
+              <p className="text-slate-400 text-sm">Build your skills, advance your career</p>
             </div>
           </div>
 
@@ -30,7 +30,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Tuition Benefits</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Eligible courses may be covered by Prudential's tuition reimbursement program
                 </p>
               </div>
@@ -39,7 +39,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Flexible Scheduling</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Live online and asynchronous options fit your work schedule
                 </p>
               </div>
@@ -48,7 +48,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <div>
                 <div className="font-semibold mb-1">Career Advancement</div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-slate-400">
                   Stackable credentials toward certificates and graduate degrees
                 </p>
               </div>
@@ -66,7 +66,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             </button>
             <button
               onClick={() => alert('Advisor scheduling feature coming soon!')}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-all duration-200 font-semibold"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 transition-all duration-200 font-semibold"
             >
               <Phone className="w-5 h-5" />
               Talk to an Advisor
@@ -74,12 +74,12 @@ const EmployeeCTA = ({ pathItems = [] }) => {
           </div>
 
           {pathItems.length > 0 && (
-            <div className="mt-6 p-4 rounded-lg bg-white/5 border border-white/10">
+            <div className="mt-6 p-4 rounded-lg bg-slate-700/5 border border-slate-600/10">
               <div className="text-sm font-semibold mb-2">Your Learning Path</div>
               <div className="text-2xl font-bold text-blue-400">
                 {pathItems.length} {pathItems.length === 1 ? 'course' : 'courses'}
               </div>
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-slate-400">
                 ~{Math.ceil(pathItems.reduce((sum, p) => sum + (parseInt(p.duration) || 6), 0) / 1.5)} weeks total
               </div>
             </div>
@@ -89,7 +89,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
 
       {/* Tuition Benefits Info */}
       <Dialog open={showTuitionInfo} onOpenChange={setShowTuitionInfo}>
-        <DialogContent className="max-w-2xl bg-gray-900 text-white border-gray-700">
+        <DialogContent className="max-w-2xl bg-slate-800 text-white border-slate-600">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Prudential Tuition Benefits</DialogTitle>
           </DialogHeader>
@@ -101,10 +101,10 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                 <DollarSign className="w-8 h-8 text-green-400" />
                 <div>
                   <div className="text-2xl font-bold">$5,250 / Year</div>
-                  <div className="text-sm text-gray-400">IRS Tax-Free Tuition Benefit</div>
+                  <div className="text-sm text-slate-400">IRS Tax-Free Tuition Benefit</div>
                 </div>
               </div>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-slate-300">
                 Prudential offers up to $5,250 per year in tax-free tuition reimbursement for approved programs. 
                 Many Stevens courses are designed to align with this benefit.
               </p>
@@ -120,7 +120,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Select Your Courses</div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-slate-400">
                       Choose programs from your personalized path that fit your career goals
                     </p>
                   </div>
@@ -131,7 +131,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Get Manager Approval</div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-slate-400">
                       Submit through Prudential's tuition benefit portal for approval
                     </p>
                   </div>
@@ -142,7 +142,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Enroll & Learn</div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-slate-400">
                       Complete your courses with Stevens' expert faculty and hands-on projects
                     </p>
                   </div>
@@ -153,7 +153,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Get Reimbursed</div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-slate-400">
                       Submit grades and receipts for reimbursement upon successful completion
                     </p>
                   </div>
@@ -163,7 +163,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
 
             {/* Example Cost Breakdown */}
             {pathItems.length > 0 && (
-              <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+              <div className="p-4 rounded-lg bg-slate-700/5 border border-slate-600/10">
                 <h3 className="font-bold mb-3">Your Path Cost Estimate</h3>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
@@ -178,11 +178,11 @@ const EmployeeCTA = ({ pathItems = [] }) => {
                       ${(pathItems.reduce((sum, p) => sum + (p.credits || 0), 0) * 1850).toLocaleString()}
                     </span>
                   </div>
-                  <div className="flex justify-between text-sm border-t border-white/10 pt-2">
+                  <div className="flex justify-between text-sm border-t border-slate-600/10 pt-2">
                     <span>Annual Benefit:</span>
                     <span className="font-semibold text-green-400">-$5,250</span>
                   </div>
-                  <div className="flex justify-between font-bold text-lg border-t border-white/10 pt-2">
+                  <div className="flex justify-between font-bold text-lg border-t border-slate-600/10 pt-2">
                     <span>Your Cost (Year 1):</span>
                     <span>
                       ${Math.max(0, (pathItems.reduce((sum, p) => sum + (p.credits || 0), 0) * 1850) - 5250).toLocaleString()}
@@ -196,7 +196,7 @@ const EmployeeCTA = ({ pathItems = [] }) => {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowTuitionInfo(false)}
-                className="flex-1 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 font-semibold transition-all duration-200"
+                className="flex-1 px-6 py-3 rounded-lg bg-slate-700/10 hover:bg-slate-700/20 border border-slate-600/10 font-semibold transition-all duration-200"
               >
                 Close
               </button>

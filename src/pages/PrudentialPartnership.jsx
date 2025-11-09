@@ -298,10 +298,22 @@ const PrudentialPartnership = () => {
                   alt="Stevens Institute" 
                   className="h-14 md:h-20"
                 />
-                <div className="h-16 w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent"></div>
-                <span className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                  Prudential
-                </span>
+                <div className="h-16 w-px bg-gradient-to-b from-transparent via-slate-500 to-transparent"></div>
+                {/* Prudential Logo - Replace src with actual logo path when available */}
+                <div className="flex items-center">
+                  <img 
+                    src="/assets/logos/prudential-logo.png" 
+                    alt="Prudential" 
+                    className="h-12 md:h-16 object-contain"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                  <span className="text-3xl md:text-5xl font-bold text-[#0073CF] tracking-tight hidden">
+                    Prudential
+                  </span>
+                </div>
               </motion.div>
 
               {/* Badge */}
@@ -454,7 +466,7 @@ const PrudentialPartnership = () => {
         {/* Partnership Metrics */}
         <motion.section
           id="stats"
-          className="py-24"
+          className="py-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -587,7 +599,7 @@ const PrudentialPartnership = () => {
         {/* Compliance & Standards - Animated */}
         <motion.section 
           id="compliance"
-          className="py-24"
+          className="py-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -648,7 +660,7 @@ const PrudentialPartnership = () => {
         {/* Pathway Configurator - Spacious */}
         <motion.section 
           id="configurator" 
-          className="py-24"
+          className="py-20"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
