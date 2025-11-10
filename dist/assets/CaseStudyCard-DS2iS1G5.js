@@ -1,0 +1,16 @@
+import{l as a,j as e,m as i,Y as o}from"./index-GXI5Hy2F.js";/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=[["path",{d:"M5 12h14",key:"1ays0h"}]],r=a("Minus",d);/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const c=[["path",{d:"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",key:"rib7q0"}],["path",{d:"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",key:"1ymkrd"}]],x=a("Quote",c);/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m=[["polyline",{points:"22 17 13.5 8.5 8.5 13.5 2 7",key:"1r2t7k"}],["polyline",{points:"16 17 22 17 22 11",key:"11uiuu"}]],h=a("TrendingDown",m),N=({study:s})=>{const l=t=>{switch(t){case"up":return e.jsx(o,{className:"w-5 h-5 text-green-400"});case"down":return e.jsx(h,{className:"w-5 h-5 text-green-400"});default:return e.jsx(r,{className:"w-5 h-5 text-blue-400"})}};return e.jsx(i.div,{whileHover:{y:-4},className:"h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-xl border border-slate-600/30 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300",children:e.jsxs("div",{className:"p-6",children:[e.jsxs("div",{className:"mb-4",children:[e.jsx("div",{className:"inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-3",children:s.industry}),e.jsx("h3",{className:"text-xl font-bold mb-2 text-white",children:s.title})]}),e.jsxs("div",{className:"mb-4",children:[e.jsx("div",{className:"text-sm font-semibold text-white mb-2",children:"CHALLENGE"}),e.jsx("p",{className:"text-sm text-slate-100 leading-relaxed",children:s.scenario})]}),e.jsxs("div",{className:"mb-4",children:[e.jsx("div",{className:"text-sm font-semibold text-white mb-2",children:"SOLUTION"}),e.jsx("p",{className:"text-sm text-slate-100 leading-relaxed",children:s.intervention})]}),e.jsxs("div",{className:"mb-4",children:[e.jsx("div",{className:"text-sm font-semibold text-white mb-3",children:"OUTCOMES"}),e.jsx("div",{className:"grid grid-cols-2 gap-3",children:s.outcome.metrics.map((t,n)=>e.jsxs("div",{className:"p-3 rounded-lg bg-slate-700/50 border border-slate-600/30",children:[e.jsxs("div",{className:"flex items-center gap-2 mb-1",children:[l(t.trend),e.jsx("span",{className:"text-lg font-bold text-white",children:t.value})]}),e.jsx("div",{className:"text-xs text-slate-100",children:t.label})]},n))})]}),e.jsxs("div",{className:"p-4 rounded-lg bg-stevens-maroon/10 border border-stevens-maroon/30",children:[e.jsx(x,{className:"w-5 h-5 text-stevens-maroon mb-2"}),e.jsxs("p",{className:"text-sm italic text-slate-100 mb-2",children:['"',s.outcome.quote,'"']}),e.jsxs("p",{className:"text-xs text-slate-100",children:["— ",s.outcome.role]})]})]})})};export{N as default};
