@@ -22,7 +22,7 @@ const ExploreCertAppliedDataScience = () => {
   const certData = {
     // Hero Section
     heroTitle: "YOUR FIRST STEP INTO APPLIED AI",
-    programName: "Applied Data Science Foundations Certificate",
+    programName: "Professional Graduate Certificate in Applied Data Science Foundations",
     heroSubtitle: "Master Python, SQL, and machine learning in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable to M.Eng. in Applied Data Science.",
     bgImage: "/assets/images/explore-cert-ADS-1.jpg",
     programCode: "cert-ads",
