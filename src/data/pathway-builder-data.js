@@ -588,21 +588,6 @@ export const PATHWAY_COURSES = [
     ]
   },
   {
-    id: 'enterprise-ai-cert',
-    title: 'Enterprise AI Certificate (BIA 568, 662, PE 810)',
-    level: 'practitioner',
-    credits: 9,
-    duration: '8-16 weeks',
-    pillars: ['ai'],
-    certificates: ['graduate'],
-    description: 'Comprehensive enterprise AI program: strategy, GenAI applications, operational workflows with guardrails.',
-    outcomes: [
-      'Design GenAI proof-of-concepts with business value',
-      'Build operational AI workflows with guardrails',
-      'Apply FATE principles and governance frameworks'
-    ]
-  },
-  {
     id: 'ai-foundation-stage2',
     title: 'Deep Learning Fundamentals',
     level: 'foundation',

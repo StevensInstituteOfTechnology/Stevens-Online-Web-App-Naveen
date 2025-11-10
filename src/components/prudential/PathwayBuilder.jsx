@@ -145,25 +145,33 @@ const PathwayBuilder = ({ onAddToPath, pathItems, onRemoveFromPath }) => {
   const getAvailableCoursesForStep = () => {
     if (!selectedPillar) return [];
     
+    // Get all courses already selected in any stage
+    const allSelectedCourseIds = [...stage1Courses, ...stage2Courses, ...stage3Courses]
+      .map(c => c.id);
+    
     if (step === 2) {
       // Stage 1: Professional Graduate Certificate courses
       return PATHWAY_COURSES.filter(c => 
         c.pillars.includes(selectedPillar.id) &&
-        c.certificates.includes('professional-graduate')
+        c.certificates.includes('professional-graduate') &&
+        !allSelectedCourseIds.includes(c.id) // Exclude already selected courses
       );
     } else if (step === 3) {
       // Stage 2: Graduate Certificate courses
       const pillarCourses = PATHWAY_COURSES.filter(c => 
         c.pillars.includes(selectedPillar.id) &&
-        c.certificates.includes('graduate')
+        c.certificates.includes('graduate') &&
+        !allSelectedCourseIds.includes(c.id) // Exclude already selected courses
       );
       // Prioritize cross-pillar courses
       const crossPillar = pillarCourses.filter(c => c.pillars.length > 1);
       const regular = pillarCourses.filter(c => c.pillars.length === 1);
       return [...crossPillar, ...regular];
     } else if (step === 4) {
-      // Stage 3: All courses including manager courses
-      return PATHWAY_COURSES;
+      // Stage 3: All courses including manager courses, but exclude already selected
+      return PATHWAY_COURSES.filter(c => 
+        !allSelectedCourseIds.includes(c.id) // Exclude already selected courses
+      );
     }
     return [];
   };
