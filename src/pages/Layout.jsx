@@ -1269,7 +1269,7 @@ export default function Layout({ children, currentPageName }) {
               </h3>
               <div className="space-y-2">
                 <Link
-                  to="/compare-our-programs/"
+                  to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Degree Programs
