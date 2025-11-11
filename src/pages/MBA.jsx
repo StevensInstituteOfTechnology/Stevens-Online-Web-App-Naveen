@@ -75,7 +75,7 @@ const programData = {
     { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
 
     source: "U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Microsoft", "Verizon", "Cisco", "American Express", "Deloitte", "Accenture"]
+    topCompanies: ["Microsoft", "Verizon", "JPMorgan Chase", "Amazon", "Deloitte", "Accenture"]
   },
   whatYoullLearn: {
     variant: 'skillCards',
@@ -579,14 +579,14 @@ const programData = {
         industry: "Telecommunications"
       },
       {
-        name: "Cisco",
-        logo: "/assets/company_logo/Cisco_logo.svg.png",
-        industry: "Technology"
+        name: "JPMorgan Chase",
+        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
+        industry: "Finance"
       },
       {
-        name: "American Express",
-        logo: "/assets/company_logo/American_Express_logo_(2018).svg.png",
-        industry: "Finance"
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Technology"
       },
       {
         name: "Deloitte",

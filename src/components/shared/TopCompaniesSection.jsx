@@ -38,10 +38,10 @@ export default function TopCompaniesSection({
               return (
                 <div
                   key={index}
-                  className="group bg-transparent rounded-stevens-md p-stevens-md stevens-md:p-stevens-lg -translate-y-1 hover:translate-y-0 transition-all duration-stevens-normal flex flex-col items-center justify-center min-h-[140px]"
+                  className="group bg-transparent rounded-stevens-md p-stevens-sm stevens-md:p-stevens-md -translate-y-1 hover:translate-y-0 transition-all duration-stevens-normal flex flex-col items-center justify-center min-h-[105px]"
                 >
                   {/* Company Logo */}
-                  <div className="mb-stevens-sm flex items-center justify-center h-16 stevens-md:h-20 w-full">
+                  <div className="mb-stevens-xs flex items-center justify-center h-12 stevens-md:h-[60px] w-full">
                     {companyLogo ? (
                       <img
                         src={companyLogo}
@@ -60,20 +60,20 @@ export default function TopCompaniesSection({
                       className="logo-placeholder w-full h-full items-center justify-center bg-stevens-gray-50 rounded-stevens-sm"
                       style={{ display: companyLogo ? 'none' : 'flex' }}
                     >
-                      <div className="text-stevens-gray-400 font-stevens-bold text-stevens-lg stevens-md:text-stevens-xl">
+                      <div className="text-stevens-gray-400 font-stevens-bold text-stevens-base stevens-md:text-stevens-lg">
                         {companyName.substring(0, 2).toUpperCase()}
                       </div>
                     </div>
                   </div>
 
                   {/* Company Name */}
-                  <h4 className="font-stevens-semibold text-stevens-primary text-center text-stevens-xs stevens-sm:text-stevens-sm stevens-md:text-stevens-base group-hover:text-stevens-gray-900 transition-colors duration-stevens-normal mb-stevens-xs">
+                  <h4 className="font-stevens-semibold text-stevens-primary text-center text-[10px] stevens-sm:text-stevens-xs stevens-md:text-stevens-sm group-hover:text-stevens-gray-900 transition-colors duration-stevens-normal mb-0">
                     {companyName}
                   </h4>
 
                   {/* Industry (if provided) */}
                   {companyIndustry && (
-                    <p className="text-stevens-gray-500 text-center text-stevens-xs stevens-sm:text-stevens-sm mt-stevens-xs">
+                    <p className="text-stevens-gray-500 text-center text-[9px] stevens-sm:text-[10px] stevens-md:text-stevens-xs mt-0.5">
                       {companyIndustry}
                     </p>
                   )}
