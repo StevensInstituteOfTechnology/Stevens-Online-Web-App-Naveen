@@ -18,7 +18,7 @@ const programData = {
     url: '/certificates/applied-data-science-foundations/'
   },
   hero: {
-    titleLines: ['Applied Data Science', 'Foundations Certificate'],
+    titleLines: ['Professional Graduate Certificate', 'in Applied Data Science Foundations'],
     subtitle: "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
     bgImage: "/assets/images/certificate-ADS-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
