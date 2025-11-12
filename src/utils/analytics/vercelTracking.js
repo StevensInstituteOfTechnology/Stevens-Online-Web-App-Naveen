@@ -15,6 +15,110 @@ import { ALL_FUNNELS } from '@/config/funnelConfig';
 const funnelManager = new FunnelManager(ALL_FUNNELS);
 
 /**
+ * Vercel Analytics Custom Event Key Limits
+ * 
+ * Pro plan: 2 keys per custom event
+ * Pro + Web Analytics Plus ($50/month): 8 keys per custom event
+ * Enterprise: Custom amount (negotiated)
+ * 
+ * Set VITE_VERCEL_ANALYTICS_MAX_KEYS in your environment variables to match your plan.
+ * Defaults to 2 in production (Pro plan limit), 10 in development for debugging.
+ */
+const DEFAULT_MAX_CUSTOM_EVENT_KEYS = import.meta.env.PROD ? 2 : 10;
+const resolvedMaxKeys = Number(import.meta.env.VITE_VERCEL_ANALYTICS_MAX_KEYS ?? DEFAULT_MAX_CUSTOM_EVENT_KEYS);
+const MAX_CUSTOM_EVENT_KEYS = Number.isFinite(resolvedMaxKeys) && resolvedMaxKeys > 0
+  ? Math.floor(resolvedMaxKeys)
+  : DEFAULT_MAX_CUSTOM_EVENT_KEYS;
+
+/**
+ * Priority fields for custom events
+ * These fields will be kept first when trimming the payload
+ * 
+ * For 2-key limit (Pro plan):
+ * 1. program_code - Critical for business intelligence
+ * 2. form_name/modal_name/quiz_name - Event-specific identifier
+ * 
+ * Additional fields for higher limits:
+ * 3. is_conversion - Conversion tracking
+ * 4. source_page - Context for user journey
+ * 5. button_location - CTA performance tracking
+ */
+const PRIORITY_EVENT_FIELDS = [
+  'program_code',      // #1 - Business critical
+  'form_name',         // #2 - Most common event identifier
+  'modal_name',        // #2 alt - Modal events
+  'quiz_name',         // #2 alt - Quiz events
+  'is_conversion',     // #3 - Conversion flag
+  'source_page',       // #4 - Journey context
+  'button_location',   // #5 - CTA tracking
+  'funnel_name',       // #6 - Funnel tracking
+  'page_type',         // #7 - Page context
+  'page_path'          // #8 - Specific page
+];
+
+/**
+ * Truncate value to Vercel's maximum field length (255 characters)
+ */
+const truncateForVercel = (value) => {
+  if (value === undefined) return undefined;
+  if (value === null) return null;
+  if (typeof value === 'string') {
+    return value.length > 255 ? value.slice(0, 255) : value;
+  }
+  if (typeof value === 'number' || typeof value === 'boolean') {
+    return value;
+  }
+  // Unsupported types (objects, arrays) are dropped
+  return undefined;
+};
+
+/**
+ * Sanitize event data to comply with Vercel Analytics limits
+ * - Keeps only the allowed number of custom properties
+ * - Prioritizes important fields
+ * - Truncates strings to 255 characters
+ * - Drops nested objects and arrays
+ */
+const sanitizeForVercelLimits = (data = {}) => {
+  const sanitized = {};
+  const droppedKeys = [];
+
+  const trySet = (key, rawValue) => {
+    if (sanitized[key] !== undefined) return;
+    if (Object.keys(sanitized).length >= MAX_CUSTOM_EVENT_KEYS) {
+      droppedKeys.push(key);
+      return;
+    }
+    const value = truncateForVercel(rawValue);
+    if (value === undefined) {
+      droppedKeys.push(key);
+      return;
+    }
+    sanitized[key] = value;
+  };
+
+  // Add priority fields first
+  PRIORITY_EVENT_FIELDS.forEach((key) => {
+    if (key in data) {
+      trySet(key, data[key]);
+    }
+  });
+
+  // Add remaining fields up to the limit
+  Object.entries(data).forEach(([key, value]) => {
+    if (PRIORITY_EVENT_FIELDS.includes(key)) return;
+    trySet(key, value);
+  });
+
+  // Log dropped keys in development
+  if (droppedKeys.length && import.meta.env.DEV) {
+    console.warn('[analytics] Dropped Vercel custom event fields:', droppedKeys);
+  }
+
+  return sanitized;
+};
+
+/**
  * Get device type
  */
 const getDeviceType = () => {
@@ -124,8 +228,11 @@ export const trackEvent = (eventName, eventData = {}) => {
     // Enrich event data with context
     const enrichedData = enrichEventData(eventData);
     
+    // Sanitize data to respect Vercel Analytics limits
+    const sanitizedData = sanitizeForVercelLimits(enrichedData);
+    
     // Track to Vercel Analytics
-    track(eventName, enrichedData);
+    track(eventName, sanitizedData);
     
     // Also track funnel progression
     const progressions = funnelManager.trackEvent(eventName, enrichedData);
@@ -133,7 +240,9 @@ export const trackEvent = (eventName, eventData = {}) => {
     // If this event caused funnel progression, track that too
     if (progressions && progressions.length > 0) {
       progressions.forEach(progression => {
-        track('funnel_stage_progressed', progression);
+        // Sanitize progression data before tracking
+        const sanitizedProgression = sanitizeForVercelLimits(progression);
+        track('funnel_stage_progressed', sanitizedProgression);
       });
     }
     
@@ -141,8 +250,13 @@ export const trackEvent = (eventName, eventData = {}) => {
     incrementEventsInSession();
     
     // Debug logging
-    if (process.env.NODE_ENV === 'development') {
-      console.log('📊 Vercel Event:', eventName, enrichedData);
+    if (import.meta.env.DEV) {
+      console.log('📊 Vercel Event:', eventName, {
+        original: enrichedData,
+        sanitized: sanitizedData,
+        keyCount: Object.keys(sanitizedData).length,
+        maxKeys: MAX_CUSTOM_EVENT_KEYS
+      });
       if (progressions && progressions.length > 0) {
         console.log('🎯 Funnel Progression:', progressions);
       }
