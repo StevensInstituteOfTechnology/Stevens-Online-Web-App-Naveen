@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { X } from 'lucide-react';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**
  * RequestInfoModal - Modal wrapper for LeadCaptureForm
@@ -11,13 +12,37 @@ import LeadCaptureForm from '../forms/LeadCaptureForm';
  */
 export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '' }) {
   const [mountKey, setMountKey] = useState(0);
+  const modalOpenTime = useRef(null);
+  const hasTrackedOpen = useRef(false);
 
   // Force remount of LeadCaptureForm when modal opens to ensure script loads
   useEffect(() => {
     if (isOpen) {
       setMountKey(prev => prev + 1);
+      modalOpenTime.current = Date.now();
+      
+      // Track modal open (only once per open)
+      if (!hasTrackedOpen.current) {
+        trackEvent('rfi_modal_opened', {
+          modal_name: 'request_info',
+          source_page: sourcePage,
+          program_code: programOfInterest || 'general'
+        });
+        hasTrackedOpen.current = true;
+      }
+    } else if (modalOpenTime.current) {
+      // Track modal close
+      const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
+      trackEvent('rfi_modal_closed', {
+        modal_name: 'request_info',
+        source_page: sourcePage,
+        program_code: programOfInterest || 'general',
+        time_open_seconds: timeOpen
+      });
+      modalOpenTime.current = null;
+      hasTrackedOpen.current = false; // Reset for next open
     }
-  }, [isOpen]);
+  }, [isOpen, sourcePage, programOfInterest]);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -61,39 +86,41 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
           className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button - Fixed to modal */}
-          <button
-            onClick={onClose}
-            className="sticky top-2 sm:top-4 right-2 sm:right-4 float-right z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+          
 
           {/* Header */}
-          <div className="bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+          <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
             <h2 className="font-stevens-display text-lg sm:text-stevens-xl md:text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
               Request Information
             </h2>
             <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
               Take the next step in your career journey
             </p>
+            {/* Close Button - Fixed to modal */}
+          <button
+            onClick={onClose}
+            className="absolute top-2 right-2  z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
+            aria-label="Close modal"
+          >
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
           </div>
 
           {/* Content */}
-          <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-gray-50">
+          <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
             <LeadCaptureForm 
               key={`request-info-${mountKey}`}
               title="Get Program Details"
               subtitle="An admissions advisor will contact you shortly."
               sourcePage={sourcePage}
               programOfInterest={programOfInterest}
+              hideHeader={true}
             />
           </div>
 
           {/* Footer */}
           <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
-            <p className="text-[10px] sm:text-stevens-xs text-stevens-gray-600 text-center leading-tight">
+            <p className="text-stevens-xs sm:text-stevens-sm text-stevens-gray-600 text-center leading-tight">
               Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our admissions team.
             </p>
           </div>

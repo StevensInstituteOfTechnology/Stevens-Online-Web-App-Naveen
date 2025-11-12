@@ -144,6 +144,7 @@ module.exports = {
 		fontSize: {
 			'stevens-xs': ['0.75rem', { lineHeight: '1rem' }],
 			'stevens-sm': ['0.875rem', { lineHeight: '1.25rem' }],
+			'stevens-md': ['1rem', { lineHeight: '1.5rem' }],
 			'stevens-base': ['1rem', { lineHeight: '1.5rem' }],
 			'stevens-lg': ['1.125rem', { lineHeight: '1.75rem' }],
 			'stevens-xl': ['1.25rem', { lineHeight: '1.75rem' }],

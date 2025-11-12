@@ -3,12 +3,26 @@ import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, TrendingUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreCertAppliedDataScience = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'cert-ads',
+    additionalData: {
+      program_name: 'Professional Graduate Certificate in Applied Data Science Foundations',
+      has_embedded_form: true,
+      has_pricing_cards: true,
+      program_type: 'certificate'
+    }
+  });
+  
   const certData = {
     // Hero Section
     heroTitle: "YOUR FIRST STEP INTO APPLIED AI",
-    programName: "Applied Data Science Foundations Certificate",
+    programName: "Professional Graduate Certificate in Applied Data Science Foundations",
     heroSubtitle: "Master Python, SQL, and machine learning in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable to M.Eng. in Applied Data Science.",
     bgImage: "/assets/images/explore-cert-ADS-1.jpg",
     programCode: "cert-ads",
@@ -166,15 +180,25 @@ const ExploreCertAppliedDataScience = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate 
-    {...certData}
-    whyChooseStevensVideo={null}
-    whyChooseStevensVideoCover={null}
-    heroBottomContent={<CertificateTuitionCardsHero cards={[
-      { value: "$5,250", label: "Total Certificate Cost" },
-      { value: "$583", label: "Per Credit" }
-    ]} />}
-  />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreCertAppliedDataScience">
+      <ProgramContextProvider 
+        programCode="cert-ads"
+        programName="Professional Graduate Certificate in Applied Data Science Foundations"
+        programType="certificate"
+      >
+        <ExploreProgramPageTemplate 
+          {...certData}
+          whyChooseStevensVideo={null}
+          whyChooseStevensVideoCover={null}
+          heroBottomContent={<CertificateTuitionCardsHero cards={[
+            { value: "$5,250", label: "Total Certificate Cost" },
+            { value: "$583", label: "Per Credit" }
+          ]} />}
+        />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreCertAppliedDataScience;

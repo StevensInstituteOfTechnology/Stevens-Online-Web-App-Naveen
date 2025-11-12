@@ -6,8 +6,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Clock, PlayCircle, FileText } from 'lucide-react';
 import { BOOKING_URLS } from '@/config/constants';
+import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function Events() {
+  usePageTracking({
+    pageType: 'content',
+    additionalData: {
+      page_name: 'Events',
+      has_event_cards: true
+    }
+  });
+
   const spotlight = {
     title: 'The StevensOnline Experience: Current Student Perspectives',
     status: 'Ongoing',
@@ -170,6 +181,7 @@ export default function Events() {
   ];
 
   return (
+    <PageContextProvider pageType="content" pageName="Events">
     <div>
       <PageHero
         title="Stevens Institute of Technology"
@@ -312,5 +324,6 @@ export default function Events() {
         </div>
       </div>
     </div>
+    </PageContextProvider>
   );
 }

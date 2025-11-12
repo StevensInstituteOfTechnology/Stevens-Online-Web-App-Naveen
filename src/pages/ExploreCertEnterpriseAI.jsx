@@ -3,8 +3,22 @@ import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, GraduationCap } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreCertEnterpriseAI = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'cert-eai',
+    additionalData: {
+      program_name: 'Professional Graduate Certificate in Enterprise AI',
+      has_embedded_form: true,
+      has_pricing_cards: true,
+      program_type: 'certificate'
+    }
+  });
+  
   const certData = {
     // Hero Section
     heroTitle: "BUILD AI THAT WORKS AT WORK",
@@ -162,13 +176,23 @@ const ExploreCertEnterpriseAI = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate 
-    {...certData}
-    heroBottomContent={<CertificateTuitionCardsHero cards={[
-      { value: "$5,250", label: "Total Certificate Cost" },
-      { value: "$583", label: "Per Credit" }
-    ]} />}
-  />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreCertEnterpriseAI">
+      <ProgramContextProvider 
+        programCode="cert-eai"
+        programName="Professional Graduate Certificate in Enterprise AI"
+        programType="certificate"
+      >
+        <ExploreProgramPageTemplate 
+          {...certData}
+          heroBottomContent={<CertificateTuitionCardsHero cards={[
+            { value: "$5,250", label: "Total Certificate Cost" },
+            { value: "$583", label: "Per Credit" }
+          ]} />}
+        />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreCertEnterpriseAI;

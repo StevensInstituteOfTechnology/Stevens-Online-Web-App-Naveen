@@ -4,6 +4,9 @@ import {
   Target, TrendingUp, Users } from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mba',
@@ -72,7 +75,7 @@ const programData = {
     { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
 
     source: "U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Microsoft", "Verizon", "Cisco", "American Express", "Millenium", "L3Harris"]
+    topCompanies: ["Microsoft", "Verizon", "JPMorgan Chase", "Amazon", "Deloitte", "Accenture"]
   },
   whatYoullLearn: {
     variant: 'skillCards',
@@ -562,7 +565,40 @@ const programData = {
     title: "Common Job Titles for MBA Graduates"
   },
   topCompanies: {
-    title: "Top Companies Hiring Stevens Alumni"
+    title: "Top Companies Hiring Stevens Alumni",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    companies: [
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Verizon",
+        logo: "/assets/company_logo/Verizon_2024.svg.png",
+        industry: "Telecommunications"
+      },
+      {
+        name: "JPMorgan Chase",
+        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
+        industry: "Finance"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Technology"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      }
+    ]
   },
   admissions: {
     variant: 'combinedWithTuition',
@@ -672,5 +708,25 @@ const programData = {
 };
 
 export default function MBAPage() {
-  return <ProgramPageTemplate programData={programData} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mba',
+    additionalData: {
+      program_name: 'Master of Business Administration',
+      has_video: true,
+      has_rfi_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MBA">
+      <ProgramContextProvider 
+        programCode="mba"
+        programName="Master of Business Administration"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

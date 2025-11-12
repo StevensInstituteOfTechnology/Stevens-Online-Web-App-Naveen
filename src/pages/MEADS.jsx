@@ -1,8 +1,12 @@
+import React from 'react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'meads',
@@ -122,13 +126,12 @@ const programData = {
     //   { title: "Principal Engineer - Data", salary: "$195,000" }
     // ],
     topCompanies: [
-      "Technology",
-      "Finance",
-      "Healthcare",
-      "Energy",
-      "Manufacturing",
-      "Consulting",
-      "Government",
+      "Microsoft",
+      "Google",
+      "Amazon",
+      "Deloitte",
+      "Accenture",
+      "IBM"
     ],
     // source: "Glassdoor and LinkedIn, 2024"
   },
@@ -150,16 +153,39 @@ const programData = {
   // },
   // ==================================================================
   topCompanies: {
-    title: "Industries Hiring Stevens Graduates",
-    description: "According to the U.S. Bureau of Labor Statistics, employment in data science is projected to grow 35% through 2032-more than seven times faster than the average for all occupations.",
+    title: "Where Stevens Alumni Work",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
-      "Technology",
-      "Finance",
-      "Healthcare",
-      "Energy",
-      "Manufacturing",
-      "Consulting",
-      "Government",
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Google",
+        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Technology"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      }
     ]
   },
 // ==================================================================
@@ -481,11 +507,32 @@ const programData = {
 };
 
 export default function MEADS() {
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'meads',
+    additionalData: {
+      program_name: 'Master of Engineering in Applied Data Science',
+      has_video: true,
+      has_rfi_modal: true,
+      has_pricing_cards: true
+    }
+  });
+
   // Add pricing cards to hero section
   const heroWithPricing = {
     ...programData.hero,
     bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
   };
   
-  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />;
+  return (
+    <PageContextProvider pageType="program" pageName="MEADS">
+      <ProgramContextProvider 
+        programCode="meads"
+        programName="Master of Engineering in Applied Data Science"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

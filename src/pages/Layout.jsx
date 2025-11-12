@@ -108,6 +108,38 @@ export default function Layout({ children, currentPageName }) {
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
   
+  // Determine banner redirect based on current page
+  const getBannerRedirect = () => {
+    const pathname = location.pathname.toLowerCase();
+    
+    // MSCS or MEM (including explore pages) -> ASAP application
+    if (pathname.includes('online-masters-computer-science') || 
+        pathname.includes('online-masters-engineering-management')) {
+      return { type: 'internal', url: createPageUrl('ASAP/') };
+    }
+    
+    // MEADS or Certificates (including explore pages) -> Accelerated application
+    if (pathname.includes('online-masters-engineering-applied-data-science') ||
+        pathname.includes('online-masters-eng-applied-data-science') ||
+        pathname.includes('certificates/')) {
+      return { type: 'internal', url: createPageUrl('accelerated-application/') };
+    }
+    
+    // MBA (including explore pages) -> External Stevens application
+    if (pathname.includes('online-mba')) {
+      return { type: 'external', url: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' };
+    }
+    
+    // Non-program pages -> Accelerated application page
+    return { type: 'internal', url: createPageUrl('accelerated-application/') };
+  };
+
+  const redirect = getBannerRedirect();
+  const BannerLink = redirect.type === 'external' ? 'a' : Link;
+  const bannerProps = redirect.type === 'external' 
+    ? { href: redirect.url, target: '_blank', rel: 'noopener noreferrer' }
+    : { to: redirect.url };
+
   // ASAP Banner continuous message with emphasis
   const BannerMessage = () => (
     <>
@@ -260,17 +292,25 @@ export default function Layout({ children, currentPageName }) {
           pointer-events: auto !important;
         }
         
+        /* Search suggestions protection - allow absolute positioning relative to input */
+        [data-search-suggestions="true"] {
+          z-index: 10001 !important;
+          position: absolute !important;
+          pointer-events: auto !important;
+        }
+        
         [data-radix-popper-content-wrapper] *,
         [data-radix-dropdown-menu-content] *,
         [role="menu"] *,
-        .dropdown-content * {
+        .dropdown-content *,
+        [data-search-suggestions="true"] * {
           pointer-events: auto !important;
           z-index: inherit !important;
         }
         
         
         /* Reset external script z-index interference */
-        *:not(header):not(header *):not([class*="z-[9"]):not([data-radix-popper-content-wrapper]):not([data-radix-dropdown-menu-content]):not([role="menu"]) {
+        *:not(header):not(header *):not([class*="z-[9"]):not([data-radix-popper-content-wrapper]):not([data-radix-dropdown-menu-content]):not([role="menu"]):not([data-search-suggestions="true"]) {
           z-index: auto !important;
         }
       `;
@@ -1152,8 +1192,8 @@ export default function Layout({ children, currentPageName }) {
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
         >
-                <Link
-            to={createPageUrl("accelerated-application/")}
+                <BannerLink
+            {...bannerProps}
             className="block transition-colors duration-stevens-normal"
           >
             <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
@@ -1182,7 +1222,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
               </div>
             </div>
-                </Link>
+                </BannerLink>
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -1229,7 +1269,7 @@ export default function Layout({ children, currentPageName }) {
               </h3>
               <div className="space-y-2">
                 <Link
-                  to="/compare-our-programs/"
+                  to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Degree Programs

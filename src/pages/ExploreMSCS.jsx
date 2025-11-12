@@ -2,8 +2,22 @@ import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp, Code } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMSCS = () => {
+  // Automatic page tracking with context
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'mscs',
+    additionalData: {
+      program_name: 'Master of Science in Computer Science',
+      has_embedded_form: true,
+      has_application_modal: true
+    }
+  });
+  
   const mscsData = {
     // Hero Section
     heroTitle: "Build What's Next in Tech. All Experience Levels Welcome.",
@@ -86,7 +100,7 @@ const ExploreMSCS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
-    newFall2025Image: "/assets/images/stevens-campus.png", // Placeholder
+    newFall2025Image: "/assets/images/1-explore-mem.webp", // Placeholder
     
     // Just Launched Section
     justLaunchedBadge: "JUST LAUNCHED",
@@ -97,7 +111,7 @@ const ExploreMSCS = () => {
       <p>To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
     `,
     justLaunchedButtonText: "Request Flexible App Info",
-    justLaunchedButtonLink: "#",
+    justLaunchedButtonLink: "/request-information/",
     justLaunchedImage: "/assets/images/3-explore-mscs.webp", 
     
     // Program Benefits
@@ -192,7 +206,17 @@ const ExploreMSCS = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate {...mscsData} />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMSCS">
+      <ProgramContextProvider 
+        programCode="mscs" 
+        programName="Master of Science in Computer Science"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate {...mscsData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMSCS;

@@ -4,6 +4,9 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mscs',
@@ -90,7 +93,7 @@ const programData = {
       { title: "Computer Systems Analyst", salary: "$103,800" }
     ],
     source: "¹ U.S. Bureau of Labor Statistics, 2025. ² Glassdoor, April 2024. ³ U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Amazon", "Meta", "IBM", "Bank of America", "Google", "JPMorgan Chase"]
+    topCompanies: ["Microsoft", "Google", "Amazon", "Meta", "IBM", "Apple"]
   },
   whatYoullLearn: {
     title: "Helping You Master Cutting-Edge Skills",
@@ -183,7 +186,38 @@ const programData = {
   topCompanies: {
     title: "Stevens Alumni Drive Innovation at Top Companies",
     description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
-    companies: ["Amazon", "Meta", "IBM", "Bank of America", "Google", "JPMorgan Chase"]
+    companies: [
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Google",
+        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Technology"
+      },
+      {
+        name: "Meta",
+        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Apple",
+        logo: "/assets/company_logo/Apple_logo_black.svg.png",
+        industry: "Technology"
+      }
+    ]
   },
   whyStevens: {
     title: "Why Choose an Online MSCS from Stevens?",
@@ -613,5 +647,26 @@ The objective of this course is to give students a basic grounding in designing 
 
 
 export default function MSCSPage() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mscs',
+    additionalData: {
+      program_name: 'Master of Science in Computer Science',
+      has_video: true,
+      has_rfi_modal: true,
+      has_application_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MSCS">
+      <ProgramContextProvider 
+        programCode="mscs"
+        programName="Master of Science in Computer Science"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }

@@ -2,8 +2,20 @@ import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const ExploreMSAI = () => {
+  usePageTracking({
+    pageType: 'explore',
+    programCode: 'msai',
+    additionalData: {
+      program_name: 'Master of Science in Artificial Intelligence',
+      has_embedded_form: true
+    }
+  });
+  
   const msaiData = {
     // Hero Section
     heroTitle: "Master AI and Launch Your Computer Science Career - All Experience Levels Welcome!",
@@ -219,7 +231,17 @@ const ExploreMSAI = () => {
     contactButtonText: "Schedule a Call"
   };
 
-  return <ExploreProgramPageTemplate {...msaiData} />;
+  return (
+    <PageContextProvider pageType="explore" pageName="ExploreMSAI">
+      <ProgramContextProvider 
+        programCode="msai"
+        programName="Master of Science in Artificial Intelligence"
+        programType="degree"
+      >
+        <ExploreProgramPageTemplate {...msaiData} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 };
 
 export default ExploreMSAI;

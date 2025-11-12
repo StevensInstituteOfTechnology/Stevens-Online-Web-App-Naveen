@@ -8,8 +8,19 @@ import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 export default function OnlineExperience() {
+  usePageTracking({
+    pageType: 'content',
+    additionalData: {
+      page_name: 'Online Experience',
+      has_dean_letter: true,
+      has_rfi_modal: true
+    }
+  });
+
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [
     {
@@ -35,6 +46,7 @@ export default function OnlineExperience() {
   ];
 
   return (
+    <PageContextProvider pageType="content" pageName="OnlineExperience">
     <div>
       <PageHero 
         title="Online Education"
@@ -58,14 +70,14 @@ export default function OnlineExperience() {
                   <div className="text-center stevens-md:text-left">
                     <h2 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold mb-stevens-xs">
                       Arshad Saiyed
-                    </h2>
+            </h2>
                     <p className="text-stevens-base stevens-md:text-stevens-lg font-stevens-medium text-white/90">
                       Chief Online Learning Officer and Dean of the College of Professional Education
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+              </p>
+            </div>
+          </div>
+        </div>
+      
               {/* Letter Content */}
               <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
                 <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
@@ -83,25 +95,25 @@ export default function OnlineExperience() {
                   </p>
                   <p>
                     I invite you to explore our programs and experience how Stevens continues to set the standard for excellence and innovation in online learning and professional education.
-                  </p>
-                </div>
-
+            </p>
+          </div>
+          
                 {/* Signature */}
                 <div className="mt-stevens-xl">
-                  <img
+                <img 
                     src="/assets/images/arshad-signature.png"
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />
                   <p className="font-stevens-semibold text-stevens-gray-900">
                     Arshad Saiyed
-                  </p>
+              </p>
                   <p className="text-stevens-sm text-stevens-gray-600">
                     Chief Online Learning Officer and Dean<br />
                     College of Professional Education <br />
                     Stevens Institute of Technology
                   </p>
-                </div>
+            </div>
               </div>
             </CardContent>
           </Card>
@@ -144,12 +156,12 @@ export default function OnlineExperience() {
             Connect with our admissions team to get your questions answered and find out if an online program at Stevens is the right fit for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
-                  <Button className="btn-secondary px-8 py-3 text-lg">Schedule a Call</Button>
+                <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)} className="w-full sm:w-auto">
+                  <Button className="w-full btn-secondary px-8 py-3 text-lg">Schedule a Call</Button>
                 </a>
                 <Button 
                   variant="outline" 
-                  className="btn-outline-maroon px-8 py-3 text-lg"
+                  className="w-full sm:w-auto btn-outline-maroon px-8 py-3 text-lg"
                   onClick={() => {
                     trackConversion(CONVERSION_LABELS.REQUEST_INFO);
                     setShowRequestInfoModal(true);
@@ -169,5 +181,6 @@ export default function OnlineExperience() {
         programOfInterest=""
       />
     </div>
+    </PageContextProvider>
   );
 }

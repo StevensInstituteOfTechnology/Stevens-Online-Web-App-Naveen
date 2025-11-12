@@ -5,6 +5,9 @@ import {
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'cert-eai',
@@ -170,7 +173,40 @@ const programData = {
     title: "Career Opportunities with AI Skills"
   },
   topCompanies: {
-    title: "Where Stevens Alumni Work"
+    title: "Where Stevens Alumni Work",
+    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    companies: [
+      {
+        name: "Microsoft",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Google",
+        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "Amazon",
+        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        industry: "Ecommerce"
+      },
+      {
+        name: "Deloitte",
+        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "Accenture",
+        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        industry: "Consulting"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      }
+    ]
   },
   admissions: {
     variant: 'certificateWithDeadlines',
@@ -221,12 +257,12 @@ const programData = {
         <p class="text-left">At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-semibold text-stevens-gray-900 mb-2">💼 Corporate Tuition Assistance</p>
+          <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Corporate Tuition Assistance</p>
           <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-semibold text-stevens-gray-900 mb-2">💰 Financial Aid & Funding Options</p>
+          <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Financial Aid & Funding Options</p>
           <p class="text-stevens-sm mb-3 text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
           <p class="text-stevens-sm text-left">Apply by the <strong>priority deadline (November 20, 2025)</strong> to maximize your funding opportunities.</p>
         </div>
@@ -266,12 +302,33 @@ const programData = {
 };
 
 export default function CertificateEnterpriseAIPage() {
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'cert-eai',
+    additionalData: {
+      program_name: 'Professional Graduate Certificate in Enterprise AI',
+      has_rfi_modal: true,
+      has_pricing_cards: true,
+      program_type: 'certificate'
+    }
+  });
+
   // Add bottomContent to hero for certificate pages
   const heroWithTuitionCards = {
     ...programData.hero,
     bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
   };
   
-  return <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />;
+  return (
+    <PageContextProvider pageType="program" pageName="CertificateEnterpriseAI">
+      <ProgramContextProvider 
+        programCode="cert-eai"
+        programName="Professional Graduate Certificate in Enterprise AI"
+        programType="certificate"
+      >
+        <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }
 

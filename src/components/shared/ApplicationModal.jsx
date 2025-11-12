@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ExternalLink, Zap, Check } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { useProgramContext } from '@/contexts/analytics/ProgramContext';
 
 /**
  * ApplicationModal - Shows two application options for MEM and MSCS pages
@@ -11,6 +13,37 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
  * Option 2: ASAP Application (redirect to ASAP page)
  */
 export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
+  const modalOpenTime = useRef(null);
+  const programContext = useProgramContext();
+  const hasTrackedOpen = useRef(false);
+  
+  // Track modal open/close
+  useEffect(() => {
+    if (isOpen) {
+      modalOpenTime.current = Date.now();
+      
+      // Track modal open (only once per open)
+      if (!hasTrackedOpen.current) {
+        trackEvent('application_modal_opened', {
+          modal_name: 'application_options',
+          program_code: programContext?.programCode || 'unknown',
+          options_shown: 'standard,asap',
+          options_count: 2
+        });
+        hasTrackedOpen.current = true;
+      }
+    } else if (modalOpenTime.current) {
+      const timeOpen = Math.floor((Date.now() - modalOpenTime.current) / 1000);
+      trackEvent('application_modal_closed', {
+        modal_name: 'application_options',
+        program_code: programContext?.programCode || 'unknown',
+        time_open_seconds: timeOpen
+      });
+      modalOpenTime.current = null;
+      hasTrackedOpen.current = false; // Reset for next open
+    }
+  }, [isOpen, programContext]);
+  
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -71,35 +104,6 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
           {/* Content */}
           <div className="p-stevens-sm sm:p-stevens-md">
             <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
-          {/* Standard Application */}
-          <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
-            <div className="flex items-start gap-stevens-sm mb-stevens-sm">
-              <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md group-hover:bg-stevens-primary/10 transition-colors duration-stevens-normal">
-                <ExternalLink className="w-5 h-5 text-stevens-gray-700 group-hover:text-stevens-primary transition-colors duration-stevens-normal" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
-                  Standard Application
-                </h3>
-                <p className="text-stevens-xs text-stevens-gray-600">
-                  Standard graduate application process
-                </p>
-              </div>
-            </div>
-
-            <p className="text-stevens-sm text-stevens-gray-700 mb-stevens-md leading-relaxed">
-              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
-            </p>
-
-            <a 
-              href={traditionalLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
-            >
-              Standard Application
-            </a>
-          </div>
 
           {/* ASAP Application - Featured */}
           <div className="bg-gradient-to-br from-stevens-primary/5 to-stevens-primary/10 border-2 border-stevens-primary rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
@@ -141,13 +145,65 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             </div>
 
             <Link 
-              to={createPageUrl('ASAP')}
+              to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
               className="btn-stevens-primary w-full text-center inline-block"
-              onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
+              onClick={() => {
+                // Store program in sessionStorage for persistence
+                sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
+                sessionStorage.setItem('asap_application_source', 'modal');
+                
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('application_option_selected', {
+                  option: 'asap',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  is_conversion: true
+                });
+              }}
             >
               Start ASAP Application
             </Link>
           </div>
+          {/* Standard Application */}
+          <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
+            <div className="flex items-start gap-stevens-sm mb-stevens-sm">
+              <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md group-hover:bg-stevens-primary/10 transition-colors duration-stevens-normal">
+                <ExternalLink className="w-5 h-5 text-stevens-gray-700 group-hover:text-stevens-primary transition-colors duration-stevens-normal" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
+                  Standard Application
+                </h3>
+                <p className="text-stevens-xs text-stevens-gray-600">
+                  Standard graduate application process
+                </p>
+              </div>
+            </div>
+
+            <p className="text-stevens-sm text-stevens-gray-700 mb-stevens-md leading-relaxed">
+              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
+            </p>
+
+            <a 
+              href={traditionalLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
+              onClick={() => {
+                trackEvent('application_option_selected', {
+                  option: 'standard',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  destination_url: traditionalLink,
+                  is_conversion: true
+                });
+              }}
+            >
+              Standard Application
+            </a>
+          </div>
+
+          
           </div>
           </div>
 

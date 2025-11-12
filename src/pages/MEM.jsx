@@ -4,6 +4,9 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 import { Globe, Check, Award } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
 
 const programData = {
   code: 'mem',
@@ -171,7 +174,38 @@ const programData = {
   topCompanies: {
     title: "Stevens Alumni Drive Innovation at Top Companies",
     description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
-    companies: ["BMW", "Goldman Sachs", "Lockheed Martin", "Exxon", "IBM", "UPS"]
+    companies: [
+      {
+        name: "BMW",
+        logo: "/assets/company_logo/BMW.svg.png",
+        industry: "Manufacturing"
+      },
+      {
+        name: "Goldman Sachs",
+        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.svg.png",
+        industry: "Finance"
+      },
+      {
+        name: "Lockheed Martin",
+        logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+        industry: "Aerospace & Defense"
+      },
+      {
+        name: "Exxon",
+        logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+        industry: "Energy"
+      },
+      {
+        name: "IBM",
+        logo: "/assets/company_logo/IBM_logo.svg.png",
+        industry: "Technology"
+      },
+      {
+        name: "UPS",
+        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.svg.png",
+        industry: "Logistics"
+      }
+    ]
   },
   whyStevens: {
     title: "Why Choose an Online MEM from Stevens?",
@@ -387,5 +421,26 @@ const programData = {
 };
 
 export default function MEMPage() {
-  return <ProgramPageTemplate programData={programData} useApplicationModal={true} />;
+  usePageTracking({
+    pageType: 'program',
+    programCode: 'mem',
+    additionalData: {
+      program_name: 'Master of Engineering in Engineering Management',
+      has_video: true,
+      has_rfi_modal: true,
+      has_application_modal: true
+    }
+  });
+
+  return (
+    <PageContextProvider pageType="program" pageName="MEM">
+      <ProgramContextProvider 
+        programCode="mem"
+        programName="Master of Engineering in Engineering Management"
+        programType="degree"
+      >
+        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+      </ProgramContextProvider>
+    </PageContextProvider>
+  );
 }
