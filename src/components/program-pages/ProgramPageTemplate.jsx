@@ -1076,7 +1076,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               {/* Background Image */}
               <div className="absolute inset-0">
                 <img 
-                  src="/assets/images/accreditation.avif" 
+                  src="/assets/images/shared/accreditation.avif" 
                   alt="" 
                   className="w-full h-full object-cover opacity-30"
                   aria-hidden="true"

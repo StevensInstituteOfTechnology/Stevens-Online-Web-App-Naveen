@@ -31,7 +31,7 @@ const ExploreProgramPageTemplate = ({
   programBenefitsTitle,
   programBenefitsDescription,
   programBenefitsHighlights,
-  programBenefitsImage = "/assets/images/stevens-campus.png",
+  programBenefitsImage = "/assets/images/shared/stevens-campus.webp",
   
   // Program Details Props
   programDetails,
@@ -82,7 +82,7 @@ const ExploreProgramPageTemplate = ({
   justLaunchedDescription = "",
   justLaunchedButtonText = "",
   justLaunchedButtonLink = "#",
-  justLaunchedImage = "/assets/images/stevens-campus.png"
+  justLaunchedImage = "/assets/images/shared/stevens-campus.webp"
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

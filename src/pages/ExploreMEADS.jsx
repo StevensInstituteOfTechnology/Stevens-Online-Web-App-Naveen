@@ -23,12 +23,12 @@ const ExploreMEADS = () => {
     heroTitle: "Master AI & Machine Learning Engineering.",
     programName: "Build What's Next.",
     heroSubtitle: "Train LLMs, deploy production ML systems, and lead AI initiatives. Engineering-first curriculum for the AI age.",
-    bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp", 
+    bgImage: "/assets/images/explore-meads/stevens-manhattan-skyline-ds.webp", 
     programCode: "meads",
     seo: {
       title: 'Online M.Eng. in Applied Data Science - AI & ML | Stevens',
       description: 'Master AI engineering, machine learning, and LLMs. Build production ML systems. $24,000 for 30 credits. 100% online from Stevens.',
-      ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+      ogImage: '/assets/images/explore-meads/stevens-manhattan-skyline-ds.webp',
       url: '/explore/online-masters-eng-applied-data-science/'
     },
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
@@ -82,7 +82,7 @@ const ExploreMEADS = () => {
     // Program Benefits
     programBenefitsTitle: "Program Overview",
     programBenefitsDescription: "The AI revolution is here. Organizations need engineers who can build, deploy, and scale intelligent systems—from training large language models to operationalizing machine learning pipelines. The M.Eng. in Applied Data Science prepares you to lead AI initiatives across industries.<br/><br/>Through an engineering-first curriculum, you'll master the full AI lifecycle: <strong>data engineering, ML model development, LLM fine-tuning, MLOps, and production deployment</strong>. Work with cutting-edge frameworks like PyTorch, TensorFlow, Hugging Face, and cloud AI platforms. Learn to build AI systems that are not just powerful, but responsible—with ethics, explainability, and governance integrated throughout. <ul class='list-disc pl-5 my-5'><li>Build production-ready AI and ML systems from scratch</li><li>Master LLMs, deep learning, and modern AI architectures</li><li>Learn MLOps: CI/CD for machine learning, model monitoring, and deployment</li><li>Hands-on projects with real datasets and AI tools used at Google, Meta, and leading tech companies</li><li>Flexible, asynchronous online format designed for working AI professionals</li></ul>",
-        programBenefitsImage: "/assets/images/1-explore-msai.webp", // Placeholder
+        programBenefitsImage: "/assets/images/explore-msai/1-explore-msai.webp", // Placeholder
     programBenefitsHighlights: [
       {
         title: "Excellence in Online Education",
@@ -176,7 +176,7 @@ const ExploreMEADS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
-    newFall2025Image: "/assets/images/1-explore-mem.webp",
+    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",
     
     // Just Launched Section
     justLaunchedBadge: "Just Launched",
@@ -188,7 +188,7 @@ const ExploreMEADS = () => {
     `,
     justLaunchedButtonText: "Apply Now",
     justLaunchedButtonLink: "/accelerated-application/",
-    justLaunchedImage: "/assets/images/2-explore-mem.webp",
+    justLaunchedImage: "/assets/images/explore-mem/2-explore-mem.webp",
     
     // Contact
     contactTitle: "Ready to Take the Next Step?",

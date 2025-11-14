@@ -24,13 +24,13 @@ const ExploreCertEnterpriseAI = () => {
     heroTitle: "BUILD AI THAT WORKS AT WORK",
     programName: "Professional Graduate Certificate in Enterprise AI",
     heroSubtitle: "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable to MBA and M.Eng. in Applied Data Science.",
-    bgImage: "/assets/images/explore-cert-EAI-1.avif",
+    bgImage: "/assets/images/explore-cert-enterprise-ai/explore-cert-EAI-1.avif",
     programCode: "cert-eai",
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     seo: {
       title: 'Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology',
       description: 'Launch your AI career in 9 graduate credits. Build AI workflows from strategy to deployment. $5,250 aligns with employer tuition benefits. Stackable to masters degrees.',
-      ogImage: '/assets/images/explore-cert-EAI-1.avif',
+      ogImage: '/assets/images/explore-cert-enterprise-ai/explore-cert-EAI-1.avif',
       url: '/explore/certificates/enterprise-ai/'
     },
     badges: [
@@ -77,7 +77,7 @@ const ExploreCertEnterpriseAI = () => {
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
     programBenefitsDescription: "Employers are hiring for 'AI-fluent' business talent across every function. AI roles top 'Jobs on the Rise 2025,' and AI skills carry a salary premium. This certificate turns managers, analysts, and professionals into responsible AI practitioners who can operationalize AI safely and effectively.<br/><br/>The 9-credit model aligns perfectly with the IRS $5,250 tax-free employer tuition benefit, improving affordability and making it ideal for corporate-sponsored learning.",
-    programBenefitsImage: "/assets/images/explore-cert-EAI-2.webp",
+    programBenefitsImage: "/assets/images/explore-cert-enterprise-ai/explore-cert-EAI-2.webp",
     programBenefitsHighlights: [
       {
         title: "Strategy to Deployment",

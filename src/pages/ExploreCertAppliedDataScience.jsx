@@ -24,13 +24,13 @@ const ExploreCertAppliedDataScience = () => {
     heroTitle: "YOUR FIRST STEP INTO APPLIED AI",
     programName: "Professional Graduate Certificate in Applied Data Science Foundations",
     heroSubtitle: "Master Python, SQL, and machine learning in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable to M.Eng. in Applied Data Science.",
-    bgImage: "/assets/images/explore-cert-ADS-1.webp",
+    bgImage: "/assets/images/explore-cert-applied-data-science/explore-cert-ADS-1.webp",
     programCode: "cert-ads",
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     seo: {
       title: 'Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
       description: 'Master Python, SQL, and ML in 9 graduate credits. Build AI-ready data pipelines and deploy machine learning models. $5,250 aligns with tuition benefits. Stackable to MEADS.',
-      ogImage: '/assets/images/explore-cert-ADS-1.webp',
+      ogImage: '/assets/images/explore-cert-applied-data-science/explore-cert-ADS-1.webp',
       url: '/explore/certificates/applied-data-science-foundations/'
     },
     badges: [
@@ -77,7 +77,7 @@ const ExploreCertAppliedDataScience = () => {
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
     programBenefitsDescription: "Organizations need professionals who can do more than analyze data-they need people who can build and deploy AI systems. This certificate provides the practical, project-driven foundation for careers in applied data science, machine learning engineering, and AI analytics.<br/><br/>With credit-bearing courses that stack toward the M.Eng. in Applied Data Science (MEADS), you can test your interest in data science while earning credentials that count toward a full master's degree.",
-    programBenefitsImage: "/assets/images/explore-cert-ADS-3.webp",
+    programBenefitsImage: "/assets/images/explore-cert-applied-data-science/explore-cert-ADS-3.webp",
     programBenefitsHighlights: [
       {
         title: "AI-First, Job-Ready Skills",

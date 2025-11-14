@@ -160,7 +160,7 @@ export default function ASAPPage() {
         title="ASAP Application"
         subtitle="Your Fast Track to a Master's Degree at Stevens" 
         // bgImage={<img src="/assets/images/asap-hero.avif" alt="ASAP Application" />}  
-        bgImage="/assets/images/asap-hero.avif"
+        bgImage="/assets/images/shared/asap-hero.avif"
         />
 
       <div className="py-stevens-section bg-stevens-gray-50">

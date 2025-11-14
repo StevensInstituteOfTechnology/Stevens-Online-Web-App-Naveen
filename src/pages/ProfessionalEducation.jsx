@@ -71,7 +71,7 @@ export default function ProfessionalEducation() {
       <PageHero 
         title="Stevens Professional Education"
         subtitle="Build job-ready skills, fast."
-        bgImage="/assets/images/1-professional-education.avif"
+        bgImage="/assets/images/professional-education/1-professional-education.avif"
       />
 
       {/* Hero Section */}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { createPageUrl } from '@/utils';
+import { getHeroImageProps } from '@/utils/responsiveImage';
 import ApplicationModal from './ApplicationModal';
 import RequestInfoModal from './RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
@@ -169,7 +170,7 @@ export default function PageHero({
     <section className="relative bg-gray-900 text-white overflow-hidden">
       {bgImage && (
         <img
-          src={bgImage}
+          {...getHeroImageProps(bgImage)}
           alt=""
           aria-hidden="true"
           fetchpriority="high"

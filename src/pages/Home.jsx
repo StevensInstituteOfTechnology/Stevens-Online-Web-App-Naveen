@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import { getHeroImageProps, getContentImageProps } from "@/utils/responsiveImage";
 import {
   GraduationCap,
   Users,
@@ -168,19 +169,19 @@ export default function Home() {
       title: 'Application Overview: Online MBA',
       length: '15 minutes',
       url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE',
-      image: '/assets/images/2-event.webp'
+      image: '/assets/images/home/2-event.webp'
     },
     {
       title: 'Application Walkthrough: Computer Science',
       length: '10 minutes',
       url: 'https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29',
-      image: '/assets/images/3-event.webp'
+      image: '/assets/images/home/3-event.webp'
     },
     {
       title: 'Application Walkthrough: Engineering Management',
       length: '24 minutes',
       url: 'https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810',
-      image: '/assets/images/4-event.webp'
+      image: '/assets/images/home/4-event.webp'
     }
   ];
 
@@ -209,10 +210,15 @@ export default function Home() {
     <div className="font-sans bg-white">
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-80"
-          style={{ backgroundImage: "url('/assets/images/HEADER-0865.webp')" }}
-        ></div>
+        <img
+          {...getHeroImageProps('/assets/images/home/HEADER-0865.webp')}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent"></div>
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
@@ -509,7 +515,7 @@ export default function Home() {
               
             </div>
             <img
-              src="/assets/images/stevens-campus.webp"
+              {...getContentImageProps('/assets/images/home/stevens-campus.webp')}
               alt="Stevens campus with NYC skyline"
               className="rounded-stevens-md shadow-xl"
               loading="lazy"
@@ -517,7 +523,7 @@ export default function Home() {
           </AnimatedSection>
           <AnimatedSection className="grid lg:grid-cols-2 gap-12 items-center">
           <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+              src="/assets/images/home/home-1.png"
               alt="Students collaborating online"
               className="rounded-stevens-md shadow-xl lg:order-1"
               loading="lazy"

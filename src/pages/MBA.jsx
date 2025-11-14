@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: 'Online MBA | Stevens Institute of Technology',
     description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
-    ogImage: '/assets/images/1-omba-hero-scaled.webp',
+    ogImage: '/assets/images/mba/1-omba-hero-scaled.webp',
     url: '/online-mba/'
   },
   hero: {
     titleLines: ['Earn Your MBA Online.', 'Build Your Career Anywhere.'],
     subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
-    bgImage: "/assets/images/1-omba-hero-scaled.webp",
+    bgImage: "/assets/images/mba/1-omba-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [

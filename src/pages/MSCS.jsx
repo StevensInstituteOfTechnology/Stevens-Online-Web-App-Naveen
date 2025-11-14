@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: "Online Master's in Computer Science | Stevens Institute of Technology",
     description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
-    ogImage: '/assets/images/bg_program.webp',
+    ogImage: '/assets/images/mscs/bg_program.webp',
     url: '/online-masters-computer-science-mscs/'
   },
   hero: {
     titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
-    bgImage: "/assets/images/bg_program.webp",
+    bgImage: "/assets/images/mscs/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [

@@ -13,14 +13,14 @@ const programData = {
   seo: {
     title: 'Online M.Eng. in Applied Data Science - AI & Machine Learning | Stevens',
     description: 'Master AI, machine learning, and LLMs. Build and deploy production ML systems. $24,000 for 30 credits. 100% online from top-ranked Stevens.',
-    ogImage: '/assets/images/stevens-manhattan-skyline-ds.webp',
+    ogImage: '/assets/images/meads/stevens-manhattan-skyline-ds.webp',
     url: '/online-masters-engineering-applied-data-science/'
   },
   // ==================================================================
   hero: {
     titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build AI-Powered Systems."],
     subtitle: "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
-    bgImage: "/assets/images/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
     // badges: [

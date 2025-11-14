@@ -21,7 +21,7 @@ const ExploreMSAI = () => {
     heroTitle: "Master AI and Launch Your Computer Science Career - All Experience Levels Welcome!",
     
     heroSubtitle: "Specialize in Artificial Intelligence and Machine Learning. 100% online program designed for aspiring AI professionals.",
-    bgImage: "/assets/images/3-explore-msai.webp", // Placeholder
+    bgImage: "/assets/images/explore-msai/3-explore-msai.webp", // Placeholder
     programCode: "msai",
     badges: [
       { text: "No. 1 in New Jersey", icon: Award },
@@ -127,7 +127,7 @@ const ExploreMSAI = () => {
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
     programBenefitsDescription: "Stevens designed the Online M.S. in Computer Science curriculum to align with in-demand industry skills and emerging technologies, including <strong>machine learning</strong> and <strong>artificial intelligence</strong>, while equipping students with a strong foundation in theory and academic areas of inquiry. Our graduates gain the technical proficiency to engineer solutions and contribute to the future of technology through skills like:",
-    programBenefitsImage: "/assets/images/1-explore-msai.webp", // Placeholder
+    programBenefitsImage: "/assets/images/explore-msai/1-explore-msai.webp", // Placeholder
     programBenefitsHighlights: [
       {
         title: "Advanced topics like artificial intelligence (AI), machine learning and cloud computing",
@@ -199,7 +199,7 @@ const ExploreMSAI = () => {
       
       <p>Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
-    additionalWhyChooseStevensImage: "/assets/images/2-explore-msai.webp", // Placeholder - should be city skyline image
+    additionalWhyChooseStevensImage: "/assets/images/explore-msai/2-explore-msai.webp", // Placeholder - should be city skyline image
     
     // FAQ
     faqs: [

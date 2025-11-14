@@ -14,13 +14,13 @@ const programData = {
   seo: {
     title: 'Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
     description: 'Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.',
-    ogImage: '/assets/images/certificate-ADS-1.webp',
+    ogImage: '/assets/images/certificate-applied-data-science/certificate-ADS-1.webp',
     url: '/certificates/applied-data-science-foundations/'
   },
   hero: {
     titleLines: ['Professional Graduate Certificate', 'in Applied Data Science Foundations'],
     subtitle: "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
-    bgImage: "/assets/images/certificate-ADS-1.webp",
+    bgImage: "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
     badges: [

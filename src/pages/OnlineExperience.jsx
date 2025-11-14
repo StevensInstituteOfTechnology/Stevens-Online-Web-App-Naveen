@@ -51,7 +51,7 @@ export default function OnlineExperience() {
       <PageHero 
         title="Online Education"
         subtitle="A premier, technology-driven education, delivered with flexibility."
-        bgImage="/assets/images/1-online-learning-hero-scaled.webp"
+        bgImage="/assets/images/online-experience/1-online-learning-hero-scaled.webp"
       />
       
       {/* Welcome Message from Dean Arshad */}
@@ -101,7 +101,7 @@ export default function OnlineExperience() {
                 {/* Signature */}
                 <div className="mt-stevens-xl">
                 <img 
-                    src="/assets/images/arshad-signature.webp"
+                    src="/assets/images/online-experience/arshad-signature.webp"
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />
@@ -150,7 +150,7 @@ export default function OnlineExperience() {
 
        <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
+              <img src="/assets/images/online-experience/online-experience-1.png" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Ready to Learn More?</h2>
           <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed mb-stevens-lg">
             Connect with our admissions team to get your questions answered and find out if an online program at Stevens is the right fit for you.

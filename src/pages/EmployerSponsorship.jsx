@@ -142,7 +142,7 @@ const EmployerSponsorship = () => {
         title="Employer Sponsorship"
         subtitle="Benefits for all"
         description="Both students and employers benefit from employer sponsorship programs that help enrollees pay for degrees. Students earn a degree with less debt, while their employers get to retain newly upskilled workers and market this benefit to attract more talent."
-        bgImage="/assets/images/1-employer-sponsorship.webp " // Placeholder
+        bgImage="/assets/images/employer-sponsorship/1-employer-sponsorship.webp" // Placeholder
         
       />
 
@@ -249,7 +249,7 @@ const EmployerSponsorship = () => {
                   <div className="flex justify-center lg:justify-end">
                     <div className="w-full max-w-lg">
                       <img 
-                        src="/assets/images/2-employer-sponsorship.webp" 
+                        src="/assets/images/employer-sponsorship/2-employer-sponsorship.webp" 
                         alt="Business professionals shaking hands during a meeting, representing employer sponsorship agreements"
                         className="w-full h-auto rounded-stevens-lg shadow-stevens-md object-cover"
                       />
@@ -385,7 +385,7 @@ const EmployerSponsorship = () => {
                 <div className="flex justify-center lg:justify-end">
                   <div className="w-full max-w-xl mx-auto">
                     <img 
-                      src="/assets/images/3-employer-sponsorship.webp" 
+                      src="/assets/images/employer-sponsorship/3-employer-sponsorship.webp" 
                       alt="Professional business executive in a modern office environment, representing the benefits of employer tuition reimbursement programs"
                       className="w-full h-auto rounded-stevens-lg shadow-stevens-md object-cover"
                     />

@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: 'Online MEM in Engineering Management | Stevens',
     description: 'Lead engineering teams with the 100% online MEM in Engineering Management from Stevens Institute of Technology. STEM-designated, flexible format, no GRE required.',
-    ogImage: '/assets/images/1-mem-hero-scaled.webp',
+    ogImage: '/assets/images/mem/1-mem-hero-scaled.webp',
     url: '/online-masters-engineering-management/'
   },
   hero: {
     titleLines: ["Earn Your MEM Online.", "Lead Engineering Teams Anywhere."],
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
-    bgImage: "/assets/images/1-mem-hero-scaled.webp",
+    bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     

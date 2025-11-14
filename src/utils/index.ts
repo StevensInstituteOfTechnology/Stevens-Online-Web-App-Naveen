@@ -9,17 +9,30 @@ export function createPageUrl(pageName: string) {
     return '/' + (normalized.endsWith('/') ? normalized : normalized + '/');
 }
 // For SEO friendly URLs
-// Build an absolute canonical URL with a trailing slash
+// Build an absolute canonical URL with a trailing slash (except for files with extensions)
 export function buildCanonicalUrl(pathname: string, siteOrigin: string = 'https://online.stevens.edu') {
     // Ensure pathname starts with '/'
     let path = pathname || '/';
     if (!path.startsWith('/')) {
         path = '/' + path;
     }
-    // Normalize: lowercase path and ensure trailing slash for non-root
+    
+    // Check if path is a file (has extension) - files should NOT have trailing slash
+    const hasFileExtension = /\.\w+$/.test(path);
+    
+    // Normalize: lowercase path
     const lower = path.toLowerCase();
-    const hasTrailing = lower.endsWith('/');
-    const normalized = lower === '/' ? '/' : (hasTrailing ? lower : lower + '/');
+    
+    // For files (images, etc.), don't add trailing slash
+    // For directories/pages, ensure trailing slash
+    let normalized: string;
+    if (hasFileExtension) {
+        normalized = lower; // Keep as-is for files
+    } else {
+        const hasTrailing = lower.endsWith('/');
+        normalized = lower === '/' ? '/' : (hasTrailing ? lower : lower + '/');
+    }
+    
     // Join with origin
     return siteOrigin.replace(/\/$/, '') + normalized;
 }

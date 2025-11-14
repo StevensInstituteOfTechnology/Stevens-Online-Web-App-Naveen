@@ -144,7 +144,7 @@ export default function ComparePrograms() {
       <PageHero 
         title="Compare Our Programs" 
         subtitle="Find your path" 
-        bgImage="/assets/images/compare-hero.webp"
+        bgImage="/assets/images/compare-programs/compare-hero.webp"
         rightContent={
           <ProgramReadinessAssessment
             onComplete={handleAssessmentComplete}

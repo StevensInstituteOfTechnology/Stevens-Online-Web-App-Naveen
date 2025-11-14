@@ -23,7 +23,7 @@ export default function Tuition() {
       <PageHero
         title="Tuition & Financial Aid Overview"
         subtitle="Financial Options for Our Online Programs"
-        bgImage="/assets/images/1-tuition-hero-scaled.webp"
+        bgImage="/assets/images/tuition/1-tuition-hero-scaled.webp"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tuition and Financial Aid" }]}
       />
 

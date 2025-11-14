@@ -83,7 +83,7 @@ export default function Admissions() {
       <PageHero 
         title="We Put Our Strengths Behind Your Career"
         subtitle="Admissions"
-        bgImage="/assets/images/1-hero-admissions-scaled.webp"
+        bgImage="/assets/images/admissions/1-hero-admissions-scaled.webp"
       />
 
       {/* Admissions Overview */}

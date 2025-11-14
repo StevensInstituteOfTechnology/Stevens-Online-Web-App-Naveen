@@ -11,7 +11,7 @@ export default function Certificates() {
       <PageHero
         title="Certificates & Short Courses"
         subtitle="Sharpen your skills and advance your career with professional education from Stevens."
-        bgImage="/assets/images/1-professional-education.avif"
+        bgImage="/assets/images/professional-education/1-professional-education.avif"
       />
       <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-20 text-center">
         <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-6 rounded-r-lg mb-12 text-left">
