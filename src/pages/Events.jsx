@@ -206,7 +206,7 @@ export default function Events() {
             <div className="stevens-md:flex">
               {/* Image */}
               <div className="stevens-md:w-2/5 overflow-hidden">
-                <img src="/assets/images/1-event.avif" alt="Event Spotlight" className="w-full h-full object-cover aspect-video stevens-md:aspect-auto" />
+                <img src="/assets/images/1-event.avif" alt="Event Spotlight" className="w-full h-full object-cover aspect-video stevens-md:aspect-auto" loading="lazy" />
               </div>
               
               {/* Content */}
@@ -275,7 +275,7 @@ export default function Events() {
                 <div className="stevens-md:flex stevens-md:flex-row flex flex-col h-full">
                   {/* Image */}
                   <div className="stevens-md:w-2/5 overflow-hidden flex-shrink-0">
-                    <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" />
+                    <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" loading="lazy" />
           </div>
           
                   {/* Content */}

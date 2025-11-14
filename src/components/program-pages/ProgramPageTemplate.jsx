@@ -52,7 +52,7 @@ const FacultyCard = ({ member }) => {
   return (
     <div className="text-center snap-center flex-shrink-0 w-[180px] stevens-md:w-[220px]">
       {hasImage ? (
-        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg"/>
+        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg" loading="lazy"/>
       ) : (
         <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-primary flex items-center justify-center shadow-stevens-lg">
           <span className="text-stevens-white font-stevens-bold text-stevens-2xl">{initials}</span>

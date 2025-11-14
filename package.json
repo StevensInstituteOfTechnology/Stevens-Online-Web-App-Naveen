@@ -12,7 +12,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "convert-to-webp": "node scripts/convert-to-webp.js",
-    "convert-to-webp:dry-run": "node scripts/convert-to-webp.js --dry-run"
+    "convert-to-webp:dry-run": "node scripts/convert-to-webp.js --dry-run",
+    "compress-videos": "node scripts/compress-videos.js",
+    "compress-videos:dry-run": "node scripts/compress-videos.js --dry-run"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",

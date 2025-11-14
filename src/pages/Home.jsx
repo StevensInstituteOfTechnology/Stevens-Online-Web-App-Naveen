@@ -117,6 +117,7 @@ const BadgeRankingItem = ({ image, description }) => (
         src={image}
         alt="Ranking Badge"
         className="w-20 h-20 shrink-0 object-contain"
+        loading="lazy"
       />
         </div>
         <div className="flex-1">
@@ -511,6 +512,7 @@ export default function Home() {
               src="/assets/images/stevens-campus.webp"
               alt="Stevens campus with NYC skyline"
               className="rounded-stevens-md shadow-xl"
+              loading="lazy"
             />
           </AnimatedSection>
           <AnimatedSection className="grid lg:grid-cols-2 gap-12 items-center">
@@ -518,6 +520,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
               alt="Students collaborating online"
               className="rounded-stevens-md shadow-xl lg:order-1"
+              loading="lazy"
             />
             <div className="lg:order-2">
               <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
@@ -551,6 +554,7 @@ export default function Home() {
               src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
               alt="Alumni portrait"
               className="mb-4 mx-auto w-24 h-24 rounded-full object-cover border-4 border-stevens-white shadow-stevens-lg"
+              loading="lazy"
             />
             <blockquote className="text-stevens-2xl leading-snug italic text-stevens-white mb-stevens-md">
               "Stevens Online is dedicated to delivering world-class technology
@@ -754,7 +758,7 @@ export default function Home() {
                   <div className="stevens-md:flex stevens-md:flex-row flex flex-col h-full">
                     {/* Image */}
                     <div className="stevens-md:w-2/5 overflow-hidden flex-shrink-0">
-                      <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" />
+                      <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" loading="lazy" />
                     </div>
                     {/* Content */}
                     <CardContent className="stevens-md:w-3/5 p-stevens-lg flex flex-col justify-between flex-1">

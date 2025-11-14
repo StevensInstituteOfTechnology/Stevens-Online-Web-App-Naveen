@@ -222,6 +222,7 @@ const BlogDetail = ({
             src={featured_image_url} 
             alt={title}
             className="w-full h-96 object-cover rounded-stevens-md shadow-stevens-md"
+            loading="lazy"
           />
         </div>
       )}
@@ -250,6 +251,7 @@ const BlogDetail = ({
                   src={relatedPost.featured_image_url} 
                   alt={relatedPost.title}
                   className="w-full h-32 object-cover rounded-stevens-sm mb-stevens-md"
+                  loading="lazy"
                 />
                 <h4 className="font-stevens-display text-stevens-lg text-stevens-primary mb-stevens-sm line-clamp-2">
                   {relatedPost.title}

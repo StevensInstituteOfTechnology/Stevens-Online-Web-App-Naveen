@@ -223,6 +223,7 @@ const ExploreProgramPageTemplate = ({
                     src={programBenefitsImage} 
                     alt={`${programBenefitsTitle || 'Program Benefits'} illustration`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -395,6 +396,7 @@ const ExploreProgramPageTemplate = ({
                       src={newFall2025Image} 
                       alt={`${newFall2025Title} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -455,6 +457,7 @@ const ExploreProgramPageTemplate = ({
                       src={justLaunchedImage} 
                       alt={`${justLaunchedTitle} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -559,6 +562,7 @@ const ExploreProgramPageTemplate = ({
                       src={additionalWhyChooseStevensImage} 
                       alt={`${additionalWhyChooseStevensTitle} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
