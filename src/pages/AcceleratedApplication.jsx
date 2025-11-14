@@ -188,7 +188,7 @@ export default function AcceleratedApplicationPage() {
       <PageHero
         title="Accelerated Application"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
-        bgImage="/assets/images/AcceleratedApplication-3.jpg"
+        bgImage="/assets/images/AcceleratedApplication-3.webp"
       />
 
       {/* Speed Emphasis Section */}

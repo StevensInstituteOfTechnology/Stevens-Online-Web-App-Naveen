@@ -101,7 +101,7 @@ export default function OnlineExperience() {
                 {/* Signature */}
                 <div className="mt-stevens-xl">
                 <img 
-                    src="/assets/images/arshad-signature.png"
+                    src="/assets/images/arshad-signature.webp"
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />

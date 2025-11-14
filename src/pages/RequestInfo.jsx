@@ -9,7 +9,7 @@ export default function RequestInfo() {
       <PageHero 
         title="Request Information"
         subtitle="Let's connect. Complete the form below and an enrollment advisor will be in touch to answer your questions."
-        bgImage="/assets/images/stevens-campus.png"
+        bgImage="/assets/images/stevens-campus.webp"
       />
       <div className="py-stevens-section">
         <div className="max-w-7xl mx-auto px-stevens-lg">

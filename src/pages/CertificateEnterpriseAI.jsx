@@ -287,7 +287,7 @@ const programData = {
     members: [
       { name: "Michael zur Muehlen", title: "Associate Dean of Graduate Studies and Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/mmuehlen.avif" },
       { name: "Alkiviadis Vazacopoulos", title: "Teaching Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/avazacop.avif" },
-      { name: "Carlo Lipizzi", title: "Teaching Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/carlo-lipizzi-stevens-faculty.jpg" }
+      { name: "Carlo Lipizzi", title: "Teaching Associate Professor", image: "/assets/avatars/certificate-EAI-avatar/carlo-lipizzi-stevens-faculty.webp" }
     ]
   },
   faqs: [

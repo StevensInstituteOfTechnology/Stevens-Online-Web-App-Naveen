@@ -198,7 +198,7 @@ export default function Blog() {
       setOpenGraphTags({
         title: singlePost.title,
         description: description,
-        image: singlePost.featured_image_url ? buildCanonicalUrl(singlePost.featured_image_url) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+        image: singlePost.featured_image_url ? buildCanonicalUrl(singlePost.featured_image_url) : buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
         url: canonical,
         type: 'article'
       });
@@ -218,7 +218,7 @@ export default function Blog() {
         "publisher": {
           "@type": "Organization",
           "name": "Stevens Institute of Technology",
-          "logo": { "@type": "ImageObject", "url": buildCanonicalUrl('/assets/logos/stevens-crest.png') }
+          "logo": { "@type": "ImageObject", "url": buildCanonicalUrl('/assets/logos/stevens-crest.webp') }
         },
         "mainEntityOfPage": canonical,
         "url": canonical

@@ -82,7 +82,7 @@ const ExploreMEADS = () => {
     // Program Benefits
     programBenefitsTitle: "Program Overview",
     programBenefitsDescription: "The AI revolution is here. Organizations need engineers who can build, deploy, and scale intelligent systems—from training large language models to operationalizing machine learning pipelines. The M.Eng. in Applied Data Science prepares you to lead AI initiatives across industries.<br/><br/>Through an engineering-first curriculum, you'll master the full AI lifecycle: <strong>data engineering, ML model development, LLM fine-tuning, MLOps, and production deployment</strong>. Work with cutting-edge frameworks like PyTorch, TensorFlow, Hugging Face, and cloud AI platforms. Learn to build AI systems that are not just powerful, but responsible—with ethics, explainability, and governance integrated throughout. <ul class='list-disc pl-5 my-5'><li>Build production-ready AI and ML systems from scratch</li><li>Master LLMs, deep learning, and modern AI architectures</li><li>Learn MLOps: CI/CD for machine learning, model monitoring, and deployment</li><li>Hands-on projects with real datasets and AI tools used at Google, Meta, and leading tech companies</li><li>Flexible, asynchronous online format designed for working AI professionals</li></ul>",
-        programBenefitsImage: "/assets/images/1-explore-msai.jpg", // Placeholder
+        programBenefitsImage: "/assets/images/1-explore-msai.webp", // Placeholder
     programBenefitsHighlights: [
       {
         title: "Excellence in Online Education",

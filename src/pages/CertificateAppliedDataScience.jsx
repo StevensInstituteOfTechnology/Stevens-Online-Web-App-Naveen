@@ -283,7 +283,7 @@ const programData = {
     description: "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
     members: [
       { name: "Upendra Prasad", title: "Senior Lecturer", image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif" },
-      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/certificate-ADS-avatar/skim2.jpg" },
+      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/certificate-ADS-avatar/skim2.webp" },
       { name: "David Landaeta", title: "", image: "" }
     ]
   },

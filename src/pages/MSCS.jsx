@@ -585,11 +585,11 @@ The objective of this course is to give students a basic grounding in designing 
   faculty: {
     description: "Our faculty includes National Science Foundation (NSF) CAREER winners as well as researchers who consult for companies such as Microsoft, IBM, Google, Bell Labs and other top industry firms.",
     members: [
-      { name: "Shudong Hao", title: "Assoc. Chair for Graduate Studies", image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.png" },
-      { name: "Reza Peyrovian", title: "Senior Lecturer", image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.png" },
-      { name: "Patrick Hill", title: "Lecturer", image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.jpg" },
-      { name: "Dominic Duggan", title: "Associate Professor", image: "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.jpg" },
-      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/mscs-avatar/Samuel_Kim.png" },
+      { name: "Shudong Hao", title: "Assoc. Chair for Graduate Studies", image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp" },
+      { name: "Reza Peyrovian", title: "Senior Lecturer", image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp" },
+      { name: "Patrick Hill", title: "Lecturer", image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp" },
+      { name: "Dominic Duggan", title: "Associate Professor", image: "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.webp" },
+      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp" },
     ]
   },
   admissions: {

@@ -10,7 +10,9 @@
     "prerender": "node scripts/prerender.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "convert-to-webp": "node scripts/convert-to-webp.js",
+    "convert-to-webp:dry-run": "node scripts/convert-to-webp.js --dry-run"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
@@ -81,6 +83,7 @@
     "postcss": "^8.5.3",
     "puppeteer": "^24.22.3",
     "puppeteer-core": "^23.0.0",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17",
     "vite": "^6.1.0"
   }

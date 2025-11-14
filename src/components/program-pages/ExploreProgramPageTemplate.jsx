@@ -95,7 +95,7 @@ const ExploreProgramPageTemplate = ({
     setOpenGraphTags({
       title: seo.title,
       description: seo.description,
-      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
       url: buildCanonicalUrl(seo.url),
       type: 'website'
     });

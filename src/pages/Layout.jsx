@@ -423,7 +423,7 @@ export default function Layout({ children, currentPageName }) {
               >
                 <div className="relative">
                   <img
-                    src="/assets/logos/Stevens-web-logo-sized-400x400.png"
+                    src="/assets/logos/Stevens-web-logo-sized-400x400.webp"
                     alt="Stevens Institute of Technology Pentagon Badge"
                     className="pentagon-shape-extended bg-stevens-white"
                   />
@@ -708,7 +708,7 @@ export default function Layout({ children, currentPageName }) {
                 <div className="relative overflow-visible ">
                   {/* Main Logo - shows when scrolled, hidden at top (covered by badge) */}
                   <img
-                    src="/assets/logos/Stevens-Wordmark-RGB_WHT.png"
+                    src="/assets/logos/Stevens-Wordmark-RGB_WHT.webp"
                     alt="Stevens Institute of Technology Professional Education Logo" 
                     className={`h-12 stevens-md:h-16 w-[137px] transition-opacity duration-300 mobile-logo-height logo-responsive-width ${
                       isScrolled && !isHoveringRedNav

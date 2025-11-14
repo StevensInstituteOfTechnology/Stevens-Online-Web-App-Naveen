@@ -23,12 +23,12 @@ const ExploreMSCS = () => {
     heroTitle: "Build What's Next in Tech. All Experience Levels Welcome.",
     programName: "Online Master's in Computer Science",
     heroSubtitle: "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $16K in scholarships available.",
-    bgImage: "/assets/images/stevens-campus.png", // Placeholder
+    bgImage: "/assets/images/stevens-campus.webp", // Placeholder
     programCode: "mscs",
     seo: {
       title: "Online Master's in Computer Science | Stevens Institute of Technology",
       description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
-      ogImage: '/assets/images/stevens-campus.png',
+      ogImage: '/assets/images/stevens-campus.webp',
       url: '/explore/online-masters-computer-science/'
     },
     useApplicationModal: true,

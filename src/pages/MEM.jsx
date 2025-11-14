@@ -362,11 +362,11 @@ const programData = {
   faculty: {
     description: "The School of Systems and Enterprises (SSE) faculty is made up of experienced educators and active researchers who offer industry insights to Engineering Management students.",
     members: [
-      { name: "Carlo Lipizzi", title: "MEM Program Director & Professor", image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.jpg" },
-      { name: "Chong Ee", title: "Adjunct Professor", image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.jpg" },
-      { name: "Alparslan Emrah Bayrak", title: "Assistant Professor", image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.jpg" },
-      { name: "Teresa Zigh", title: "Teaching Associate Professor", image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.jpg" },
-      { name: "Yeganeh Hayeri", title: "Professor", image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.jpeg" },
+      { name: "Carlo Lipizzi", title: "MEM Program Director & Professor", image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.webp" },
+      { name: "Chong Ee", title: "Adjunct Professor", image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.webp" },
+      { name: "Alparslan Emrah Bayrak", title: "Assistant Professor", image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.webp" },
+      { name: "Teresa Zigh", title: "Teaching Associate Professor", image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp" },
+      { name: "Yeganeh Hayeri", title: "Professor", image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.webp" },
     ]
   },
   admissions: {

@@ -78,16 +78,16 @@ const textRankings = [
 
 const badgeRankings = [
 {
-  image: "/assets/rankings/ranking-badge-1.png",
+  image: "/assets/rankings/ranking-badge-1.webp",
     description:
       "No. 1 in New Jersey in Best Online Master's in Computer Information Technology Programs",
 },
 {
-  image: "/assets/rankings/ranking-badge-2.png", 
+  image: "/assets/rankings/ranking-badge-2.webp", 
     description: "No. 1 in New Jersey in Best Online MBA Programs",
 },
 {
-  image: "/assets/rankings/ranking-badge-3.png",
+  image: "/assets/rankings/ranking-badge-3.webp",
     description: "No. 36 Nationally in Best Online Engineering Programs",
   },
 ];
@@ -167,7 +167,7 @@ export default function Home() {
       title: 'Application Overview: Online MBA',
       length: '15 minutes',
       url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE',
-      image: '/assets/images/2-event.png'
+      image: '/assets/images/2-event.webp'
     },
     {
       title: 'Application Walkthrough: Computer Science',
@@ -210,7 +210,7 @@ export default function Home() {
       <section className="relative bg-gray-900 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
-          style={{ backgroundImage: "url('/assets/images/HEADER-0865.jpg')" }}
+          style={{ backgroundImage: "url('/assets/images/HEADER-0865.webp')" }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent"></div>
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
@@ -508,7 +508,7 @@ export default function Home() {
               
             </div>
             <img
-              src="/assets/images/stevens-campus.png"
+              src="/assets/images/stevens-campus.webp"
               alt="Stevens campus with NYC skyline"
               className="rounded-stevens-md shadow-xl"
             />
@@ -671,7 +671,7 @@ export default function Home() {
                     {/* Compact Image - 16:9 aspect ratio */}
                     <div className="aspect-[16/9] w-full overflow-hidden">
                       <img 
-                        src={blog.featured_image_url || '/assets/blog/placeholder-blog.jpg'} 
+                        src={blog.featured_image_url || '/assets/blog/placeholder-blog.webp'} 
                         alt={blog.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"

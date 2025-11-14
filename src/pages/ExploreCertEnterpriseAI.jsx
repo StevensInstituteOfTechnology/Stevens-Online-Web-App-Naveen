@@ -77,7 +77,7 @@ const ExploreCertEnterpriseAI = () => {
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
     programBenefitsDescription: "Employers are hiring for 'AI-fluent' business talent across every function. AI roles top 'Jobs on the Rise 2025,' and AI skills carry a salary premium. This certificate turns managers, analysts, and professionals into responsible AI practitioners who can operationalize AI safely and effectively.<br/><br/>The 9-credit model aligns perfectly with the IRS $5,250 tax-free employer tuition benefit, improving affordability and making it ideal for corporate-sponsored learning.",
-    programBenefitsImage: "/assets/images/explore-cert-EAI-2.jpg",
+    programBenefitsImage: "/assets/images/explore-cert-EAI-2.webp",
     programBenefitsHighlights: [
       {
         title: "Strategy to Deployment",
