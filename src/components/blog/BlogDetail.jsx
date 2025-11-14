@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, User, Clock, Facebook, Twitter, Linkedin } from 'l
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import { createPageUrl } from '@/utils';
+import { getContentImageProps, getThumbnailImageProps } from '@/utils/responsiveImage';
 
 // Structured Content Renderer Component
 const StructuredContentRenderer = ({ content }) => {
@@ -219,7 +220,7 @@ const BlogDetail = ({
       {featured_image_url && (
         <div className="mb-stevens-2xl">
           <img 
-            src={featured_image_url} 
+            {...getContentImageProps(featured_image_url, '1200px')}
             alt={title}
             className="w-full h-96 object-cover rounded-stevens-md shadow-stevens-md"
             loading="lazy"
@@ -248,7 +249,7 @@ const BlogDetail = ({
             {relatedPosts.map((relatedPost) => (
               <div key={relatedPost.id} className="border border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:shadow-stevens-md transition-shadow">
                 <img 
-                  src={relatedPost.featured_image_url} 
+                  {...getThumbnailImageProps(relatedPost.featured_image_url, '400px')}
                   alt={relatedPost.title}
                   className="w-full h-32 object-cover rounded-stevens-sm mb-stevens-md"
                   loading="lazy"

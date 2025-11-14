@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { getHeroImageProps, getContentImageProps } from "@/utils/responsiveImage";
+import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
 import {
   GraduationCap,
   Users,
@@ -211,7 +211,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white overflow-hidden">
         <img
-          {...getHeroImageProps('/assets/images/home/HEADER-0865.webp')}
+          {...getHeroImageProps('/assets/images/home/HEADER-0865.webp', { 
+            widths: [640, 1024, 1280, 1920] 
+          })}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
@@ -517,7 +519,7 @@ export default function Home() {
             <img
               {...getContentImageProps('/assets/images/home/stevens-campus.webp')}
               alt="Stevens campus with NYC skyline"
-              className="rounded-stevens-md shadow-xl"
+              className="w-full h-auto rounded-stevens-md shadow-xl"
               loading="lazy"
             />
           </AnimatedSection>
@@ -764,7 +766,12 @@ export default function Home() {
                   <div className="stevens-md:flex stevens-md:flex-row flex flex-col h-full">
                     {/* Image */}
                     <div className="stevens-md:w-2/5 overflow-hidden flex-shrink-0">
-                      <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" loading="lazy" />
+                      <img 
+                        {...getCardImageProps(e.image)} 
+                        alt={e.title} 
+                        className="w-full h-full object-cover min-h-full" 
+                        loading="lazy" 
+                      />
                     </div>
                     {/* Content */}
                     <CardContent className="stevens-md:w-3/5 p-stevens-lg flex flex-col justify-between flex-1">

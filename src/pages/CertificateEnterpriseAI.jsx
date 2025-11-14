@@ -14,13 +14,13 @@ const programData = {
   seo: {
     title: 'Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows. $5,250 aligns with employer tuition benefits. Stackable to MBA and M.Eng.',
-    ogImage: '/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.avif',
+    ogImage: '/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp',
     url: '/certificates/enterprise-ai/'
   },
   hero: {
     titleLines: ['Professional Graduate Certificate', 'in Enterprise AI'],
     subtitle: "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow-no CS degree required.",
-    bgImage: "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.avif",
+    bgImage: "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
     badges: [

@@ -1362,7 +1362,7 @@ export default function Layout({ children, currentPageName }) {
                 }}
               >
                 <img
-                  src="/assets/logos/Stevens-Wordmark-RGB_WHT.png"
+                  src="/assets/logos/Stevens-Wordmark-RGB_WHT.webp"
                   alt="Stevens Institute of Technology Logo"
                   className="h-16 w-auto"
                 />

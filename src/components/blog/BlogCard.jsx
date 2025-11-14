@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import { createPageUrl } from '@/utils';
+import { getCardImageProps } from '@/utils/responsiveImage';
 
 const BlogCard = ({ 
   post, 
@@ -42,7 +43,7 @@ const BlogCard = ({
             {/* Optimized image container - 3/5 of square size */}
             <div className="aspect-[5/4] w-full">
               <img 
-                src={featured_image_url || '/assets/blog/placeholder-blog.jpg'} 
+                {...getCardImageProps(featured_image_url || '/assets/blog/placeholder-blog.jpg')}
                 alt={safeTitle}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 loading="lazy"
