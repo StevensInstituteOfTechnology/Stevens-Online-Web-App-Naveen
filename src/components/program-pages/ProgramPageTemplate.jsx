@@ -10,7 +10,7 @@ import VideoPlayer from '../shared/VideoPlayer';
 import PageHero from '../shared/PageHero';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import TopCompaniesSection from '../shared/TopCompaniesSection';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 
@@ -240,6 +240,7 @@ const WhatYoullLearnCarousel = ({ modules }) => {
 
 export default function ProgramPageTemplate({ programData, useApplicationModal = false, useRequestInfoModal = true }) {
   const { code, seo, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
+  const location = useLocation();
   const sectionRefs = useRef({});
   const [activeSection, setActiveSection] = useState('overview');
 
@@ -403,6 +404,40 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
       });
     };
   }, [navItems, admissions]);
+
+  // Handle hash navigation - scroll to section when page loads with hash
+  useEffect(() => {
+    if (!location.hash) return;
+    
+    // Remove the # from hash
+    const hashId = location.hash.substring(1);
+    
+    // Wait for DOM to be ready and sections to be rendered
+    const scrollToHash = () => {
+      const element = sectionRefs.current[hashId];
+      if (element) {
+        // Use scrollIntoView with smooth behavior and offset for fixed header
+        const yOffset = -100; // Offset for fixed header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        return true; // Successfully scrolled
+      }
+      return false; // Element not found yet
+    };
+    
+    // Try immediately
+    if (scrollToHash()) return;
+    
+    // If element not found, try again after delays (sections may still be rendering)
+    const timeout1 = setTimeout(() => {
+      if (scrollToHash()) return;
+      
+      // Final attempt after longer delay
+      setTimeout(scrollToHash, 200);
+    }, 100);
+    
+    return () => clearTimeout(timeout1);
+  }, [location.hash, navItems]);
 
   if (!programData) return <div>Loading program data...</div>;
 

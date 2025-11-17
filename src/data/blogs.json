@@ -982,7 +982,7 @@
             },
             {
               "text": "engineering leadership positions",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             },
             {
               "text": "between 9 and 13% more",
@@ -1096,7 +1096,7 @@
               "links": [
                 {
                   "text": "Stevens Online Master’s in Engineering Management curriculum",
-                  "url": "/online-masters-engineering-management/#coursework"
+                  "url": "/online-masters-engineering-management/#curriculum"
                 }
               ],
               "bold": [
@@ -1162,7 +1162,7 @@
           "links": [
             {
               "text": "Stevens Online MEM admission requirements",
-              "url": "/online-masters-engineering-management/#program-admission-requirements"
+              "url": "/online-masters-engineering-management/#admissions"
             },
             {
               "text": "contact an enrollment advisor",
@@ -1246,7 +1246,7 @@
           "links": [
             {
               "text": "acquiring those skills",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "StevensOnline M.Eng. in Applied Data Science/#curriculum"
             }
           ],
           "bold": [
@@ -1280,13 +1280,10 @@
           "type": "paragraph",
           "text": "StevensOnline‘s MSDS graduate program attracts domestic and international students with academic backgrounds and professional specializations in data analytics, data visualization, business intelligence, business analytics, information technology, information systems, computer science, and statistical mathematics. While some enroll in the online program because they want to transition into data science, others pursue this degree to further advance in analytics careers or learn how to leverage the vast quantities of data generated in their professional spheres.",
           "links": [
-            {
-              "text": "StevensOnline",
-              "url": "/about/"
-            },
+            
             {
               "text": "attracts domestic and international students",
-              "url": "/online-masters-data-science-msds/#admissions"
+              "url": "/online-masters-engineering-applied-data-science/#admissions"
             }
           ],
           "bold": [
@@ -2418,7 +2415,7 @@
           "links": [
             {
               "text": "computer science classes",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": [
@@ -2516,7 +2513,7 @@
             },
             {
               "text": "career as a software engineer",
-              "url": "/online-masters-computer-science-mscs/#career-outlook"
+              "url": "/online-masters-computer-science-mscs/#career"
             }
           ],
           "bold": [
@@ -2773,7 +2770,7 @@
           "links": [
             {
               "text": "Stevens offers the classes necessary to enter the field of AI",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -2784,7 +2781,7 @@
           "links": [
             {
               "text": "Stevens was named one of the Top 20 U.S. Private Schools",
-              "url": "/online-masters-computer-science-mscs/#by-the-numbers"
+              "url": "/online-masters-computer-science-mscs/#rankings"
             },
             {
               "text": "MSCS",
@@ -2792,7 +2789,7 @@
             },
             {
               "text": "Amazon, Meta, IBM, Google and more",
-              "url": "/online-masters-computer-science-mscs/#career-outlook"
+              "url": "/online-masters-computer-science-mscs/#career"
             }
           ],
           "bold": []
@@ -2918,7 +2915,7 @@
           "links": [
             {
               "text": "computer science classes",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             },
             {
               "text": "computer science degrees",
@@ -3178,7 +3175,7 @@
             },
             {
               "text": "work at companies like Amazon, Meta, Google and IBM",
-              "url": "/online-masters-computer-science-mscs/#career-outlook"
+              "url": "/online-masters-computer-science-mscs/#career"
             }
           ],
           "bold": []
@@ -3196,7 +3193,7 @@
           "links": [
             {
               "text": "These courses establish a foundational understanding",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -3312,7 +3309,7 @@
           "links": [
             {
               "text": "online MSCS",
-              "url": "/about/"
+              "url": "/online-masters-computer-science-mscs/"
             }
           ],
           "bold": [
@@ -3325,7 +3322,7 @@
           "links": [
             {
               "text": "computer science curriculum",
-              "url": "/online-masters-computer-science-mscs/"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -3351,7 +3348,7 @@
             },
             {
               "text": "computer science courses",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": [
@@ -3832,7 +3829,7 @@
           "links": [
             {
               "text": "our full time MBA program has been fortunate to emerge stronger in many ways",
-              "url": "/online-mba/#by-the-numbers"
+              "url": "/online-mba/#rankings"
             }
           ],
           "bold": []
@@ -3924,11 +3921,11 @@
         },
         {
           "type": "paragraph",
-          "text": "As a science, technology, engineering or mathematics professional, you already possess many valuable skills required to succeed in the growing field of data science. By evaluating your existing strengths and developing an academic plan to fill in any gaps in knowledge, you can be on your way to a new, in-demand career. You can fill those gaps with a StevensOnline Master of Science in Data Science.",
+          "text": "As a science, technology, engineering or mathematics professional, you already possess many valuable skills required to succeed in the growing field of data science. By evaluating your existing strengths and developing an academic plan to fill in any gaps in knowledge, you can be on your way to a new, in-demand career. You can fill those gaps with a StevensOnline M.Eng. in Applied Data Science.",
           "links": [
             {
-              "text": "StevensOnline Master of Science in Data Science",
-              "url": "/online-masters-data-science-msds/"
+              "text": "StevensOnline M.Eng. in Applied Data Science",
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -4149,7 +4146,7 @@
           "links": [
             {
               "text": "faculty are industry experts",
-              "url": "/online-masters-data-science-msds/#faculty"
+              "url": "/online-masters-engineering-applied-data-science/#faculty"
             }
           ],
           "bold": []
@@ -4177,7 +4174,7 @@
           "links": [
             {
               "text": "many reasons",
-              "url": "/online-masters-data-science-msds/#by-the-numbers"
+              "url": "/online-masters-engineering-applied-data-science/#rankings"
             }
           ],
           "bold": []
@@ -4384,7 +4381,7 @@
           "links": [
             {
               "text": "Stevens online master’s in data science",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
           "bold": []
@@ -4417,7 +4414,7 @@
           "links": [
             {
               "text": "Stevens’ Online MSDS program",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -4433,7 +4430,7 @@
           "links": [
             {
               "text": "deep learning course",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -4487,7 +4484,7 @@
           "links": [
             {
               "text": "data science faculty",
-              "url": "/online-masters-data-science-msds/#faculty"
+              "url": "/online-masters-engineering-applied-data-science/#faculty"
             }
           ],
           "bold": []
@@ -4748,7 +4745,7 @@
           "links": [
             {
               "text": "Stevens Online M.S. in Data Science curriculum",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -4787,7 +4784,7 @@
           "links": [
             {
               "text": "Stevens online data science master’s program",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -4821,7 +4818,7 @@
           "links": [
             {
               "text": "virtual events",
-              "url": "/online-masters-data-science-msds/#upcoming-webinars"
+              "url": "/online-masters-engineering-applied-data-science/#upcoming-webinars"
             }
           ],
           "bold": []
@@ -5621,7 +5618,7 @@
           "links": [
             {
               "text": "career outlooks",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             },
             {
               "text": "online MBA programs",
@@ -6162,7 +6159,7 @@
           "links": [
             {
               "text": "technical proficiencies remain sharp while developing your managerial skills",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -6179,7 +6176,7 @@
           "links": [
             {
               "text": "number 13 top private school for best career placement",
-              "url": "/online-masters-engineering-management/#by-the-numbers"
+              "url": "/online-masters-engineering-management/#rankings"
             }
           ],
           "bold": []
@@ -6487,7 +6484,7 @@
           "links": [
             {
               "text": "Stevens Online MEM curriculum",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -6503,7 +6500,7 @@
           "links": [
             {
               "text": "earn attractive incomes",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             }
           ],
           "bold": []
@@ -7425,7 +7422,7 @@
           "links": [
             {
               "text": "important topics are also covered as well",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -7703,11 +7700,11 @@
           "links": [
             {
               "text": "BMW, Goldman Sachs, IBM and more",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             },
             {
               "text": "accepted job offers within three months of graduating",
-              "url": "/online-masters-engineering-management/#by-the-numbers"
+              "url": "/online-masters-engineering-management/#rankings"
             }
           ],
           "bold": []
@@ -7892,7 +7889,7 @@
           "links": [
             {
               "text": "Online MSCS program",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -8488,7 +8485,7 @@
             },
             {
               "text": "MSCS curriculum",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             },
             {
               "text": "expert faculty",
@@ -8503,7 +8500,7 @@
           "links": [
             {
               "text": "Coursework covers",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -8635,7 +8632,7 @@
           "links": [
             {
               "text": "foundational coursework",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -8646,7 +8643,7 @@
           "links": [
             {
               "text": "eight industry-relevant concentrations",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -8936,7 +8933,7 @@
               "links": [
                 {
                   "text": "traditional and advanced",
-                  "url": "/online-masters-computer-science-mscs/#coursework"
+                  "url": "/online-masters-computer-science-mscs/#curriculum"
                 }
               ],
               "bold": [
@@ -9025,7 +9022,7 @@
           "links": [
             {
               "text": "choose from two academic tracks",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -9042,7 +9039,7 @@
           "links": [
             {
               "text": "97% of alumni securing job offers",
-              "url": "/online-masters-computer-science-mscs/#by-the-numbers"
+              "url": "/online-masters-computer-science-mscs/#rankings"
             }
           ],
           "bold": []
@@ -9058,7 +9055,7 @@
           "links": [
             {
               "text": "diverse career paths",
-              "url": "/online-masters-computer-science-mscs/#career-outlook"
+              "url": "/online-masters-computer-science-mscs/#career"
             },
             {
               "text": "Computer scientists earn a median income of $136,620. Factors including",
@@ -9204,7 +9201,7 @@
           "links": [
             {
               "text": "seven in-demand concentrations",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -9280,7 +9277,7 @@
           "links": [
             {
               "text": "application materials for the Stevens Online MBA",
-              "url": "/online-mba/#program-admission-requirements"
+              "url": "/online-mba/#admissions"
             }
           ],
           "bold": []
@@ -9761,7 +9758,7 @@
             },
             {
               "text": "technology-focused coursework",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -9873,7 +9870,7 @@
             },
             {
               "text": "impact on students’ careers",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             },
             {
               "text": "type of student",
@@ -10055,7 +10052,7 @@
           "links": [
             {
               "text": "advance to a leadership role",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             }
           ],
           "bold": [
@@ -10242,7 +10239,7 @@
           "links": [
             {
               "text": "flexible degree that prepares you to enter many different fields",
-              "url": "/online-mba/#career-outlook"
+              "url": "/online-mba/#career"
             }
           ],
           "bold": []
@@ -10407,7 +10404,7 @@
           "links": [
             {
               "text": "Stevens Online MBA program curriculum",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -11149,7 +11146,7 @@
             },
             {
               "text": "Master of Science in Data Science",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
@@ -11788,7 +11785,7 @@
           "links": [
             {
               "text": "A computer science degree online",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -12184,7 +12181,7 @@
             },
             {
               "text": "where the M.Eng.EM can take them",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             }
           ],
           "bold": [
@@ -12214,7 +12211,7 @@
           "links": [
             {
               "text": "Core courses",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": [
@@ -12484,7 +12481,7 @@
           "links": [
             {
               "text": "The Online MEM curriculum",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -12618,7 +12615,7 @@
           "links": [
             {
               "text": "qualify for various engineering leadership roles",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             }
           ],
           "bold": []
@@ -13602,7 +13599,7 @@
             },
             {
               "text": "coursework that targets three areas",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -13629,7 +13626,7 @@
             },
             {
               "text": "reach out to our enrollment team",
-              "url": "/online-masters-engineering-management/#program-admission-requirements"
+              "url": "/online-masters-engineering-management/#admissions"
             }
           ],
           "bold": []
@@ -13810,7 +13807,7 @@
           "links": [
             {
               "text": "mathematical principles that drive unlocking insights",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -13839,11 +13836,11 @@
           "links": [
             {
               "text": "The strength of the program has been recognized as well",
-              "url": "/online-masters-data-science-msds/#by-the-numbers"
+              "url": "/online-masters-engineering-applied-data-science/#rankings"
             },
             {
               "text": "MSDS graduates",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -14166,7 +14163,7 @@
             },
             {
               "text": "curriculum",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -14361,7 +14358,7 @@
           "links": [
             {
               "text": "enabling graduates to find jobs in fields like fintech, academia and even government positions",
-              "url": "/online-masters-data-science-msds/#by-the-numbers"
+              "url": "/online-masters-engineering-applied-data-science/#rankings"
             }
           ],
           "bold": []
@@ -14372,7 +14369,7 @@
           "links": [
             {
               "text": "the applications of a Data Science Master’s Degree are much more robust than people initially think",
-              "url": "/online-masters-data-science-msds/#career-outlook"
+              "url": "/online-masters-engineering-applied-data-science/#career"
             }
           ],
           "bold": []
@@ -14462,7 +14459,7 @@
           "links": [
             {
               "text": "Data Science Master’s Degree",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -14502,7 +14499,7 @@
           "links": [
             {
               "text": "MS in data science",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
@@ -14587,7 +14584,7 @@
           "links": [
             {
               "text": "competitive educational",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
@@ -14600,7 +14597,7 @@
           "links": [
             {
               "text": "Stevens Online Master of Science in Data Science",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
@@ -15576,7 +15573,7 @@
           "links": [
             {
               "text": "targeted coursework",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -15658,7 +15655,7 @@
           "links": [
             {
               "text": "three industry-aligned focus areas",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -15755,7 +15752,7 @@
           "links": [
             {
               "text": "core MSCS curriculum",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -15969,7 +15966,7 @@
           "links": [
             {
               "text": "MSCS curriculum",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -15996,7 +15993,7 @@
           "links": [
             {
               "text": "MEM curriculum",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -16181,7 +16178,7 @@
           "links": [
             {
               "text": "assembling a solid application",
-              "url": "/online-masters-computer-science-mscs/#program-admission-requirements"
+              "url": "/online-masters-computer-science-mscs/#admissions"
             }
           ],
           "bold": []
@@ -16201,7 +16198,7 @@
             },
             {
               "text": "to apply",
-              "url": "/online-masters-computer-science-mscs/#program-admission-requirements"
+              "url": "/online-masters-computer-science-mscs/#admissions"
             }
           ],
           "bold": []
@@ -16212,7 +16209,7 @@
           "links": [
             {
               "text": "offers traditional and advanced course sequences",
-              "url": "/online-masters-computer-science-mscs/#coursework"
+              "url": "/online-masters-computer-science-mscs/#curriculum"
             }
           ],
           "bold": []
@@ -16229,7 +16226,7 @@
           "links": [
             {
               "text": "Applicants to the Stevens online MSCS",
-              "url": "/online-masters-computer-science-mscs/#program-admission-requirements"
+              "url": "/online-masters-computer-science-mscs/#admissions"
             }
           ],
           "bold": []
@@ -16377,7 +16374,7 @@
           "links": [
             {
               "text": "97 percent of its computer science graduates accept jobs",
-              "url": "/online-masters-computer-science-mscs/#by-the-numbers"
+              "url": "/online-masters-computer-science-mscs/#rankings"
             }
           ],
           "bold": []
@@ -16498,7 +16495,7 @@
           "links": [
             {
               "text": "Stevens data science master’s program",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
           "bold": []
@@ -16536,7 +16533,7 @@
           "links": [
             {
               "text": "Stevens online MSDS curriculum",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -16563,7 +16560,7 @@
           "links": [
             {
               "text": "Stevens’ online MSDS includes a course in deep learning",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -16590,11 +16587,11 @@
           "links": [
             {
               "text": "Stevens data science master’s student",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
               "text": "an NLP course",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -16621,11 +16618,11 @@
           "links": [
             {
               "text": "online MSDS students",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
               "text": "courses focusing on probability, time series analysis and statistical methods",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -16652,7 +16649,7 @@
           "links": [
             {
               "text": "Stevens online MSDS",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
           "bold": []
@@ -16668,7 +16665,7 @@
           "links": [
             {
               "text": "Stevens data science master’s program",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
           "bold": []
@@ -16755,11 +16752,11 @@
           "links": [
             {
               "text": "Stevens online MSDS",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
               "text": "faculty members",
-              "url": "/online-masters-data-science-msds/#faculty"
+              "url": "/online-masters-engineering-applied-data-science/#faculty"
             }
           ],
           "bold": []
@@ -16971,7 +16968,7 @@
             },
             {
               "text": "industry-aligned curriculum",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             },
             {
               "text": "our renowned faculty",
@@ -17066,7 +17063,7 @@
           "links": [
             {
               "text": "application processes",
-              "url": "/online-masters-data-science-msds/#program-admission-requirements"
+              "url": "/online-masters-engineering-applied-data-science/#admissions"
             }
           ],
           "bold": []
@@ -17104,11 +17101,11 @@
           "links": [
             {
               "text": "application and enrollment process",
-              "url": "/online-masters-data-science-msds/#program-admission-requirements"
+              "url": "/online-masters-engineering-applied-data-science/#admissions"
             },
             {
               "text": "what the coursework entails",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             },
             {
               "text": "online student experience",
@@ -17128,7 +17125,7 @@
           "links": [
             {
               "text": "apply to the Stevens online MSDS",
-              "url": "/online-masters-data-science-msds/#program-admission-requirements"
+              "url": "/online-masters-engineering-applied-data-science/#admissions"
             }
           ],
           "bold": []
@@ -17177,7 +17174,7 @@
           "links": [
             {
               "text": "application deadline",
-              "url": "/online-masters-data-science-msds/#key-dates-deadlines"
+              "url": "/online-masters-engineering-applied-data-science/#key-dates-deadlines"
             }
           ],
           "bold": []
@@ -17213,11 +17210,11 @@
           "links": [
             {
               "text": "Stevens’ online MSDS",
-              "url": "/online-masters-data-science-msds/#overview"
+              "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
               "text": "100 percent of graduates are employed",
-              "url": "/online-masters-data-science-msds/#by-the-numbers"
+              "url": "/online-masters-engineering-applied-data-science/#rankings"
             }
           ],
           "bold": []
@@ -17724,7 +17721,7 @@
           "links": [
             {
               "text": "OMBA curriculum",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": [
@@ -17918,7 +17915,7 @@
           "links": [
             {
               "text": "data science careers",
-              "url": "/online-masters-data-science-msds/#career-outlook"
+              "url": "/online-masters-engineering-applied-data-science/#career"
             },
             {
               "text": "Charles V. Schaefer Jr. School of Engineering & Science",
@@ -17926,7 +17923,7 @@
             },
             {
               "text": "Master of Science in Data Science",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
@@ -18217,7 +18214,7 @@
             },
             {
               "text": "coursework",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": [
@@ -18232,7 +18229,7 @@
           "links": [
             {
               "text": "led by experts",
-              "url": "/online-masters-data-science-msds/#faculty"
+              "url": "/online-masters-engineering-applied-data-science/#faculty"
             }
           ],
           "bold": [
@@ -18478,7 +18475,7 @@
           "links": [
             {
               "text": "Stevens’ MSDS curriculum is always evolving",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": []
@@ -18495,7 +18492,7 @@
           "links": [
             {
               "text": "Amazon, Bank of America and Disney Streaming Services",
-              "url": "/online-masters-data-science-msds/#career-outlook"
+              "url": "/online-masters-engineering-applied-data-science/#career"
             }
           ],
           "bold": []
@@ -18506,7 +18503,7 @@
           "links": [
             {
               "text": "best suit our graduates",
-              "url": "/online-masters-data-science-msds/#career-outlook"
+              "url": "/online-masters-engineering-applied-data-science/#career"
             }
           ],
           "bold": []
@@ -18671,7 +18668,7 @@
           "links": [
             {
               "text": "concentrations offered as part of the Online MBA",
-              "url": "/online-mba/#coursework"
+              "url": "/online-mba/#curriculum"
             }
           ],
           "bold": []
@@ -18878,7 +18875,7 @@
             },
             {
               "text": "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating",
-              "url": "/online-mba/#by-the-numbers"
+              "url": "/online-mba/#rankings"
             }
           ],
           "bold": []
@@ -18957,7 +18954,7 @@
           "links": [
             {
               "text": "Master of Science in Data Science",
-              "url": "/online-masters-data-science-msds/"
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
@@ -19037,7 +19034,7 @@
           "links": [
             {
               "text": "coursework",
-              "url": "/online-masters-data-science-msds/#coursework"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             },
             {
               "text": "Innovation and entrepreneurship",
@@ -19894,10 +19891,7 @@
           "type": "paragraph",
           "text": "Stevens has a very long history in online education, offering a unique advantage in delivering an exceptional engineering curriculum. Our faculty knows how to deliver material so that students can easily follow and understand it. Especially during the pandemic, many schools realized that online teaching is hard. It’s not just teaching the same thing on Zoom. You have to design the courses for online graduate programs from scratch. We have been doing it for a long time, which is part of what makes Stevens unique. We didn’t just start bringing graduate programs online during the pandemic.",
           "links": [
-            {
-              "text": "graduate programs online",
-              "url": "/about/"
-            }
+            
           ],
           "bold": []
         },
@@ -19940,7 +19934,7 @@
             },
             {
               "text": "engineering management curriculum",
-              "url": "/online-masters-engineering-management/#coursework"
+              "url": "/online-masters-engineering-management/#curriculum"
             }
           ],
           "bold": []
@@ -19989,7 +19983,7 @@
             },
             {
               "text": "graduates work in different sectors",
-              "url": "/online-masters-engineering-management/#career-outlook"
+              "url": "/online-masters-engineering-management/#career"
             }
           ],
           "bold": []
@@ -20326,7 +20320,7 @@
           "links": [
             {
               "text": "track record",
-              "url": "/online-masters-computer-science-mscs/#career-outlook"
+              "url": "/online-masters-computer-science-mscs/#career"
             },
             {
               "text": "can pay around $200,000",
@@ -20342,7 +20336,7 @@
             },
             {
               "text": "97% of Online MSCS graduates",
-              "url": "/online-masters-computer-science-mscs/#by-the-numbers"
+              "url": "/online-masters-computer-science-mscs/#rankings"
             }
           ],
           "bold": []
@@ -20353,7 +20347,7 @@
           "links": [
             {
               "text": "reach out to our admissions team",
-              "url": "/online-masters-computer-science-mscs/#program-admission-requirements"
+              "url": "/online-masters-computer-science-mscs/#admissions"
             }
           ],
           "bold": []
@@ -20805,7 +20799,7 @@
               "links": [
                 {
                   "text": "curriculum",
-                  "url": "/online-mba/#coursework"
+                  "url": "/online-mba/#curriculum"
                 }
               ],
               "bold": [
@@ -20839,7 +20833,7 @@
               "links": [
                 {
                   "text": "career outcomes",
-                  "url": "/online-mba/#career-outlook"
+                  "url": "/online-mba/#career"
                 }
               ],
               "bold": [
@@ -20942,7 +20936,7 @@
             },
             {
               "text": "ranked No.13 for best career placement",
-              "url": "/online-mba/#by-the-numbers"
+              "url": "/online-mba/#rankings"
             }
           ],
           "bold": []
@@ -21120,7 +21114,7 @@
           "links": [
             {
               "text": "New Jersey’s number-one ranked online MBA program",
-              "url": "/online-mba/#by-the-numbers"
+              "url": "/online-mba/#rankings"
             }
           ],
           "bold": []

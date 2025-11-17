@@ -1192,11 +1192,11 @@ export default function Layout({ children, currentPageName }) {
                                     )}
                                     <Link
                                       to={createPageUrl(item.page)}
-                                      className="block px-stevens-lg py-stevens-sm text-stevens-gray-700 hover:text-stevens-primary hover:bg-stevens-white transition-colors duration-stevens-normal"
-                                      onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                      {item.name}
-                                    </Link>
+                                    className="block px-stevens-lg py-stevens-sm text-stevens-gray-700 hover:text-stevens-primary hover:bg-stevens-white transition-colors duration-stevens-normal"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                        {item.name}
+                                      </Link>
                                   </React.Fragment>
                                 ))}
                               </div>

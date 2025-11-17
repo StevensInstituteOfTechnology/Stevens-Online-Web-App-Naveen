@@ -22,6 +22,15 @@
 /Events         /events/                                 301!
 /Admissions     /admissions/                             301!
 
+# Redirect old WordPress/CMS URLs to appropriate pages
+/faculty/*      /                                         301!
+/event/*        /events/                                  301!
+/info/*         /                                         301!
+/course/*       /                                         301!
+/blog/category/* /blog/                                   301!
+/blog/course/*  /blog/                                    301!
+/faq/*          /                                         301!
+
 # SPA fallback
 /*    /index.html   200
 
