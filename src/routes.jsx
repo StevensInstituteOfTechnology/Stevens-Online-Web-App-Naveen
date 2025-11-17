@@ -33,6 +33,7 @@ import Certificates from "@/pages/Certificates";
 import OnlineExperience from "@/pages/OnlineExperience";
 import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import Admissions from "@/pages/Admissions";
+import EmployerSponsorship from "@/pages/EmployerSponsorship";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
@@ -301,6 +302,16 @@ export const routes = [
   {
     path: '/admissions',
     element: <Navigate to="/admissions/" replace />
+  },
+
+  // Employer Sponsorship
+  {
+    path: '/employer-sponsorship/',
+    element: <EmployerSponsorship />
+  },
+  {
+    path: '/employer-sponsorship',
+    element: <Navigate to="/employer-sponsorship/" replace />
   },
 
   // Explore program pages

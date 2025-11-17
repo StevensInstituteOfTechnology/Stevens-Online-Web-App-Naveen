@@ -7,6 +7,7 @@ import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import { createPageUrl } from '@/utils';
 import { getContentImageProps, getThumbnailImageProps } from '@/utils/responsiveImage';
+import { BOOKING_URLS } from '@/config/constants';
 
 // Structured Content Renderer Component
 const StructuredContentRenderer = ({ content }) => {
@@ -88,10 +89,18 @@ const renderTextWithFormatting = (text, bold = [], links = []) => {
   // Handle links - replace the plain text with linked text
   if (links && links.length > 0) {
     links.forEach(link => {
+      // Check for special markers and replace with actual URLs
+      let actualUrl = link.url;
+      
+      // Replace SCHEDULE_CALL marker with actual booking URL
+      if (link.url === 'SCHEDULE_CALL' || link.url === '__SCHEDULE_CALL__') {
+        actualUrl = BOOKING_URLS.SCHEDULE_CALL;
+      }
+      
       // Escape special regex characters in link text
       const escapedLinkText = link.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp(escapedLinkText, 'g');
-      processedText = processedText.replace(regex, `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`);
+      processedText = processedText.replace(regex, `<a href="${actualUrl}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`);
     });
   }
   

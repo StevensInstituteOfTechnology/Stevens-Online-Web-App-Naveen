@@ -37,6 +37,7 @@ const PAGES = {
   OnlineExperience: "OnlineExperience",
   TuitionOutcomes: "TuitionOutcomes",
   Admissions: "Admissions",
+  EmployerSponsorship: "EmployerSponsorship",
   NotFound: "NotFound",
 };
 

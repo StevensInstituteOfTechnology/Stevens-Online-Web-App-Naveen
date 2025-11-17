@@ -460,7 +460,7 @@
           "links": [
             {
               "text": "Contact an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "start your online application today",
@@ -1166,7 +1166,7 @@
             },
             {
               "text": "contact an enrollment advisor",
-              "url": "mailto:onlineadmissions@stevens.edu"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -8084,7 +8084,7 @@
             },
             {
               "text": "connect with an enrollment advisor",
-              "url": "mailto:onlineadmissions@stevens.edu"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -9096,7 +9096,7 @@
           "links": [
             {
               "text": "Schedule a call with an enrollment advisor",
-              "url": "mailto:onlineadmissions@stevens.edu"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "start your application",
@@ -9448,7 +9448,7 @@
             },
             {
               "text": "schedule a one-on-one application walkthrough",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -10547,7 +10547,7 @@
           "links": [
             {
               "text": "connect with an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "complete your program application",
@@ -12626,7 +12626,7 @@
           "links": [
             {
               "text": "Schedule a one-on-one call with an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "start your application",
@@ -15693,7 +15693,7 @@
           "links": [
             {
               "text": "contact an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -15763,7 +15763,7 @@
           "links": [
             {
               "text": "Stevens enrollment advisors",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -15778,7 +15778,7 @@
             },
             {
               "text": "contact an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
@@ -16075,7 +16075,7 @@
           "links": [
             {
               "text": "Connect with an enrollment advisor",
-              "url": "https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "submit your ASAP Application",
@@ -16385,7 +16385,7 @@
           "links": [
             {
               "text": "Contact an enrollment advisor",
-              "url": "mailto:onlineadmissions@stevens.edu"
+              "url": "SCHEDULE_CALL"
             },
             {
               "text": "start your application",
@@ -16983,7 +16983,7 @@
           "links": [
             {
               "text": "Contact an enrollment advisor",
-              "url": "mailto:onlineadmissions@stevens.edu"
+              "url": "SCHEDULE_CALL"
             }
           ],
           "bold": []
