@@ -338,7 +338,7 @@ export default function AcceleratedApplicationPage() {
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
                         width: 100% !important;
                         max-width: 100% !important;
-                        padding: 1rem !important;
+                        padding: 1.5rem !important;
                       }
 
                       /* Protect navigation elements from external script interference */
@@ -536,7 +536,7 @@ export default function AcceleratedApplicationPage() {
                         }
                       }
                     `}</style>
-                    <div className="bg-stevens-gray-50 text-stevens-gray-900 p-stevens-md">
+                    <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
                       <div
                         id="form_89080626-7bc4-4c48-9437-fd47479d7371"
                         className="min-h-[600px] w-full">
