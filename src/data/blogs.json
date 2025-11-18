@@ -1260,15 +1260,10 @@
             {
               "text": "90 percent of data scientists have advanced degrees",
               "url": "https://www.burtchworks.com/wp-content/uploads/2017/05/DS-2017-Education.pdf"
-            },
-            {
-              "text": "shortage of Big Data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
             }
           ],
           "bold": [
-            "90 percent of data scientists have advanced degrees",
-            "shortage of Big Data talent"
+            "90 percent of data scientists have advanced degrees"
           ]
         },
         {
@@ -4900,29 +4895,19 @@
               "url": "https://www.burtchworks.com/wp-content/uploads/2017/05/DS-2017-Education.pdf"
             },
             {
-              "text": "shortage of Big Data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
-            },
-            {
               "text": "tuition",
               "url": "/tuition-and-financial-aid/"
             }
           ],
           "bold": [
             "90 percent of data scientists have advanced degrees",
-            "shortage of Big Data talent",
             "tuition"
           ]
         },
         {
           "type": "paragraph",
           "text": "Before you reject that offer out of hand, however, consider that nearly half of all data science job postings across the U.S. require that applicants have a Master of Science in Data Science (MSDS) or a related degree. Based on this statistic alone, it is not hyperbole to claim that the MSDS is now the entry-level degree in data science. It is also increasingly an academic credential even seasoned data scientists must have to remain competitive in the field.",
-          "links": [
-            {
-              "text": "applicants have a Master of Science in Data Science",
-              "url": "https://www.burning-glass.com/research-project/quant-crunch-data-science-job-market/"
-            }
-          ],
+          "links": [],
           "bold": [
             "applicants have a Master of Science in Data Science"
           ]
@@ -4985,10 +4970,6 @@
             {
               "text": "Data science",
               "url": "https://www.stevens.edu/research/research-pillars"
-            },
-            {
-              "text": "Quant Crunch report",
-              "url": "https://www.burning-glass.com/wp-content/uploads/The_Quant_Crunch.pdf"
             }
           ],
           "bold": [
@@ -15271,12 +15252,7 @@
         {
           "type": "paragraph",
           "text": "The rapidly evolving digital landscape promises increased productivity and unprecedented advances, but it also creates alarming opportunities for bad actors. The surge in cyber threats has led to substantial losses for businesses and institutions, fueling demand for secure software design and professionals well-versed in cybersecurity.",
-          "links": [
-            {
-              "text": "The surge in cyber threats",
-              "url": "https://www.usaid.gov/digital-development/cybersecurity/economic-growth-briefer"
-            }
-          ],
+          "links": [],
           "bold": []
         },
         {
@@ -18005,10 +17981,6 @@
             {
               "text": "data janitor work",
               "url": "https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html"
-            },
-            {
-              "text": "applicants have an M.Eng. in Applied Data Science",
-              "url": "https://www.burning-glass.com/research-project/quant-crunch-data-science-job-market/"
             }
           ],
           "bold": [
@@ -18021,17 +17993,13 @@
           "text": "While it's true that there are more highly trained data scientists today than four years ago, there is still a global shortage of data talent when it comes to professionals with the right blend of advanced training and credentials. Therein lies the value of earning a master's-level data science degree. Pursuing an M.Eng. in Applied Data Science is a straightforward way to gain leading-edge skills that separate applicants in data science hiring pools.",
           "links": [
             {
-              "text": "there is still a global shortage of data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
-            },
-            {
-              "text": "master’s-level data science degree",
+              "text": "master's-level data science degree",
               "url": "/blog/masters-in-data-science-programs-faculty-student-alumni-networking/"
             }
           ],
           "bold": [
             "there is still a global shortage of data talent",
-            "master’s-level data science degree"
+            "master's-level data science degree"
           ]
         },
         {
@@ -18116,12 +18084,7 @@
         {
           "type": "paragraph",
           "text": "Keep in mind that the field is growing more segmented, and the way people think about data science may be far too limiting. The Quant Crunch report compiled by IBM and the Business Higher Education Forum asserts that employers and higher education institutions think beyond the limitations of what we currently call a data scientist or data analyst “to develop talent for a variety of roles, such as data engineer, data governance and lifecycle and data privacy and security specialist and data product developer.” That speaks to a future with abundant opportunities for data scientists with the right skills.",
-          "links": [
-            {
-              "text": "The Quant Crunch report",
-              "url": "https://www.burning-glass.com/wp-content/uploads/The_Quant_Crunch.pdf"
-            }
-          ],
+          "links": [],
           "bold": [
             "The Quant Crunch report"
           ]
@@ -18175,13 +18138,8 @@
         },
         {
           "type": "paragraph",
-          "text": "Headlines declaring that data science is dead or data science will die soon - or that data scientists will become obsolete - ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
-          "links": [
-            {
-              "text": "data science will die soon",
-              "url": "https://towardsdatascience.com/is-data-science-dead-in-10-years-3cde3963552"
-            }
-          ],
+          "text": "Headlines declaring that data science is dead or data science will die soon - or that data scientists will become obsolete - ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
+          "links": [],
           "bold": [
             "data science is dead",
             "data science will die soon"
@@ -21369,13 +21327,8 @@
         },
         {
           "type": "paragraph",
-          "text": "According to a report by QuantCrunch, 39% of data scientists and advanced analysts have a master’s or PhD. This suggests master’s degrees are not required in every data science job but help candidates stand out for some of the most competitive or well-paid positions. Financial quantitative analysts, for example, earn an average of about $103,600 a year, according to that same report, and 47% of job postings for this position require a master’s degree or higher.",
-          "links": [
-            {
-              "text": "39% of data scientists and advanced analysts have a master’s or PhD",
-              "url": "https://www.economicmodeling.com/wp-content/uploads/2022/05/The_Quant_Crunch.pdf"
-            }
-          ],
+          "text": "According to a report by QuantCrunch, 39% of data scientists and advanced analysts have a master's or PhD. This suggests master's degrees are not required in every data science job but help candidates stand out for some of the most competitive or well-paid positions. Financial quantitative analysts, for example, earn an average of about $103,600 a year, according to that same report, and 47% of job postings for this position require a master's degree or higher.",
+          "links": [],
           "bold": []
         },
         {
@@ -21390,10 +21343,6 @@
             {
               "text": "best MSDS programs",
               "url": "https://www.noodle.com/articles/nine-things-top-masters-in-data-science-programs-have-in-common"
-            },
-            {
-              "text": "attract recruiter interest",
-              "url": "https://towardsdatascience.com/was-it-worth-studying-a-data-science-masters-c469e5b3e020"
             },
             {
               "text": "faculty",

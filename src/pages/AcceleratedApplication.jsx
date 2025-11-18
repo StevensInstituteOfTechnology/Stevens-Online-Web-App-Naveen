@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 export default function AcceleratedApplicationPage() {
   // Get program code from URL or sessionStorage
@@ -25,6 +26,19 @@ export default function AcceleratedApplicationPage() {
       program_code: programCode
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Accelerated Master\'s Application Requirements | Stevens Online');
+    setMetaDescription('Apply to the Stevens Accelerated Master\'s program and start earning graduate credits sooner toward your future career goals.');
+    setOpenGraphTags({
+      title: 'Accelerated Master\'s Application Requirements | Stevens Online',
+      description: 'Apply to the Stevens Accelerated Master\'s program and start earning graduate credits sooner toward your future career goals.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/accelerated-application/'),
+      type: 'website'
+    });
+  }, []);
 
   useEffect(() => {
     // Only run on client side

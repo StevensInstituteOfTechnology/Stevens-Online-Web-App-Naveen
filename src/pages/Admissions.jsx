@@ -9,6 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS, KEY_DATES } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import ProgramFilterGrid from '../components/admissions/ProgramFilterGrid';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -36,6 +37,19 @@ export default function Admissions() {
       }, 100);
     }
   }, [location]);
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Graduate Admissions & Application Requirements | Stevens Online');
+    setMetaDescription('Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master\'s programs.');
+    setOpenGraphTags({
+      title: 'Graduate Admissions & Application Requirements | Stevens Online',
+      description: 'Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master\'s programs.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/admissions/'),
+      type: 'website'
+    });
+  }, []);
 
   const keyDates = {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],

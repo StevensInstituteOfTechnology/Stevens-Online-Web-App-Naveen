@@ -132,12 +132,20 @@ export const routes = [
 
   // ASAP page
   {
-    path: '/ASAP/',
+    path: '/asap/',
     element: <ASAP />
   },
   {
+    path: '/ASAP/',
+    element: <Navigate to="/asap/" replace />
+  },
+  {
     path: '/asap',
-    element: <Navigate to="/ASAP/" replace />
+    element: <Navigate to="/asap/" replace />
+  },
+  {
+    path: '/ASAP',
+    element: <Navigate to="/asap/" replace />
   },
 
   // Accelerated Application page
@@ -260,8 +268,16 @@ export const routes = [
 
   // Professional Education
   {
-    path: '/ProfessionalEducation',
+    path: '/professionaleducation/',
     element: <ProfessionalEducation />
+  },
+  {
+    path: '/ProfessionalEducation',
+    element: <Navigate to="/professionaleducation/" replace />
+  },
+  {
+    path: '/professionaleducation',
+    element: <Navigate to="/professionaleducation/" replace />
   },
 
   // Certificates

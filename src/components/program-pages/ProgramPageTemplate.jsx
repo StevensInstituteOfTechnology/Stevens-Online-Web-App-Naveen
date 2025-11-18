@@ -32,7 +32,6 @@ const Section = ({ id, title, children, container = true, el = 'section', refPro
 const RankingCard = ({ ranking, description, source, note }) => (
   <div className="group bg-stevens-white p-stevens-lg rounded-stevens-sm border border-stevens-gray-300 text-center h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
     {/* Stevens Chevron Arrow - pointing down from top, full width, subtle background */}
-    {/* SCHEME A: Primary color with low opacity for brand consistency */}
     {/* Hover Effect: Opacity increases and slight scale animation */}
     <div className="absolute left-0 right-0 top-0 h-32 opacity-[0.12] group-hover:opacity-[0.15] pointer-events-none transition-all duration-300 group-hover:scale-105 origin-top">
       <svg viewBox="0 0 100 84" className="w-full h-full" preserveAspectRatio="none">

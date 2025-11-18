@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,19 @@ export default function Events() {
       has_event_cards: true
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Upcoming Virtual Events & Webinars | Stevens Online');
+    setMetaDescription('Join upcoming virtual events and webinars to explore Stevens Online graduate programs and connect with faculty.');
+    setOpenGraphTags({
+      title: 'Upcoming Virtual Events & Webinars | Stevens Online',
+      description: 'Join upcoming virtual events and webinars to explore Stevens Online graduate programs and connect with faculty.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/events/'),
+      type: 'website'
+    });
+  }, []);
 
   const spotlight = {
     title: 'The StevensOnline Experience: Current Student Perspectives',

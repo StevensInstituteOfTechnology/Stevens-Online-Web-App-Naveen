@@ -5,6 +5,7 @@ import { Check } from 'lucide-react';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 export default function ASAPPage() {
   // Get program code from URL or sessionStorage
@@ -24,6 +25,19 @@ export default function ASAPPage() {
       program_code: programCode
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Accelerated Stevens Admission Process (ASAP)| Stevens Online');
+    setMetaDescription('The Accelerated Stevens Admission Process (ASAP) allows you to start graduate courses early and fast-track your degree.');
+    setOpenGraphTags({
+      title: 'Accelerated Stevens Admission Process (ASAP)| Stevens Online',
+      description: 'The Accelerated Stevens Admission Process (ASAP) allows you to start graduate courses early and fast-track your degree.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/asap/'),
+      type: 'website'
+    });
+  }, []);
 
   useEffect(() => {
     // Only run on client side

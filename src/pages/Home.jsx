@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
 import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
 import {
   GraduationCap,
@@ -203,6 +203,19 @@ export default function Home() {
       }
     }
     loadData();
+  }, []);
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Explore Online Master\'s Programs | Stevens Online');
+    setMetaDescription('Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.');
+    setOpenGraphTags({
+      title: 'Explore Online Master\'s Programs | Stevens Online',
+      description: 'Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/'),
+      type: 'website'
+    });
   }, []);
 
   return (

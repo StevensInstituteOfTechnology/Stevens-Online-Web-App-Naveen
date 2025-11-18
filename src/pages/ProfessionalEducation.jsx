@@ -18,10 +18,24 @@ import {
   Globe,
   X
 } from 'lucide-react';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 export default function ProfessionalEducation() {
   const [signInModalOpen, setSignInModalOpen] = useState(false);
   const [browseModalOpen, setBrowseModalOpen] = useState(false);
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Professional Education Programs | Stevens Online');
+    setMetaDescription('Explore Stevens\' professional education programs designed to advance your career with flexible, industry-driven coursework.');
+    setOpenGraphTags({
+      title: 'Professional Education Programs | Stevens Online',
+      description: 'Explore Stevens\' professional education programs designed to advance your career with flexible, industry-driven coursework.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/professionaleducation/'),
+      type: 'website'
+    });
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
