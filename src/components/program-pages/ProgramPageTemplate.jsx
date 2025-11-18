@@ -28,15 +28,31 @@ const Section = ({ id, title, children, container = true, el = 'section', refPro
   );
 };
 
-// Ranking Card Component
+// Ranking Card Component - VERSION 5: Stevens Chevron Arrow Design (Pointing Down) with Hover Effects
 const RankingCard = ({ ranking, description, source, note }) => (
-  <div className="bg-stevens-white p-stevens-md rounded-stevens-md shadow-stevens-lg text-center border-t-4 border-stevens-primary h-full flex flex-col">
-    <div className="flex-grow">
-      <p className="font-stevens-display text-stevens-hero font-stevens-bold text-stevens-primary mb-stevens-sm">{ranking}</p>
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-gray-900 uppercase tracking-wide">{description}</p>
+  <div className="group bg-stevens-white p-stevens-lg rounded-stevens-sm border border-stevens-gray-300 text-center h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+    {/* Stevens Chevron Arrow - pointing down from top, full width, subtle background */}
+    {/* SCHEME A: Primary color with low opacity for brand consistency */}
+    {/* Hover Effect: Opacity increases and slight scale animation */}
+    <div className="absolute left-0 right-0 top-0 h-32 opacity-[0.12] group-hover:opacity-[0.15] pointer-events-none transition-all duration-300 group-hover:scale-105 origin-top">
+      <svg viewBox="0 0 100 84" className="w-full h-full" preserveAspectRatio="none">
+        {/* Chevron/Arrow shape pointing down - full width, reduced by 20% */}
+        <path d="M 0,0 L 100,0 L 100,70 L 50,84 L 0,70 Z" fill="currentColor" className="text-stevens-primary" />
+      </svg>
     </div>
+    
+    {/* Thin top border accent - grows thicker on hover */}
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-stevens-primary group-hover:h-[3px] transition-all duration-300"></div>
+    
+    <div className="flex-grow relative z-10">
+      {/* Large statistic number - scales up 20% on hover */}
+      <p className="font-stevens-display text-[3rem] md:text-[3rem] font-bold text-stevens-primary mb-stevens-xs leading-none transition-transform duration-300 group-hover:scale-[1.2]">{ranking}</p>
+      {/* Description text */}
+      <p className="text-stevens-lg md:text-stevens-xl font-medium text-stevens-gray-900 mb-stevens-md leading-tight transition-colors duration-300 group-hover:text-stevens-gray-700">{description}</p>
+    </div>
+    {/* Source text */}
     {source && (
-      <p className="text-stevens-sm text-stevens-gray-600 mt-stevens-sm">
+      <p className="text-stevens-sm text-stevens-gray-700 mt-auto pt-stevens-sm relative z-10">
         {source} {note && <sup>{note}</sup>}
       </p>
     )}
@@ -575,10 +591,15 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         
         {rankings && rankings.length > 0 && (
           <Section id="rankings" title="By the Numbers" bgClassName="bg-stevens-gray-100" container={false} el="div" refProp={el => sectionRefs.current.rankings = el}>
-            <div className="max-w-7xl mx-auto bg-stevens-gray-200 py-stevens-2xl">
+            <div className="max-w-7xl mx-auto  py-stevens-2xl">
               <div className=" px-stevens-lg">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
-                  {rankings.map((rank, i) => <RankingCard key={i} {...rank} />)}
+                {/* Flexbox layout to center odd number of cards in last row */}
+                <div className="flex flex-wrap justify-center gap-stevens-lg">
+                  {rankings.map((rank, i) => (
+                    <div key={i} className="w-full sm:w-[calc(100%-2rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.25rem)] max-w-[400px]">
+                      <RankingCard {...rank} />
+                    </div>
+                  ))}
                 </div>
                 {programData.rankings_footnotes && programData.rankings_footnotes.length > 0 && (
                   <div className="mt-stevens-xl max-w-4xl mx-auto text-stevens-sm text-stevens-gray-600 space-y-stevens-xs">

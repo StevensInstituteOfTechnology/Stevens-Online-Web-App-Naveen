@@ -150,7 +150,7 @@ const BlogDetail = ({
       <header className="mb-stevens-2xl">
         
         
-        <h1 className="font-stevens-display text-stevens-xl md:text-stevens-hero lg:text-stevens-6xl text-stevens-primary mb-stevens-lg leading-tight">
+        <h1 className="font-stevens-display text-stevens-4xl md:text-stevens-hero  text-stevens-primary mb-stevens-lg leading-tight">
           {safeTitle}
         </h1>
 
