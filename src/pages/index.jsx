@@ -38,6 +38,8 @@ const PAGES = {
   TuitionOutcomes: "TuitionOutcomes",
   Admissions: "Admissions",
   EmployerSponsorship: "EmployerSponsorship",
+  CorporatePartners: "CorporatePartners",
+  CorporateStudents: "CorporateStudents",
   NotFound: "NotFound",
 };
 

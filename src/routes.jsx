@@ -34,6 +34,8 @@ import OnlineExperience from "@/pages/OnlineExperience";
 import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import Admissions from "@/pages/Admissions";
 import EmployerSponsorship from "@/pages/EmployerSponsorship";
+import CorporatePartners from "@/pages/CorporatePartners";
+import CorporateStudents from "@/pages/CorporateStudents";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
@@ -312,6 +314,24 @@ export const routes = [
   {
     path: '/employer-sponsorship',
     element: <Navigate to="/employer-sponsorship/" replace />
+  },
+
+  // Corporate Partnership Pages
+  {
+    path: '/corporate-partners/',
+    element: <CorporatePartners />
+  },
+  {
+    path: '/corporate-partners',
+    element: <Navigate to="/corporate-partners/" replace />
+  },
+  {
+    path: '/corporate-students/',
+    element: <CorporateStudents />
+  },
+  {
+    path: '/corporate-students',
+    element: <Navigate to="/corporate-students/" replace />
   },
 
   // Explore program pages

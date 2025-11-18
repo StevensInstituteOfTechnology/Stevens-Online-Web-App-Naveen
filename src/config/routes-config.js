@@ -24,6 +24,8 @@ export const STATIC_ROUTES = [
   '/online-learning-experience/',
   '/admissions/',
   '/request-information/',
+  '/corporate-partners/',
+  '/corporate-students/',
   '/ProfessionalEducation',
   '/Certificates',
   '/TuitionOutcomes',
