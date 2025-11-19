@@ -156,7 +156,7 @@ export default function ComparePrograms() {
     <PageContextProvider pageType="comparison" pageName="ComparePrograms">
     <div>
       <PageHero 
-        title="Compare Our Programs" 
+        title="Compare Online Graduate Programs at Stevens" 
         subtitle="Find your path" 
         bgImage="/assets/images/compare-programs/compare-hero.webp"
         rightContent={

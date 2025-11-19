@@ -200,7 +200,7 @@ export default function AcceleratedApplicationPage() {
     <PageContextProvider pageType="application" pageName="AcceleratedApplication">
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero
-        title="Accelerated Application"
+        title="Accelerated Master's Application Requirements"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
         bgImage="/assets/images/accelerated-application/AcceleratedApplication-3.webp"
       />

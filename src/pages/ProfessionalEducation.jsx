@@ -83,7 +83,7 @@ export default function ProfessionalEducation() {
       <div className="absolute bottom-stevens-section left-stevens-xl w-80 h-80 bg-stevens-secondary/15 rounded-full blur-3xl pointer-events-none" />
 
       <PageHero 
-        title="Stevens Professional Education"
+        title="Professional Education Programs at Stevens"
         subtitle="Build job-ready skills, fast."
         bgImage="/assets/images/professional-education/1-professional-education.webp"
       />

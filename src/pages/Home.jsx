@@ -239,7 +239,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
-                Advance Your Career with a World-Class Online Degree from
+                Advance Your Career with a World-Class Online Master's Degree from
                 Stevens
               </h1>
               <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>

@@ -17,7 +17,7 @@ const programData = {
     url: '/online-masters-engineering-management/'
   },
   hero: {
-    titleLines: ["Earn Your MEM Online.", "Lead Engineering Teams Anywhere."],
+    titleLines: ["Earn Your Master of Engineering Management (MEM) Online", "Lead Engineering Teams Anywhere."],
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
     bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },

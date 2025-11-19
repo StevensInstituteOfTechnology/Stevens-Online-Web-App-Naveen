@@ -17,7 +17,7 @@ const programData = {
     url: '/online-masters-computer-science-mscs/'
   },
   hero: {
-    titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
+    titleLines: ["Earn Your Master of Science in Computer Science (MSCS) Online", "Build What's Next."],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
     bgImage: "/assets/images/mscs/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
