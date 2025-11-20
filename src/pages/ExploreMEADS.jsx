@@ -113,7 +113,7 @@ const ExploreMEADS = () => {
         label: "Credits"
       },
       {
-        value: "12",
+        value: "10",
         label: "Courses"
       },
       {
