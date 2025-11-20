@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Award, FileText, Phone, Mail, Building, ArrowRight, BookOpen, LinkIcon } from 'lucide-react';
 import { CONTACT_INFO } from '@/config/constants';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 const FinancialAidOption = ({ title, children }) => (
   <AccordionItem value={title}>
@@ -18,12 +19,25 @@ const FinancialAidOption = ({ title, children }) => (
 );
 
 export default function Tuition() {
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Online Tuition & Financial Aid | Stevens Online');
+    setMetaDescription('Discover online master\'s program costs, tuition rates, and financial aid options for Stevens Online graduate degrees.');
+    setOpenGraphTags({
+      title: 'Online Tuition & Financial Aid | Stevens Online',
+      description: 'Discover online master\'s program costs, tuition rates, and financial aid options for Stevens Online graduate degrees.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/tuition-and-financial-aid/'),
+      type: 'website'
+    });
+  }, []);
+
   return (
     <div>
       <PageHero
         title="Tuition & Financial Aid Overview"
         subtitle="Financial Options for Our Online Programs"
-        bgImage="/assets/images/1-tuition-hero-scaled.webp"
+        bgImage="/assets/images/tuition/1-tuition-hero-scaled.webp"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tuition and Financial Aid" }]}
       />
 

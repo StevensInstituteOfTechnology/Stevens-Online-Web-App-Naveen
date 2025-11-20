@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: "Online Master's in Computer Science | Stevens Institute of Technology",
     description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
-    ogImage: '/assets/images/bg_program.webp',
+    ogImage: '/assets/images/mscs/bg_program.webp',
     url: '/online-masters-computer-science-mscs/'
   },
   hero: {
-    titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
+    titleLines: ["Earn Your Master of Science in Computer Science (MSCS) Online", "Build What's Next."],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
-    bgImage: "/assets/images/bg_program.webp",
+    bgImage: "/assets/images/mscs/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
@@ -585,11 +585,11 @@ The objective of this course is to give students a basic grounding in designing 
   faculty: {
     description: "Our faculty includes National Science Foundation (NSF) CAREER winners as well as researchers who consult for companies such as Microsoft, IBM, Google, Bell Labs and other top industry firms.",
     members: [
-      { name: "Shudong Hao", title: "Assoc. Chair for Graduate Studies", image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.png" },
-      { name: "Reza Peyrovian", title: "Senior Lecturer", image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.png" },
-      { name: "Patrick Hill", title: "Lecturer", image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.jpg" },
-      { name: "Dominic Duggan", title: "Associate Professor", image: "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.jpg" },
-      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/mscs-avatar/Samuel_Kim.png" },
+      { name: "Shudong Hao", title: "Assoc. Chair for Graduate Studies", image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp" },
+      { name: "Reza Peyrovian", title: "Senior Lecturer", image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp" },
+      { name: "Patrick Hill", title: "Lecturer", image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp" },
+      { name: "Dominic Duggan", title: "Associate Professor", image: "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.webp" },
+      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp" },
     ]
   },
   admissions: {

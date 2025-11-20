@@ -21,12 +21,12 @@ const ExploreMBA = () => {
     heroTitle: "TECHNOLOGY ISN'T JUST IN OUR DNA. IT DEFINES OUR MBA.",
     programName: "Online MBA Program",
     heroSubtitle: "Master business strategy with cutting-edge technology and data analytics. AACSB-accredited program designed for working professionals.",
-    bgImage: "/assets/images/1-omba-hero-scaled.webp",
+    bgImage: "/assets/images/explore-mba/1-omba-hero-scaled.webp",
     programCode: "mba",
     seo: {
       title: 'Online MBA | Stevens Institute of Technology',
       description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
-      ogImage: '/assets/images/1-omba-hero-scaled.webp',
+      ogImage: '/assets/images/explore-mba/1-omba-hero-scaled.webp',
       url: '/explore/online-mba/'
     },
     badges: [
@@ -76,7 +76,7 @@ const ExploreMBA = () => {
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
     programBenefitsDescription: "In a global market increasingly reliant on technology, data and analytics, you need more than the traditional management toolkit. Learn to leverage business data to drive better decisions through the Master of Business Administration online program at Stevens Institute of Technology, which pairs the quality of our on-campus program with the flexibility of part-time study and remote coursework.<br/><br/>The Stevens Online MBA is an AACSB-accredited program that combines business knowledge with the technology and analytics necessary to excel in today's data-centric world. Our part-time online program offers tailored leadership development, individualized career services and two on-site immersions in the New York City region.",
-    programBenefitsImage: "/assets/images/2-explore-mba.jpg",
+    programBenefitsImage: "/assets/images/explore-mba/2-explore-mba.webp",
     programBenefitsHighlights: [
       {
         title: "Connections to Top Hiring Companies",

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,7 @@ import { BOOKING_URLS } from '@/config/constants';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import { getContentImageProps, getCardImageProps } from '@/utils/responsiveImage';
 
 export default function Events() {
   usePageTracking({
@@ -18,6 +19,19 @@ export default function Events() {
       has_event_cards: true
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Upcoming Virtual Events & Webinars | Stevens Online');
+    setMetaDescription('Join upcoming virtual events and webinars to explore Stevens Online graduate programs and connect with faculty.');
+    setOpenGraphTags({
+      title: 'Upcoming Virtual Events & Webinars | Stevens Online',
+      description: 'Join upcoming virtual events and webinars to explore Stevens Online graduate programs and connect with faculty.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/events/'),
+      type: 'website'
+    });
+  }, []);
 
   const spotlight = {
     title: 'The StevensOnline Experience: Current Student Perspectives',
@@ -163,19 +177,19 @@ export default function Events() {
       title: 'Application Overview: Online MBA',
       length: '15 minutes',
       url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE',
-      image: '/assets/images/2-event.png'
+      image: '/assets/images/events/2-event.webp'
     },
     {
       title: 'Application Walkthrough: Computer Science',
       length: '10 minutes',
       url: 'https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29',
-      image: '/assets/images/3-event.webp'
+      image: '/assets/images/events/3-event.webp'
     },
     {
       title: 'Application Walkthrough: Engineering Management',
       length: '24 minutes',
       url: 'https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810',
-      image: '/assets/images/4-event.webp'
+      image: '/assets/images/events/4-event.webp'
     }
 
   ];
@@ -186,7 +200,7 @@ export default function Events() {
       <PageHero
         title="Stevens Institute of Technology"
         subtitle="Virtual Events"
-        bgImage="/assets/images/1-event-scaled.webp"
+        bgImage="/assets/images/events/1-event-scaled.webp"
       />
 
       {/* Intro Section */}
@@ -206,7 +220,12 @@ export default function Events() {
             <div className="stevens-md:flex">
               {/* Image */}
               <div className="stevens-md:w-2/5 overflow-hidden">
-                <img src="/assets/images/1-event.avif" alt="Event Spotlight" className="w-full h-full object-cover aspect-video stevens-md:aspect-auto" />
+                <img 
+                  {...getContentImageProps('/assets/images/events/1-event.webp', '800px')}
+                  alt="Event Spotlight" 
+                  className="w-full h-full object-cover aspect-video stevens-md:aspect-auto" 
+                  loading="lazy" 
+                />
               </div>
               
               {/* Content */}
@@ -275,7 +294,12 @@ export default function Events() {
                 <div className="stevens-md:flex stevens-md:flex-row flex flex-col h-full">
                   {/* Image */}
                   <div className="stevens-md:w-2/5 overflow-hidden flex-shrink-0">
-                    <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" />
+                    <img 
+                      {...getCardImageProps(e.image)} 
+                      alt={e.title} 
+                      className="w-full h-full object-cover min-h-full" 
+                      loading="lazy" 
+                    />
           </div>
           
                   {/* Content */}

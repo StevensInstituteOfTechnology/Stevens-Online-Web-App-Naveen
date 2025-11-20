@@ -6,6 +6,8 @@ import { ArrowLeft, Calendar, User, Clock, Facebook, Twitter, Linkedin } from 'l
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import { createPageUrl } from '@/utils';
+import { getContentImageProps, getThumbnailImageProps } from '@/utils/responsiveImage';
+import { BOOKING_URLS } from '@/config/constants';
 
 // Structured Content Renderer Component
 const StructuredContentRenderer = ({ content }) => {
@@ -87,10 +89,18 @@ const renderTextWithFormatting = (text, bold = [], links = []) => {
   // Handle links - replace the plain text with linked text
   if (links && links.length > 0) {
     links.forEach(link => {
+      // Check for special markers and replace with actual URLs
+      let actualUrl = link.url;
+      
+      // Replace SCHEDULE_CALL marker with actual booking URL
+      if (link.url === 'SCHEDULE_CALL' || link.url === '__SCHEDULE_CALL__') {
+        actualUrl = BOOKING_URLS.SCHEDULE_CALL;
+      }
+      
       // Escape special regex characters in link text
       const escapedLinkText = link.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp(escapedLinkText, 'g');
-      processedText = processedText.replace(regex, `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`);
+      processedText = processedText.replace(regex, `<a href="${actualUrl}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`);
     });
   }
   
@@ -140,7 +150,7 @@ const BlogDetail = ({
       <header className="mb-stevens-2xl">
         
         
-        <h1 className="font-stevens-display text-stevens-hero text-stevens-primary mb-stevens-lg leading-tight">
+        <h1 className="font-stevens-display text-stevens-4xl md:text-stevens-hero  text-stevens-primary mb-stevens-lg leading-tight">
           {safeTitle}
         </h1>
 
@@ -219,9 +229,10 @@ const BlogDetail = ({
       {featured_image_url && (
         <div className="mb-stevens-2xl">
           <img 
-            src={featured_image_url} 
+            {...getContentImageProps(featured_image_url, '1200px')}
             alt={title}
             className="w-full h-96 object-cover rounded-stevens-md shadow-stevens-md"
+            loading="lazy"
           />
         </div>
       )}
@@ -247,9 +258,10 @@ const BlogDetail = ({
             {relatedPosts.map((relatedPost) => (
               <div key={relatedPost.id} className="border border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:shadow-stevens-md transition-shadow">
                 <img 
-                  src={relatedPost.featured_image_url} 
+                  {...getThumbnailImageProps(relatedPost.featured_image_url, '400px')}
                   alt={relatedPost.title}
                   className="w-full h-32 object-cover rounded-stevens-sm mb-stevens-md"
+                  loading="lazy"
                 />
                 <h4 className="font-stevens-display text-stevens-lg text-stevens-primary mb-stevens-sm line-clamp-2">
                   {relatedPost.title}

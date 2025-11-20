@@ -47,6 +47,7 @@ export default function TopCompaniesSection({
                         src={companyLogo}
                         alt={companyName}
                         className="max-h-full max-w-full object-contain grayscale-0 group-hover:grayscale transition-all duration-stevens-normal opacity-100 group-hover:opacity-70"
+                        loading="lazy"
                         onError={(e) => {
                           // Hide image and show placeholder on error
                           e.target.style.display = 'none';

@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: 'Online MBA | Stevens Institute of Technology',
     description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
-    ogImage: '/assets/images/1-omba-hero-scaled.webp',
+    ogImage: '/assets/images/mba/1-omba-hero-scaled.webp',
     url: '/online-mba/'
   },
   hero: {
     titleLines: ['Earn Your MBA Online.', 'Build Your Career Anywhere.'],
     subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
-    bgImage: "/assets/images/1-omba-hero-scaled.webp",
+    bgImage: "/assets/images/mba/1-omba-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
@@ -690,14 +690,14 @@ const programData = {
     title: "Meet the Online MBA Faculty",
     description: "Our faculty are experienced educators and active researchers who offer industry insights.",
     members: [
-      { name: "Brian Rothschild", title: "Online MBA Program Director", image: "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.jpg" },
-      { name: "Pranav Garg, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.jpg" },
-      { name: "Gary Lynn, Ph.D.", title: "Professor", image: "/assets/avatars/mba-avatar/gary-lynn-stevens-faculty-683x1024.jpg" },
-      { name: "Peter Dominick, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.jpg" },
-      { name: "Bei Yan, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.jpg" },
-      { name: "Alkiviadis Vazacopoulos, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.jpg" },
-      { name: "Ann Murphy, Ph.D.", title: "Associate Professor", image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.png" },
-      { name: "Wei Zheng, Ph.D.", title: "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership", image: "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.png" }
+      { name: "Brian Rothschild", title: "Online MBA Program Director", image: "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.webp" },
+      { name: "Pranav Garg, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.webp" },
+      { name: "Gary Lynn, Ph.D.", title: "Professor", image: "/assets/avatars/mba-avatar/gary-lynn-stevens-faculty-683x1024.webp" },
+      { name: "Peter Dominick, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.webp" },
+      { name: "Bei Yan, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.webp" },
+      { name: "Alkiviadis Vazacopoulos, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.webp" },
+      { name: "Ann Murphy, Ph.D.", title: "Associate Professor", image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.webp" },
+      { name: "Wei Zheng, Ph.D.", title: "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership", image: "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.webp" }
     ]
   },
   faqs: [

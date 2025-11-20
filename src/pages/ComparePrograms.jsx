@@ -7,6 +7,7 @@ import ProgramReadinessAssessment from "../components/assessment/ProgramReadines
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
 
 export default function ComparePrograms() {
   usePageTracking({
@@ -16,6 +17,19 @@ export default function ComparePrograms() {
       has_quiz: true
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Compare Graduate Programs | Stevens Online');
+    setMetaDescription('Compare Stevens\' online graduate programs to find the master\'s degree that best fits your career goals and interests.');
+    setOpenGraphTags({
+      title: 'Compare Graduate Programs | Stevens Online',
+      description: 'Compare Stevens\' online graduate programs to find the master\'s degree that best fits your career goals and interests.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/compare-our-programs/'),
+      type: 'website'
+    });
+  }, []);
 
   const PROGRAM_OPTIONS = [
     { label: "MBA", value: "mba" },
@@ -142,9 +156,9 @@ export default function ComparePrograms() {
     <PageContextProvider pageType="comparison" pageName="ComparePrograms">
     <div>
       <PageHero 
-        title="Compare Our Programs" 
+        title="Compare Online Graduate Programs at Stevens" 
         subtitle="Find your path" 
-        bgImage="/assets/images/compare-hero.jpg"
+        bgImage="/assets/images/compare-programs/compare-hero.webp"
         rightContent={
           <ProgramReadinessAssessment
             onComplete={handleAssessmentComplete}

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent } from '@/components/ui/card';
 import { Laptop, Users, LifeBuoy, Library, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
@@ -20,6 +20,19 @@ export default function OnlineExperience() {
       has_rfi_modal: true
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Online Learning Experience & Student Support | Stevens Online');
+    setMetaDescription('Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement.');
+    setOpenGraphTags({
+      title: 'Online Learning Experience & Student Support | Stevens Online',
+      description: 'Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/online-learning-experience/'),
+      type: 'website'
+    });
+  }, []);
 
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [
@@ -51,7 +64,7 @@ export default function OnlineExperience() {
       <PageHero 
         title="Online Education"
         subtitle="A premier, technology-driven education, delivered with flexibility."
-        bgImage="/assets/images/1-online-learning-hero-scaled.webp"
+        bgImage="/assets/images/online-experience/1-online-learning-hero-scaled.webp"
       />
       
       {/* Welcome Message from Dean Arshad */}
@@ -101,7 +114,7 @@ export default function OnlineExperience() {
                 {/* Signature */}
                 <div className="mt-stevens-xl">
                 <img 
-                    src="/assets/images/arshad-signature.png"
+                    src="/assets/images/online-experience/arshad-signature.webp"
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />
@@ -150,7 +163,7 @@ export default function OnlineExperience() {
 
        <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
+              <img src="/assets/images/online-experience/online-experience-1.png" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Ready to Learn More?</h2>
           <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed mb-stevens-lg">
             Connect with our admissions team to get your questions answered and find out if an online program at Stevens is the right fit for you.

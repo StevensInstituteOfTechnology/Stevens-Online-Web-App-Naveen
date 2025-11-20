@@ -1,13 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Users, Building2, DollarSign, TrendingUp, CheckCircle, Handshake, BookOpen, Award } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 const EmployerSponsorship = () => {
+  usePageTracking({
+    pageType: 'content',
+    additionalData: {
+      page_name: 'Employer Sponsorship',
+      has_form: true
+    }
+  });
+
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState('for-students');
   const sectionRefs = useRef({});
+
+  // Set SEO meta tags
+  useEffect(() => {
+    const canonical = buildCanonicalUrl('/employer-sponsorship/');
+    setPageTitle('Employer Sponsorship & Tuition Assistance | Stevens Online');
+    setMetaDescription('Learn about employer sponsorship and tuition assistance programs for Stevens Online graduate programs. Discover how employers and students benefit from tuition reimbursement.');
+    setOpenGraphTags({
+      title: 'Employer Sponsorship & Tuition Assistance | Stevens Online',
+      description: 'Learn about employer sponsorship and tuition assistance programs for Stevens Online graduate programs.',
+      image: buildCanonicalUrl('/assets/images/employer-sponsorship/1-employer-sponsorship.webp'),
+      url: canonical,
+      type: 'website'
+    });
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -46,6 +73,40 @@ const EmployerSponsorship = () => {
       });
     };
   }, []);
+
+  // Handle hash navigation - scroll to section when page loads with hash
+  useEffect(() => {
+    if (!location.hash) return;
+    
+    // Remove the # from hash
+    const hashId = location.hash.substring(1);
+    
+    // Wait for DOM to be ready and sections to be rendered
+    const scrollToHash = () => {
+      const element = sectionRefs.current[hashId];
+      if (element) {
+        // Use scrollIntoView with smooth behavior and offset for fixed header
+        const yOffset = -100; // Offset for fixed header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        return true; // Successfully scrolled
+      }
+      return false; // Element not found yet
+    };
+    
+    // Try immediately
+    if (scrollToHash()) return;
+    
+    // If element not found, try again after delays (sections may still be rendering)
+    const timeout1 = setTimeout(() => {
+      if (scrollToHash()) return;
+      
+      // Final attempt after longer delay
+      setTimeout(scrollToHash, 200);
+    }, 100);
+    
+    return () => clearTimeout(timeout1);
+  }, [location.hash]);
 
   const studentBenefits = [
     "Master's degree holders earn median annual salaries $12,600 higher than those who hold only bachelor's degrees.",
@@ -136,13 +197,14 @@ const EmployerSponsorship = () => {
   ];
 
   return (
+    <PageContextProvider pageType="content" pageName="Employer Sponsorship">
     <div className="min-h-screen bg-stevens-white">
       {/* Page Hero */}
       <PageHero
         title="Employer Sponsorship"
         subtitle="Benefits for all"
         description="Both students and employers benefit from employer sponsorship programs that help enrollees pay for degrees. Students earn a degree with less debt, while their employers get to retain newly upskilled workers and market this benefit to attract more talent."
-        bgImage="/assets/images/1-employer-sponsorship.webp " // Placeholder
+        bgImage="/assets/images/employer-sponsorship/1-employer-sponsorship.webp" // Placeholder
         
       />
 
@@ -249,7 +311,7 @@ const EmployerSponsorship = () => {
                   <div className="flex justify-center lg:justify-end">
                     <div className="w-full max-w-lg">
                       <img 
-                        src="/assets/images/2-employer-sponsorship.webp" 
+                        src="/assets/images/employer-sponsorship/2-employer-sponsorship.webp" 
                         alt="Business professionals shaking hands during a meeting, representing employer sponsorship agreements"
                         className="w-full h-auto rounded-stevens-lg shadow-stevens-md object-cover"
                       />
@@ -385,7 +447,7 @@ const EmployerSponsorship = () => {
                 <div className="flex justify-center lg:justify-end">
                   <div className="w-full max-w-xl mx-auto">
                     <img 
-                      src="/assets/images/3-employer-sponsorship.webp" 
+                      src="/assets/images/employer-sponsorship/3-employer-sponsorship.webp" 
                       alt="Professional business executive in a modern office environment, representing the benefits of employer tuition reimbursement programs"
                       className="w-full h-auto rounded-stevens-lg shadow-stevens-md object-cover"
                     />
@@ -420,22 +482,20 @@ const EmployerSponsorship = () => {
             </section>
 
             {/* FAQ Section */}
-            <section className="bg-stevens-white rounded-stevens-lg shadow-stevens-md p-stevens-xl">
-              <h3 className="font-stevens-display text-stevens-2xl text-stevens-gray-900 mb-stevens-xl">
-                Frequently Asked Questions
-              </h3>
-              <Accordion type="single" collapsible className="w-full space-y-stevens-sm">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border border-stevens-gray-400 rounded-stevens-md overflow-hidden">
-                    <AccordionTrigger className="text-left font-stevens-semibold text-stevens-base px-stevens-lg py-stevens-md bg-stevens-gray-200 hover:bg-stevens-gray-100 transition-colors duration-stevens-normal">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="px-stevens-lg py-stevens-md mt-stevens-md text-stevens-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <section className="bg-stevens-white py-stevens-section-sm lg:py-stevens-section">
+              <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+                <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-gray-900 mb-stevens-lg text-center">
+                  Frequently Asked Questions
+                </h2>
+                <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+                  {faqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                      <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
             </section>
         </motion.div>
       </div>
@@ -445,11 +505,12 @@ const EmployerSponsorship = () => {
         <div className="max-w-7xl mx-auto px-stevens-md text-left">
           <p className="text-stevens-sm text-stevens-gray-600">
             <sup>1</sup><a href="https://www.edassist.com/insights/employee-benefits-study-2018" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">EdAssist study, 2018.</a><br />
-            <sup>2</sup><a href="https://www.luminafoundation.org/resource/tuition-reimbursement-programs-increase-employee-retention-and-satisfaction/" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Lumina Foundation study, 2016.</a>
+            
           </p>
         </div>
       </div>
     </div>
+    </PageContextProvider>
   );
 };
 

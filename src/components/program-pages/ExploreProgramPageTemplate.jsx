@@ -9,6 +9,7 @@ import VideoPlayer from '../shared/VideoPlayer';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { BOOKING_URLS } from '@/config/constants';
+import { getContentImageProps } from '@/utils/responsiveImage';
 const ExploreProgramPageTemplate = ({
   // Hero Section Props
   heroTitle,
@@ -31,7 +32,7 @@ const ExploreProgramPageTemplate = ({
   programBenefitsTitle,
   programBenefitsDescription,
   programBenefitsHighlights,
-  programBenefitsImage = "/assets/images/stevens-campus.png",
+  programBenefitsImage = "/assets/images/shared/stevens-campus.webp",
   
   // Program Details Props
   programDetails,
@@ -82,7 +83,7 @@ const ExploreProgramPageTemplate = ({
   justLaunchedDescription = "",
   justLaunchedButtonText = "",
   justLaunchedButtonLink = "#",
-  justLaunchedImage = "/assets/images/stevens-campus.png"
+  justLaunchedImage = "/assets/images/shared/stevens-campus.webp"
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -95,7 +96,7 @@ const ExploreProgramPageTemplate = ({
     setOpenGraphTags({
       title: seo.title,
       description: seo.description,
-      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
       url: buildCanonicalUrl(seo.url),
       type: 'website'
     });
@@ -220,9 +221,10 @@ const ExploreProgramPageTemplate = ({
               <div className="relative lg:order-1 order-2">
                 <div className=" max-h-[400px] rounded-stevens-lg overflow-hidden shadow-stevens-xl">
                   <img 
-                    src={programBenefitsImage} 
+                    {...getContentImageProps(programBenefitsImage, '800px')}
                     alt={`${programBenefitsTitle || 'Program Benefits'} illustration`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -392,9 +394,10 @@ const ExploreProgramPageTemplate = ({
                 <div className="relative w-full h-full hidden lg:block">
                   <div className="rounded-stevens-lg overflow-hidden shadow-stevens-xl">
                     <img 
-                      src={newFall2025Image} 
+                      {...getContentImageProps(newFall2025Image, '800px')}
                       alt={`${newFall2025Title} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -452,9 +455,10 @@ const ExploreProgramPageTemplate = ({
                 <div className="relative">
                   <div className=" max-h-[500px] rounded-stevens-lg overflow-hidden shadow-stevens-xl">
                     <img 
-                      src={justLaunchedImage} 
+                      {...getContentImageProps(justLaunchedImage, '800px')}
                       alt={`${justLaunchedTitle} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -556,9 +560,10 @@ const ExploreProgramPageTemplate = ({
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-stevens-lg overflow-hidden shadow-stevens-xl">
                     <img 
-                      src={additionalWhyChooseStevensImage} 
+                      {...getContentImageProps(additionalWhyChooseStevensImage, '800px')}
                       alt={`${additionalWhyChooseStevensTitle} illustration`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>

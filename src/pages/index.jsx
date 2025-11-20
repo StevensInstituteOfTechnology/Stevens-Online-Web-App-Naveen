@@ -37,6 +37,7 @@ const PAGES = {
   OnlineExperience: "OnlineExperience",
   TuitionOutcomes: "TuitionOutcomes",
   Admissions: "Admissions",
+  EmployerSponsorship: "EmployerSponsorship",
   NotFound: "NotFound",
 };
 
@@ -64,11 +65,12 @@ function PagesContent() {
   const currentPage = _getCurrentPage(location.pathname);
   
   React.useEffect(() => {
-    // Scroll to top on route change - only in browser
-    if (typeof window !== 'undefined') {
+    // Scroll to top on route change - only if no hash is present
+    // If hash is present, let the page component handle scrolling to the hash target
+    if (typeof window !== 'undefined' && !location.hash) {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <Layout currentPageName={currentPage}>

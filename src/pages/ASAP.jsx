@@ -5,6 +5,7 @@ import { Check } from 'lucide-react';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 export default function ASAPPage() {
   // Get program code from URL or sessionStorage
@@ -24,6 +25,19 @@ export default function ASAPPage() {
       program_code: programCode
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Accelerated Stevens Admission Process (ASAP)| Stevens Online');
+    setMetaDescription('The Accelerated Stevens Admission Process (ASAP) allows you to start graduate courses early and fast-track your degree.');
+    setOpenGraphTags({
+      title: 'Accelerated Stevens Admission Process (ASAP)| Stevens Online',
+      description: 'The Accelerated Stevens Admission Process (ASAP) allows you to start graduate courses early and fast-track your degree.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/asap/'),
+      type: 'website'
+    });
+  }, []);
 
   useEffect(() => {
     // Only run on client side
@@ -157,10 +171,9 @@ export default function ASAPPage() {
     <PageContextProvider pageType="application" pageName="ASAP">
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero
-        title="ASAP Application"
+        title="Advance Your Career with an Accelerated Master's Application (ASAP) Program"
         subtitle="Your Fast Track to a Master's Degree at Stevens" 
-        // bgImage={<img src="/assets/images/asap-hero.avif" alt="ASAP Application" />}  
-        bgImage="/assets/images/asap-hero.avif"
+        bgImage="/assets/images/shared/asap-hero.webp"
         />
 
       <div className="py-stevens-section bg-stevens-gray-50">
@@ -227,7 +240,7 @@ export default function ASAPPage() {
                       #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c form {
                         width: 100% !important;
                         max-width: 100% !important;
-                        padding: 1rem !important;
+                        padding: 1.5rem !important;
                       }
 
                       /* Protect navigation elements from external script interference */
@@ -296,7 +309,7 @@ export default function ASAPPage() {
                         }
                       }
                     `}</style>
-                    <div className="bg-stevens-gray-50 text-stevens-gray-900 p-stevens-md">
+                    <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
                       <div
                         id="form_9268876a-a7c7-484d-a41e-7d0cb4c5613c"
                         className="min-h-[600px] w-full">

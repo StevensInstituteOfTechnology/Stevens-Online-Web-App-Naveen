@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
+import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
 import {
   GraduationCap,
   Users,
@@ -78,16 +79,16 @@ const textRankings = [
 
 const badgeRankings = [
 {
-  image: "/assets/rankings/ranking-badge-1.png",
+  image: "/assets/rankings/ranking-badge-1.webp",
     description:
       "No. 1 in New Jersey in Best Online Master's in Computer Information Technology Programs",
 },
 {
-  image: "/assets/rankings/ranking-badge-2.png", 
+  image: "/assets/rankings/ranking-badge-2.webp", 
     description: "No. 1 in New Jersey in Best Online MBA Programs",
 },
 {
-  image: "/assets/rankings/ranking-badge-3.png",
+  image: "/assets/rankings/ranking-badge-3.webp",
     description: "No. 36 Nationally in Best Online Engineering Programs",
   },
 ];
@@ -117,6 +118,7 @@ const BadgeRankingItem = ({ image, description }) => (
         src={image}
         alt="Ranking Badge"
         className="w-20 h-20 shrink-0 object-contain"
+        loading="lazy"
       />
         </div>
         <div className="flex-1">
@@ -167,19 +169,19 @@ export default function Home() {
       title: 'Application Overview: Online MBA',
       length: '15 minutes',
       url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE',
-      image: '/assets/images/2-event.png'
+      image: '/assets/images/home/2-event.webp'
     },
     {
       title: 'Application Walkthrough: Computer Science',
       length: '10 minutes',
       url: 'https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29',
-      image: '/assets/images/3-event.webp'
+      image: '/assets/images/home/3-event.webp'
     },
     {
       title: 'Application Walkthrough: Engineering Management',
       length: '24 minutes',
       url: 'https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810',
-      image: '/assets/images/4-event.webp'
+      image: '/assets/images/home/4-event.webp'
     }
   ];
 
@@ -203,21 +205,41 @@ export default function Home() {
     loadData();
   }, []);
 
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Explore Online Master\'s Programs | Stevens Online');
+    setMetaDescription('Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.');
+    setOpenGraphTags({
+      title: 'Explore Online Master\'s Programs | Stevens Online',
+      description: 'Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/'),
+      type: 'website'
+    });
+  }, []);
+
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
     <div className="font-sans bg-white">
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-80"
-          style={{ backgroundImage: "url('/assets/images/HEADER-0865.jpg')" }}
-        ></div>
+        <img
+          {...getHeroImageProps('/assets/images/home/HEADER-0865.webp', { 
+            widths: [640, 1024, 1280, 1920] 
+          })}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent"></div>
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
-                Advance Your Career with a World-Class Online Degree from
+                Advance Your Career with a World-Class Online Master's Degree from
                 Stevens
               </h1>
               <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
@@ -508,16 +530,18 @@ export default function Home() {
               
             </div>
             <img
-              src="/assets/images/stevens-campus.png"
+              {...getContentImageProps('/assets/images/home/stevens-campus.webp')}
               alt="Stevens campus with NYC skyline"
-              className="rounded-stevens-md shadow-xl"
+              className="w-full h-auto rounded-stevens-md shadow-xl"
+              loading="lazy"
             />
           </AnimatedSection>
           <AnimatedSection className="grid lg:grid-cols-2 gap-12 items-center">
           <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+              src="/assets/images/home/home-1.png"
               alt="Students collaborating online"
               className="rounded-stevens-md shadow-xl lg:order-1"
+              loading="lazy"
             />
             <div className="lg:order-2">
               <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
@@ -551,6 +575,7 @@ export default function Home() {
               src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
               alt="Alumni portrait"
               className="mb-4 mx-auto w-24 h-24 rounded-full object-cover border-4 border-stevens-white shadow-stevens-lg"
+              loading="lazy"
             />
             <blockquote className="text-stevens-2xl leading-snug italic text-stevens-white mb-stevens-md">
               "Stevens Online is dedicated to delivering world-class technology
@@ -671,7 +696,7 @@ export default function Home() {
                     {/* Compact Image - 16:9 aspect ratio */}
                     <div className="aspect-[16/9] w-full overflow-hidden">
                       <img 
-                        src={blog.featured_image_url || '/assets/blog/placeholder-blog.jpg'} 
+                        src={blog.featured_image_url || '/assets/blog/placeholder-blog.webp'} 
                         alt={blog.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
@@ -754,7 +779,12 @@ export default function Home() {
                   <div className="stevens-md:flex stevens-md:flex-row flex flex-col h-full">
                     {/* Image */}
                     <div className="stevens-md:w-2/5 overflow-hidden flex-shrink-0">
-                      <img src={e.image} alt={e.title} className="w-full h-full object-cover min-h-full" />
+                      <img 
+                        {...getCardImageProps(e.image)} 
+                        alt={e.title} 
+                        className="w-full h-full object-cover min-h-full" 
+                        loading="lazy" 
+                      />
                     </div>
                     {/* Content */}
                     <CardContent className="stevens-md:w-3/5 p-stevens-lg flex flex-col justify-between flex-1">

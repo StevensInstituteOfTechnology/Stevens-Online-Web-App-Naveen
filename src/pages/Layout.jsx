@@ -39,7 +39,7 @@ import ChatbotButton from "@/components/chat/ChatbotButton";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import "@/globals.css";
 
-const degreeProgramItems = [
+const graduateProgramItems = [
   { name: "Online MBA", page: "online-mba/" },
   { name: "M.S. in Computer Science", page: "online-masters-computer-science-mscs/" },
   // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
@@ -53,7 +53,7 @@ const certificateProgramItems = [
 ];
 
 const mainNavLinks = [
-  // The "Degree Programs" and "Tuition & Admissions" are handled separately with custom dropdowns.
+  // The "GRADUATE" and "Tuition & Admissions" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
  
   { name: "Online Experience", page: "online-learning-experience/" },
@@ -67,20 +67,27 @@ const tuitionAdmissionsItems = [
  
 ];
 
+// Mobile menu items with Compare Programs added to dropdowns
+const mobileGraduateProgramItems = [
+  ...graduateProgramItems,
+  { name: "Compare All Programs", page: "compare-our-programs/" },
+];
+
+const mobileCertificateProgramItems = [
+  ...certificateProgramItems,
+  { name: "Compare All Programs", page: "compare-our-programs/" },
+];
+
 const mobileNavLinks = [
   {
     name: "Graduate Programs",
     isDropdown: true,
-    items: degreeProgramItems,
+    items: mobileGraduateProgramItems,
   },
   {
-    name: "Certificate Programs",
+    name: "Certificates",
     isDropdown: true,
-    items: certificateProgramItems,
-  },
-  {
-    name: "Compare Programs",
-      page: "compare-our-programs/",
+    items: mobileCertificateProgramItems,
   },
   {
     name: "Tuition & Admissions",
@@ -101,10 +108,12 @@ export default function Layout({ children, currentPageName }) {
   const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(initialWidth <= 1024);
   const [isHoveringRedNav, setIsHoveringRedNav] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [degreeDropdownOpen, setDegreeDropdownOpen] = React.useState(false);
+  const [graduateDropdownOpen, setGraduateDropdownOpen] = React.useState(false);
+  const [certificateDropdownOpen, setCertificateDropdownOpen] = React.useState(false);
   const [tuitionDropdownOpen, setTuitionDropdownOpen] = React.useState(false);
   const hoverTimeoutRef = React.useRef(null);
-  const degreeHoverTimeoutRef = React.useRef(null);
+  const graduateHoverTimeoutRef = React.useRef(null);
+  const certificateHoverTimeoutRef = React.useRef(null);
   const tuitionHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
   
@@ -339,8 +348,11 @@ export default function Layout({ children, currentPageName }) {
       if (hoverTimeoutRef.current) {
         clearTimeout(hoverTimeoutRef.current);
       }
-      if (degreeHoverTimeoutRef.current) {
-        clearTimeout(degreeHoverTimeoutRef.current);
+      if (graduateHoverTimeoutRef.current) {
+        clearTimeout(graduateHoverTimeoutRef.current);
+      }
+      if (certificateHoverTimeoutRef.current) {
+        clearTimeout(certificateHoverTimeoutRef.current);
       }
       if (tuitionHoverTimeoutRef.current) {
         clearTimeout(tuitionHoverTimeoutRef.current);
@@ -365,7 +377,8 @@ export default function Layout({ children, currentPageName }) {
     setIsHoveringRedNav(false);
     
     // Reset dropdown states
-    setDegreeDropdownOpen(false);
+    setGraduateDropdownOpen(false);
+    setCertificateDropdownOpen(false);
     setTuitionDropdownOpen(false);
     // Close mobile menu and restore ASAP banner when navigating to a new page
     setMobileMenuOpen(false);
@@ -423,7 +436,7 @@ export default function Layout({ children, currentPageName }) {
               >
                 <div className="relative">
                   <img
-                    src="/assets/logos/Stevens-web-logo-sized-400x400.png"
+                    src="/assets/logos/Stevens-web-logo-sized-400x400.webp"
                     alt="Stevens Institute of Technology Pentagon Badge"
                     className="pentagon-shape-extended bg-stevens-white"
                   />
@@ -708,7 +721,7 @@ export default function Layout({ children, currentPageName }) {
                 <div className="relative overflow-visible ">
                   {/* Main Logo - shows when scrolled, hidden at top (covered by badge) */}
                   <img
-                    src="/assets/logos/Stevens-Wordmark-RGB_WHT.png"
+                    src="/assets/logos/Stevens-Wordmark-RGB_WHT.webp"
                     alt="Stevens Institute of Technology Professional Education Logo" 
                     className={`h-12 stevens-md:h-16 w-[137px] transition-opacity duration-300 mobile-logo-height logo-responsive-width ${
                       isScrolled && !isHoveringRedNav
@@ -723,7 +736,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Desktop Navigation - Right Aligned */}
             <div className="hidden stevens-lg:flex ml-auto">
               <nav className="flex items-center gap-stevens-xl">
-                <DropdownMenu open={degreeDropdownOpen} onOpenChange={setDegreeDropdownOpen}>
+                <DropdownMenu open={graduateDropdownOpen} onOpenChange={setGraduateDropdownOpen}>
                   <DropdownMenuTrigger
                     className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
                       isActive("MBA") ||
@@ -736,57 +749,57 @@ export default function Layout({ children, currentPageName }) {
                         : "text-stevens-white hover:text-stevens-white/80"
                     }`}
                     onMouseEnter={() => {
-                      if (degreeHoverTimeoutRef.current) {
-                        clearTimeout(degreeHoverTimeoutRef.current);
+                      if (graduateHoverTimeoutRef.current) {
+                        clearTimeout(graduateHoverTimeoutRef.current);
                       }
                       if (hoverTimeoutRef.current) {
                         clearTimeout(hoverTimeoutRef.current);
                       }
-                      setDegreeDropdownOpen(true);
+                      setGraduateDropdownOpen(true);
                       setIsHoveringRedNav(true);
                     }}
                     onMouseLeave={() => {
-                      degreeHoverTimeoutRef.current = setTimeout(() => {
-                        setDegreeDropdownOpen(false);
+                      graduateHoverTimeoutRef.current = setTimeout(() => {
+                        setGraduateDropdownOpen(false);
                       }, 100);
                       hoverTimeoutRef.current = setTimeout(() => {
                         setIsHoveringRedNav(false);
                       }, 100);
                     }}
                   >
-                    Degree Programs{" "}
-                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${degreeDropdownOpen ? 'rotate-180' : ''}`} />
+                    GRADUATE PROGRAMS{" "}
+                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${graduateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
-                      if (degreeHoverTimeoutRef.current) {
-                        clearTimeout(degreeHoverTimeoutRef.current);
+                      if (graduateHoverTimeoutRef.current) {
+                        clearTimeout(graduateHoverTimeoutRef.current);
                       }
                       if (hoverTimeoutRef.current) {
                         clearTimeout(hoverTimeoutRef.current);
                       }
-                      setDegreeDropdownOpen(true);
+                      setGraduateDropdownOpen(true);
                       setIsHoveringRedNav(true);
                     }}
                     onMouseLeave={() => {
-                      degreeHoverTimeoutRef.current = setTimeout(() => {
-                        setDegreeDropdownOpen(false);
+                      graduateHoverTimeoutRef.current = setTimeout(() => {
+                        setGraduateDropdownOpen(false);
                       }, 100);
                       hoverTimeoutRef.current = setTimeout(() => {
                         setIsHoveringRedNav(false);
                       }, 100);
                     }}
                   >
-                    <div className="grid grid-cols-3 gap-stevens-xl">
+                    <div className="grid grid-cols-2 gap-stevens-xl">
                       {/* Section 1: Graduate Programs */}
                       <div className="flex flex-col space-y-2">
                         <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
                           <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Graduate Programs</span>
                         </div>
-                        {degreeProgramItems.map((item) => (
+                        {graduateProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
@@ -815,7 +828,95 @@ export default function Layout({ children, currentPageName }) {
                         ))}
                       </div>
                       
-                      {/* Section 2: Certificate Programs */}
+                      {/* Section 2: Compare Programs */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
+                        </div>
+                        <DropdownMenuItem asChild>
+                          <Link
+                            to="/compare-our-programs/"
+                            className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
+                            style={{
+                              color: "#1f2937",
+                              backgroundColor: "transparent",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.target.style.color = "#ffffff";
+                              e.target.style.backgroundColor = "#a32638";
+                              e.target.style.textDecoration = "underline";
+                              e.target.style.fontWeight = "700";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.target.style.color = "#1f2937";
+                              e.target.style.backgroundColor = "transparent";
+                              e.target.style.textDecoration = "none";
+                              e.target.style.fontWeight = "600";
+                            }}
+                          >
+                              Compare All Programs
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
+                        </DropdownMenuItem>
+                      </div>
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu open={certificateDropdownOpen} onOpenChange={setCertificateDropdownOpen}>
+                  <DropdownMenuTrigger
+                    className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
+                      isActive("CertificateEnterpriseAI") ||
+                      isActive("CertificateAppliedDataScience")
+                        ? "text-stevens-white/80"
+                        : "text-stevens-white hover:text-stevens-white/80"
+                    }`}
+                    onMouseEnter={() => {
+                      if (certificateHoverTimeoutRef.current) {
+                        clearTimeout(certificateHoverTimeoutRef.current);
+                      }
+                      if (hoverTimeoutRef.current) {
+                        clearTimeout(hoverTimeoutRef.current);
+                      }
+                      setCertificateDropdownOpen(true);
+                      setIsHoveringRedNav(true);
+                    }}
+                    onMouseLeave={() => {
+                      certificateHoverTimeoutRef.current = setTimeout(() => {
+                        setCertificateDropdownOpen(false);
+                      }, 100);
+                      hoverTimeoutRef.current = setTimeout(() => {
+                        setIsHoveringRedNav(false);
+                      }, 100);
+                    }}
+                  >
+                    Certificates{" "}
+                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${certificateDropdownOpen ? 'rotate-180' : ''}`} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    sideOffset={4}
+                    align="start"
+                    onMouseEnter={() => {
+                      if (certificateHoverTimeoutRef.current) {
+                        clearTimeout(certificateHoverTimeoutRef.current);
+                      }
+                      if (hoverTimeoutRef.current) {
+                        clearTimeout(hoverTimeoutRef.current);
+                      }
+                      setCertificateDropdownOpen(true);
+                      setIsHoveringRedNav(true);
+                    }}
+                    onMouseLeave={() => {
+                      certificateHoverTimeoutRef.current = setTimeout(() => {
+                        setCertificateDropdownOpen(false);
+                      }, 100);
+                      hoverTimeoutRef.current = setTimeout(() => {
+                        setIsHoveringRedNav(false);
+                      }, 100);
+                    }}
+                  >
+                    <div className="grid grid-cols-2 gap-stevens-xl">
+                      {/* Section 1: Certificate Programs */}
                       <div className="flex flex-col space-y-2">
                         <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
                           <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Certificate Programs</span>
@@ -848,7 +949,7 @@ export default function Layout({ children, currentPageName }) {
                         ))}
                       </div>
                       
-                      {/* Section 3: Compare Programs */}
+                      {/* Section 2: Compare Programs */}
                       <div className="flex flex-col space-y-2">
                         <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
                           <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
@@ -1052,7 +1153,7 @@ export default function Layout({ children, currentPageName }) {
                       className="block"
                       onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
                     >
-                      <Button className="w-full bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md">
+                      <Button className="w-full btn-stevens-secondary hover:text-stevens-primary bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider border-0">
                         Schedule a Call
                       </Button>
                       
@@ -1084,15 +1185,19 @@ export default function Layout({ children, currentPageName }) {
                                 <ChevronDown className="w-4 h-4 transition-transform duration-stevens-normal" />
                               </button>
                               <div className="hidden bg-stevens-gray-50">
-                                {link.items.map((item) => (
+                                {link.items.map((item, index) => (
+                                  <React.Fragment key={item.name}>
+                                    {item.name === "Compare All Programs" && (
+                                      <div className="border-t border-stevens-gray-300 "></div>
+                                    )}
                                     <Link
-                                      key={item.name}
                                       to={createPageUrl(item.page)}
                                     className="block px-stevens-lg py-stevens-sm text-stevens-gray-700 hover:text-stevens-primary hover:bg-stevens-white transition-colors duration-stevens-normal"
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                         {item.name}
                                       </Link>
+                                  </React.Fragment>
                                 ))}
                               </div>
                                   </div>
@@ -1257,7 +1362,7 @@ export default function Layout({ children, currentPageName }) {
                 }}
               >
                 <img
-                  src="/assets/logos/Stevens-Wordmark-RGB_WHT.png"
+                  src="/assets/logos/Stevens-Wordmark-RGB_WHT.webp"
                   alt="Stevens Institute of Technology Logo"
                   className="h-16 w-auto"
                 />
@@ -1272,7 +1377,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Degree Programs
+                  GRADUATE
                 </Link>
                 {/* <Link
                   to={createPageUrl("Certificates")}

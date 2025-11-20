@@ -23,12 +23,12 @@ const ExploreMSCS = () => {
     heroTitle: "Build What's Next in Tech. All Experience Levels Welcome.",
     programName: "Online Master's in Computer Science",
     heroSubtitle: "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $16K in scholarships available.",
-    bgImage: "/assets/images/stevens-campus.png", // Placeholder
+    bgImage: "/assets/images/explore-mscs/stevens-campus.webp", // Placeholder
     programCode: "mscs",
     seo: {
       title: "Online Master's in Computer Science | Stevens Institute of Technology",
       description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
-      ogImage: '/assets/images/stevens-campus.png',
+      ogImage: '/assets/images/explore-mscs/stevens-campus.webp',
       url: '/explore/online-masters-computer-science/'
     },
     useApplicationModal: true,
@@ -100,7 +100,7 @@ const ExploreMSCS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
-    newFall2025Image: "/assets/images/1-explore-mem.webp", // Placeholder
+    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp", // Placeholder
     
     // Just Launched Section
     justLaunchedBadge: "JUST LAUNCHED",
@@ -112,12 +112,12 @@ const ExploreMSCS = () => {
     `,
     justLaunchedButtonText: "Request Flexible App Info",
     justLaunchedButtonLink: "/request-information/",
-    justLaunchedImage: "/assets/images/3-explore-mscs.webp", 
+    justLaunchedImage: "/assets/images/explore-mscs/3-explore-mscs.webp", 
     
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
     programBenefitsDescription: "At Stevens, we cultivate the next generation of innovators through our 100% online, leading-edge curriculum. You'll gain future-ready skills taught by faculty who led engineering at IBM, Microsoft and AT&T Labs. Our career-aligned curriculum is designed for real-world impact, so you don't just learn how to code, you learn how to solve complex problems and lead in a fast-changing field.",
-    programBenefitsImage: "/assets/images/1-explore-mscs.webp", // Placeholder
+    programBenefitsImage: "/assets/images/explore-mscs/1-explore-mscs.webp", // Placeholder
     programBenefitsHighlights: [
       {
         title: "Program Advantages:",

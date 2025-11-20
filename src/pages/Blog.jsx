@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { createPageUrl, buildCanonicalUrl, setJsonLd, setPageTitle, setMetaDescription, setOpenGraphTags } from '@/utils';
+import { BLOG_SEO_META_DESCRIPTIONS, BLOG_INDEX_SEO } from '@/config/blog-seo-config';
 import BlogList from '@/components/blog/BlogList';
 import BlogDetail from '@/components/blog/BlogDetail';
 import BlogErrorBoundary from '@/components/blog/BlogErrorBoundary';
@@ -190,15 +191,18 @@ export default function Blog() {
       // Set page title
       setPageTitle(`${singlePost.title} | Stevens Online`);
       
-      // Set meta description
-      const description = singlePost.excerpt || singlePost.subtitle || `Read about ${singlePost.title} on Stevens Online blog.`;
+      // Set meta description - prioritize SEO-optimized descriptions from config
+      const description = BLOG_SEO_META_DESCRIPTIONS[singlePost.id] 
+        || singlePost.excerpt 
+        || singlePost.subtitle 
+        || `Read about ${singlePost.title} on Stevens Online blog.`;
       setMetaDescription(description);
       
       // Set Open Graph tags
       setOpenGraphTags({
         title: singlePost.title,
         description: description,
-        image: singlePost.featured_image_url ? buildCanonicalUrl(singlePost.featured_image_url) : buildCanonicalUrl('/assets/logos/stevens-crest.png'),
+        image: singlePost.featured_image_url ? buildCanonicalUrl(singlePost.featured_image_url) : buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
         url: canonical,
         type: 'article'
       });
@@ -218,7 +222,7 @@ export default function Blog() {
         "publisher": {
           "@type": "Organization",
           "name": "Stevens Institute of Technology",
-          "logo": { "@type": "ImageObject", "url": buildCanonicalUrl('/assets/logos/stevens-crest.png') }
+          "logo": { "@type": "ImageObject", "url": buildCanonicalUrl('/assets/logos/stevens-crest.webp') }
         },
         "mainEntityOfPage": canonical,
         "url": canonical
@@ -226,13 +230,13 @@ export default function Blog() {
       setJsonLd('jsonld-blog-post', jsonld);
     } else if (posts.length > 0) {
 
-      // Blog index page
-      setPageTitle('Stevens Online Blog | Graduate Education Insights');
-      setMetaDescription('Stay informed with insights, tips, and news about online education, career advancement, and technology trends from Stevens Institute of Technology.');
+      // Blog index page - use SEO-optimized descriptions
+      setPageTitle(BLOG_INDEX_SEO.title);
+      setMetaDescription(BLOG_INDEX_SEO.description);
       
       setOpenGraphTags({
         title: 'Stevens Online Blog',
-        description: 'Stay informed with insights, tips, and news about online education, career advancement, and technology trends.',
+        description: BLOG_INDEX_SEO.ogDescription,
         url: buildCanonicalUrl('/blog/'),
         type: 'website'
       });

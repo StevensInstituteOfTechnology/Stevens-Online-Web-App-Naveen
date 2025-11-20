@@ -13,13 +13,13 @@ const programData = {
   seo: {
     title: 'Online MEM in Engineering Management | Stevens',
     description: 'Lead engineering teams with the 100% online MEM in Engineering Management from Stevens Institute of Technology. STEM-designated, flexible format, no GRE required.',
-    ogImage: '/assets/images/1-mem-hero-scaled.webp',
+    ogImage: '/assets/images/mem/1-mem-hero-scaled.webp',
     url: '/online-masters-engineering-management/'
   },
   hero: {
-    titleLines: ["Earn Your MEM Online.", "Lead Engineering Teams Anywhere."],
+    titleLines: ["Earn Your Master of Engineering Management (MEM) Online", "Lead Engineering Teams Anywhere."],
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
-    bgImage: "/assets/images/1-mem-hero-scaled.webp",
+    bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     
@@ -362,11 +362,11 @@ const programData = {
   faculty: {
     description: "The School of Systems and Enterprises (SSE) faculty is made up of experienced educators and active researchers who offer industry insights to Engineering Management students.",
     members: [
-      { name: "Carlo Lipizzi", title: "MEM Program Director & Professor", image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.jpg" },
-      { name: "Chong Ee", title: "Adjunct Professor", image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.jpg" },
-      { name: "Alparslan Emrah Bayrak", title: "Assistant Professor", image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.jpg" },
-      { name: "Teresa Zigh", title: "Teaching Associate Professor", image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.jpg" },
-      { name: "Yeganeh Hayeri", title: "Professor", image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.jpeg" },
+      { name: "Carlo Lipizzi", title: "MEM Program Director & Professor", image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.webp" },
+      { name: "Chong Ee", title: "Adjunct Professor", image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.webp" },
+      { name: "Alparslan Emrah Bayrak", title: "Assistant Professor", image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.webp" },
+      { name: "Teresa Zigh", title: "Teaching Associate Professor", image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp" },
+      { name: "Yeganeh Hayeri", title: "Professor", image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.webp" },
     ]
   },
   admissions: {

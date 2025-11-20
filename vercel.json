@@ -120,6 +120,41 @@
       "source": "/asap",
       "destination": "/ASAP/",
       "permanent": true
+    },
+    {
+      "source": "/faculty/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/event/:path*",
+      "destination": "/events/",
+      "permanent": true
+    },
+    {
+      "source": "/info/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/course/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/:path*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/course/:path*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/faq/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
