@@ -85,7 +85,7 @@ const mobileNavLinks = [
     items: mobileGraduateProgramItems,
   },
   {
-    name: "Certificate Programs",
+    name: "Certificates",
     isDropdown: true,
     items: mobileCertificateProgramItems,
   },
@@ -767,7 +767,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    GRADUATE{" "}
+                    GRADUATE PROGRAMS{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${graduateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
@@ -889,7 +889,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    Certificate{" "}
+                    Certificates{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${certificateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
