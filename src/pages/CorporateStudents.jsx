@@ -43,6 +43,7 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { PROGRAMS_DATA } from '@/data/programsData';
 import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/utils/discountCalculator';
+import { BOOKING_URLS } from '@/config/constants';
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
@@ -232,35 +233,48 @@ const CorporateStudents = () => {
   const applicationSteps = [
     {
       step: 1,
-      actionNeeded: "Start the Stevens graduate application",
-      forYourPlan: "Start your Graduate Application at https://gradadmissions.stevens.edu/apply/"
+      actionNeeded: "Select your program or certificate",
+      forYourPlan: "Explore our specially designed graduate programs and professional certificates, crafted to advance your career and support your professional development goals.",
+      linkText: "View Programs",
+      linkTarget: "#programs-section"
     },
     {
       step: 2,
-      actionNeeded: "Add corporate partnership information to your application",
-      forYourPlan: 'In Financial Support Section, answer YES to "Will you be attending Stevens Institute of Technology as part of a corporate partner agreement (i.e. corporate, government, or other professional organization)?"'
+      actionNeeded: "Use the cost calculator to estimate your investment",
+      forYourPlan: "Click 'Calculate Your Cost' on your selected program to access our interactive calculator. This tool helps you understand the total program cost before applying.",
+      linkText: "Start",
+      linkTarget: "#cost-calculator"
     },
     {
       step: 3,
-      actionNeeded: "Enter your corporate code",
-      forYourPlan: "Under Sponsored Program List, select your corporate code from the drop down."
+      actionNeeded: "Select your company to view partnership benefits",
+      forYourPlan: "In the calculator, choose your company from the dropdown menu to see available corporate partnership benefits, discounts, and special programs tailored to your organization."
     },
     {
       step: 4,
-      actionNeeded: "Receive application fee waiver, if applicable",
-      forYourPlan: "You will receive the $60 application fee waiver after submitting your application."
+      actionNeeded: "Apply eligible discounts",
+      forYourPlan: "Select any applicable discounts and enter your employer reimbursement amount. The calculator will show your final out-of-pocket cost after all discounts and benefits."
     },
     {
       step: 5,
-      actionNeeded: "Receive tuition discount, if applicable",
-      forYourPlan: "To receive your tuition discount, email your corporate advisor from your company email address at the beginning of each semester that you register. Please note, the tuition discount is only applicable to part-time study (3 to 6 credits per semester.)"
-    },
-    {
-      step: 6,
-      actionNeeded: "Enroll in deferred payment plan & receive fee waiver, if applicable",
-      forYourPlan: "If you wish to enroll in our deferred payment plan, once registered for a course, submit our Employer Tuition Reimbursement Bridge Plan Form for corporate students. You will need to submit this form at the beginning of each semester you are registered for classes."
+      actionNeeded: "Start your application",
+      forYourPlan: "Click the 'Apply Now' button on your selected program page to begin your application. If you have any questions or need assistance, feel free to ",
+      linkText: "schedule a call with an advisor",
+      linkTarget: BOOKING_URLS.SCHEDULE_CALL,
+      isExternal: true
     }
   ];
+
+  // Handle scroll to section
+  const scrollToSection = (targetId) => {
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
 
   // Tuition savings calculator data
   const tuitionData = {
@@ -329,7 +343,7 @@ const CorporateStudents = () => {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
                 Exclusive Benefits for Partner Employees
               </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-5xl mx-auto">
                 Through your employer's partnership with Stevens Online, you can access a fast, flexible, 
                 and career-aligned path to earn a graduate certificate, master's degree, or professional credential.
               </p>
@@ -341,17 +355,17 @@ const CorporateStudents = () => {
                 return (
                   <div 
                     key={benefit.title} 
-                    className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-gray-200"
+                    className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-gray-200 flex flex-col"
                   >
                     {/* Icon Container */}
                     <div className="mb-stevens-md flex justify-center">
-                      <div className="w-16 h-16 bg-stevens-primary rounded-stevens-lg flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-primary/90 group-hover:scale-105">
+                      <div className="w-16 h-16 bg-stevens-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-primary/90 group-hover:scale-105">
                         <Icon className="w-8 h-8 text-stevens-white" />
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="font-stevens-display text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors">
+                    {/* Title - Fixed height to align descriptions */}
+                    <h3 className="font-stevens-display text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors min-h-[90px] flex items-center justify-center">
                       {benefit.title}
                     </h3>
 
@@ -436,7 +450,7 @@ const CorporateStudents = () => {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
                 Explore Career-Aligned Programs
               </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto mb-stevens-lg">
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-4xl mx-auto mb-stevens-lg">
                 Choose from flexible graduate certificates, degrees, and short courses designed to 
                 strengthen your expertise and leadership potential.
               </p>
@@ -570,17 +584,18 @@ const CorporateStudents = () => {
                           </Button>
                           
                         <Link 
-                          to={`${createPageUrl('/accelerated-application/')}?program=${program.code}${corporateCode ? `&code=${corporateCode}` : ''}`}
+                          to={program.programPage || `${createPageUrl('/')}${program.code}/`}
                           onClick={() => {
                             trackEvent('program_card_clicked', {
                               program_code: program.code,
                               source: 'corporate_students',
-                              has_corporate_code: !!corporateCode
+                              has_corporate_code: !!corporateCode,
+                              action: 'view_detail'
                             });
                           }}
                         >
                             <Button className="w-full text-stevens-white">
-                            Apply Now
+                            View Detail
                             <ArrowRight className="ml-2 w-4 h-4" />
                           </Button>
                         </Link>
@@ -615,7 +630,7 @@ const CorporateStudents = () => {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
                 Your Education, Made More Affordable
               </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-5xl mx-auto">
                 Calculate your actual cost with corporate discounts and employer benefits. 
                 Select a program above to get started.
               </p>
@@ -1239,6 +1254,28 @@ const CorporateStudents = () => {
                         <td className="px-stevens-lg py-stevens-lg align-top w-3/5">
                           <p className="text-stevens-gray-700 leading-relaxed">
                             {step.forYourPlan}
+                            {step.linkText && step.linkTarget && (
+                              <>
+                                {' '}
+                                {step.isExternal ? (
+                                  <a
+                                    href={step.linkTarget}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-stevens-primary font-stevens-semibold hover:text-stevens-primary/80 underline transition-colors"
+                                  >
+                                    {step.linkText}
+                                  </a>
+                                ) : (
+                                  <button
+                                    onClick={() => scrollToSection(step.linkTarget)}
+                                    className="text-stevens-primary font-stevens-semibold hover:text-stevens-primary/80 underline transition-colors"
+                                  >
+                                    {step.linkText}
+                                  </button>
+                                )}
+                              </>
+                            )}
                           </p>
                         </td>
                       </tr>
@@ -1261,6 +1298,28 @@ const CorporateStudents = () => {
                     </div>
                     <p className="text-stevens-gray-700 text-stevens-sm leading-relaxed">
                       {step.forYourPlan}
+                      {step.linkText && step.linkTarget && (
+                        <>
+                          {' '}
+                          {step.isExternal ? (
+                            <a
+                              href={step.linkTarget}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-stevens-primary font-stevens-semibold hover:text-stevens-primary/80 underline transition-colors"
+                            >
+                              {step.linkText}
+                            </a>
+                          ) : (
+                            <button
+                              onClick={() => scrollToSection(step.linkTarget)}
+                              className="text-stevens-primary font-stevens-semibold hover:text-stevens-primary/80 underline transition-colors"
+                            >
+                              {step.linkText}
+                            </button>
+                          )}
+                        </>
+                      )}
                     </p>
                   </div>
                 ))}
