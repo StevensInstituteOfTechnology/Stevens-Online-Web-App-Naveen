@@ -64,8 +64,8 @@ const tuitionAdmissionsItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
   { name: "Events", page: "Events/" },
-  { name: "Corporate Partners", page: "corporate-partners/" },
-  { name: "Corporate Students", page: "corporate-students/" },
+  // { name: "Corporate Partners", page: "corporate-partners/" },
+  // { name: "Corporate Students", page: "corporate-students/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -970,7 +970,7 @@ export default function Layout({ children, currentPageName }) {
                 <DropdownMenu open={tuitionDropdownOpen} onOpenChange={setTuitionDropdownOpen}>
                   <DropdownMenuTrigger
                     className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
-                      isActive("Tuition") || isActive("Events") || isActive("Admissions") || isActive("corporate-partners") || isActive("corporate-students")
+                      isActive("Tuition") || isActive("Events") || isActive("Admissions")
                         ? "text-stevens-white/80"
                         : "text-stevens-white hover:text-stevens-white/80"
                     }`}
