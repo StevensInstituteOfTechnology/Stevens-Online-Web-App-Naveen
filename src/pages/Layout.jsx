@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
-import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
+import { BOOKING_URLS, CONTACT_INFO, KEY_DATES } from "@/config/constants";
 import {
   ChevronDown,
   Menu,
@@ -150,12 +150,31 @@ export default function Layout({ children, currentPageName }) {
     ? { href: redirect.url, target: '_blank', rel: 'noopener noreferrer' }
     : { to: redirect.url };
 
+  // Format date from "December 25, 2025" to "December 25th"
+  const formatPriorityDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const day = date.getDate();
+    
+    // Add ordinal suffix
+    const getOrdinalSuffix = (n) => {
+      const s = ['th', 'st', 'nd', 'rd'];
+      const v = n % 100;
+      return s[(v - 20) % 10] || s[v] || s[0];
+    };
+    
+    return `${month} ${day}${getOrdinalSuffix(day)}`;
+  };
+
   // ASAP Banner continuous message with emphasis
-  const BannerMessage = () => (
-    <>
-      <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>November 20th Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
-    </>
-  );
+  const BannerMessage = () => {
+    const priorityDate = formatPriorityDate(KEY_DATES.PRIORITY_SUBMIT.date);
+    return (
+      <>
+        <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>{priorityDate} Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
+      </>
+    );
+  };
   
   // Mobile banner message - simplified version
   const MobileBannerMessage = () => (
