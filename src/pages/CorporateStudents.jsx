@@ -22,7 +22,8 @@ import {
   Home,
   Building,
   Calculator,
-  X
+  X,
+  Quote
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import ApplicationModal from '@/components/shared/ApplicationModal';
@@ -156,11 +157,7 @@ const CorporateStudents = () => {
       title: "Immediate Career Impact",
       description: "Apply new skills right away and gain credentials that enhance your role and open opportunities."
     },
-    {
-      icon: Shield,
-      title: "Exclusive Partner Discounts",
-      description: "Additional savings beyond tuition reimbursement through our corporate partnership."
-    }
+    
   ];
 
   // Career paths and programs
@@ -231,43 +228,37 @@ const CorporateStudents = () => {
     }
   ];
 
-  // Learning journey steps
-  const learningJourney = [
+  // Learning journey steps - Application & Benefits
+  const applicationSteps = [
     {
       step: 1,
-      title: "Start Your Application",
-      description: "Use your corporate code for instant benefits and fee waivers",
-      icon: BookOpen
+      actionNeeded: "Start the Stevens graduate application",
+      forYourPlan: "Start your Graduate Application at https://gradadmissions.stevens.edu/apply/"
     },
     {
       step: 2,
-      title: "Get Admitted Fast",
-      description: "Accelerated review process with no essays required",
-      icon: Zap
+      actionNeeded: "Add corporate partnership information to your application",
+      forYourPlan: 'In Financial Support Section, answer YES to "Will you be attending Stevens Institute of Technology as part of a corporate partner agreement (i.e. corporate, government, or other professional organization)?"'
     },
     {
       step: 3,
-      title: "Connect with Advisor",
-      description: "Your dedicated corporate care advisor guides your journey",
-      icon: Users
+      actionNeeded: "Enter your corporate code",
+      forYourPlan: "Under Sponsored Program List, select your corporate code from the drop down."
     },
     {
       step: 4,
-      title: "Begin Learning",
-      description: "Start with courses aligned to your career goals",
-      icon: GraduationCap
+      actionNeeded: "Receive application fee waiver, if applicable",
+      forYourPlan: "You will receive the $60 application fee waiver after submitting your application."
     },
     {
       step: 5,
-      title: "Apply Skills Immediately",
-      description: "Use new knowledge in your current role right away",
-      icon: Briefcase
+      actionNeeded: "Receive tuition discount, if applicable",
+      forYourPlan: "To receive your tuition discount, email your corporate advisor from your company email address at the beginning of each semester that you register. Please note, the tuition discount is only applicable to part-time study (3 to 6 credits per semester.)"
     },
     {
       step: 6,
-      title: "Advance Your Career",
-      description: "Graduate with credentials that open new opportunities",
-      icon: TrendingUp
+      actionNeeded: "Enroll in deferred payment plan & receive fee waiver, if applicable",
+      forYourPlan: "If you wish to enroll in our deferred payment plan, once registered for a course, submit our Employer Tuition Reimbursement Bridge Plan Form for corporate students. You will need to submit this form at the beginning of each semester you are registered for classes."
     }
   ];
 
@@ -344,28 +335,30 @@ const CorporateStudents = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-stevens-md lg:gap-stevens-lg">
               {partnerBenefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title}>
-                    <Card className="h-full">
-                      <CardContent className="p-stevens-lg">
-                        <div className="flex items-start space-x-stevens-md">
-                          <div className="w-12 h-12 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-6 h-6 text-stevens-primary" />
-                          </div>
-                          <div>
-                            <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
-                              {benefit.title}
-                            </h3>
-                            <p className="text-stevens-gray-700">
-                              {benefit.description}
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                  <div 
+                    key={benefit.title} 
+                    className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-gray-200"
+                  >
+                    {/* Icon Container */}
+                    <div className="mb-stevens-md flex justify-center">
+                      <div className="w-16 h-16 bg-stevens-primary rounded-stevens-lg flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-primary/90 group-hover:scale-105">
+                        <Icon className="w-8 h-8 text-stevens-white" />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-stevens-display text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors">
+                      {benefit.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed group-hover:text-stevens-gray-700 transition-colors">
+                      {benefit.description}
+                    </p>
                   </div>
                 );
               })}
@@ -374,45 +367,57 @@ const CorporateStudents = () => {
         </section>
 
         {/* Why Stevens Online */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                A Top-Ranked University Built for Working Professionals
-              </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-                Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
-                career outcomes, empowering professionals to thrive in the future of work.
-              </p>
+        <section className="bg-stevens-primary">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            {/* Left Side - Image (Square) */}
+            <div className="relative aspect-square lg:aspect-square overflow-hidden">
+              <img
+                src="/assets/images/shared/accreditation.webp"
+                alt="Stevens Online students and professionals"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '20% center' }}
+              />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
-              {/* Ranking Cards */}
-              <div className="text-center">
-                <div className="bg-stevens-primary text-stevens-white rounded-stevens-lg p-stevens-lg">
-                  <Award className="w-12 h-12 mx-auto mb-stevens-md" />
-                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">#1</div>
-                  <p className="font-stevens-medium">Online MBA in New Jersey</p>
-                  <p className="text-stevens-sm opacity-80">U.S. News 2025</p>
+            {/* Right Side - Text Content (Square, Red Background) */}
+            <div className="aspect-square lg:aspect-square bg-stevens-primary text-stevens-white flex flex-col justify-center px-stevens-lg lg:px-stevens-2xl py-stevens-xl">
+              <div className="space-y-stevens-xl">
+                {/* Title and Description */}
+                <div className="space-y-stevens-md">
+                  <h2 className="font-stevens-display text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-stevens-white leading-tight">
+                    A Top-Ranked University Built for Working Professionals
+                  </h2>
+                  <p className="text-stevens-base lg:text-stevens-lg text-stevens-white/90 leading-relaxed">
+                    Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
+                    career outcomes, empowering professionals to thrive in the future of work.
+                  </p>
                 </div>
-              </div>
 
-              <div className="text-center">
-                <div className="bg-stevens-secondary text-stevens-white rounded-stevens-lg p-stevens-lg">
-                  <TrendingUp className="w-12 h-12 mx-auto mb-stevens-md" />
-                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">#9</div>
-                  <p className="font-stevens-medium">Best ROI Colleges</p>
-                  <p className="text-stevens-sm opacity-80">Princeton Review</p>
+                {/* Large Quote Icon */}
+                <div className="pt-stevens-md">
+                  <Quote className="w-16 h-16 text-stevens-white/80" />
                 </div>
-              </div>
 
-              <div className="text-center">
-                <div className="bg-stevens-tertiary text-stevens-white rounded-stevens-lg p-stevens-lg">
-                  <Star className="w-12 h-12 mx-auto mb-stevens-md" />
-                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">7x</div>
-                  <p className="font-stevens-medium">21st Century Award Winner</p>
-                  <p className="text-stevens-sm opacity-80">Distance Learning</p>
-                </div>
+                {/* Student Quote */}
+                {successStories.slice(0, 1).map((story, index) => (
+                  <div key={index} className="space-y-stevens-lg">
+                    <blockquote className="text-stevens-xl lg:text-stevens-2xl text-stevens-white leading-relaxed">
+                      {story.quote}
+                    </blockquote>
+                    
+                    {/* Divider */}
+                    <div className="border-t border-stevens-white/30 pt-stevens-lg">
+                      <p className="text-stevens-base font-stevens-medium text-stevens-white">
+                        {story.name}, {story.title}
+                      </p>
+                      {story.company && (
+                        <p className="text-stevens-sm text-stevens-white/80 mt-stevens-xs">
+                          {story.company}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -704,31 +709,50 @@ const CorporateStudents = () => {
                       {selectedCompany && calculatedCost && (
                         <>
                           {/* CPE 30% Retail Discount (only show if eligible and before deadline) */}
-                          {DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id)?.show30Percent && (
-                            <div className="flex items-start space-x-3 p-stevens-md bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border-2 border-blue-200">
-                              <Checkbox
-                                id="cpe-discount"
-                                checked={applyCPEDiscount}
-                                onCheckedChange={setApplyCPEDiscount}
-                                className="mt-0.5"
-                              />
-                              <div className="flex-1">
-                                <label
-                                  htmlFor="cpe-discount"
-                                  className="text-sm font-medium text-blue-900 cursor-pointer flex items-center"
-                                >
-                                  <Sparkles className="w-4 h-4 mr-1.5 text-blue-600" />
-                                  Apply CPE 30% Retail Student Discount
-                                </label>
-                                <p className="text-xs text-blue-800 mt-1">
-                                  Special limited-time offer for new online retail students
-                                </p>
-                                <p className="text-xs text-blue-700 mt-1 font-semibold">
-                                  ⏰ Apply by December 25, 2026 to qualify
+                          {(() => {
+                            const discountAvailability = DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id);
+                            if (!discountAvailability?.show30Percent) return null;
+                            
+                            // Format date from "2026-12-25" to "December 25, 2026"
+                            const formatDate = (dateString) => {
+                              const date = new Date(dateString);
+                              return date.toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric' 
+                              });
+                            };
+                            
+                            const validUntilDate = discountAvailability.cpeValidUntil 
+                              ? formatDate(discountAvailability.cpeValidUntil)
+                              : 'December 25, 2026';
+                            
+                            return (
+                              <div className="flex items-start space-x-3 p-stevens-md bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border-2 border-blue-200">
+                                <Checkbox
+                                  id="cpe-discount"
+                                  checked={applyCPEDiscount}
+                                  onCheckedChange={setApplyCPEDiscount}
+                                  className="mt-0.5"
+                                />
+                                <div className="flex-1">
+                                  <label
+                                    htmlFor="cpe-discount"
+                                    className="text-sm font-medium text-blue-900 cursor-pointer flex items-center"
+                                  >
+                                    <Sparkles className="w-4 h-4 mr-1.5 text-blue-600" />
+                                    Apply CPE 30% Retail Student Discount
+                                  </label>
+                                  <p className="text-xs text-blue-800 mt-1">
+                                    Special limited-time offer for new online retail students
+                                  </p>
+                                  <p className="text-xs text-blue-700 mt-1 font-semibold">
+                                    ⏰ Apply by {validUntilDate} to qualify
                         </p>
                       </div>
                     </div>
-                          )}
+                            );
+                          })()}
 
                           {/* Hoboken Resident (only show if eligible) */}
                           {DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id)?.showHoboken && (
@@ -1144,16 +1168,17 @@ const CorporateStudents = () => {
             ) : (
               /* Default view - select a program message */
               <Card className="max-w-2xl mx-auto">
-                <CardContent className="p-stevens-2xl text-center">
-                  <Calculator className="w-16 h-16 mx-auto mb-stevens-lg text-stevens-gray-400" />
-                  <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+                <CardContent className="p-stevens-xl lg:p-stevens-2xl text-center">
+                  <Calculator className="w-16 h-16 mx-auto mb-stevens-xl text-stevens-gray-400" />
+                  <h3 className="font-stevens-display text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
                     Ready to see your actual cost?
                   </h3>
-                  <p className="text-stevens-gray-700 mb-stevens-lg">
+                  <p className="text-stevens-base lg:text-stevens-lg text-stevens-gray-700 mb-stevens-xl max-w-xl mx-auto leading-relaxed">
                     Click "Calculate Your Cost" on any program above to see how corporate discounts 
                     and employer benefits can make your education more affordable.
                   </p>
                   <Button
+                    className="text-stevens-white"
                     size="lg"
                     onClick={() => {
                       // Scroll to programs section
@@ -1163,8 +1188,9 @@ const CorporateStudents = () => {
                       });
                     }}
                   >
-                    <ArrowRight className="mr-2 w-5 h-5 rotate-[-90deg]" />
+                    
                     Explore Programs Above
+                    <ArrowRight className="mr-2 w-5 h-5 rotate-[-90deg]" />
                   </Button>
                 </CardContent>
               </Card>
@@ -1177,37 +1203,68 @@ const CorporateStudents = () => {
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                Start Your Journey with Stevens
+                How to Apply for Admission & Receive Your Benefits
               </h2>
               <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-                From application to graduation, we make your path to success clear and achievable.
+                Follow these steps to start your journey with Stevens and unlock your corporate benefits.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
-              {learningJourney.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={step.step} className="relative">
-                    
-                    <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg shadow-stevens-md relative z-10">
-                      <div className="flex items-start space-x-stevens-md">
-                        <div className="w-12 h-12 bg-stevens-primary text-stevens-white rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="font-stevens-bold">{step.step}</span>
-                        </div>
-                        <div>
-                          <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
-                            {step.title}
-                          </h3>
-                          <p className="text-stevens-gray-700">
-                            {step.description}
+            {/* Table Layout for Desktop, Card Layout for Mobile */}
+            <div className="bg-stevens-white rounded-stevens-lg overflow-hidden shadow-stevens-md">
+              {/* Desktop Table View */}
+              <div className="hidden lg:block overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-stevens-gray-800 text-stevens-white">
+                      <th className="px-stevens-lg py-stevens-md text-left font-stevens-bold text-stevens-base uppercase tracking-wide">
+                        Action Needed
+                      </th>
+                      <th className="px-stevens-lg py-stevens-md text-left font-stevens-bold text-stevens-base uppercase tracking-wide">
+                        For Your Corporate Plan
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {applicationSteps.map((step, index) => (
+                      <tr 
+                        key={step.step}
+                        className={`border-b border-stevens-gray-200 ${index % 2 === 0 ? 'bg-stevens-white' : 'bg-stevens-gray-50'}`}
+                      >
+                        <td className="px-stevens-lg py-stevens-lg align-top w-2/5">
+                          <p className="font-stevens-semibold text-stevens-gray-900">
+                            <span className="text-stevens-primary font-stevens-bold">Step {step.step}</span> - {step.actionNeeded}
                           </p>
-                        </div>
-                      </div>
+                        </td>
+                        <td className="px-stevens-lg py-stevens-lg align-top w-3/5">
+                          <p className="text-stevens-gray-700 leading-relaxed">
+                            {step.forYourPlan}
+                          </p>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Card View */}
+              <div className="lg:hidden divide-y divide-stevens-gray-200">
+                {applicationSteps.map((step) => (
+                  <div key={step.step} className="p-stevens-lg">
+                    <div className="mb-stevens-md">
+                      <p className="font-stevens-bold text-stevens-primary text-stevens-sm uppercase mb-stevens-xs">
+                        Step {step.step}
+                      </p>
+                      <p className="font-stevens-semibold text-stevens-gray-900 text-stevens-base">
+                        {step.actionNeeded}
+                      </p>
                     </div>
+                    <p className="text-stevens-gray-700 text-stevens-sm leading-relaxed">
+                      {step.forYourPlan}
+                    </p>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </section>
