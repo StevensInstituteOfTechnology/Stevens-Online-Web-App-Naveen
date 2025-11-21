@@ -133,7 +133,7 @@ const ExploreCertEnterpriseAI = () => {
       },
       {
         label: "Final Submit",
-        date: "January 5, 2026"
+        date: KEY_DATES.FINAL_SUBMIT.date
       },
       {
         label: "Start of Classes",
