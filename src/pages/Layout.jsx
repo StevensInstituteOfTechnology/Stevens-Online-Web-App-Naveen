@@ -64,8 +64,8 @@ const tuitionAdmissionsItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
   { name: "Events", page: "Events/" },
-  // { name: "Corporate Partners", page: "corporate-partners/" },
-  // { name: "Corporate Students", page: "corporate-students/" },
+  { name: "Corporate Partners", page: "corporate-partners/" },
+  { name: "Corporate Students", page: "corporate-students/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -1361,7 +1361,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  GRADUATE
+                  Graduate Programs
                 </Link>
                 {/* <Link
                   to={createPageUrl("Certificates")}
