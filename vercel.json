@@ -155,6 +155,26 @@
       "source": "/faq/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/blog/computer-science-salaries-outlook-for-2023",
+      "destination": "/blog/computer-science-salary-outlook-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/computer-science-salaries-outlook-for-2023/",
+      "destination": "/blog/computer-science-salary-outlook-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/explore-computer-science-salary-and-job-outlook-2024",
+      "destination": "/blog/computer-science-salary-outlook-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/explore-computer-science-salary-and-job-outlook-2024/",
+      "destination": "/blog/computer-science-salary-outlook-2025/",
+      "permanent": true
     }
   ],
   "headers": [

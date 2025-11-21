@@ -22,12 +22,26 @@ export const CONTACT_INFO = {
 
 // Key Dates & Deadlines constants
 export const KEY_DATES = {
+  TERM: {
+    name: 'Spring 2026',
+    nameUppercase: 'SPRING 2026',
+    year: '2026',
+    season: 'Spring'
+  },
+  EARLY_SUBMIT: {
+    date: 'November 20, 2025',
+    details: 'Deposit Waiver* and Application Fee Waiver Available.'
+  },
   PRIORITY_SUBMIT: {
-    date: 'December 25, 2025',
+    date: 'December 15, 2025',
     details: 'Application Fee Waiver Available and Early Application Review.'
   },
   FINAL_SUBMIT: {
     date: 'January 10, 2026',
     details: 'Final application deadline for Spring 2026 term.'
+  },
+  START_OF_CLASSES: {
+    date: 'January 20, 2026',
+    details: 'Start of classes for Spring 2026 term.'
   }
 };

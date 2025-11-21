@@ -534,10 +534,10 @@ const CorporatePartners = () => {
             onClick={() => setShowContactModal(false)}
           >
             <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
-              <div 
+            <div
                 className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
                 onClick={(e) => e.stopPropagation()}
-              >
+            >
                 {/* Header */}
                 <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
                   <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
@@ -555,19 +555,19 @@ const CorporatePartners = () => {
                     <X className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </div>
-
+                
                 {/* Content */}
                 <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
-                  <LeadCaptureForm
-                    formType="corporate_partnership"
-                    source="corporate_partners_page"
-                    programCode="CORP"
+                <LeadCaptureForm
+                  formType="corporate_partnership"
+                  source="corporate_partners_page"
+                  programCode="CORP"
                     hideHeader={true}
-                    onSuccess={() => {
-                      trackConversion(CONVERSION_LABELS.CORPORATE_INQUIRY);
-                      setShowContactModal(false);
-                    }}
-                  />
+                  onSuccess={() => {
+                    trackConversion(CONVERSION_LABELS.CORPORATE_INQUIRY);
+                    setShowContactModal(false);
+                  }}
+                />
                 </div>
 
                 {/* Footer */}

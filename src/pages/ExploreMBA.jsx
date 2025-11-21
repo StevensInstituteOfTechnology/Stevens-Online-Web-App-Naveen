@@ -124,7 +124,7 @@ const ExploreMBA = () => {
     keyDates: [
       {
         label: "Early Submit",
-        date: "October 14, 2025"
+        date: KEY_DATES.EARLY_SUBMIT.date
       },
       {
         label: "Priority Submit", 
@@ -132,11 +132,11 @@ const ExploreMBA = () => {
       },
       {
         label: "Final Submit",
-        date: "January 5, 2026"
+        date: KEY_DATES.FINAL_SUBMIT.date
       },
       {
         label: "Start of Classes",
-        date: "January 20, 2026"
+        date: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive tuition discounts are not eligible. Other eligibility conditions may apply.",
