@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
 import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
 import {
   GraduationCap,
@@ -205,6 +205,19 @@ export default function Home() {
     loadData();
   }, []);
 
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Explore Online Master\'s Programs | Stevens Online');
+    setMetaDescription('Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.');
+    setOpenGraphTags({
+      title: 'Explore Online Master\'s Programs | Stevens Online',
+      description: 'Explore accredited online master\'s programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/'),
+      type: 'website'
+    });
+  }, []);
+
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
     <div className="font-sans bg-white">
@@ -226,7 +239,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
-                Advance Your Career with a World-Class Online Degree from
+                Advance Your Career with a World-Class Online Master's Degree from
                 Stevens
               </h1>
               <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>

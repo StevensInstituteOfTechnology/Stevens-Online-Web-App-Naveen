@@ -23,7 +23,11 @@ export const CONTACT_INFO = {
 // Key Dates & Deadlines constants
 export const KEY_DATES = {
   PRIORITY_SUBMIT: {
-    date: 'November 20, 2025',
+    date: 'December 20, 2025',
     details: 'Application Fee Waiver Available and Early Application Review.'
+  },
+  FINAL_SUBMIT: {
+    date: 'January 10, 2026',
+    details: 'Final application deadline for Spring 2026 term.'
   }
 };

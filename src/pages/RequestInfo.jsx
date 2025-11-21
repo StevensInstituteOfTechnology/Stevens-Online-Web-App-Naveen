@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS, CONTACT_INFO } from '@/config/constants';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 
 export default function RequestInfo() {
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Request Information About Graduate Programs | Stevens Online');
+    setMetaDescription('Request information about Stevens Online graduate programs and connect with an enrollment advisor today.');
+    setOpenGraphTags({
+      title: 'Request Information About Graduate Programs | Stevens Online',
+      description: 'Request information about Stevens Online graduate programs and connect with an enrollment advisor today.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/request-information/'),
+      type: 'website'
+    });
+  }, []);
+
   return (
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero 

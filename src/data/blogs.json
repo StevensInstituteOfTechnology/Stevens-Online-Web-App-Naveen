@@ -1246,7 +1246,7 @@
           "links": [
             {
               "text": "acquiring those skills",
-              "url": "StevensOnline M.Eng. in Applied Data Science/#curriculum"
+              "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
           "bold": [
@@ -1260,15 +1260,10 @@
             {
               "text": "90 percent of data scientists have advanced degrees",
               "url": "https://www.burtchworks.com/wp-content/uploads/2017/05/DS-2017-Education.pdf"
-            },
-            {
-              "text": "shortage of Big Data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
             }
           ],
           "bold": [
-            "90 percent of data scientists have advanced degrees",
-            "shortage of Big Data talent"
+            "90 percent of data scientists have advanced degrees"
           ]
         },
         {
@@ -1278,7 +1273,7 @@
         },
         {
           "type": "paragraph",
-          "text": "StevensOnline‘s MSDS graduate program attracts domestic and international students with academic backgrounds and professional specializations in data analytics, data visualization, business intelligence, business analytics, information technology, information systems, computer science, and statistical mathematics. While some enroll in the online program because they want to transition into data science, others pursue this degree to further advance in analytics careers or learn how to leverage the vast quantities of data generated in their professional spheres.",
+          "text": "StevensOnline's M.Eng. in Applied Data Science program attracts domestic and international students with academic backgrounds and professional specializations in data analytics, data visualization, business intelligence, business analytics, information technology, information systems, computer science, and statistical mathematics. While some enroll in the online program because they want to transition into data science, others pursue this degree to further advance in analytics careers or learn how to leverage the vast quantities of data generated in their professional spheres.",
           "links": [
             
             {
@@ -1299,7 +1294,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Many prospective MSDS students already work in data science or related roles and, though it’s not a prerequisite, are proficient in:",
+          "text": "Many prospective M.Eng. in Applied Data Science students already work in data science or related roles and, though it's not a prerequisite, are proficient in:",
           "links": [],
           "bold": []
         },
@@ -1349,7 +1344,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens’ future-focused interdisciplinary MSDS curriculum prepares students to thrive in data science careers in settings as diverse as fintech, academia, healthcare and government. Core courses are laser-focused on skills that employers seek in data scientists:",
+          "text": "Stevens' future-focused interdisciplinary M.Eng. in Applied Data Science curriculum prepares students to thrive in data science careers in settings as diverse as fintech, academia, healthcare and government. Core courses are laser-focused on skills that employers seek in data scientists:",
           "links": [
             {
               "text": "data science careers",
@@ -1435,7 +1430,7 @@
               ]
             },
             {
-              "text": "Database Management Systems helps MSDS students develop skills related to the design and querying of data management systems, so they don’t have to rely on machine learning engineers or data engineers. Data scientists can sometimes get away without knowing their way around database management systems, but they’ll never be as efficient or as effective as those who can use data mining and tools like SQL.",
+              "text": "Database Management Systems helps M.Eng. in Applied Data Science students develop skills related to the design and querying of data management systems, so they don't have to rely on machine learning engineers or data engineers. Data scientists can sometimes get away without knowing their way around database management systems, but they'll never be as efficient or as effective as those who can use data mining and tools like SQL.",
               "links": [],
               "bold": [
                 "Database Management Systems"
@@ -1449,7 +1444,7 @@
               ]
             },
             {
-              "text": "Distributed Systems use groupings of individual computers to address one significant problem. Networked devices in multiple locations share the workload. Cloud computing, on the other hand, uses remote networked servers to complete several tasks (usually for multiple organizations). MSDS students at Stevens learn to design and implement distributed and cloud systems and fault-tolerant applications in distributed environments. Coursework covers protocol design, models of distributed systems and methods of replication for fault tolerance. Given how quickly distributed systems and the cloud replace traditional in-house networked systems, it won’t be long before data scientists work with the former more often than with the latter.",
+              "text": "Distributed Systems use groupings of individual computers to address one significant problem. Networked devices in multiple locations share the workload. Cloud computing, on the other hand, uses remote networked servers to complete several tasks (usually for multiple organizations). M.Eng. in Applied Data Science students at Stevens learn to design and implement distributed and cloud systems and fault-tolerant applications in distributed environments. Coursework covers protocol design, models of distributed systems and methods of replication for fault tolerance. Given how quickly distributed systems and the cloud replace traditional in-house networked systems, it won't be long before data scientists work with the former more often than with the latter.",
               "links": [],
               "bold": [
                 "Distributed Systems"
@@ -1464,7 +1459,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Competition for open data science positions is fierce. More highly trained data scientists exist today than when LinkedIn reported in 2018 that 150,000 jobs for data scientists would go unfilled. The master’s has become the entry-level data science degree, and employers expect to see an MSDS on your resume as proof positive that you have the hard and soft skills to turn information into actionable insights. Bachelor’s degrees, boot camps, certificate programs and MOOC sequences are no longer sufficient to break into this field - especially now that innovations like Natural Language Processing, intelligent machines and Federated Learning are rapidly changing the data science landscape.",
+          "text": "Competition for open data science positions is fierce. More highly trained data scientists exist today than when LinkedIn reported in 2018 that 150,000 jobs for data scientists would go unfilled. The master's has become the entry-level data science degree, and employers expect to see an M.Eng. in Applied Data Science on your resume as proof positive that you have the hard and soft skills to turn information into actionable insights. Bachelor's degrees, boot camps, certificate programs and MOOC sequences are no longer sufficient to break into this field - especially now that innovations like Natural Language Processing, intelligent machines and Federated Learning are rapidly changing the data science landscape.",
           "links": [],
           "bold": [
             "150,000 jobs for data scientists would go unfilled"
@@ -1477,11 +1472,11 @@
         },
         {
           "type": "paragraph",
-          "text": "The Charles V. Schaefer, Jr. School of Engineering & Science’s online MSDS lets highly motivated professionals study and complete assignments from anywhere - and at almost any time. Stevens students complete just 1.5 hours of synchronous (live) class work per week per course. The rest of their time is spent in asynchronous (self-paced) courses and doing homework, research and project work, allowing them to fulfill the core MSDS requirements while working full-time - maximizing the ROI of the MS in Data Science tuition.",
+          "text": "The Charles V. Schaefer, Jr. School of Engineering & Science's online M.Eng. in Applied Data Science lets highly motivated professionals study and complete assignments from anywhere - and at almost any time. Stevens students complete just 1.5 hours of synchronous (live) class work per week per course. The rest of their time is spent in asynchronous (self-paced) courses and doing homework, research and project work, allowing them to fulfill the core M.Eng. in Applied Data Science requirements while working full-time - maximizing the ROI of the M.Eng. in Applied Data Science tuition.",
           "links": [
             {
-              "text": "online MSDS",
-              "url": "/"
+              "text": "online M.Eng. in Applied Data Science",
+              "url": "/online-masters-engineering-applied-data-science/"
             },
             {
               "text": "complete assignments from anywhere",
@@ -1493,7 +1488,7 @@
             }
           ],
           "bold": [
-            "online MSDS",
+            "online M.Eng. in Applied Data Science",
             "complete assignments from anywhere",
             "tuition"
           ]
@@ -3052,16 +3047,16 @@
     },
     {
       "id": "computer-science-salaries-outlook-for-2023",
-      "title": "Computer Science Salaries Outlook for 2023",
-      "subtitle": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With a position that’s so important, it’s natural to wonder what a master’s in computer science salaries looks like.",
-      "excerpt": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With a position that’s so important, it’s natural to wonder what a master’s in computer science salaries looks like.",
+      "title": "Computer Science Salaries Outlook for 2025",
+      "subtitle": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With technology careers growing rapidly and the median wage for computer and IT occupations reaching $105,990 in 2024, it's natural to wonder what a master's in computer science salaries looks like.",
+      "excerpt": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With technology careers growing rapidly and the median wage for computer and IT occupations reaching $105,990 in 2024, it's natural to wonder what a master's in computer science salaries looks like.",
       "featured_image_url": "/assets/blogs/mastering-computer-science/computer-science-salaries-outlook-for-2023/computer-science-salary-1-1024x681.webp",
       "category": "Mastering Computer Science",
       "author": "Stevens Online",
       "author_bio": "Stevens Institute of Technology provides expert insights on graduate education.",
       "author_image": "/assets/blogs/mastering-computer-science/computer-science-salaries-outlook-for-2023/computer-science-salary-1-1024x681.webp",
       "created_date": "2023-09-14T04:00:00.000Z",
-      "updated_date": "2023-09-14T04:00:00.000Z",
+      "updated_date": "2025-01-15T04:00:00.000Z",
       "read_time": 6,
       "tags": [
         "Stevens Online",
@@ -3071,8 +3066,13 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With a position that’s so important, it’s natural to wonder what a master’s in computer science salaries looks like.",
-          "links": [],
+          "text": "Laptops. Tablets. Phones. Even washers and dryers. Everything in our lives is connected through software. Those who make the future a reality play a critical role in how we experience life. With technology careers growing rapidly and the median wage for computer and IT occupations reaching $105,990 in 2024—well above the median for all occupations—it's natural to wonder what a master's in computer science salaries looks like.",
+          "links": [
+            {
+              "text": "median wage for computer and IT occupations reaching $105,990",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
+            }
+          ],
           "bold": []
         },
         {
@@ -3114,8 +3114,17 @@
         },
         {
           "type": "paragraph",
-          "text": "And right now it’s a very healthy field. The US Bureau of Labor Statistics (BLS) reports the annual average of computer scientists’ salaries is a very healthy $131,490. Even more, they predict technology-related positions are expected to grow 21% between 2021 and 2031.",
-          "links": [],
+          "text": "And right now it's a very healthy field. The U.S. Bureau of Labor Statistics (BLS) reports employment in computer and information technology occupations will grow much faster than average from 2024 to 2034, creating about 317,700 job openings each year. Computer and information research scientists earned a median annual wage of $140,910 in May 2024, while the median for all computer and IT occupations was $105,990.",
+          "links": [
+            {
+              "text": "317,700 job openings each year",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
+            },
+            {
+              "text": "median annual wage of $140,910",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm"
+            }
+          ],
           "bold": []
         },
         {
@@ -3155,19 +3164,27 @@
         },
         {
           "type": "paragraph",
-          "text": "The certificates a person has can also have a positive impact on salaries. These programs offer the opportunity to stay current with trends. There are both vendor-specific trainings (Cisco, Microsoft) but also vendor-neutral certificates that apply to broader concepts, like software and programming languages. These can help grow your skills as well as aid in progressing within your company.",
-          "links": [],
+          "text": "The certificates a person has can also have a positive impact on salaries. These programs offer the opportunity to stay current with trends. There are both vendor-specific trainings (Cisco, Microsoft) but also vendor-neutral certificates that apply to broader concepts, like software and programming languages. Specializations in high-demand areas like AI/ML, cybersecurity, and cloud computing are particularly valuable—for example, machine learning engineers average $119,000 per year and are projected to see a 26% employment increase.",
+          "links": [
+            {
+              
+            }
+          ],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "The last factor that can affect salary is education. Unlike boot camps, master’s degrees go deeper and wider in the subjects that are taught, ultimately making it more beneficial. When comparing advanced education to certificates, a master’s is a stronger addition to your resume because the process of earning builds upon your bachelor degree to bolster your skillset in significant ways.",
-          "links": [],
+          "text": "The last factor that can affect salary is education. Unlike boot camps, master's degrees go deeper and wider in the subjects that are taught, ultimately making it more beneficial. According to PayScale data for 2025, workers with a master's in computer science earn an average base salary of about $114,000, while colleagues with a bachelor's degree earn around $98,000—representing a ~17% earnings premium for master's-degree holders. When comparing advanced education to certificates, a master's is a stronger addition to your resume because the process of earning builds upon your bachelor degree to bolster your skillset in significant ways.",
+          "links": [
+            {
+             
+            }
+          ],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "On top of that, 97% of MSCS graduates in the Class of 2021 accepted job offers within three months of graduating (based on data from 63% of spring 2021 full-time program graduates). What you accomplish after completing our program is just as important as what you learn in it. Our alumni have gone on to work at companies like Amazon, Meta, Google and IBM. The doors a master’s opens can be a good indicator of the strength of the degree.",
+          "text": "On top of that, 97% of Stevens MSCS graduates accept job offers within three months of graduation (as of 2025). What you accomplish after completing our program is just as important as what you learn in it. Our alumni have gone on to work at companies like Amazon, Meta, Google and IBM. The doors a master's opens can be a good indicator of the strength of the degree.",
           "links": [
             {
               "text": "MSCS",
@@ -3212,8 +3229,13 @@
         },
         {
           "type": "paragraph",
-          "text": "The median salaries for computer scientists are already quite impressive. It tells the story of the health of the industry and the direction things are headed. With several factors kept in mind, one can easily earn an even higher wage.",
-          "links": [],
+          "text": "The median salaries for computer scientists are already quite impressive, with the field showing strong growth. Data scientists (34% growth, $112,590 median pay), information security analysts (29% growth, $124,910 median pay), and software developers (15% growth, $133,080 median pay) are among the fastest-growing occupations. With several factors kept in mind, one can easily earn an even higher wage.",
+          "links": [
+            {
+              "text": "fastest-growing occupations",
+              "url": "https://www.bls.gov/ooh/fastest-growing.htm"
+            }
+          ],
           "bold": []
         },
         {
@@ -4125,7 +4147,7 @@
         },
         {
           "type": "paragraph",
-          "text": "An MSDS lays the foundation of theoretical knowledge and lifelong learning skills that enable graduates to respond to accelerated technological changes. They are qualified experts in analyzing and interpreting large datasets, gleaning actionable insights and supporting informed decision-making.",
+          "text": "An M.Eng. in Applied Data Science lays the foundation of theoretical knowledge and lifelong learning skills that enable graduates to respond to accelerated technological changes. They are qualified experts in analyzing and interpreting large datasets, gleaning actionable insights and supporting informed decision-making.",
           "links": [],
           "bold": []
         },
@@ -4136,7 +4158,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In addition to relevant and up-to-date industry insights, an online master’s degree in data science provides degree recipients with valuable connections that can help grow their personal and professional network.",
+          "text": "In addition to relevant and up-to-date industry insights, an online M.Eng. in Applied Data Science provides degree recipients with valuable connections that can help grow their personal and professional network.",
           "links": [],
           "bold": []
         },
@@ -4159,18 +4181,18 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens MSDS alumni have gone on to work at organizations like Amazon, Disney Streaming Services, Bank of America, CityBlock Health, and Two Sigma Investments. With a network of over 50,000 alumni, Stevens offers opportunities to build your professional network through alumni events.",
+          "text": "Stevens M.Eng. in Applied Data Science alumni have gone on to work at organizations like Amazon, Disney Streaming Services, Bank of America, CityBlock Health, and Two Sigma Investments. With a network of over 50,000 alumni, Stevens offers opportunities to build your professional network through alumni events.",
           "links": [],
           "bold": []
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "Why Stevens for Your Online Master’s in Data Science?"
+          "text": "Why Stevens for Your Online M.Eng. in Applied Data Science?"
         },
         {
           "type": "paragraph",
-          "text": "As you weigh the value of a master’s in data science degree in advancing your career goals, consider the many reasons a Stevens MSDS is an excellent choice.",
+          "text": "As you weigh the value of an M.Eng. in Applied Data Science degree in advancing your career goals, consider the many reasons a Stevens M.Eng. in Applied Data Science is an excellent choice.",
           "links": [
             {
               "text": "many reasons",
@@ -4194,7 +4216,7 @@
               "bold": []
             },
             {
-              "text": "Ranked no. 10 best online master’s in data science program in the country",
+              "text": "Ranked no. 10 best online M.Eng. in Applied Data Science program in the country",
               "links": [],
               "bold": []
             },
@@ -4261,9 +4283,9 @@
     },
     {
       "id": "data-science-masters-benefits",
-      "title": "Six Unexpected Benefits of Earning a Master of Science in Data Science",
-      "subtitle": "Those are some of the most obvious benefits of an MSDS. The degree also offers several unexpected benefits, which this article discusses.",
-      "excerpt": "Those are some of the most obvious benefits of an MSDS. The degree also offers several unexpected benefits, which this article discusses.",
+      "title": "Six Unexpected Benefits of Earning an M.Eng. in Applied Data Science",
+      "subtitle": "Those are some of the most obvious benefits of an M.Eng. in Applied Data Science. The degree also offers several unexpected benefits, which this article discusses.",
+      "excerpt": "Those are some of the most obvious benefits of an M.Eng. in Applied Data Science. The degree also offers several unexpected benefits, which this article discusses.",
       "featured_image_url": "/assets/blogs/uncategorized/six-unexpected-benefits-of-earning-a-master-of-science-in-data-science/benefits-earning-data-science-degree-stevens-article.webp",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -4280,21 +4302,21 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Those are some of the most obvious benefits of an MSDS. The degree also offers several unexpected benefits, which this article discusses.",
+          "text": "Those are some of the most obvious benefits of an M.Eng. in Applied Data Science. The degree also offers several unexpected benefits, which this article discusses.",
           "links": [],
           "bold": []
         },
         {
           "type": "heading",
           "level": 2,
-          "text": "What is a Master of Science in Data Science?"
+          "text": "What is an M.Eng. in Applied Data Science?"
         },
         {
           "type": "paragraph",
-          "text": "A Master of Science in Data Science can help you develop the expertise to analyze and interpret large, complex datasets using analytical tools and machine learning technology. As the volume of available data and its potential applications continues to expand, demand for this skill set should also increase.",
+          "text": "An M.Eng. in Applied Data Science can help you develop the expertise to analyze and interpret large, complex datasets using analytical tools and machine learning technology. As the volume of available data and its potential applications continues to expand, demand for this skill set should also increase.",
           "links": [
             {
-              "text": "Master of Science in Data Science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/blog/your-data-science-resume/"
             }
           ],
@@ -4302,7 +4324,7 @@
         },
         {
           "type": "paragraph",
-          "text": "According to the U.S. Bureau of Labor Statistics (2022), the data science field should grow 35% over the next decade, creating more than 17,000 new job openings each year. Pursuing a data science master’s can distinguish you as a strong candidate for in-demand data science jobs across various industries, including:",
+          "text": "According to the U.S. Bureau of Labor Statistics (2022), the data science field should grow 35% over the next decade, creating more than 17,000 new job openings each year. Pursuing an M.Eng. in Applied Data Science can distinguish you as a strong candidate for in-demand data science jobs across various industries, including:",
           "links": [
             {
               "text": "should grow 35% over the next decade",
@@ -4373,14 +4395,14 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "Six Unexpected Benefits of Earning an MSDS"
+          "text": "Six Unexpected Benefits of Earning an M.Eng. in Applied Data Science"
         },
         {
           "type": "paragraph",
-          "text": "In MSDS programs like the Stevens online master’s in data science, you can gain key competencies that prepare you to succeed in the data science field. You’ll take classes covering topics such as time series analysis, predictive modeling, and data visualization. You’ll also build proficiency in leading industry tools and programming languages, including Hadoop, Python and R, and TensorFlow.",
+          "text": "In M.Eng. in Applied Data Science programs like the Stevens online M.Eng. in Applied Data Science, you can gain key competencies that prepare you to succeed in the data science field. You'll take classes covering topics such as time series analysis, predictive modeling, and data visualization. You'll also build proficiency in leading industry tools and programming languages, including Hadoop, Python and R, and TensorFlow.",
           "links": [
             {
-              "text": "Stevens online master’s in data science",
+              "text": "Stevens online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
@@ -4399,7 +4421,7 @@
         },
         {
           "type": "paragraph",
-          "text": "While the desire to gain technical skills is the most obvious reason to enroll in an MSDS program, pursuing this advanced degree can also provide some unexpected yet equally valuable opportunities for professional development, including the six explored below.",
+          "text": "While the desire to gain technical skills is the most obvious reason to enroll in an M.Eng. in Applied Data Science program, pursuing this advanced degree can also provide some unexpected yet equally valuable opportunities for professional development, including the six explored below.",
           "links": [],
           "bold": []
         },
@@ -4410,10 +4432,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Data science draws upon statistics, computer science and mathematical principles; the best MSDS programs focus on each of these areas. Stevens’ Online MSDS program offers courses in mathematics, statistics methods and cognitive computing to provide students a robust skill set with wide business applications.",
+          "text": "Data science draws upon statistics, computer science and mathematical principles; the best M.Eng. in Applied Data Science programs focus on each of these areas. Stevens' Online M.Eng. in Applied Data Science program offers courses in mathematics, statistics methods and cognitive computing to provide students a robust skill set with wide business applications.",
           "links": [
             {
-              "text": "Stevens’ Online MSDS program",
+              "text": "Stevens' Online M.Eng. in Applied Data Science program",
               "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
@@ -4426,7 +4448,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Problem solving lies at the heart of data science, a key skill with professional and personal applications. As a student in an MSDS program, you’ll learn how to take a structured, methodical approach to problem analysis and solving. Stevens’ deep learning course, for example, offers hands-on opportunities to hone your problem-solving skills on such challenges as self-driving automobiles, face recognition and automated game play.",
+          "text": "Problem solving lies at the heart of data science, a key skill with professional and personal applications. As a student in an M.Eng. in Applied Data Science program, you'll learn how to take a structured, methodical approach to problem analysis and solving. Stevens' deep learning course, for example, offers hands-on opportunities to hone your problem-solving skills on such challenges as self-driving automobiles, face recognition and automated game play.",
           "links": [
             {
               "text": "deep learning course",
@@ -4453,10 +4475,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Many students in the Stevens Online M.S. in Data Science program pursue their degree part time while working full time. Since they spend nine to 12 hours a week on coursework and class sessions, time management is essential. As an Online MSDS student, you’ll learn how to balance your studies with your career, mastering a valuable skill you can use in other areas of your life.",
+          "text": "Many students in the Stevens Online M.Eng. in Applied Data Science program pursue their degree part time while working full time. Since they spend nine to 12 hours a week on coursework and class sessions, time management is essential. As an Online M.Eng. in Applied Data Science student, you'll learn how to balance your studies with your career, mastering a valuable skill you can use in other areas of your life.",
           "links": [
             {
-              "text": "Online M.S. in Data Science program",
+              "text": "Online M.Eng. in Applied Data Science program",
               "url": "/online-learning-experience/"
             }
           ],
@@ -4480,7 +4502,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Building a strong professional network can yield benefits such as new job opportunities, career advice and insights into different industries. When you join a small cohort-based program like the Stevens Online MSDS, you’ll form lasting bonds with peers and data science faculty who are invested in your success.",
+          "text": "Building a strong professional network can yield benefits such as new job opportunities, career advice and insights into different industries. When you join a small cohort-based program like the Stevens Online M.Eng. in Applied Data Science, you'll form lasting bonds with peers and data science faculty who are invested in your success.",
           "links": [
             {
               "text": "data science faculty",
@@ -4546,7 +4568,7 @@
     },
     {
       "id": "data-science-masters-for-ai-future",
-      "title": "How Can a Master’s in Data Science Prepare You for the Future of Artificial Intelligence?",
+      "title": "How Can an M.Eng. in Applied Data Science Prepare You for the Future of Artificial Intelligence?",
       "subtitle": "According to the World Economic Forum’s 2023 Future of Jobs Report, 75% of companies plan to adopt artificial intelligence technologies within the next five years. This increased interest in AI is driving rising demand for highly skilled data scientists and AI developers.",
       "excerpt": "According to the World Economic Forum’s 2023 Future of Jobs Report, 75% of companies plan to adopt artificial intelligence technologies within the next five years. This increased interest in AI is driving rising demand for highly skilled data scientists and AI developers.",
       "featured_image_url": "/assets/blogs/uncategorized/how-can-a-masters-in-data-science-prepare-you-for-the-future-of-artificial-intel/stevens-online-msds-future-ai-article.webp",
@@ -4691,11 +4713,11 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "How a Data Science Master’s Degree Can Help"
+          "text": "How an M.Eng. in Applied Data Science Can Help"
         },
         {
           "type": "paragraph",
-          "text": "Data science employment is expected to grow 35% by 2032. An M.S. in Data Science is a degree program that can provide professionals an edge in a rapidly growing field. In a data science master’s program, students gain technical, analytical and practical skills they can apply to solving problems in data science jobs in any industry. Most master’s in data science programs teach mathematics, programming and data visualization concepts to build a cross-disciplinary skill set.",
+          "text": "Data science employment is expected to grow 35% by 2032. An M.Eng. in Applied Data Science is a degree program that can provide professionals an edge in a rapidly growing field. In an M.Eng. in Applied Data Science program, students gain technical, analytical and practical skills they can apply to solving problems in data science jobs in any industry. Most M.Eng. in Applied Data Science programs teach mathematics, programming and data visualization concepts to build a cross-disciplinary skill set.",
           "links": [
             {
               "text": "Data science employment is expected to grow 35% by 2032",
@@ -4706,7 +4728,7 @@
               "url": "/blog/real-life-data-science-masters-degree/"
             },
             {
-              "text": "master’s in data science programs",
+              "text": "M.Eng. in Applied Data Science programs",
               "url": "/blog/outlook-for-data-science-occupations/"
             }
           ],
@@ -4714,7 +4736,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Earning a master’s degree in data science also provides a foundation for career success in an increasingly AI-driven world. Machine learning, neural networks and natural language processing (NLP) expertise is in high demand. Students learn about all of these topics in a data science master’s program, such as the one offered by Stevens.",
+          "text": "Earning an M.Eng. in Applied Data Science also provides a foundation for career success in an increasingly AI-driven world. Machine learning, neural networks and natural language processing (NLP) expertise is in high demand. Students learn about all of these topics in an M.Eng. in Applied Data Science program, such as the one offered by Stevens.",
           "links": [
             {
               "text": "in high demand",
@@ -4741,10 +4763,10 @@
         },
         {
           "type": "paragraph",
-          "text": "When researching MSDS programs, consider which options are aligned with current industry trends and offer hands-on training in data science methodologies. The Stevens Online M.S. in Data Science curriculum, for example, covers topics related to artificial intelligence, including applied machine learning, deep learning and NLP.",
+          "text": "When researching M.Eng. in Applied Data Science programs, consider which options are aligned with current industry trends and offer hands-on training in data science methodologies. The Stevens Online M.Eng. in Applied Data Science curriculum, for example, covers topics related to artificial intelligence, including applied machine learning, deep learning and NLP.",
           "links": [
             {
-              "text": "Stevens Online M.S. in Data Science curriculum",
+              "text": "Stevens Online M.Eng. in Applied Data Science curriculum",
               "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
@@ -4780,10 +4802,10 @@
         },
         {
           "type": "paragraph",
-          "text": "In the Stevens online data science master’s program, students form lasting bonds with their classmates through group projects and live class discussions. Former Stevens online MSDS students work for prestigious organizations such as Amazon, Disney Streaming Services and Bank of America.",
+          "text": "In the Stevens online M.Eng. in Applied Data Science program, students form lasting bonds with their classmates through group projects and live class discussions. Former Stevens online M.Eng. in Applied Data Science students work for prestigious organizations such as Amazon, Disney Streaming Services and Bank of America.",
           "links": [
             {
-              "text": "Stevens online data science master’s program",
+              "text": "Stevens online M.Eng. in Applied Data Science program",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
@@ -4797,24 +4819,24 @@
         },
         {
           "type": "paragraph",
-          "text": "Future-focused data science master’s programs, like the Stevens Online MSDS, can get you one step closer to becoming the candidate employers want to hire. With a focus on innovation, the Stevens Online MSDS curriculum is influenced by the corporate headquarters and bustling tech startups in nearby New York City. As a remote learner, you can benefit from these insights, no matter where you are located.",
+          "text": "Future-focused M.Eng. in Applied Data Science programs, like the Stevens Online M.Eng. in Applied Data Science, can get you one step closer to becoming the candidate employers want to hire. With a focus on innovation, the Stevens Online M.Eng. in Applied Data Science curriculum is influenced by the corporate headquarters and bustling tech startups in nearby New York City. As a remote learner, you can benefit from these insights, no matter where you are located.",
           "links": [
             {
-              "text": "Stevens Online MSDS",
-              "url": "/admissions/"
+              "text": "Stevens Online M.Eng. in Applied Data Science",
+              "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Stevens MSDS students earn their degree part time in two years or less, 100% online. Housed within the math department, the program emphasizes foundational data science mathematics to ensure students are equipped with the skills needed to support informed decision-making and quickly respond to accelerated technological changes.",
+          "text": "Stevens M.Eng. in Applied Data Science students earn their degree part time in two years or less, 100% online. Housed within the math department, the program emphasizes foundational data science mathematics to ensure students are equipped with the skills needed to support informed decision-making and quickly respond to accelerated technological changes.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "As you consider the data science master’s program that is right for you, attend admission events and meet people affiliated with each program. Stevens offers virtual events, where you can speak to admissions staff and current students to learn more about the program and gain insight into the online student experience.",
+          "text": "As you consider the M.Eng. in Applied Data Science program that is right for you, attend admission events and meet people affiliated with each program. Stevens offers virtual events, where you can speak to admissions staff and current students to learn more about the program and gain insight into the online student experience.",
           "links": [
             {
               "text": "virtual events",
@@ -4900,29 +4922,19 @@
               "url": "https://www.burtchworks.com/wp-content/uploads/2017/05/DS-2017-Education.pdf"
             },
             {
-              "text": "shortage of Big Data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
-            },
-            {
               "text": "tuition",
               "url": "/tuition-and-financial-aid/"
             }
           ],
           "bold": [
             "90 percent of data scientists have advanced degrees",
-            "shortage of Big Data talent",
             "tuition"
           ]
         },
         {
           "type": "paragraph",
           "text": "Before you reject that offer out of hand, however, consider that nearly half of all data science job postings across the U.S. require that applicants have a Master of Science in Data Science (MSDS) or a related degree. Based on this statistic alone, it is not hyperbole to claim that the MSDS is now the entry-level degree in data science. It is also increasingly an academic credential even seasoned data scientists must have to remain competitive in the field.",
-          "links": [
-            {
-              "text": "applicants have a Master of Science in Data Science",
-              "url": "https://www.burning-glass.com/research-project/quant-crunch-data-science-job-market/"
-            }
-          ],
+          "links": [],
           "bold": [
             "applicants have a Master of Science in Data Science"
           ]
@@ -4985,10 +4997,6 @@
             {
               "text": "Data science",
               "url": "https://www.stevens.edu/research/research-pillars"
-            },
-            {
-              "text": "Quant Crunch report",
-              "url": "https://www.burning-glass.com/wp-content/uploads/The_Quant_Crunch.pdf"
             }
           ],
           "bold": [
@@ -6898,16 +6906,16 @@
     },
     {
       "id": "explore-computer-science-salary-and-job-outlook-2024",
-      "title": "Career Guide: Explore the Computer Scientist Salary and Job Outlook in 2024",
-      "subtitle": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. McKinsey reports that tech-related job postings increased by 15% between 2021 and 2022; the U.S. Bureau of Labor Statistics (BLS) projects 377,500 job postings per year in the sector over the next decade, significantly faster than the average employment growth rate across all occupations.",
-      "excerpt": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. McKinsey reports that tech-related job postings increased by 15% between 2021 and 2022; the U.S. Bureau of Labor Statistics (BLS) projects 377,500 job postings per year in the sector over the next decade, significantly faster than the average employment growth rate across all occupations.",
+      "title": "Career Guide: Explore the Computer Scientist Salary and Job Outlook in 2025",
+      "subtitle": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. The U.S. Bureau of Labor Statistics (BLS) projects employment in computer and information technology occupations will grow much faster than average from 2024 to 2034, creating about 317,700 job openings each year—significantly faster than the average employment growth rate across all occupations.",
+      "excerpt": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. The U.S. Bureau of Labor Statistics (BLS) projects employment in computer and information technology occupations will grow much faster than average from 2024 to 2034, creating about 317,700 job openings each year—significantly faster than the average employment growth rate across all occupations.",
       "featured_image_url": "/assets/blogs/mastering-computer-science/career-guide-explore-the-computer-scientist-salary-and-job-outlook-in-2024/stv-blog-explore-computer-science-salary-and-job-outlook-2024.webp",
       "category": "Mastering Computer Science",
       "author": "Stevens Online",
       "author_bio": "Stevens Institute of Technology provides expert insights on graduate education.",
       "author_image": "/assets/blogs/mastering-computer-science/career-guide-explore-the-computer-scientist-salary-and-job-outlook-in-2024/stv-blog-explore-computer-science-salary-and-job-outlook-2024.webp",
       "created_date": "2024-06-26T04:00:00.000Z",
-      "updated_date": "2024-06-26T04:00:00.000Z",
+      "updated_date": "2025-01-15T04:00:00.000Z",
       "read_time": 4,
       "tags": [
         "Stevens Online",
@@ -6917,14 +6925,14 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. McKinsey reports that tech-related job postings increased by 15% between 2021 and 2022; the U.S. Bureau of Labor Statistics (BLS) projects 377,500 job postings per year in the sector over the next decade, significantly faster than the average employment growth rate across all occupations.",
+          "text": "Technology permeates almost every aspect of our lives, as reflected in the burgeoning computing job market. The U.S. Bureau of Labor Statistics (BLS) projects employment in computer and information technology occupations will grow much faster than average from 2024 to 2034, creating about 317,700 job openings each year. The median annual wage for computer and IT occupations was $105,990 in May 2024, well above the median for all occupations ($49,500).",
           "links": [
             {
-              "text": "tech-related job postings increased by 15%",
-              "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-top-trends-in-tech#tech-talent-dynamics"
+              "text": "317,700 job openings each year",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
             },
             {
-              "text": "377,500 job postings per year in the sector",
+              "text": "median annual wage for computer and IT occupations was $105,990",
               "url": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
             }
           ],
@@ -6946,7 +6954,7 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "Computer Scientist Salary and Other Top-Paying Jobs in the Field"
+          "text": "Computer Scientist Salary and Other Top-Paying Jobs in the Field in 2025"
         },
         {
           "type": "paragraph",
@@ -6966,10 +6974,14 @@
         },
         {
           "type": "paragraph",
-          "text": "Computer and information research scientists create innovative ways to utilize old and new computer technologies. They develop new computing languages and software systems, conduct experiments to test their work, and publish their research in peer-reviewed journals. These professionals earned $145,000 annually in 2022, with employment projected to grow by 23% over the next decade.",
+          "text": "Computer and information research scientists create innovative ways to utilize old and new computer technologies. They develop new computing languages and software systems, conduct experiments to test their work, and publish their research in peer-reviewed journals. In May 2024, the median annual wage was $140,910, with employment projected to grow 20% from 2024 to 2034, creating about 3,200 openings each year.",
           "links": [
             {
-              "text": "These professionals earned $145,000 annually",
+              "text": "median annual wage was $140,910",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm"
+            },
+            {
+              "text": "grow 20% from 2024 to 2034",
               "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm"
             }
           ],
@@ -6982,10 +6994,14 @@
         },
         {
           "type": "paragraph",
-          "text": "Software developers create and improve the applications that enable computers to complete specific tasks. They research user needs and incorporate their findings into their designs, test and troubleshoot their new programs, and continue to improve their creations after they are published. Software developers earned a median income of $130,000 in 2023, with employment projected to grow by 25% between 2022 and 2032.",
+          "text": "Software developers create and improve the applications that enable computers to complete specific tasks. They research user needs and incorporate their findings into their designs, test and troubleshoot their new programs, and continue to improve their creations after they are published. The 2024 median annual wage for software developers was $133,080, with employment projected to grow 15% from 2024 to 2034—much faster than average—producing about 129,200 openings annually.",
           "links": [
             {
-              "text": "Software developers earned a median income",
+              "text": "median annual wage for software developers was $133,080",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
+            },
+            {
+              "text": "grow 15% from 2024 to 2034",
               "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
             }
           ],
@@ -6998,10 +7014,14 @@
         },
         {
           "type": "paragraph",
-          "text": "Information security analysts plan and execute security operations for their organizations’ systems and networks. They police computer networks to detect and prevent security breaches, test systems for potential vulnerabilities, establish security standards and best practices, and research and recommend the latest developments in the field. This field should grow by 32% between 2022 and 2032; information security analysts earn a median income of $120,000 annually.",
+          "text": "Information security analysts plan and execute security operations for their organizations' systems and networks. They police computer networks to detect and prevent security breaches, test systems for potential vulnerabilities, establish security standards and best practices, and research and recommend the latest developments in the field. The 2024 median annual wage for information security analysts was $124,910, with employment projected to grow 29% from 2024 to 2034, producing about 16,000 openings per year.",
           "links": [
             {
-              "text": "information security analysts earn a median income",
+              "text": "median annual wage for information security analysts was $124,910",
+              "url": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
+            },
+            {
+              "text": "grow 29% from 2024 to 2034",
               "url": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
             }
           ],
@@ -7014,19 +7034,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Computer science interacts with almost every aspect of our lives. Demand for computer scientists is accelerating; software development and information security both landed on the BLS’ list of fastest-growing occupations, U.S. News & World Report’s 100 best jobs and CIO’s 15 most in-demand tech jobs lists.",
+          "text": "Computer science interacts with almost every aspect of our lives. Demand for computer scientists is accelerating; data scientists (34% growth, $112,590 median pay), information security analysts (29% growth, $124,910 median pay), and computer and information research scientists (20% growth, $140,910 median pay) all appear on the BLS list of fastest-growing occupations for 2024-2034.",
           "links": [
             {
-              "text": "fastest-growing occupations",
+              "text": "fastest-growing occupations for 2024-2034",
               "url": "https://www.bls.gov/ooh/fastest-growing.htm"
-            },
-            {
-              "text": "100 best jobs",
-              "url": "https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs"
-            },
-            {
-              "text": "15 most in-demand tech jobs",
-              "url": "https://www.cio.com/article/230935/hiring-the-most-in-demand-tech-jobs-for-2021.html"
             }
           ],
           "bold": []
@@ -7097,7 +7109,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The program fits well into working professionals’ calendars, enabling them to earn a degree part-time while continuing to work full-time. They can complete the degree in two years or less, typically with satisfying results: 97% of Stevens MSCS graduates accept job offers within three months of graduation.",
+          "text": "The program fits well into working professionals' calendars, enabling them to earn a degree part-time while continuing to work full-time. They can complete the degree in two years or less, typically with satisfying results: 97% of Stevens MSCS graduates accept job offers within three months of graduation (as of 2025).",
           "links": [],
           "bold": []
         },
@@ -11138,25 +11150,25 @@
         },
         {
           "type": "paragraph",
-          "text": "Consider the Master of Science in Computer Science (MSCS) vs the Master of Science in Data Science (MSDS). Both degrees are associated with high salaries. Both give ambitious students the qualifications they need to take full advantage of booming tech employment.",
+          "text": "Consider the Master of Science in Computer Science (MSCS) vs the M.Eng. in Applied Data Science. Both degrees are associated with high salaries. Both give ambitious students the qualifications they need to take full advantage of booming tech employment.",
           "links": [
             {
               "text": "Master of Science in Computer Science",
               "url": "/online-masters-computer-science-mscs/"
             },
             {
-              "text": "Master of Science in Data Science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
             "Master of Science in Computer Science",
-            "Master of Science in Data Science"
+            "M.Eng. in Applied Data Science"
           ]
         },
         {
           "type": "paragraph",
-          "text": "The question isn’t whether an MSCS is better than an MSDS, or vice versa, but rather which degree pathway is the right one for you. The applications of computer science and data science are very different, and that can guide your choice.",
+          "text": "The question isn't whether an MSCS is better than an M.Eng. in Applied Data Science, or vice versa, but rather which degree pathway is the right one for you. The applications of computer science and data science are very different, and that can guide your choice.",
           "links": [],
           "bold": []
         },
@@ -11258,7 +11270,7 @@
         },
         {
           "type": "paragraph",
-          "text": "MSDS graduates have fewer paths open to them, but still more than many people realize. It’s harder to quantify precisely how many more because employer naming conventions drive data science job titles. One company’s data scientist might be another company’s information engineer or advanced analyst. Data science degree graduates have titles such as:",
+          "text": "M.Eng. in Applied Data Science graduates have fewer paths open to them, but still more than many people realize. It's harder to quantify precisely how many more because employer naming conventions drive data science job titles. One company's data scientist might be another company's information engineer or advanced analyst. Data science degree graduates have titles such as:",
           "links": [
             {
               "text": "data scientist",
@@ -11338,7 +11350,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Job outlook and earning potential can help guide your choices, though predicting your prospects is easier if you are leaning toward Master of Science in Data Science (MSDS) vs Master of Science in Computer Science (MSCS). Different data science job titles don’t necessarily correlate with varying demand or pay scales - unless you look at salaries for manager-level or executive-level roles, which trend higher. The average data scientist earns about $116,000 with a master’s degree, which is very close to the typical salaries data engineer, data visualization developer and decision scientist report on sites such as Indeed. Job growth across data science roles will likely be strong over the next decade, which means a data science master’s degree is a wise investment.",
+          "text": "Job outlook and earning potential can help guide your choices, though predicting your prospects is easier if you are leaning toward M.Eng. in Applied Data Science vs Master of Science in Computer Science (MSCS). Different data science job titles don't necessarily correlate with varying demand or pay scales - unless you look at salaries for manager-level or executive-level roles, which trend higher. The average data scientist earns about $116,000 with a master's degree, which is very close to the typical salaries data engineer, data visualization developer and decision scientist report on sites such as Indeed. Job growth across data science roles will likely be strong over the next decade, which means an M.Eng. in Applied Data Science is a wise investment.",
           "links": [],
           "bold": []
         },
@@ -11467,7 +11479,7 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "MSCS VS. MSDS – THE DIFFERENCES"
+          "text": "MSCS VS. M.Eng. in Applied Data Science – THE DIFFERENCES"
         },
         {
           "type": "paragraph",
@@ -11484,7 +11496,7 @@
         },
         {
           "type": "paragraph",
-          "text": "At Stevens,  MSCS and MSDS applicants have to meet the same basic admissions requirements, including a bachelor’s degree and an undergraduate GPA of 3.0 or higher. Students enroll in each program with different skillsets, however. Computer science master’s degree candidates usually enter the online MSCS program with skills and knowledge related to:",
+          "text": "At Stevens,  MSCS and M.Eng. in Applied Data Science applicants have to meet the same basic admissions requirements, including a bachelor's degree and an undergraduate GPA of 3.0 or higher. Students enroll in each program with different skillsets, however. Computer science master's degree candidates usually enter the online MSCS program with skills and knowledge related to:",
           "links": [
             {
               "text": "Stevens",
@@ -11535,7 +11547,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The online Master’s in Data Science program, on the other hand, attracts students with experience in advanced mathematics, computer science and data analytics. They want to launch careers in data science - a field in which the master’s is the entry-level degree - or in specialty areas related to machine learning and AI. MSDS candidates typically enter the program with skills and knowledge related to:",
+          "text": "The online M.Eng. in Applied Data Science program, on the other hand, attracts students with experience in advanced mathematics, computer science and data analytics. They want to launch careers in data science - a field in which the master's is the entry-level degree - or in specialty areas related to machine learning and AI. M.Eng. in Applied Data Science candidates typically enter the program with skills and knowledge related to:",
           "links": [],
           "bold": []
         },
@@ -11572,7 +11584,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Students in both online master’s programs study database management systems, distributed systems and cloud computing. Beyond that, the coursework in the StevensOnline MSCS and MSDS programs are quite different.",
+          "text": "Students in both online master's programs study database management systems, distributed systems and cloud computing. Beyond that, the coursework in the StevensOnline MSCS and M.Eng. in Applied Data Science programs are quite different.",
           "links": [
             {
               "text": "online master’s programs",
@@ -11726,7 +11738,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Although MSDS candidates study programming and algorithm design, their primary skills revolve around:",
+          "text": "Although M.Eng. in Applied Data Science candidates study programming and algorithm design, their primary skills revolve around:",
           "links": [],
           "bold": []
         },
@@ -11797,14 +11809,14 @@
         },
         {
           "type": "paragraph",
-          "text": "Once you’ve compared data science vs. computer science and chosen your path, Stevens makes it easier to earn your degree. The Schaefer School of Engineering & Science offers both the MSCS and the MSDS entirely online. Whether you choose computer science or data science, you’ll get the qualifications required to advance without taking a leave of absence from your current job - or even taking time off work. A master’s degree from Stevens can also help land one of the few, highly coveted remote computer science or data science jobs that often go to candidates with advanced degrees from schools with a reputation for excellence.",
+          "text": "Once you've compared data science vs. computer science and chosen your path, Stevens makes it easier to earn your degree. The Schaefer School of Engineering & Science offers both the MSCS and the M.Eng. in Applied Data Science entirely online. Whether you choose computer science or data science, you'll get the qualifications required to advance without taking a leave of absence from your current job - or even taking time off work. A master's degree from Stevens can also help land one of the few, highly coveted remote computer science or data science jobs that often go to candidates with advanced degrees from schools with a reputation for excellence.",
           "links": [],
           "bold": []
         },
         
         {
           "type": "paragraph",
-          "text": "Stevens ranks #8 in the nation on U.S. News & World Report’s lineup of the best graduate-level online computer information technology degree programs. The MSCS and MSDS faculty includes world-class computer science and data science experts who conduct cutting-edge, future-focused research in artificial intelligence, cybersecurity, Big Data and information science. The curricula in the MSCS and MSDS programs follow industry demand. And the online learning experience the Schaefer School of Engineering & Science offers is supportive and designed to foster career success.",
+          "text": "Stevens ranks #8 in the nation on U.S. News & World Report's lineup of the best graduate-level online computer information technology degree programs. The MSCS and M.Eng. in Applied Data Science faculty includes world-class computer science and data science experts who conduct cutting-edge, future-focused research in artificial intelligence, cybersecurity, Big Data and information science. The curricula in the MSCS and M.Eng. in Applied Data Science programs follow industry demand. And the online learning experience the Schaefer School of Engineering & Science offers is supportive and designed to foster career success.",
           "links": [
             {
               "text": "ranks",
@@ -12687,7 +12699,7 @@
     },
     {
       "id": "online-mscs-develops-skills-required-for-remote-computer-science-jobs",
-      "title": "Remote Work in Tech Is the Norm - For Those Qualified to Do It",
+      "title": "Remote Computer Science Jobs and Online MSCS Skills",
       "subtitle": "The technology sector embraced remote work long before Covid-19 shuttered offices in 2020. Companies in this space had the digital infrastructure to manage distributed teams years earlier and recognized that having generous remote work policies let them court top global talent. Amazon, Intuit, Dell and Adobe topped lists of companies with remote jobs back in 2018. Since then, many high-profile technology firms, including Twitter, Square, Facebook and Shopify, have instituted generous work-from-home policies.",
       "excerpt": "The technology sector embraced remote work long before Covid-19 shuttered offices in 2020. Companies in this space had the digital infrastructure to manage distributed teams years earlier and recognized that having generous remote work policies let them court top global talent. Amazon, Intuit, Dell and Adobe topped lists of companies with remote jobs back in 2018. Since then, many high-profile technology firms, including Twitter, Square, Facebook and Shopify, have instituted generous work-from-home policies.",
       "featured_image_url": "/assets/blogs/mastering-computer-science/remote-work-in-tech-is-the-norm-for-those-qualified-to-do-it/online-mscs-skills-for-computer-science.webp",
@@ -13768,7 +13780,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The median salary is currently $100,920 and the field is expected to grow 36% between now and 2031 (National Bureau of Labor Statistics, 2023). These indicators alone testify that the field is hot right now and all signs point to it only becoming more significant. If there was ever a time to pursue a master’s in data science, it would be now.All the innovations that have improved the field, and the momentum they’re generating, have led to career opportunities blossoming across all sectors. Having access to performance-enhancing insights helps people who manufacture keychains all the way to individuals running for the highest office in this country. It cannot be understated how powerful this career has become-and that it’s applicable across all industries, regardless of output.",
+          "text": "The median salary is currently $100,920 and the field is expected to grow 36% between now and 2031 (National Bureau of Labor Statistics, 2023). These indicators alone testify that the field is hot right now and all signs point to it only becoming more significant. If there was ever a time to pursue an M.Eng. in Applied Data Science, it would be now.All the innovations that have improved the field, and the momentum they're generating, have led to career opportunities blossoming across all sectors. Having access to performance-enhancing insights helps people who manufacture keychains all the way to individuals running for the highest office in this country. It cannot be understated how powerful this career has become-and that it's applicable across all industries, regardless of output.",
           "links": [],
           "bold": []
         },
@@ -13786,7 +13798,7 @@
         },
         {
           "type": "paragraph",
-          "text": "One of the best ways to stand out is with a master’s in data science. Only 34% of people in the field have one, meaning those that do have an advantage. It’s also often required to advance into more high profile roles and pursue career goals. This achievement helps applicants get recognized and speaks to the skills they learned attending the program.",
+          "text": "One of the best ways to stand out is with an M.Eng. in Applied Data Science. Only 34% of people in the field have one, meaning those that do have an advantage. It's also often required to advance into more high profile roles and pursue career goals. This achievement helps applicants get recognized and speaks to the skills they learned attending the program.",
           "links": [
             {
               "text": "meaning those that do have an advantage",
@@ -13832,14 +13844,14 @@
         },
         {
           "type": "paragraph",
-          "text": "The strength of the program has been recognized as well. Stevens was named one of the Top 20 U.S. Private Schools for Best Career Placement by The Princeton Review (2022). UniversityHQ recognized Stevens as the No. 10 Online Master’s in Data Science program in the country (2023). But perhaps the most significant fact is not an award, but simply that three months after graduation, 100% of MSDS graduates in the Class of 2021 accepted job offers (based on data from 50% of spring 2021 full-time program graduates).",
+          "text": "The strength of the program has been recognized as well. Stevens was named one of the Top 20 U.S. Private Schools for Best Career Placement by The Princeton Review (2022). UniversityHQ recognized Stevens as the No. 10 Online M.Eng. in Applied Data Science program in the country (2023). But perhaps the most significant fact is not an award, but simply that three months after graduation, 100% of M.Eng. in Applied Data Science graduates in the Class of 2021 accepted job offers (based on data from 50% of spring 2021 full-time program graduates).",
           "links": [
             {
               "text": "The strength of the program has been recognized as well",
               "url": "/online-masters-engineering-applied-data-science/#rankings"
             },
             {
-              "text": "MSDS graduates",
+              "text": "M.Eng. in Applied Data Science graduates",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
@@ -13847,7 +13859,7 @@
         },
         {
           "type": "paragraph",
-          "text": "This is all possible because of the way we’ve designed our program to support data science career success. Another benefit is being online allows for the work to be completed around your schedule. This flexibility means you can pursue your master’s while continuing to work.",
+          "text": "This is all possible because of the way we've designed our program to support data science career success. Another benefit is being online allows for the work to be completed around your schedule. This flexibility means you can pursue your M.Eng. in Applied Data Science while continuing to work.",
           "links": [],
           "bold": []
         },
@@ -13865,7 +13877,7 @@
         },
         {
           "type": "paragraph",
-          "text": "As a forward-thinking institution, Stevens has always understood the transformative power of mathematics. We designed our master’s in data science program to set our graduates up for success. For those looking to take the big, bold next steps in their career, our program could be the perfect fit for you. Partnering with us means the academic decisions you make today, result in professional wins tomorrow.",
+          "text": "As a forward-thinking institution, Stevens has always understood the transformative power of mathematics. We designed our M.Eng. in Applied Data Science program to set our graduates up for success. For those looking to take the big, bold next steps in their career, our program could be the perfect fit for you. Partnering with us means the academic decisions you make today, result in professional wins tomorrow.",
           "links": [],
           "bold": []
         },
@@ -14323,9 +14335,9 @@
     },
     {
       "id": "real-life-data-science-masters-degree",
-      "title": "Real Life Careers with a Data Science Master’s Degree",
-      "subtitle": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
-      "excerpt": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
+      "title": "Real Life Careers with an M.Eng. in Applied Data Science",
+      "subtitle": "It's often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That's where an M.Eng. in Applied Data Science comes into play.",
+      "excerpt": "It's often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That's where an M.Eng. in Applied Data Science comes into play.",
       "featured_image_url": "/assets/blogs/uncategorized/real-life-careers-with-a-data-science-masters-degree/Noodle_Stevens_May2023-2055-min-1024x683.webp",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -14342,7 +14354,7 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "It’s often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That’s where a master’s degree in data science comes into play.",
+          "text": "It's often said data is the new oil. It can be an incredible boon to any company-as long as they are able to interpret it in a way that is useful. That's where an M.Eng. in Applied Data Science comes into play.",
           "links": [],
           "bold": []
         },
@@ -14354,7 +14366,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You may find yourself asking, “What happens once you earn your data science master’s degree?” An MSDS improves your analytical skills to unlock a world of possibilities, enabling graduates to find jobs in fields like fintech, academia and even government positions. Refining your skills in a rigorous program provides you with real life experience gleaning operation-critical insights from data. Best of all, this specialty can be applied to a wide range of fields.",
+          "text": "You may find yourself asking, \"What happens once you earn your M.Eng. in Applied Data Science?\" An M.Eng. in Applied Data Science improves your analytical skills to unlock a world of possibilities, enabling graduates to find jobs in fields like fintech, academia and even government positions. Refining your skills in a rigorous program provides you with real life experience gleaning operation-critical insights from data. Best of all, this specialty can be applied to a wide range of fields.",
           "links": [
             {
               "text": "enabling graduates to find jobs in fields like fintech, academia and even government positions",
@@ -14365,10 +14377,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Many data scientists go into industries people would expect-research, corporate business, analytics, etc. However, the applications of a Data Science Master’s Degree are much more robust than people initially think. To paint a better picture of what data science looks like, we’ve compiled a list of careers that offer engaging, challenging and rewarding full time professional experiences.",
+          "text": "Many data scientists go into industries people would expect-research, corporate business, analytics, etc. However, the applications of an M.Eng. in Applied Data Science are much more robust than people initially think. To paint a better picture of what data science looks like, we've compiled a list of careers that offer engaging, challenging and rewarding full time professional experiences.",
           "links": [
             {
-              "text": "the applications of a Data Science Master’s Degree are much more robust than people initially think",
+              "text": "the applications of an M.Eng. in Applied Data Science are much more robust than people initially think",
               "url": "/online-masters-engineering-applied-data-science/#career"
             }
           ],
@@ -14404,7 +14416,7 @@
         },
         {
           "type": "paragraph",
-          "text": "An MSDS gives students exposure to cognitive computing, machine learning, natural language processing and other relevant tools they need in order to thrive in the role. Training systems to mimic how humans think is a critical tool in bridging technology and user experience and is one of the focuses of a study in a Data Science Master’s Degree. What users ask for isn’t always what they actually want-and applying data science to make sense of their journey can help transform searches to deliver the key information they were looking for.",
+          "text": "An M.Eng. in Applied Data Science gives students exposure to cognitive computing, machine learning, natural language processing and other relevant tools they need in order to thrive in the role. Training systems to mimic how humans think is a critical tool in bridging technology and user experience and is one of the focuses of a study in an M.Eng. in Applied Data Science. What users ask for isn't always what they actually want-and applying data science to make sense of their journey can help transform searches to deliver the key information they were looking for.",
           "links": [],
           "bold": []
         },
@@ -14421,7 +14433,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The amount of data that is captured is massive, the abundance of it offering the opportunity to discover powerful insights. With the mastery of big data technologies and neural networks that comes with earning a Data Science Master’s Degree, data scientists can help use scientific methods to help businesses create better user experiences. Even more, they can share larger trends to help leadership keep the company one step ahead rather than catching up.",
+          "text": "The amount of data that is captured is massive, the abundance of it offering the opportunity to discover powerful insights. With the mastery of big data technologies and neural networks that comes with earning an M.Eng. in Applied Data Science, data scientists can help use scientific methods to help businesses create better user experiences. Even more, they can share larger trends to help leadership keep the company one step ahead rather than catching up.",
           "links": [],
           "bold": []
         },
@@ -14438,7 +14450,7 @@
         },
         {
           "type": "paragraph",
-          "text": "One of the foundations of data science is statistical methods, which covers topics like data collection, analysis, testing, and presentation of the conclusions. The strength of these skills acquired through a Data Science Master’s Degree can help multiple departments that range from user experience to treatment itself. And with the growing strength of machine learning, findings from data scientists are a remarkable tool researchers can utilize.",
+          "text": "One of the foundations of data science is statistical methods, which covers topics like data collection, analysis, testing, and presentation of the conclusions. The strength of these skills acquired through an M.Eng. in Applied Data Science can help multiple departments that range from user experience to treatment itself. And with the growing strength of machine learning, findings from data scientists are a remarkable tool researchers can utilize.",
           "links": [],
           "bold": []
         },
@@ -14455,10 +14467,10 @@
         },
         {
           "type": "paragraph",
-          "text": "With predictive modeling and analyses of real time data, data scientists with a Data Science Master’s Degree can identify trends early. The financial field moves quickly and spotting trends as they’re on their rise is a game changer. Using their analytical skills, data scientists can present findings in a way that allows key players to make informed investment decisions. Those that can see the story behind the numbers are best equipped to lead a thriving career in the finance sector.",
+          "text": "With predictive modeling and analyses of real time data, data scientists with an M.Eng. in Applied Data Science can identify trends early. The financial field moves quickly and spotting trends as they're on their rise is a game changer. Using their analytical skills, data scientists can present findings in a way that allows key players to make informed investment decisions. Those that can see the story behind the numbers are best equipped to lead a thriving career in the finance sector.",
           "links": [
             {
-              "text": "Data Science Master’s Degree",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
@@ -14477,13 +14489,13 @@
         },
         {
           "type": "paragraph",
-          "text": "With a Data Science Master’s Degree under their belt and armed with advanced statistical and optimization methods in their toolbox, data scientists can identify how campaigns are performing and the factors that affect it. Teasing out these insights from data allows media supervisors, creative writers and marketing directors to understand the factors that are playing a role in the reception of the work.",
+          "text": "With an M.Eng. in Applied Data Science under their belt and armed with advanced statistical and optimization methods in their toolbox, data scientists can identify how campaigns are performing and the factors that affect it. Teasing out these insights from data allows media supervisors, creative writers and marketing directors to understand the factors that are playing a role in the reception of the work.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Once upon a time video games were simply made for people to enjoy on the couch by themselves. Today, gaming connects people across the globe with rich experiences they can connect, compete and explore with each other. Understanding the data with insights gained from a Data Science Master’s Degree, of how millions of people play is critical in sustaining franchises worth millions, and in some cases billions, of dollars.",
+          "text": "Once upon a time video games were simply made for people to enjoy on the couch by themselves. Today, gaming connects people across the globe with rich experiences they can connect, compete and explore with each other. Understanding the data with insights gained from an M.Eng. in Applied Data Science, of how millions of people play is critical in sustaining franchises worth millions, and in some cases billions, of dollars.",
           "links": [],
           "bold": []
         },
@@ -14495,10 +14507,10 @@
         },
         {
           "type": "paragraph",
-          "text": "In today’s connected age, our data is being gathered unlike ever before. This presents an incredible opportunity across all industries to transform numbers into actionable insights. Those with an MS in data science have found imperative roles in a wide range of fields, helping guide decision makers to redefine their business-and sometimes the industry as a whole.",
+          "text": "In today's connected age, our data is being gathered unlike ever before. This presents an incredible opportunity across all industries to transform numbers into actionable insights. Those with an M.Eng. in Applied Data Science have found imperative roles in a wide range of fields, helping guide decision makers to redefine their business-and sometimes the industry as a whole.",
           "links": [
             {
-              "text": "MS in data science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
@@ -14555,7 +14567,7 @@
     },
     {
       "id": "remote-computer-jobs-online-msds-grads",
-      "title": "Remote Computer Jobs: Why Online MSDS Graduates Thrive",
+      "title": "Remote Computer Jobs: Why Online M.Eng. in Applied Data Science Graduates Thrive",
       "subtitle": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements - provided they have the right skills and qualifications.",
       "excerpt": "When Covid-19 shuttered offices and turned other white-collar workers into remote employees, many data scientists were already working as part of distributed teams. Notable companies such as payment processing platform Stripe, IBM, Bank of America and the Google subsidiary Kaggle employed remote data scientists years before the pandemic. Companies across sectors may be welcoming employees back into offices, but data scientists still have a distinct edge when negotiating flexible working arrangements - provided they have the right skills and qualifications.",
       "featured_image_url": "/assets/blogs/uncategorized/remote-computer-jobs-why-online-msds-graduates-thrive/image.webp",
@@ -14593,15 +14605,15 @@
         },
         {
           "type": "paragraph",
-          "text": "The outlook for remote work in data science is bright and largely unaffected by emerging post-Covid return-to-work plans, but capitalizing on expanding distributed work opportunities - and high salaries - in data science requires more than a passing knowledge of Python and MATLAB. The Stevens Online Master of Science in Data Science (MSDS) exists to give data science professionals the experience and mastery employers are looking for in their distributed talent. Think of it as a key that can unlock a world of remote data science work.",
+          "text": "The outlook for remote work in data science is bright and largely unaffected by emerging post-Covid return-to-work plans, but capitalizing on expanding distributed work opportunities - and high salaries - in data science requires more than a passing knowledge of Python and MATLAB. The Stevens Online M.Eng. in Applied Data Science exists to give data science professionals the experience and mastery employers are looking for in their distributed talent. Think of it as a key that can unlock a world of remote data science work.",
           "links": [
             {
-              "text": "Stevens Online Master of Science in Data Science",
+              "text": "Stevens Online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
-            "Stevens Online Master of Science in Data Science"
+            "Stevens Online M.Eng. in Applied Data Science"
           ]
         },
         {
@@ -14761,7 +14773,7 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "HOW CAN A DATA SCIENCE MASTER’S DEGREE HELP YOU TRANSITION INTO TELEWORK?"
+          "text": "HOW CAN AN M.Eng. IN APPLIED DATA SCIENCE HELP YOU TRANSITION INTO TELEWORK?"
         },
         {
           "type": "paragraph",
@@ -14784,10 +14796,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Employers want to know that their remote data scientists have the tech skills and domain knowledge to deliver value while off-site and the expertise they need to work independently. Setting the bar high is among the ways companies ensure they’re getting the best return on their investment when hiring remote workers and employment data suggests a master’s in data science increases your chances of landing a flexible working arrangement. According to the 2019 American Time Use Survey, “among workers age 25 and over, those with an advanced degree were more likely to work at home than were persons with lower levels of educational attainment - 42 percent of those with an advanced degree performed some work at home.”",
+          "text": "Employers want to know that their remote data scientists have the tech skills and domain knowledge to deliver value while off-site and the expertise they need to work independently. Setting the bar high is among the ways companies ensure they're getting the best return on their investment when hiring remote workers and employment data suggests an M.Eng. in Applied Data Science increases your chances of landing a flexible working arrangement. According to the 2019 American Time Use Survey, “among workers age 25 and over, those with an advanced degree were more likely to work at home than were persons with lower levels of educational attainment - 42 percent of those with an advanced degree performed some work at home.”",
           "links": [
             {
-              "text": "master’s in data science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-learning-experience/"
             },
             {
@@ -14796,7 +14808,7 @@
             }
           ],
           "bold": [
-            "master’s in data science",
+            "M.Eng. in Applied Data Science",
             "2019 American Time Use Survey"
           ]
         },
@@ -14807,7 +14819,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Six-figure salaries in data science are typical, but that doesn’t mean early career professionals with a bachelor’s degree make $100,000 while working from home. The average data science salary falls somewhere between $96,000 and $130,000 per year - a range that includes self-reported income from both recent MSDS graduates and experienced data scientists in managerial roles earning $200,000 or more. The highest-paying data science job is arguably chief data officer ($176,000), though some companies pay cloud data architects and data science managers just as much.",
+          "text": "Six-figure salaries in data science are typical, but that doesn't mean early career professionals with a bachelor's degree make $100,000 while working from home. The average data science salary falls somewhere between $96,000 and $130,000 per year - a range that includes self-reported income from both recent M.Eng. in Applied Data Science graduates and experienced data scientists in managerial roles earning $200,000 or more. The highest-paying data science job is arguably chief data officer ($176,000), though some companies pay cloud data architects and data science managers just as much.",
           "links": [
             {
               "text": "$96,000",
@@ -15047,7 +15059,7 @@
         },
         {
           "type": "paragraph",
-          "text": "How business analysts and data scientists differ depends on whom you ask, and the responsibilities associated with the two roles can overlap significantly. In general, however, employers don’t expect business analysts or data analysts to have the same coding, mathematical modeling or machine learning skills common among data scientists - or advanced degrees. Senior data analysts earn about $82,000 and can advance into mid-level and senior data scientist roles after earning an MSDS.",
+          "text": "How business analysts and data scientists differ depends on whom you ask, and the responsibilities associated with the two roles can overlap significantly. In general, however, employers don't expect business analysts or data analysts to have the same coding, mathematical modeling or machine learning skills common among data scientists - or advanced degrees. Senior data analysts earn about $82,000 and can advance into mid-level and senior data scientist roles after earning an M.Eng. in Applied Data Science.",
           "links": [
             {
               "text": "earn about $82,000",
@@ -15106,7 +15118,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Professionals with this title are usually responsible for sourcing, clearing, organizing and analyzing large amounts of data to find actionable insights and drive strategic decision-making. It’s a technical, specialized role, and most data scientists have master’s degrees in data science or computer science. Average salaries in data science are close to $100,000, but many data scientists earn a lot more.",
+          "text": "Professionals with this title are usually responsible for sourcing, clearing, organizing and analyzing large amounts of data to find actionable insights and drive strategic decision-making. It's a technical, specialized role, and most data scientists have an M.Eng. in Applied Data Science or a master's degree in computer science. Average salaries in data science are close to $100,000, but many data scientists earn a lot more.",
           "links": [
             {
               "text": "Average salaries in data science",
@@ -15184,7 +15196,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Keeping your expectations realistic is the key to transitioning into remote work in data science. Employers that embrace work-from-home and work-from-anywhere policies can draw from an expansive, global talent pool. To compete, you need to be at the top of your game and an expert in the field. Enrolling in the Charles V. Schaefer, Jr. School of Engineering & Science’s 100 percent online Master in Data Science program is one way to enhance your practical skills and theoretical knowledge while you continue building career capital.",
+          "text": "Keeping your expectations realistic is the key to transitioning into remote work in data science. Employers that embrace work-from-home and work-from-anywhere policies can draw from an expansive, global talent pool. To compete, you need to be at the top of your game and an expert in the field. Enrolling in the Charles V. Schaefer, Jr. School of Engineering & Science's 100 percent online M.Eng. in Applied Data Science program is one way to enhance your practical skills and theoretical knowledge while you continue building career capital.",
           "links": [],
           "bold": []
         },
@@ -15196,7 +15208,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You may start in a junior-level, business-focused data science job after earning an MSDS, but if you have an eye for the potential hidden in information, you will eventually be able to use data to do things like improve the effectiveness of education, make travel safer or help develop more effective drug treatments. More importantly, you’ll be able to do it all from the comfort of home.",
+          "text": "You may start in a junior-level, business-focused data science job after earning an M.Eng. in Applied Data Science, but if you have an eye for the potential hidden in information, you will eventually be able to use data to do things like improve the effectiveness of education, make travel safer or help develop more effective drug treatments. More importantly, you'll be able to do it all from the comfort of home.",
           "links": [],
           "bold": []
         },
@@ -15271,12 +15283,7 @@
         {
           "type": "paragraph",
           "text": "The rapidly evolving digital landscape promises increased productivity and unprecedented advances, but it also creates alarming opportunities for bad actors. The surge in cyber threats has led to substantial losses for businesses and institutions, fueling demand for secure software design and professionals well-versed in cybersecurity.",
-          "links": [
-            {
-              "text": "The surge in cyber threats",
-              "url": "https://www.usaid.gov/digital-development/cybersecurity/economic-growth-briefer"
-            }
-          ],
+          "links": [],
           "bold": []
         },
         {
@@ -16446,7 +16453,7 @@
     },
     {
       "id": "stevens-master-of-science-in-data-science-hands-on-skills",
-      "title": "What Hands-On Skills Will You Gain in the Stevens Data Science Master’s Degree Program?",
+      "title": "What Hands-On Skills Will You Gain in the Stevens M.Eng. in Applied Data Science Program?",
       "subtitle": "Big data and artificial intelligence loom large in business planning; 97% of businesses are actively investing in big data and artificial intelligence (AI), and 98% of executives believe it’s essential to increase their organization’s data analysis capabilities in the next three years.",
       "excerpt": "Big data and artificial intelligence loom large in business planning; 97% of businesses are actively investing in big data and artificial intelligence (AI), and 98% of executives believe it’s essential to increase their organization’s data analysis capabilities in the next three years.",
       "featured_image_url": "/assets/blogs/uncategorized/what-hands-on-skills-will-you-gain-in-the-stevens-data-science-masters-degree-pr/stv-blog-stevens-master-of-science-in-data-science-hands-on-skills.webp",
@@ -16491,10 +16498,10 @@
         },
         {
           "type": "paragraph",
-          "text": "This article outlines the hands-on technical expertise you can gain through the Stevens data science master’s program and explains how these in-demand skills can help you advance your career.",
+          "text": "This article outlines the hands-on technical expertise you can gain through the Stevens M.Eng. in Applied Data Science program and explains how these in-demand skills can help you advance your career.",
           "links": [
             {
-              "text": "Stevens data science master’s program",
+              "text": "Stevens M.Eng. in Applied Data Science program",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
@@ -16529,10 +16536,10 @@
         },
         {
           "type": "paragraph",
-          "text": "The Stevens online MSDS curriculum covers various aspects of AI and machine learning. Stevens data science master’s students take courses in applied machine learning, cognitive computing and other specialized areas (discussed below) to help them develop sought-after skills.",
+          "text": "The Stevens online M.Eng. in Applied Data Science curriculum covers various aspects of AI and machine learning. Stevens M.Eng. in Applied Data Science students take courses in applied machine learning, cognitive computing and other specialized areas (discussed below) to help them develop sought-after skills.",
           "links": [
             {
-              "text": "Stevens online MSDS curriculum",
+              "text": "Stevens online M.Eng. in Applied Data Science curriculum",
               "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
@@ -16556,10 +16563,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Deep learning is used in various industries, including financial services (to power predictive analytics) and healthcare (to analyze health data faster), making it an invaluable data science skill. Stevens’ online MSDS includes a course in deep learning designed to teach students deep learning methods to solve real-world machine-learning problems.",
+          "text": "Deep learning is used in various industries, including financial services (to power predictive analytics) and healthcare (to analyze health data faster), making it an invaluable data science skill. Stevens' online M.Eng. in Applied Data Science includes a course in deep learning designed to teach students deep learning methods to solve real-world machine-learning problems.",
           "links": [
             {
-              "text": "Stevens’ online MSDS includes a course in deep learning",
+              "text": "Stevens' online M.Eng. in Applied Data Science includes a course in deep learning",
               "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
@@ -16583,10 +16590,10 @@
         },
         {
           "type": "paragraph",
-          "text": "As a Stevens data science master’s student, you will take an NLP course focused on applying dynamic programming to statistical learning in various industries, including engineering, business and finance.",
+          "text": "As a Stevens M.Eng. in Applied Data Science student, you will take an NLP course focused on applying dynamic programming to statistical learning in various industries, including engineering, business and finance.",
           "links": [
             {
-              "text": "Stevens data science master’s student",
+              "text": "Stevens M.Eng. in Applied Data Science student",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
@@ -16614,10 +16621,10 @@
         },
         {
           "type": "paragraph",
-          "text": "At Stevens, online MSDS students develop their predictive modeling and statistical skills through courses focusing on probability, time series analysis and statistical methods. The program also includes foundational mathematics courses to foster the skills needed to succeed in the more advanced statistical coursework.",
+          "text": "At Stevens, online M.Eng. in Applied Data Science students develop their predictive modeling and statistical skills through courses focusing on probability, time series analysis and statistical methods. The program also includes foundational mathematics courses to foster the skills needed to succeed in the more advanced statistical coursework.",
           "links": [
             {
-              "text": "online MSDS students",
+              "text": "online M.Eng. in Applied Data Science students",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
@@ -16645,10 +16652,10 @@
         },
         {
           "type": "paragraph",
-          "text": "The Stevens online MSDS covers data visualization skills in several courses, preparing students to communicate data-driven insights; “Statistical Methods” includes a focus on presenting one’s conclusions from statistical analysis.",
+          "text": "The Stevens online M.Eng. in Applied Data Science covers data visualization skills in several courses, preparing students to communicate data-driven insights; \"Statistical Methods\" includes a focus on presenting one's conclusions from statistical analysis.",
           "links": [
             {
-              "text": "Stevens online MSDS",
+              "text": "Stevens online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
@@ -16661,10 +16668,10 @@
         },
         {
           "type": "paragraph",
-          "text": "The Stevens data science master’s program teaches in-demand skills using industry-standard software and tools. Students should graduate with a deep understanding of data science as well as technical proficiency in key tools like:",
+          "text": "The Stevens M.Eng. in Applied Data Science program teaches in-demand skills using industry-standard software and tools. Students should graduate with a deep understanding of data science as well as technical proficiency in key tools like:",
           "links": [
             {
-              "text": "Stevens data science master’s program",
+              "text": "Stevens M.Eng. in Applied Data Science program",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             }
           ],
@@ -16713,7 +16720,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Some software vendors, like Google and Amazon, offer certifications, many of which are highly regarded by employers. Stevens MSDS graduates develop the necessary skills to pursue these certifications after graduation, which can further boost earning potential and employment opportunities.",
+          "text": "Some software vendors, like Google and Amazon, offer certifications, many of which are highly regarded by employers. Stevens M.Eng. in Applied Data Science graduates develop the necessary skills to pursue these certifications after graduation, which can further boost earning potential and employment opportunities.",
           "links": [
             {
               "text": "Google",
@@ -16748,10 +16755,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Enrolling in a master’s program, like the Stevens online MSDS, provides direct access to expert faculty members who bring their professional experience of ever-changing industry trends and technologies to the classroom. At Stevens, you can begin to build a network of industry connections as you develop in-demand skills that include machine learning, predictive modeling and data visualization.",
+          "text": "Enrolling in a master's program, like the Stevens online M.Eng. in Applied Data Science, provides direct access to expert faculty members who bring their professional experience of ever-changing industry trends and technologies to the classroom. At Stevens, you can begin to build a network of industry connections as you develop in-demand skills that include machine learning, predictive modeling and data visualization.",
           "links": [
             {
-              "text": "Stevens online MSDS",
+              "text": "Stevens online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
@@ -17040,7 +17047,7 @@
     },
     {
       "id": "submit-a-stronger-msds-application-start-with-application-walkthrough",
-      "title": "Want to Submit a Stronger MSDS Application? Start With an Application Walkthrough",
+      "title": "Want to Submit a Stronger M.Eng. in Applied Data Science Application? Start With an Application Walkthrough",
       "subtitle": "Prospective Stevens students can work with an enrollment advisor (EA) to navigate the program research and application processes. This article explains how an application walkthrough with an EA can help you submit a robust application and improve your chances of gaining admission.",
       "excerpt": "Prospective Stevens students can work with an enrollment advisor (EA) to navigate the program research and application processes. This article explains how an application walkthrough with an EA can help you submit a robust application and improve your chances of gaining admission.",
       "featured_image_url": "/assets/blogs/uncategorized/want-to-submit-a-stronger-msds-application-start-with-an-application-walkthrough/stv-blog-submit-a-stronger-msds-application-start-with-application-walkthrough.webp",
@@ -17075,7 +17082,7 @@
         },
         {
           "type": "paragraph",
-          "text": "EAs are admissions experts who guide prospective students through the application process. EAs assigned to the online MSDS have in-depth knowledge of the program and its admission requirements. They know what the admissions board seeks in candidates and can help you tailor your application to highlight your strengths. That’s why many successful MSDS candidates work with an EA when they apply to the program.",
+          "text": "EAs are admissions experts who guide prospective students through the application process. EAs assigned to the online M.Eng. in Applied Data Science have in-depth knowledge of the program and its admission requirements. They know what the admissions board seeks in candidates and can help you tailor your application to highlight your strengths. That's why many successful M.Eng. in Applied Data Science candidates work with an EA when they apply to the program.",
           "links": [],
           "bold": []
         },
@@ -17097,7 +17104,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Your EA can provide one-on-one support throughout the application and enrollment process, answering any questions that crop up along the way. They will help you assess your academic and professional history and your career aspirations so you can determine whether the online MSDS aligns with your goals. Your EA can provide more detailed information on what the coursework entails to help you decide which course sequence (traditional or advanced) better serves your objectives. They can also tell you more about the online student experience.",
+          "text": "Your EA can provide one-on-one support throughout the application and enrollment process, answering any questions that crop up along the way. They will help you assess your academic and professional history and your career aspirations so you can determine whether the online M.Eng. in Applied Data Science aligns with your goals. Your EA can provide more detailed information on what the coursework entails to help you decide which course sequence (traditional or advanced) better serves your objectives. They can also tell you more about the online student experience.",
           "links": [
             {
               "text": "application and enrollment process",
@@ -17121,10 +17128,10 @@
         },
         {
           "type": "paragraph",
-          "text": "To apply to the Stevens online MSDS, you must have a bachelor’s degree with a minimum 3.0 GPA from an accredited institution. You also need the following materials:",
+          "text": "To apply to the Stevens online M.Eng. in Applied Data Science, you must have a bachelor's degree with a minimum 3.0 GPA from an accredited institution. You also need the following materials:",
           "links": [
             {
-              "text": "apply to the Stevens online MSDS",
+              "text": "apply to the Stevens online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/#admissions"
             }
           ],
@@ -17206,10 +17213,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens’ online MSDS can help you gain the skills and expertise you need to accelerate your data science career. Coursework focuses on data science skills that are increasing in demand; 100 percent of graduates are employed within three months of graduation.",
+          "text": "Stevens' online M.Eng. in Applied Data Science can help you gain the skills and expertise you need to accelerate your data science career. Coursework focuses on data science skills that are increasing in demand; 100 percent of graduates are employed within three months of graduation.",
           "links": [
             {
-              "text": "Stevens’ online MSDS",
+              "text": "Stevens' online M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/#overview"
             },
             {
@@ -17911,7 +17918,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Professionals already pursuing data science careers may wonder what this means for the future of data scientists. And the idea that there is a looming data science bubble may give aspiring data scientists looking at programs such as the Charles V. Schaefer Jr. School of Engineering & Science‘s online Master of Science in Data Science (MSDS) pause. However, while data science is undoubtedly changing in several ways explored in more depth in this article, there is no objective evidence to suggest the Big Data market is in danger of collapsing.",
+          "text": "Professionals already pursuing data science careers may wonder what this means for the future of data scientists. And the idea that there is a looming data science bubble may give aspiring data scientists looking at programs such as the Charles V. Schaefer Jr. School of Engineering & Science's online M.Eng. in Applied Data Science pause. However, while data science is undoubtedly changing in several ways explored in more depth in this article, there is no objective evidence to suggest the Big Data market is in danger of collapsing.",
           "links": [
             {
               "text": "data science careers",
@@ -17922,14 +17929,14 @@
               "url": "/"
             },
             {
-              "text": "Master of Science in Data Science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
             "data science careers",
             "Charles V. Schaefer Jr. School of Engineering & Science",
-            "Master of Science in Data Science"
+            "M.Eng. in Applied Data Science"
           ]
         },
         {
@@ -18000,38 +18007,30 @@
         },
         {
           "type": "paragraph",
-          "text": "And finally, titles are often misleading and may not align with work experience. Some professionals in data scientist roles have the skills to do what is colloquially known as “data janitor work” but not the credentials or knowledge to advance in this increasingly complex and specialized field. About half of all data science job postings across the U.S. require that applicants have an MSDS or have completed a similar graduate program in data analysis or business analytics. In-demand data science skills in 2022 include programming language skills (especially in Python and R), data visualization skills, Natural Language Processing skills, cloud computing skills, gradient boosting skills and deep learning skills.",
+          "text": "And finally, titles are often misleading and may not align with work experience. Some professionals in data scientist roles have the skills to do what is colloquially known as \"data janitor work\" but not the credentials or knowledge to advance in this increasingly complex and specialized field. About half of all data science job postings across the U.S. require that applicants have an M.Eng. in Applied Data Science or have completed a similar graduate program in data analysis or business analytics. In-demand data science skills in 2022 include programming language skills (especially in Python and R), data visualization skills, Natural Language Processing skills, cloud computing skills, gradient boosting skills and deep learning skills.",
           "links": [
             {
               "text": "data janitor work",
               "url": "https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html"
-            },
-            {
-              "text": "applicants have an MSDS",
-              "url": "https://www.burning-glass.com/research-project/quant-crunch-data-science-job-market/"
             }
           ],
           "bold": [
             "data janitor work",
-            "applicants have an MSDS"
+            "applicants have an M.Eng. in Applied Data Science"
           ]
         },
         {
           "type": "paragraph",
-          "text": "While it’s true that there are more highly trained data scientists today than four years ago, there is still a global shortage of data talent when it comes to professionals with the right blend of advanced training and credentials. Therein lies the value of earning a master’s-level data science degree. Pursuing an MSDS is a straightforward way to gain leading-edge skills that separate applicants in data science hiring pools.",
+          "text": "While it's true that there are more highly trained data scientists today than four years ago, there is still a global shortage of data talent when it comes to professionals with the right blend of advanced training and credentials. Therein lies the value of earning a master's-level data science degree. Pursuing an M.Eng. in Applied Data Science is a straightforward way to gain leading-edge skills that separate applicants in data science hiring pools.",
           "links": [
             {
-              "text": "there is still a global shortage of data talent",
-              "url": "https://www.springboard.com/blog/data-science-talent-shortage/"
-            },
-            {
-              "text": "master’s-level data science degree",
+              "text": "master's-level data science degree",
               "url": "/blog/masters-in-data-science-programs-faculty-student-alumni-networking/"
             }
           ],
           "bold": [
             "there is still a global shortage of data talent",
-            "master’s-level data science degree"
+            "master's-level data science degree"
           ]
         },
         {
@@ -18116,12 +18115,7 @@
         {
           "type": "paragraph",
           "text": "Keep in mind that the field is growing more segmented, and the way people think about data science may be far too limiting. The Quant Crunch report compiled by IBM and the Business Higher Education Forum asserts that employers and higher education institutions think beyond the limitations of what we currently call a data scientist or data analyst “to develop talent for a variety of roles, such as data engineer, data governance and lifecycle and data privacy and security specialist and data product developer.” That speaks to a future with abundant opportunities for data scientists with the right skills.",
-          "links": [
-            {
-              "text": "The Quant Crunch report",
-              "url": "https://www.burning-glass.com/wp-content/uploads/The_Quant_Crunch.pdf"
-            }
-          ],
+          "links": [],
           "bold": [
             "The Quant Crunch report"
           ]
@@ -18175,13 +18169,8 @@
         },
         {
           "type": "paragraph",
-          "text": "Headlines declaring that data science is dead or data science will die soon - or that data scientists will become obsolete - ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
-          "links": [
-            {
-              "text": "data science will die soon",
-              "url": "https://towardsdatascience.com/is-data-science-dead-in-10-years-3cde3963552"
-            }
-          ],
+          "text": "Headlines declaring that data science is dead or data science will die soon - or that data scientists will become obsolete - ignore the fact that this discipline is evolving. It is only natural that interest in data science is skyrocketing. Innovations in neural networks, Natural Language Processing, intelligent machines, supervised learning and Federated Learning are relatively recent advancements in a discipline defined by disruptive technology. Data science was once a murky discipline that even those working in it could not easily define. Modern data science is growing more segmented and specialization makes it easier to see how data scientists in different roles deliver value. Some data scientists handle model development. Others do analysis. Still others adapt AI for technical implementation. And many data scientists specialize in software engineering, deep learning, data mining, data visualization or data architecture.",
+          "links": [],
           "bold": [
             "data science is dead",
             "data science will die soon"
@@ -18202,7 +18191,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Cindi Howson, Chief Data Strategy Officer of ThoughtSpot, writes that “the mismatch of expectation and reality will cause data science to lose its luster.” This suggests the enthusiasm for data science and the demand for data scientists can continue to grow unabated, provided professionals in the field deliver insights that drive quantifiable enhancements. Pragmatism is clearly more useful than hype in data science, as are leading-edge data science skills, advanced mathematical skills and highly developed computational skills - everything covered in the coursework in degree programs such as Stevens’ 100% online M.S. in Data Science.",
+          "text": "Cindi Howson, Chief Data Strategy Officer of ThoughtSpot, writes that \"the mismatch of expectation and reality will cause data science to lose its luster.\" This suggests the enthusiasm for data science and the demand for data scientists can continue to grow unabated, provided professionals in the field deliver insights that drive quantifiable enhancements. Pragmatism is clearly more useful than hype in data science, as are leading-edge data science skills, advanced mathematical skills and highly developed computational skills - everything covered in the coursework in degree programs such as Stevens' 100% online M.Eng. in Applied Data Science.",
           "links": [
             {
               "text": "cause data science to lose its luster",
@@ -18225,7 +18214,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The graduate-level data science program is led by experts in subfields of data science and data engineering such as stochastic optimization and cryptography. It attracts data analysts and other professionals who feel that pursuing a part-time M.S. in Data Science online is the best way to advance in their careers or learn to leverage the data generated in their professional spheres more adroitly. They believe in the power of information to change the world, but they are ready to enter the field with their eyes wide open.",
+          "text": "The graduate-level data science program is led by experts in subfields of data science and data engineering such as stochastic optimization and cryptography. It attracts data analysts and other professionals who feel that pursuing a part-time M.Eng. in Applied Data Science online is the best way to advance in their careers or learn to leverage the data generated in their professional spheres more adroitly. They believe in the power of information to change the world, but they are ready to enter the field with their eyes wide open.",
           "links": [
             {
               "text": "led by experts",
@@ -18471,10 +18460,10 @@
         },
         {
           "type": "paragraph",
-          "text": "These trends highlight the reason Stevens’ MSDS curriculum is always evolving. Machine learning, big data, web analytics and cognitive computing are all topics covered in the coursework. Understanding data science is increasingly important in business today. As an institute of higher learning, we know the importance of graduating with the necessary skills to thrive in the field of data science.",
+          "text": "These trends highlight the reason Stevens' M.Eng. in Applied Data Science curriculum is always evolving. Machine learning, big data, web analytics and cognitive computing are all topics covered in the coursework. Understanding data science is increasingly important in business today. As an institute of higher learning, we know the importance of graduating with the necessary skills to thrive in the field of data science.",
           "links": [
             {
-              "text": "Stevens’ MSDS curriculum is always evolving",
+              "text": "Stevens' M.Eng. in Applied Data Science curriculum is always evolving",
               "url": "/online-masters-engineering-applied-data-science/#curriculum"
             }
           ],
@@ -18932,8 +18921,8 @@
     {
       "id": "top-best-data-science-programs",
       "title": "The People that Drive Value for the Best Data Science Master’s Programs?",
-      "subtitle": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
-      "excerpt": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+      "subtitle": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but an M.Eng. in Applied Data Science isn't enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+      "excerpt": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but an M.Eng. in Applied Data Science isn't enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
       "featured_image_url": "/assets/blogs/uncategorized/the-people-that-drive-value-for-the-best-data-science-masters-programs/image.webp",
       "category": "Other Programs",
       "author": "Stevens Online",
@@ -18950,16 +18939,16 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but a Master of Science in Data Science (MSDS) isn’t enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
+          "text": "Conventional wisdom states that success is a matter of who you know, not what you know. In data science, success hinges on both. Ninety percent of data scientists have advanced degrees - suggesting a discipline with high respect for formal education - but an M.Eng. in Applied Data Science isn't enough to launch a career. Relationships drive opportunity and innovation, and building a robust professional network is equally as important as developing a knowledge base of technical data science skills. To optimize your journey towards success in this field, it is essential to choose the best data science program that caters to both academic excellence and networking opportunities.",
           "links": [
             {
-              "text": "Master of Science in Data Science",
+              "text": "M.Eng. in Applied Data Science",
               "url": "/online-masters-engineering-applied-data-science/"
             }
           ],
           "bold": [
             "Ninety percent of data scientists have advanced degrees",
-            "Master of Science in Data Science"
+            "M.Eng. in Applied Data Science"
           ]
         },
         {
@@ -18980,7 +18969,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Faculty access is another critical variable. In theory, class sizes in online master’s in data science programs are limited only by the capabilities of digital learning platforms. However, StevensOnline graduate programs take a conservative approach, similar to that of highly selective on-campus programs. The student-to-faculty ratio is just 25:1, which is small enough to ensure distance learners develop relationships with their professors and other Schaefer School of Engineering & Science faculty and staff.",
+          "text": "Faculty access is another critical variable. In theory, class sizes in online M.Eng. in Applied Data Science programs are limited only by the capabilities of digital learning platforms. However, StevensOnline graduate programs take a conservative approach, similar to that of highly selective on-campus programs. The student-to-faculty ratio is just 25:1, which is small enough to ensure distance learners develop relationships with their professors and other Schaefer School of Engineering & Science faculty and staff.",
           "links": [
             {
               "text": "StevensOnline",
@@ -18993,7 +18982,7 @@
         },
         {
           "type": "paragraph",
-          "text": "What happens behind the scenes? To say that data science is a rapidly evolving field is an understatement, and it’s not enough for professors to have backgrounds in data analysis, data mining, information systems and computational methods. For example, industry trade journals regularly publish Stevens’ Associate Professor Michael Zabarankin‘s ongoing research into risk management and optimal control, continuous and discrete optimization, mathematical physics and variational principles. Thought leaders such as Zabarankin are at the helm of the best MSDS programs, tackling real-world data science problems. They also bring relationships and partnerships with top employers and influential organizations in data science. StevensOnline has a track record of placing MSDS graduates at notable tech companies such as Amazon and financial firms such as Bank of America, in part because of faculty connections.",
+          "text": "What happens behind the scenes? To say that data science is a rapidly evolving field is an understatement, and it's not enough for professors to have backgrounds in data analysis, data mining, information systems and computational methods. For example, industry trade journals regularly publish Stevens' Associate Professor Michael Zabarankin's ongoing research into risk management and optimal control, continuous and discrete optimization, mathematical physics and variational principles. Thought leaders such as Zabarankin are at the helm of the best M.Eng. in Applied Data Science programs, tackling real-world data science problems. They also bring relationships and partnerships with top employers and influential organizations in data science. StevensOnline has a track record of placing M.Eng. in Applied Data Science graduates at notable tech companies such as Amazon and financial firms such as Bank of America, in part because of faculty connections.",
           "links": [
             {
               "text": "Michael Zabarankin",
@@ -19030,7 +19019,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Top MSDS programs nurture relationship-building through group coursework and project work so students can develop career-boosting professional networks. Stevens’ Master of Science in Data Science program stands out when it comes to peer-to-peer engagement. Highly intelligent, motivated students bring years of professional experience solving large-scale, real-world problems to each cohort. All data science students begin the master’s degree program (whether online or on-campus) ready to learn from one another. Stevens is also intentional about fostering interdisciplinary collaboration through cross-departmental research by faculty and students. Innovation and entrepreneurship events unite MSDS, bachelor’s degree and Ph.D. candidates on experience-building projects spanning healthcare, cybersecurity, engineering, data science and analytics.",
+          "text": "Top M.Eng. in Applied Data Science programs nurture relationship-building through group coursework and project work so students can develop career-boosting professional networks. Stevens' M.Eng. in Applied Data Science program stands out when it comes to peer-to-peer engagement. Highly intelligent, motivated students bring years of professional experience solving large-scale, real-world problems to each cohort. All data science students begin the master's degree program (whether online or on-campus) ready to learn from one another. Stevens is also intentional about fostering interdisciplinary collaboration through cross-departmental research by faculty and students. Innovation and entrepreneurship events unite M.Eng. in Applied Data Science, bachelor's degree and Ph.D. candidates on experience-building projects spanning healthcare, cybersecurity, engineering, data science and analytics.",
           "links": [
             {
               "text": "coursework",
@@ -19048,7 +19037,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Stevens attracts professionals who already have significant computer science, analytics and data science experience, which means the university’s global alumni network is substantial. Students who connect and work together after graduation can accomplish great things - especially given the postgraduate support alumni receive. Graduates of the part-time, online data science program receive the same job counseling, networking assistance and support as full-time students studying on campus. Online Master of Science in Data Science graduates can join the same alumni groups, connect with potential employers, meet with career advisors, and participate in events and workshops that provide new chances to make valuable professional connections.",
+          "text": "Stevens attracts professionals who already have significant computer science, analytics and data science experience, which means the university's global alumni network is substantial. Students who connect and work together after graduation can accomplish great things - especially given the postgraduate support alumni receive. Graduates of the part-time, online data science program receive the same job counseling, networking assistance and support as full-time students studying on campus. Online M.Eng. in Applied Data Science graduates can join the same alumni groups, connect with potential employers, meet with career advisors, and participate in events and workshops that provide new chances to make valuable professional connections.",
           "links": [
             {
               "text": "postgraduate support",
@@ -19094,13 +19083,13 @@
         },
         {
           "type": "paragraph",
-          "text": "Program content and format are crucial factors to consider when choosing the Best Data Science Program. The top-notch data science master’s programs are known for their highly technical curriculum, which places a strong emphasis on mathematics. These programs are typically offered by esteemed engineering or computer science departments. At StevensOnline, while it is not a requirement for MSDS applicants to be proficient in programming languages and platforms like Python, R, and MATLAB before enrolling, many incoming students are already comfortable with these tools at the time of application. Moreover, most individuals pursuing a graduate-level data science degree have prior experience with essential mathematical concepts such as multivariable calculus, linear algebra, probability and statistics. They are also familiar with popular frameworks like Apache, Hadoop, Hive, Mahout, as well as data visualization tools such as D3.js and Tableau. These foundational skills and knowledge contribute to a well-rounded education in the field of data science.",
+          "text": "Program content and format are crucial factors to consider when choosing the Best Data Science Program. The top-notch data science master's programs are known for their highly technical curriculum, which places a strong emphasis on mathematics. These programs are typically offered by esteemed engineering or computer science departments. At StevensOnline, while it is not a requirement for M.Eng. in Applied Data Science applicants to be proficient in programming languages and platforms like Python, R, and MATLAB before enrolling, many incoming students are already comfortable with these tools at the time of application. Moreover, most individuals pursuing a graduate-level data science degree have prior experience with essential mathematical concepts such as multivariable calculus, linear algebra, probability and statistics. They are also familiar with popular frameworks like Apache, Hadoop, Hive, Mahout, as well as data visualization tools such as D3.js and Tableau. These foundational skills and knowledge contribute to a well-rounded education in the field of data science.",
           "links": [],
           "bold": []
         },
         {
           "type": "paragraph",
-          "text": "Core data science courses in top MSDS programs cover topics such as:",
+          "text": "Core data science courses in top M.Eng. in Applied Data Science programs cover topics such as:",
           "links": [],
           "bold": []
         },
@@ -19219,7 +19208,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Ultimately, the value of a master’s in data science remains the same, whether it is earned part-time, online, or on-campus. However, it is crucial to choose the Best Data Science Program that prioritizes not only the curriculum but also the people. Often, the human side of data science can be easily overlooked, despite delving into the offerings of MSDS programs. Acknowledging the career-enhancing power of relationships in graduate school and beyond can significantly propel your advancement and expedite your success.",
+          "text": "Ultimately, the value of a master's in data science remains the same, whether it is earned part-time, online, or on-campus. However, it is crucial to choose the Best Data Science Program that prioritizes not only the curriculum but also the people. Often, the human side of data science can be easily overlooked, despite delving into the offerings of M.Eng. in Applied Data Science programs. Acknowledging the career-enhancing power of relationships in graduate school and beyond can significantly propel your advancement and expedite your success.",
           "links": [],
           "bold": []
         },
@@ -21369,13 +21358,8 @@
         },
         {
           "type": "paragraph",
-          "text": "According to a report by QuantCrunch, 39% of data scientists and advanced analysts have a master’s or PhD. This suggests master’s degrees are not required in every data science job but help candidates stand out for some of the most competitive or well-paid positions. Financial quantitative analysts, for example, earn an average of about $103,600 a year, according to that same report, and 47% of job postings for this position require a master’s degree or higher.",
-          "links": [
-            {
-              "text": "39% of data scientists and advanced analysts have a master’s or PhD",
-              "url": "https://www.economicmodeling.com/wp-content/uploads/2022/05/The_Quant_Crunch.pdf"
-            }
-          ],
+          "text": "According to a report by QuantCrunch, 39% of data scientists and advanced analysts have a master's or PhD. This suggests master's degrees are not required in every data science job but help candidates stand out for some of the most competitive or well-paid positions. Financial quantitative analysts, for example, earn an average of about $103,600 a year, according to that same report, and 47% of job postings for this position require a master's degree or higher.",
+          "links": [],
           "bold": []
         },
         {
@@ -21390,10 +21374,6 @@
             {
               "text": "best MSDS programs",
               "url": "https://www.noodle.com/articles/nine-things-top-masters-in-data-science-programs-have-in-common"
-            },
-            {
-              "text": "attract recruiter interest",
-              "url": "https://towardsdatascience.com/was-it-worth-studying-a-data-science-masters-c469e5b3e020"
             },
             {
               "text": "faculty",

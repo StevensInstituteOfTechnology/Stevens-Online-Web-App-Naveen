@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent } from '@/components/ui/card';
 import { Laptop, Users, LifeBuoy, Library, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
 import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
@@ -20,6 +20,19 @@ export default function OnlineExperience() {
       has_rfi_modal: true
     }
   });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    setPageTitle('Online Learning Experience & Student Support | Stevens Online');
+    setMetaDescription('Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement.');
+    setOpenGraphTags({
+      title: 'Online Learning Experience & Student Support | Stevens Online',
+      description: 'Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement.',
+      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      url: buildCanonicalUrl('/online-learning-experience/'),
+      type: 'website'
+    });
+  }, []);
 
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
   const features = [

@@ -17,7 +17,7 @@ const programData = {
     url: '/online-masters-engineering-management/'
   },
   hero: {
-    titleLines: ["Earn Your MEM Online.", "Lead Engineering Teams Anywhere."],
+    titleLines: ["Earn Your Master of Engineering Management (MEM) Online", "Lead Engineering Teams Anywhere."],
     subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
     bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
@@ -385,7 +385,7 @@ const programData = {
         details: "Deposit Waiver* and Application Fee Waiver Available.",
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: "January 5, 2026",
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: "January 20, 2026"
       }
     ],

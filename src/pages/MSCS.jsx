@@ -17,7 +17,7 @@ const programData = {
     url: '/online-masters-computer-science-mscs/'
   },
   hero: {
-    titleLines: ["Earn Your MSCS Online.", "Build What's Next."],
+    titleLines: ["Earn Your Master of Science in Computer Science (MSCS) Online", "Build What's Next."],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
     bgImage: "/assets/images/mscs/bg_program.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
@@ -608,7 +608,7 @@ The objective of this course is to give students a basic grounding in designing 
         details: "Deposit Waiver* and Application Fee Waiver Available.",
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: "January 5, 2026",
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: "January 20, 2026"
       }
     ],

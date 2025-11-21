@@ -16,7 +16,8 @@
     "generate-responsive-images": "node scripts/convert-to-webp.js --generate-responsive",
     "generate-responsive-images:dry-run": "node scripts/convert-to-webp.js --generate-responsive --dry-run",
     "compress-videos": "node scripts/compress-videos.js",
-    "compress-videos:dry-run": "node scripts/compress-videos.js --dry-run"
+    "compress-videos:dry-run": "node scripts/compress-videos.js --dry-run",
+    "check-blog-links": "node scripts/check-blog-links.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",

@@ -34,8 +34,8 @@ import OnlineExperience from "@/pages/OnlineExperience";
 import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import Admissions from "@/pages/Admissions";
 import EmployerSponsorship from "@/pages/EmployerSponsorship";
-import CorporatePartners from "@/pages/CorporatePartners";
-import CorporateStudents from "@/pages/CorporateStudents";
+// import CorporatePartners from "@/pages/CorporatePartners";
+// import CorporateStudents from "@/pages/CorporateStudents";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
@@ -134,12 +134,20 @@ export const routes = [
 
   // ASAP page
   {
-    path: '/ASAP/',
+    path: '/asap/',
     element: <ASAP />
   },
   {
+    path: '/ASAP/',
+    element: <Navigate to="/asap/" replace />
+  },
+  {
     path: '/asap',
-    element: <Navigate to="/ASAP/" replace />
+    element: <Navigate to="/asap/" replace />
+  },
+  {
+    path: '/ASAP',
+    element: <Navigate to="/asap/" replace />
   },
 
   // Accelerated Application page
@@ -262,8 +270,16 @@ export const routes = [
 
   // Professional Education
   {
-    path: '/ProfessionalEducation',
+    path: '/professionaleducation/',
     element: <ProfessionalEducation />
+  },
+  {
+    path: '/ProfessionalEducation',
+    element: <Navigate to="/professionaleducation/" replace />
+  },
+  {
+    path: '/professionaleducation',
+    element: <Navigate to="/professionaleducation/" replace />
   },
 
   // Certificates
@@ -317,22 +333,22 @@ export const routes = [
   },
 
   // Corporate Partnership Pages
-  {
-    path: '/corporate-partners/',
-    element: <CorporatePartners />
-  },
-  {
-    path: '/corporate-partners',
-    element: <Navigate to="/corporate-partners/" replace />
-  },
-  {
-    path: '/corporate-students/',
-    element: <CorporateStudents />
-  },
-  {
-    path: '/corporate-students',
-    element: <Navigate to="/corporate-students/" replace />
-  },
+  // {
+  //   path: '/corporate-partners/',
+  //   element: <CorporatePartners />
+  // },
+  // {
+  //   path: '/corporate-partners',
+  //   element: <Navigate to="/corporate-partners/" replace />
+  // },
+  // {
+  //   path: '/corporate-students/',
+  //   element: <CorporateStudents />
+  // },
+  // {
+  //   path: '/corporate-students',
+  //   element: <Navigate to="/corporate-students/" replace />
+  // },
 
   // Explore program pages
   {

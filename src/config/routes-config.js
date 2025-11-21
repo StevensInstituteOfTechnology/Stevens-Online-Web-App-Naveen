@@ -10,7 +10,7 @@
 
 export const STATIC_ROUTES = [
   '/',
-  '/ASAP/',
+  '/asap/', // Canonical: lowercase with trailing slash
   '/accelerated-application/',
   '/tuition-and-financial-aid/',
   '/online-mba/',
@@ -24,9 +24,7 @@ export const STATIC_ROUTES = [
   '/online-learning-experience/',
   '/admissions/',
   '/request-information/',
-  '/corporate-partners/',
-  '/corporate-students/',
-  '/ProfessionalEducation',
+  '/professionaleducation/', // Canonical: lowercase with trailing slash
   '/Certificates',
   '/TuitionOutcomes',
   '/explore/online-mba/',
@@ -37,6 +35,8 @@ export const STATIC_ROUTES = [
   '/explore/certificates/enterprise-ai/',
   '/explore/certificates/applied-data-science-foundations/',
   '/employer-sponsorship/',
+  '/corporate-partners/',
+  '/corporate-students/',
   '/page-not-found/',
 ];
 
