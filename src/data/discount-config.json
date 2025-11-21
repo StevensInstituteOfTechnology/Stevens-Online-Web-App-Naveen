@@ -1,0 +1,195 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-20",
+  "description": "Corporate discount configuration for Stevens Online programs",
+  
+  "programs": {
+    "mscs": {
+      "code": "mscs",
+      "name": "M.S. Computer Science",
+      "basePrice": 53082,
+      "credits": {
+        "type": "fixed",
+        "value": 30
+      },
+      "cohortPricing": {}
+    },
+    "mem": {
+      "code": "mem",
+      "name": "M.Eng. Engineering Management",
+      "basePrice": 53082,
+      "credits": {
+        "type": "fixed",
+        "value": 30
+      },
+      "cohortPricing": {}
+    },
+    "mba": {
+      "code": "mba",
+      "name": "Online MBA",
+      "basePrice": 86695,
+      "credits": {
+        "type": "variable",
+        "min": 39,
+        "typical": 42,
+        "max": 48,
+        "description": "Credits vary by concentration"
+      },
+      "cohortPricing": {
+        "pfizer": {
+          "type": "per_credit",
+          "perCredit": 666.66,
+          "description": "Pfizer Cohort: $666.66 per credit"
+        }
+      }
+    },
+    "meads": {
+      "code": "meads",
+      "name": "M.Eng. Applied Data Science",
+      "basePrice": 24000,
+      "credits": {
+        "type": "fixed",
+        "value": 30
+      },
+      "cohortPricing": {
+        "pfizer": {
+          "type": "per_credit",
+          "perCredit": 555,
+          "description": "Pfizer Cohort: $555 per credit"
+        }
+      }
+    },
+    "cert-eai": {
+      "code": "cert-eai",
+      "name": "Enterprise AI Certificate",
+      "basePrice": 5250,
+      "credits": {
+        "type": "fixed",
+        "value": 9
+      },
+      "cohortPricing": {}
+    },
+    "cert-ads": {
+      "code": "cert-ads",
+      "name": "Applied Data Science Foundations",
+      "basePrice": 5250,
+      "credits": {
+        "type": "fixed",
+        "value": 9
+      },
+      "cohortPricing": {}
+    }
+  },
+  
+  "corporatePartners": [
+    {
+      "id": "pfizer",
+      "name": "Pfizer",
+      "hasSpecialCohort": true,
+      "eligiblePrograms": ["mba", "meads"],
+      "benefits": "Special cohort pricing available for MBA and MEADS"
+    },
+    {
+      "id": "jpmorgan",
+      "name": "JPMorgan Chase",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for all standard corporate discounts"
+    },
+    {
+      "id": "jnj",
+      "name": "Johnson & Johnson",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for all standard corporate discounts"
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for all standard corporate discounts"
+    },
+    {
+      "id": "merck",
+      "name": "Merck",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for all standard corporate discounts"
+    },
+    {
+      "id": "ey",
+      "name": "EY",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for all standard corporate discounts"
+    },
+    {
+      "id": "other",
+      "name": "Other Corporate Partner",
+      "hasSpecialCohort": false,
+      "benefits": "Eligible for standard corporate discounts"
+    },
+    {
+      "id": "none",
+      "name": "I'm not from a partner company",
+      "hasSpecialCohort": false,
+      "benefits": "Individual student pricing with available discounts"
+    }
+  ],
+  
+  "discounts": {
+    "cpeRetail": {
+      "id": "cpe-retail-30",
+      "name": "CPE 30% Retail Student Discount",
+      "type": "percentage",
+      "value": 0.30,
+      "enabled": true,
+      "validFrom": "2025-01-01",
+      "validUntil": "2026-12-25", 
+      "eligibility": {
+        "excludeSpecialCohorts": true,
+        "requiresNewEnrollment": true,
+        "excludedPrograms": ["meads", "cert-eai", "cert-ads"],
+        "description": "Available to new online retail students starting Spring 2026"
+      },
+      "applicablePrograms": ["mscs", "mem", "mba"],
+      "stackable": false,
+      "priority": 1
+    },
+    
+    "hobokenResident": {
+      "id": "hoboken-resident",
+      "name": "Hoboken Resident Discount",
+      "type": "percentage",
+      "value": 0.05,
+      "enabled": true,
+      "eligibility": {
+        "excludeSpecialCohorts": true,
+        "excludedPrograms": ["cert-eai", "cert-ads"],
+        "description": "5% discount for Hoboken residents"
+      },
+      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
+      "stackable": true,
+      "priority": 2
+    },
+    
+    "alumniDiscount": {
+      "id": "stevens-alumni",
+      "name": "Stevens Alumni Discount",
+      "type": "percentage",
+      "value": 0.05,
+      "enabled": true,
+      "eligibility": {
+        "excludeSpecialCohorts": true,
+        "excludedPrograms": ["cert-eai", "cert-ads"],
+        "description": "5% discount for Stevens alumni"
+      },
+      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
+      "stackable": true,
+      "priority": 3
+    }
+  },
+  
+  "employerReimbursement": {
+    "defaultAnnual": 5250,
+    "irsLimit": 5250,
+    "typicalYears": 2,
+    "description": "Most employers offer up to $5,250/year (IRS Section 127 limit)"
+  }
+}

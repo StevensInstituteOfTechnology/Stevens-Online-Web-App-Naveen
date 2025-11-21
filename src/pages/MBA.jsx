@@ -629,7 +629,7 @@ const programData = {
       rows: [
       { event: "Early Submit", date: "October 14, 2025" },
       { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
-      { event: "Final Submit", date: "January 5, 2026" },
+      { event: "Final Submit", date: KEY_DATES.FINAL_SUBMIT.date },
       { event: "Start of Classes", date: "January 20, 2026" }
     ]
   },

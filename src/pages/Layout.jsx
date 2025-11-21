@@ -53,7 +53,7 @@ const certificateProgramItems = [
 ];
 
 const mainNavLinks = [
-  // The "GRADUATE" and "Tuition & Admissions" are handled separately with custom dropdowns.
+  // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
  
   { name: "Online Experience", page: "online-learning-experience/" },
@@ -64,7 +64,8 @@ const tuitionAdmissionsItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
   { name: "Events", page: "Events/" },
- 
+  { name: "Corporate Partners", page: "corporate-partners/" },
+  { name: "Corporate Students", page: "corporate-students/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -90,7 +91,7 @@ const mobileNavLinks = [
     items: mobileCertificateProgramItems,
   },
   {
-    name: "Tuition & Admissions",
+    name: "Academics",
     isDropdown: true,
     items: tuitionAdmissionsItems,
   },
@@ -501,23 +502,6 @@ export default function Layout({ children, currentPageName }) {
               className="flex items-center justify-end h-16 text-stevens-sm px-stevens-md lg:px-stevens-lg"
             >
               <div className="flex items-center space-x-stevens-md ">
-                <a
-                  href="https://www.stevens.edu/corporate-relations"
-                  className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
-                  onMouseEnter={() => {
-                    if (hoverTimeoutRef.current) {
-                      clearTimeout(hoverTimeoutRef.current);
-                    }
-                    setIsHoveringRedNav(true);
-                  }}
-                  onMouseLeave={() => {
-                    hoverTimeoutRef.current = setTimeout(() => {
-                      setIsHoveringRedNav(false);
-                    }, 100);
-                  }}
-                >
-                  Corporate Relations
-                </a>
                 <a
                   href="https://www.stevens.edu/development-alumni-engagement"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
@@ -986,7 +970,7 @@ export default function Layout({ children, currentPageName }) {
                 <DropdownMenu open={tuitionDropdownOpen} onOpenChange={setTuitionDropdownOpen}>
                   <DropdownMenuTrigger
                     className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
-                      isActive("Tuition") || isActive("Events") || isActive("Admissions")
+                      isActive("Tuition") || isActive("Events") || isActive("Admissions") || isActive("corporate-partners") || isActive("corporate-students")
                         ? "text-stevens-white/80"
                         : "text-stevens-white hover:text-stevens-white/80"
                     }`}
@@ -1009,7 +993,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    Tuition & Admissions{" "}
+                    Academics{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${tuitionDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent

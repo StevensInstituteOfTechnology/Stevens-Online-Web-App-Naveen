@@ -385,7 +385,7 @@ const programData = {
         details: "Deposit Waiver* and Application Fee Waiver Available.",
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: "January 5, 2026",
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: "January 20, 2026"
       }
     ],
