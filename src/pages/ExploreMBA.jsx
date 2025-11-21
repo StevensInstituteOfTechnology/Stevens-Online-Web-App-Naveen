@@ -124,8 +124,8 @@ const ExploreMBA = () => {
     concentrations: {
       title: "Concentrations",
       content: `
-            <h4 class="course-section-header">Choose Your Concentration</h4>
-            <p class="course-intro">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
+
+            <p class="course-intro text-stevens-lg text-stevens-gray-700 leading-relaxed">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
             
             <ul class="list-disc pl-8 space-y-4">
               <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Business Intelligence & Analytics</li>
