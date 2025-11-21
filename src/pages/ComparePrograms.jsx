@@ -110,7 +110,7 @@ export default function ComparePrograms() {
       name: "Professional Graduate Certificate in Enterprise AI",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "8-16 weeks**",
-      programStart: "Spring 2026",
+      programStart: KEY_DATES.TERM.name,
       cost: "$5,250*",
       creditHours: "9 credits",
       curriculum:
@@ -120,7 +120,7 @@ export default function ComparePrograms() {
       name: "Applied Data Science Foundations Certificate",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "16-20 weeks**",
-      programStart: "Spring 2026",
+      programStart: KEY_DATES.TERM.name,
       cost: "$5,250*",
       creditHours: "9 credits",
       curriculum:

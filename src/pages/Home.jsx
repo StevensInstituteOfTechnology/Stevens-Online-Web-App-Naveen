@@ -601,7 +601,7 @@ export default function Home() {
                     Key Dates & Deadlines
                 </h2>
                 <p className="text-stevens-xl text-stevens-gray-900 max-w-3xl mx-auto">
-                    Plan your application for the upcoming Spring 2026 term.
+                    Plan your application for the upcoming {KEY_DATES.TERM.name} term.
                 </p>
             </AnimatedSection>
             
@@ -631,14 +631,14 @@ export default function Home() {
                           <tbody>
                     <tr className="bg-white">
                       <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-gray-300">
-                        Spring 2026
+                        {KEY_DATES.TERM.name}
                       </td>
                       <td className="p-4 align-top border border-gray-300">
                         <div className="font-bold text-gray-900">
-                          October 14, 2025
+                          {KEY_DATES.EARLY_SUBMIT.date}
                         </div>
                         <div className="text-stevens-gray-900 mt-1 text-stevens-sm">
-                          Deposit Waiver* and Application Fee Waiver Available.
+                          {KEY_DATES.EARLY_SUBMIT.details}
                         </div>
                       </td>
                       <td className="p-4 align-top border border-gray-300">
@@ -653,7 +653,7 @@ export default function Home() {
                         {KEY_DATES.FINAL_SUBMIT.date}
                                   </td>
                       <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
-                        January 20, 2026
+                        {KEY_DATES.START_OF_CLASSES.date}
                                   </td>
                               </tr>
                           </tbody>

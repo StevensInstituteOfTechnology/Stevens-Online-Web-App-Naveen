@@ -35,10 +35,10 @@ const programData = {
     { value: "9 Credits", label: "3 Courses", icon: BookOpen },
     { value: "100%", label: "Online", icon: Globe },
     { value: "Stackable", label: "To MBA & MEADS", icon: GraduationCap },
-    { value: "Spring 2026", label: "Launch", icon: TrendingUp },
+    { value: KEY_DATES.TERM.name, label: "Launch", icon: TrendingUp },
     { value: "No Prereqs", label: "Required", icon: Check }],
 
-    termStartDate: "SPRING 2026: January 20, 2026",
+    termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online</li><li>8-16 Week Completion Time*</li><li>Stackable toward MBA & M.Eng. in Applied Data Science graduate degrees</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
   },
   overview: {
@@ -235,13 +235,13 @@ const programData = {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
     rows: [
       { 
-        event: "Spring 2026", 
-        date: "October 14, 2025", 
-        details: "Deposit Waiver* and Application Fee Waiver Available.",
+        event: KEY_DATES.TERM.name, 
+        date: KEY_DATES.EARLY_SUBMIT.date, 
+        details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: "January 20, 2026"
+        startDate: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."

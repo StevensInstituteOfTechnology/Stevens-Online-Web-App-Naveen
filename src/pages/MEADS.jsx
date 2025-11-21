@@ -11,8 +11,8 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 const programData = {
   code: 'meads',
   seo: {
-    title: 'Online M.Eng. in Applied Data Science - AI & Machine Learning | Stevens',
-    description: 'Master AI, machine learning, and LLMs. Build and deploy production ML systems. $24,000 for 30 credits. 100% online from top-ranked Stevens.',
+    title: 'Online Master’s in Engineering: Applied Data Science | Stevens Online',
+    description: 'Earn your online MS in Engineering – Applied Data Science from Stevens. Build expertise in data visualization, predictive analytics, and machine learning techniques used to solve complex engineering and business challenges.',
     ogImage: '/assets/images/meads/stevens-manhattan-skyline-ds.webp',
     url: '/online-masters-engineering-applied-data-science/'
   },
@@ -65,7 +65,7 @@ const programData = {
       { value: "Hands-On", label: "Projects" },
       { value: "Industry", label: "Focused" }
     ],
-    termStartDate: "Spring 2026: January 20, 2026",
+    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `
       <ul>
         <li>30 Credit Hours</li>
@@ -466,13 +466,13 @@ const programData = {
       headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
       rows: [
         { 
-          event: "Spring 2026", 
-          date: "November 20 , 2025", 
-          details: "Deposit Waiver* and Application Fee Waiver Available.",
+          event: KEY_DATES.TERM.name, 
+          date: KEY_DATES.EARLY_SUBMIT.date, 
+          details: KEY_DATES.EARLY_SUBMIT.details,
           priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
           priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
           finalDate: KEY_DATES.FINAL_SUBMIT.date,
-          startDate: "January 20, 2026"
+          startDate: KEY_DATES.START_OF_CLASSES.date
         }
       ],
       footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."

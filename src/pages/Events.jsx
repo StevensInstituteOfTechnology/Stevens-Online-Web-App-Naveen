@@ -199,7 +199,7 @@ export default function Events() {
     <div>
       <PageHero
         title="Stevens Institute of Technology"
-        subtitle="Virtual Events"
+        subtitle="Upcoming Virtual Events & Webinars"
         bgImage="/assets/images/events/1-event-scaled.webp"
       />
 

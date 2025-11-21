@@ -175,12 +175,12 @@ const ExploreMSCS = () => {
     ],
     
     // Key Dates
-    keyDatesTerm: "SPRING 2026",
+    keyDatesTerm: KEY_DATES.TERM.nameUppercase,
     keyDates: [
       {
         label: "Early Submit",
-        date: "October 14, 2025",
-        description: "Deposit Waiver* and Application Fee Waiver Available."
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        description: KEY_DATES.EARLY_SUBMIT.details
       },
       {
         label: "Priority Submit", 
@@ -193,7 +193,7 @@ const ExploreMSCS = () => {
       },
       {
         label: "Start of Classes",
-        date: "January 20, 2026"
+        date: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply.",

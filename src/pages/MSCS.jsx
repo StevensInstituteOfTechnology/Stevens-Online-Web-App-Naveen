@@ -12,7 +12,7 @@ const programData = {
   code: 'mscs',
   seo: {
     title: "Online Master's in Computer Science | Stevens Institute of Technology",
-    description: "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
+    description: "Earn your online Master's in Computer Science (MSCS) from Stevens. Build advanced coding and AI skills for the modern tech workforce.",
     ogImage: '/assets/images/mscs/bg_program.webp',
     url: '/online-masters-computer-science-mscs/'
   },
@@ -35,7 +35,7 @@ const programData = {
       { value: "Pivot", label: "Your Career" },
       { value: "In-Demand", label: "Focus Areas" },
     ],
-    termStartDate: "Spring 2026: January 20, 2026",
+    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `
       <ul>
         <li>30 Credit Hours</li>
@@ -603,13 +603,13 @@ The objective of this course is to give students a basic grounding in designing 
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
     rows: [
       { 
-        event: "Spring 2026", 
-        date: "October 14, 2025", 
-        details: "Deposit Waiver* and Application Fee Waiver Available.",
+        event: KEY_DATES.TERM.name, 
+        date: KEY_DATES.EARLY_SUBMIT.date, 
+        details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: "January 20, 2026"
+        startDate: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."

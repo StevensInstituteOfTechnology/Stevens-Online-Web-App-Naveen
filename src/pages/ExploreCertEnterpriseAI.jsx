@@ -125,7 +125,7 @@ const ExploreCertEnterpriseAI = () => {
     keyDates: [
       {
         label: "Early Submit",
-        date: "October 14, 2025"
+        date: KEY_DATES.EARLY_SUBMIT.date
       },
       {
         label: "Priority Submit", 
@@ -137,10 +137,10 @@ const ExploreCertEnterpriseAI = () => {
       },
       {
         label: "Start of Classes",
-        date: "January 20, 2026"
+        date: KEY_DATES.START_OF_CLASSES.date
       }
     ],
-    keyDatesNote: "*The Enterprise AI Certificate launches Spring 2026. Apply early to secure your spot in this inaugural cohort.",
+    keyDatesNote: `*The Enterprise AI Certificate launches ${KEY_DATES.TERM.name}. Apply early to secure your spot in this inaugural cohort.`,
     
     // FAQ
     faqs: [

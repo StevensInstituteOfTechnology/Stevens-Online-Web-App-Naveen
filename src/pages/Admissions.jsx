@@ -55,13 +55,13 @@ export default function Admissions() {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
     rows: [
       {
-        event: "Spring 2026",
-        date: "October 14, 2025",
-        details: "Deposit Waiver* and Application Fee Waiver Available.",
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: "January 20, 2026"
+        startDate: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply."
@@ -127,7 +127,7 @@ export default function Admissions() {
               Key Dates & Deadlines
             </h2>
             <p className="text-stevens-lg text-stevens-gray-600">
-              Plan your application for the upcoming Spring 2026 term.
+              Plan your application for the upcoming {KEY_DATES.TERM.name} term.
             </p>
           </div>
           
