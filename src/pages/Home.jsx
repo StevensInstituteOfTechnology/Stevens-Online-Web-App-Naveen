@@ -650,7 +650,7 @@ export default function Home() {
                         </div>
                       </td>
                       <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
-                        January 5, 2026
+                        {KEY_DATES.FINAL_SUBMIT.date}
                                   </td>
                       <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
                         January 20, 2026
