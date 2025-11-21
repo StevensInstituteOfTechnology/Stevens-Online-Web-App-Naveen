@@ -268,6 +268,24 @@ export const routes = [
   // Topic routes (dynamically generated)
   ...generateTopicRoutes(),
 
+  // Blog redirects - redirect old URLs to new 2025 version
+  {
+    path: '/blog/computer-science-salaries-outlook-for-2023/',
+    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+  },
+  {
+    path: '/blog/computer-science-salaries-outlook-for-2023',
+    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+  },
+  {
+    path: '/blog/explore-computer-science-salary-and-job-outlook-2024/',
+    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+  },
+  {
+    path: '/blog/explore-computer-science-salary-and-job-outlook-2024',
+    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+  },
+
   // Professional Education
   {
     path: '/professionaleducation/',

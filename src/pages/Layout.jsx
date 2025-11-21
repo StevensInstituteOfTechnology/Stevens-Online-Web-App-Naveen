@@ -170,10 +170,10 @@ export default function Layout({ children, currentPageName }) {
   const BannerMessage = () => {
     const priorityDate = formatPriorityDate(KEY_DATES.PRIORITY_SUBMIT.date);
     return (
-      <>
+    <>
         <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>{priorityDate} Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
-      </>
-    );
+    </>
+  );
   };
   
   // Mobile banner message - simplified version
