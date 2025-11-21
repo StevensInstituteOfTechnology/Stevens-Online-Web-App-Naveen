@@ -43,7 +43,7 @@ const programData = {
 
       <ul class='my-5'>
         <li><strong>Format: 100% Online</strong></li>
-        <li><strong>Duration: Approximately 2 years (30 credits)</strong></li>
+        <li><strong>Duration: 1 to 2 years (30 credits)</strong></li>
         <li><strong>Focus: Applied AI, Machine Learning, LLMs & MLOps</strong></li>
         <li><strong>Accreditation: Middle States Commission on Higher Education</strong></li>
       </ul>
@@ -61,7 +61,7 @@ const programData = {
       // { value: "30", label: "Credit Hours" },
       // { value: "10", label: "Courses" },
       { value: "100%", label: "Online" },
-      // { value: "2 Years", label: "Completion" },
+      // { value: "1-2 Years", label: "Completion" },
       { value: "Hands-On", label: "Projects" },
       { value: "Industry", label: "Focused" }
     ],
@@ -71,7 +71,7 @@ const programData = {
         <li>30 Credit Hours</li>
         <li>10 Courses</li>
         <li>100% Online</li>
-        <li>2 Years or Less Completion Time*</li>
+        <li>1 to 2 Years Completion Time*</li>
         <li>Integrated data science and engineering curriculum</li>
         <li>Real-world capstone project</li>
       </ul>
