@@ -11,8 +11,8 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 const programData = {
   code: 'mba',
   seo: {
-    title: 'Online MBA | Stevens Institute of Technology',
-    description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
+    title: 'Online MBA Program | Stevens Online',
+    description: 'Earn your 100% online MBA from Stevens Institute of Technology. A tech-driven program designed for business leaders in innovation and strategy.',
     ogImage: '/assets/images/mba/1-omba-hero-scaled.webp',
     url: '/online-mba/'
   },
@@ -37,7 +37,7 @@ const programData = {
     { value: "Expert", label: "Faculty", icon: Users },
     { value: "Merit", label: "Scholarships Available", icon: Award }],
 
-    termStartDate: "SPRING 2026: January 20, 2026",
+    termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `<ul><li>39–48 Credit Hours</li><li>13–16 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`
   },
   overview: {
@@ -625,12 +625,12 @@ const programData = {
     `
   },
     keyDates: {
-    term: "Spring 2026",
+    term: KEY_DATES.TERM.name,
       rows: [
-      { event: "Early Submit", date: "October 14, 2025" },
+      { event: "Early Submit", date: KEY_DATES.EARLY_SUBMIT.date },
       { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
-      { event: "Final Submit", date: "January 5, 2026" },
-      { event: "Start of Classes", date: "January 20, 2026" }
+      { event: "Final Submit", date: KEY_DATES.FINAL_SUBMIT.date },
+      { event: "Start of Classes", date: KEY_DATES.START_OF_CLASSES.date }
     ]
   },
   tuition: {

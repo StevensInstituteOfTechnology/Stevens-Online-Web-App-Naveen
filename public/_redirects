@@ -35,6 +35,12 @@
 /blog/course/*  /blog/                                    301!
 /faq/*          /                                         301!
 
+# Blog redirects - redirect old URLs to new 2025 version (301 permanent)
+/blog/computer-science-salaries-outlook-for-2023/    /blog/computer-science-salary-outlook-2025/    301!
+/blog/computer-science-salaries-outlook-for-2023     /blog/computer-science-salary-outlook-2025/    301!
+/blog/explore-computer-science-salary-and-job-outlook-2024/    /blog/computer-science-salary-outlook-2025/    301!
+/blog/explore-computer-science-salary-and-job-outlook-2024     /blog/computer-science-salary-outlook-2025/    301!
+
 # SPA fallback
 /*    /index.html   200
 

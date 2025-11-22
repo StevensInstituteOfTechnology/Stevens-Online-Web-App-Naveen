@@ -47,6 +47,9 @@ const ExploreProgramPageTemplate = ({
   additionalWhyChooseStevensContent,
   additionalWhyChooseStevensImage,
   
+  // Concentrations Props
+  concentrations,
+  
   // Key Dates Props
   keyDates,
   keyDatesTerm = "SPRING 2026",
@@ -105,6 +108,51 @@ const ExploreProgramPageTemplate = ({
       setPageTitle('Stevens Online');
     };
   }, [seo]);
+
+  // Handle collapsible course toggles (for concentrations)
+  useEffect(() => {
+    const handleCourseToggle = (e) => {
+      const button = e.currentTarget;
+      const targetId = button.getAttribute('data-target');
+      if (targetId) {
+        const content = document.getElementById(targetId);
+        const arrow = button.querySelector('.course-arrow');
+        if (content && arrow) {
+          const isHidden = content.classList.contains('hidden');
+          if (isHidden) {
+            content.classList.remove('hidden');
+            arrow.textContent = '▲';
+          } else {
+            content.classList.add('hidden');
+            arrow.textContent = '▼';
+          }
+        }
+      }
+    };
+
+    const attachEventListeners = () => {
+      const courseButtons = document.querySelectorAll('.course-toggle');
+      courseButtons.forEach(button => {
+        button.removeEventListener('click', handleCourseToggle);
+        button.addEventListener('click', handleCourseToggle);
+      });
+    };
+
+    // Initial attachment
+    attachEventListeners();
+
+    // Re-attach when DOM changes (for dynamic content)
+    const observer = new MutationObserver(attachEventListeners);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      const courseButtons = document.querySelectorAll('.course-toggle');
+      courseButtons.forEach(button => {
+        button.removeEventListener('click', handleCourseToggle);
+      });
+    };
+  }, [concentrations]);
 
   return (
     <div className="min-h-screen bg-stevens-white">
@@ -467,6 +515,27 @@ const ExploreProgramPageTemplate = ({
           </div>
         </section>
       )}
+      
+      {/* Concentrations Section */}
+      {concentrations && concentrations.content && (
+        <section className="py-stevens-3xl bg-stevens-white">
+          <div className="max-w-6xl mx-auto px-stevens-md">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {concentrations.title && (
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-primary font-stevens-bold uppercase tracking-wide mb-stevens-3xl text-center">
+                  {concentrations.title}
+                </h2>
+              )}
+              <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-gray-900 [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-gray-900 [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-gray-700 [&_p]:leading-relaxed [&_p]:mb-stevens-lg [&_.course-item]:mb-stevens-md [&_.course-toggle]:w-full [&_.course-toggle]:text-left [&_.course-toggle]:px-stevens-md [&_.course-toggle]:py-stevens-sm [&_.course-toggle]:bg-stevens-gray-50 [&_.course-toggle]:border [&_.course-toggle]:border-stevens-gray-200 [&_.course-toggle]:rounded-stevens-sm [&_.course-toggle]:font-stevens-bold [&_.course-toggle]:text-stevens-base [&_.course-toggle]:text-stevens-gray-900 [&_.course-toggle]:hover:bg-stevens-gray-100 [&_.course-toggle]:transition-colors [&_.course-content]:px-stevens-md [&_.course-content]:py-stevens-md [&_.course-content]:bg-stevens-white [&_.course-content]:border-l-4 [&_.course-content]:border-stevens-primary]" dangerouslySetInnerHTML={{ __html: concentrations.content }} />
+            </motion.div>
+          </div>
+        </section>
+      )}
+      
       {/* Key Dates Section */}
       <section className="py-stevens-3xl bg-stevens-gray-50">
         <div className="max-w-6xl mx-auto px-stevens-md">

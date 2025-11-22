@@ -35,6 +35,8 @@ export const STATIC_ROUTES = [
   '/explore/certificates/enterprise-ai/',
   '/explore/certificates/applied-data-science-foundations/',
   '/employer-sponsorship/',
+  '/corporate-partners/',
+  '/corporate-students/',
   '/page-not-found/',
 ];
 

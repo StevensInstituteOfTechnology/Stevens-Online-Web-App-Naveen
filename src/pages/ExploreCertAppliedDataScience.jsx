@@ -125,7 +125,7 @@ const ExploreCertAppliedDataScience = () => {
     keyDates: [
       {
         label: "Early Submit",
-        date: "October 14, 2025"
+        date: KEY_DATES.EARLY_SUBMIT.date
       },
       {
         label: "Priority Submit", 
@@ -133,14 +133,14 @@ const ExploreCertAppliedDataScience = () => {
       },
       {
         label: "Final Submit",
-        date: "January 5, 2026"
+        date: KEY_DATES.FINAL_SUBMIT.date
       },
       {
         label: "Start of Classes",
-        date: "January 20, 2026"
+        date: KEY_DATES.START_OF_CLASSES.date
       }
     ],
-    keyDatesNote: "*The Applied Data Science Foundations Certificate launches Spring 2026. Join the inaugural cohort and start building your data science career.",
+    keyDatesNote: `*The Applied Data Science Foundations Certificate launches ${KEY_DATES.TERM.name}. Join the inaugural cohort and start building your data science career.`,
     
     // FAQ
     faqs: [

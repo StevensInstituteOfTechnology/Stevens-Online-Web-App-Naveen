@@ -11,8 +11,8 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 const programData = {
   code: 'mem',
   seo: {
-    title: 'Online MEM in Engineering Management | Stevens',
-    description: 'Lead engineering teams with the 100% online MEM in Engineering Management from Stevens Institute of Technology. STEM-designated, flexible format, no GRE required.',
+    title: 'Online Master’s in Engineering Management (MEM) | Stevens Online',
+    description: 'Earn your Master of Engineering Management online from Stevens. Gain leadership, analytics, and project management skills in a flexible STEM program.',
     ogImage: '/assets/images/mem/1-mem-hero-scaled.webp',
     url: '/online-masters-engineering-management/'
   },
@@ -36,7 +36,7 @@ const programData = {
       { value: "Analyze", label: "Data" },
       { value: "Build", label: "Models" },
     ],
-    termStartDate: "Spring 2026: January 20, 2026",
+    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `
       <ul>
         <li>30 Credit Hours</li>
@@ -380,13 +380,13 @@ const programData = {
     headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
     rows: [
       { 
-        event: "Spring 2026", 
-        date: "October 14, 2025", 
-        details: "Deposit Waiver* and Application Fee Waiver Available.",
+        event: KEY_DATES.TERM.name, 
+        date: KEY_DATES.EARLY_SUBMIT.date, 
+        details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: "January 5, 2026",
-        startDate: "January 20, 2026"
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
+        startDate: KEY_DATES.START_OF_CLASSES.date
       }
     ],
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."

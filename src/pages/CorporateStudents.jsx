@@ -1,0 +1,1325 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useSearchParams } from 'react-router-dom';
+import { 
+  ArrowRight, 
+  CheckCircle,
+  Clock,
+  DollarSign,
+  GraduationCap,
+  Users,
+  Award,
+  BookOpen,
+  Star,
+  Zap,
+  Shield,
+  TrendingUp,
+  Briefcase,
+  Target,
+  ArrowDown,
+  Info,
+  Sparkles,
+  Home,
+  Building,
+  Calculator,
+  X
+} from 'lucide-react';
+import PageHero from '@/components/shared/PageHero';
+import ApplicationModal from '@/components/shared/ApplicationModal';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+// Removed ProgramCard import - using custom implementation
+import { usePageTracking } from '@/hooks/analytics/usePageTracking';
+import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl, createPageUrl } from '@/utils';
+import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { PROGRAMS_DATA } from '@/data/programsData';
+import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/utils/discountCalculator';
+
+const CorporateStudents = () => {
+  const [searchParams] = useSearchParams();
+  const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [selectedCareerPath, setSelectedCareerPath] = useState('all');
+  const [companyName, setCompanyName] = useState(null);
+  const [corporateCode, setCorporateCode] = useState(null);
+  
+  // Cost Calculator States
+  const [selectedProgram, setSelectedProgram] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState(null);
+  const [applyCPEDiscount, setApplyCPEDiscount] = useState(true); // Default checked
+  const [isHobokenResident, setIsHobokenResident] = useState(false);
+  const [isStevensAlumni, setIsStevensAlumni] = useState(false);
+  const [customReimbursement, setCustomReimbursement] = useState('');
+  const [calculatedCost, setCalculatedCost] = useState(null);
+  const [showCalculator, setShowCalculator] = useState(false);
+
+  usePageTracking({
+    pageType: 'landing',
+    additionalData: {
+      page_name: 'Corporate Students',
+      has_form: true,
+      landing_page_type: 'b2c',
+      company: companyName || 'unknown'
+    }
+  });
+
+  // Set SEO meta tags
+  useEffect(() => {
+    const canonical = buildCanonicalUrl('/corporate-students/');
+    setPageTitle('Employee Tuition Benefits | Advance Your Career | Stevens Online');
+    setMetaDescription('Take advantage of your employer tuition benefits. Earn a Stevens Online degree with accelerated admissions, dedicated support, and career-aligned programs.');
+    setOpenGraphTags({
+      title: 'Employee Tuition Benefits | Stevens Online',
+      description: 'Advance your career with Stevens Online using your company tuition benefits. Accelerated applications and dedicated support.',
+      image: buildCanonicalUrl('/assets/images/corporate-students/corporate-students-1.webp'),
+      url: canonical,
+      type: 'website'
+    });
+  }, []);
+
+  // Detect company from URL parameters
+  useEffect(() => {
+    const company = searchParams.get('company');
+    const code = searchParams.get('code');
+    
+    if (company) {
+      setCompanyName(decodeURIComponent(company));
+    }
+    if (code) {
+      setCorporateCode(code);
+      sessionStorage.setItem('corporate_code', code);
+    }
+
+    // Track landing with company info
+    trackEvent('corporate_student_landing', {
+      company: company || 'direct',
+      has_code: !!code
+    });
+  }, [searchParams]);
+
+  // Calculate cost whenever inputs change
+  useEffect(() => {
+    if (selectedProgram && selectedCompany) {
+      const options = {
+        applyCPEDiscount,
+        isHobokenResident,
+        isStevensAlumni,
+        customReimbursement: customReimbursement ? parseFloat(customReimbursement) : undefined
+      };
+      
+      const result = calculateProgramCost(selectedProgram.code, selectedCompany.id, options);
+      setCalculatedCost(result);
+      
+      // Track calculator usage
+      trackEvent('cost_calculator_used', {
+        program: selectedProgram.code,
+        company: selectedCompany.id,
+        has_cpe_discount: applyCPEDiscount,
+        has_hoboken: isHobokenResident,
+        has_alumni: isStevensAlumni,
+        has_custom_reimbursement: !!customReimbursement
+      });
+    }
+  }, [selectedProgram, selectedCompany, applyCPEDiscount, isHobokenResident, isStevensAlumni, customReimbursement]);
+
+  // Partner benefits
+  const partnerBenefits = [
+    {
+      icon: Zap,
+      title: "Accelerated Application",
+      description: "Skip essays and recommendation letters — apply in minutes, not weeks."
+    },
+    {
+      icon: DollarSign,
+      title: "Tuition Reimbursement Friendly",
+      description: "We work directly with your HR team to ensure seamless tuition assistance processing."
+    },
+    {
+      icon: Users,
+      title: "Dedicated Corporate Care Team",
+      description: "From application to graduation, our Corporate Care Advisors are your single point of contact."
+    },
+    {
+      icon: Target,
+      title: "Customized Learning Pathways",
+      description: "Programs and courses built around your company's real-world projects and skill needs."
+    },
+    {
+      icon: TrendingUp,
+      title: "Immediate Career Impact",
+      description: "Apply new skills right away and gain credentials that enhance your role and open opportunities."
+    },
+    {
+      icon: Shield,
+      title: "Exclusive Partner Discounts",
+      description: "Additional savings beyond tuition reimbursement through our corporate partnership."
+    }
+  ];
+
+  // Career paths and programs
+  const careerPaths = [
+    {
+      id: 'ai-ml',
+      name: 'AI & Machine Learning',
+      programs: ['mscs', 'meads', 'cert-eai']
+    },
+    {
+      id: 'data-science',
+      name: 'Data Science',
+      programs: ['meads', 'cert-ads']
+    },
+    {
+      id: 'business',
+      name: 'Business & Management',
+      programs: ['mba', 'mem']
+    },
+    {
+      id: 'engineering',
+      name: 'Engineering Leadership',
+      programs: ['mem', 'meads']
+    },
+    {
+      id: 'cybersecurity',
+      name: 'Cybersecurity',
+      programs: ['mscs']
+    }
+  ];
+
+  // Filter programs based on selected career path
+  const filteredPrograms = selectedCareerPath === 'all' 
+    ? PROGRAMS_DATA.filter(p => !p.isHidden) // Show all programs including certificates
+    : PROGRAMS_DATA.filter(p => {
+        const path = careerPaths.find(cp => cp.id === selectedCareerPath);
+        return path && path.programs.includes(p.code);
+      });
+
+  // Success stories
+  const successStories = [
+    {
+      name: "Sarah Mitchell",
+      title: "Data Science Manager",
+      company: "Fortune 500 Tech Company",
+      program: "MS in Data Science & Engineering",
+      quote: "Stevens' program helped me transition from analyst to manager in just 18 months. The corporate care team made balancing work and study seamless.",
+      outcome: "Promoted twice, 40% salary increase",
+      image: "/assets/avatars/student-sarah.webp"
+    },
+    {
+      name: "James Chen",
+      title: "Senior Software Engineer",
+      company: "Global Financial Services",
+      program: "MS in Computer Science",
+      quote: "The AI concentration perfectly aligned with my company's strategic direction. I'm now leading our machine learning initiatives.",
+      outcome: "Leading AI initiatives, received innovation award",
+      image: "/assets/avatars/student-james.webp"
+    },
+    {
+      name: "Maria Rodriguez",
+      title: "Product Manager",
+      company: "Healthcare Technology",
+      program: "Online MBA",
+      quote: "The flexibility of Stevens Online allowed me to earn my MBA while working full-time. My company covered 100% of the tuition.",
+      outcome: "Transitioned to product management, managing $10M portfolio",
+      image: "/assets/avatars/student-maria.webp"
+    }
+  ];
+
+  // Learning journey steps
+  const learningJourney = [
+    {
+      step: 1,
+      title: "Start Your Application",
+      description: "Use your corporate code for instant benefits and fee waivers",
+      icon: BookOpen
+    },
+    {
+      step: 2,
+      title: "Get Admitted Fast",
+      description: "Accelerated review process with no essays required",
+      icon: Zap
+    },
+    {
+      step: 3,
+      title: "Connect with Advisor",
+      description: "Your dedicated corporate care advisor guides your journey",
+      icon: Users
+    },
+    {
+      step: 4,
+      title: "Begin Learning",
+      description: "Start with courses aligned to your career goals",
+      icon: GraduationCap
+    },
+    {
+      step: 5,
+      title: "Apply Skills Immediately",
+      description: "Use new knowledge in your current role right away",
+      icon: Briefcase
+    },
+    {
+      step: 6,
+      title: "Advance Your Career",
+      description: "Graduate with credentials that open new opportunities",
+      icon: TrendingUp
+    }
+  ];
+
+  // Tuition savings calculator data
+  const tuitionData = {
+    averageProgramCost: 45000,
+    corporateDiscount: 0.1, // 10%
+    employerContribution: 5250, // Annual IRS limit
+    typicalDuration: 2 // years
+  };
+
+  const calculateSavings = () => {
+    const discountAmount = tuitionData.averageProgramCost * tuitionData.corporateDiscount;
+    const employerTotal = tuitionData.employerContribution * tuitionData.typicalDuration;
+    const totalSavings = discountAmount + employerTotal;
+    const outOfPocket = tuitionData.averageProgramCost - totalSavings;
+    
+    return {
+      programCost: tuitionData.averageProgramCost,
+      corporateDiscount: discountAmount,
+      employerContribution: employerTotal,
+      totalSavings: totalSavings,
+      outOfPocket: outOfPocket,
+      percentSaved: (totalSavings / tuitionData.averageProgramCost * 100).toFixed(0)
+    };
+  };
+
+  const savings = calculateSavings();
+
+  const handleApplicationStart = () => {
+    trackEvent('corporate_application_started', {
+      company: companyName || 'unknown',
+      has_code: !!corporateCode
+    });
+    trackConversion(CONVERSION_LABELS.APPLICATION_STARTED);
+    setShowApplicationModal(true);
+  };
+
+  return (
+    <PageContextProvider pageType="landing" pageName="Corporate Students">
+      <div className="min-h-screen bg-stevens-white">
+        {/* Hero Section */}
+        <PageHero
+          titleLines={["Advance Your Career", "with Stevens Online"]}
+          subtitle={
+            companyName 
+              ? `As a ${companyName} employee, you have exclusive access to flexible online programs, simplified admissions, and dedicated support — designed to help you gain in-demand skills and achieve your career goals faster.`
+              : "As an employee of a Stevens corporate partner, you have exclusive access to flexible online programs, simplified admissions, and dedicated support — designed to help you gain in-demand skills and achieve your career goals faster."
+          }
+          bgImage="/assets/images/corporate-students/corporate-students-1.webp"
+          primaryCta={{
+            label: "Start Your Accelerated Application",
+            onClick: handleApplicationStart
+          }}
+          secondaryCta={{
+            label: "Talk to a Corporate Care Advisor",
+            href: "#contact"
+          }}
+          badges={companyName ? [
+            { text: `Exclusive benefits for ${companyName} employees`, variant: "secondary" }
+          ] : []}
+        />
+
+        {/* Partner Benefits Overview */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Exclusive Benefits for Partner Employees
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+                Through your employer's partnership with Stevens Online, you can access a fast, flexible, 
+                and career-aligned path to earn a graduate certificate, master's degree, or professional credential.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
+              {partnerBenefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <div key={benefit.title}>
+                    <Card className="h-full">
+                      <CardContent className="p-stevens-lg">
+                        <div className="flex items-start space-x-stevens-md">
+                          <div className="w-12 h-12 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-6 h-6 text-stevens-primary" />
+                          </div>
+                          <div>
+                            <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+                              {benefit.title}
+                            </h3>
+                            <p className="text-stevens-gray-700">
+                              {benefit.description}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Stevens Online */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                A Top-Ranked University Built for Working Professionals
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+                Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
+                career outcomes, empowering professionals to thrive in the future of work.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
+              {/* Ranking Cards */}
+              <div className="text-center">
+                <div className="bg-stevens-primary text-stevens-white rounded-stevens-lg p-stevens-lg">
+                  <Award className="w-12 h-12 mx-auto mb-stevens-md" />
+                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">#1</div>
+                  <p className="font-stevens-medium">Online MBA in New Jersey</p>
+                  <p className="text-stevens-sm opacity-80">U.S. News 2025</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-stevens-secondary text-stevens-white rounded-stevens-lg p-stevens-lg">
+                  <TrendingUp className="w-12 h-12 mx-auto mb-stevens-md" />
+                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">#9</div>
+                  <p className="font-stevens-medium">Best ROI Colleges</p>
+                  <p className="text-stevens-sm opacity-80">Princeton Review</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-stevens-tertiary text-stevens-white rounded-stevens-lg p-stevens-lg">
+                  <Star className="w-12 h-12 mx-auto mb-stevens-md" />
+                  <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-sm">7x</div>
+                  <p className="font-stevens-medium">21st Century Award Winner</p>
+                  <p className="text-stevens-sm opacity-80">Distance Learning</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Career-Aligned Programs */}
+        <section id="programs-section" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-stevens-xl"
+            >
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Explore Career-Aligned Programs
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto mb-stevens-lg">
+                Choose from flexible graduate certificates, degrees, and short courses designed to 
+                strengthen your expertise and leadership potential.
+              </p>
+            </div>
+
+            {/* Career Path Filter */}
+            <div className="flex flex-wrap justify-center gap-stevens-sm mb-stevens-xl">
+              <Button
+                variant={selectedCareerPath === 'all' ? 'default' : 'outline'}
+                onClick={() => setSelectedCareerPath('all')}
+                className="mb-stevens-sm"
+              >
+                All Programs
+              </Button>
+              {careerPaths.map(path => (
+                <Button
+                  key={path.id}
+                  variant={selectedCareerPath === path.id ? 'default' : 'outline'}
+                  onClick={() => setSelectedCareerPath(path.id)}
+                  className="mb-stevens-sm"
+                >
+                  {path.name}
+                </Button>
+              ))}
+            </div>
+
+            {/* Program Cards */}
+            <AnimatePresence mode="wait">
+              <div
+                key={selectedCareerPath}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg"
+              >
+                {filteredPrograms.slice(0, 6).map((program, index) => (
+                  <div
+                    key={program.code}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <Card className="h-full">
+                      <CardHeader>
+                        <Badge className="mb-stevens-sm w-fit bg-stevens-primary text-stevens-white">
+                          {program.degree}
+                        </Badge>
+                        <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-gray-900">
+                          {program.shortName || program.name}
+                        </CardTitle>
+                        {program.tagline && (
+                          <p className="text-stevens-gray-600 text-stevens-sm mt-stevens-xs">
+                            {program.tagline}
+                          </p>
+                        )}
+                      </CardHeader>
+                      <CardContent className="space-y-stevens-md">
+                        <p className="text-stevens-gray-700">
+                          {program.description}
+                        </p>
+
+                        {/* Program Stats */}
+                        {program.stats && (
+                          <div className="space-y-stevens-sm">
+                            {program.stats.duration && (
+                              <div className="flex items-center text-stevens-sm text-stevens-gray-600">
+                                <Clock className="w-4 h-4 mr-stevens-xs" />
+                                <span>{program.stats.duration}</span>
+                              </div>
+                            )}
+                            {program.stats.credits && (
+                              <div className="flex items-center text-stevens-sm text-stevens-gray-600">
+                                <Award className="w-4 h-4 mr-stevens-xs" />
+                                <span>{program.stats.credits} credits</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Key Highlights */}
+                        {program.highlights && (
+                          <div className="space-y-stevens-xs">
+                            {program.highlights.slice(0, 3).map((highlight, hIndex) => (
+                              <div key={hIndex} className="flex items-start">
+                                <CheckCircle className="w-4 h-4 text-stevens-primary mr-stevens-xs mt-0.5 flex-shrink-0" />
+                                <span className="text-stevens-sm text-stevens-gray-700">{highlight}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* CTA Buttons */}
+                        <div className="space-y-stevens-sm mt-stevens-md">
+                          <Button 
+                            className="w-full"
+                            variant="outline"
+                            onClick={() => {
+                              setSelectedProgram(program);
+                              // Reset discount checkboxes to default
+                              setApplyCPEDiscount(true); // Default checked
+                              setIsHobokenResident(false); // Default unchecked
+                              setIsStevensAlumni(false); // Default unchecked
+                              setCustomReimbursement(''); // Clear reimbursement
+                              
+                              // Auto-select company if available from URL
+                              if (companyName && !selectedCompany) {
+                                const config = getDiscountConfig();
+                                const company = config.corporatePartners.find(
+                                  c => c.name.toLowerCase().includes(companyName.toLowerCase())
+                                );
+                                if (company) setSelectedCompany(company);
+                              }
+                              setShowCalculator(true);
+                              // Scroll to calculator
+                              setTimeout(() => {
+                                document.getElementById('cost-calculator')?.scrollIntoView({ 
+                                  behavior: 'smooth',
+                                  block: 'start'
+                                });
+                              }, 100);
+                              
+                              trackEvent('calculate_cost_clicked', {
+                                program_code: program.code,
+                                source: 'program_card'
+                              });
+                            }}
+                          >
+                            <Calculator className="mr-2 w-4 h-4" />
+                            Calculate Your Cost
+                          </Button>
+                          
+                        <Link 
+                          to={`${createPageUrl('/accelerated-application/')}?program=${program.code}${corporateCode ? `&code=${corporateCode}` : ''}`}
+                          onClick={() => {
+                            trackEvent('program_card_clicked', {
+                              program_code: program.code,
+                              source: 'corporate_students',
+                              has_corporate_code: !!corporateCode
+                            });
+                          }}
+                        >
+                            <Button className="w-full text-stevens-white">
+                            Apply Now
+                            <ArrowRight className="ml-2 w-4 h-4" />
+                          </Button>
+                        </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </AnimatePresence>
+
+            {filteredPrograms.length > 6 && (
+              <div className="text-center mt-stevens-xl">
+                <Link to="/compare-our-programs">
+                  <Button variant="outline" size="lg">
+                    View All Programs
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Interactive Cost Calculator */}
+        <section 
+          id="cost-calculator"
+          className="py-stevens-section-sm lg:py-stevens-section bg-gradient-to-b from-stevens-white to-stevens-gray-50"
+        >
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Your Education, Made More Affordable
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+                Calculate your actual cost with corporate discounts and employer benefits. 
+                Select a program above to get started.
+              </p>
+            </div>
+
+            {showCalculator && selectedProgram ? (
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-stevens-lg">
+                {/* Left side - Calculator Inputs */}
+                <div className="lg:col-span-2 space-y-stevens-md">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center text-stevens-lg">
+                        <Calculator className="w-5 h-5 mr-2" />
+                        Calculate Your Cost
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-stevens-lg">
+                      {/* Selected Program */}
+                      <div>
+                        <label className="text-sm font-semibold text-stevens-gray-900 mb-2 block">
+                          Selected Program
+                        </label>
+                        <Card className="bg-blue-50 border-blue-200">
+                          <CardContent className="p-stevens-md">
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <Badge className="mb-2 bg-stevens-primary">
+                                  {selectedProgram.degree}
+                                </Badge>
+                                <p className="font-semibold text-stevens-gray-900">
+                                  {selectedProgram.name}
+                                </p>
+                                <p className="text-xs text-stevens-gray-600 mt-1">
+                                  {selectedProgram.stats?.credits} credits
+                        </p>
+                      </div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => {
+                                  setSelectedProgram(null);
+                                  setCalculatedCost(null);
+                                  // Reset discount options
+                                  setApplyCPEDiscount(true);
+                                  setIsHobokenResident(false);
+                                  setIsStevensAlumni(false);
+                                  setCustomReimbursement('');
+                                }}
+                              >
+                                Change
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
+                    </div>
+
+                      {/* Company Selection */}
+                      <div>
+                        <label className="text-sm font-semibold text-stevens-gray-900 mb-2 block">
+                          Your Company
+                        </label>
+                        <Select
+                          value={selectedCompany?.id}
+                          onValueChange={(value) => {
+                            const config = getDiscountConfig();
+                            const company = config.corporatePartners.find(c => c.id === value);
+                            setSelectedCompany(company);
+                          }}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select your company" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {getDiscountConfig().corporatePartners.map(company => (
+                              <SelectItem key={company.id} value={company.id}>
+                                {company.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        {selectedCompany && selectedCompany.hasSpecialCohort && (
+                          <Alert className="mt-2 bg-green-50 border-green-200">
+                            <Sparkles className="w-4 h-4 text-green-600" />
+                            <AlertDescription className="text-xs text-green-800">
+                              {selectedCompany.benefits}
+                            </AlertDescription>
+                          </Alert>
+                        )}
+                      </div>
+
+                      {selectedCompany && calculatedCost && (
+                        <>
+                          {/* CPE 30% Retail Discount (only show if eligible and before deadline) */}
+                          {DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id)?.show30Percent && (
+                            <div className="flex items-start space-x-3 p-stevens-md bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border-2 border-blue-200">
+                              <Checkbox
+                                id="cpe-discount"
+                                checked={applyCPEDiscount}
+                                onCheckedChange={setApplyCPEDiscount}
+                                className="mt-0.5"
+                              />
+                              <div className="flex-1">
+                                <label
+                                  htmlFor="cpe-discount"
+                                  className="text-sm font-medium text-blue-900 cursor-pointer flex items-center"
+                                >
+                                  <Sparkles className="w-4 h-4 mr-1.5 text-blue-600" />
+                                  Apply CPE 30% Retail Student Discount
+                                </label>
+                                <p className="text-xs text-blue-800 mt-1">
+                                  Special limited-time offer for new online retail students
+                                </p>
+                                <p className="text-xs text-blue-700 mt-1 font-semibold">
+                                  ⏰ Apply by December 25, 2026 to qualify
+                        </p>
+                      </div>
+                    </div>
+                          )}
+
+                          {/* Hoboken Resident (only show if eligible) */}
+                          {DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id)?.showHoboken && (
+                            <div className="flex items-start space-x-3 p-stevens-md bg-stevens-gray-50 rounded-lg">
+                              <Checkbox
+                                id="hoboken"
+                                checked={isHobokenResident}
+                                onCheckedChange={setIsHobokenResident}
+                                className="mt-0.5"
+                              />
+                              <div className="flex-1">
+                                <label
+                                  htmlFor="hoboken"
+                                  className="text-sm font-medium text-stevens-gray-900 cursor-pointer"
+                                >
+                                  I am a Hoboken resident
+                                </label>
+                                <p className="text-xs text-stevens-gray-600 mt-1">
+                                  5% additional discount for Hoboken residents
+                        </p>
+                      </div>
+                    </div>
+                          )}
+
+                          {/* Stevens Alumni (only show if eligible) */}
+                          {DiscountCalculator.getDiscountAvailability(selectedProgram.code, selectedCompany.id)?.showAlumni && (
+                            <div className="flex items-start space-x-3 p-stevens-md bg-stevens-gray-50 rounded-lg">
+                              <Checkbox
+                                id="alumni"
+                                checked={isStevensAlumni}
+                                onCheckedChange={setIsStevensAlumni}
+                                className="mt-0.5"
+                              />
+                              <div className="flex-1">
+                                <label
+                                  htmlFor="alumni"
+                                  className="text-sm font-medium text-stevens-gray-900 cursor-pointer"
+                                >
+                                  I am a Stevens Institute of Technology alumni
+                                </label>
+                                <p className="text-xs text-stevens-gray-600 mt-1">
+                                  5% alumni discount for Stevens graduates
+                                </p>
+                  </div>
+                </div>
+                          )}
+
+                          {/* Employer Reimbursement - Required Input */}
+                <div>
+                            <label className="text-sm font-semibold text-stevens-gray-900 mb-2 flex items-center">
+                              <Briefcase className="w-4 h-4 mr-2" />
+                              Your Employer Reimbursement
+                            </label>
+                            <div className="relative">
+                              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stevens-gray-600 font-medium">
+                                $
+                              </span>
+                              <Input
+                                type="number"
+                                placeholder="Enter amount"
+                                value={customReimbursement}
+                                onChange={(e) => setCustomReimbursement(e.target.value)}
+                                className="w-full pl-8"
+                              />
+                              {customReimbursement && (
+                                <button
+                                  onClick={() => setCustomReimbursement('')}
+                                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stevens-gray-400 hover:text-stevens-gray-600"
+                                  aria-label="Clear"
+                                >
+                                  <X className="w-4 h-4" />
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Right side - Cost Breakdown */}
+                <div className="lg:col-span-3">
+                  {calculatedCost ? (
+                    <Card className="sticky top-4">
+                      <CardHeader className="bg-gradient-to-r from-stevens-primary to-red-700 text-stevens-white">
+                        <CardTitle className="text-stevens-2xl">
+                          Your Investment Breakdown
+                      </CardTitle>
+                        <p className="text-stevens-white/90 text-sm">
+                          {calculatedCost.programName}
+                        </p>
+                    </CardHeader>
+                      <CardContent className="p-stevens-lg">
+                        {/* Base Price */}
+                        <div className="mb-stevens-lg pb-stevens-md border-b-2">
+                          <div className="flex justify-between items-center">
+                            <span className="text-stevens-gray-700">
+                              {calculatedCost.credits.type === 'variable' ? 'Program Cost' : 'Standard Program Price'}
+                            </span>
+                            <span className="text-stevens-2xl font-bold text-stevens-gray-900">
+                              ${calculatedCost.basePrice.toLocaleString()}
+                            </span>
+                      </div>
+                          {calculatedCost.credits.type === 'fixed' && (
+                            <p className="text-xs text-stevens-gray-600 mt-1">
+                              {calculatedCost.credits.value} credits
+                            </p>
+                          )}
+                          {calculatedCost.credits.type === 'variable' && !calculatedCost.cohortPricing && (
+                            <p className="text-xs text-stevens-gray-600 mt-1">
+                              Based on typical {calculatedCost.credits.typical} credits
+                            </p>
+                          )}
+                        </div>
+
+
+                        {/* Variable Credit Info - WITHOUT Cohort Pricing (Use Case 4) */}
+                        {!calculatedCost.cohortPricing && 
+                         calculatedCost.credits.type === 'variable' && (
+                          <div className="mb-stevens-lg">
+                            <Alert className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200">
+                              <Info className="w-5 h-5 text-blue-600" />
+                              <AlertTitle className="text-blue-900 font-semibold mb-2">
+                                Variable Credit Program
+                              </AlertTitle>
+                              <AlertDescription>
+                                <p className="text-sm text-blue-800 mb-2">
+                                  {calculatedCost.programName} requires {calculatedCost.credits.min}-{calculatedCost.credits.max} credits 
+                                  based on concentration. Estimate uses {calculatedCost.credits.typical} credits.
+                                </p>
+                                <p className="text-xs text-blue-700 flex items-center">
+                                  <Sparkles className="w-3 h-3 mr-1" />
+                                  Cost range: ${Math.round(calculatedCost.basePrice * calculatedCost.credits.min / calculatedCost.credits.typical).toLocaleString()} - 
+                                  ${Math.round(calculatedCost.basePrice * calculatedCost.credits.max / calculatedCost.credits.typical).toLocaleString()}
+                                  {' '}({calculatedCost.credits.min}-{calculatedCost.credits.max} credits at standard rate)
+                                </p>
+                              </AlertDescription>
+                            </Alert>
+                          </div>
+                        )}
+
+                        {/* MEADS Special Pricing Message (Use Case 5) */}
+                        {calculatedCost.programCode === 'meads' && !calculatedCost.hasSpecialCohort && (
+                          <div className="mb-stevens-lg">
+                            <Alert className="bg-blue-50 border-blue-200">
+                              <Info className="w-5 h-5 text-blue-600" />
+                              <AlertTitle className="text-blue-900 font-semibold mb-2">
+                                MEADS Special Pricing
+                              </AlertTitle>
+                              <AlertDescription>
+                                <p className="text-sm text-blue-800">
+                                  This program has fixed pricing at ${calculatedCost.basePrice.toLocaleString()}.
+                                  The 30% retail discount is not applicable.
+                                </p>
+                              </AlertDescription>
+                            </Alert>
+                          </div>
+                        )}
+
+                        {/* Certificate Program Benefits Message (Use Case 7) */}
+                        {calculatedCost.programCode.startsWith('cert-') && (
+                          <div className="mb-stevens-lg">
+                            <Alert className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
+                              <Sparkles className="w-5 h-5 text-green-600" />
+                              <AlertTitle className="text-green-900 font-semibold mb-2">
+                                Certificate Program Benefits
+                              </AlertTitle>
+                              <AlertDescription>
+                                <p className="text-sm text-green-800 mb-2">
+                                  Professional certificates are priced at ${calculatedCost.basePrice.toLocaleString()} 
+                                  ({calculatedCost.credits.value} credits) to align with IRS Section 127 annual limits.
+                                </p>
+                                <p className="text-xs text-green-700 flex items-center">
+                                  <CheckCircle className="w-3 h-3 mr-1" />
+                                  This certificate can stack toward a full master's degree!
+                                </p>
+                              </AlertDescription>
+                            </Alert>
+                          </div>
+                        )}
+
+                        {/* Discount Steps */}
+                        <div className="space-y-stevens-md mb-stevens-lg">
+                          {calculatedCost.steps.map((step, index) => {
+                            const Icon = step.icon === 'building' ? Building :
+                                        step.icon === 'sparkles' ? Sparkles :
+                                        step.icon === 'home' ? Home :
+                                        step.icon === 'graduation-cap' ? GraduationCap :
+                                        step.icon === 'briefcase' ? Briefcase : CheckCircle;
+                            
+                            const isCohortVariable = step.type === 'cohort-variable';
+                            const isCohortFixed = step.type === 'cohort-fixed';
+                            
+                            return (
+                              <div key={index}>
+                                <div className="flex items-start space-x-3 p-stevens-md bg-green-50 rounded-lg border border-green-200">
+                                  <Icon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex justify-between items-start mb-1">
+                                      <div className="flex-1 min-w-0">
+                                        <p className="font-semibold text-stevens-gray-900 text-sm">
+                                          {step.name}
+                                        </p>
+                                        <p className="text-xs text-stevens-gray-600 mt-0.5">
+                                          {step.description}
+                                        </p>
+                                        {step.percentage && (
+                                          <Badge variant="secondary" className="mt-1 text-xs">
+                                            {step.percentage}% off
+                                          </Badge>
+                                        )}
+                                      </div>
+                                      <div className="text-right ml-4 flex-shrink-0">
+                                        <p className="font-bold text-green-700">
+                                          -${step.discountAmount.toLocaleString()}
+                                        </p>
+                                      </div>
+                                    </div>
+                                    
+                                    {/* Cohort Fixed: Show per credit calculation */}
+                                    {isCohortFixed && calculatedCost.cohortPricing && (
+                                      <div className="mt-stevens-sm">
+                                        <div className="bg-white rounded-lg px-3 py-2 border border-green-200">
+                                          <p className="text-xs font-medium text-stevens-gray-900">
+                                            ${calculatedCost.cohortPricing.perCredit} per credit × {calculatedCost.cohortPricing.credits} credits
+                                          </p>
+                                          <p className="text-sm font-bold text-stevens-primary mt-1">
+                                            Cohort Price: ${calculatedCost.cohortPricing.totalPrice.toLocaleString()}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    )}
+                                    
+                                    {/* Embedded Pricing Table for Cohort Variable */}
+                                    {isCohortVariable && calculatedCost.cohortPricing?.credits && (
+                                      <div className="mt-stevens-md">
+                                        <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-green-200">
+                                          <div className="bg-blue-50 px-3 py-2 border-b border-green-200">
+                                            <p className="text-xs font-semibold text-blue-900 flex items-center">
+                                              <Info className="w-3 h-3 mr-1" />
+                                              📊 Credit-based pricing ({calculatedCost.credits.min}-{calculatedCost.credits.max} credits):
+                                            </p>
+                                          </div>
+                                          <div className="divide-y divide-gray-200">
+                                            {Object.entries(calculatedCost.cohortPricing.credits).map(([key, data]) => {
+                                              const isTypical = key === 'typical';
+                                              return (
+                                                <div 
+                                                  key={key}
+                                                  className={`flex justify-between items-center px-3 py-2 ${isTypical ? 'bg-blue-50' : 'bg-white'}`}
+                                                >
+                                                  <span className="text-xs">
+                                                    <Badge variant={isTypical ? "default" : "outline"} className="text-xs mr-1">
+                                                      {key.charAt(0).toUpperCase() + key.slice(1)}
+                                                    </Badge>
+                                                    {data.credits} credits
+                                                  </span>
+                                                  <span className="text-sm font-bold text-stevens-primary">
+                                                    ${data.price.toLocaleString()}
+                        </span>
+                      </div>
+                                              );
+                                            })}
+                                          </div>
+                                          <div className="bg-blue-50 px-3 py-2 border-t border-green-200">
+                                            <p className="text-xs text-blue-700 flex items-center">
+                                              <Sparkles className="w-3 h-3 mr-1" />
+                                              💡 Actual credits depend on your chosen concentration
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* Final Price */}
+                        <div className="bg-gradient-to-r from-stevens-primary to-red-700 text-stevens-white p-stevens-lg rounded-lg">
+                          {/* Variable credit: Show COST RANGE */}
+                          {calculatedCost.credits.type === 'variable' ? (() => {
+                             const employerReimbursement = calculatedCost.steps.find(s => s.type === 'reimbursement')?.discountAmount || 0;
+                             const hasReimbursement = employerReimbursement > 0;
+                             
+                             let minCost, maxCost;
+                             
+                             if (calculatedCost.cohortPricing?.credits) {
+                               // WITH cohort: Use cohort pricing directly
+                               minCost = Math.max(0, calculatedCost.cohortPricing.credits.min.price - employerReimbursement);
+                               maxCost = Math.max(0, calculatedCost.cohortPricing.credits.max.price - employerReimbursement);
+                             } else {
+                               // WITHOUT cohort: Calculate proportionally
+                               const otherDiscounts = calculatedCost.basePrice - calculatedCost.finalPrice - employerReimbursement;
+                               
+                               const minCreditsBase = Math.round(calculatedCost.basePrice * calculatedCost.credits.min / calculatedCost.credits.typical);
+                               const maxCreditsBase = Math.round(calculatedCost.basePrice * calculatedCost.credits.max / calculatedCost.credits.typical);
+                               
+                               const minCreditsDiscount = Math.round(otherDiscounts * calculatedCost.credits.min / calculatedCost.credits.typical);
+                               const maxCreditsDiscount = Math.round(otherDiscounts * calculatedCost.credits.max / calculatedCost.credits.typical);
+                               
+                               minCost = Math.max(0, minCreditsBase - minCreditsDiscount - employerReimbursement);
+                               maxCost = Math.max(0, maxCreditsBase - maxCreditsDiscount - employerReimbursement);
+                             }
+                             
+                             return (
+                               <>
+                                 <div className="mb-stevens-md pb-stevens-md border-b border-stevens-white/20">
+                                   <span className="text-sm font-medium text-stevens-white/90">YOUR COST RANGE</span>
+                                   <div className="text-stevens-3xl font-bold mt-1">
+                                     ${minCost.toLocaleString()} - ${maxCost.toLocaleString()}
+                                   </div>
+                                 </div>
+                                 <div className="flex justify-between items-center">
+                                   <span className="text-sm font-medium text-stevens-white/90">
+                                     Based on {calculatedCost.credits.typical} credits:
+                                   </span>
+                                   <span className="text-stevens-2xl font-bold">
+                                     ${calculatedCost.finalPrice.toLocaleString()}
+                        </span>
+                      </div>
+                                 {!hasReimbursement && (
+                                   <p className="text-xs text-stevens-white/70 mt-2 italic">
+                                     * Before employer reimbursement
+                                   </p>
+                                 )}
+                               </>
+                             );
+                           })() : (
+                             /* Fixed credits: Show single price */
+                             <>
+                               <div className="flex justify-between items-center mb-2">
+                                 <span className="text-lg font-semibold">
+                                   {calculatedCost.steps.find(s => s.type === 'reimbursement') ? 'YOUR FINAL COST' : 'YOUR COST'}
+                                 </span>
+                                 <span className="text-stevens-4xl font-bold">
+                                   ${calculatedCost.finalPrice.toLocaleString()}
+                                 </span>
+                               </div>
+                               {!calculatedCost.steps.find(s => s.type === 'reimbursement') && (
+                                 <p className="text-xs text-stevens-white/70 italic">
+                                   * Before employer reimbursement
+                                 </p>
+                               )}
+                             </>
+                           )}
+                          
+                          <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
+                            <Star className="w-5 h-5 mr-2 fill-current" />
+                            <span className="text-lg">
+                              You save {calculatedCost.percentSaved}%!
+                            </span>
+                          </div>
+                          
+                          {/* Prompt to add reimbursement if not entered */}
+                          {!calculatedCost.steps.find(s => s.type === 'reimbursement') && (
+                            <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
+                              <div className="flex items-start text-stevens-white/90">
+                                <Briefcase className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
+                                <div className="text-sm">
+                                  <p className="font-semibold mb-1">Add your employer reimbursement above</p>
+                                  <p className="text-xs text-stevens-white/80">
+                                    Most employers offer up to ${getDiscountConfig().employerReimbursement.defaultAnnual.toLocaleString()}/year
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Certificate FREE message */}
+                          {calculatedCost.programCode.startsWith('cert-') && calculatedCost.finalPrice === 0 && (
+                            <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
+                              <div className="flex items-center text-stevens-white">
+                                <CheckCircle className="w-6 h-6 mr-2 fill-current" />
+                                <span className="text-lg font-bold">
+                                  💯 Fully covered by employer benefits!
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* CTA */}
+                        <div className="mt-stevens-lg space-y-stevens-sm">
+                          <Link 
+                            to={`${createPageUrl('/accelerated-application/')}?program=${selectedProgram.code}${corporateCode ? `&code=${corporateCode}` : ''}`}
+                          >
+                            <Button size="lg" className="w-full text-stevens-white">
+                              Start Your Application
+                             
+                            </Button>
+                          </Link>
+                          <p className="text-center text-xs text-stevens-gray-600">
+                            Questions? <a href="#" className="text-stevens-primary hover:underline font-semibold">Talk to an advisor</a>
+                          </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  ) : (
+                    <Card className="h-full flex items-center justify-center p-stevens-2xl">
+                      <div className="text-center text-stevens-gray-500">
+                        <Calculator className="w-16 h-16 mx-auto mb-stevens-md opacity-50" />
+                        <p className="text-lg font-semibold mb-2">Select a company to see your personalized pricing</p>
+                        <p className="text-sm">Choose your employer from the dropdown to calculate your actual cost</p>
+                </div>
+                    </Card>
+                  )}
+              </div>
+            </div>
+            ) : (
+              /* Default view - select a program message */
+              <Card className="max-w-2xl mx-auto">
+                <CardContent className="p-stevens-2xl text-center">
+                  <Calculator className="w-16 h-16 mx-auto mb-stevens-lg text-stevens-gray-400" />
+                  <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+                    Ready to see your actual cost?
+                  </h3>
+                  <p className="text-stevens-gray-700 mb-stevens-lg">
+                    Click "Calculate Your Cost" on any program above to see how corporate discounts 
+                    and employer benefits can make your education more affordable.
+                  </p>
+                  <Button
+                    size="lg"
+                    onClick={() => {
+                      // Scroll to programs section
+                      document.getElementById('programs-section')?.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                      });
+                    }}
+                  >
+                    <ArrowRight className="mr-2 w-5 h-5 rotate-[-90deg]" />
+                    Explore Programs Above
+                  </Button>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </section>
+
+        {/* Your Learning Journey */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Start Your Journey with Stevens
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+                From application to graduation, we make your path to success clear and achievable.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
+              {learningJourney.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.step} className="relative">
+                    
+                    <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg shadow-stevens-md relative z-10">
+                      <div className="flex items-start space-x-stevens-md">
+                        <div className="w-12 h-12 bg-stevens-primary text-stevens-white rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="font-stevens-bold">{step.step}</span>
+                        </div>
+                        <div>
+                          <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+                            {step.title}
+                          </h3>
+                          <p className="text-stevens-gray-700">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Alumni Success Stories */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Success Stories from Corporate-Sponsored Alumni
+              </h2>
+              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+                See how professionals like you leveraged their employer benefits to advance their careers.
+              </p>
+            </div>
+
+            {/* Success Stories Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg">
+              {successStories.map((story, index) => (
+                <Card key={index} className="h-full">
+                  <CardContent className="p-stevens-lg">
+                    <div className="space-y-stevens-md">
+                      <blockquote className="text-stevens-gray-700 italic">
+                        "{story.quote}"
+                      </blockquote>
+                      
+                      <div className="border-t pt-stevens-md">
+                        <p className="font-stevens-medium text-stevens-gray-900">
+                          {story.name}
+                        </p>
+                        <p className="text-stevens-sm text-stevens-gray-600">
+                          {story.title}
+                        </p>
+                        <p className="text-stevens-sm text-stevens-gray-600">
+                          {story.company}
+                        </p>
+                        <p className="text-stevens-sm text-stevens-primary font-stevens-medium mt-stevens-xs">
+                          {story.program}
+                        </p>
+                      </div>
+
+                      {story.outcome && (
+                        <div className="bg-stevens-gray-50 rounded p-stevens-sm">
+                          <p className="text-stevens-sm text-stevens-gray-700">
+                            <span className="font-stevens-medium">Outcome:</span> {story.outcome}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}</div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section id="contact" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md">
+                Ready to Take the Next Step?
+              </h2>
+              <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto opacity-90">
+                Join thousands of professionals advancing their careers through Stevens Online 
+                with the exclusive benefits available to partner employees.
+              </p>
+              
+
+              <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
+                <Button
+                  size="lg"
+                  variant="default"
+                  className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 w-full sm:w-auto min-w-[280px]"
+                  onClick={handleApplicationStart}
+                >
+                  Start Your Accelerated Application
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-stevens-white text-stevens-white bg-transparent hover:bg-stevens-white hover:text-stevens-primary transition-all duration-stevens-normal w-full sm:w-auto min-w-[280px]"
+                  onClick={() => {
+                    trackEvent('corporate_advisor_contact', {
+                      company: companyName || 'unknown'
+                    });
+                  }}
+                >
+                  Talk to Corporate Care Advisor
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Application Modal */}
+        {showApplicationModal && (
+          <ApplicationModal
+            isOpen={showApplicationModal}
+            onClose={() => setShowApplicationModal(false)}
+            corporateCode={corporateCode}
+            programCode={searchParams.get('program')}
+          />
+        )}
+      </div>
+    </PageContextProvider>
+  );
+};
+
+export default CorporateStudents;

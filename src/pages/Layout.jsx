@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
-import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
+import { BOOKING_URLS, CONTACT_INFO, KEY_DATES } from "@/config/constants";
 import {
   ChevronDown,
   Menu,
@@ -53,7 +53,7 @@ const certificateProgramItems = [
 ];
 
 const mainNavLinks = [
-  // The "GRADUATE" and "Tuition & Admissions" are handled separately with custom dropdowns.
+  // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
  
   { name: "Online Experience", page: "online-learning-experience/" },
@@ -64,7 +64,8 @@ const tuitionAdmissionsItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
   { name: "Events", page: "Events/" },
- 
+  // { name: "Corporate Partners", page: "corporate-partners/" },
+  // { name: "Corporate Students", page: "corporate-students/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -90,7 +91,7 @@ const mobileNavLinks = [
     items: mobileCertificateProgramItems,
   },
   {
-    name: "Tuition & Admissions",
+    name: "Academics",
     isDropdown: true,
     items: tuitionAdmissionsItems,
   },
@@ -149,12 +150,31 @@ export default function Layout({ children, currentPageName }) {
     ? { href: redirect.url, target: '_blank', rel: 'noopener noreferrer' }
     : { to: redirect.url };
 
+  // Format date from "December 25, 2025" to "December 25th"
+  const formatPriorityDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const day = date.getDate();
+    
+    // Add ordinal suffix
+    const getOrdinalSuffix = (n) => {
+      const s = ['th', 'st', 'nd', 'rd'];
+      const v = n % 100;
+      return s[(v - 20) % 10] || s[v] || s[0];
+    };
+    
+    return `${month} ${day}${getOrdinalSuffix(day)}`;
+  };
+
   // ASAP Banner continuous message with emphasis
-  const BannerMessage = () => (
+  const BannerMessage = () => {
+    const priorityDate = formatPriorityDate(KEY_DATES.PRIORITY_SUBMIT.date);
+    return (
     <>
-      <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>November 20th Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
+        <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>{priorityDate} Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
     </>
   );
+  };
   
   // Mobile banner message - simplified version
   const MobileBannerMessage = () => (
@@ -501,23 +521,6 @@ export default function Layout({ children, currentPageName }) {
               className="flex items-center justify-end h-16 text-stevens-sm px-stevens-md lg:px-stevens-lg"
             >
               <div className="flex items-center space-x-stevens-md ">
-                <a
-                  href="https://www.stevens.edu/corporate-relations"
-                  className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
-                  onMouseEnter={() => {
-                    if (hoverTimeoutRef.current) {
-                      clearTimeout(hoverTimeoutRef.current);
-                    }
-                    setIsHoveringRedNav(true);
-                  }}
-                  onMouseLeave={() => {
-                    hoverTimeoutRef.current = setTimeout(() => {
-                      setIsHoveringRedNav(false);
-                    }, 100);
-                  }}
-                >
-                  Corporate Relations
-                </a>
                 <a
                   href="https://www.stevens.edu/development-alumni-engagement"
                   className="menu-item-link font-stevens-bitter text-stevens-sm text-stevens-white hover:text-stevens-white hover:underline hover:font-bold transition-colors duration-stevens-fast"
@@ -1009,7 +1012,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    Tuition & Admissions{" "}
+                    Academics{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${tuitionDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
@@ -1377,7 +1380,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  GRADUATE
+                  Graduate Programs
                 </Link>
                 {/* <Link
                   to={createPageUrl("Certificates")}
