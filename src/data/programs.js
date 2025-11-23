@@ -45,8 +45,8 @@ export const programs = [
       ]
     },
     tuition: {
-      perCredit: 1850,
-      totalProgram: 66600,
+      perCredit: 1395,
+      totalProgram: 50220,
       financialAid: true
     },
     created_date: "2024-01-01T00:00:00Z"
@@ -105,8 +105,8 @@ export const programs = [
       ]
     },
     tuition: {
-      perCredit: 1850,
-      totalProgram: 55500,
+      perCredit: 1395,
+      totalProgram: 41850,
       financialAid: true
     },
     created_date: "2024-01-02T00:00:00Z"
@@ -159,8 +159,8 @@ export const programs = [
       ]
     },
     tuition: {
-      perCredit: 1850,
-      totalProgram: 55500,
+      perCredit: 1395,
+      totalProgram: 41850,
       financialAid: true
     },
     created_date: "2024-01-03T00:00:00Z"
@@ -171,24 +171,24 @@ export const Program = {
   list: (sortBy = "-created_date", limit = null) => {
     return new Promise((resolve) => {
       let sortedPrograms = [...programs];
-      
+
       // Sort logic
       if (sortBy === "-created_date") {
         sortedPrograms.sort((a, b) => new Date(b.created_date) - new Date(a.created_date));
       } else if (sortBy === "created_date") {
         sortedPrograms.sort((a, b) => new Date(a.created_date) - new Date(b.created_date));
       }
-      
+
       // Apply limit
       if (limit) {
         sortedPrograms = sortedPrograms.slice(0, limit);
       }
-      
+
       // Simulate API delay
       setTimeout(() => resolve(sortedPrograms), 100);
     });
   },
-  
+
   get: (id) => {
     return new Promise((resolve, reject) => {
       const program = programs.find(p => p.id === id);
