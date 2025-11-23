@@ -615,11 +615,16 @@ The objective of this course is to give students a basic grounding in designing 
     footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
   },
   tuition: {
-    cards: [],
-    description: `<h3 class="font-bold text-xl mb-4">New for 2025: Up to $16,708 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p>`,
+    cards: [
+      { value: "$1,395", label: "Per Credit (Standard)" },
+      { value: "$875", label: "Per Credit (Async)*" },
+      { value: "$60", label: "Application Fee" },
+      { value: "$250", label: "Enrollment Deposit" }
+    ],
+    description: `<h3 class="font-bold text-xl mb-4">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="text-sm italic mt-2">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
     grants: [
-        { title: "Aspire Grant (for standard applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
-        { title: "Pathway Grant (for ASAP applicants)", description: "$6,708 in tuition support for the first two asynchronous courses." },
+        { title: "Aspire Grant (for standard applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
+        { title: "Pathway Grant (for ASAP applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
         { title: "Dean’s Merit Scholar Program", description: "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more." }
     ]
   },
