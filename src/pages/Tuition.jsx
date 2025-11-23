@@ -43,7 +43,7 @@ export default function Tuition() {
 
       <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
         <div className="grid lg:grid-cols-3 gap-12">
-          
+
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-16">
             <div>
@@ -93,7 +93,7 @@ export default function Tuition() {
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
-                 <Card className="text-center shadow-lg">
+                <Card className="text-center shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-maroon" /> Pathway Grant</CardTitle>
                     <p className="text-sm text-gray-500">(for ASAP applicants)</p>
@@ -122,35 +122,35 @@ export default function Tuition() {
                         <TableRow><TableHead>Program</TableHead><TableHead>Credits</TableHead><TableHead>Cost Per Credit</TableHead><TableHead className="text-right">Est. Tuition*</TableHead></TableRow>
                       </TableHeader>
                       <TableBody>
-                        <TableRow><TableCell>Online MSCS</TableCell><TableCell>24</TableCell><TableCell>$1,993</TableCell><TableCell className="text-right">$47,832</TableCell></TableRow>
+                        <TableRow><TableCell>Online MSCS</TableCell><TableCell>24</TableCell><TableCell>$1,395</TableCell><TableCell className="text-right">$33,480</TableCell></TableRow>
                         <TableRow className="bg-gray-50"><TableCell>Online MSCS (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
-                        <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$53,082</TableCell></TableRow>
+                        <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$38,730</TableCell></TableRow>
                       </TableBody>
                     </Table>
                   </Card>
                 </TabsContent>
                 <TabsContent value="mem">
                   <Card>
-                     <Table>
+                    <Table>
                       <TableHeader>
                         <TableRow><TableHead>Program</TableHead><TableHead>Credits</TableHead><TableHead>Cost Per Credit</TableHead><TableHead className="text-right">Est. Tuition*</TableHead></TableRow>
                       </TableHeader>
                       <TableBody>
-                        <TableRow><TableCell>Online MEM</TableCell><TableCell>24</TableCell><TableCell>$1,993</TableCell><TableCell className="text-right">$47,832</TableCell></TableRow>
+                        <TableRow><TableCell>Online MEM</TableCell><TableCell>24</TableCell><TableCell>$1,395</TableCell><TableCell className="text-right">$33,480</TableCell></TableRow>
                         <TableRow className="bg-gray-50"><TableCell>Online MEM (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
-                        <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$53,082</TableCell></TableRow>
+                        <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$38,730</TableCell></TableRow>
                       </TableBody>
                     </Table>
                   </Card>
                 </TabsContent>
                 <TabsContent value="mba">
                   <Card>
-                     <Table>
+                    <Table>
                       <TableHeader>
                         <TableRow><TableHead>Program</TableHead><TableHead>Credits</TableHead><TableHead>Cost Per Credit</TableHead><TableHead className="text-right">Est. Tuition*</TableHead></TableRow>
                       </TableHeader>
                       <TableBody>
-                        <TableRow><TableCell>Online MBA</TableCell><TableCell>39-48</TableCell><TableCell>$1,993</TableCell><TableCell className="text-right">$77,727 - $95,664</TableCell></TableRow>
+                        <TableRow><TableCell>Online MBA</TableCell><TableCell>39-48</TableCell><TableCell>$1,395</TableCell><TableCell className="text-right">$54,405 - $66,960</TableCell></TableRow>
                       </TableBody>
                     </Table>
                   </Card>
@@ -169,12 +169,12 @@ export default function Tuition() {
                   </TableHeader>
                   <TableBody>
                     <TableRow><TableCell>First two asynchronous courses: Online MSCS/Online MEM</TableCell><TableCell className="text-right">$2,625 per course</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>Tuition</TableCell><TableCell className="text-right">$1,993 per credit hour</TableCell></TableRow>
+                    <TableRow className="bg-gray-50"><TableCell>Tuition</TableCell><TableCell className="text-right">$1,395 per credit hour</TableCell></TableRow>
                     <TableRow><TableCell>Tuition (First two asynchronous courses: Online MSCS/Online MEM)</TableCell><TableCell className="text-right">$875 per credit hour</TableCell></TableRow>
                     <TableRow className="bg-gray-50"><TableCell>Annual Health Insurance Fee*</TableCell><TableCell className="text-right">$2,204</TableCell></TableRow>
                     <TableRow><TableCell>Student Activity Fee**</TableCell><TableCell className="text-right">$275 per semester</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>General Services Fee – Part Time***</TableCell><TableCell className="text-right">$402 per semester</TableCell></TableRow>
-                    <TableRow><TableCell>General Services Fee – Full Time***</TableCell><TableCell className="text-right">$638 per semester</TableCell></TableRow>
+                    <TableRow className="bg-gray-50"><TableCell>General Services Fee – Part Time***</TableCell><TableCell className="text-right">$452 per semester</TableCell></TableRow>
+                    <TableRow><TableCell>General Services Fee – Full Time***</TableCell><TableCell className="text-right">$688 per semester</TableCell></TableRow>
                     <TableRow className="bg-gray-50"><TableCell>Books</TableCell><TableCell className="text-right">$1,000</TableCell></TableRow>
                     <TableRow><TableCell>Miscellaneous</TableCell><TableCell className="text-right">$1,050</TableCell></TableRow>
                   </TableBody>
@@ -191,11 +191,11 @@ export default function Tuition() {
             {/* Financial Aid Section */}
             <div>
               <h2 className="font-display text-3xl font-bold mb-4">Financial Aid</h2>
-               <p className="mb-4 text-gray-700">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
-               <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
-                 Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
-               </p>
-               <h3 className="font-display text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
+              <p className="mb-4 text-gray-700">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
+              <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
+                Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
+              </p>
+              <h3 className="font-display text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <FinancialAidOption title="Dean’s Merit Scholar Program">
                   <p>Students in the Online MSCS and MEM programs may be eligible for up to $10,000 in scholarship support, while those in the Online MBA program may qualify for up to $25,000 - both based on academic merit. Contact your enrollment advisor to learn more about eligibility.</p>
@@ -203,18 +203,18 @@ export default function Tuition() {
                 <FinancialAidOption title="Direct Unsubsidized Loans">
                   <p>Direct Unsubsidized Loans do not require you to demonstrate financial need to be eligible for the loan. The Direct Unsubsidized Loan for graduate students has a fixed interest rate. The interest on the loan begins to accrue as soon as Stevens receives the first funds. Visit the Federal Aid for Graduate Students page for more information.</p>
                 </FinancialAidOption>
-                 <FinancialAidOption title="Direct Plus Loans">
-                   <p>PLUS loans are available if you need to borrow more than what you receive in unsubsidized loans. These loans have higher interest rates and fees than unsubsidized loans and also require a credit check. If you have an adverse credit history, you will need to complete additional documentation and credit counseling before you can receive the loan. Visit the Federal Aid for Graduate Students page for more information.</p>
+                <FinancialAidOption title="Direct Plus Loans">
+                  <p>PLUS loans are available if you need to borrow more than what you receive in unsubsidized loans. These loans have higher interest rates and fees than unsubsidized loans and also require a credit check. If you have an adverse credit history, you will need to complete additional documentation and credit counseling before you can receive the loan. Visit the Federal Aid for Graduate Students page for more information.</p>
                 </FinancialAidOption>
                 <FinancialAidOption title="Private Loans">
-                   <p>We strongly recommend that all eligible students apply for federal financial aid and plan to use all offered federal grants and loans before deciding to borrow private student loans. The best time to decide whether to apply for private loans is after you have been accepted to Stevens, applied for aid, and received your aid letter from our financial aid office. Visit the Alternative Financing Options for Graduate Students page for more information.</p>
+                  <p>We strongly recommend that all eligible students apply for federal financial aid and plan to use all offered federal grants and loans before deciding to borrow private student loans. The best time to decide whether to apply for private loans is after you have been accepted to Stevens, applied for aid, and received your aid letter from our financial aid office. Visit the Alternative Financing Options for Graduate Students page for more information.</p>
                 </FinancialAidOption>
                 <FinancialAidOption title="International Student Loan Resources">
                   <p>We welcome students from all over the world who wish to pursue an advanced degree at Stevens. As is the case with graduate study throughout the United States, aid to international graduate students (those studying in the U.S. on visas) is limited. However, several options are still available and we’re here to help you find them so that you can join us for postgraduate study. Visit the Graduate International Student Resources page for more information.</p>
                 </FinancialAidOption>
               </Accordion>
             </div>
-            
+
             {/* Alumni & Veterans */}
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
@@ -241,19 +241,19 @@ export default function Tuition() {
             </div>
 
           </div>
-          
+
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-8">
               <Card className="border-2 border-stevens-maroon">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-3"><FileText className="w-6 h-6"/> FAFSA Information</CardTitle>
+                  <CardTitle className="flex items-center gap-3"><FileText className="w-6 h-6" /> FAFSA Information</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-2">Complete the FAFSA to apply for federal aid.</p>
                   <p className="text-sm">Stevens Institute of Technology College Code:</p>
                   <p className="font-display text-4xl font-bold text-stevens-maroon my-2">002639</p>
-                   <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button className="w-full btn-secondary mt-2">
                       Go to FAFSA Website <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -262,22 +262,22 @@ export default function Tuition() {
               </Card>
 
               <Card>
-                 <CardHeader>
-                  <CardTitle className="flex items-center gap-3"><Building className="w-6 h-6"/> Student Service Center</CardTitle>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3"><Building className="w-6 h-6" /> Student Service Center</CardTitle>
                 </CardHeader>
-                 <CardContent className="space-y-4 text-gray-700">
-                   <p className="font-semibold">Hours:</p>
-                   <ul className="text-sm">
-                     <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>
-                     <li>Tuesday: 10 a.m.-5 p.m. ET</li>
-                   </ul>
-                   <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.PHONE}</div>
-                   <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.EMAIL}</div>
-                   <p className="text-sm">
-                     Wesley J. Howe Center, First Floor<br/>
-                     1 Castle Point Terrace<br/>
-                     Hoboken, NJ 07030
-                   </p>
+                <CardContent className="space-y-4 text-gray-700">
+                  <p className="font-semibold">Hours:</p>
+                  <ul className="text-sm">
+                    <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>
+                    <li>Tuesday: 10 a.m.-5 p.m. ET</li>
+                  </ul>
+                  <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.PHONE}</div>
+                  <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> {CONTACT_INFO.FINANCIAL_AID.EMAIL}</div>
+                  <p className="text-sm">
+                    Wesley J. Howe Center, First Floor<br />
+                    1 Castle Point Terrace<br />
+                    Hoboken, NJ 07030
+                  </p>
                 </CardContent>
               </Card>
             </div>

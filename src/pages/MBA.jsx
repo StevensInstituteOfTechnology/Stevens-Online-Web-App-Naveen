@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Globe, Award, Check, Briefcase, DollarSign, BrainCircuit, LineChart,
-  Target, TrendingUp, Users } from 'lucide-react';
+  Target, TrendingUp, Users
+} from 'lucide-react';
 import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
 import { KEY_DATES } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
@@ -23,19 +24,19 @@ const programData = {
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
-    { text: "100% Online", icon: Globe },
-    { text: "AACSB Accredited", icon: Award },
+      { text: "100% Online", icon: Globe },
+      { text: "AACSB Accredited", icon: Award },
       { text: "No GMAT/GRE Required", icon: Check }
     ]
   },
   quickFacts: {
     atAGlance: [
-    { value: "100%", label: "Online", icon: Globe },
-    { value: "Tech-Focused", label: "Curriculum", icon: BrainCircuit },
-    { value: "No GMAT/GRE", label: "Required", icon: Check },
-    { value: "Career-Driven", label: "Outcomes", icon: Briefcase },
-    { value: "Expert", label: "Faculty", icon: Users },
-    { value: "Merit", label: "Scholarships Available", icon: Award }],
+      { value: "100%", label: "Online", icon: Globe },
+      { value: "Tech-Focused", label: "Curriculum", icon: BrainCircuit },
+      { value: "No GMAT/GRE", label: "Required", icon: Check },
+      { value: "Career-Driven", label: "Outcomes", icon: Briefcase },
+      { value: "Expert", label: "Faculty", icon: Users },
+      { value: "Merit", label: "Scholarships Available", icon: Award }],
 
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
     details: `<ul><li>39–48 Credit Hours</li><li>13–16 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`
@@ -55,24 +56,24 @@ const programData = {
     muted: true
   },
   rankings: [
-  { ranking: "100%", description: "EMPLOYMENT", source: "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.", note: "1" },
-  { ranking: "#15", description: "FOR BEST VALUE", source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).', note: "2" },
-  { ranking: "#1", description: "ONLINE MBA IN N.J.", source: "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024)." },
-  { ranking: "#14", description: "FOR ECONOMIC RETURN", source: "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).", note: "2" },
-  { ranking: "Top 20", description: "FOR BEST CAREER PLACEMENT", source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)." }],
+    { ranking: "100%", description: "EMPLOYMENT", source: "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.", note: "1" },
+    { ranking: "#15", description: "FOR BEST VALUE", source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).', note: "2" },
+    { ranking: "#1", description: "ONLINE MBA IN N.J.", source: "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024)." },
+    { ranking: "#14", description: "FOR ECONOMIC RETURN", source: "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).", note: "2" },
+    { ranking: "Top 20", description: "FOR BEST CAREER PLACEMENT", source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)." }],
 
   rankings_footnotes: [
-  { note: "1", text: "Based on data from 82% of the 2021-2022 full-time program graduates." },
-  { note: "2", text: "Based on the cost of a four-year bachelor's degree program." }],
+    { note: "1", text: "Based on data from 82% of the 2021-2022 full-time program graduates." },
+    { note: "2", text: "Based on the cost of a four-year bachelor's degree program." }],
 
   career: {
     description: `<p class="mb-4">The Stevens Online MBA program prepares you for many leadership roles in companies based in New York City and other business hubs across the country. According to 2025 data from the U.S. Bureau of Labor Statistics, NYC is one of the top-paying regions for management professionals - financial managers in the greater metropolitan area, for instance, earn over $247,000 annually. It's also the region hiring the greatest number of management professionals - the area employs over 187,000 general and operations managers.</p><p class="mb-4">The outlook for management positions is very positive. Some, like financial managers, are projected to grow much faster than average. Employment of financial managers is forecast to grow by 17% by 2033 (with around 75,100 job openings each year). Others, like sales managers, are also projected to grow faster than the national average over the next decade. An Online MBA from Stevens provides students with transferable skills valuable in any industry and prepares them for professional success throughout their careers.</p><p>According to data from the labor market analytics experts at Lightcast, a skills gap exists among MBA occupations, resulting in a demand for graduates with finance, accounting, project management, auditing and data analysis skills. Our comprehensive curriculum and specialized concentrations focus on these essential and highly sought-after skills, preparing you for professional success in your chosen field.</p>`,
     jobTitles: [
-    { title: "Chief Executive", employed: "211,230", salary: "$206,420" },
-    { title: "Financial Manager", employed: "837,100", salary: "$161,700" },
-    { title: "Marketing Manager", employed: "411,300", salary: "$159,660" },
-    { title: "Human Resources Manager", employed: "208,900", salary: "$140,030" },
-    { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
+      { title: "Chief Executive", employed: "211,230", salary: "$206,420" },
+      { title: "Financial Manager", employed: "837,100", salary: "$161,700" },
+      { title: "Marketing Manager", employed: "411,300", salary: "$159,660" },
+      { title: "Human Resources Manager", employed: "208,900", salary: "$140,030" },
+      { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
 
     source: "U.S. Bureau of Labor Statistics, 2025.",
     topCompanies: ["Microsoft", "Verizon", "JPMorgan Chase", "Amazon", "Deloitte", "Accenture"]
@@ -82,40 +83,40 @@ const programData = {
     title: "A Skill Set Designed for Impact",
     description: "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills - broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
     modules: [
-    {
-      title: "Financial Management",
-      growth: "+14.8% Projected Growth Until 2035",
-      icon: DollarSign,
-      courses: [
-      { code: "FIN 500", title: "Financial and Managerial Accounting" },
-      { code: "FIN 523", title: "Financial Management" },
-      { code: "FIN 638", title: "Corporate Finance" },
-      { code: "MGT 506", title: "Economics for Managers" }]
+      {
+        title: "Financial Management",
+        growth: "+14.8% Projected Growth Until 2035",
+        icon: DollarSign,
+        courses: [
+          { code: "FIN 500", title: "Financial and Managerial Accounting" },
+          { code: "FIN 523", title: "Financial Management" },
+          { code: "FIN 638", title: "Corporate Finance" },
+          { code: "MGT 506", title: "Economics for Managers" }]
 
-    },
-    {
-      title: "Project Management",
-      growth: "+19.8% Projected Growth Until 2035",
-      icon: Briefcase,
-      courses: [
-      { code: "MGT 609", title: "Project Management Fundamentals" },
-      { code: "MGT 610", title: "Strategic Perspectives on Project Management" },
-      { code: "MGT 611", title: "Project Analytics" },
-      { code: "MGT 619", title: "Leading Across Projects" }]
+      },
+      {
+        title: "Project Management",
+        growth: "+19.8% Projected Growth Until 2035",
+        icon: Briefcase,
+        courses: [
+          { code: "MGT 609", title: "Project Management Fundamentals" },
+          { code: "MGT 610", title: "Strategic Perspectives on Project Management" },
+          { code: "MGT 611", title: "Project Analytics" },
+          { code: "MGT 619", title: "Leading Across Projects" }]
 
-    },
-    {
-      title: "Data Analysis",
-      growth: "+25.8% Projected Growth Until 2035",
-      icon: LineChart,
-      courses: [
-      { code: "BIA 500", title: "Business Analytics: Data, Models and Decisions" },
-      { code: "BIA 610", title: "Applied Analytics" },
-      { code: "BIA 672", title: "Marketing Analytics" },
-      { code: "BIA 674", title: "Supply Chain Analytics" },
-      { code: "BIA 658", title: "Social Network Analytics" }]
+      },
+      {
+        title: "Data Analysis",
+        growth: "+25.8% Projected Growth Until 2035",
+        icon: LineChart,
+        courses: [
+          { code: "BIA 500", title: "Business Analytics: Data, Models and Decisions" },
+          { code: "BIA 610", title: "Applied Analytics" },
+          { code: "BIA 672", title: "Marketing Analytics" },
+          { code: "BIA 674", title: "Supply Chain Analytics" },
+          { code: "BIA 658", title: "Social Network Analytics" }]
 
-    }]
+      }]
 
   },
   whyStevens: {
@@ -133,7 +134,7 @@ const programData = {
     description: "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
     courseTabs: {
       foundations: {
-          title: "Foundational Courses",
+        title: "Foundational Courses",
         content: `
             <h4 class="course-section-header">Foundational Courses</h4>
             <p class="course-intro">Foundational courses should be completed in advance of pursuing a concentration. Courses may be waived based on academic history and previous coursework completed.</p>
@@ -232,7 +233,7 @@ const programData = {
           <h4 class="course-term-header">Terms 5 & 6: Electives</h4>
           <p class="text-stevens-gray-600">Terms 5 and 6 are elective-only; see Concentrations for course options.</p>`
       },
-      
+
       concentrations: {
         title: "Concentrations",
         content: `
@@ -624,9 +625,9 @@ const programData = {
       </div>
     `
   },
-    keyDates: {
+  keyDates: {
     term: KEY_DATES.TERM.name,
-      rows: [
+    rows: [
       { event: "Early Submit", date: KEY_DATES.EARLY_SUBMIT.date },
       { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
       { event: "Final Submit", date: KEY_DATES.FINAL_SUBMIT.date },
@@ -634,7 +635,7 @@ const programData = {
     ]
   },
   tuition: {
-    cards: [{ value: "$1,993", label: "Per Credit" }, { value: "$60", label: "Application Fee" }, { value: "$250", label: "Enrollment Deposit" }],
+    cards: [{ value: "$1,395", label: "Per Credit" }, { value: "$60", label: "Application Fee" }, { value: "$250", label: "Enrollment Deposit" }],
     description: `<p>Tuition based on fall 2025 rates. Tuition and fees are subject to change annually.</p>`
   },
   events: {
@@ -701,8 +702,8 @@ const programData = {
     ]
   },
   faqs: [
-  { q: "What jobs can you get with an MBA?", a: "An MBA qualifies you for leadership positions in virtually every industry, such as financial or sales manager, and later in executive positions, such as CEO or CFO." },
-  { q: "Is an online MBA worth it?", a: "Yes. The Stevens Online MBA gives students an edge by developing their analytical and emotional intelligence skills and focusing on the complex technologies informing business decisions and strategy." }],
+    { q: "What jobs can you get with an MBA?", a: "An MBA qualifies you for leadership positions in virtually every industry, such as financial or sales manager, and later in executive positions, such as CEO or CFO." },
+    { q: "Is an online MBA worth it?", a: "Yes. The Stevens Online MBA gives students an edge by developing their analytical and emotional intelligence skills and focusing on the complex technologies informing business decisions and strategy." }],
 
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027. The school of business is also accredited by the <a href="https://www.aacsb.edu/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-primary transition-colors duration-stevens-normal">AACSB</a>, placing Stevens among the five percent of business schools globally to earn this distinction.`
 };
@@ -720,7 +721,7 @@ export default function MBAPage() {
 
   return (
     <PageContextProvider pageType="program" pageName="MBA">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="mba"
         programName="Master of Business Administration"
         programType="degree"
