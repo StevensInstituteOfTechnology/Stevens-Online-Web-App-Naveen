@@ -59,7 +59,7 @@ export default function Tuition() {
                 <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-primary">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p>Effective Fall 2025, the Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs will incorporate asynchronous course delivery for the initial phase of their curriculum. This change will impact the tuition rates for some courses.</p>
+                <p>Effective Spring & Summer 2026, the Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs will incorporate asynchronous course delivery for the initial phase of their curriculum. This change will impact the tuition rates for some courses.</p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-semibold text-gray-800">Online M.S. in Computer Science</h4>
@@ -89,7 +89,7 @@ export default function Tuition() {
                     <p className="text-sm text-gray-500">(for standard applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-display text-4xl font-bold text-stevens-maroon">$6,708</p>
+                    <p className="font-display text-4xl font-bold text-stevens-maroon">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -99,7 +99,7 @@ export default function Tuition() {
                     <p className="text-sm text-gray-500">(for ASAP applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-display text-4xl font-bold text-stevens-maroon">$6,708</p>
+                    <p className="font-display text-4xl font-bold text-stevens-maroon">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -156,7 +156,7 @@ export default function Tuition() {
                   </Card>
                 </TabsContent>
               </Tabs>
-              <p className="p-4 text-center text-xs text-gray-600 italic">*Tuition estimates based on Fall 2025 rates effective September 2025. Tuition and fees are subject to change annually. Additional program fees may apply.</p>
+              <p className="p-4 text-center text-xs text-gray-600 italic">*Tuition estimates based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually. Additional program fees may apply.</p>
             </div>
 
             {/* Average Cost Table */}
