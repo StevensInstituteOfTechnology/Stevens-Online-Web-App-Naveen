@@ -22,7 +22,7 @@ const ExploreMSCS = () => {
     // Hero Section
     heroTitle: "Build What's Next in Tech. All Experience Levels Welcome.",
     programName: "Online Master's in Computer Science",
-    heroSubtitle: "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $16K in scholarships available.",
+    heroSubtitle: "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $13K in scholarships available.",
     bgImage: "/assets/images/explore-mscs/stevens-campus.webp", // Placeholder
     programCode: "mscs",
     seo: {
@@ -36,7 +36,7 @@ const ExploreMSCS = () => {
     badges: [
       { text: "No. 1 in New Jersey", icon: Award },
       { text: "100% Online", icon: Globe },
-      { text: "Up to $16K Off Tuition", icon: Star }
+      { text: "Up to $13K Off Tuition", icon: Star }
     ],
     
     // Statistics

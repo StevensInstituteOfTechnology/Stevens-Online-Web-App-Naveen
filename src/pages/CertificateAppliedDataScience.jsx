@@ -250,11 +250,11 @@ const programData = {
     description: `
       <div class="space-y-4">
         <p class="font-bold text-lg text-stevens-gray-900">Invest in Your Data Science Future</p>
-        <p class="text-left">At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically aligned with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>-making it an ideal choice if your company offers tuition assistance.</p>
+        <p class="text-left">At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal choice if your company offers tuition assistance.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md  text-stevens-gray-900 mb-2">Employer Tuition Reimbursement</p>
-          <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate is priced to fit perfectly within that benefit-potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
+          <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate fits perfectly within that benefit—potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
@@ -272,7 +272,7 @@ const programData = {
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },

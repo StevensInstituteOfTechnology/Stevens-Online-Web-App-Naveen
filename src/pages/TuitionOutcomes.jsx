@@ -56,8 +56,8 @@ export default function TuitionOutcomes() {
                  </p>
                  <Card className="bg-stevens-gray-50 border-stevens-gray-200 rounded-stevens-md">
                     <CardContent className="p-stevens-lg pt-stevens-lg text-center">
-                        <p className="text-stevens-gray-600 text-stevens-lg">2025-2026 Academic Year</p>
-                        <p className="font-stevens-display text-stevens-5xl font-stevens-bold text-stevens-primary my-stevens-sm">$1,993</p>
+                        <p className="text-stevens-gray-600 text-stevens-lg">Spring & Summer 2026</p>
+                        <p className="font-stevens-display text-stevens-5xl font-stevens-bold text-stevens-primary my-stevens-sm">$1,395</p>
                         <p className="text-stevens-gray-600 text-stevens-lg">per credit hour</p>
                         <p className="text-stevens-sm text-stevens-gray-500 mt-stevens-md">Most master's programs require 30 credits for completion. For detailed cost breakdowns and university fees, please visit the official Student Accounts page.</p>
                     </CardContent>
