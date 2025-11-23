@@ -636,7 +636,7 @@ const programData = {
   },
   tuition: {
     cards: [{ value: "$1,395", label: "Per Credit" }, { value: "$60", label: "Application Fee" }, { value: "$250", label: "Enrollment Deposit" }],
-    description: `<p>Tuition based on fall 2025 rates. Tuition and fees are subject to change annually.</p>`
+    description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`
   },
   events: {
     title: "On-Demand Content",
