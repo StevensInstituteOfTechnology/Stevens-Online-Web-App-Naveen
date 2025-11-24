@@ -185,7 +185,7 @@ const EmployerSponsorship = () => {
             <li><strong>Talent development:</strong> Build a more skilled workforce that fosters innovation and growth.</li>
             <li><strong>Higher recruitment and retention:</strong> Spend less time, money and effort recruiting new workers when you keep long-term employees.</li>
             <li><strong>Employee engagement:</strong> Keep employees interested through new challenges while allowing them to turn their passions into productivity at work.</li>
-            <li><strong>Competitive edge:</strong> Attract talent by offering a valuable incentive. Companies like <a href="https://careers.walmart.com/us/jobs/education" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Walmart</a>, <a href="https://www.mcdonalds.com/us/en-us/arch-golden-opportunities/archways-to-opportunity.html" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">McDonald's</a>, <a href="https://www.t-mobile.com/culture-and-careers/careers/education" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">T-Mobile</a> and <a href="https://www.aboutamazon.com/working-at-amazon/amazon-career-choice" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Amazon</a> help cover the cost of going back to school.</li>
+            <li><strong>Competitive edge:</strong> Attract talent by offering a valuable incentive. Companies like <a href="https://corporate.walmart.com/about/working-at-walmart/live-better-u" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Walmart</a>, <a href="https://www.archwaystoopportunity.com/tuition_assistance.html" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">McDonald's</a>, <a href="https://livemagenta.com/l3/Tuition-Assistance" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">T-Mobile</a> and <a href="https://hiring.amazon.com/why-amazon/career-advancement/higher-education-support" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Amazon</a> help cover the cost of going back to school.</li>
           </ul>
         </div>
       )
@@ -505,7 +505,8 @@ const EmployerSponsorship = () => {
         <div className="max-w-7xl mx-auto px-stevens-md text-left">
           <p className="text-stevens-sm text-stevens-gray-600">
             <sup>1</sup><a href="https://www.edassist.com/insights/employee-benefits-study-2018" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">EdAssist study, 2018.</a><br />
-            
+            <sup>2</sup><a href="https://www.luminafoundation.org/news-and-views/2016-04-22-cigna-education-reimbursement-program
+" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Lumina Foundation for Education, 2016.</a><br />
           </p>
         </div>
       </div>
