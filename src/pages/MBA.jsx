@@ -45,7 +45,7 @@ const programData = {
     title: "MBA Program Overview",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
     keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management", "Leader Development"],
-    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management", "AI"]
+    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management", "Artificial Intelligence"]
   },
   videoSection: {
     title: "Discover Your Future at Stevens",
@@ -481,10 +481,38 @@ const programData = {
                 </div>
               </div>
               
-              <!-- AI -->
+              <!-- Artificial Intelligence -->
               <div>
-                <h5 class="font-stevens-bold text-stevens-xl text-stevens-primary mb-stevens-lg">AI</h5>
-                
+                <h5 class="font-stevens-bold text-stevens-xl text-stevens-primary mb-stevens-lg">Artificial Intelligence</h5>
+                <div class="space-y-stevens-md">
+                  <div class="course-item">
+                    <button class="course-toggle" data-target="bia568">BIA 568 Managing AI of Technology (3)<span class="course-arrow">▼</span></button>
+                    <div class="course-content hidden" id="bia568">
+                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Artificial Intelligence (AI) is an interdisciplinary field that draws on insights from computer science, engineering, mathematics, statistics, linguistics, psychology, and neuroscience to design agents that can perceive the environment and act upon it. This course surveys applications of artificial intelligence to business and technology in the digital era, including autonomous transportation, fraud detection, machine translation, meeting scheduling, and face recognition. In each application area, the course focuses on issues related to management of AI projects, including fairness, accountability, transparency, ethics, and the law.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="course-item">
+                    <button class="course-toggle" data-target="mis637">MIS 637 Data Analytics and Machine Learning (3)<span class="course-arrow">▼</span></button>
+                    <div class="course-content hidden" id="mis637">
+                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course will focus on Data Mining & Knowledge Discovery Algorithms and their applications in solving real world business and operation problems. We concentrate on demonstrating how discovering the hidden knowledge in corporate databases will help managers to make near-real time intelligent business and operation decisions. The course will begin with an introduction to Data Mining and Knowledge Discovery in Databases. Methodological and practical aspects of knowledge discovery algorithms including: Data Preprocessing, k-Nearest Neighborhood algorithm, Machine Learning and Decision Trees, Artificial Neural Networks, Clustering, and Algorithm Evaluation Techniques will be covered. Practical examples and case studies will be present throughout the course.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="course-item">
+                    <button class="course-toggle" data-target="bia662">BIA 662 Augmented Intelligence and Generative AI (3)<span class="course-arrow">▼</span></button>
+                    <div class="course-content hidden" id="bia662">
+                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course explores the area of cognitive computing and its implications for today's world of big data analytics and evidence-based decision making. Topics covered as part of this seminar include: cognitive computing design principles, natural language processing, knowledge representation, advanced analytics, as well as IBM's Watson DeepQA and Google's TensorFlow deep learning architectures. Students will have an opportunity to build cognitive applications, as well as explore how knowledge-based artificial intelligence and deep learning are impacting the field of data science.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="course-item">
+                    <button class="course-toggle" data-target="bia667">BIA 667 Introduction to Deep Learning and Business Applications (3)<span class="course-arrow">▼</span></button>
+                    <div class="course-content hidden" id="bia667">
+                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course introduces fundamentals of deep learning with a focus on business applications to students in the School of Business, who, mostly, are beginners of this field. It starts with basic constructs of neural networks and progresses into widely used models including convolutional neural networks, recurrent networks, generative models, and reinforcement learning. Extensive hands-on experiments are provided in class or as assignments for students to practice each model, understand its applicable scenarios, and build practical skills. In addition, various successful deep learning business applications will be studied in this class. Moreover, the potential implications and risks of applying deep learning in the business world will be discussed, and relevant techniques to address such issues will be provided. The objective of this course is to provide students the fundamental concepts of deep learning and to build students' practical skills of applying deep learning to solve real business problems. Prerequisite course required MIS 637 <strong>or equivalent</strong> and BIA 660.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>`
       },
