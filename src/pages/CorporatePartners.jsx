@@ -37,6 +37,10 @@ import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 // Testimonials Carousel Component
 const TestimonialsCarousel = ({ testimonials }) => {
+ 
+  const buttonGradientLeft = 'linear-gradient(to right, rgba(107, 114, 128, 0.8) 0%, rgba(107, 114, 128, 0.4) 50%, transparent 100%)';
+  const buttonGradientRight = 'linear-gradient(to left, rgba(107, 114, 128, 0.8) 0%, rgba(107, 114, 128, 0.4) 50%, transparent 100%)';
+  
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -175,7 +179,7 @@ const TestimonialsCarousel = ({ testimonials }) => {
               onClick={scrollPrev}
               className="absolute left-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
               style={{
-                background: 'linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+                background: buttonGradientLeft
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -191,7 +195,7 @@ const TestimonialsCarousel = ({ testimonials }) => {
               onClick={scrollNext}
               className="absolute right-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
               style={{
-                background: 'linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+                background: buttonGradientRight
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
