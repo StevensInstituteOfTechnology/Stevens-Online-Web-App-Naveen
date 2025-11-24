@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useEmblaCarousel from 'embla-carousel-react';
 import { 
   ArrowRight, 
   TrendingUp, 
@@ -17,7 +18,9 @@ import {
   Lightbulb,
   Shield,
   DollarSign,
-  X
+  X,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import TopCompaniesSection from '@/components/shared/TopCompaniesSection';
@@ -31,6 +34,177 @@ import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl }
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
+
+// Testimonials Carousel Component
+const TestimonialsCarousel = ({ testimonials }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: true,
+    draggable: true,
+    loop: false,
+    skipSnaps: false,
+    slidesToScroll: 1
+  });
+
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const containerRef = useRef(null);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+    const index = emblaApi.selectedScrollSnap();
+    setSelectedIndex(index);
+  }, [emblaApi]);
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      scrollPrev();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      scrollNext();
+    }
+  }, [scrollPrev, scrollNext]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+      <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+        <div className="text-center mb-stevens-2xl">
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+            Success Stories from Our Partners
+          </h2>
+        </div>
+
+        {/* Carousel Container */}
+        <div 
+          className="relative group w-full overflow-hidden"
+          ref={containerRef}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="group"
+          aria-label="Success stories carousel. Use arrow keys to navigate."
+        >
+          {/* Embla Viewport */}
+          <div 
+            className="overflow-hidden py-6 w-full relative z-0" 
+            ref={emblaRef}
+            role="list"
+          >
+            <div className="flex gap-stevens-lg">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={index}
+                  className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
+                  style={{ minWidth: '300px' }}
+                  role="listitem"
+                  aria-label={`Testimonial ${index + 1} of ${testimonials.length}: ${testimonial.author}`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card className="h-full bg-stevens-white">
+                      <CardContent className="p-stevens-lg flex flex-col h-full">
+                        <div className="flex-grow">
+                          <div className="flex items-start mb-stevens-md">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-stevens-gold text-stevens-gold" />
+                            ))}
+                          </div>
+                          <blockquote className="text-stevens-gray-700 mb-stevens-lg italic">
+                            "{testimonial.quote}"
+                          </blockquote>
+                        </div>
+                        <div className="pt-stevens-md border-t border-stevens-gray-200">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <p className="font-stevens-medium text-stevens-gray-900">
+                                {testimonial.author}
+                              </p>
+                              <p className="text-stevens-sm text-stevens-gray-600">
+                                {testimonial.title}
+                              </p>
+                              <p className="text-stevens-sm text-stevens-gray-600">
+                                {testimonial.company}
+                              </p>
+                            </div>
+                            <img 
+                              src={testimonial.logo} 
+                              alt={testimonial.company}
+                              className="h-8 w-auto object-contain opacity-70"
+                            />
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Left Navigation Arrow */}
+          {canScrollPrev && (
+            <motion.button
+              onClick={scrollPrev}
+              className="absolute left-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
+              style={{
+                background: 'linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
+            </motion.button>
+          )}
+
+          {/* Right Navigation Arrow */}
+          {canScrollNext && (
+            <motion.button
+              onClick={scrollNext}
+              className="absolute right-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
+              style={{
+                background: 'linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)'
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
+            </motion.button>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const CorporatePartners = () => {
   usePageTracking({
@@ -210,6 +384,55 @@ const CorporatePartners = () => {
       title: "Chief People Officer",
       company: "Healthcare Leader",
       logo: "/assets/company_logo/johnson-and-johnson-logo.png"
+    },
+    {
+      quote: "The accelerated admissions process made it easy for our employees to get started. We've seen a 60% increase in program enrollment since partnering with Stevens.",
+      author: "David Rodriguez",
+      title: "Chief Learning Officer",
+      company: "Fortune 100 Technology",
+      logo: "/assets/company_logo/IBM_logo.svg.png"
+    },
+    {
+      quote: "Stevens' corporate care team provides exceptional support. They understand our business needs and tailor programs that drive real results.",
+      author: "Jennifer Park",
+      title: "Head of Talent Development",
+      company: "Leading Healthcare Provider",
+      logo: "/assets/company_logo/Merck_Logo.svg.png"
+    },
+    {
+      quote: "The stackable credential approach allows our employees to build skills incrementally while working full-time. It's been a game-changer for retention.",
+      author: "Robert Kim",
+      title: "VP of Human Resources",
+      company: "Global Consulting Firm",
+      logo: "/assets/company_logo/EY_logo_2019.svg.png"
+    },
+    {
+      quote: "We've partnered with many universities, but Stevens stands out for their responsiveness and ability to customize programs to our specific needs.",
+      author: "Amanda Williams",
+      title: "Director of Learning & Development",
+      company: "Major Financial Institution",
+      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png"
+    },
+    {
+      quote: "The ROI on our Stevens partnership exceeded expectations. Our employees are more engaged, and we've seen measurable improvements in key performance metrics.",
+      author: "James Martinez",
+      title: "Chief People Officer",
+      company: "Innovation Leader",
+      logo: "/assets/company_logo/Pfizer_(2021).png"
+    },
+    {
+      quote: "Stevens' online platform is intuitive and accessible. Our team members appreciate the flexibility to learn on their own schedule without sacrificing quality.",
+      author: "Patricia Lee",
+      title: "Senior VP of Talent",
+      company: "Healthcare Technology",
+      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png"
+    },
+    {
+      quote: "The faculty expertise and industry alignment of Stevens programs have directly contributed to our team's ability to tackle complex technical challenges.",
+      author: "Christopher Brown",
+      title: "Engineering Director",
+      company: "Enterprise Software Company",
+      logo: "/assets/company_logo/IBM_logo.svg.png"
     }
   ];
 
@@ -429,62 +652,7 @@ const CorporatePartners = () => {
         </section>
 
         {/* Success Stories / Testimonials */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                Success Stories from Our Partners
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-stevens-lg">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full bg-stevens-white">
-                    <CardContent className="p-stevens-lg flex flex-col h-full">
-                      <div className="flex-grow">
-                        <div className="flex items-start mb-stevens-md">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-stevens-gold text-stevens-gold" />
-                          ))}
-                        </div>
-                        <blockquote className="text-stevens-gray-700 mb-stevens-lg italic">
-                          "{testimonial.quote}"
-                        </blockquote>
-                      </div>
-                      <div className="pt-stevens-md border-t border-stevens-gray-200">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="font-stevens-medium text-stevens-gray-900">
-                              {testimonial.author}
-                            </p>
-                            <p className="text-stevens-sm text-stevens-gray-600">
-                              {testimonial.title}
-                            </p>
-                            <p className="text-stevens-sm text-stevens-gray-600">
-                              {testimonial.company}
-                            </p>
-                          </div>
-                          <img 
-                            src={testimonial.logo} 
-                            alt={testimonial.company}
-                            className="h-8 w-auto object-contain opacity-70"
-                          />
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TestimonialsCarousel testimonials={testimonials} />
 
         {/* FAQ Section */}
         <EmployerFaqSection accordionPrefix="corporate-partners" />
