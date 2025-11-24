@@ -20,6 +20,7 @@ const IMAGE_WIDTH_CONFIG = {
     '/events/1-event-scaled': [640, 800, 1024],
     '/corporate-partners/corporate-partners-1': [640, 1024, 1280, 1920],
     '/corporate-students/corporate-students-1': [400, 640, 800, 1024],
+    '/request-info/stevens-campus': [400, 640, 800, 1024],
   },
   // Content images with limited variants (400w, 640w only)
   content: {
