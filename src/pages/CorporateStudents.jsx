@@ -44,6 +44,7 @@ import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { PROGRAMS_DATA } from '@/data/programsData';
 import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/utils/discountCalculator';
 import { BOOKING_URLS } from '@/config/constants';
+import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
@@ -1378,6 +1379,9 @@ const CorporateStudents = () => {
               ))}</div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <EmployerFaqSection accordionPrefix="corporate-students" />
 
         {/* Final CTA Section */}
         <section id="contact" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white">

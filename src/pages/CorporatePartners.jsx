@@ -30,6 +30,7 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
+import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 const CorporatePartners = () => {
   usePageTracking({
@@ -484,6 +485,9 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <EmployerFaqSection accordionPrefix="corporate-partners" />
 
         {/* Final CTA Section */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white">
