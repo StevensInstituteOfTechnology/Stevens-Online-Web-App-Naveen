@@ -39,19 +39,19 @@ const programData = {
       { value: "Merit", label: "Scholarships Available", icon: Award }],
 
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>39–48 Credit Hours</li><li>13–16 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`
+    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`
   },
   overview: {
     title: "MBA Program Overview",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
-    keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management"],
-    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management"]
+    keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management", "Leader Development"],
+    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management", "AI"]
   },
   videoSection: {
     title: "Discover Your Future at Stevens",
     description: "Watch how Stevens Online transforms careers through innovative education, expert faculty, and flexible learning designed for working professionals.",
-    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
-    posterSrc: "/assets/videos/video-cover-2.avif",
+    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.avif",
     showControls: true,
     muted: true
   },
@@ -111,7 +111,7 @@ const programData = {
         icon: LineChart,
         courses: [
           { code: "BIA 500", title: "Business Analytics: Data, Models and Decisions" },
-          { code: "BIA 610", title: "Applied Analytics" },
+          { code: "BIA 568", title: "Managing AI of Technology" },
           { code: "BIA 672", title: "Marketing Analytics" },
           { code: "BIA 674", title: "Supply Chain Analytics" },
           { code: "BIA 658", title: "Social Network Analytics" }]
@@ -189,9 +189,9 @@ const programData = {
             </div>
             
             <div class="course-item">
-              <button class="course-toggle" data-target="bia610">BIA 610 Applied Analytics (3)<span class="course-arrow">▼</span></button>
-              <div class="course-content hidden" id="bia610">
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course is intended to integrate all previously taken courses in the program by presenting a set of increasingly complex business problems. These problems can be solved through analytic skills taught in this course and previous courses. In particular, the course is intended to reinforce the understanding of analysis as a way to build models that can focus attention on parts of the system that can be improved through intervention. The early part of the course uses synthetic data and empirical data readily available for analysis. The second part of the course encourages students to state and solve their own problem, gathering their own data as a part of the analytic process.</p>
+              <button class="course-toggle" data-target="bia568">BIA 568 Managing AI of Technology (3)<span class="course-arrow">▼</span></button>
+              <div class="course-content hidden" id="bia568">
+                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Artificial Intelligence (AI) is an interdisciplinary field that draws on insights from computer science, engineering, mathematics, statistics, linguistics, psychology, and neuroscience to design agents that can perceive the environment and act upon it. This course surveys applications of artificial intelligence to business and technology in the digital era, including autonomous transportation, fraud detection, machine translation, meeting scheduling, and face recognition. In each application area, the course focuses on issues related to management of AI projects, including fairness, accountability, transparency, ethics, and the law.</p>
               </div>
             </div>
           </div>
@@ -480,6 +480,12 @@ const programData = {
                   </div>
                 </div>
               </div>
+              
+              <!-- AI -->
+              <div>
+                <h5 class="font-stevens-bold text-stevens-xl text-stevens-primary mb-stevens-lg">AI</h5>
+                
+              </div>
             </div>`
       },
       immersions: {
@@ -693,7 +699,6 @@ const programData = {
     members: [
       { name: "Brian Rothschild", title: "Online MBA Program Director", image: "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.webp" },
       { name: "Pranav Garg, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.webp" },
-      { name: "Gary Lynn, Ph.D.", title: "Professor", image: "/assets/avatars/mba-avatar/gary-lynn-stevens-faculty-683x1024.webp" },
       { name: "Peter Dominick, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.webp" },
       { name: "Bei Yan, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.webp" },
       { name: "Alkiviadis Vazacopoulos, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.webp" },
