@@ -507,7 +507,7 @@ const programData = {
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on 2025 rates. Tuition and fees are subject to change annually.</p>
+        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       `
     },
     // ==================================================================
