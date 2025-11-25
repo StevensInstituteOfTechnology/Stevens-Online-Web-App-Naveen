@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
 import { 
@@ -23,8 +23,11 @@ import {
   Building,
   Calculator,
   X,
-  Quote
+  Quote,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import PageHero from '@/components/shared/PageHero';
 import ApplicationModal from '@/components/shared/ApplicationModal';
 import { Button } from '@/components/ui/button';
@@ -45,6 +48,175 @@ import { PROGRAMS_DATA } from '@/data/programsData';
 import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/utils/discountCalculator';
 import { BOOKING_URLS } from '@/config/constants';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
+
+const StudentSuccessCarousel = ({ stories }) => {
+  const buttonGradientLeft = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
+  const buttonGradientRight = 'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
+  
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+    dragFree: true,
+    loop: false,
+    slidesToScroll: 1
+  });
+  
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const containerRef = useRef(null);
+  
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+  
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
+  
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+  
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      scrollPrev();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      scrollNext();
+    }
+  }, [scrollPrev, scrollNext]);
+  
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    return () => {
+      emblaApi?.off('select', onSelect);
+      emblaApi?.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+  
+  return (
+    <section className="py-stevens-section bg-gradient-to-b from-stevens-gray-50 via-white to-stevens-gray-50">
+      <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+        <div className="text-center mb-stevens-3xl">
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-primary mb-stevens-lg">
+            Success Stories from Corporate-Sponsored Alumni
+          </h2>
+          <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Hear how working professionals balanced life, work, and Stevens Online to earn transformative outcomes powered by their employer benefits.
+          </p>
+        </div>
+        
+        <div
+          className="relative group w-full overflow-hidden"
+          ref={containerRef}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="region"
+          aria-label="Student success stories carousel. Use arrow keys to navigate."
+        >
+          <div
+            className="overflow-hidden py-8 w-full relative z-0"
+            ref={emblaRef}
+            role="list"
+          >
+            <div className="flex gap-stevens-xl rounded-stevens-xl ">
+              {stories.map((story, index) => {
+                const [leadSentence, ...restSentences] = story.quote.split('. ');
+                const leadText = restSentences.length ? `${leadSentence}.` : leadSentence;
+                const restBody = restSentences.join('. ');
+                const restText = restBody
+                  ? `${restBody}${restBody.trim().endsWith('.') ? '' : '.'}`
+                  : '';
+                
+                return (
+                  <div
+                    key={story.name}
+                    className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
+                    style={{ minWidth: '300px' }}
+                    role="listitem"
+                    aria-label={`Testimonial ${index + 1} of ${stories.length}: ${story.name}`}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Card className="h-full bg-[#F9FAFB] shadow-stevens-lg transition-all duration-300 hover:shadow-stevens-2xl hover:-translate-y-1 border border-stevens-gray-100/60 rounded-stevens-xl overflow-hidden">
+                        <CardContent className="p-stevens-xl flex flex-col h-full">
+                          <div className="flex-grow">
+                            <div className="-mx-stevens-xl -mt-stevens-xl mb-stevens-lg rounded-t-stevens-xl overflow-hidden h-[350px] w-[calc(100%+theme(spacing.stevens-xl)*2)]">
+                              <img
+                                src={story.image || '/assets/avatars/student-placeholder.webp'}
+                                alt={`${story.name} portrait`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            
+                            <blockquote className="mb-stevens-xl leading-relaxed">
+                              <span className="block text-stevens-xl md:text-stevens-2xl font-stevens-semibold text-stevens-primary mb-stevens-md leading-tight">
+                                {leadText}
+                              </span>
+                            </blockquote>
+                          </div>
+                          
+                          <div className="pt-stevens-lg mt-auto border-t-2 border-stevens-gray-100">
+                            <p className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs">{story.name}</p>
+                            <p className="text-stevens-xs text-stevens-gray-600 uppercase tracking-wide mb-stevens-sm">{story.company}</p>
+                            <p className="text-stevens-sm text-stevens-gray-500">
+                              Program: <span className="font-stevens-bold text-stevens-gray-900">{story.program}</span>
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {canScrollPrev && (
+            <div className="absolute inset-y-0 left-0 flex items-center pl-stevens-md pointer-events-none">
+              <motion.button
+                onClick={scrollPrev}
+                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
+                style={{ background: buttonGradientLeft }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Previous testimonials"
+              >
+                <ChevronLeft className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
+              </motion.button>
+            </div>
+          )}
+          
+          {canScrollNext && (
+            <div className="absolute inset-y-0 right-0 flex items-center pr-stevens-md pointer-events-none">
+              <motion.button
+                onClick={scrollNext}
+                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
+                style={{ background: buttonGradientRight }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Next testimonials"
+              >
+                <ChevronRight className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
+              </motion.button>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
@@ -208,7 +380,7 @@ const CorporateStudents = () => {
       program: "MS in Data Science & Engineering",
       quote: "Stevens' program helped me transition from analyst to manager in just 18 months. The corporate care team made balancing work and study seamless.",
       outcome: "Promoted twice, 40% salary increase",
-      image: "/assets/avatars/student-sarah.webp"
+      image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp"
     },
     {
       name: "James Chen",
@@ -217,7 +389,7 @@ const CorporateStudents = () => {
       program: "MS in Computer Science",
       quote: "The AI concentration perfectly aligned with my company's strategic direction. I'm now leading our machine learning initiatives.",
       outcome: "Leading AI initiatives, received innovation award",
-      image: "/assets/avatars/student-james.webp"
+      image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp"
     },
     {
       name: "Maria Rodriguez",
@@ -226,7 +398,7 @@ const CorporateStudents = () => {
       program: "Online MBA",
       quote: "The flexibility of Stevens Online allowed me to earn my MBA while working full-time. My company covered 100% of the tuition.",
       outcome: "Transitioned to product management, managing $10M portfolio",
-      image: "/assets/avatars/student-maria.webp"
+      image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp"
     }
   ];
 
@@ -1329,56 +1501,7 @@ const CorporateStudents = () => {
           </div>
         </section>
 
-        {/* Alumni Success Stories */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                Success Stories from Corporate-Sponsored Alumni
-              </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-                See how professionals like you leveraged their employer benefits to advance their careers.
-              </p>
-            </div>
-
-            {/* Success Stories Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg">
-              {successStories.map((story, index) => (
-                <Card key={index} className="h-full">
-                  <CardContent className="p-stevens-lg">
-                    <div className="space-y-stevens-md">
-                      <blockquote className="text-stevens-gray-700 italic">
-                        "{story.quote}"
-                      </blockquote>
-                      
-                      <div className="border-t pt-stevens-md">
-                        <p className="font-stevens-medium text-stevens-gray-900">
-                          {story.name}
-                        </p>
-                        <p className="text-stevens-sm text-stevens-gray-600">
-                          {story.title}
-                        </p>
-                        <p className="text-stevens-sm text-stevens-gray-600">
-                          {story.company}
-                        </p>
-                        <p className="text-stevens-sm text-stevens-primary font-stevens-medium mt-stevens-xs">
-                          {story.program}
-                        </p>
-                      </div>
-
-                      {story.outcome && (
-                        <div className="bg-stevens-gray-50 rounded p-stevens-sm">
-                          <p className="text-stevens-sm text-stevens-gray-700">
-                            <span className="font-stevens-medium">Outcome:</span> {story.outcome}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}</div>
-          </div>
-        </section>
+        <StudentSuccessCarousel stories={successStories} />
 
         {/* FAQ Section */}
         <EmployerFaqSection accordionPrefix="corporate-students" />

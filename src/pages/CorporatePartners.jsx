@@ -20,7 +20,8 @@ import {
   DollarSign,
   X,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Quote
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import TopCompaniesSection from '@/components/shared/TopCompaniesSection';
@@ -38,8 +39,8 @@ import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 // Testimonials Carousel Component
 const TestimonialsCarousel = ({ testimonials }) => {
  
-  const buttonGradientLeft = 'linear-gradient(to right, rgba(107, 114, 128, 0.8) 0%, rgba(107, 114, 128, 0.4) 50%, transparent 100%)';
-  const buttonGradientRight = 'linear-gradient(to left, rgba(107, 114, 128, 0.8) 0%, rgba(107, 114, 128, 0.4) 50%, transparent 100%)';
+  const buttonGradientLeft = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
+  const buttonGradientRight = 'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
   
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
@@ -95,12 +96,15 @@ const TestimonialsCarousel = ({ testimonials }) => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+    <section className="py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-gray-50 to-stevens-white">
       <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-        <div className="text-center mb-stevens-2xl">
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+        <div className="text-center mb-stevens-3xl">
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-primary mb-stevens-lg">
             Success Stories from Our Partners
           </h2>
+          <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Hear from industry leaders who've transformed their workforce through partnership with Stevens Online
+          </p>
         </div>
 
         {/* Carousel Container */}
@@ -114,95 +118,118 @@ const TestimonialsCarousel = ({ testimonials }) => {
         >
           {/* Embla Viewport */}
           <div 
-            className="overflow-hidden py-6 w-full relative z-0" 
+            className="overflow-hidden py-8 w-full relative z-0" 
             ref={emblaRef}
             role="list"
           >
-            <div className="flex gap-stevens-lg">
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
-                  style={{ minWidth: '300px' }}
-                  role="listitem"
-                  aria-label={`Testimonial ${index + 1} of ${testimonials.length}: ${testimonial.author}`}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+            <div className="flex gap-stevens-xl">
+              {testimonials.map((testimonial, index) => {
+                const [leadSentence, ...restSentences] = testimonial.quote.split('. ');
+                const leadText = restSentences.length ? `${leadSentence}.` : leadSentence;
+                const restBody = restSentences.join('. ');
+                const restText = restBody
+                  ? `${restBody}${restBody.trim().endsWith('.') ? '' : '.'}`
+                  : '';
+                
+                return (
+                  <div 
+                    key={index}
+                    className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
+                    style={{ minWidth: '300px' }}
+                    role="listitem"
+                    aria-label={`Testimonial ${index + 1} of ${testimonials.length}: ${testimonial.author}`}
                   >
-                    <Card className="h-full bg-stevens-white">
-                      <CardContent className="p-stevens-lg flex flex-col h-full">
-                        <div className="flex-grow">
-                          <div className="flex items-start mb-stevens-md">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-stevens-gold text-stevens-gold" />
-                            ))}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Card className="h-full bg-[#F9FAFB] shadow-stevens-lg transition-all duration-300 hover:shadow-stevens-2xl hover:-translate-y-1 border border-stevens-gray-100/50 rounded-stevens-xl overflow-hidden">
+                        <CardContent className="p-stevens-xl flex flex-col h-full">
+                          <div className="flex-grow">
+                            <div className="mb-stevens-lg">
+                              <Quote className="w-12 h-12 text-stevens-primary/20" />
+                            </div>
+                            <blockquote className="mb-stevens-xl leading-relaxed">
+                              <span className="block text-stevens-xl md:text-stevens-2xl font-stevens-semibold text-stevens-primary mb-stevens-md leading-tight">
+                                {leadText}
+                              </span>
+                              {restText && (
+                                <span className="text-stevens-base md:text-stevens-lg text-stevens-gray-600 leading-relaxed">
+                                  {restText}
+                                </span>
+                              )}
+                            </blockquote>
                           </div>
-                          <blockquote className="text-stevens-gray-700 mb-stevens-lg italic">
-                            "{testimonial.quote}"
-                          </blockquote>
-                        </div>
-                        <div className="pt-stevens-md border-t border-stevens-gray-200">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <p className="font-stevens-medium text-stevens-gray-900">
+                        <div className="pt-stevens-lg mt-auto border-t-2 border-stevens-gray-100">
+                          <div className="flex w-full items-center gap-stevens-lg">
+                            <div className="basis-1/2">
+                              <p className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs">
                                 {testimonial.author}
                               </p>
-                              <p className="text-stevens-sm text-stevens-gray-600">
+                              <p className="text-stevens-sm text-stevens-gray-600 leading-snug mb-stevens-xs">
                                 {testimonial.title}
                               </p>
-                              <p className="text-stevens-sm text-stevens-gray-600">
+                              <p className="text-stevens-sm text-stevens-gray-500 font-stevens-medium">
                                 {testimonial.company}
                               </p>
                             </div>
-                            <img 
-                              src={testimonial.logo} 
-                              alt={testimonial.company}
-                              className="h-8 w-auto object-contain opacity-70"
-                            />
+                            <div className="basis-1/2 flex justify-center items-center">
+                              <div className="bg-stevens-gray-50/50 rounded-stevens-md p-stevens-md flex items-center justify-center min-h-[60px]">
+                                <img 
+                                  src={testimonial.logo} 
+                                  alt={testimonial.company}
+                                  className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </motion.div>
                 </div>
-              ))}
+              );
+            })}
             </div>
           </div>
 
           {/* Left Navigation Arrow */}
           {canScrollPrev && (
-            <motion.button
-              onClick={scrollPrev}
-              className="absolute left-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
-              style={{
-                background: buttonGradientLeft
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Previous testimonials"
-            >
-              <ChevronLeft className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
-            </motion.button>
+            <div className="absolute inset-y-0 left-0 flex items-center pl-stevens-md pointer-events-none">
+              <motion.button
+                onClick={scrollPrev}
+                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
+                style={{
+                  background: buttonGradientLeft
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Previous testimonials"
+              >
+                <ChevronLeft className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
+              </motion.button>
+            </div>
           )}
 
           {/* Right Navigation Arrow */}
           {canScrollNext && (
-            <motion.button
-              onClick={scrollNext}
-              className="absolute right-0 top-0 bottom-0 z-[100] w-16 flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-100 cursor-pointer"
-              style={{
-                background: buttonGradientRight
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Next testimonials"
-            >
-              <ChevronRight className="w-10 h-10 text-white drop-shadow-lg" aria-hidden="true" />
-            </motion.button>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-stevens-md pointer-events-none">
+              <motion.button
+                onClick={scrollNext}
+                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
+                style={{
+                  background: buttonGradientRight
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Next testimonials"
+              >
+                <ChevronRight className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
+              </motion.button>
+            </div>
           )}
         </div>
       </div>
@@ -372,71 +399,65 @@ const CorporatePartners = () => {
       quote: "Stevens' flexible online programs have been instrumental in helping our engineers stay ahead of technology trends while maintaining their work responsibilities.",
       author: "Sarah Johnson",
       title: "L&D Director",
-      company: "Tech Fortune 500",
-      logo: "/assets/company_logo/pfizer-logo.png"
+      company: "Pfizer",
+      logo: "/assets/company_logo/Pfizer_(2021).png"
     },
     {
       quote: "The customized learning pathways Stevens created for our data science team directly aligned with our business objectives and delivered immediate ROI.",
       author: "Michael Chen",
       title: "VP of Talent Development",
-      company: "Global Financial Services",
-      logo: "/assets/company_logo/jpmorgan-logo.png"
+      company: "JPMorgan Chase",
+      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png"
     },
     {
       quote: "Our partnership with Stevens has reduced turnover by 40% and created a culture of continuous learning within our organization.",
       author: "Lisa Thompson",
       title: "Chief People Officer",
-      company: "Healthcare Leader",
-      logo: "/assets/company_logo/johnson-and-johnson-logo.png"
+      company: "Johnson & Johnson",
+      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png"
     },
     {
       quote: "The accelerated admissions process made it easy for our employees to get started. We've seen a 60% increase in program enrollment since partnering with Stevens.",
       author: "David Rodriguez",
       title: "Chief Learning Officer",
-      company: "Fortune 100 Technology",
+      company: "IBM",
       logo: "/assets/company_logo/IBM_logo.svg.png"
     },
     {
       quote: "Stevens' corporate care team provides exceptional support. They understand our business needs and tailor programs that drive real results.",
       author: "Jennifer Park",
       title: "Head of Talent Development",
-      company: "Leading Healthcare Provider",
+      company: "Merck",
       logo: "/assets/company_logo/Merck_Logo.svg.png"
     },
-    {
-      quote: "The stackable credential approach allows our employees to build skills incrementally while working full-time. It's been a game-changer for retention.",
-      author: "Robert Kim",
-      title: "VP of Human Resources",
-      company: "Global Consulting Firm",
-      logo: "/assets/company_logo/EY_logo_2019.svg.png"
-    },
+    
     {
       quote: "We've partnered with many universities, but Stevens stands out for their responsiveness and ability to customize programs to our specific needs.",
       author: "Amanda Williams",
       title: "Director of Learning & Development",
-      company: "Major Financial Institution",
-      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png"
+      company: "Deloitte",
+      logo: "/assets/company_logo/Logo_of_Deloitte.svg.png"
     },
     {
       quote: "The ROI on our Stevens partnership exceeded expectations. Our employees are more engaged, and we've seen measurable improvements in key performance metrics.",
       author: "James Martinez",
       title: "Chief People Officer",
-      company: "Innovation Leader",
-      logo: "/assets/company_logo/Pfizer_(2021).png"
+      company: "Amazon",
+      logo: "/assets/company_logo/Amazon_logo.svg.webp"
     },
     {
       quote: "Stevens' online platform is intuitive and accessible. Our team members appreciate the flexibility to learn on their own schedule without sacrificing quality.",
       author: "Patricia Lee",
       title: "Senior VP of Talent",
-      company: "Healthcare Technology",
-      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png"
+      company: "Microsoft",
+      logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png"
     },
     {
       quote: "The faculty expertise and industry alignment of Stevens programs have directly contributed to our team's ability to tackle complex technical challenges.",
       author: "Christopher Brown",
       title: "Engineering Director",
-      company: "Enterprise Software Company",
-      logo: "/assets/company_logo/IBM_logo.svg.png"
+      company: "Accenture",
+      logo: "/assets/company_logo/Accenture_logo.svg.png"
     }
   ];
 
