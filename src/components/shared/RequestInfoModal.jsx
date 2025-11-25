@@ -9,8 +9,9 @@ import { trackEvent } from '@/utils/analytics/vercelTracking';
  * @param {Function} onClose - Close handler
  * @param {string} sourcePage - Source page identifier for tracking
  * @param {string} programOfInterest - Program code for pre-filling form
+ * @param {Object} additionalUrlParams - Additional URL parameters for the form
  */
-export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '' }) {
+export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '', additionalUrlParams = {} }) {
   const [mountKey, setMountKey] = useState(0);
   const modalOpenTime = useRef(null);
   const hasTrackedOpen = useRef(false);
@@ -114,6 +115,7 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
               subtitle="An admissions advisor will contact you shortly."
               sourcePage={sourcePage}
               programOfInterest={programOfInterest}
+              additionalUrlParams={additionalUrlParams}
               hideHeader={true}
             />
           </div>

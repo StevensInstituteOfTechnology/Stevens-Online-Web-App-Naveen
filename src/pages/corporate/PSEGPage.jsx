@@ -47,15 +47,15 @@ export default function PSEGPage() {
             title: "M.Eng. in Applied Data Science",
             description: "Master data analysis and application.",
             exploreLink: "/online-masters-engineering-applied-data-science/",
-            applyLink: "/accelerated-application/?program=meads&corporate_code=P01S02G",
+            applyLink: "/accelerated-application/?program=meads&corporate_code=P01S04G",
             useModal: false
         }
     ];
 
     const formConfig = {
-        mode: "PSEG",
+        mode: "PSEG-select-online",
         campaignUrl: "/pseg-spo-inquiry",
-        corporateCode: "P01S02G",
+        corporateCode: "P01S04G",
         programCode: "" // No specific program, multiple options
     };
 
@@ -99,7 +99,6 @@ export default function PSEGPage() {
             content: "<p>As a PSEG employee, you have access to a private cohort for these four online master's programs. This exclusive opportunity allows you to advance your education with the support of your organization.</p>",
             items: [
                 "100% Online delivery for maximum flexibility",
-                "Direct billing to PSEG (Zero out-of-pocket cost for eligible students)",
                 "No application fee",
                 "Streamlined application process"
             ]
@@ -111,25 +110,23 @@ export default function PSEGPage() {
         <ul class="list-disc pl-5 mt-2 space-y-1">
             <li>Most programs use the standard Stevens application process.</li>
             <li>MEADS offers an accelerated application option with simplified requirements.</li>
-            <li>Your enrollment advisor will provide the cohort code <strong>P01S02G</strong> to include with your application.</li>
+            <li>Your cohort code is <strong>P01S04G</strong> to include with your application.</li>
         </ul>
       `
         },
         {
             title: "Corporate Partnership Details",
             content: `
-        <p>This landing page is hidden and only accessible to PSEG employees through the direct URL. Please do not share outside of the company.</p>
-        <p class="mt-3">Your application will be automatically tagged as part of the PSEG cohort when you use the links on this page.</p>
+        <p>This landing page is only for PSEG employees and only accessible through the direct URL. Please do not share outside of the company.</p>
       `
         }
     ];
 
     const pricing = {
         items: [
-            { label: "Tuition Rate", value: "$583", note: "Per Credit Hour" },
-            { label: "Student Cost", value: "$0", note: "Billed directly to PSEG" }
-        ],
-        description: "This private cohort pricing is billed directly to PSEG, resulting in zero out-of-pocket tuition cost for approved employees."
+            { label: "Tuition Rate", value: "$583", note: "Per Credit Hour" }
+            ],
+        description: "This is a private cohort for PSEG employees."
     };
 
     return (

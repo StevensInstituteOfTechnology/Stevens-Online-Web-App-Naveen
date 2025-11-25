@@ -211,11 +211,6 @@ export default function CorporateLandingPageTemplate({
                                                     corporate_code: formConfig.corporateCode
                                                 }}
                                             />
-                                            <div className="mt-4 text-center">
-                                                <p className="text-xs text-gray-500">
-                                                    Corporate Code: <span className="font-mono font-bold text-gray-700">{formConfig.corporateCode}</span>
-                                                </p>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -234,6 +229,10 @@ export default function CorporateLandingPageTemplate({
             onClose={() => setIsRFIModalOpen(false)}
             sourcePage={`corporate-${partnerName.toLowerCase()}`}
             programOfInterest={formConfig.programCode || ''}
+            additionalUrlParams={{
+                mode: formConfig.mode,
+                utm_campaign: formConfig.campaignUrl
+            }}
         />
         </>
     );

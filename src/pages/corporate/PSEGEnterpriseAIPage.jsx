@@ -50,8 +50,7 @@ export default function PSEGEnterpriseAIPage() {
         <ul class="list-disc pl-5 mt-2 space-y-1">
             <li>No letters of recommendation required</li>
             <li>Upload unofficial transcripts to begin</li>
-            <li>Official transcripts due within the first two months of study</li>
-            <li>Use corporate code <strong>P01S02G</strong> when applying</li>
+            <li>Official transcripts due within the <strong>2 months</strong> of enrollment</li>
         </ul>
       `
         }
@@ -59,11 +58,10 @@ export default function PSEGEnterpriseAIPage() {
 
     const pricing = {
         items: [
-            { label: "Total Program Cost", value: "$5,250", note: "9 Credit Hours" },
-            { label: "Per Credit Rate", value: "$583", note: "Same as PSEG master's cohort rate" },
-            { label: "Student Cost", value: "$0", note: "Billed directly to PSEG" }
+            { label: "Program Sponsorship", value: "100% Sponsored", note: "Fully covered by PSEG" },
+            { label: "Employee Cost", value: "$0", note: "Zero out-of-pocket expenses" }
         ],
-        description: "This private cohort pricing is billed directly to PSEG, resulting in zero out-of-pocket tuition cost for approved employees. All credits earned can stack into OMBA or MEADS programs."
+        description: "This Professional Graduate Certificate in Enterprise AI is a fully sponsored program for eligible PSEG employees. All tuition, fees, and course materials are covered by PSEG. All 9 credits earned can stack into OMBA or MEADS programs."
     };
 
     return (

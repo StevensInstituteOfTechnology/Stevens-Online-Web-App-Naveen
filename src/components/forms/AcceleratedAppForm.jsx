@@ -36,8 +36,17 @@ export default function AcceleratedAppForm({
     `;
     
     // Build URL with parameters
+    // Convert 'mode' to 'display_mode' if present, similar to LeadCaptureForm
     const baseUrl = `https://gradadmissions.stevens.edu/register/?id=${rawId}&output=embed&div=${formId}`;
     const params = new URLSearchParams(additionalUrlParams);
+    
+    // Rename 'mode' to 'display_mode' if present
+    if (params.has('mode')) {
+      const modeValue = params.get('mode');
+      params.delete('mode');
+      params.set('display_mode', modeValue);
+    }
+    
     const scriptSrc = `${baseUrl}&${params.toString()}`;
 
     const script = document.createElement('script');
