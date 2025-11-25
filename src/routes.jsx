@@ -34,6 +34,10 @@ import OnlineExperience from "@/pages/OnlineExperience";
 import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import Admissions from "@/pages/Admissions";
 import EmployerSponsorship from "@/pages/EmployerSponsorship";
+
+import SiemensPage from "@/pages/corporate/SiemensPage";
+import PSEGPage from "@/pages/corporate/PSEGPage";
+import PSEGEnterpriseAIPage from "@/pages/corporate/PSEGEnterpriseAIPage";
 // import CorporatePartners from "@/pages/CorporatePartners";
 // import CorporateStudents from "@/pages/CorporateStudents";
 import NotFound from "@/pages/NotFound";
@@ -47,7 +51,7 @@ function BlogNoSlashRedirect() {
 // Generate blog routes dynamically
 const generateBlogRoutes = () => {
   const routes = [];
-  
+
   // Main blog listing
   routes.push({
     path: '/blog/',
@@ -72,13 +76,13 @@ const generateBlogRoutes = () => {
 // Generate topic/category routes dynamically
 const generateTopicRoutes = () => {
   const routes = [];
-  
+
   // Engineering Essentials topic routes
   routes.push({
     path: '/topics/engineering-essentials/',
     element: <EngineeringEssentials />
   });
-  
+
   routes.push({
     path: '/topics/engineering-essentials/:slug/',
     element: <EngineeringEssentials />
@@ -89,7 +93,7 @@ const generateTopicRoutes = () => {
     path: '/topics/mastering-computer-science/',
     element: <MasteringComputerScience />
   });
-  
+
   routes.push({
     path: '/topics/mastering-computer-science/:slug/',
     element: <MasteringComputerScience />
@@ -100,7 +104,7 @@ const generateTopicRoutes = () => {
     path: '/topics/online-mba-success/',
     element: <OnlineMBASuccess />
   });
-  
+
   routes.push({
     path: '/topics/online-mba-success/:slug/',
     element: <OnlineMBASuccess />
@@ -111,7 +115,7 @@ const generateTopicRoutes = () => {
     path: '/topics/uncategorized/',
     element: <OtherPrograms />
   });
-  
+
   routes.push({
     path: '/topics/uncategorized/:slug/',
     element: <OtherPrograms />
@@ -351,6 +355,38 @@ export const routes = [
   },
 
   // Corporate Partnership Pages
+  {
+    path: '/siemens-pgcsef/',
+    element: <SiemensPage />
+  },
+  {
+    path: '/siemens-pgcsef',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
+    path: '/siemens/',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
+    path: '/siemens',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
+    path: '/pseg-inquiry/',
+    element: <PSEGPage />
+  },
+  {
+    path: '/pseg-inquiry',
+    element: <Navigate to="/pseg-inquiry/" replace />
+  },
+  {
+    path: '/pseg-pgceai/',
+    element: <PSEGEnterpriseAIPage />
+  },
+  {
+    path: '/pseg-pgceai',
+    element: <Navigate to="/pseg-pgceai/" replace />
+  },
   // {
   //   path: '/corporate-partners/',
   //   element: <CorporatePartners />
@@ -389,7 +425,7 @@ export const routes = [
     path: '/explore/ai-masters-computer-science/',
     element: <ExploreMSAI />
   },
-  
+
   // Explore certificate pages
   {
     path: '/explore/certificates/enterprise-ai/',
@@ -399,13 +435,13 @@ export const routes = [
     path: '/explore/certificates/applied-data-science-foundations/',
     element: <ExploreCertAppliedDataScience />
   },
-  
+
   // 404 Not Found page
   {
     path: '/page-not-found/',
     element: <NotFound />
   },
-  
+
   // Catch-all route - must be last
   {
     path: '*',

@@ -58,6 +58,21 @@ export default function PageHero({
       }
     };
 
+    // If CTA has an onClick handler, use it (for modals, custom actions, etc.)
+    if (cta.onClick) {
+      return (
+        <button 
+          onClick={() => {
+            handleClick();
+            cta.onClick();
+          }}
+          className={className}
+        >
+          {cta.label}
+        </button>
+      );
+    }
+
     // If this is the primary CTA and useRequestInfoModal is true, trigger modal instead
     if (variant === 'primary' && useRequestInfoModal) {
       return (

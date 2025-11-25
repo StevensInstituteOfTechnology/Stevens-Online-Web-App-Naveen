@@ -15,7 +15,8 @@ export default function LeadCaptureForm({
   programOfInterest = "",
   useModal = false,
   triggerLabel = "Request Info",
-  hideHeader = false // New prop to hide header when used in modal
+  hideHeader = false, // New prop to hide header when used in modal
+  additionalUrlParams = {} // New prop for custom URL parameters (mode, utm, etc.)
 }) {
   const [open, setOpen] = useState(false);
   const programContext = useProgramContext();
@@ -36,26 +37,35 @@ export default function LeadCaptureForm({
 
     // Only run on client side
     if (typeof document === 'undefined') return;
-    
+
     // Create the script element
     const script = document.createElement('script');
     script.id = `stevens-inquiry-form-script-${sourcePage}-${Date.now()}`;
     script.async = true;
-    
+
     // Build the script URL with current page parameters
-    // Use centralized form ID constant
+    // Use centralized form ID constant - extract the UUID from the form ID
     const formId = FORM_IDS.RFI;
-    const baseUrl = `https://gradadmissions.stevens.edu/register/?id=f55a243b-abd6-45ea-8ff2-cd7f7af4d532&output=embed&div=${formId}`;
+    const formUuid = formId.replace('form_', ''); // Extract UUID from 'form_XXXX' format
+    const baseUrl = `https://gradadmissions.stevens.edu/register/?id=${formUuid}&output=embed&div=${formId}`;
     const currentParams = location.search.length > 1 ? '&' + location.search.substring(1) : '';
-    
-    // Add source page and program interest as URL parameters
-    const additionalParams = new URLSearchParams({
-        source_page: sourcePage,
-      ...(programOfInterest && { program_interest: programOfInterest })
+
+    // Rename 'mode' to 'display_mode' if present in additionalUrlParams
+    // But DO NOT mutate additionalUrlParams directly as it's a dependency
+    const finalAdditionalParams = new URLSearchParams({
+      source_page: sourcePage,
+      ...(programOfInterest && { program_interest: programOfInterest }),
+      ...additionalUrlParams
     });
-    
-    script.src = `${baseUrl}${currentParams}&${additionalParams.toString()}`;
-    
+
+    if (finalAdditionalParams.has('mode')) {
+      const modeValue = finalAdditionalParams.get('mode');
+      finalAdditionalParams.delete('mode');
+      finalAdditionalParams.set('display_mode', modeValue);
+    }
+
+    script.src = `${baseUrl}${currentParams}&${finalAdditionalParams.toString()}`;
+
     // Track form submission when iframe loads successfully and user submits
     script.onload = () => {
       // Track form loaded successfully
@@ -72,7 +82,7 @@ export default function LeadCaptureForm({
         if (event.data && (event.data.type === 'form-submit' || event.data.status === 'success')) {
           // GTM tracking
           trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
-          
+
           // Vercel tracking with full context
           trackEvent('rfi_form_submitted', {
             form_name: 'request_info',
@@ -84,19 +94,26 @@ export default function LeadCaptureForm({
         }
       };
       window.addEventListener('message', handleMessage);
-      
+
       // Alternative: Listen for form submission on the embedded form
       setTimeout(() => {
         const formContainer = document.getElementById(FORM_IDS.RFI);
         if (formContainer) {
           const forms = formContainer.querySelectorAll('form');
           forms.forEach(form => {
-            form.addEventListener('submit', () => {
+            // Add data attribute to mark this as RFI form
+            form.setAttribute('data-form-type', 'rfi');
+            
+            // Stop propagation to prevent interference with other forms
+            const submitHandler = (e) => {
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              
               // Track after a short delay to ensure submission went through
               setTimeout(() => {
                 // GTM tracking
                 trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
-                
+
                 // Vercel tracking
                 trackEvent('rfi_form_submitted', {
                   form_name: 'request_info',
@@ -106,19 +123,21 @@ export default function LeadCaptureForm({
                   is_conversion: true
                 });
               }, 500);
-            });
+            };
+            
+            form.addEventListener('submit', submitHandler, true); // Use capture phase
           });
         }
       }, 2000);
     };
-    
+
     // Track script load start time
     script.dataset.loadStart = Date.now().toString();
-    
+
     // Insert the script
     const firstScript = document.getElementsByTagName('script')[0];
     firstScript.parentNode.insertBefore(script, firstScript);
-    
+
     // Cleanup function
     return () => {
       if (script && script.parentNode) {
@@ -130,7 +149,7 @@ export default function LeadCaptureForm({
         formContainer.innerHTML = '';
       }
     };
-  }, [sourcePage, programOfInterest]);
+  }, [sourcePage, programOfInterest, JSON.stringify(additionalUrlParams)]);
 
   const FormCard = (
     <Card className={`w-full max-w-sm sm:max-w-md mx-auto shadow-stevens-xl rounded-stevens-lg overflow-hidden ${hideHeader ? 'shadow-none border-0' : ''}`}>
@@ -144,12 +163,12 @@ export default function LeadCaptureForm({
         <div className="relative">
           {/* Form styles are now in src/styles/form-overrides.css */}
           {/* Supports all form IDs: RFI, ASAP, Accelerated */}
-          
+
           <div className="bg-stevens-white text-stevens-gray-900">
             <div
               id={FORM_IDS.RFI}
               className="min-h-[320px] w-full">
-              
+
               {/* Loading state */}
               <div className="flex items-center justify-center py-12">
                 <div className="text-center">
