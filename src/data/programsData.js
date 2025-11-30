@@ -40,13 +40,13 @@ export const PROGRAMS_DATA = [
     shortName: 'M.Eng. Engineering Management',
     degree: 'M.Eng.',
     tagline: 'Built for Engineers Who Want to Lead',
-    description: 'Bridge technology and business leadership with our ABET-accredited program. Advance your engineering career with strategic management skills.',
+    description: 'Bridge technology and business leadership in this program designed for working engineers. Advance your engineering career with strategic management skills.',
     image: '/assets/images/explore-mem/1-explore-mem.webp',
     highlights: [
-      'ABET Accredited',
       '100% Online',
       'No GRE Required',
-      'Top 20 for Career Placement'
+      'Top 20 for Career Placement',
+      '#6 in the Nation'
     ],
     applicationConfig: {
       type: 'modal',

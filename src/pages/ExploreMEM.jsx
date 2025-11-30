@@ -33,9 +33,9 @@ const ExploreMEM = () => {
     useApplicationModal: true,
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
-      { text: "ABET Accredited", icon: Award },
       { text: "100% Online", icon: Globe },
-      { text: "No GRE Required", icon: Star }
+      { text: "No GRE Required", icon: Star },
+      { text: "#6 in the Nation", icon: Award }
     ],
     
     // Statistics
