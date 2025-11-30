@@ -61,11 +61,11 @@ const programData = {
     ]
   },
   rankings: [
-    { ranking: "#6", description: "In the Nation", source: "U.S. News & World Report, Best Online Master's in Industrial Engineering Program (2025)." },
-    { ranking: "#15", description: "For Best Value", source: "Payscale (2024)" },
-    { ranking: "Top 20", description: "For Best Career Placement", source: "The Princeton Review (2024)" },
-    { ranking: "100%", description: "Employment", source: "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers." },
-    { ranking: "#1", description: "In N.J.", source: "U.S. News & World Report, Online Master’s in Engineering Program at a N.J. school (2022)." },
+    { ranking: "No. 6", description: "In the Nation", source: "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025)." },
+    { ranking: "No. 15", description: "For Best Value", source: "Ranks No. 15 among \"Best Value Colleges\" By Payscale (2024)." },
+    { ranking: "Top 20", description: "For Best Career Placement", source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)." },
+    { ranking: "100%", description: "Employment", source: "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers.¹" },
+    { ranking: "No. 1", description: "In N.J.", source: "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022)." },
   ],
   career: {
     description: `
