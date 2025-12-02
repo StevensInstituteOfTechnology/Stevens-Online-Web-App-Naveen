@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import PageHero from "../components/shared/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BOOKING_URLS } from "@/config/constants";
+import { BOOKING_URLS, KEY_DATES } from "@/config/constants";
 import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
