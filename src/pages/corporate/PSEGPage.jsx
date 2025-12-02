@@ -49,6 +49,24 @@ export default function PSEGPage() {
             exploreLink: "/online-masters-engineering-applied-data-science/",
             applyLink: "/accelerated-application/?program=meads&corporate_code=P01S04G",
             useModal: false
+        },
+        {
+            code: "cert-eai",
+            title: "Certificate in Enterprise AI",
+            description: "Master AI implementation and strategy for enterprise environments.",
+            exploreLink: "/certificates/enterprise-ai/",
+            applyLink: "/accelerated-application/?program=pgc-eai&corporate_code=P01S04G",
+            useModal: false,
+            isCertificate: true
+        },
+        {
+            code: "cert-ads",
+            title: "Certificate in Applied Data Science",
+            description: "Build foundational skills in data science and analytics.",
+            exploreLink: "/certificates/applied-data-science-foundations/",
+            applyLink: "/accelerated-application/?program=pgc-ads&corporate_code=P01S04G",
+            useModal: false,
+            isCertificate: true
         }
     ];
 

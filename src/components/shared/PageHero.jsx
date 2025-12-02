@@ -37,8 +37,8 @@ export default function PageHero({
   const renderCta = (cta, variant = 'primary') => {
     if (!cta || !cta.label) return null;
     const className = variant === 'primary'
-      ? 'btn-stevens-primary w-full sm:w-auto'
-      : 'btn-stevens-secondary w-full sm:w-auto';
+      ? 'btn-stevens-primary w-full sm:w-auto text-[1.3em] px-[31px] py-[21px] min-h-[57px]'
+      : 'btn-stevens-secondary w-full sm:w-auto text-[1.3em] px-[31px] py-[21px] min-h-[57px]';
 
     // Determine conversion label based on variant and label
     const getConversionLabel = () => {
