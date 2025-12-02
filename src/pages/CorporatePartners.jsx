@@ -237,6 +237,313 @@ const TestimonialsCarousel = ({ testimonials }) => {
   );
 };
 
+// Animated Stat Value Component (V4)
+const AnimatedStatValue = ({ value, delay = 0 }) => {
+  const parseValue = (val) => {
+    if (val.startsWith('#')) return { number: 1, prefix: '#', suffix: '', isSpecial: true };
+    if (val.includes('%')) {
+      const num = parseInt(val.replace('%', ''));
+      return { number: num, prefix: '', suffix: '%', isPercentage: true };
+    }
+    if (val.includes('$')) {
+      const num = parseInt(val.replace(/[$,]/g, ''));
+      return { number: num, prefix: '$', suffix: '', isCurrency: true };
+    }
+    return { number: parseInt(val) || 0, prefix: '', suffix: '' };
+  };
+
+  const { number, prefix, suffix, isSpecial, isPercentage, isCurrency } = parseValue(value);
+  const [displayValue, setDisplayValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (hasAnimated || isSpecial) {
+      setDisplayValue(number);
+      setHasAnimated(true);
+      return;
+    }
+    
+    const duration = 2000;
+    const steps = 60;
+    const increment = number / steps;
+    const stepDuration = duration / steps;
+    
+    let current = 0;
+    let interval;
+    
+    const timer = setTimeout(() => {
+      interval = setInterval(() => {
+        current += increment;
+        if (current >= number) {
+          setDisplayValue(number);
+          clearInterval(interval);
+          setHasAnimated(true);
+        } else {
+          setDisplayValue(Math.floor(current));
+        }
+      }, stepDuration);
+    }, delay * 100);
+
+    return () => {
+      clearTimeout(timer);
+      if (interval) clearInterval(interval);
+    };
+  }, [number, hasAnimated, isSpecial, delay]);
+
+  if (isSpecial) {
+    return (
+      <span>
+        <span className="text-white/90">#</span>
+        <span className="text-white">1</span>
+      </span>
+    );
+  }
+
+  if (isPercentage) {
+    return (
+      <span>
+        <span className="text-white">{displayValue}</span>
+        <span className="text-white/80 text-stevens-3xl md:text-stevens-4xl">%</span>
+      </span>
+    );
+  }
+
+  if (isCurrency) {
+    return (
+      <span>
+        <span className="text-white/90">$</span>
+        <span className="text-white">{displayValue.toLocaleString()}</span>
+      </span>
+    );
+  }
+
+  return <span className="text-white">{displayValue}</span>;
+};
+
+// Employment Growth Bar Chart Component
+const EmploymentGrowthChart = () => {
+  const [showSources, setShowSources] = useState(false);
+
+  const growthData = [
+    { 
+      discipline: 'Machine Learning', 
+      growth: 34, 
+      color: '#A51C30',
+      source: 'https://www.bls.gov/ooh/math/data-scientists.htm',
+      footnote: 2
+    },
+    { 
+      discipline: 'Cybersecurity', 
+      growth: 29, 
+      color: '#CC2936',
+      source: 'https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm',
+      footnote: 5
+    },
+    { 
+      discipline: 'Business Intelligence', 
+      growth: 21, 
+      color: '#D63447',
+      source: 'https://www.bls.gov/ooh/math/operations-research-analysts.htm',
+      footnote: 6
+    },
+    { 
+      discipline: 'Artificial Intelligence', 
+      growth: 20, 
+      color: '#E63946',
+      source: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm',
+      footnote: 1
+    },
+    { 
+      discipline: 'Computer Science', 
+      growth: 15, 
+      color: '#F25C54',
+      source: 'https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm',
+      footnote: 4
+    },
+    { 
+      discipline: 'Data Science', 
+      growth: 8, 
+      color: '#FF7F7F',
+      source: 'https://www.bls.gov/ooh/math/mathematicians-and-statisticians.htm',
+      footnote: 3
+    }
+  ];
+
+  const maxGrowth = Math.max(...growthData.map(d => d.growth));
+  const chartHeight = 400;
+  const barHeight = 45;
+  const barSpacing = 20;
+  const leftMargin = 180;
+  const rightMargin = 60;
+  const topMargin = 32;
+  const bottomMargin = 100;
+  
+  const chartWidth = 700;
+  const availableWidth = chartWidth - leftMargin - rightMargin;
+
+  return (
+    <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-gray-100 shadow-stevens-md">
+      <div className="mb-stevens-md">
+        <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
+          Projected Employment Growth (2024–2034)
+        </h3>
+       
+      </div>
+
+      <div className="overflow-x-auto">
+        <svg 
+          viewBox={`0 0 ${chartWidth} ${chartHeight + bottomMargin}`}
+          className="w-full h-auto"
+          role="img"
+          aria-label="Bar chart showing projected employment growth from 2024 to 2034 for six disciplines: Machine Learning at 34%, Cybersecurity at 29%, Business Intelligence at 21%, Artificial Intelligence at 20%, Computer Science at 15%, and Data Science at 8%"
+        >
+          {/* Bars + labels with hover interaction */}
+          {growthData.map((item, index) => {
+            const yTop = topMargin + index * (barHeight + barSpacing);
+            const yCenter = yTop + barHeight / 2;
+            const barWidth = (item.growth / maxGrowth) * availableWidth;
+
+            return (
+              <motion.g
+                key={`bar-${index}`}
+                whileHover={{ scale: 1.01, x: 2 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 20 }}
+                style={{ cursor: 'default' }}
+              >
+                {/* Y-axis label (discipline) */}
+                <text
+                  x={leftMargin - 10}
+                  y={yCenter}
+                  textAnchor="end"
+                  dominantBaseline="middle"
+                  className="text-stevens-md fill-stevens-gray-900"
+                  style={{ fontSize: '17px' }}
+                >
+                  {item.discipline}
+                </text>
+
+                {/* Bar background */}
+                <rect
+                  x={leftMargin}
+                  y={yTop}
+                  width={availableWidth}
+                  height={barHeight}
+                  fill="#F1F5F9"
+                  rx="4"
+                />
+                
+                {/* Animated bar with subtle hover glow */}
+                <motion.rect
+                  x={leftMargin}
+                  y={yTop}
+                  width={barWidth}
+                  height={barHeight}
+                  fill={item.color}
+                  rx="4"
+                  initial={{ width: 0, opacity: 0.9 }}
+                  whileInView={{ width: barWidth, opacity: 1 }}
+                  whileHover={{ filter: 'brightness(1.08)' }}
+                  transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                />
+                
+                {/* Percentage label */}
+                <text
+                  x={leftMargin + barWidth + 8}
+                  y={yCenter}
+                  dominantBaseline="middle"
+                  className="font-stevens-bold fill-stevens-gray-900"
+                  style={{ fontSize: '16px' }}
+                >
+                  {item.growth}%
+                </text>
+
+                {/* Footnote reference */}
+                <text
+                  x={leftMargin + barWidth + 35}
+                  y={yCenter - 8}
+                  dominantBaseline="middle"
+                  className="text-stevens-xs fill-stevens-gray-500"
+                  style={{ fontSize: '11px' }}
+                >
+                  [{item.footnote}]
+                </text>
+              </motion.g>
+            );
+          })}
+
+          {/* X-axis line */}
+          <line
+            x1={leftMargin}
+            y1={topMargin + growthData.length * (barHeight + barSpacing) - barSpacing + barHeight}
+            x2={leftMargin + availableWidth}
+            y2={topMargin + growthData.length * (barHeight + barSpacing) - barSpacing + barHeight}
+            stroke="#CBD5E1"
+            strokeWidth="1"
+          />
+
+          {/* X-axis label */}
+          <text
+            x={leftMargin + availableWidth / 2}
+            y={chartHeight - 10}
+            textAnchor="middle"
+            className="text-stevens-sm font-stevens-medium fill-stevens-gray-600"
+            style={{ fontSize: '13px' }}
+          >
+            Growth Rate (%)
+          </text>
+        </svg>
+      </div>
+
+      {/* Collapsible Footnotes */}
+      <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200">
+        <button
+          type="button"
+          onClick={() => setShowSources((prev) => !prev)}
+          className="flex w-full items-center justify-between text-stevens-xs font-stevens-semibold text-stevens-gray-800 hover:text-stevens-primary transition-colors"
+          aria-expanded={showSources}
+          aria-controls="employment-growth-sources"
+        >
+          <span>View data sources (U.S. Bureau of Labor Statistics)</span>
+          <span className="ml-stevens-sm text-stevens-base leading-none">
+            {showSources ? '−' : '+'}
+          </span>
+        </button>
+
+        {showSources && (
+          <div
+            id="employment-growth-sources"
+            className="mt-stevens-sm grid gap-stevens-xs text-stevens-xs md:text-stevens-sm text-stevens-gray-600 leading-relaxed"
+          >
+            {growthData
+              .slice()
+              .sort((a, b) => a.footnote - b.footnote)
+              .map((item) => (
+                <p key={item.footnote}>
+                  <span>[{item.footnote}]</span>{' '}
+                  <a
+                    href={item.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stevens-primary hover:underline"
+                  >
+                    {item.discipline === 'Artificial Intelligence' && 'Computer & Information Research Scientists'}
+                    {item.discipline === 'Machine Learning' && 'Data Scientists'}
+                    {item.discipline === 'Data Science' && 'Mathematicians & Statisticians'}
+                    {item.discipline === 'Computer Science' && 'Software Developers, QA Analysts & Testers'}
+                    {item.discipline === 'Cybersecurity' && 'Information Security Analysts'}
+                    {item.discipline === 'Business Intelligence' && 'Operations Research Analysts'}
+                  </a>
+                  {' — '}U.S. Bureau of Labor Statistics, Occupational Outlook Handbook
+                </p>
+              ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const CorporatePartners = () => {
   usePageTracking({
     pageType: 'landing',
@@ -503,6 +810,278 @@ const CorporatePartners = () => {
           }}
         />
 
+        
+
+        {/* Why Partner with Stevens - Constellation Layout */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-gradient-to-br from-stevens-white via-stevens-gray-50/30 to-stevens-white overflow-hidden">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="grid lg:grid-cols-[40%_60%] gap-stevens-3xl items-center">
+              {/* Left Side: Headline & Description */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-left"
+              >
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-primary mb-stevens-lg leading-tight">
+                Education That Moves at the Speed of Industry
+              </h2>
+                <p className="text-stevens-base md:text-stevens-lg text-stevens-gray-700 leading-relaxed">
+                Stevens' College of Professional Education (CPE) reimagines how universities collaborate with employers. 
+                Built to be flexible, fast-moving, and interdisciplinary, CPE removes the barriers that slow corporate 
+                partnerships — helping you launch impactful learning initiatives that drive real results.
+              </p>
+              </motion.div>
+
+              {/* Right Side: Constellation Quadrant - 2x2 Grid Layout like Stevens.edu */}
+              <div className="relative">
+                {/* Mobile: Stack vertically */}
+                <div className="lg:hidden w-full space-y-stevens-2xl">
+                  {/* Star with horizontal lines */}
+                  <div className="relative flex items-center justify-center mb-stevens-xl px-stevens-lg">
+                    {/* Left line with animation */}
+                    <motion.div
+                      className="flex-1 h-[1px] bg-[#F9C94E]/40 mr-stevens-md"
+                      initial={{ scaleX: 0, originX: 1 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    />
+                    
+                    {/* Star with subtle glow */}
+                    <motion.svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="text-[#F9C94E] flex-shrink-0 drop-shadow-[0_0_8px_rgba(249,201,78,0.3)]"
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    >
+                      {/* 4-pointed star  - symmetric cross/diamond shape */}
+                      <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="currentColor"/>
+                    </motion.svg>
+                    
+                    {/* Right line with animation */}
+                    <motion.div
+                      className="flex-1 h-[1px] bg-[#F9C94E]/40 ml-stevens-md"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    />
+                        </div>
+                  
+                  {partnerBenefits.map((benefit, index) => (
+                    <motion.div
+                      key={benefit.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-center px-stevens-md"
+                    >
+                      <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+                          {benefit.title}
+                      </h3>
+                      <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed">
+                          {benefit.description}
+                        </p>
+                    </motion.div>
+                  ))}
+                  </div>
+
+                {/* Desktop: 2x2 Grid with central star and divider lines */}
+                <div className="hidden lg:block relative">
+                  {/* 2x2 Grid Container */}
+                  <div className="grid grid-cols-2 grid-rows-2 relative">
+                    {/* Horizontal divider line with animation */}
+                    <motion.div
+                      className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] bg-[#F9C94E]/40"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    />
+                    
+                    {/* Vertical divider line with animation */}
+                    <motion.div
+                      className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-[#F9C94E]/40"
+                      initial={{ scaleY: 0 }}
+                      whileInView={{ scaleY: 1 }}
+                      transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    />
+                    
+                    {/* Central Star at intersection with glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-stevens-white p-1 rounded-full">
+                      <motion.svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="text-[#F9C94E] drop-shadow-[0_0_6px_rgba(249,201,78,0.4)]"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                      >
+                        {/* 4-pointed star  - symmetric cross/diamond shape */}
+                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="currentColor"/>
+                      </motion.svg>
+                    </div>
+
+                    {/* Top-Left: Built for Employers */}
+                    <motion.div
+                      className="p-stevens-lg pr-stevens-xl pb-stevens-xl text-left group cursor-default transition-all duration-300 hover:bg-stevens-gray-50/50 rounded-stevens-md"
+                      initial={{ opacity: 0, y: -10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors duration-300">
+                        Built for Employers
+                      </h3>
+                      <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed mb-stevens-md">
+                        Streamlined partnership setup, custom cohort onboarding, and flexible corporate billing options.
+                      </p>
+                    </motion.div>
+
+                    {/* Top-Right: Integrated Talent Solutions */}
+                    <motion.div
+                      className="p-stevens-lg pl-stevens-xl pb-stevens-xl text-left group cursor-default transition-all duration-300 hover:bg-stevens-gray-50/50 rounded-stevens-md"
+                      initial={{ opacity: 0, y: -10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors duration-300">
+                        Integrated Talent Solutions
+                      </h3>
+                      <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed mb-stevens-md">
+                        Learning pathways aligned with your HR and L&D systems for seamless integration.
+                      </p>
+                    </motion.div>
+
+                    {/* Bottom-Left: Co-Developed Education */}
+                    <motion.div
+                      className="p-stevens-lg pr-stevens-xl pt-stevens-xl text-left group cursor-default transition-all duration-300 hover:bg-stevens-gray-50/50 rounded-stevens-md"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors duration-300">
+                        Co-Developed Education
+                      </h3>
+                      <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed mb-stevens-md">
+                        Collaborate directly with Stevens faculty to create skills-based programs that meet your workforce goals.
+                      </p>
+                    </motion.div>
+
+                    {/* Bottom-Right: Agile by Design */}
+                    <motion.div
+                      className="p-stevens-lg pl-stevens-xl pt-stevens-xl text-left group cursor-default transition-all duration-300 hover:bg-stevens-gray-50/50 rounded-stevens-md"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                      viewport={{ once: true }}
+                    >
+                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-sm group-hover:text-stevens-primary transition-colors duration-300">
+                        Agile by Design
+                      </h3>
+                      <p className="text-stevens-sm text-stevens-gray-600 leading-relaxed mb-stevens-md">
+                        Quickly develop and deploy courses or credentials aligned with the latest industry demands.
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+        {/* Why Stevens - Statistics */}
+        <section className="relative py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white overflow-hidden">
+          {/* Background decoration (B1) */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          </div>
+
+          {/* Top decorative line (B2) */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+          <div className="relative max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold mb-stevens-md tracking-tight">
+                A University Built for the Future of Work
+              </h2>
+              <p className="text-stevens-lg max-w-3xl mx-auto text-white/95 leading-relaxed">
+                At Stevens, academic rigor meets real-world application. Our online programs empower professionals 
+                to lead with confidence in a technology-driven world and deliver measurable results for your organization.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-xl">
+              {stevensStats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className="bg-stevens-white/10 backdrop-blur rounded-stevens-lg p-stevens-lg transition-all duration-300 cursor-default border border-white/10"
+                      whileHover={{ 
+                        scale: 1.05,
+                        backgroundColor: "rgba(255, 255, 255, 0.15)"
+                      }}
+                    >
+                      {/* Icon with hover animation (V3) */}
+                      <motion.div
+                        whileHover={{ 
+                          scale: 1.1,
+                          rotate: [0, -5, 5, -5, 0],
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        <Icon className="w-10 h-10 mx-auto mb-stevens-sm opacity-80" />
+                      </motion.div>
+                      
+                      {/* Animated number with special symbol styling (V4, B3) */}
+                      <div className="text-stevens-4xl md:text-stevens-5xl font-stevens-display font-stevens-bold mb-stevens-sm tabular-nums">
+                        <AnimatedStatValue value={stat.value} delay={index * 0.1} />
+                      </div>
+                      <div className="text-stevens-base font-stevens-semibold mb-stevens-xs">
+                        {stat.label}
+                      </div>
+                      <div className="text-stevens-sm opacity-80">
+                        {stat.source}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Bottom decorative line (B2) */}
+          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        </section>
         {/* Trust Signals - Company Logos */}
         <section className="bg-stevens-gray-50 py-stevens-section-sm lg:py-stevens-section">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -520,88 +1099,6 @@ const CorporatePartners = () => {
             />
           </div>
         </section>
-
-        {/* Why Partner with Stevens */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                Education That Moves at the Speed of Industry
-              </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-                Stevens' College of Professional Education (CPE) reimagines how universities collaborate with employers. 
-                Built to be flexible, fast-moving, and interdisciplinary, CPE removes the barriers that slow corporate 
-                partnerships — helping you launch impactful learning initiatives that drive real results.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-lg">
-              {partnerBenefits.map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <div key={benefit.title}>
-                    <Card className="h-full hover:shadow-stevens-xl transition-all duration-stevens-normal transform hover:-translate-y-1">
-                      <CardHeader className="pb-stevens-md">
-                        <div className="w-12 h-12 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center mb-stevens-md">
-                          <Icon className="w-6 h-6 text-stevens-primary" />
-                        </div>
-                        <CardTitle className="text-stevens-lg font-stevens-bold text-stevens-gray-900">
-                          {benefit.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-stevens-gray-700">
-                          {benefit.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Stevens - Statistics */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md">
-                A University Built for the Future of Work
-              </h2>
-              <p className="text-stevens-lg max-w-3xl mx-auto opacity-90">
-                At Stevens, academic rigor meets real-world application. Our online programs empower professionals 
-                to lead with confidence in a technology-driven world and deliver measurable results for your organization.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-lg">
-              {stevensStats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <div
-                    key={stat.label}
-                    className="text-center"
-                  >
-                    <div className="bg-stevens-white/10 backdrop-blur rounded-stevens-lg p-stevens-lg">
-                      <Icon className="w-10 h-10 mx-auto mb-stevens-sm opacity-80" />
-                      <div className="text-stevens-4xl font-stevens-display font-stevens-bold mb-stevens-xs">
-                        {stat.value}
-                      </div>
-                      <div className="text-stevens-base font-stevens-medium mb-stevens-xs">
-                        {stat.label}
-                      </div>
-                      <div className="text-stevens-sm opacity-70">
-                        {stat.source}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* What We Offer */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -649,29 +1146,51 @@ const CorporatePartners = () => {
           </div>
         </section>
 
-        {/* Areas of Expertise */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+        {/* Areas of Expertise - Employment Growth Chart */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
                 Build Expertise in High-Demand Fields
               </h2>
               <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-                Develop your workforce's technical and leadership capabilities in disciplines shaping the future:
+                Develop your workforce&apos;s technical and leadership capabilities in disciplines shaping the future.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-stevens-lg max-w-4xl mx-auto">
-              {expertiseAreas.map((area, index) => (
-                <div
-                  key={area}
-                  className="text-center p-stevens-lg border border-stevens-gray-200 rounded-stevens-lg"
-                >
-                  <h3 className="font-stevens-medium text-stevens-base text-stevens-gray-900">
-                    {area}
-                  </h3>
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-stevens-2xl lg:gap-stevens-3xl items-start">
+              {/* Left: Bar Chart */}
+              <div className="order-2 lg:order-1">
+                <EmploymentGrowthChart />
                 </div>
-              ))}
+
+              {/* Right: Explanatory Text */}
+              <div className="order-1 lg:order-2 mt-stevens-xl lg:mt-0 lg:border-l lg:border-stevens-gray-100 lg:pl-stevens-2xl">
+                <div className="bg-gradient-to-br from-stevens-gray-50 to-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-gray-100 shadow-stevens-md">
+                  <div className="mb-stevens-md">
+                    
+                    <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+                      Prepare for Careers Growing Faster Than Average
+                    </h3>
+                        </div>
+                  
+                  <div className="space-y-stevens-md text-stevens-base md:text-stevens-lg leading-relaxed md:leading-loose">
+                    <p className="text-stevens-gray-700">
+                      The fields shown are projected to grow <span className="font-stevens-bold text-stevens-primary">significantly faster</span> than 
+                      the average occupation through 2034, according to the U.S. Bureau of Labor Statistics.
+                    </p>
+                    <p className="text-stevens-gray-600">
+                      Stevens Online programs are designed to align with this industry demand, equipping your workforce with 
+                      the <span className="font-stevens-semibold text-stevens-gray-900">technical depth and practical skills</span> employers 
+                      need to stay competitive in a rapidly evolving landscape.
+                    </p>
+                    <p className="text-stevens-sm md:text-stevens-base text-stevens-gray-600 italic border-l-2 border-stevens-primary/30 pl-stevens-md">
+                      By investing in these high-growth disciplines, you&apos;re positioning your organization to lead in 
+                      AI, data, cybersecurity, and emerging technologies.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
             </div>
           </div>
         </section>
