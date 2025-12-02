@@ -137,7 +137,7 @@ const StudentSuccessCarousel = ({ stories }) => {
                 return (
                   <div
                     key={story.name}
-                    className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
+                    className="flex-none w-full lg:w-[calc(33.333%-2rem)] min-w-[300px]"
                     style={{ minWidth: '300px' }}
                     role="listitem"
                     aria-label={`Testimonial ${index + 1} of ${stories.length}: ${story.name}`}
@@ -556,8 +556,8 @@ const CorporateStudents = () => {
         {/* Why Stevens Online */}
         <section className="bg-stevens-primary">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left Side - Image (Square) */}
-            <div className="relative aspect-square lg:aspect-square overflow-hidden">
+            {/* Left Side - Image */}
+            <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden">
               <img
                 src="/assets/images/shared/accreditation.webp"
                 alt="Stevens Online students and professionals"
@@ -566,39 +566,39 @@ const CorporateStudents = () => {
               />
             </div>
 
-            {/* Right Side - Text Content (Square, Red Background) */}
-            <div className="aspect-square lg:aspect-square bg-stevens-primary text-stevens-white flex flex-col justify-center px-stevens-lg lg:px-stevens-2xl py-stevens-xl">
-              <div className="space-y-stevens-xl">
+            {/* Right Side - Text Content */}
+            <div className="bg-stevens-primary text-stevens-white flex flex-col justify-center px-stevens-md sm:px-stevens-lg lg:px-stevens-2xl py-stevens-xl lg:aspect-square lg:min-h-0">
+              <div className="space-y-stevens-lg lg:space-y-stevens-xl">
                 {/* Title and Description */}
-                <div className="space-y-stevens-md">
-                  <h2 className="font-stevens-display text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-stevens-white leading-tight">
+                <div className="space-y-stevens-sm lg:space-y-stevens-md">
+                  <h2 className="font-stevens-display text-stevens-xl sm:text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-stevens-white leading-tight">
                     A Top-Ranked University Built for Working Professionals
                   </h2>
-                  <p className="text-stevens-base lg:text-stevens-lg text-stevens-white/90 leading-relaxed">
+                  <p className="text-stevens-sm sm:text-stevens-base lg:text-stevens-lg text-stevens-white/90 leading-relaxed">
                     Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
                     career outcomes, empowering professionals to thrive in the future of work.
                   </p>
                 </div>
 
                 {/* Large Quote Icon */}
-                <div className="pt-stevens-md">
-                  <Quote className="w-16 h-16 text-stevens-white/80" />
+                <div className="pt-stevens-sm lg:pt-stevens-md">
+                  <Quote className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-stevens-white/80" />
                 </div>
 
                 {/* Student Quote */}
                 {successStories.slice(0, 1).map((story, index) => (
-                  <div key={index} className="space-y-stevens-lg">
-                    <blockquote className="text-stevens-xl lg:text-stevens-2xl text-stevens-white leading-relaxed">
+                  <div key={index} className="space-y-stevens-md lg:space-y-stevens-lg">
+                    <blockquote className="text-stevens-lg sm:text-stevens-xl lg:text-stevens-2xl text-stevens-white leading-relaxed">
                       {story.quote}
                     </blockquote>
                     
                     {/* Divider */}
-                    <div className="border-t border-stevens-white/30 pt-stevens-lg">
-                      <p className="text-stevens-base font-stevens-medium text-stevens-white">
+                    <div className="border-t border-stevens-white/30 pt-stevens-md lg:pt-stevens-lg">
+                      <p className="text-stevens-sm sm:text-stevens-base font-stevens-medium text-stevens-white">
                         {story.name}, {story.title}
                       </p>
                       {story.company && (
-                        <p className="text-stevens-sm text-stevens-white/80 mt-stevens-xs">
+                        <p className="text-xs sm:text-stevens-sm text-stevens-white/80 mt-stevens-xs">
                           {story.company}
                         </p>
                       )}
@@ -1356,7 +1356,7 @@ const CorporateStudents = () => {
             ) : (
               /* Default view - select a program message */
               <Card className="max-w-2xl mx-auto">
-                <CardContent className="p-stevens-xl lg:p-stevens-2xl text-center">
+                <CardContent className="p-stevens-2xl pt-stevens-2xl text-center">
                   <Calculator className="w-16 h-16 mx-auto mb-stevens-xl text-stevens-gray-400" />
                   <h3 className="font-stevens-display text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
                     Ready to see your actual cost?

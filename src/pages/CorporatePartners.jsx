@@ -134,7 +134,7 @@ const TestimonialsCarousel = ({ testimonials }) => {
                 return (
                   <div 
                     key={index}
-                    className="flex-none w-full lg:w-[calc(33.333%-1rem)] min-w-[300px]"
+                    className="flex-none w-full lg:w-[calc(33.333%-1.5rem)] min-w-[300px]"
                     style={{ minWidth: '300px' }}
                     role="listitem"
                     aria-label={`Testimonial ${index + 1} of ${testimonials.length}: ${testimonial.author}`}
@@ -235,89 +235,6 @@ const TestimonialsCarousel = ({ testimonials }) => {
       </div>
     </section>
   );
-};
-
-// Animated Stat Value Component (V4)
-const AnimatedStatValue = ({ value, delay = 0 }) => {
-  const parseValue = (val) => {
-    if (val.startsWith('#')) return { number: 1, prefix: '#', suffix: '', isSpecial: true };
-    if (val.includes('%')) {
-      const num = parseInt(val.replace('%', ''));
-      return { number: num, prefix: '', suffix: '%', isPercentage: true };
-    }
-    if (val.includes('$')) {
-      const num = parseInt(val.replace(/[$,]/g, ''));
-      return { number: num, prefix: '$', suffix: '', isCurrency: true };
-    }
-    return { number: parseInt(val) || 0, prefix: '', suffix: '' };
-  };
-
-  const { number, prefix, suffix, isSpecial, isPercentage, isCurrency } = parseValue(value);
-  const [displayValue, setDisplayValue] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (hasAnimated || isSpecial) {
-      setDisplayValue(number);
-      setHasAnimated(true);
-      return;
-    }
-    
-    const duration = 2000;
-    const steps = 60;
-    const increment = number / steps;
-    const stepDuration = duration / steps;
-    
-    let current = 0;
-    let interval;
-    
-    const timer = setTimeout(() => {
-      interval = setInterval(() => {
-        current += increment;
-        if (current >= number) {
-          setDisplayValue(number);
-          clearInterval(interval);
-          setHasAnimated(true);
-        } else {
-          setDisplayValue(Math.floor(current));
-        }
-      }, stepDuration);
-    }, delay * 100);
-
-    return () => {
-      clearTimeout(timer);
-      if (interval) clearInterval(interval);
-    };
-  }, [number, hasAnimated, isSpecial, delay]);
-
-  if (isSpecial) {
-    return (
-      <span>
-        <span className="text-white/90">#</span>
-        <span className="text-white">1</span>
-      </span>
-    );
-  }
-
-  if (isPercentage) {
-    return (
-      <span>
-        <span className="text-white">{displayValue}</span>
-        <span className="text-white/80 text-stevens-3xl md:text-stevens-4xl">%</span>
-      </span>
-    );
-  }
-
-  if (isCurrency) {
-    return (
-      <span>
-        <span className="text-white/90">$</span>
-        <span className="text-white">{displayValue.toLocaleString()}</span>
-      </span>
-    );
-  }
-
-  return <span className="text-white">{displayValue}</span>;
 };
 
 // Employment Growth Bar Chart Component
@@ -1010,28 +927,40 @@ const CorporatePartners = () => {
         
 
         {/* Why Stevens - Statistics */}
-        <section className="relative py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white overflow-hidden">
-          {/* Background decoration (B1) */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-white/5" />
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <section className="py-stevens-section lg:py-stevens-section-lg text-stevens-white relative overflow-hidden">
+          {/* Background image with blur */}
+          <div className="absolute inset-0">
+            <img
+              src="/assets/images/shared/accreditation.webp"
+              alt=""
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
-
-          {/* Top decorative line (B2) */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-          <div className="relative max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold mb-stevens-md tracking-tight">
+          
+          {/* Red overlay */}
+          <div className="absolute inset-0 bg-stevens-primary/90" />
+          
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg relative z-10">
+            {/* Header with enhanced typography */}
+            <motion.div
+              className="text-center mb-stevens-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold mb-stevens-lg tracking-tight">
                 A University Built for the Future of Work
               </h2>
-              <p className="text-stevens-lg max-w-3xl mx-auto text-white/95 leading-relaxed">
+              <p className="text-stevens-base md:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed">
                 At Stevens, academic rigor meets real-world application. Our online programs empower professionals 
                 to lead with confidence in a technology-driven world and deliver measurable results for your organization.
               </p>
-            </div>
+            </motion.div>
 
+            {/* Stats grid with enhanced cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-xl">
               {stevensStats.map((stat, index) => {
                 const Icon = stat.icon;
@@ -1041,35 +970,34 @@ const CorporatePartners = () => {
                     className="text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
                     <motion.div
-                      className="bg-stevens-white/10 backdrop-blur rounded-stevens-lg p-stevens-lg transition-all duration-300 cursor-default border border-white/10"
-                      whileHover={{ 
-                        scale: 1.05,
-                        backgroundColor: "rgba(255, 255, 255, 0.15)"
-                      }}
+                      className="bg-white/10 backdrop-blur-sm rounded-stevens-xl p-stevens-xl border border-white/10 h-full transition-all duration-300 hover:bg-white/15 hover:border-white/20 group"
+                      whileHover={{ y: -4, scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {/* Icon with hover animation (V3) */}
-                      <motion.div
-                        whileHover={{ 
-                          scale: 1.1,
-                          rotate: [0, -5, 5, -5, 0],
-                          transition: { duration: 0.5 }
-                        }}
-                      >
-                        <Icon className="w-10 h-10 mx-auto mb-stevens-sm opacity-80" />
-                      </motion.div>
-                      
-                      {/* Animated number with special symbol styling (V4, B3) */}
-                      <div className="text-stevens-4xl md:text-stevens-5xl font-stevens-display font-stevens-bold mb-stevens-sm tabular-nums">
-                        <AnimatedStatValue value={stat.value} delay={index * 0.1} />
+                      {/* Icon with background circle */}
+                      <div className="w-14 h-14 mx-auto mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                        <Icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
-                      <div className="text-stevens-base font-stevens-semibold mb-stevens-xs">
+                      
+                      {/* Stat value with enhanced styling */}
+                      <div className="text-stevens-4xl md:text-stevens-5xl font-stevens-display font-stevens-bold mb-stevens-sm tracking-tight tabular-nums">
+                        {stat.value}
+                      </div>
+                      
+                      {/* Label with better hierarchy */}
+                      <div className="text-stevens-base font-stevens-semibold mb-stevens-sm text-white/95">
                         {stat.label}
                       </div>
-                      <div className="text-stevens-sm opacity-80">
+                      
+                      {/* Divider */}
+                      <div className="w-12 h-[1px] bg-white/20 mx-auto mb-stevens-sm" />
+                      
+                      {/* Source with improved readability */}
+                      <div className="text-stevens-sm text-white/75 font-stevens-medium">
                         {stat.source}
                       </div>
                     </motion.div>
@@ -1078,9 +1006,6 @@ const CorporatePartners = () => {
               })}
             </div>
           </div>
-
-          {/* Bottom decorative line (B2) */}
-          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </section>
         {/* Trust Signals - Company Logos */}
         <section className="bg-stevens-gray-50 py-stevens-section-sm lg:py-stevens-section">
