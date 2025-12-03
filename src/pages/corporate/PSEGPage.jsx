@@ -88,7 +88,7 @@ export default function PSEGPage() {
                             <p className="text-gray-600 text-sm mb-6 flex-grow">{program.description}</p>
                             <div className="mt-auto space-y-3">
                                 <Link to={program.exploreLink} target="_blank">
-                                    <Button variant="outline" className="w-full text-stevens-primary border-stevens-primary hover:bg-stevens-primary hover:text-white">
+                                    <Button variant="outline" className="w-full text-stevens-primary border-stevens-primary hover:bg-stevens-primary hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Explore Program <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -99,7 +99,7 @@ export default function PSEGPage() {
                                     className="block"
                                     onClick={(e) => handleApplyClick(e, program.applyLink, program.useModal)}
                                 >
-                                    <Button className="w-full bg-stevens-primary hover:bg-stevens-primary/90 text-white">
+                                    <Button className="w-full bg-stevens-primary hover:bg-stevens-primary/90 text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Apply in Minutes
                                     </Button>
                                 </a>

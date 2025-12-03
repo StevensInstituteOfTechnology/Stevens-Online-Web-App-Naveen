@@ -108,6 +108,8 @@ export default function CorporateLandingPageTemplate({
                 className="min-h-[500px]"
                 primaryCta={effectiveHeroPrimaryCta}
                 secondaryCta={heroSecondaryCta}
+                primaryButtonClassName="text-[1.3em] px-[31px] py-[21px] min-h-[57px]"
+                secondaryButtonClassName="text-[1.3em] px-[31px] py-[21px] min-h-[57px]"
             />
 
             <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section relative z-10">
