@@ -99,7 +99,7 @@ const TestimonialsCarousel = ({ testimonials }) => {
     <section className="py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-gray-50 to-stevens-white">
       <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
         <div className="text-center mb-stevens-3xl">
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-primary mb-stevens-lg">
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
             Success Stories from Our Partners
           </h2>
           <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -249,19 +249,13 @@ const EmploymentGrowthChart = () => {
       source: 'https://www.bls.gov/ooh/math/data-scientists.htm',
       footnote: 2
     },
-    { 
-      discipline: 'Cybersecurity', 
-      growth: 29, 
-      color: '#CC2936',
-      source: 'https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm',
-      footnote: 5
-    },
+    
     { 
       discipline: 'Business Intelligence', 
       growth: 21, 
       color: '#D63447',
       source: 'https://www.bls.gov/ooh/math/operations-research-analysts.htm',
-      footnote: 6
+      footnote: 5
     },
     { 
       discipline: 'Artificial Intelligence', 
@@ -448,7 +442,7 @@ const EmploymentGrowthChart = () => {
                     {item.discipline === 'Machine Learning' && 'Data Scientists'}
                     {item.discipline === 'Data Science' && 'Mathematicians & Statisticians'}
                     {item.discipline === 'Computer Science' && 'Software Developers, QA Analysts & Testers'}
-                    {item.discipline === 'Cybersecurity' && 'Information Security Analysts'}
+                    
                     {item.discipline === 'Business Intelligence' && 'Operations Research Analysts'}
                   </a>
                   {' — '}U.S. Bureau of Labor Statistics, Occupational Outlook Handbook
@@ -567,8 +561,8 @@ const CorporatePartners = () => {
     },
     {
       value: "$5,250",
-      label: "Annual Tax Deduction",
-      source: "IRS Code Section 127",
+      label: "Maximum Reimbursement Policy",
+      source: "IRS Section 127 Compliant",
       icon: DollarSign
     }
   ];
@@ -590,11 +584,7 @@ const CorporatePartners = () => {
       title: "Dedicated Corporate Care",
       description: "Receive one-on-one support from a corporate advisor who manages onboarding and student success."
     },
-    {
-      icon: BarChart3,
-      title: "HR Systems Integration",
-      description: "Map completions, credentials, and skill outcomes directly into your HR or L&D systems."
-    },
+    
     {
       icon: Users,
       title: "Tailored Info Sessions",
@@ -613,7 +603,7 @@ const CorporatePartners = () => {
     "Machine Learning", 
     "Data Science",
     "Computer Science",
-    "Cybersecurity",
+    
     "Business Intelligence"
   ];
 
@@ -951,7 +941,7 @@ const CorporatePartners = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold mb-stevens-lg tracking-tight">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-lg tracking-tight">
                 A University Built for the Future of Work
               </h2>
               <p className="text-stevens-base md:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed">
@@ -989,16 +979,8 @@ const CorporatePartners = () => {
                       </div>
                       
                       {/* Label with better hierarchy */}
-                      <div className="text-stevens-base font-stevens-semibold mb-stevens-sm text-white/95">
+                      <div className="text-stevens-base font-stevens-semibold text-white/95">
                         {stat.label}
-                      </div>
-                      
-                      {/* Divider */}
-                      <div className="w-12 h-[1px] bg-white/20 mx-auto mb-stevens-sm" />
-                      
-                      {/* Source with improved readability */}
-                      <div className="text-stevens-sm text-white/75 font-stevens-medium">
-                        {stat.source}
                       </div>
                     </motion.div>
                   </motion.div>
@@ -1111,7 +1093,7 @@ const CorporatePartners = () => {
                     </p>
                     <p className="text-stevens-sm md:text-stevens-base text-stevens-gray-600 italic border-l-2 border-stevens-primary/30 pl-stevens-md">
                       By investing in these high-growth disciplines, you&apos;re positioning your organization to lead in 
-                      AI, data, cybersecurity, and emerging technologies.
+                      AI, data, and emerging technologies.
                             </p>
                           </div>
                         </div>

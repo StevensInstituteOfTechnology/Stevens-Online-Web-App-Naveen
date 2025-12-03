@@ -104,7 +104,7 @@ const StudentSuccessCarousel = ({ stories }) => {
     <section className="py-stevens-section bg-gradient-to-b from-stevens-gray-50 via-white to-stevens-gray-50">
       <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
         <div className="text-center mb-stevens-3xl">
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-primary mb-stevens-lg">
+        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
             Success Stories from Corporate-Sponsored Alumni
           </h2>
           <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -356,11 +356,7 @@ const CorporateStudents = () => {
       name: 'Engineering Leadership',
       programs: ['mem', 'meads']
     },
-    {
-      id: 'cybersecurity',
-      name: 'Cybersecurity',
-      programs: ['mscs']
-    }
+    
   ];
 
   // Filter programs based on selected career path
@@ -414,7 +410,7 @@ const CorporateStudents = () => {
     {
       step: 2,
       actionNeeded: "Use the cost calculator to estimate your investment",
-      forYourPlan: "Click 'Calculate Your Cost' on your selected program to access our interactive calculator. This tool helps you understand the total program cost before applying.",
+      forYourPlan: "Click \"Calculate\" on your selected program to access our interactive calculator. This tool helps you understand the total program cost before applying.",
       linkText: "Start",
       linkTarget: "#cost-calculator"
     },
@@ -431,7 +427,7 @@ const CorporateStudents = () => {
     {
       step: 5,
       actionNeeded: "Start your application",
-      forYourPlan: "Click the 'Apply Now' button on your selected program page to begin your application. If you have any questions or need assistance, feel free to ",
+      forYourPlan: "Click the \"Apply Now\" button on your selected program page to begin your application. If you have any questions or need assistance, feel free to ",
       linkText: "schedule a call with an advisor",
       linkTarget: BOOKING_URLS.SCHEDULE_CALL,
       isExternal: true
@@ -634,7 +630,7 @@ const CorporateStudents = () => {
               <Button
                 variant={selectedCareerPath === 'all' ? 'default' : 'outline'}
                 onClick={() => setSelectedCareerPath('all')}
-                className="mb-stevens-sm"
+                className={`mb-stevens-sm ${selectedCareerPath === 'all' ? '!text-stevens-white' : ''}`}
               >
                 All Programs
               </Button>
@@ -643,7 +639,7 @@ const CorporateStudents = () => {
                   key={path.id}
                   variant={selectedCareerPath === path.id ? 'default' : 'outline'}
                   onClick={() => setSelectedCareerPath(path.id)}
-                  className="mb-stevens-sm"
+                  className={`mb-stevens-sm ${selectedCareerPath === path.id ? '!text-stevens-white' : ''}`}
                 >
                   {path.name}
                 </Button>
@@ -661,103 +657,124 @@ const CorporateStudents = () => {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg"
               >
                 {filteredPrograms.slice(0, 6).map((program, index) => (
-                  <div
+                  <motion.div
                     key={program.code}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-gray-200 hover:border-stevens-primary overflow-hidden transition-all duration-stevens-normal"
                   >
-                    <Card className="h-full">
-                      <CardHeader>
-                        <Badge className="mb-stevens-sm w-fit bg-stevens-primary text-stevens-white">
+                    {/* Image Section */}
+                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stevens-gray-100 to-stevens-gray-200">
+                      {program.image ? (
+                        <img
+                          src={program.image}
+                          alt={program.name}
+                          className="w-full h-full object-cover transition-transform duration-stevens-slow group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-stevens-primary/20 to-stevens-primary/10" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                      
+                      {/* Degree Badge */}
+                      <div className="absolute top-stevens-md left-stevens-md">
+                        <div className="bg-stevens-primary/90 backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
                           {program.degree}
-                        </Badge>
-                        <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-gray-900">
-                          {program.shortName || program.name}
-                        </CardTitle>
-                        {program.tagline && (
-                          <p className="text-stevens-gray-600 text-stevens-sm mt-stevens-xs">
-                            {program.tagline}
-                          </p>
-                        )}
-                      </CardHeader>
-                      <CardContent className="space-y-stevens-md">
-                        <p className="text-stevens-gray-700">
-                          {program.description}
-                        </p>
+                        </div>
+                      </div>
+                    </div>
 
-                        {/* Program Stats */}
-                        {program.stats && (
-                          <div className="space-y-stevens-sm">
-                            {program.stats.duration && (
-                              <div className="flex items-center text-stevens-sm text-stevens-gray-600">
-                                <Clock className="w-4 h-4 mr-stevens-xs" />
-                                <span>{program.stats.duration}</span>
-                              </div>
-                            )}
-                            {program.stats.credits && (
-                              <div className="flex items-center text-stevens-sm text-stevens-gray-600">
-                                <Award className="w-4 h-4 mr-stevens-xs" />
-                                <span>{program.stats.credits} credits</span>
-                              </div>
-                            )}
-                          </div>
-                        )}
+                    {/* Content Section */}
+                    <div className="p-stevens-lg">
+                      {/* Title */}
+                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs group-hover:text-stevens-primary transition-colors duration-stevens-normal">
+                        {program.shortName || program.name}
+                      </h3>
 
-                        {/* Key Highlights */}
-                        {program.highlights && (
-                          <div className="space-y-stevens-xs">
-                            {program.highlights.slice(0, 3).map((highlight, hIndex) => (
-                              <div key={hIndex} className="flex items-start">
-                                <CheckCircle className="w-4 h-4 text-stevens-primary mr-stevens-xs mt-0.5 flex-shrink-0" />
-                                <span className="text-stevens-sm text-stevens-gray-700">{highlight}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                     
 
-                        {/* CTA Buttons */}
-                        <div className="space-y-stevens-sm mt-stevens-md">
-                          <Button 
-                            className="w-full"
-                            variant="outline"
-                            onClick={() => {
-                              setSelectedProgram(program);
-                              // Reset discount checkboxes to default
-                              setApplyCPEDiscount(true); // Default checked
-                              setIsHobokenResident(false); // Default unchecked
-                              setIsStevensAlumni(false); // Default unchecked
-                              setCustomReimbursement(''); // Clear reimbursement
-                              
-                              // Auto-select company if available from URL
-                              if (companyName && !selectedCompany) {
-                                const config = getDiscountConfig();
-                                const company = config.corporatePartners.find(
-                                  c => c.name.toLowerCase().includes(companyName.toLowerCase())
-                                );
-                                if (company) setSelectedCompany(company);
-                              }
-                              setShowCalculator(true);
-                              // Scroll to calculator
-                              setTimeout(() => {
-                                document.getElementById('cost-calculator')?.scrollIntoView({ 
-                                  behavior: 'smooth',
-                                  block: 'start'
-                                });
-                              }, 100);
-                              
-                              trackEvent('calculate_cost_clicked', {
-                                program_code: program.code,
-                                source: 'program_card'
+                     
+
+                      {/* Highlights */}
+                      {program.highlights && program.highlights.length > 0 && (
+                        <div className="flex flex-wrap gap-stevens-xs mb-stevens-md">
+                          {program.highlights.slice(0, 3).map((highlight, hIndex) => (
+                            <span
+                              key={hIndex}
+                              className="inline-flex items-center gap-stevens-xs bg-stevens-gray-50 text-stevens-gray-700 px-stevens-sm py-stevens-xs rounded-stevens-sm text-stevens-xs font-stevens-medium"
+                            >
+                              <GraduationCap className="w-3 h-3 text-stevens-primary" />
+                              {highlight}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Stats */}
+                      {program.stats && (
+                        <div className="grid grid-cols-2 gap-stevens-md pt-stevens-md border-t border-stevens-gray-200">
+                          {program.stats.duration && (
+                            <div>
+                              <p className="text-stevens-xs text-stevens-gray-600 mb-stevens-xs">Duration</p>
+                              <p className="font-stevens-semibold text-stevens-gray-900">{program.stats.duration}</p>
+                            </div>
+                          )}
+                          {program.stats.credits && (
+                            <div>
+                              <p className="text-stevens-xs text-stevens-gray-600 mb-stevens-xs">Credits</p>
+                              <p className="font-stevens-semibold text-stevens-gray-900">{program.stats.credits} credits</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* CTAs - Two Buttons */}
+                      <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200 flex gap-stevens-sm">
+                        {/* Calculate Cost Button - Outline style */}
+                        <Button 
+                          variant="outline"
+                          className="flex-1 text-stevens-sm border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-white"
+                          onClick={() => {
+                            setSelectedProgram(program);
+                            // Reset discount checkboxes to default
+                            setApplyCPEDiscount(true); // Default checked
+                            setIsHobokenResident(false); // Default unchecked
+                            setIsStevensAlumni(false); // Default unchecked
+                            setCustomReimbursement(''); // Clear reimbursement
+                            
+                            // Auto-select company if available from URL
+                            if (companyName && !selectedCompany) {
+                              const config = getDiscountConfig();
+                              const company = config.corporatePartners.find(
+                                c => c.name.toLowerCase().includes(companyName.toLowerCase())
+                              );
+                              if (company) setSelectedCompany(company);
+                            }
+                            setShowCalculator(true);
+                            // Scroll to calculator
+                            setTimeout(() => {
+                              document.getElementById('cost-calculator')?.scrollIntoView({ 
+                                behavior: 'smooth',
+                                block: 'start'
                               });
-                            }}
-                          >
-                            <Calculator className="mr-2 w-4 h-4" />
-                            Calculate Your Cost
-                          </Button>
-                          
+                            }, 100);
+                            
+                            trackEvent('calculate_cost_clicked', {
+                              program_code: program.code,
+                              source: 'program_card'
+                            });
+                          }}
+                        >
+                          <Calculator className="w-4 h-4 mr-1" />
+                          Calculate
+                        </Button>
+                        
+                        {/* View Detail Button - Primary style */}
                         <Link 
-                          to={program.programPage || `${createPageUrl('/')}${program.code}/`}
+                          to={program.programPage || program.explorePage || `${createPageUrl('/')}${program.code}/`}
+                          className="flex-1 text-stevens-white"
                           onClick={() => {
                             trackEvent('program_card_clicked', {
                               program_code: program.code,
@@ -767,15 +784,14 @@ const CorporateStudents = () => {
                             });
                           }}
                         >
-                            <Button className="w-full text-stevens-white">
+                          <Button className="w-full bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white text-stevens-sm">
                             View Detail
-                            <ArrowRight className="ml-2 w-4 h-4" />
+                            <ArrowRight className="w-4 h-4 ml-1" />
                           </Button>
                         </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </AnimatePresence>
@@ -1399,7 +1415,7 @@ const CorporateStudents = () => {
             </div>
 
             {/* Table Layout for Desktop, Card Layout for Mobile */}
-            <div className="bg-stevens-white rounded-stevens-lg overflow-hidden shadow-stevens-md">
+            <div className="bg-stevens-white rounded-stevens-lg overflow-hidden shadow-stevens-md hover:shadow-stevens-lg transition-shadow duration-300">
               {/* Desktop Table View */}
               <div className="hidden lg:block overflow-x-auto">
                 <table className="w-full">
@@ -1417,15 +1433,15 @@ const CorporateStudents = () => {
                     {applicationSteps.map((step, index) => (
                       <tr 
                         key={step.step}
-                        className={`border-b border-stevens-gray-200 ${index % 2 === 0 ? 'bg-stevens-white' : 'bg-stevens-gray-50'}`}
+                        className={`border-b border-stevens-gray-200 transition-all duration-300 cursor-default group ${index % 2 === 0 ? 'bg-stevens-white hover:bg-stevens-gray-50' : 'bg-stevens-gray-50 hover:bg-stevens-white'}`}
                       >
                         <td className="px-stevens-lg py-stevens-lg align-top w-2/5">
-                          <p className="font-stevens-semibold text-stevens-gray-900">
+                          <p className="font-stevens-semibold text-stevens-gray-900 group-hover:text-stevens-primary transition-colors duration-300">
                             <span className="text-stevens-primary font-stevens-bold">Step {step.step}</span> - {step.actionNeeded}
                           </p>
                         </td>
                         <td className="px-stevens-lg py-stevens-lg align-top w-3/5">
-                          <p className="text-stevens-gray-700 leading-relaxed">
+                          <p className="text-stevens-gray-700 leading-relaxed group-hover:text-stevens-gray-900 transition-colors duration-300">
                             {step.forYourPlan}
                             {step.linkText && step.linkTarget && (
                               <>
@@ -1460,16 +1476,19 @@ const CorporateStudents = () => {
               {/* Mobile Card View */}
               <div className="lg:hidden divide-y divide-stevens-gray-200">
                 {applicationSteps.map((step) => (
-                  <div key={step.step} className="p-stevens-lg">
+                  <div 
+                    key={step.step} 
+                    className="p-stevens-lg transition-all duration-300 hover:bg-stevens-gray-50 group"
+                  >
                     <div className="mb-stevens-md">
                       <p className="font-stevens-bold text-stevens-primary text-stevens-sm uppercase mb-stevens-xs">
                         Step {step.step}
                       </p>
-                      <p className="font-stevens-semibold text-stevens-gray-900 text-stevens-base">
+                      <p className="font-stevens-semibold text-stevens-gray-900 text-stevens-base group-hover:text-stevens-primary transition-colors duration-300">
                         {step.actionNeeded}
                       </p>
                     </div>
-                    <p className="text-stevens-gray-700 text-stevens-sm leading-relaxed">
+                    <p className="text-stevens-gray-700 text-stevens-sm leading-relaxed group-hover:text-stevens-gray-900 transition-colors duration-300">
                       {step.forYourPlan}
                       {step.linkText && step.linkTarget && (
                         <>
