@@ -653,7 +653,7 @@ const CorporatePartners = () => {
         
 
         {/* Why Stevens - Statistics */}
-        <section className="py-stevens-section lg:py-stevens-section-lg text-stevens-white relative overflow-hidden">
+        <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
           {/* Background image with blur */}
           <div className="absolute inset-0">
             <img
@@ -665,29 +665,29 @@ const CorporatePartners = () => {
             <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
           
-          {/* Red overlay */}
+          {/* Dark overlay */}
           <div className="absolute inset-0 bg-stevens-gray-900/50" />
           
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg relative z-10">
+          <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}
             <motion.div
-              className="text-center mb-stevens-3xl"
+              className="text-center mb-8 sm:mb-stevens-xl md:mb-stevens-2xl lg:mb-stevens-3xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-lg tracking-tight">
+              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-stevens-bold mb-4 sm:mb-stevens-md md:mb-stevens-lg tracking-tight">
                 A University Built for the Future of Work
               </h2>
-              <p className="text-stevens-base md:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed">
+              <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed px-2 sm:px-0">
                 At Stevens, academic rigor meets real-world application. Our online programs empower professionals 
                 to lead with confidence in a technology-driven world and deliver measurable results for your organization.
               </p>
             </motion.div>
 
             {/* Stats grid with enhanced cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-stevens-lg lg:gap-stevens-xl">
               {stevensStats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
@@ -700,22 +700,22 @@ const CorporatePartners = () => {
                     viewport={{ once: true }}
                   >
                     <motion.div
-                      className="bg-white/10 backdrop-blur-sm rounded-stevens-xl p-stevens-xl border border-white/10 h-full transition-all duration-300 hover:bg-white/15 hover:border-white/20 group"
+                      className="bg-white/10 backdrop-blur-sm rounded-stevens-lg sm:rounded-stevens-xl p-4 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/10 h-full transition-all duration-300 hover:bg-white/15 hover:border-white/20 group"
                       whileHover={{ y: -4, scale: 1.02 }}
                       transition={{ duration: 0.2 }}
                     >
                       {/* Icon with background circle */}
-                      <div className="w-14 h-14 mx-auto mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
-                        <Icon className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-stevens-sm md:mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       
                       {/* Stat value with enhanced styling */}
-                      <div className="text-stevens-4xl md:text-stevens-5xl font-stevens-display font-stevens-bold mb-stevens-sm tracking-tight tabular-nums">
+                      <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums">
                         {stat.value}
                       </div>
                       
                       {/* Label with better hierarchy */}
-                      <div className="text-stevens-base font-stevens-semibold text-white/95">
+                      <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white/95 leading-tight sm:leading-normal">
                         {stat.label}
                       </div>
                     </motion.div>
