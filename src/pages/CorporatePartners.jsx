@@ -441,19 +441,16 @@ const CorporatePartners = () => {
         {/* Hero Section */}
         <PageHero
           titleLines={["Partner with Stevens to Transform Your Workforce"]}
-          subtitle="Flexible, career-aligned education designed for your employees — with accelerated admissions, dedicated corporate support, and customized learning pathways."
+          subtitle="Flexible, career-aligned education designed for your employees, with accelerated admissions, dedicated corporate support, and customized learning pathways."
           bgImage="/assets/images/corporate-partners/corporate-partners-1.webp"
           primaryCta={{
-            label: "Schedule a Consultation",
+            label: "Request Information",
             onClick: () => {
               handleCTAClick('schedule_consultation');
               setShowContactModal(true);
             }
           }}
-          secondaryCta={{
-            label: "Contact Us",
-            href: "#contact"
-          }}
+          
         />
 
         
@@ -660,7 +657,7 @@ const CorporatePartners = () => {
           {/* Background image with blur */}
           <div className="absolute inset-0">
             <img
-              src="/assets/images/shared/accreditation.webp"
+              src="/assets/images/corporate-partners/corporate-partners-2.webp"
               alt=""
               className="w-full h-full object-cover"
               aria-hidden="true"
@@ -669,7 +666,7 @@ const CorporatePartners = () => {
           </div>
           
           {/* Red overlay */}
-          <div className="absolute inset-0 bg-stevens-primary/90" />
+          <div className="absolute inset-0 bg-stevens-gray-900/50" />
           
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg relative z-10">
             {/* Header with enhanced typography */}
@@ -880,14 +877,7 @@ const CorporatePartners = () => {
                 >
                   Schedule a Consultation
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-stevens-white text-stevens-white bg-transparent hover:bg-stevens-white hover:text-stevens-primary transition-all duration-stevens-normal w-full sm:w-auto min-w-[280px]"
-                  onClick={() => handleCTAClick('download_guide_footer')}
-                >
-                  Download Partnership Guide
-                </Button>
+                
               </div>
             </div>
           </div>

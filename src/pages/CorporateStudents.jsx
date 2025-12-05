@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
+import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { 
   ArrowRight, 
   CheckCircle,
@@ -27,7 +28,7 @@ import {
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import ImageTestimonial from '@/components/shared/ImageTestimonial';
-import ApplicationModal from '@/components/shared/ApplicationModal';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -50,7 +51,7 @@ import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
-  const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [selectedCareerPath, setSelectedCareerPath] = useState('all');
   const [companyName, setCompanyName] = useState(null);
   const [corporateCode, setCorporateCode] = useState(null);
@@ -277,16 +278,50 @@ const CorporateStudents = () => {
     };
   };
 
-  const savings = calculateSavings();
-
-  const handleApplicationStart = () => {
-    trackEvent('corporate_application_started', {
-      company: companyName || 'unknown',
-      has_code: !!corporateCode
+  const handleCTAClick = (ctaType) => {
+    trackEvent('corporate_student_cta_clicked', {
+      page: 'corporate_students',
+      cta_type: ctaType,
+      company: companyName || 'unknown'
     });
-    trackConversion(CONVERSION_LABELS.APPLICATION_STARTED);
-    setShowApplicationModal(true);
+    
+    if (ctaType === 'request_info') {
+      trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
+    }
   };
+
+  
+  // Lock body scroll when modal is open
+    useEffect(() => {
+      if (showContactModal) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'unset';
+      }
+      
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }, [showContactModal]);
+  
+    // Handle ESC key to close modal
+    useEffect(() => {
+      const handleEsc = (e) => {
+        if (e.key === 'Escape' && showContactModal) {
+          setShowContactModal(false);
+        }
+      };
+      
+      if (showContactModal) {
+        window.addEventListener('keydown', handleEsc);
+      }
+      
+      return () => {
+        window.removeEventListener('keydown', handleEsc);
+      };
+    }, [showContactModal]);
+
+
 
   return (
     <PageContextProvider pageType="landing" pageName="Corporate Students">
@@ -296,18 +331,18 @@ const CorporateStudents = () => {
           titleLines={["Advance Your Career", "with Stevens Online"]}
           subtitle={
             companyName 
-              ? `As a ${companyName} employee, you have exclusive access to flexible online programs, simplified admissions, and dedicated support — designed to help you gain in-demand skills and achieve your career goals faster.`
-              : "As an employee of a Stevens corporate partner, you have exclusive access to flexible online programs, simplified admissions, and dedicated support — designed to help you gain in-demand skills and achieve your career goals faster."
+              ? `As a ${companyName} employee, you have exclusive access to flexible online programs, simplified admissions, and dedicated support designed to help you gain in-demand skills and achieve your career goals faster.`
+              : "As an employee of a Stevens corporate partner, you have exclusive access to flexible online programs, simplified admissions, and dedicated support designed to help you gain in-demand skills and achieve your career goals faster."
           }
           bgImage="/assets/images/corporate-students/corporate-students-1.webp"
           primaryCta={{
-            label: "Start Your Accelerated Application",
-            onClick: handleApplicationStart
+            label: "Request Information",
+            onClick: () => {
+              handleCTAClick('request_info');
+              setShowContactModal(true);
+            }
           }}
-          secondaryCta={{
-            label: "Talk to a Corporate Care Advisor",
-            href: "#contact"
-          }}
+          
           badges={companyName ? [
             { text: `Exclusive benefits for ${companyName} employees`, variant: "secondary" }
           ] : []}
@@ -1396,36 +1431,76 @@ const CorporateStudents = () => {
                   size="lg"
                   variant="default"
                   className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 w-full sm:w-auto min-w-[280px]"
-                  onClick={handleApplicationStart}
+                  onClick={() => window.open(BOOKING_URLS.SCHEDULE_CALL, '_blank')}
                 >
-                  Start Your Accelerated Application
+                  Contact Us
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-stevens-white text-stevens-white bg-transparent hover:bg-stevens-white hover:text-stevens-primary transition-all duration-stevens-normal w-full sm:w-auto min-w-[280px]"
-                  onClick={() => {
-                    trackEvent('corporate_advisor_contact', {
-                      company: companyName || 'unknown'
-                    });
-                  }}
-                >
-                  Talk to Corporate Care Advisor
-                </Button>
+                
               </div>
             </div>
           </div>
         </section>
 
         {/* Application Modal */}
-        {showApplicationModal && (
-          <ApplicationModal
-            isOpen={showApplicationModal}
-            onClose={() => setShowApplicationModal(false)}
-            corporateCode={corporateCode}
-            programCode={searchParams.get('program')}
-          />
+
+
+        {/* Contact Modal */}
+        {showContactModal && (
+          <div 
+            className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
+            onClick={() => setShowContactModal(false)}
+          >
+            <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
+            <div
+                className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Header */}
+                <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+                  <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
+                    Take the Next Step in Your Career
+                  </h2>
+                  <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
+                    Connect with Stevens Online to explore your options
+                  </p>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setShowContactModal(false)}
+                    className="absolute top-2 right-2 z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </button>
+                </div>
+                
+                {/* Content */}
+                <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
+                <LeadCaptureForm
+                  formType="rfi"
+                  source="corporate_students_page"
+                  programCode={searchParams.get('program') || "CORP"}
+                  hideHeader={true}
+                  onSuccess={() => {
+                    trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
+                    setShowContactModal(false);
+                  }}
+                  additionalUrlParams={{
+                    company: companyName || 'unknown'
+                  }}
+                />
+                </div>
+
+                {/* Footer */}
+                <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
+                  <p className="text-stevens-xs sm:text-stevens-sm text-stevens-gray-600 text-center leading-tight">
+                    Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with an advisor.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
+
       </div>
     </PageContextProvider>
   );
