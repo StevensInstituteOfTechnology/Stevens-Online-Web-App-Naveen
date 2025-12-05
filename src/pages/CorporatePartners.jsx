@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import TopCompaniesSection from '@/components/shared/TopCompaniesSection';
+import PullQuoteTestimonial from '@/components/shared/PullQuoteTestimonial';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -31,123 +32,6 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
-// Opening Quote SVG Component - Stevens Red
-const OpeningQuoteMark = ({ className }) => (
-  <svg 
-    className={className}
-    viewBox="0 0 19 20" 
-    aria-hidden="true"
-  >
-    <path 
-      fill="#A51C30" 
-      fillRule="evenodd" 
-      clipRule="evenodd" 
-      d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
-    />
-  </svg>
-);
-
-// Closing Quote SVG Component - Gray
-const ClosingQuoteMark = ({ className }) => (
-  <svg 
-    className={className}
-    viewBox="0 0 19 20" 
-    aria-hidden="true"
-  >
-    <path 
-      fill="#7F7F7F" 
-      fillRule="evenodd" 
-      clipRule="evenodd" 
-      d="M7.6,9.7L3.7,20H0.4l2.5-9.5H0V0h7.6V9.7z M19,9.7L15.1,20h-3.3l2.5-9.5h-2.9V0H19V9.7z"
-    />
-  </svg>
-);
-
-// Testimonials Section Component - Pull Quote Style
-const TestimonialsCarousel = ({ testimonials }) => {
-  // Get the first testimonial for the featured pull quote
-  const featuredTestimonial = testimonials[0];
-  
-  return (
-    <section className="py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-gray-50 to-stevens-white">
-      <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-        {/* Section Header */}
-        <div className="text-center mb-stevens-3xl">
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
-            Success Stories from Our Partners
-          </h2>
-          <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Hear from industry leaders who've transformed their workforce through partnership with Stevens Online
-          </p>
-        </div>
-
-        {/* Featured Pull Quote Testimonial */}
-        {featuredTestimonial && (
-          <motion.div 
-            className="mt-stevens-xl lg:mt-stevens-3xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {/* Quote Container - relative for positioning lines */}
-            <div className="relative flex flex-col pt-16 md:pt-20 pb-8 md:pb-12 px-4 md:px-12 lg:px-20">
-              
-              {/* ===== TOP LINE: Horizontal line from opening quote to right edge ===== */}
-              {/* Positioned at vertical center of opening quote mark, extends from after quote to right padding */}
-              <div 
-                className="absolute top-[18px] md:top-[22px] lg:top-[28px] right-4 md:right-12 lg:right-20 h-[1px] bg-[#7F7F7F] left-[60px] md:left-[116px] lg:left-[160px]"
-                aria-hidden="true"
-              />
-              
-              {/* Opening Quote Mark - Positioned absolutely above quote */}
-              <OpeningQuoteMark 
-                className="absolute -top-2 md:-top-4 left-4 md:left-12 lg:left-20 w-10 h-10 md:w-14 md:h-14 lg:w-[70px] lg:h-[72px]"
-              />
-              
-              {/* Quote Text - Large, condensed typography */}
-              <blockquote className="font-stevens-content text-2xl md:text-4xl lg:text-stevens-6xl leading-tight md:leading-tight lg:leading-none font-normal text-stevens-gray-700">
-                {featuredTestimonial.quote}
-              </blockquote>
-              
-              {/* ===== BOTTOM ROW: Bottom Line + Closing Quote + Attribution ===== */}
-              <div className="flex items-center mt-6 md:mt-8 -ml-4 md:-ml-12 lg:-ml-20">
-                {/* Bottom horizontal line - extends from left edge to closing quote */}
-                <div 
-                  className="flex-grow h-[1px] bg-[#7F7F7F] mr-3 md:mr-4 lg:mr-5"
-                  aria-hidden="true"
-                />
-                
-                {/* Closing Quote Mark - Gray */}
-                <ClosingQuoteMark 
-                  className="w-10 h-10 md:w-14 md:h-14 lg:w-[70px] lg:h-[72px] flex-shrink-0"
-                />
-                
-                {/* Attribution - Right-aligned style */}
-                <div className="flex flex-col ml-3 md:ml-4 lg:ml-5">
-                  {/* Author Name - Bold, large */}
-                  <span className="font-stevens-content text-xl md:text-2xl lg:text-stevens-4xl font-bold text-stevens-gray-700">
-                    {featuredTestimonial.author}
-                  </span>
-                  {/* Title/Role */}
-                  <span className="font-stevens-content text-base md:text-lg lg:text-stevens-2xl font-normal text-stevens-gray-900 mt-1">
-                    {featuredTestimonial.title}
-                  </span>
-                  {/* Company */}
-                  {featuredTestimonial.company && (
-                    <span className="text-stevens-sm md:text-stevens-base text-stevens-gray-600 mt-0.5 font-stevens-body">
-                      {featuredTestimonial.company}
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </section>
-  );
-};
 
 // Employment Growth Bar Chart Component
 const EmploymentGrowthChart = () => {
@@ -199,7 +83,7 @@ const EmploymentGrowthChart = () => {
   const leftMargin = 180;
   const rightMargin = 60;
   const topMargin = 32;
-  const bottomMargin = 100;
+  const bottomMargin = 50;
   
   const chartWidth = 700;
   const availableWidth = chartWidth - leftMargin - rightMargin;
@@ -313,13 +197,13 @@ const EmploymentGrowthChart = () => {
             className="text-stevens-sm font-stevens-medium fill-stevens-gray-600"
             style={{ fontSize: '13px' }}
           >
-            Growth Rate (%)
+            
           </text>
         </svg>
       </div>
 
       {/* Collapsible Footnotes */}
-      <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200">
+      <div className=" pt-stevens-md border-t border-stevens-gray-200">
         <button
           type="button"
           onClick={() => setShowSources((prev) => !prev)}
@@ -522,69 +406,12 @@ const CorporatePartners = () => {
   // Success stories / testimonials
   const testimonials = [
     {
-      quote: "Stevens' flexible online programs have been instrumental in helping our engineers stay ahead of technology trends while maintaining their work responsibilities.",
-      author: "Sarah Johnson",
-      title: "L&D Director",
-      company: "Pfizer",
-      logo: "/assets/company_logo/Pfizer_(2021).png"
-    },
-    {
-      quote: "The customized learning pathways Stevens created for our data science team directly aligned with our business objectives and delivered immediate ROI.",
-      author: "Michael Chen",
-      title: "VP of Talent Development",
-      company: "JPMorgan Chase",
-      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png"
-    },
-    {
-      quote: "Our partnership with Stevens has reduced turnover by 40% and created a culture of continuous learning within our organization.",
-      author: "Lisa Thompson",
-      title: "Chief People Officer",
-      company: "Johnson & Johnson",
-      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png"
-    },
-    {
-      quote: "The accelerated admissions process made it easy for our employees to get started. We've seen a 60% increase in program enrollment since partnering with Stevens.",
-      author: "David Rodriguez",
-      title: "Chief Learning Officer",
-      company: "IBM",
-      logo: "/assets/company_logo/IBM_logo.svg.png"
-    },
-    {
-      quote: "Stevens' corporate care team provides exceptional support. They understand our business needs and tailor programs that drive real results.",
-      author: "Jennifer Park",
-      title: "Head of Talent Development",
-      company: "Merck",
-      logo: "/assets/company_logo/Merck_Logo.svg.png"
+      quote: "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously.",
+      author: "Kim Hanemann",
+      title: "President and Chief Operating Officer, PSEG",
+     
     },
     
-    {
-      quote: "We've partnered with many universities, but Stevens stands out for their responsiveness and ability to customize programs to our specific needs.",
-      author: "Amanda Williams",
-      title: "Director of Learning & Development",
-      company: "Deloitte",
-      logo: "/assets/company_logo/Logo_of_Deloitte.svg.png"
-    },
-    {
-      quote: "The ROI on our Stevens partnership exceeded expectations. Our employees are more engaged, and we've seen measurable improvements in key performance metrics.",
-      author: "James Martinez",
-      title: "Chief People Officer",
-      company: "Amazon",
-      logo: "/assets/company_logo/Amazon_logo.svg.webp"
-    },
-    {
-      quote: "Stevens' online platform is intuitive and accessible. Our team members appreciate the flexibility to learn on their own schedule without sacrificing quality.",
-      author: "Patricia Lee",
-      title: "Senior VP of Talent",
-      company: "Microsoft",
-      logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png"
-    },
-    {
-      quote: "The faculty expertise and industry alignment of Stevens programs have directly contributed to our team's ability to tackle complex technical challenges.",
-      author: "Christopher Brown",
-      title: "Engineering Director",
-      company: "Accenture",
-      logo: "/assets/company_logo/Accenture_logo.svg.png"
-    }
   ];
 
   // Company logos for trust signals - using actual filenames from company_logo folder
@@ -1015,7 +842,11 @@ const CorporatePartners = () => {
         </section>
 
         {/* Success Stories / Testimonials */}
-        <TestimonialsCarousel testimonials={testimonials} />
+        <PullQuoteTestimonial
+          testimonial={testimonials[0]}
+        
+          
+        />
 
         {/* FAQ Section */}
         <EmployerFaqSection accordionPrefix="corporate-partners" />

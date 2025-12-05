@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
 import { 
@@ -23,12 +23,10 @@ import {
   Building,
   Calculator,
   X,
-  Quote,
-  ChevronLeft,
-  ChevronRight
+  Quote
 } from 'lucide-react';
-import useEmblaCarousel from 'embla-carousel-react';
 import PageHero from '@/components/shared/PageHero';
+import ImageTestimonial from '@/components/shared/ImageTestimonial';
 import ApplicationModal from '@/components/shared/ApplicationModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -49,174 +47,6 @@ import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/u
 import { BOOKING_URLS } from '@/config/constants';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
-const StudentSuccessCarousel = ({ stories }) => {
-  const buttonGradientLeft = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
-  const buttonGradientRight = 'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
-  
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
-    containScroll: 'trimSnaps',
-    dragFree: true,
-    loop: false,
-    slidesToScroll: 1
-  });
-  
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const containerRef = useRef(null);
-  
-  const scrollPrev = useCallback(() => {
-    emblaApi?.scrollPrev();
-  }, [emblaApi]);
-  
-  const scrollNext = useCallback(() => {
-    emblaApi?.scrollNext();
-  }, [emblaApi]);
-  
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-  
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      scrollPrev();
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      scrollNext();
-    }
-  }, [scrollPrev, scrollNext]);
-  
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-    return () => {
-      emblaApi?.off('select', onSelect);
-      emblaApi?.off('reInit', onSelect);
-    };
-  }, [emblaApi, onSelect]);
-  
-  return (
-    <section className="py-stevens-section bg-gradient-to-b from-stevens-gray-50 via-white to-stevens-gray-50">
-      <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-        <div className="text-center mb-stevens-3xl">
-        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
-            Success Stories from Corporate-Sponsored Alumni
-          </h2>
-          <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Hear how working professionals balanced life, work, and Stevens Online to earn transformative outcomes powered by their employer benefits.
-          </p>
-        </div>
-        
-        <div
-          className="relative group w-full overflow-hidden"
-          ref={containerRef}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-          role="region"
-          aria-label="Student success stories carousel. Use arrow keys to navigate."
-        >
-          <div
-            className="overflow-hidden py-8 w-full relative z-0"
-            ref={emblaRef}
-            role="list"
-          >
-            <div className="flex gap-stevens-xl rounded-stevens-xl ">
-              {stories.map((story, index) => {
-                const [leadSentence, ...restSentences] = story.quote.split('. ');
-                const leadText = restSentences.length ? `${leadSentence}.` : leadSentence;
-                const restBody = restSentences.join('. ');
-                const restText = restBody
-                  ? `${restBody}${restBody.trim().endsWith('.') ? '' : '.'}`
-                  : '';
-                
-                return (
-                  <div
-                    key={story.name}
-                    className="flex-none w-full lg:w-[calc(33.333%-2rem)] min-w-[300px]"
-                    style={{ minWidth: '300px' }}
-                    role="listitem"
-                    aria-label={`Testimonial ${index + 1} of ${stories.length}: ${story.name}`}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -6 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <Card className="h-full bg-[#F9FAFB] shadow-stevens-lg transition-all duration-300 hover:shadow-stevens-2xl hover:-translate-y-1 border border-stevens-gray-100/60 rounded-stevens-xl overflow-hidden">
-                        <CardContent className="p-stevens-xl flex flex-col h-full">
-                          <div className="flex-grow">
-                            <div className="-mx-stevens-xl -mt-stevens-xl mb-stevens-lg rounded-t-stevens-xl overflow-hidden h-[350px] w-[calc(100%+theme(spacing.stevens-xl)*2)]">
-                              <img
-                                src={story.image || '/assets/avatars/student-placeholder.webp'}
-                                alt={`${story.name} portrait`}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            
-                            <blockquote className="mb-stevens-xl leading-relaxed">
-                              <span className="block text-stevens-xl md:text-stevens-2xl font-stevens-semibold text-stevens-primary mb-stevens-md leading-tight">
-                                {leadText}
-                              </span>
-                            </blockquote>
-                          </div>
-                          
-                          <div className="pt-stevens-lg mt-auto border-t-2 border-stevens-gray-100">
-                            <p className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs">{story.name}</p>
-                            <p className="text-stevens-xs text-stevens-gray-600 uppercase tracking-wide mb-stevens-sm">{story.company}</p>
-                            <p className="text-stevens-sm text-stevens-gray-500">
-                              Program: <span className="font-stevens-bold text-stevens-gray-900">{story.program}</span>
-                            </p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          
-          {canScrollPrev && (
-            <div className="absolute inset-y-0 left-0 flex items-center pl-stevens-md pointer-events-none">
-              <motion.button
-                onClick={scrollPrev}
-                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
-                style={{ background: buttonGradientLeft }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Previous testimonials"
-              >
-                <ChevronLeft className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
-              </motion.button>
-            </div>
-          )}
-          
-          {canScrollNext && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-stevens-md pointer-events-none">
-              <motion.button
-                onClick={scrollNext}
-                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
-                style={{ background: buttonGradientRight }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Next testimonials"
-              >
-                <ChevronRight className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
-              </motion.button>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
@@ -367,35 +197,13 @@ const CorporateStudents = () => {
         return path && path.programs.includes(p.code);
       });
 
-  // Success stories
-  const successStories = [
+  // Success stories / testimonials
+  const testimonials = [
     {
-      name: "Sarah Mitchell",
-      title: "Data Science Manager",
-      company: "Fortune 500 Tech Company",
-      program: "MS in Data Science & Engineering",
-      quote: "Stevens' program helped me transition from analyst to manager in just 18 months. The corporate care team made balancing work and study seamless.",
-      outcome: "Promoted twice, 40% salary increase",
-      image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp"
+      quote: "I can confidently say that enrolling in the Stevens MBA program was one of my best decisions. Stevens offers a comprehensive curriculum that helps students develop invaluable skills to navigate the complex business world and improve their professional capabilities.",
+      author: "Rupinder Bhullar '21",
+      title: "Director of Enterprise Automation Services, Pfizer",
     },
-    {
-      name: "James Chen",
-      title: "Senior Software Engineer",
-      company: "Global Financial Services",
-      program: "MS in Computer Science",
-      quote: "The AI concentration perfectly aligned with my company's strategic direction. I'm now leading our machine learning initiatives.",
-      outcome: "Leading AI initiatives, received innovation award",
-      image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp"
-    },
-    {
-      name: "Maria Rodriguez",
-      title: "Product Manager",
-      company: "Healthcare Technology",
-      program: "Online MBA",
-      quote: "The flexibility of Stevens Online allowed me to earn my MBA while working full-time. My company covered 100% of the tuition.",
-      outcome: "Transitioned to product management, managing $10M portfolio",
-      image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp"
-    }
   ];
 
   // Learning journey steps - Application & Benefits
@@ -549,60 +357,93 @@ const CorporateStudents = () => {
           </div>
         </section>
 
-        {/* Why Stevens Online */}
-        <section className="bg-stevens-primary">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left Side - Image */}
-            <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden">
-              <img
-                src="/assets/images/shared/accreditation.webp"
-                alt="Stevens Online students and professionals"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: '20% center' }}
-              />
-            </div>
+        {/* Why Stevens Online - Full-bleed image with text overlay (desktop) / stacked (mobile) */}
+        <section className="w-full">
+          {/* Image Container - relative on mobile, absolute overlay on desktop */}
+          <div className="relative w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[700px] overflow-hidden">
+            {/* Background Image */}
+            <img
+              src="/assets/images/shared/accreditation.webp"
+              alt="Stevens Online students and professionals"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: '20% center' }}
+            />
+            {/* Dark gradient overlay for text readability - only visible on desktop */}
+            <div 
+              className="absolute inset-0 hidden lg:block"
+              style={{
+                background: 'linear-gradient(to left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 40%, transparent 70%)'
+              }}
+            />
 
-            {/* Right Side - Text Content */}
-            <div className="bg-stevens-primary text-stevens-white flex flex-col justify-center px-stevens-md sm:px-stevens-lg lg:px-stevens-2xl py-stevens-xl lg:aspect-square lg:min-h-0">
-              <div className="space-y-stevens-lg lg:space-y-stevens-xl">
-                {/* Title and Description */}
-                <div className="space-y-stevens-sm lg:space-y-stevens-md">
-                  <h2 className="font-stevens-display text-stevens-xl sm:text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-stevens-white leading-tight">
-                    A Top-Ranked University Built for Working Professionals
-                  </h2>
-                  <p className="text-stevens-sm sm:text-stevens-base lg:text-stevens-lg text-stevens-white/90 leading-relaxed">
-                    Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
-                    career outcomes, empowering professionals to thrive in the future of work.
-                  </p>
+            {/* Content Overlay - only visible on desktop (lg+), positioned bottom-right */}
+            <div className="hidden lg:flex relative z-10 h-full min-h-[700px] flex-col justify-end items-end">
+              <div className="px-16 xl:px-20 pb-16 lg:pb-20 max-w-3xl text-left">
+                
+                {/* Star + Line Motif */}
+                <div className="flex items-center mb-6 w-full">
+                  {/* North Star SVG Icon */}
+                  <svg 
+                    className="w-6 h-6 mx-3 flex-shrink-0" 
+                    viewBox="0 0 24 24" 
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path 
+                      d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" 
+                      fill="#D4A843"
+                    />
+                  </svg>
+                  
+                  {/* Right line - extends from star to container edge */}
+                  <div className="flex-grow h-[1px] bg-[#D4A843]" />
                 </div>
 
-                {/* Large Quote Icon */}
-                <div className="pt-stevens-sm lg:pt-stevens-md">
-                  <Quote className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-stevens-white/80" />
-                </div>
-
-                {/* Student Quote */}
-                {successStories.slice(0, 1).map((story, index) => (
-                  <div key={index} className="space-y-stevens-md lg:space-y-stevens-lg">
-                    <blockquote className="text-stevens-lg sm:text-stevens-xl lg:text-stevens-2xl text-stevens-white leading-relaxed">
-                      {story.quote}
-                    </blockquote>
-                    
-                    {/* Divider */}
-                    <div className="border-t border-stevens-white/30 pt-stevens-md lg:pt-stevens-lg">
-                      <p className="text-stevens-sm sm:text-stevens-base font-stevens-medium text-stevens-white">
-                        {story.name}, {story.title}
-                      </p>
-                      {story.company && (
-                        <p className="text-xs sm:text-stevens-sm text-stevens-white/80 mt-stevens-xs">
-                          {story.company}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                {/* Heading */}
+                <h2 className="font-stevens-display text-4xl lg:text-stevens-4xl font-stevens-bold text-white leading-tight mb-6">
+                  A Top-Ranked University Built for Working Professionals
+                </h2>
+                
+                {/* Body Text */}
+                <p className="text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl">
+                  Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
+                  career outcomes, empowering professionals to thrive in the future of work.
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* Mobile/Tablet Content - only visible on screens < 1024px, displayed below image */}
+          <div className="lg:hidden bg-stevens-primary px-6 sm:px-8 md:px-12 py-10 sm:py-12 md:py-16">
+            {/* Star + Line Motif */}
+            <div className="flex items-center mb-4 sm:mb-6 w-full max-w-2xl">
+              {/* North Star SVG Icon */}
+              <svg 
+                className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 flex-shrink-0" 
+                viewBox="0 0 24 24" 
+                fill="none"
+                aria-hidden="true"
+              >
+                <path 
+                  d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" 
+                  fill="#D4A843"
+                />
+              </svg>
+              
+              {/* Right line - extends from star to edge */}
+              <div className="flex-grow h-[1px] bg-[#D4A843]" />
+            </div>
+
+            {/* Heading */}
+            <h2 className="font-stevens-display text-2xl sm:text-3xl md:text-4xl font-stevens-bold text-white leading-tight mb-4 sm:mb-6">
+              A Top-Ranked University Built for Working Professionals
+            </h2>
+            
+            {/* Body Text */}
+            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl">
+              Stevens brings together industry-leading faculty, cutting-edge technology, and a focus on 
+              career outcomes, empowering professionals to thrive in the future of work.
+            </p>
           </div>
         </section>
 
@@ -1520,7 +1361,13 @@ const CorporateStudents = () => {
           </div>
         </section>
 
-        <StudentSuccessCarousel stories={successStories} />
+        {/* Success Stories / Testimonials */}
+        <ImageTestimonial
+          testimonial={testimonials[0]}
+          imageSrc="/assets/images/corporate-students/corporate-students-2.avif"
+          imageAlt="Rupinder Bhullar, Director of Enterprise Automation Services at Pfizer"
+          imageRatio={40}
+        />
 
         {/* FAQ Section */}
         <EmployerFaqSection accordionPrefix="corporate-students" />
