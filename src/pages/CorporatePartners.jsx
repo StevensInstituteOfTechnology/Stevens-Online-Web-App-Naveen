@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import useEmblaCarousel from 'embla-carousel-react';
 import { 
   ArrowRight, 
   TrendingUp, 
@@ -18,16 +17,12 @@ import {
   Lightbulb,
   Shield,
   DollarSign,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Quote
+  X
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import TopCompaniesSection from '@/components/shared/TopCompaniesSection';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -36,68 +31,47 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
-// Testimonials Carousel Component
+// Opening Quote SVG Component - Stevens Red
+const OpeningQuoteMark = ({ className }) => (
+  <svg 
+    className={className}
+    viewBox="0 0 19 20" 
+    aria-hidden="true"
+  >
+    <path 
+      fill="#A51C30" 
+      fillRule="evenodd" 
+      clipRule="evenodd" 
+      d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+    />
+  </svg>
+);
+
+// Closing Quote SVG Component - Gray
+const ClosingQuoteMark = ({ className }) => (
+  <svg 
+    className={className}
+    viewBox="0 0 19 20" 
+    aria-hidden="true"
+  >
+    <path 
+      fill="#7F7F7F" 
+      fillRule="evenodd" 
+      clipRule="evenodd" 
+      d="M7.6,9.7L3.7,20H0.4l2.5-9.5H0V0h7.6V9.7z M19,9.7L15.1,20h-3.3l2.5-9.5h-2.9V0H19V9.7z"
+    />
+  </svg>
+);
+
+// Testimonials Section Component - Pull Quote Style
 const TestimonialsCarousel = ({ testimonials }) => {
- 
-  const buttonGradientLeft = 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
-  const buttonGradientRight = 'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.95), rgba(237,242,247,0.85))';
+  // Get the first testimonial for the featured pull quote
+  const featuredTestimonial = testimonials[0];
   
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
-    containScroll: 'trimSnaps',
-    dragFree: true,
-    draggable: true,
-    loop: false,
-    skipSnaps: false,
-    slidesToScroll: 1
-  });
-
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const containerRef = useRef(null);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-    const index = emblaApi.selectedScrollSnap();
-    setSelectedIndex(index);
-  }, [emblaApi]);
-
-  // Keyboard navigation
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      scrollPrev();
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      scrollNext();
-    }
-  }, [scrollPrev, scrollNext]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
-      emblaApi.off('reInit', onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
   return (
     <section className="py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-gray-50 to-stevens-white">
       <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+        {/* Section Header */}
         <div className="text-center mb-stevens-3xl">
           <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
             Success Stories from Our Partners
@@ -107,131 +81,69 @@ const TestimonialsCarousel = ({ testimonials }) => {
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div 
-          className="relative group w-full overflow-hidden"
-          ref={containerRef}
-          onKeyDown={handleKeyDown}
-          tabIndex={0}
-          role="group"
-          aria-label="Success stories carousel. Use arrow keys to navigate."
-        >
-          {/* Embla Viewport */}
-          <div 
-            className="overflow-hidden py-8 w-full relative z-0" 
-            ref={emblaRef}
-            role="list"
+        {/* Featured Pull Quote Testimonial */}
+        {featuredTestimonial && (
+          <motion.div 
+            className="mt-stevens-xl lg:mt-stevens-3xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <div className="flex gap-stevens-xl">
-              {testimonials.map((testimonial, index) => {
-                const [leadSentence, ...restSentences] = testimonial.quote.split('. ');
-                const leadText = restSentences.length ? `${leadSentence}.` : leadSentence;
-                const restBody = restSentences.join('. ');
-                const restText = restBody
-                  ? `${restBody}${restBody.trim().endsWith('.') ? '' : '.'}`
-                  : '';
+            {/* Quote Container - relative for positioning lines */}
+            <div className="relative flex flex-col pt-16 md:pt-20 pb-8 md:pb-12 px-4 md:px-12 lg:px-20">
+              
+              {/* ===== TOP LINE: Horizontal line from opening quote to right edge ===== */}
+              {/* Positioned at vertical center of opening quote mark, extends from after quote to right padding */}
+              <div 
+                className="absolute top-[18px] md:top-[22px] lg:top-[28px] right-4 md:right-12 lg:right-20 h-[1px] bg-[#7F7F7F] left-[60px] md:left-[116px] lg:left-[160px]"
+                aria-hidden="true"
+              />
+              
+              {/* Opening Quote Mark - Positioned absolutely above quote */}
+              <OpeningQuoteMark 
+                className="absolute -top-2 md:-top-4 left-4 md:left-12 lg:left-20 w-10 h-10 md:w-14 md:h-14 lg:w-[70px] lg:h-[72px]"
+              />
+              
+              {/* Quote Text - Large, condensed typography */}
+              <blockquote className="font-stevens-content text-2xl md:text-4xl lg:text-stevens-6xl leading-tight md:leading-tight lg:leading-none font-normal text-stevens-gray-700">
+                {featuredTestimonial.quote}
+              </blockquote>
+              
+              {/* ===== BOTTOM ROW: Bottom Line + Closing Quote + Attribution ===== */}
+              <div className="flex items-center mt-6 md:mt-8 -ml-4 md:-ml-12 lg:-ml-20">
+                {/* Bottom horizontal line - extends from left edge to closing quote */}
+                <div 
+                  className="flex-grow h-[1px] bg-[#7F7F7F] mr-3 md:mr-4 lg:mr-5"
+                  aria-hidden="true"
+                />
                 
-                return (
-                  <div 
-                    key={index}
-                    className="flex-none w-full lg:w-[calc(33.333%-1.5rem)] min-w-[300px]"
-                    style={{ minWidth: '300px' }}
-                    role="listitem"
-                    aria-label={`Testimonial ${index + 1} of ${testimonials.length}: ${testimonial.author}`}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -6 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <Card className="h-full bg-[#F9FAFB] shadow-stevens-lg transition-all duration-300 hover:shadow-stevens-2xl hover:-translate-y-1 border border-stevens-gray-100/50 rounded-stevens-xl overflow-hidden">
-                        <CardContent className="p-stevens-xl flex flex-col h-full">
-                          <div className="flex-grow">
-                            <div className="mb-stevens-lg">
-                              <Quote className="w-12 h-12 text-stevens-primary/20" />
-                            </div>
-                            <blockquote className="mb-stevens-xl leading-relaxed">
-                              <span className="block text-stevens-xl md:text-stevens-2xl font-stevens-semibold text-stevens-primary mb-stevens-md leading-tight">
-                                {leadText}
-                              </span>
-                              {restText && (
-                                <span className="text-stevens-base md:text-stevens-lg text-stevens-gray-600 leading-relaxed">
-                                  {restText}
-                                </span>
-                              )}
-                            </blockquote>
-                          </div>
-                        <div className="pt-stevens-lg mt-auto border-t-2 border-stevens-gray-100">
-                          <div className="flex w-full items-center gap-stevens-lg">
-                            <div className="basis-1/2">
-                              <p className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs">
-                                {testimonial.author}
-                              </p>
-                              <p className="text-stevens-sm text-stevens-gray-600 leading-snug mb-stevens-xs">
-                                {testimonial.title}
-                              </p>
-                              <p className="text-stevens-sm text-stevens-gray-500 font-stevens-medium">
-                                {testimonial.company}
-                              </p>
-                            </div>
-                            <div className="basis-1/2 flex justify-center items-center">
-                              <div className="bg-stevens-gray-50/50 rounded-stevens-md p-stevens-md flex items-center justify-center min-h-[60px]">
-                                <img 
-                                  src={testimonial.logo} 
-                                  alt={testimonial.company}
-                                  className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+                {/* Closing Quote Mark - Gray */}
+                <ClosingQuoteMark 
+                  className="w-10 h-10 md:w-14 md:h-14 lg:w-[70px] lg:h-[72px] flex-shrink-0"
+                />
+                
+                {/* Attribution - Right-aligned style */}
+                <div className="flex flex-col ml-3 md:ml-4 lg:ml-5">
+                  {/* Author Name - Bold, large */}
+                  <span className="font-stevens-content text-xl md:text-2xl lg:text-stevens-4xl font-bold text-stevens-gray-700">
+                    {featuredTestimonial.author}
+                  </span>
+                  {/* Title/Role */}
+                  <span className="font-stevens-content text-base md:text-lg lg:text-stevens-2xl font-normal text-stevens-gray-900 mt-1">
+                    {featuredTestimonial.title}
+                  </span>
+                  {/* Company */}
+                  {featuredTestimonial.company && (
+                    <span className="text-stevens-sm md:text-stevens-base text-stevens-gray-600 mt-0.5 font-stevens-body">
+                      {featuredTestimonial.company}
+                    </span>
+                  )}
                 </div>
-              );
-            })}
+              </div>
             </div>
-          </div>
-
-          {/* Left Navigation Arrow */}
-          {canScrollPrev && (
-            <div className="absolute inset-y-0 left-0 flex items-center pl-stevens-md pointer-events-none">
-              <motion.button
-                onClick={scrollPrev}
-                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
-                style={{
-                  background: buttonGradientLeft
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Previous testimonials"
-              >
-                <ChevronLeft className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
-              </motion.button>
-            </div>
-          )}
-
-          {/* Right Navigation Arrow */}
-          {canScrollNext && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-stevens-md pointer-events-none">
-              <motion.button
-                onClick={scrollNext}
-                className="z-[100] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none pointer-events-auto opacity-0 group-hover:opacity-90 hover:opacity-100 cursor-pointer shadow-stevens-lg border border-stevens-gray-100 bg-white/90 backdrop-blur"
-                style={{
-                  background: buttonGradientRight
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Next testimonials"
-              >
-                <ChevronRight className="w-7 h-7 text-stevens-primary" aria-hidden="true" />
-              </motion.button>
-            </div>
-          )}
-        </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
