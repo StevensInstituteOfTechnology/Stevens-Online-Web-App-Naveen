@@ -44,19 +44,27 @@ export default function LeadCaptureForm({
     script.async = true;
 
     // Build the script URL with current page parameters
-    // Use centralized form ID constant
+    // Use centralized form ID constant - extract the UUID from the form ID
     const formId = FORM_IDS.RFI;
-    const baseUrl = `https://gradadmissions.stevens.edu/register/?id=f55a243b-abd6-45ea-8ff2-cd7f7af4d532&output=embed&div=${formId}`;
+    const formUuid = formId.replace('form_', ''); // Extract UUID from 'form_XXXX' format
+    const baseUrl = `https://gradadmissions.stevens.edu/register/?id=${formUuid}&output=embed&div=${formId}`;
     const currentParams = location.search.length > 1 ? '&' + location.search.substring(1) : '';
 
-    // Add source page and program interest as URL parameters
-    const additionalParams = new URLSearchParams({
+    // Rename 'mode' to 'display_mode' if present in additionalUrlParams
+    // But DO NOT mutate additionalUrlParams directly as it's a dependency
+    const finalAdditionalParams = new URLSearchParams({
       source_page: sourcePage,
       ...(programOfInterest && { program_interest: programOfInterest }),
       ...additionalUrlParams
     });
 
-    script.src = `${baseUrl}${currentParams}&${additionalParams.toString()}`;
+    if (finalAdditionalParams.has('mode')) {
+      const modeValue = finalAdditionalParams.get('mode');
+      finalAdditionalParams.delete('mode');
+      finalAdditionalParams.set('display_mode', modeValue);
+    }
+
+    script.src = `${baseUrl}${currentParams}&${finalAdditionalParams.toString()}`;
 
     // Track form submission when iframe loads successfully and user submits
     script.onload = () => {

@@ -356,12 +356,20 @@ export const routes = [
 
   // Corporate Partnership Pages
   {
-    path: '/siemens/',
+    path: '/siemens-pgcsef/',
     element: <SiemensPage />
   },
   {
+    path: '/siemens-pgcsef',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
+    path: '/siemens/',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
     path: '/siemens',
-    element: <Navigate to="/siemens/" replace />
+    element: <Navigate to="/siemens-pgcsef/" replace />
   },
   {
     path: '/pseg-inquiry/',

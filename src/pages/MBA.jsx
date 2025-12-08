@@ -111,7 +111,7 @@ const programData = {
         icon: LineChart,
         courses: [
           { code: "BIA 500", title: "Business Analytics: Data, Models and Decisions" },
-          { code: "BIA 568", title: "Managing AI of Technology" },
+          { code: "BIA 568", title: "Management of AI Technologies" },
           { code: "BIA 672", title: "Marketing Analytics" },
           { code: "BIA 674", title: "Supply Chain Analytics" },
           { code: "BIA 658", title: "Social Network Analytics" }]
@@ -189,7 +189,7 @@ const programData = {
             </div>
             
             <div class="course-item">
-              <button class="course-toggle" data-target="bia568">BIA 568 Managing AI of Technology (3)<span class="course-arrow">▼</span></button>
+              <button class="course-toggle" data-target="bia568">BIA 568 Management of AI Technologies (3)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="bia568">
                 <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Artificial Intelligence (AI) is an interdisciplinary field that draws on insights from computer science, engineering, mathematics, statistics, linguistics, psychology, and neuroscience to design agents that can perceive the environment and act upon it. This course surveys applications of artificial intelligence to business and technology in the digital era, including autonomous transportation, fraud detection, machine translation, meeting scheduling, and face recognition. In each application area, the course focuses on issues related to management of AI projects, including fairness, accountability, transparency, ethics, and the law.</p>
               </div>
@@ -486,7 +486,7 @@ const programData = {
                 <h5 class="font-stevens-bold text-stevens-xl text-stevens-primary mb-stevens-lg">Artificial Intelligence</h5>
                 <div class="space-y-stevens-md">
                   <div class="course-item">
-                    <button class="course-toggle" data-target="bia568">BIA 568 Managing AI of Technology (3)<span class="course-arrow">▼</span></button>
+                    <button class="course-toggle" data-target="bia568">BIA 568 Management of AI Technologies (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="bia568">
                       <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Artificial Intelligence (AI) is an interdisciplinary field that draws on insights from computer science, engineering, mathematics, statistics, linguistics, psychology, and neuroscience to design agents that can perceive the environment and act upon it. This course surveys applications of artificial intelligence to business and technology in the digital era, including autonomous transportation, fraud detection, machine translation, meeting scheduling, and face recognition. In each application area, the course focuses on issues related to management of AI projects, including fairness, accountability, transparency, ethics, and the law.</p>
                     </div>

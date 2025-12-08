@@ -33,28 +33,38 @@ const ExploreMEM = () => {
     useApplicationModal: true,
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
     badges: [
-      { text: "ABET Accredited", icon: Award },
       { text: "100% Online", icon: Globe },
-      { text: "No GRE Required", icon: Star }
+      { text: "No GRE Required", icon: Star },
+      { text: "#6 in the Nation", icon: Award }
     ],
     
     // Statistics
     statistics: [
       {
+        number: "No. 6",
+        label: "In the Nation",
+        description: "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025)."
+      },
+      
+      {
+        number: "No. 15",
+        label: "For Best Value",
+        description: "Ranks No. 15 among \"Best Value Colleges\" By Payscale (2024)."
+      },
+      {
         number: "Top 20",
         label: "For Best Career Placement",
         description: "Ranked among the top private schools for best career placement by The Princeton Review (2024)."
       },
-      
       {
-        number: "Top 10",
-        label: "for ROI",
-        description: "Stevens ranks among the top 10 in the nation for ROI, according to U.S. News & World Report (2025).²"
+        number: "100%",
+        label: "Employment",
+        description: "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers.¹"
       },
       {
-        number: "No. 6",
-        label: "In the Nation",
-        description: "Named the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025)."
+        number: "No. 1",
+        label: "In N.J.",
+        description: "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022)."
       }
     ],
     
