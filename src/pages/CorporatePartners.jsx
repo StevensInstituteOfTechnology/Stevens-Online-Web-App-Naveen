@@ -473,7 +473,7 @@ const CorporatePartners = () => {
                 <p className="text-stevens-base md:text-stevens-lg text-stevens-gray-700 leading-relaxed">
                 Stevens' College of Professional Education (CPE) reimagines how universities collaborate with employers. 
                 Built to be flexible, fast-moving, and interdisciplinary, CPE removes the barriers that slow corporate 
-                partnerships — helping you launch impactful learning initiatives that drive real results.
+                partnerships, helping you launch impactful learning initiatives that drive real results.
               </p>
               </motion.div>
 
