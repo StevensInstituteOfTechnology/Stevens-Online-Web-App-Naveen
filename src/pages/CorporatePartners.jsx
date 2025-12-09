@@ -777,7 +777,7 @@ const CorporatePartners = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
+            <div className="flex flex-wrap justify-center gap-stevens-lg">
               {offerings.map((offering, index) => {
                 const Icon = offering.icon;
                 return (
@@ -787,7 +787,7 @@ const CorporatePartners = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group"
+                    className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
                   >
                     <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg h-full shadow-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal transform group-hover:-translate-y-1">
                       <div className="flex items-start space-x-stevens-md">
