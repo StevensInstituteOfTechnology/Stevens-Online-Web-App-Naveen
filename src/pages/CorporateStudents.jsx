@@ -24,7 +24,13 @@ import {
   Building,
   Calculator,
   X,
-  Quote
+  Quote,
+  Phone,
+  Mail,
+  Calendar,
+  Copy,
+  Check,
+  ExternalLink
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import ImageTestimonial from '@/components/shared/ImageTestimonial';
@@ -37,6 +43,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 // Removed ProgramCard import - using custom implementation
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -45,13 +52,15 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { PROGRAMS_DATA } from '@/data/programsData';
 import { calculateProgramCost, getDiscountConfig, DiscountCalculator } from '@/utils/discountCalculator';
-import { BOOKING_URLS } from '@/config/constants';
+import { BOOKING_URLS, CONTACT_INFO } from '@/config/constants';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showContactOptionsModal, setShowContactOptionsModal] = useState(false);
+  const [copiedItem, setCopiedItem] = useState(null); // For copy feedback
   const [selectedCareerPath, setSelectedCareerPath] = useState('all');
   const [companyName, setCompanyName] = useState(null);
   const [corporateCode, setCorporateCode] = useState(null);
@@ -342,7 +351,13 @@ const CorporateStudents = () => {
               setShowContactModal(true);
             }
           }}
-          
+          secondaryCta={{
+            label: "Contact Us",
+            onClick: () => {
+              handleCTAClick('contact_us');
+              setShowContactOptionsModal(true);
+            }
+          }}
           badges={companyName ? [
             { text: `Exclusive benefits for ${companyName} employees`, variant: "secondary" }
           ] : []}
@@ -485,7 +500,7 @@ const CorporateStudents = () => {
         {/* Explore Career-Aligned Programs */}
         <section id="programs-section" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -499,7 +514,7 @@ const CorporateStudents = () => {
                 Choose from flexible graduate certificates, degrees, and short courses designed to 
                 strengthen your expertise and leadership potential.
               </p>
-            </div>
+            </motion.div>
 
             {/* Career Path Filter */}
             <div className="flex flex-wrap justify-center gap-stevens-sm mb-stevens-xl">
@@ -524,7 +539,7 @@ const CorporateStudents = () => {
 
             {/* Program Cards */}
             <AnimatePresence mode="wait">
-              <div
+              <motion.div
                 key={selectedCareerPath}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -669,7 +684,7 @@ const CorporateStudents = () => {
                     </div>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </AnimatePresence>
 
             {filteredPrograms.length > 6 && (
@@ -1410,7 +1425,7 @@ const CorporateStudents = () => {
         {/* Final CTA Section */}
         <section id="contact" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary text-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -1431,13 +1446,26 @@ const CorporateStudents = () => {
                   size="lg"
                   variant="default"
                   className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 w-full sm:w-auto min-w-[280px]"
-                  onClick={() => window.open(BOOKING_URLS.SCHEDULE_CALL, '_blank')}
+                  onClick={() => {
+                    handleCTAClick('request_info_footer');
+                    setShowContactModal(true);
+                  }}
+                >
+                  Request Information
+                </Button>
+                <Button
+                  size="lg"
+                  variant="default"
+                  className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 w-full sm:w-auto min-w-[280px]"
+                  onClick={() => {
+                    handleCTAClick('schedule_consultation_footer');
+                    setShowContactOptionsModal(true);
+                  }}
                 >
                   Contact Us
                 </Button>
-                
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -1500,6 +1528,121 @@ const CorporateStudents = () => {
             </div>
           </div>
         )}
+
+        {/* Contact Options Modal - Enhanced */}
+        <Dialog open={showContactOptionsModal} onOpenChange={(open) => {
+          setShowContactOptionsModal(open);
+          if (!open) setCopiedItem(null); // Reset copy state when closing
+        }}>
+          <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
+            {/* Header with gradient background */}
+            <div className="bg-stevens-primary text-white px-6 py-5 rounded-t-lg">
+              <DialogHeader className="space-y-2">
+                <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-white">
+                  Get in Touch
+                </DialogTitle>
+              
+              </DialogHeader>
+            </div>
+            
+            <div className="p-6 space-y-4">
+              {/* Schedule a Call - Primary Action */}
+              <button
+                onClick={() => {
+                  trackEvent('contact_option_selected', {
+                    option: 'schedule_call',
+                    page: 'corporate_students'
+                  });
+                  window.open(BOOKING_URLS.SCHEDULE_CALL, '_blank', 'noopener,noreferrer');
+                  setShowContactOptionsModal(false);
+                }}
+                className="w-full p-5 rounded-xl bg-stevens-primary text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
+              >
+                
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                    <Calendar className="w-7 h-7 text-white" />
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className="font-bold text-lg mb-1">
+                      Schedule a Call
+                    </h3>
+                    <p className="text-sm text-white/80">
+                      Book a convenient time for a personalized consultation
+                    </p>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-white/70 group-hover:text-white transition-colors flex-shrink-0" />
+                </div>
+              </button>
+
+              {/* Divider */}
+              <div className="relative py-2">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-stevens-gray-200"></div>
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="bg-white px-4 text-sm text-stevens-gray-500">or reach us directly</span>
+                </div>
+              </div>
+
+              {/* Contact Info Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Phone Card */}
+                <a
+                  href={CONTACT_INFO.PHONE_LINK}
+                  onClick={() => {
+                    trackEvent('contact_option_selected', {
+                      option: 'phone',
+                      page: 'corporate_students'
+                    });
+                  }}
+                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-gray-200 hover:border-stevens-primary hover:bg-stevens-primary/5 transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-green-100 group-hover:bg-green-200 flex items-center justify-center mb-3 transition-colors">
+                    <Phone className="w-6 h-6 text-green-600" />
+                  </div>
+                  <span className="text-xs text-stevens-gray-500 mb-1">Call Us</span>
+                  <span className="font-bold text-stevens-gray-900 group-hover:text-stevens-primary transition-colors">
+                    {CONTACT_INFO.PHONE_DISPLAY}
+                  </span>
+                </a>
+
+                {/* Email Card */}
+                <button
+                  onClick={() => {
+                    trackEvent('contact_option_selected', {
+                      option: 'email',
+                      page: 'corporate_students'
+                    });
+                    navigator.clipboard.writeText(CONTACT_INFO.EMAIL);
+                    setCopiedItem('email');
+                    setTimeout(() => setCopiedItem(null), 2000);
+                  }}
+                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-gray-200 hover:border-stevens-primary hover:bg-stevens-primary/5 transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-blue-100 group-hover:bg-blue-200 flex items-center justify-center mb-3 transition-colors">
+                    {copiedItem === 'email' ? (
+                      <Check className="w-6 h-6 text-green-600" />
+                    ) : (
+                      <Mail className="w-6 h-6 text-blue-600" />
+                    )}
+                  </div>
+                  <span className="text-xs text-stevens-gray-500 mb-1">
+                    {copiedItem === 'email' ? 'Copied!' : 'Email Us'}
+                  </span>
+                  <span className="font-bold text-stevens-gray-900 group-hover:text-stevens-primary transition-colors text-sm break-all">
+                    {CONTACT_INFO.EMAIL}
+                  </span>
+                  <span className="text-xs text-stevens-gray-400 mt-1 flex items-center gap-1">
+                    <Copy className="w-3 h-3" /> Click to copy
+                  </span>
+                </button>
+              </div>
+
+              
+            </div>
+          </DialogContent>
+        </Dialog>
 
       </div>
     </PageContextProvider>
