@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PageHero from '../shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
-import AcceleratedAppForm from '../forms/AcceleratedAppForm';
+import AcceleratedFormEmbed from '../forms/AcceleratedFormEmbed';
 import RequestInfoModal from '../shared/RequestInfoModal';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { Check, ArrowRight, Building, Users, BookOpen, Phone, Mail, Calendar } from 'lucide-react';
@@ -71,6 +71,13 @@ export default function CorporateLandingPageTemplate({
     }, [partnerName, heroImage]);
 
     const acceleratedFormTitle = formConfig.acceleratedFormTitle || 'Apply Now';
+    
+    // Build URL params for accelerated form
+    const acceleratedFormParams = {
+        ...(formConfig.mode && { display_mode: formConfig.mode }),
+        ...(formConfig.campaignUrl && { utm_campaign: formConfig.campaignUrl }),
+        ...(formConfig.corporateCode && { corporate_code: formConfig.corporateCode })
+    };
 
     // Create hero CTAs with RFI modal trigger
     const effectiveHeroPrimaryCta = heroPrimaryCta || {
@@ -192,31 +199,12 @@ export default function CorporateLandingPageTemplate({
                                             Complete the accelerated application form below to join the cohort.
                                         </p>
                                     </div>
-                                    <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                                        <div className="bg-stevens-maroon p-6 text-white">
-                                            <h3 className="font-display text-xl font-bold text-center">
-                                                {acceleratedFormTitle}
-                                            </h3>
-                                            <p className="text-center text-white/80 text-sm mt-2">
-                                                Exclusive application for {partnerName} employees
-                                            </p>
-                                        </div>
-                                        <div className="p-6">
-                                            <AcceleratedAppForm 
-                                                hideHeader={true}
-                                                programCode={formConfig.programCode || 'unknown'}
-                                                additionalUrlParams={{
-                                                    mode: formConfig.mode,
-                                                    utm_campaign: formConfig.campaignUrl,
-                                                    corporate_code: formConfig.corporateCode
-                                                }}
-                                            />
-                                            <div className="mt-4 text-center">
-                                                <p className="text-xs text-gray-500">
-                                                    Corporate Code: <span className="font-mono font-bold text-gray-700">{formConfig.corporateCode}</span>
-                                                </p>
-                                            </div>
-                                        </div>
+                                    <div className="max-w-3xl mx-auto lg:sticky lg:top-8">
+                                        <AcceleratedFormEmbed 
+                                            title={acceleratedFormTitle}
+                                            subtitle={`Exclusive application for ${partnerName} employees`}
+                                            urlParams={acceleratedFormParams}
+                                        />
                                     </div>
                                 </div>
                             )}
@@ -234,6 +222,10 @@ export default function CorporateLandingPageTemplate({
             onClose={() => setIsRFIModalOpen(false)}
             sourcePage={`corporate-${partnerName.toLowerCase()}`}
             programOfInterest={formConfig.programCode || ''}
+            additionalUrlParams={{
+                mode: formConfig.mode,
+                utm_campaign: formConfig.campaignUrl
+            }}
         />
         </>
     );

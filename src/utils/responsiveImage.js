@@ -239,9 +239,12 @@ export function getCardImageProps(imagePath) {
     };
   }
   
+  // Use widths that match actual available image variants (400w, 640w, 800w)
+  // Changed from [400, 600, 800] to [400, 640, 800] to fix broken image issue
+  // where 600w variants don't exist
   return {
     src: imagePath,
-    srcSet: generateSrcSet(imagePath, [400, 600, 800]),
+    srcSet: generateSrcSet(imagePath, [400, 640, 800]),
     sizes: generateSizes(
       {
         '640': '100vw',

@@ -48,14 +48,23 @@ const ExploreMSCS = () => {
       },
       {
         number: "No. 1",
-        label: "Best IT Programs",
-        description: "Stevens is ranked No. 1 in New Jersey for Best Online Master's in Computer Information Technology Programs by U.S. News & World Report (2025)."
+        label: "In N.J.",
+        description: "Stevens is ranked No. 1 in New Jersey for Best Online Master's in Computer Information Technology Programs by U.S. News & World Report (2024)."
       },
-     
       {
-        number: "Top 10",
-        label: "For ROI",
-        description: "Stevens ranks among the top 10 in the nation for ROI, according to U.S. News & World Report (2025).²"
+        number: "7x",
+        label: "Winner",
+        description: "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning."
+      },
+      {
+        number: "#13",
+        label: "In The Nation",
+        description: "The Princeton Review, Top 20 U.S. Private Schools for Best Career Placement (2022)."
+      },
+      {
+        number: "#15",
+        label: "For Best Value",
+        description: "Payscale (2024)."
       }
     ],
     

@@ -40,6 +40,8 @@ import PSEGPage from "@/pages/corporate/PSEGPage";
 import PSEGEnterpriseAIPage from "@/pages/corporate/PSEGEnterpriseAIPage";
 import CorporatePartners from "@/pages/CorporatePartners";
 import CorporateStudents from "@/pages/CorporateStudents";
+// import CorporatePartners from "@/pages/CorporatePartners";
+// import CorporateStudents from "@/pages/CorporateStudents";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
@@ -356,12 +358,20 @@ export const routes = [
 
   // Corporate Partnership Pages
   {
-    path: '/siemens/',
+    path: '/siemens-pgcsef/',
     element: <SiemensPage />
   },
   {
+    path: '/siemens-pgcsef',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
+    path: '/siemens/',
+    element: <Navigate to="/siemens-pgcsef/" replace />
+  },
+  {
     path: '/siemens',
-    element: <Navigate to="/siemens/" replace />
+    element: <Navigate to="/siemens-pgcsef/" replace />
   },
   {
     path: '/pseg-inquiry/',
@@ -395,6 +405,22 @@ export const routes = [
     path: '/corporate-students',
     element: <Navigate to="/corporate-students/" replace />
   },
+  // {
+  //   path: '/corporate-partners/',
+  //   element: <CorporatePartners />
+  // },
+  // {
+  //   path: '/corporate-partners',
+  //   element: <Navigate to="/corporate-partners/" replace />
+  // },
+  // {
+  //   path: '/corporate-students/',
+  //   element: <CorporateStudents />
+  // },
+  // {
+  //   path: '/corporate-students',
+  //   element: <Navigate to="/corporate-students/" replace />
+  // },
 
   // Explore program pages
   {

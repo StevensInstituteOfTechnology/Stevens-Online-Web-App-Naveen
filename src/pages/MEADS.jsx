@@ -81,20 +81,29 @@ const programData = {
   // ==================================================================
   rankings: [
     {
-      ranking: "99%",
-      description: "EMPLOYMENT",
-      source: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.",
-      note: ""
+      ranking: "Top 20",
+      description: "For Best Career Placement",
+      source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)."
     },
     {
-      ranking: "7x",
-      description: "Winner",
-      source: "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning."
+      ranking: "Top 15",
+      description: "For ROI",
+      source: "Stevens ranks among the top 15 in the nation for ROI, according to U.S. News & World Report (2025)."
+    },
+    {
+      ranking: "99%",
+      description: "Employment",
+      source: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating."
     },
     {
       ranking: "#15",
       description: "For Best Value",
       source: "Payscale (2024)."
+    },
+    {
+      ranking: "7x",
+      description: "Winner",
+      source: "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning."
     }
   ],
   // ==================================================================

@@ -806,17 +806,25 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             {curriculum.courseTabs && (
               <Tabs defaultValue={Object.keys(curriculum.courseTabs)[0]} className="w-full">
                 {/* Tabs Navigation */}
-                <TabsList className="w-full justify-start bg-transparent border-b-2 border-stevens-gray-200 rounded-none h-auto p-0 gap-0">
-                  {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
-                    <TabsTrigger 
-                      key={tabKey} 
-                      value={tabKey}
-                      className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-primary rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-gray-700 data-[state=active]:text-stevens-gray-900 hover:text-stevens-primary transition-colors duration-stevens-normal border-b-4 border-transparent"
-                    >
-                      {curriculum.courseTabs[tabKey].title}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+                <div className="relative overflow-x-auto scrollbar-hide group">
+                  {/* Left scroll indicator */}
+                  <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                  
+                  {/* Right scroll indicator */}
+                  <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                  
+                  <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-gray-200 rounded-none h-auto p-0 gap-0">
+                    {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
+                      <TabsTrigger 
+                        key={tabKey} 
+                        value={tabKey}
+                        className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-primary rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-gray-700 data-[state=active]:text-stevens-gray-900 hover:text-stevens-primary transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                      >
+                        {curriculum.courseTabs[tabKey].title}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </div>
                 
                 {/* Tab Content */}
                 {Object.keys(curriculum.courseTabs).map(tabKey => (
