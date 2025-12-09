@@ -234,16 +234,11 @@ const CorporateStudents = () => {
     },
     {
       step: 3,
-      actionNeeded: "Select your company to view partnership benefits",
-      forYourPlan: "In the calculator, choose your company from the dropdown menu to see available corporate partnership benefits, discounts, and special programs tailored to your organization."
+      actionNeeded: "Select your company and apply eligible discounts",
+      forYourPlan: "In the calculator, choose your company from the dropdown menu to see available corporate partnership benefits. Then select any applicable discounts and enter your employer reimbursement amount to see your final out-of-pocket cost."
     },
     {
       step: 4,
-      actionNeeded: "Apply eligible discounts",
-      forYourPlan: "Select any applicable discounts and enter your employer reimbursement amount. The calculator will show your final out-of-pocket cost after all discounts and benefits."
-    },
-    {
-      step: 5,
       actionNeeded: "Start your application",
       forYourPlan: "Click the \"Apply Now\" button on your selected program page to begin your application. If you have any questions or need assistance, feel free to ",
       linkText: "schedule a call with an advisor",
@@ -344,7 +339,7 @@ const CorporateStudents = () => {
               : "As an employee of a Stevens corporate partner, you have exclusive access to flexible online programs, simplified admissions, and dedicated support designed to help you gain in-demand skills and achieve your career goals faster."
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
-          bgImagePosition="center 20%"
+          bgImagePosition="center 30%"
           primaryCta={{
             label: "Request Information",
             onClick: () => {
