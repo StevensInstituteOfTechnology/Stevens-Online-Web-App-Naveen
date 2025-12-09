@@ -343,7 +343,8 @@ const CorporateStudents = () => {
               ? `As a ${companyName} employee, you have exclusive access to flexible online programs, simplified admissions, and dedicated support designed to help you gain in-demand skills and achieve your career goals faster.`
               : "As an employee of a Stevens corporate partner, you have exclusive access to flexible online programs, simplified admissions, and dedicated support designed to help you gain in-demand skills and achieve your career goals faster."
           }
-          bgImage="/assets/images/corporate-students/corporate-students-1.webp"
+          bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
+          bgImagePosition="center 20%"
           primaryCta={{
             label: "Request Information",
             onClick: () => {

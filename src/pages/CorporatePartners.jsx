@@ -853,6 +853,21 @@ const CorporatePartners = () => {
                       By investing in these high-growth disciplines, you&apos;re positioning your organization to lead in 
                       AI, data, and emerging technologies.
                             </p>
+                    
+                    {/* CTA Button to Explore Programs */}
+                    <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-gray-200">
+                      <Link 
+                        to="/admissions/#explore-programs"
+                        className="inline-flex items-center gap-2 bg-stevens-primary hover:bg-stevens-primary/90 text-white font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg"
+                      >
+                        <GraduationCap className="w-5 h-5" />
+                        Explore Our Programs
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      <p className="text-stevens-sm text-stevens-gray-500 mt-stevens-sm">
+                        Browse masters degrees and certificates available for your workforce
+                      </p>
+                    </div>
                           </div>
                         </div>
                       </div>
