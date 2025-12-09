@@ -231,14 +231,21 @@ function ProgramReadinessAssessment({ onComplete }) {
       
       <CardContent className="bg-stevens-white p-stevens-lg mt-stevens-lg mb-stevens-lg">
         <AnimatePresence mode="wait">
-        <h3 className="text-stevens-xl font-semibold mb-stevens-lg text-stevens-gray-900 font-stevens-display">
+          <motion.div
+            key={currentQuestion.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="text-stevens-xl font-semibold mb-stevens-lg text-stevens-gray-900 font-stevens-display">
               {currentQuestion.question}
             </h3>
             
             <div className="space-y-stevens-sm" >
               {currentQuestion.answers.map((answer, index) =>
               <Button
-                key={index}
+                key={`${currentQuestion.id}-${index}`}
                 variant={answers[currentQuestion.id] === index ? "default" : "outline"}
                 className={`w-full text-left justify-start p-stevens-md h-auto min-h-[60px] transition-all duration-stevens-normal rounded-stevens-md text-wrap break-words text-stevens-sm stevens-md:text-stevens-base ${
                 answers[currentQuestion.id] === index ?
@@ -260,6 +267,7 @@ function ProgramReadinessAssessment({ onComplete }) {
                 Previous Question
               </Button>
             }
+          </motion.div>
         </AnimatePresence>
       </CardContent>
     </Card>);
