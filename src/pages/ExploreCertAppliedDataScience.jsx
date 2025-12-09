@@ -108,7 +108,7 @@ const ExploreCertAppliedDataScience = () => {
         label: "Total Cost"
       },
       {
-        value: "16-20 Weeks",
+        value: "16-24 Weeks",
         label: "Duration"
       },
       {

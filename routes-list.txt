@@ -1,0 +1,55 @@
+URL Routes List (excluding blog pages)
+========================================
+
+Home & Main Pages
+-----------------
+/
+/asap/
+/accelerated-application/
+/tuition-and-financial-aid/
+/request-information/
+/page-not-found/
+
+Program Pages
+-------------
+/online-mba/
+/online-masters-computer-science-mscs/
+/online-masters-engineering-management/
+/online-masters-engineering-applied-data-science/
+
+Certificate Pages
+-----------------
+/certificates/enterprise-ai/
+/certificates/applied-data-science-foundations/
+/Certificates
+
+Explore Program Pages
+---------------------
+/explore/online-mba/
+/explore/online-masters-engineering-management/
+/explore/online-masters-eng-applied-data-science/
+/explore/online-masters-computer-science/
+/explore/ai-masters-computer-science/
+
+Explore Certificate Pages
+-------------------------
+/explore/certificates/enterprise-ai/
+/explore/certificates/applied-data-science-foundations/
+
+Other Pages
+-----------
+/compare-our-programs/
+/events/
+/professionaleducation/
+/online-learning-experience/
+/TuitionOutcomes
+/admissions/
+/employer-sponsorship/
+
+Corporate Pages
+---------------
+/corporate-partners/
+/corporate-students/
+/siemens-pgcsef/
+/pseg-inquiry/
+/pseg-pgceai/

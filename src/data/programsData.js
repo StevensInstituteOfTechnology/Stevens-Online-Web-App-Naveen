@@ -141,7 +141,7 @@ export const PROGRAMS_DATA = [
     explorePage: '/explore/certificates/enterprise-ai/',
     stats: {
       cost: '$5,250',
-      duration: '8-16 weeks',
+      duration: '16-24 weeks',
       credits: '9',
       format: '100% Online'
     }
@@ -169,7 +169,7 @@ export const PROGRAMS_DATA = [
     explorePage: '/explore/certificates/applied-data-science-foundations/',
     stats: {
       cost: '$5,250',
-      duration: '16-20 weeks',
+      duration: '16-24 weeks',
       credits: '9',
       format: '100% Online'
     }
