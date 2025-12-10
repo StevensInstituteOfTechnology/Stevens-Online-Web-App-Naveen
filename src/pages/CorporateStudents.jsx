@@ -165,7 +165,7 @@ const CorporateStudents = () => {
     {
       icon: Zap,
       title: "Accelerated Application",
-      description: "Skip essays and recommendation letters — apply in minutes, not weeks."
+      description: "Skip essays and recommendation letters. Apply in minutes, not weeks."
     },
     {
       icon: DollarSign,
@@ -210,7 +210,7 @@ const CorporateStudents = () => {
     {
       step: 2,
       actionNeeded: "Select your recommended program",
-      forYourPlan: "Choose from our personalized recommendations based on your interests—whether you're looking for a master's degree or a stackable certificate."
+      forYourPlan: "Choose from our personalized recommendations based on your interests, whether you're looking for a master's degree or a stackable certificate."
     },
     {
       step: 3,
@@ -413,7 +413,7 @@ const CorporateStudents = () => {
             <div className="space-y-4">
               {[
                 { text: "Dedicated corporate care advisors for every student" },
-                { text: "Accelerated application—no essays or GRE required" },
+                { text: "Accelerated application: no essays or GRE required" },
                 { text: "Discounts stack: Partner + Hoboken + Alumni = up to 50% off" }
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-white/90">
@@ -749,7 +749,7 @@ const CorporateStudents = () => {
           subtitle={
             companyName 
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. Spring 2026 enrollment is now open.`
-              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits—Spring 2026 enrollment is now open."
+              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. Spring 2026 enrollment is now open."
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
           bgImagePosition="center 30%"
@@ -1270,7 +1270,7 @@ const CorporateStudents = () => {
                                 >
                                   <Button size="lg" className="w-full text-stevens-white group py-4">
                                     <Send className="w-5 h-5 mr-2" />
-                                    Apply Now — Lock In Your Savings
+                                    Apply Now
                                     <ExternalLink className="w-4 h-4 ml-2" />
                                   </Button>
                                 </a>
@@ -1295,7 +1295,7 @@ const CorporateStudents = () => {
                               >
                                 <Button size="lg" className="w-full text-stevens-white group py-4">
                                   <Send className="w-5 h-5 mr-2" />
-                                  Apply Now — Lock In Your Savings
+                                  Apply Now
                                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                               </Link>
