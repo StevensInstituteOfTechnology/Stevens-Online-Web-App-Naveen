@@ -83,7 +83,7 @@ const AlumniPGC = () => {
       content: `
         <p>Professional Graduate Certificates offer a fast, focused way to gain in-demand skills without committing to a full degree program.</p>
         <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Quick completion:</strong> Earn your certificate in as few as 8-16 weeks</li>
+          <li><strong>Quick completion:</strong> Earn your certificate in as few as 16-24 weeks</li>
           <li><strong>Immediate ROI:</strong> Apply new skills directly to your current role</li>
           <li><strong>Stackable credits:</strong> All 9 credits can be applied toward a master's degree</li>
           <li><strong>Cost-effective:</strong> Aligns with your employer's tuition benefit</li>
@@ -96,8 +96,7 @@ const AlumniPGC = () => {
         <p>Getting started is easy with our accelerated application process:</p>
         <ul class="list-disc pl-5 mt-2 space-y-1">
           <li>No letters of recommendation required</li>
-          <li>Upload unofficial transcripts to begin</li>
-          <li>Official transcripts due within <strong>2 months</strong> of enrollment</li>
+          <li>No transcripts required, we have your transcripts on file</li>
           <li>Apply your 15% alumni discount automatically</li>
         </ul>
       `
@@ -137,7 +136,10 @@ const AlumniPGC = () => {
           }}
           secondaryCta={{
             label: "Apply In Minutes",
-            href: "#apply-now"
+            onClick: () => {
+              handleCTAClick('apply_now');
+              document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
+            }
           }}
         />
 
@@ -169,7 +171,14 @@ const AlumniPGC = () => {
               </h3>
               <div className="grid stevens-md:grid-cols-2 gap-stevens-lg">
                 {certificatePrograms.map((program) => (
-                  <ProgramCard key={program.id} program={program} />
+                  <ProgramCard 
+                    key={program.id} 
+                    program={program} 
+                    onApplyClick={() => {
+                      handleCTAClick('apply_now_card');
+                      document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  />
                 ))}
               </div>
             </div>
@@ -258,8 +267,8 @@ const AlumniPGC = () => {
         sourcePage="alumni-pgc"
         programOfInterest=""
         additionalUrlParams={{
-          mode: "ALUMNI-PGC",
-          utm_campaign: "/alumni-pgc-inquiry"
+          display_mode: formConfig.mode,
+          utm_campaign: formConfig.campaignUrl
         }}
       />
     </PageContextProvider>
