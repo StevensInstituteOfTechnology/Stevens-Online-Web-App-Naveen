@@ -39,7 +39,7 @@ const programData = {
     { value: "Portfolio", label: "Projects", icon: Briefcase }],
 
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-20 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
+    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-24 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
   },
   overview: {
     title: "Certificate Overview",

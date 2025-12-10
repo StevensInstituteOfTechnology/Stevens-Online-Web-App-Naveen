@@ -10,8 +10,9 @@ import { trackEvent } from '@/utils/analytics/vercelTracking';
 /**
  * ProgramCard - Beautiful card component for displaying program information
  * @param {Object} program - Program data object
+ * @param {Function} onApplyClick - Optional override for Apply Now button behavior
  */
-const ProgramCard = ({ program }) => {
+const ProgramCard = ({ program, onApplyClick }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Determine application link based on config
@@ -112,7 +113,26 @@ const ProgramCard = ({ program }) => {
           </Link>
 
           {/* Apply Now Button - Different behavior based on application type */}
-          {program.applicationConfig.type === 'modal' ? (
+          {onApplyClick ? (
+            // Custom override provided (e.g., Alumni page scrolls to embedded form)
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onApplyClick(program);
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('apply_button_clicked', {
+                  program_code: program.code,
+                  program_name: program.shortName,
+                  button_location: 'admissions_card',
+                  application_type: 'custom_override'
+                });
+              }}
+              className="flex-1 btn-stevens-primary text-stevens-sm"
+            >
+              Apply Now
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </button>
+          ) : program.applicationConfig.type === 'modal' ? (
             // Modal type (MSCS, MEM) - Opens modal to choose Standard vs ASAP
             <button
               onClick={(e) => {

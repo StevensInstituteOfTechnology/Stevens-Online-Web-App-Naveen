@@ -97,7 +97,7 @@ export default function CorporateLandingPageTemplate({
             <PageHero
                 title={
                     <div className="flex flex-col gap-4">
-                        <span className="inline-block w-fit px-6 py-2.5 rounded-full bg-stevens-maroon/90 text-white text-lg font-bold tracking-wide uppercase shadow-md border border-white/20">
+                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-maroon/90 text-white text-2xl font-bold tracking-wide uppercase shadow-md border border-white/20">
                             A Stevens × {partnerName} Partnership
                         </span>
                         <span>{heroTitle}</span>
