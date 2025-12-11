@@ -66,7 +66,7 @@ const tuitionAdmissionsItems = [
   { name: "Events", page: "Events/" },
   //{ name: "Corporate Partners", page: "corporate-partners/" },
   //{ name: "Corporate Students", page: "corporate-students/" },
-  { name: "Alumni Professional Development", page: "alumni-pgc/" },
+  { name: "Alumni Workforce Development", page: "alumni-pgc/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
