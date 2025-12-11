@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, Award, Percent, BookOpen, Check, Users } from 'lucide-react';
+import { GraduationCap, Award, Percent, BookOpen, Check, Users, DollarSign, BadgeCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageHero from '@/components/shared/PageHero';
 import RequestInfoModal from '@/components/shared/RequestInfoModal';
@@ -141,6 +141,24 @@ const AlumniPGC = () => {
               document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
             }
           }}
+          bottomContent={
+            <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+              <div className="inline-flex items-center gap-4 bg-white px-6 py-4 rounded-xl shadow-2xl border-l-4 border-l-stevens-success">
+                <div className="w-14 h-14 min-w-[3.5rem] bg-stevens-success rounded-full flex items-center justify-center">
+                  <BadgeCheck className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-bold text-stevens-success uppercase tracking-wide">Employer Benefit Friendly</p>
+                  <p className="text-xl font-bold text-gray-900">
+                    Tuition Aligned with Reimbursement Plans
+                  </p>
+                  <p className="text-sm text-gray-700 mt-1">
+                    <span className="font-bold text-stevens-primary text-base">$4,462.50</span> with alumni discount - fits within most employer tuition benefits
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
         />
 
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section relative z-10">
