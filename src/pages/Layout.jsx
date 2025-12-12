@@ -66,6 +66,9 @@ const tuitionAdmissionsItems = [
   { name: "Events", page: "Events/" },
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
+  //{ name: "Corporate Partners", page: "corporate-partners/" },
+  //{ name: "Corporate Students", page: "corporate-students/" },
+  { name: "Alumni Workforce Development", page: "alumni-pgc/" },
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -91,7 +94,7 @@ const mobileNavLinks = [
     items: mobileCertificateProgramItems,
   },
   {
-    name: "Academics",
+    name: "Discover",
     isDropdown: true,
     items: tuitionAdmissionsItems,
   },
@@ -1012,7 +1015,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    Academics{" "}
+                    Discover{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${tuitionDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent

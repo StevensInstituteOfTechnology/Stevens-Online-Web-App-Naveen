@@ -27,7 +27,9 @@ export default function PageHero({
   requestInfoProgramCode = '', // Program code for Request Info modal
   requestInfoSourcePage = 'unknown', // Source page for tracking
   rightContent, // Content to display on the right side
-  bottomContent // Content to display at the bottom of left column
+  bottomContent, // Content to display at the bottom of left column
+  primaryButtonClassName = '', // Custom className for primary button
+  secondaryButtonClassName = '' // Custom className for secondary button
 }) {
   const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
   const [isRequestInfoModalOpen, setIsRequestInfoModalOpen] = useState(false);
@@ -37,9 +39,13 @@ export default function PageHero({
 
   const renderCta = (cta, variant = 'primary') => {
     if (!cta || !cta.label) return null;
-    const className = variant === 'primary'
+    const baseClassName = variant === 'primary'
       ? 'btn-stevens-primary w-full sm:w-auto'
       : 'btn-stevens-secondary w-full sm:w-auto';
+    const customClassName = variant === 'primary'
+      ? primaryButtonClassName
+      : secondaryButtonClassName;
+    const className = `${baseClassName} ${customClassName}`.trim();
 
     // Determine conversion label based on variant and label
     const getConversionLabel = () => {

@@ -49,6 +49,24 @@ export default function PSEGPage() {
             exploreLink: "/online-masters-engineering-applied-data-science/",
             applyLink: "/accelerated-application/?program=meads&corporate_code=P01S04G",
             useModal: false
+        },
+        {
+            code: "cert-eai",
+            title: "Certificate in Enterprise AI",
+            description: "Master AI implementation and strategy for enterprise environments.",
+            exploreLink: "/certificates/enterprise-ai/",
+            applyLink: "/accelerated-application/?program=pgc-eai&corporate_code=P01S04G",
+            useModal: false,
+            isCertificate: true
+        },
+        {
+            code: "cert-ads",
+            title: "Certificate in Applied Data Science",
+            description: "Build foundational skills in data science and analytics.",
+            exploreLink: "/certificates/applied-data-science-foundations/",
+            applyLink: "/accelerated-application/?program=pgc-ads&corporate_code=P01S04G",
+            useModal: false,
+            isCertificate: true
         }
     ];
 
@@ -70,7 +88,7 @@ export default function PSEGPage() {
                             <p className="text-gray-600 text-sm mb-6 flex-grow">{program.description}</p>
                             <div className="mt-auto space-y-3">
                                 <Link to={program.exploreLink} target="_blank">
-                                    <Button variant="outline" className="w-full text-stevens-primary border-stevens-primary hover:bg-stevens-primary hover:text-white">
+                                    <Button variant="outline" className="w-full text-stevens-primary border-stevens-primary hover:bg-stevens-primary hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Explore Program <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -81,7 +99,7 @@ export default function PSEGPage() {
                                     className="block"
                                     onClick={(e) => handleApplyClick(e, program.applyLink, program.useModal)}
                                 >
-                                    <Button className="w-full bg-stevens-primary hover:bg-stevens-primary/90 text-white">
+                                    <Button className="w-full bg-stevens-primary hover:bg-stevens-primary/90 text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Apply in Minutes
                                     </Button>
                                 </a>

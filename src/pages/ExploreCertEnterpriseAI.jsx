@@ -108,7 +108,7 @@ const ExploreCertEnterpriseAI = () => {
         label: "Total Cost"
       },
       {
-        value: "8-16 Weeks",
+        value: "16-24 Weeks",
         label: "Duration"
       },
       {

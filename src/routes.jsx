@@ -42,6 +42,7 @@ import CorporatePartners from "@/pages/CorporatePartners";
 import CorporateStudents from "@/pages/CorporateStudents";
 // import CorporatePartners from "@/pages/CorporatePartners";
 // import CorporateStudents from "@/pages/CorporateStudents";
+import AlumniPGC from "@/pages/AlumniPGC";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
@@ -421,6 +422,14 @@ export const routes = [
   //   path: '/corporate-students',
   //   element: <Navigate to="/corporate-students/" replace />
   // },
+  {
+    path: '/alumni-pgc/',
+    element: <AlumniPGC />
+  },
+  {
+    path: '/alumni-pgc',
+    element: <Navigate to="/alumni-pgc/" replace />
+  },
 
   // Explore program pages
   {
