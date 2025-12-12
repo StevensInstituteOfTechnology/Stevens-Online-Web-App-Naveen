@@ -824,7 +824,7 @@ export default function Home() {
             <div className="space-y-4">
               
               <img 
-                src="/assets/images/home/SARA_Seal_group_2024_Participating.avif"
+                src="/assets/images/home/SARA_Seal_group_2024_Participating.webp"
                 alt="SARA Participating Institution"
                 className="mx-auto max-w-xs w-full h-auto"
                 loading="lazy"

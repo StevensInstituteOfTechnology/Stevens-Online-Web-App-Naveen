@@ -57,9 +57,9 @@ const ExploreMSCS = () => {
         description: "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning."
       },
       {
-        number: "#13",
-        label: "In The Nation",
-        description: "The Princeton Review, Top 20 U.S. Private Schools for Best Career Placement (2022)."
+        number: "#12",
+        label: "For Best Career Placement",
+        description: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)."
       },
       {
         number: "#15",

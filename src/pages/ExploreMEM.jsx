@@ -52,9 +52,9 @@ const ExploreMEM = () => {
         description: "Ranks No. 15 among \"Best Value Colleges\" By Payscale (2024)."
       },
       {
-        number: "Top 20",
+        number: "#12",
         label: "For Best Career Placement",
-        description: "Ranked among the top private schools for best career placement by The Princeton Review (2024)."
+        description: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)."
       },
       {
         number: "100%",

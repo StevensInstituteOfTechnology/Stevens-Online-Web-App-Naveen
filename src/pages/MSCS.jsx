@@ -70,7 +70,7 @@ const programData = {
     { ranking: "99%", description: "Employment", source: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating." },
     { ranking: "#1", description: "In N.J.", source: "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024)." },
     { ranking: "7x", description: "Winner", source: "U.S. Distance Learning Association’s 21st Century Award for Best Practices in Distance Learning." },
-    { ranking: "#13", description: "In The Nation", source: "The Princeton Review, Top 20 U.S. Private Schools for Best Career Placement (2022)." },
+    { ranking: "#12", description: "For Best Career Placement", source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)." },
     { ranking: "#15", description: "For Best Value", source: "Payscale (2024)" },
   ],
   career: {

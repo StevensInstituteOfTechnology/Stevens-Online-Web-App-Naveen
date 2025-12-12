@@ -81,9 +81,9 @@ const programData = {
   // ==================================================================
   rankings: [
     {
-      ranking: "Top 20",
+      ranking: "#12",
       description: "For Best Career Placement",
-      source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)."
+      source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)."
     },
     {
       ranking: "Top 15",

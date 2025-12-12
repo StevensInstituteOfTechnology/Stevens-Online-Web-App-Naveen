@@ -305,7 +305,7 @@ export default function Admissions() {
                 <div className="flex justify-center">
                   <div className="bg-white rounded-lg p-4 inline-block ">
                     <img 
-                      src="/assets/images/home/SARA_Seal_group_2024_Participating.avif"
+                      src="/assets/images/home/SARA_Seal_group_2024_Participating.webp"
                       alt="SARA Participating Institution"
                       className="mx-auto max-w-[200px] w-full h-auto"
                       loading="lazy"

@@ -60,7 +60,7 @@ const programData = {
     { ranking: "#15", description: "FOR BEST VALUE", source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).', note: "2" },
     { ranking: "#1", description: "ONLINE MBA IN N.J.", source: "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024)." },
     { ranking: "#14", description: "FOR ECONOMIC RETURN", source: "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).", note: "2" },
-    { ranking: "Top 20", description: "FOR BEST CAREER PLACEMENT", source: "Ranked among the top private schools for best career placement by The Princeton Review (2024)." }],
+    { ranking: "#12", description: "FOR BEST CAREER PLACEMENT", source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)." }],
 
   rankings_footnotes: [
     { note: "1", text: "Based on data from 82% of the 2021-2022 full-time program graduates." },
