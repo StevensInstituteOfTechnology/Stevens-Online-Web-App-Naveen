@@ -34,7 +34,7 @@ import {
   Send
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
-import ImageTestimonial from '@/components/shared/ImageTestimonial';
+import TestimonialCarousel from '@/components/shared/TestimonialCarousel';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -194,8 +194,40 @@ const CorporateStudents = () => {
     {
       quote: "I can confidently say that enrolling in the Stevens MBA program was one of my best decisions. Stevens offers a comprehensive curriculum that helps students develop invaluable skills to navigate the complex business world and improve their professional capabilities.",
       author: "Rupinder Bhullar '21",
-      title: "Director of Enterprise Automation Services, Pfizer",
+      title: "Director of Enterprise Automation Services",
+      company: "Pfizer",
+      imageSrc: "/assets/images/corporate-students/corporate-students-2.webp",
+      imageAlt: "Rupinder Bhullar, Director of Enterprise Automation Services at Pfizer",
+      buttonText: "Read More",
+      buttonLink: "https://www.stevens.edu/news/q-and-a-with-stevens-alum-and-pfizer-director-rupinder-bhullar"
     },
+    {
+      quote: "Stakeholder management and collaboration are important. The courses I have taken at Stevens help me apply the knowledge I've learned to my daily tasks...At bigger companies like Pfizer, managing cross-functional projects is critical.",
+      author: "Gullnaz Saeedi '25",
+      
+      imageSrc: "/assets/images/corporate-students/corporate-students-3.webp",
+      imageAlt: "Gullnaz Saeedi",
+
+    },
+    {
+      quote: "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
+      author: "Sara Swanson '22",
+    
+      imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
+      imageAlt: "Sara Swanson",
+      buttonText: "Read More",
+      buttonLink: "https://www.stevens.edu/news/becoming-a-design-leader"
+    },
+    {
+      quote: "It [Technology Management program] just fit the bill so perfectly for me, because it was not all about coding. It was diverse and had everything from accounting, finance, how to display data with Tableau, how to be a leader, strategic management, pushing your team to achieve better – all of these checked all the boxes for me.",
+      author: "Anagha Yerande '21",
+      title: "Vice President",
+      company: "JP Morgan",
+      imageSrc: "/assets/images/corporate-students/corporate-students-5.webp",
+      imageAlt: "Anagha Yerande",
+      buttonText: "Read More",
+      buttonLink: "https://www.stevens.edu/news/student-spotlight-anagha-yerande"
+    }
   ];
 
   // Learning journey steps - Application & Benefits
@@ -1480,12 +1512,10 @@ const CorporateStudents = () => {
           </div>
         </section>
 
-        {/* Success Stories / Testimonials */}
-        <ImageTestimonial
-          testimonial={testimonials[0]}
-          imageSrc="/assets/images/corporate-students/corporate-students-2.avif"
-          imageAlt="Rupinder Bhullar, Director of Enterprise Automation Services at Pfizer"
-          imageRatio={40}
+        {/* Success Stories / Testimonials Carousel */}
+        <TestimonialCarousel
+          testimonials={testimonials}
+          imageRatio={50}
         />
 
         {/* FAQ Section */}

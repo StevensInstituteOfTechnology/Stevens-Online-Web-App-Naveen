@@ -979,10 +979,10 @@ const CorporatePartners = () => {
                     Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our corporate partnerships team.
                   </p>
                 </div>
-                </div>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
         {/* Contact Options Modal - Enhanced */}
         <Dialog open={showContactOptionsModal} onOpenChange={(open) => {
