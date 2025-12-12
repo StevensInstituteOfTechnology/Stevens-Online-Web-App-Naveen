@@ -28,6 +28,7 @@ import {
   User,
   Clock,
   Calendar,
+  DollarSign,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -57,6 +58,11 @@ const textRankings = [
     source: "U.S. News & World Report",
   },
   {
+    value: "#1",
+    description: "No. 1 in New Jersey for Graduate Earnings",
+    source: "U.S. Department of Education College Scorecard (2025)",
+  },
+  {
     value: "7x",
       description:
         "Winner of the 21st Century Award for Best Practices in Distance Learning",
@@ -68,12 +74,7 @@ const textRankings = [
   description: "Ranks No. 9 among 'Best ROI Colleges'",
     source: "*Based on the cost of a four-year bachelor's degree program",
 },
-{
-  value: "#19",
-  description:
-    "Best Online Master's in Computer Information Technology Programs",
-  source: "U.S. News & World Report (2025)",
-},
+
 
 ];
 
@@ -275,7 +276,7 @@ export default function Home() {
               label="Best ROI Colleges"
               icon={Award}
             />
-            <StatItem value="#19" label="Online IT Programs" icon={Star} />
+            <StatItem value="#1" label="Graduate Earnings (NJ)" icon={DollarSign} />
             <StatItem
               value="Top 10%"
               label="Return on Investment"
