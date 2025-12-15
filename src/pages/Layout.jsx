@@ -82,7 +82,7 @@ const mobileCertificateProgramItems = [
 
 const mobileNavLinks = [
   {
-    name: "Graduate Programs",
+    name: "Degrees",
     isDropdown: true,
     items: mobileGraduateProgramItems,
   },
@@ -771,7 +771,7 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
-                    GRADUATE PROGRAMS{" "}
+                    Degrees{" "}
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${graduateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
@@ -798,10 +798,10 @@ export default function Layout({ children, currentPageName }) {
                     }}
                   >
                     <div className="grid grid-cols-2 gap-stevens-xl">
-                      {/* Section 1: Graduate Programs */}
+                      {/* Section 1: Degrees */}
                       <div className="flex flex-col space-y-2">
                         <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Graduate Programs</span>
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Degrees</span>
                         </div>
                         {graduateProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
@@ -1297,6 +1297,10 @@ export default function Layout({ children, currentPageName }) {
       {/* ASAP Banner - Horizontal Scrolling Marquee */}
       {showASAPBanner && (
         <div
+          id="promo-banner"
+          data-gtm-element="promo-banner"
+          data-gtm-category="promotion"
+          data-gtm-action="banner-view"
           className={`bg-stevens-gray-400 text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
@@ -1304,6 +1308,7 @@ export default function Layout({ children, currentPageName }) {
                 <BannerLink
             {...bannerProps}
             className="block transition-colors duration-stevens-normal"
+            data-gtm-action="banner-click"
           >
             <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
               <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
@@ -1340,6 +1345,7 @@ export default function Layout({ children, currentPageName }) {
             }}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-gray-900 hover:text-stevens-gray-700 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
             aria-label="Close banner"
+            data-gtm-action="banner-dismiss"
           >
             <X className="w-5 h-5" />
           </button>
@@ -1381,7 +1387,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Graduate Programs
+                  Degrees
                 </Link>
                 {/* <Link
                   to={createPageUrl("Certificates")}
