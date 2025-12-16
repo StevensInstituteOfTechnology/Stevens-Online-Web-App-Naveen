@@ -52,23 +52,33 @@ const certificateProgramItems = [
   { name: "Applied Data Science Foundations", page: "certificates/applied-data-science-foundations/" },
 ];
 
+const aboutItems = [
+  { name: "Online Experience", page: "online-learning-experience/" },
+  { name: "Events", page: "Events/" },
+];
+
 const mainNavLinks = [
   // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
  
-  { name: "Online Experience", page: "online-learning-experience/" },
   { name: "Blog", page: "Blog/" },
 ];
 
-const tuitionAdmissionsItems = [
+const admissionsAidItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
-  { name: "Events", page: "Events/" },
+];
+
+const corporateAlumniItems = [
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
-  //{ name: "Corporate Partners", page: "corporate-partners/" },
-  //{ name: "Corporate Students", page: "corporate-students/" },
   { name: "Alumni Workforce Development", page: "alumni-pgc/" },
+];
+
+// Combined for mobile menu
+const tuitionAdmissionsItems = [
+  ...admissionsAidItems,
+  ...corporateAlumniItems,
 ];
 
 // Mobile menu items with Compare Programs added to dropdowns
@@ -98,6 +108,11 @@ const mobileNavLinks = [
     isDropdown: true,
     items: tuitionAdmissionsItems,
   },
+  {
+    name: "About",
+    isDropdown: true,
+    items: aboutItems,
+  },
   ...mainNavLinks,
 ];
 
@@ -115,10 +130,12 @@ export default function Layout({ children, currentPageName }) {
   const [graduateDropdownOpen, setGraduateDropdownOpen] = React.useState(false);
   const [certificateDropdownOpen, setCertificateDropdownOpen] = React.useState(false);
   const [tuitionDropdownOpen, setTuitionDropdownOpen] = React.useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = React.useState(false);
   const hoverTimeoutRef = React.useRef(null);
   const graduateHoverTimeoutRef = React.useRef(null);
   const certificateHoverTimeoutRef = React.useRef(null);
   const tuitionHoverTimeoutRef = React.useRef(null);
+  const aboutHoverTimeoutRef = React.useRef(null);
   const prevASAPVisibleRef = React.useRef(true);
   
   // Determine banner redirect based on current page
@@ -380,6 +397,9 @@ export default function Layout({ children, currentPageName }) {
       if (tuitionHoverTimeoutRef.current) {
         clearTimeout(tuitionHoverTimeoutRef.current);
       }
+      if (aboutHoverTimeoutRef.current) {
+        clearTimeout(aboutHoverTimeoutRef.current);
+      }
       // Clean up protection styles
       const protection = document.getElementById("navigation-protection");
       if (protection) {
@@ -403,6 +423,7 @@ export default function Layout({ children, currentPageName }) {
     setGraduateDropdownOpen(false);
     setCertificateDropdownOpen(false);
     setTuitionDropdownOpen(false);
+    setAboutDropdownOpen(false);
     // Close mobile menu and restore ASAP banner when navigating to a new page
     setMobileMenuOpen(false);
     if (prevASAPVisibleRef.current) {
@@ -992,7 +1013,7 @@ export default function Layout({ children, currentPageName }) {
                 <DropdownMenu open={tuitionDropdownOpen} onOpenChange={setTuitionDropdownOpen}>
                   <DropdownMenuTrigger
                     className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
-                      isActive("Tuition") || isActive("Events") || isActive("Admissions")
+                      isActive("Tuition") || isActive("Admissions") || isActive("CorporatePartners") || isActive("CorporateStudents") || isActive("AlumniPGC")
                         ? "text-stevens-white/80"
                         : "text-stevens-white hover:text-stevens-white/80"
                     }`}
@@ -1019,7 +1040,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${tuitionDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-40 p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -1041,8 +1062,129 @@ export default function Layout({ children, currentPageName }) {
                       }, 100);
                     }}
                   >
+                    <div className="grid grid-cols-2 gap-stevens-xl">
+                      {/* Section 1: Admissions & Aid */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Admissions & Aid</span>
+                        </div>
+                        {admissionsAidItems.map((item) => (
+                          <DropdownMenuItem key={item.name} asChild>
+                            <Link
+                              to={createPageUrl(item.page)}
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              style={{
+                                color: "#1f2937",
+                                backgroundColor: "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.color = "#ffffff";
+                                e.target.style.backgroundColor = "#a32638";
+                                e.target.style.textDecoration = "underline";
+                                e.target.style.fontWeight = "700";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.color = "#1f2937";
+                                e.target.style.backgroundColor = "transparent";
+                                e.target.style.textDecoration = "none";
+                                e.target.style.fontWeight = "600";
+                              }}
+                            >
+                              {item.name}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                      
+                      {/* Section 2: Corporate & Alumni */}
+                      <div className="flex flex-col space-y-2">
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Corporate & Alumni</span>
+                        </div>
+                        {corporateAlumniItems.map((item) => (
+                          <DropdownMenuItem key={item.name} asChild>
+                            <Link
+                              to={createPageUrl(item.page)}
+                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              style={{
+                                color: "#1f2937",
+                                backgroundColor: "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.color = "#ffffff";
+                                e.target.style.backgroundColor = "#a32638";
+                                e.target.style.textDecoration = "underline";
+                                e.target.style.fontWeight = "700";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.color = "#1f2937";
+                                e.target.style.backgroundColor = "transparent";
+                                e.target.style.textDecoration = "none";
+                                e.target.style.fontWeight = "600";
+                              }}
+                            >
+                              {item.name}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu open={aboutDropdownOpen} onOpenChange={setAboutDropdownOpen}>
+                  <DropdownMenuTrigger
+                    className={`group relative font-stevens-nav font-normal uppercase tracking-wider flex items-center cursor-pointer transition-colors duration-stevens-normal ${
+                      isActive("OnlineExperience") || isActive("Events")
+                        ? "text-stevens-white/80"
+                        : "text-stevens-white hover:text-stevens-white/80"
+                    }`}
+                    onMouseEnter={() => {
+                      if (aboutHoverTimeoutRef.current) {
+                        clearTimeout(aboutHoverTimeoutRef.current);
+                      }
+                      if (hoverTimeoutRef.current) {
+                        clearTimeout(hoverTimeoutRef.current);
+                      }
+                      setAboutDropdownOpen(true);
+                      setIsHoveringRedNav(true);
+                    }}
+                    onMouseLeave={() => {
+                      aboutHoverTimeoutRef.current = setTimeout(() => {
+                        setAboutDropdownOpen(false);
+                      }, 100);
+                      hoverTimeoutRef.current = setTimeout(() => {
+                        setIsHoveringRedNav(false);
+                      }, 100);
+                    }}
+                  >
+                    About{" "}
+                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    className="w-40 p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    sideOffset={4}
+                    align="start"
+                    onMouseEnter={() => {
+                      if (aboutHoverTimeoutRef.current) {
+                        clearTimeout(aboutHoverTimeoutRef.current);
+                      }
+                      if (hoverTimeoutRef.current) {
+                        clearTimeout(hoverTimeoutRef.current);
+                      }
+                      setAboutDropdownOpen(true);
+                      setIsHoveringRedNav(true);
+                    }}
+                    onMouseLeave={() => {
+                      aboutHoverTimeoutRef.current = setTimeout(() => {
+                        setAboutDropdownOpen(false);
+                      }, 100);
+                      hoverTimeoutRef.current = setTimeout(() => {
+                        setIsHoveringRedNav(false);
+                      }, 100);
+                    }}
+                  >
                     <div className="flex flex-col space-y-1">
-                      {tuitionAdmissionsItems.map((item) => (
+                      {aboutItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                           <Link
                             to={createPageUrl(item.page)}
