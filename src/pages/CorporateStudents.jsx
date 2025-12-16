@@ -509,9 +509,9 @@ const CorporateStudents = () => {
               <Badge className="mb-stevens-md bg-stevens-primary/10 text-stevens-primary border-none">
                 Step 1 of 2
               </Badge>
-              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
-                What area interests you most?
-              </h3>
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Find Your Perfect Program
+              </h2>
               <p className="text-stevens-lg text-stevens-gray-600">
                 Select your primary career focus to see personalized program recommendations.
               </p>
@@ -595,9 +595,9 @@ const CorporateStudents = () => {
               <Badge className="mb-stevens-md bg-stevens-primary/10 text-stevens-primary border-none ml-4">
                 Step 2 of 2
               </Badge>
-              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
-                What type of credential are you looking for?
-              </h3>
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Find Your Perfect Program
+              </h2>
               <p className="text-stevens-lg text-stevens-gray-600">
                 Choose between a full master's degree or a stackable certificate.
               </p>
@@ -683,9 +683,9 @@ const CorporateStudents = () => {
                 <CheckCircle className="w-3 h-3 mr-1" />
                 Personalized Recommendations
               </Badge>
-              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
-                {recommendedPrograms.length === 1 ? 'Your Perfect Match' : 'Programs Recommended for You'}
-              </h3>
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+                Find Your Perfect Program
+              </h2>
               <p className="text-stevens-lg text-stevens-gray-600">
                 Based on your interest in <span className="font-semibold text-stevens-primary">{selectedInterest === 'management' ? 'Management & Business' : 'Engineering & Technology'}</span> and preference for a <span className="font-semibold text-stevens-primary">{selectedCredentialType === 'masters' ? "Master's Degree" : 'Stackable Certificate'}</span>
               </p>
@@ -885,12 +885,7 @@ const CorporateStudents = () => {
               viewport={{ once: true }}
               className="text-center mb-stevens-xl"
             >
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
-                Find Your Perfect Program
-              </h2>
-              <p className="text-stevens-lg text-stevens-gray-700 max-w-4xl mx-auto">
-                Answer two quick questions and we'll recommend the best programs for your career goals.
-              </p>
+              
             </motion.div>
 
             <ProgramQuestionnaire />
@@ -933,7 +928,7 @@ const CorporateStudents = () => {
                           <CardContent className="p-stevens-md">
                             <div className="flex items-start justify-between">
                               <div>
-                                <Badge className="mb-2 bg-stevens-primary">
+                                <Badge className="mt-2 bg-stevens-primary">
                                   {selectedProgram.degree}
                                 </Badge>
                                 <p className="font-semibold text-stevens-gray-900">
@@ -975,27 +970,29 @@ const CorporateStudents = () => {
                         </AlertDescription>
                       </Alert>
 
-                      {/* Workforce Partner Discount */}
-                      <div className="flex items-start space-x-3 p-4 bg-stevens-primary/5 rounded-lg border border-stevens-primary/20">
-                        <Checkbox
-                          id="workforce-partner"
-                          checked={isWorkforcePartner}
-                          onCheckedChange={setIsWorkforcePartner}
-                          className="mt-0.5"
-                        />
-                        <div className="flex-1">
-                          <label
-                            htmlFor="workforce-partner"
-                            className="text-sm font-medium text-stevens-gray-900 cursor-pointer flex items-center"
-                          >
-                            <Building className="w-4 h-4 mr-1.5 text-stevens-primary" />
-                            Is your employer a Stevens workforce development partner?
-                          </label>
-                          <p className="text-xs text-stevens-gray-600 mt-1">
-                            {discountInfo.workforcePartner.percentage}% discount (average savings of ~20%)
-                          </p>
+                      {/* Workforce Partner Discount - Only show for master's programs */}
+                      {selectedProgram && !selectedProgram.code.startsWith('cert-') && (
+                        <div className="flex items-start space-x-3 p-4 bg-stevens-primary/5 rounded-lg border border-stevens-primary/20">
+                          <Checkbox
+                            id="workforce-partner"
+                            checked={isWorkforcePartner}
+                            onCheckedChange={setIsWorkforcePartner}
+                            className="mt-0.5"
+                          />
+                          <div className="flex-1">
+                            <label
+                              htmlFor="workforce-partner"
+                              className="text-sm font-medium text-stevens-gray-900 cursor-pointer flex items-center"
+                            >
+                              <Building className="w-4 h-4 mr-1.5 text-stevens-primary" />
+                              Is your employer a Stevens workforce development partner?
+                            </label>
+                            <p className="text-xs text-stevens-gray-600 mt-1">
+                              {discountInfo.workforcePartner.percentage}% discount (average savings of ~20%)
+                            </p>
+                          </div>
                         </div>
-                      </div>
+                      )}
 
                       {/* Hoboken Resident Discount */}
                       <div className="flex items-start space-x-3 p-stevens-md bg-stevens-gray-50 rounded-lg">
@@ -1082,10 +1079,10 @@ const CorporateStudents = () => {
                 </div>
 
                 {/* Right side - Cost Breakdown */}
-                <div className="lg:col-span-3">
+                <div className="lg:col-span-3 ">
                   {calculatedCost ? (
                     <Card className="sticky top-4">
-                      <CardHeader className="bg-gradient-to-r from-stevens-primary to-red-700 text-stevens-white">
+                      <CardHeader className="bg-stevens-primary text-stevens-white rounded-t-stevens-md">
                         <CardTitle className="text-stevens-2xl">
                           Your Investment Breakdown
                         </CardTitle>
@@ -1095,7 +1092,7 @@ const CorporateStudents = () => {
                       </CardHeader>
                       <CardContent className="p-stevens-lg">
                         {/* Base Price */}
-                        <div className="mb-stevens-lg pb-stevens-md border-b-2">
+                        <div className="mb-stevens-lg pb-stevens-md border-b-2 pt-stevens-md">
                           <div className="flex justify-between items-center">
                             <span className="text-stevens-gray-700">
                               {calculatedCost.credits.type === 'variable' ? 'Program Cost' : 'Standard Program Price'}
@@ -1179,11 +1176,6 @@ const CorporateStudents = () => {
                                           <p className="text-xs text-stevens-gray-600 mt-0.5">
                                             {step.description}
                                           </p>
-                                          {step.percentage && (
-                                            <Badge variant="secondary" className="mt-1 text-xs">
-                                              {step.percentage}% off
-                                            </Badge>
-                                          )}
                                         </div>
                                         <div className="text-right ml-4 flex-shrink-0">
                                           <p className="font-bold text-stevens-primary">
@@ -1200,7 +1192,7 @@ const CorporateStudents = () => {
                         )}
 
                         {/* Final Price */}
-                        <div className="bg-gradient-to-r from-stevens-primary to-red-700 text-stevens-white p-stevens-lg rounded-lg">
+                        <div className="bg-stevens-primary text-stevens-white p-stevens-lg rounded-stevens-md">
                           {calculatedCost.credits.type === 'variable' ? (
                             <>
                               <div className="flex justify-between items-center mb-2">
@@ -1294,7 +1286,7 @@ const CorporateStudents = () => {
                                       cta_type: 'apply_now',
                                       cta_location: 'calculator_results',
                                       program_code: selectedProgram.code,
-                                      final_price: calculation.finalPrice,
+                                      final_price: calculatedCost.finalPrice,
                                       application_type: 'external'
                                     });
                                     trackConversion(CONVERSION_LABELS.APPLY_NOW);
@@ -1319,7 +1311,7 @@ const CorporateStudents = () => {
                                     cta_type: 'apply_now',
                                     cta_location: 'calculator_results',
                                     program_code: selectedProgram.code,
-                                    final_price: calculation.finalPrice,
+                                    final_price: calculatedCost.finalPrice,
                                     application_type: 'accelerated'
                                   });
                                   trackConversion(CONVERSION_LABELS.APPLY_NOW);

@@ -89,10 +89,10 @@
       "value": 0.20,
       "enabled": true,
       "eligibility": {
-        "excludedPrograms": [],
+        "excludedPrograms": ["cert-eai", "cert-ads"],
         "description": "20% discount for employees of Stevens workforce development partners"
       },
-      "applicablePrograms": ["mscs", "mem", "mba", "meads", "cert-eai", "cert-ads"],
+      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
       "stackable": true,
       "priority": 1
     },
