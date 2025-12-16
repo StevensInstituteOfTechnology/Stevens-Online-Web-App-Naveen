@@ -74,6 +74,7 @@ const GoldDiamond = ({ className, style }) => (
  * @param {string} [props.testimonials[].company] - Author's company (optional)
  * @param {string} props.testimonials[].imageSrc - URL/path to the speaker's image
  * @param {string} [props.testimonials[].imageAlt] - Alt text for the image
+ * @param {string} [props.testimonials[].imageObjectPosition] - CSS object-position value (e.g., 'center bottom', 'center 70%') to adjust image vertical/horizontal positioning
  * @param {string} [props.testimonials[].buttonText] - Text for CTA button (optional)
  * @param {string} [props.testimonials[].buttonLink] - Link for CTA button (optional)
  * @param {string} [props.backgroundColor='#A32638'] - Background color for quote panels
@@ -91,11 +92,18 @@ const TestimonialCarousel = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
   const [starPosition, setStarPosition] = useState({ left: 0, width: 0 });
+  const [maxContentHeight, setMaxContentHeight] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
+
   const uniqueId = useId().replace(/:/g, '');
   
   // Refs for tracking button positions
   const navContainerRef = useRef(null);
   const buttonRefs = useRef([]);
+  const contentRef = useRef(null);
+  const measurementRefs = useRef([]);
 
   // Update star position when active index changes or on mount
   useEffect(() => {
@@ -124,6 +132,39 @@ const TestimonialCarousel = ({
     window.addEventListener('resize', updateStarPosition);
     return () => window.removeEventListener('resize', updateStarPosition);
   }, [activeIndex, testimonials.length]);
+
+  // Track window width so we can recompute heights on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      // Reset max height so we remeasure all slides at new width
+      setMaxContentHeight(0);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Measure ALL slides upfront to find the maximum height
+  useEffect(() => {
+    // Wait a tick for DOM to settle
+    const timer = setTimeout(() => {
+      if (measurementRefs.current.length === 0) return;
+      
+      let maxHeight = 0;
+      measurementRefs.current.forEach((ref) => {
+        if (ref && ref.offsetHeight) {
+          maxHeight = Math.max(maxHeight, ref.offsetHeight);
+        }
+      });
+      
+      if (maxHeight > 0) {
+        setMaxContentHeight(maxHeight);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [testimonials.length, windowWidth]);
 
   if (!testimonials || testimonials.length === 0) return null;
 
@@ -260,6 +301,72 @@ const TestimonialCarousel = ({
           </div>
         </div>
 
+        {/* Hidden measurement area - render all slides invisibly to measure heights */}
+        <div className="absolute opacity-0 pointer-events-none" style={{ visibility: 'hidden', position: 'absolute', top: '-9999px' }}>
+          {testimonials.map((testimonial, index) => (
+            <div key={`measure-${index}`} className="w-full testimonial-content-col">
+              <div 
+                ref={(el) => {
+                  if (el) measurementRefs.current[index] = el;
+                }}
+                className="relative flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16"
+                style={{ backgroundColor }}
+              >
+                    {/* Opening Quote Mark with horizontal accent line */}
+                    <div className="flex items-center mb-4 md:mb-6">
+                      <OpeningQuoteMark 
+                        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[75px] lg:h-[77px] flex-shrink-0"
+                        color={accentColor}
+                      />
+                      <div 
+                        className="flex-grow h-[1px] ml-4 md:ml-6"
+                        style={{ backgroundColor: accentColor }}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    
+                    {/* Quote Text */}
+                    <blockquote className="font-stevens-content text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-snug md:leading-tight lg:leading-tight font-normal text-white mb-8 md:mb-10 lg:mb-12">
+                      {testimonial.quote}
+                    </blockquote>
+                    
+                    {/* Bottom section: Horizontal Line + Closing Quote + Attribution */}
+                    <div className="flex items-center">
+                      <div 
+                        className="flex-grow h-[1px] mr-4 md:mr-6"
+                        style={{ backgroundColor: accentColor }}
+                        aria-hidden="true"
+                      />
+                      
+                      <ClosingQuoteMark 
+                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-[60px] lg:h-[62px] flex-shrink-0"
+                        color="#FFFFFF"
+                      />
+                      
+                      <div className="flex flex-col ml-3 md:ml-4 lg:ml-5">
+                        <span className="font-stevens-content text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">
+                          {testimonial.author}
+                        </span>
+                        <span className="font-stevens-content text-xs sm:text-sm md:text-base lg:text-lg font-normal text-white/90">
+                          {testimonial.title}
+                          {testimonial.company && `, ${testimonial.company}`}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Optional CTA Button */}
+                    {testimonial.buttonText && (
+                      <div className="mt-8 md:mt-10 lg:mt-12 flex justify-start">
+                        <div className="inline-block px-8 md:px-10 lg:px-12 py-3 md:py-4 border-2 text-white font-stevens-display text-sm md:text-base uppercase tracking-wider" style={{ borderColor: accentColor }}>
+                          {testimonial.buttonText}
+                        </div>
+                      </div>
+                    )}
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Carousel Content */}
         <div className="relative overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
@@ -287,17 +394,25 @@ const TestimonialCarousel = ({
                     <img
                       src={activeTestimonial.imageSrc}
                       alt={activeTestimonial.imageAlt || `${activeTestimonial.author} testimonial`}
-                      className="absolute inset-0 w-full h-full object-cover object-center"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{
+                        objectPosition: activeTestimonial.imageObjectPosition || 'center center'
+                      }}
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                {/* Quote Content Column - Defines the height for both columns on desktop */}
+                {/* Quote Content Column - Fixed height based on tallest slide */}
                 <div className="w-full testimonial-content-col">
                   <div 
-                    className="relative flex flex-col justify-center min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] p-6 sm:p-8 md:p-12 lg:p-16"
-                    style={{ backgroundColor }}
+                    ref={contentRef}
+                    className="relative flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16"
+                    style={{ 
+                      backgroundColor,
+                      // Fixed height - never grows, never shrinks
+                      height: maxContentHeight || 900
+                    }}
                   >
                     {/* Opening Quote Mark with horizontal accent line */}
                     <div className="flex items-center mb-4 md:mb-6">

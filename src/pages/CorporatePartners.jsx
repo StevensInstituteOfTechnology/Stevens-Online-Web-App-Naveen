@@ -459,6 +459,7 @@ const CorporatePartners = () => {
           titleLines={["Partner with Stevens to Transform Your Workforce"]}
           subtitle="Flexible, career-aligned education designed for your employees, with accelerated admissions, dedicated corporate support, and customized learning pathways."
           bgImage="/assets/images/corporate-partners/corporate-partners-1.webp"
+          bgImageFlip={true}
           primaryCta={{
             label: "Request Information",
             onClick: () => {

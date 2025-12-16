@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { Link, useSearchParams } from 'react-router-dom';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { 
@@ -191,6 +191,24 @@ const CorporateStudents = () => {
 
   // Success stories / testimonials
   const testimonials = [
+    
+    {
+      quote: "Stakeholder management and collaboration are important. The courses I have taken at Stevens help me apply the knowledge I've learned to my daily tasks...At bigger companies like Pfizer, managing cross-functional projects is critical.",
+      author: "Gullnaz Saeedi '25",
+      imageSrc: "/assets/images/corporate-students/corporate-students-3.webp",
+      imageAlt: "Gullnaz Saeedi",
+      imageObjectPosition: 'center 20%', // Center horizontally, 20% from top
+    },
+    {
+      quote: "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
+      author: "Sara Swanson '22",
+    
+      imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
+      imageAlt: "Sara Swanson",
+      buttonText: "Read More",
+      buttonLink: "https://www.stevens.edu/news/becoming-a-design-leader",
+      imageObjectPosition: 'center 10%', // Center horizontally, 10% from top
+    },
     {
       quote: "I can confidently say that enrolling in the Stevens MBA program was one of my best decisions. Stevens offers a comprehensive curriculum that helps students develop invaluable skills to navigate the complex business world and improve their professional capabilities.",
       author: "Rupinder Bhullar '21",
@@ -200,23 +218,6 @@ const CorporateStudents = () => {
       imageAlt: "Rupinder Bhullar, Director of Enterprise Automation Services at Pfizer",
       buttonText: "Read More",
       buttonLink: "https://www.stevens.edu/news/q-and-a-with-stevens-alum-and-pfizer-director-rupinder-bhullar"
-    },
-    {
-      quote: "Stakeholder management and collaboration are important. The courses I have taken at Stevens help me apply the knowledge I've learned to my daily tasks...At bigger companies like Pfizer, managing cross-functional projects is critical.",
-      author: "Gullnaz Saeedi '25",
-      
-      imageSrc: "/assets/images/corporate-students/corporate-students-3.webp",
-      imageAlt: "Gullnaz Saeedi",
-
-    },
-    {
-      quote: "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
-      author: "Sara Swanson '22",
-    
-      imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
-      imageAlt: "Sara Swanson",
-      buttonText: "Read More",
-      buttonLink: "https://www.stevens.edu/news/becoming-a-design-leader"
     },
     {
       quote: "It [Technology Management program] just fit the bill so perfectly for me, because it was not all about coding. It was diverse and had everything from accounting, finance, how to display data with Tableau, how to be a leader, strategic management, pushing your team to achieve better – all of these checked all the boxes for me.",
@@ -768,7 +769,6 @@ const CorporateStudents = () => {
     </div>
   );
 
-
   return (
     <PageContextProvider pageType="landing" pageName="Corporate Students">
       <div className="min-h-screen bg-stevens-white">
@@ -1248,7 +1248,7 @@ const CorporateStudents = () => {
                               <div className="flex items-start text-stevens-white/90">
                                 <Briefcase className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
                                 <div className="text-sm">
-                                  <p className="font-semibold mb-1">Add your annual employer reimbursement above</p>
+                                  <p className="font-semibold mb-1">Add your annual employer reimbursement</p>
                                   <p className="text-xs text-stevens-white/80">
                                     Most employers offer up to ${discountInfo.employerReimbursement.defaultAnnual.toLocaleString()}/year
                                   </p>
