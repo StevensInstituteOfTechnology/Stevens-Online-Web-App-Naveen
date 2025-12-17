@@ -301,17 +301,7 @@ export default function Admissions() {
                 <p className="text-stevens-lg text-stevens-white mb-stevens-lg">
                   Ready to take the next step? Get more information about our programs and start your application today.
                 </p>
-                {/* SARA Logo */}
-                <div className="flex justify-center">
-                  <div className="bg-white rounded-lg p-4 inline-block ">
-                    <img 
-                      src="/assets/images/home/SARA_Seal_group_2024_Participating.avif"
-                      alt="SARA Participating Institution"
-                      className="mx-auto max-w-[200px] w-full h-auto"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+                
                 {/* <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
                   <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
                     <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary">

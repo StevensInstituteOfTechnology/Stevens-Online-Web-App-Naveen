@@ -825,7 +825,7 @@ export default function Home() {
               <img 
                 src="/assets/images/home/SARA_Seal_group_2024_Participating.avif"
                 alt="SARA Participating Institution"
-                className="mx-auto max-w-xs w-full h-auto"
+                className="mx-auto max-w-[200px] w-full h-auto"
                 loading="lazy"
               />
              
