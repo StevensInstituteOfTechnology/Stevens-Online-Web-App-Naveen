@@ -816,6 +816,24 @@ export default function Home() {
         </section>
       )}
 
+      {/* SARA Accreditation Logo Section */}
+      <section className="py-20 border-t bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center">
+            <div className="space-y-4">
+              
+              <img 
+                src="/assets/images/home/SARA_Seal_group_2024_Participating.avif"
+                alt="SARA Participating Institution"
+                className="mx-auto max-w-[200px] w-full h-auto"
+                loading="lazy"
+              />
+             
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Browse Courses Modal */}
       {showBrowseModal && (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
