@@ -44,7 +44,7 @@ const graduateProgramItems = [
   { name: "M.S. in Computer Science", page: "online-masters-computer-science-mscs/" },
   // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
   { name: "M.Eng. in Applied Data Science", page: "online-masters-engineering-applied-data-science/" },
-  { name: "M.S. in Engineering Management", page: "online-masters-engineering-management/" },
+  { name: "M.Eng. in Engineering Management", page: "online-masters-engineering-management/" },
 ];
 
 const certificateProgramItems = [

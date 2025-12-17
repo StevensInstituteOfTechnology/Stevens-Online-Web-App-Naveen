@@ -170,7 +170,7 @@ function ProgramReadinessAssessment({ onComplete }) {
             }
             {showResults.topProgram === 'mem' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.S. in Engineering Management</h3>
+                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.Eng. in Engineering Management</h3>
                 <p className="text-stevens-gray-600">Great for technical professionals ready to lead teams and projects.</p>
               </div>
             }
