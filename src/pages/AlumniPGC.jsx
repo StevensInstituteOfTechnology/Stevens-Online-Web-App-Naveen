@@ -221,14 +221,14 @@ const AlumniPGC = () => {
             </div>
 
             {/* Application Form Section */}
-            <div id="apply-now" className="scroll-mt-24">
+            <div id="apply-now" className="scroll-mt-24 relative z-20">
               <div className="text-center mb-6 sm:mb-8">
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h2>
                 <p className="text-gray-600 text-base sm:text-lg">
                   Complete the accelerated application form below to secure your 15% alumni discount.
                 </p>
               </div>
-              <div className="max-w-3xl mx-auto">
+              <div className="max-w-3xl mx-auto lg:sticky lg:top-8">
                 <AcceleratedFormEmbed 
                   title={formConfig.acceleratedFormTitle}
                   subtitle="Exclusive application for Stevens alumni"
