@@ -264,7 +264,7 @@ const AlumniPGC = () => {
                     handleCTAClick('request_info_secondary');
                     setIsRFIModalOpen(true);
                   }}
-                  className="w-full sm:w-auto border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold px-6 py-3 transition-colors"
+                  className="w-full sm:w-auto border-gray-400 text-gray-700 hover:bg-gray-700 hover:text-white hover:border-gray-700 font-semibold px-6 py-3 transition-colors"
                 >
                   Request Information
                 </Button>
