@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { GraduationCap, Award, Percent, BookOpen, Check, Users, DollarSign, BadgeCheck } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import PageHero from '@/components/shared/PageHero';
 import RequestInfoModal from '@/components/shared/RequestInfoModal';
 import AcceleratedFormEmbed from '@/components/forms/AcceleratedFormEmbed';
@@ -65,42 +66,19 @@ const AlumniPGC = () => {
     program => program.degree === 'Certificate'
   );
 
-  // Program details sections (similar to corporate pages)
-  const programDetails = [
-    {
-      title: "Alumni Benefits",
-      content: "<p>As a Stevens alumnus, you have access to exclusive benefits designed to help you continue your professional development:</p>",
-      items: [
-        "15% tuition discount on all Professional Graduate Certificates",
-        "Streamlined application process - no letters of recommendation required",
-        "Credits stack toward advanced degrees (MBA, M.Eng. in Applied Data Science)",
-        "Dedicated support from our enrollment advisors",
-        "Flexible 100% online format to fit your schedule"
-      ]
-    },
-    {
-      title: "Why Earn a Certificate?",
-      content: `
-        <p>Professional Graduate Certificates offer a fast, focused way to gain in-demand skills without committing to a full degree program.</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Quick completion:</strong> Earn your certificate in as few as 16-24 weeks</li>
-          <li><strong>Immediate ROI:</strong> Apply new skills directly to your current role</li>
-          <li><strong>Stackable credits:</strong> All 9 credits can be applied toward a master's degree</li>
-          <li><strong>Cost-effective:</strong> Aligns with your employer's tuition benefit</li>
-        </ul>
-      `
-    },
-    {
-      title: "Application Process",
-      content: `
-        <p>Getting started is easy with our accelerated application process:</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>No letters of recommendation required</li>
-          <li>No transcripts required, we have your transcripts on file</li>
-          <li>Apply your 15% alumni discount automatically</li>
-        </ul>
-      `
-    }
+  // Program benefits for the combined section
+  const programBenefits = [
+    { label: "Quick completion", description: "Earn your certificate in as few as 16-24 weeks" },
+    { label: "Immediate ROI", description: "Apply new skills directly to your current role" },
+    { label: "Stackable credits", description: "All 9 credits can be applied toward a master's degree" },
+    { label: "Cost-effective", description: "Aligned with many employer tuition benefit programs" }
+  ];
+
+  // Easy application benefits for alumni
+  const applicationBenefits = [
+    { label: "No letters of recommendation required" },
+    { label: "No transcripts required. Your Stevens transcripts are already on file" },
+    { label: "15% alumni discount applied automatically" }
   ];
 
   // Pricing information with 15% alumni discount
@@ -117,25 +95,11 @@ const AlumniPGC = () => {
       <div className="min-h-screen bg-stevens-gray-50">
         {/* Hero Section */}
         <PageHero
-          title={
-            <div className="flex flex-col gap-4">
-              <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-maroon/90 text-white text-2xl font-bold tracking-wide uppercase shadow-md border border-white/20">
-                Exclusive for Stevens Alumni
-              </span>
-              <span>Continue Your Journey with Stevens Online</span>
-            </div>
-          }
-          subtitle="As a Stevens alumnus, take the next step in your career with our specialized Professional Graduate Certificate programs. Enjoy 15% off tuition and build on your foundation with cutting-edge skills in high-demand fields."
+          title="Professional Graduate Certificates for Stevens Alumni"
+          subtitle="Build in-demand skills in AI and data science through flexible, career-focused certificates designed for working professionals and stackable into a Stevens master's degree."
           bgImage="/assets/images/alumni-pgc/martin-mom_20web.webp"
           primaryCta={{
-            label: "Request Information",
-            onClick: () => {
-              handleCTAClick('request_info');
-              setIsRFIModalOpen(true);
-            }
-          }}
-          secondaryCta={{
-            label: "Apply In Minutes",
+            label: "Apply in Minutes!",
             onClick: () => {
               handleCTAClick('apply_now');
               document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
@@ -143,19 +107,17 @@ const AlumniPGC = () => {
           }}
           bottomContent={
             <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-              <div className="inline-flex items-center gap-4 bg-white px-6 py-4 rounded-xl shadow-2xl border-l-4 border-l-stevens-success">
-                <div className="w-14 h-14 min-w-[3.5rem] bg-stevens-success rounded-full flex items-center justify-center">
-                  <BadgeCheck className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-bold text-stevens-success uppercase tracking-wide">Employer Benefit Friendly</p>
-                  <p className="text-xl font-bold text-gray-900">
-                    Tuition Aligned with Reimbursement Plans
-                  </p>
-                  <p className="text-sm text-gray-700 mt-1">
-                    <span className="font-bold text-stevens-primary text-base">$4,462.50</span> with alumni discount - fits within most employer tuition benefits
-                  </p>
-                </div>
+              <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-primary">
+                <p className="text-xs sm:text-sm font-semibold text-stevens-primary uppercase tracking-wide">Tuition-Reimbursement Friendly</p>
+                <p className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
+                  Alumni rate: <span className="text-stevens-primary">$4,462.50</span>*
+                </p>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                  Aligning with many employer tuition reimbursement programs
+                </p>
+                <p className="text-xs text-gray-500 mt-1 italic">
+                  *Final cost reflects the 15% Stevens alumni discount
+                </p>
               </div>
             </div>
           }
@@ -163,30 +125,12 @@ const AlumniPGC = () => {
 
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section relative z-10">
           <div className="space-y-12">
-            
-            {/* Alumni Welcome Card */}
-            <Card className="border-t-4 border-t-stevens-maroon shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <GraduationCap className="w-8 h-8 text-stevens-maroon" />
-                  <h2 className="font-display text-3xl font-bold text-gray-900">
-                    Welcome Back, <span className="text-stevens-maroon">Stevens Alumni</span>
-                  </h2>
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Your Stevens degree opened doors. Now, take the next step with a Professional Graduate Certificate 
-                  designed to advance your career in Leadership, AI and data science. As a valued member of the Stevens community, 
-                  you'll receive a <strong className="text-stevens-primary">15% tuition discount</strong> on all certificate programs.
-                </p>
-              </CardContent>
-            </Card>
 
             {/* Certificate Programs Section */}
             <div>
-              <h3 className="font-display text-2xl font-bold text-gray-900 flex items-center gap-2 mb-6">
-                <BookOpen className="w-6 h-6 text-stevens-secondary" />
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                 Available Certificate Programs
-              </h3>
+              </h2>
               <div className="grid stevens-md:grid-cols-2 gap-stevens-lg">
                 {certificatePrograms.map((program) => (
                   <ProgramCard 
@@ -201,76 +145,129 @@ const AlumniPGC = () => {
               </div>
             </div>
 
-            {/* Program Details Sections */}
-            {programDetails.map((section, index) => (
-              <div key={index} className="space-y-4">
-                <h3 className="font-display text-2xl font-bold text-gray-900 flex items-center gap-2">
-                  {index === 0 && <Percent className="w-6 h-6 text-stevens-secondary" />}
-                  {index === 1 && <Award className="w-6 h-6 text-stevens-secondary" />}
-                  {index === 2 && <Check className="w-6 h-6 text-stevens-secondary" />}
-                  {section.title}
-                </h3>
-                <div className="prose max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: section.content }} />
-
-                {/* Optional List Items */}
-                {section.items && (
-                  <ul className="grid gap-3 mt-4">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                        <Check className="w-5 h-5 text-stevens-green mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-
-            {/* Pricing Section */}
-            <Card className="bg-stevens-gray-50 border-stevens-gray-200">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="w-6 h-6 text-stevens-primary" />
+            {/* Alumni Tuition & Savings Section - Moved Up */}
+            <Card className="border-stevens-gray-200 shadow-md">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl sm:text-2xl">
                   Alumni Tuition & Savings
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {pricing.items.map((item, index) => (
-                    <div key={index} className={`p-4 rounded-lg shadow-sm ${index === 1 ? 'bg-stevens-primary/10 border-2 border-stevens-primary' : 'bg-white'}`}>
-                      <p className="text-sm text-gray-500 uppercase tracking-wide font-semibold">{item.label}</p>
-                      <p className={`text-2xl font-bold mt-1 ${index === 1 ? 'text-stevens-primary' : 'text-gray-400 line-through'}`}>{item.value}</p>
+                    <div key={index} className={`p-4 sm:p-5 rounded-lg ${index === 1 ? 'bg-stevens-primary/10 border-2 border-stevens-primary' : 'bg-white border border-gray-200'}`}>
+                      <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide font-semibold">{item.label}</p>
+                      <p className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? 'text-stevens-primary' : 'text-gray-400 line-through'}`}>{item.value}</p>
                       {item.note && <p className="text-xs text-gray-600 mt-2 italic">{item.note}</p>}
                     </div>
                   ))}
                 </div>
-                {pricing.description && (
-                  <p className="text-sm text-gray-600 mt-4 border-t pt-4 border-gray-200">
-                    {pricing.description}
+                <div className="text-center pt-4 border-t border-gray-200">
+                  <p className="text-base sm:text-lg font-semibold text-stevens-primary">
+                    Save $787.50 with your alumni discount
                   </p>
-                )}
-                <div className="text-center mt-6">
-                  <p className="text-lg font-semibold text-stevens-primary mb-2">
-                    Save $787.50 with your alumni discount!
+                  <p className="text-xs sm:text-sm text-gray-600 mt-2">
+                    {pricing.description}
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Body Accelerated App Section */}
+            {/* Combined Section: Why a Certificate & How to Get Started */}
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+              <div className="bg-stevens-primary px-4 sm:px-8 py-4 sm:py-6">
+                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
+                  Why a Professional Graduate Certificate and How to Get Started
+                </h2>
+                <p className="text-white/90 mt-2 text-sm sm:text-base">
+                  Professional Graduate Certificates offer a fast, focused way to gain in-demand skills without committing to a full degree program, with a streamlined application process designed specifically for Stevens alumni.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 p-4 sm:p-8">
+                {/* Program Benefits Column */}
+                <div>
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                    Program Benefits
+                  </h3>
+                  <ul className="space-y-3">
+                    {programBenefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base">{benefit.label}</p>
+                          <p className="text-xs sm:text-sm text-gray-600">{benefit.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Easy Application Column */}
+                <div>
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                    Easy Application for Alumni
+                  </h3>
+                  <ul className="space-y-3">
+                    {applicationBenefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
+                        <p className="text-gray-800 text-sm sm:text-base">{benefit.label}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Application Form Section */}
             <div id="apply-now" className="scroll-mt-24">
-              <div className="text-center mb-8">
-                <h3 className="font-display text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h3>
-                <p className="text-gray-600 text-lg">
+              <div className="text-center mb-6 sm:mb-8">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h2>
+                <p className="text-gray-600 text-base sm:text-lg">
                   Complete the accelerated application form below to secure your 15% alumni discount.
                 </p>
               </div>
-              <div className="max-w-3xl mx-auto lg:sticky lg:top-8">
+              <div className="max-w-3xl mx-auto">
                 <AcceleratedFormEmbed 
                   title={formConfig.acceleratedFormTitle}
                   subtitle="Exclusive application for Stevens alumni"
                   urlParams={acceleratedFormParams}
                 />
+              </div>
+            </div>
+
+            {/* Secondary CTAs Section */}
+            <div className="bg-stevens-gray-50 rounded-lg p-4 sm:p-8 border border-gray-200">
+              <div className="text-center mb-6">
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-gray-900">
+                  Need More Information?
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 mt-1">
+                  We're here to help you make the right decision for your career.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    handleCTAClick('explore_certificate');
+                    window.open('/certificates/enterprise-ai/', '_blank');
+                  }}
+                  className="w-full sm:w-auto border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-white font-semibold px-6 py-3 transition-colors"
+                >
+                  Explore Certificates
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    handleCTAClick('request_info_secondary');
+                    setIsRFIModalOpen(true);
+                  }}
+                  className="w-full sm:w-auto border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold px-6 py-3 transition-colors"
+                >
+                  Request Information
+                </Button>
               </div>
             </div>
 
