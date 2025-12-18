@@ -279,9 +279,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
   }, [seo]);
   
   // Handle collapsible course toggles (for MBA-style curriculum)
+  // Using event delegation for reliable click handling regardless of DOM changes
   useEffect(() => {
     const handleCourseToggle = (e) => {
-      const button = e.currentTarget;
+      // Use event delegation - check if clicked element is or is inside a .course-toggle
+      const button = e.target.closest('.course-toggle');
+      if (!button) return;
+      
       const targetId = button.getAttribute('data-target');
       if (targetId) {
         const content = document.getElementById(targetId);
@@ -299,31 +303,11 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
       }
     };
 
-    const attachEventListeners = () => {
-      const courseButtons = document.querySelectorAll('.course-toggle');
-      courseButtons.forEach(button => {
-        button.removeEventListener('click', handleCourseToggle);
-        button.addEventListener('click', handleCourseToggle);
-      });
-    };
-
-    attachEventListeners();
-
-    const observer = new MutationObserver(() => {
-      setTimeout(attachEventListeners, 100);
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
+    // Single event listener on document using event delegation
+    document.addEventListener('click', handleCourseToggle);
 
     return () => {
-      observer.disconnect();
-      const courseButtons = document.querySelectorAll('.course-toggle');
-      courseButtons.forEach(button => {
-        button.removeEventListener('click', handleCourseToggle);
-      });
+      document.removeEventListener('click', handleCourseToggle);
     };
   }, []);
 

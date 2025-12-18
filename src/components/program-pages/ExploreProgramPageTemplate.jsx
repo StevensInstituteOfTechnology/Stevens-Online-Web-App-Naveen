@@ -110,9 +110,13 @@ const ExploreProgramPageTemplate = ({
   }, [seo]);
 
   // Handle collapsible course toggles (for concentrations)
+  // Using event delegation for reliable click handling regardless of DOM changes
   useEffect(() => {
     const handleCourseToggle = (e) => {
-      const button = e.currentTarget;
+      // Use event delegation - check if clicked element is or is inside a .course-toggle
+      const button = e.target.closest('.course-toggle');
+      if (!button) return;
+      
       const targetId = button.getAttribute('data-target');
       if (targetId) {
         const content = document.getElementById(targetId);
@@ -130,29 +134,13 @@ const ExploreProgramPageTemplate = ({
       }
     };
 
-    const attachEventListeners = () => {
-      const courseButtons = document.querySelectorAll('.course-toggle');
-      courseButtons.forEach(button => {
-        button.removeEventListener('click', handleCourseToggle);
-        button.addEventListener('click', handleCourseToggle);
-      });
-    };
-
-    // Initial attachment
-    attachEventListeners();
-
-    // Re-attach when DOM changes (for dynamic content)
-    const observer = new MutationObserver(attachEventListeners);
-    observer.observe(document.body, { childList: true, subtree: true });
+    // Single event listener on document using event delegation
+    document.addEventListener('click', handleCourseToggle);
 
     return () => {
-      observer.disconnect();
-      const courseButtons = document.querySelectorAll('.course-toggle');
-      courseButtons.forEach(button => {
-        button.removeEventListener('click', handleCourseToggle);
-      });
+      document.removeEventListener('click', handleCourseToggle);
     };
-  }, [concentrations]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-stevens-white">
