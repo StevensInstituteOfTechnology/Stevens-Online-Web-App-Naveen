@@ -30,6 +30,7 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
+import { BOOKING_URLS } from '@/config/constants';
 
 const CorporatePartners = () => {
   usePageTracking({
@@ -573,7 +574,7 @@ const CorporatePartners = () => {
                 {/* Footer */}
                 <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
                   <p className="text-stevens-xs sm:text-stevens-sm text-stevens-gray-600 text-center leading-tight">
-                    Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our corporate partnerships team.
+                    Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our corporate partnerships team.
                   </p>
                 </div>
               </div>
