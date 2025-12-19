@@ -3,7 +3,7 @@ import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate
 import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
-import { KEY_DATES } from '@/config/constants';
+import { KEY_DATES, BOOKING_URLS } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -511,7 +511,7 @@ const programData = {
           <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="https://stevens.edu/schedule-call" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call for Funding Details
           </a>
         </div>
