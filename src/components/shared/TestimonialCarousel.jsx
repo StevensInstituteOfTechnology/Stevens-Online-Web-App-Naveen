@@ -106,8 +106,14 @@ const TestimonialCarousel = ({
   const measurementRefs = useRef([]);
 
   // Update star position when active index changes or on mount
+  // Only calculate on screens >= 1024px (lg breakpoint) where navigation tabs are visible
   useEffect(() => {
     const updateStarPosition = () => {
+      // Only calculate if window width is >= 1024px (lg breakpoint)
+      if (window.innerWidth < 1024) {
+        return;
+      }
+      
       const activeButton = buttonRefs.current[activeIndex];
       const container = navContainerRef.current;
       
@@ -231,8 +237,8 @@ const TestimonialCarousel = ({
           }
         `}</style>
 
-        {/* Navigation Tabs */}
-        <div className="bg-white py-6 md:py-8">
+        {/* Navigation Tabs - Hidden on screens < 1024px (lg breakpoint) */}
+        <div className="bg-white py-6 md:py-8 hidden lg:block">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             {/* Names Navigation */}
             <div 
@@ -298,6 +304,91 @@ const TestimonialCarousel = ({
                 <GoldDiamond className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Bar (< 1024px) - Matches Stevens site design */}
+        <div className="lg:hidden bg-white relative">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md">
+            {/* Navigation Bar - All elements on one line */}
+            <div className="relative flex items-center gap-2 sm:gap-3 md:gap-4 py-4">
+              {/* Left Arrow */}
+              <button
+                onClick={() => {
+                  const prevIndex = activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1;
+                  handleNavClick(prevIndex);
+                }}
+                className="text-stevens-primary hover:text-stevens-primary/80 transition-colors p-1 flex-shrink-0"
+                aria-label="Previous testimonial"
+              >
+                <svg 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                >
+                  <path 
+                    d="M15 18L9 12L15 6" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              
+              {/* Current Person's Name - Centered */}
+              <div className="flex-1 text-center min-w-0 px-2">
+                <h3 className="font-stevens-display text-xs sm:text-sm md:text-base uppercase tracking-wider text-stevens-gray-500 font-medium">
+                  {activeTestimonial.author}
+                </h3>
+              </div>
+              
+              {/* Horizontal Line with Gold Diamond Indicator */}
+              <div className="relative flex items-center justify-center flex-shrink-0 w-12 sm:w-16">
+                {/* Horizontal Line */}
+                <div 
+                  className="absolute left-0 right-0 h-[2px]"
+                  style={{ backgroundColor: accentColor }}
+                  aria-hidden="true"
+                />
+                
+                {/* Gold Diamond Indicator - Centered */}
+                <div className="relative z-10">
+                  <GoldDiamond className="w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
+              </div>
+              
+              {/* Right Arrow */}
+              <button
+                onClick={() => {
+                  const nextIndex = activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1;
+                  handleNavClick(nextIndex);
+                }}
+                className="text-stevens-primary hover:text-stevens-primary/80 transition-colors p-1 flex-shrink-0"
+                aria-label="Next testimonial"
+              >
+                <svg 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                >
+                  <path 
+                    d="M9 18L15 12L9 6" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            
           </div>
         </div>
 
@@ -486,24 +577,6 @@ const TestimonialCarousel = ({
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* Dot indicators for mobile */}
-        <div className="flex justify-center gap-2 py-4 bg-white md:hidden">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleNavClick(index)}
-              className={`
-                w-2.5 h-2.5 rounded-full transition-colors duration-300
-                ${activeIndex === index 
-                  ? 'bg-stevens-primary' 
-                  : 'bg-stevens-gray-300 hover:bg-stevens-gray-400'
-                }
-              `}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </motion.section>
