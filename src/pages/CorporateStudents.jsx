@@ -29,8 +29,6 @@ import {
   Check,
   ExternalLink,
   ChevronLeft,
-  ChevronUp,
-  ChevronDown,
   Wrench,
   BarChart3,
   Send
@@ -78,8 +76,6 @@ const CorporateStudents = () => {
   const [annualReimbursement, setAnnualReimbursement] = useState('');
   const [calculatedCost, setCalculatedCost] = useState(null);
   const [showCalculator, setShowCalculator] = useState(false);
-  const [isMobilePriceExpanded, setIsMobilePriceExpanded] = useState(false);
-  const [showMobileBreakdown, setShowMobileBreakdown] = useState(false);
 
   // Get discount info for display
   const discountInfo = getDiscountInfo();
@@ -1079,11 +1075,145 @@ const CorporateStudents = () => {
                         )}
                       </div>
                     </CardContent>
+                    
+                    {/* Mobile Price Summary - Only visible on mobile */}
+                    {calculatedCost && (
+                      <div className="lg:hidden p-stevens-md pt-0 border-t border-stevens-gray-200">
+                        {/* Final Price */}
+                        <div className="bg-stevens-primary text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
+                          {calculatedCost.credits.type === 'variable' ? (
+                            <>
+                              <div className="flex justify-between items-center mb-2">
+                                <span className="text-base font-semibold">
+                                  {calculatedCost.steps.find(s => s.type === 'reimbursement') ? 'YOUR FINAL COST' : 'YOUR COST'}
+                                </span>
+                                <span className="text-stevens-2xl font-bold">
+                                  ${calculatedCost.finalPrice.toLocaleString()}
+                                </span>
+                              </div>
+                              <p className="text-xs text-stevens-white/80">
+                                Based on {calculatedCost.credits.typical} credits
+                              </p>
+                            </>
+                          ) : (
+                            <>
+                              <div className="flex justify-between items-center mb-2">
+                                <span className="text-base font-semibold">
+                                  {calculatedCost.steps.find(s => s.type === 'reimbursement') ? 'YOUR FINAL COST' : 'YOUR COST'}
+                                </span>
+                                <span className="text-stevens-2xl font-bold">
+                                  ${calculatedCost.finalPrice.toLocaleString()}
+                                </span>
+                              </div>
+                              {!calculatedCost.steps.find(s => s.type === 'reimbursement') && (
+                                <p className="text-xs text-stevens-white/70 italic">
+                                  * Before employer reimbursement
+                                </p>
+                              )}
+                            </>
+                          )}
+                          
+                          {calculatedCost.percentSaved > 0 && (
+                            <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
+                              <Star className="w-4 h-4 mr-2 fill-current" />
+                              <span className="text-sm">
+                                You save {calculatedCost.percentSaved}%!
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Mobile CTA Buttons - Only visible on mobile */}
+                    {calculatedCost && (
+                      <div className="lg:hidden p-stevens-md pt-0 space-y-stevens-md border-t border-stevens-gray-200">
+                        {/* Primary CTA - Apply */}
+                        {(() => {
+                          // Build the correct application URL based on program config
+                          const appConfig = selectedProgram.applicationConfig;
+                          const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
+                          
+                          // External application (Stevens grad admissions)
+                          if (appConfig?.standardLink || (appConfig?.type === 'direct' && appConfig?.link?.startsWith('http'))) {
+                            const baseUrl = appConfig.standardLink || appConfig.link;
+                            const separator = baseUrl.includes('?') ? '&' : '?';
+                            const fullUrl = `${baseUrl}${separator}${utmParams}`;
+                            
+                            return (
+                              <a 
+                                href={fullUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => {
+                                  trackEvent('cta_click', {
+                                    cta_type: 'apply_now',
+                                    cta_location: 'calculator_inputs_mobile',
+                                    program_code: selectedProgram.code,
+                                    final_price: calculatedCost.finalPrice,
+                                    application_type: 'external'
+                                  });
+                                  trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                                }}
+                              >
+                                <Button size="lg" className="w-full text-stevens-white group py-4">
+                                  <Send className="w-5 h-5 mr-2" />
+                                  Apply Now
+                                  <ExternalLink className="w-4 h-4 ml-2" />
+                                </Button>
+                              </a>
+                            );
+                          }
+                          
+                          // Internal accelerated application
+                          const internalPath = appConfig?.link || '/accelerated-application/';
+                          return (
+                            <Link 
+                              to={`${internalPath}?program=${selectedProgram.code}${corporateCode ? `&code=${corporateCode}` : ''}&${utmParams}`}
+                              onClick={() => {
+                                trackEvent('cta_click', {
+                                  cta_type: 'apply_now',
+                                  cta_location: 'calculator_inputs_mobile',
+                                  program_code: selectedProgram.code,
+                                  final_price: calculatedCost.finalPrice,
+                                  application_type: 'accelerated'
+                                });
+                                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                              }}
+                            >
+                              <Button size="lg" className="w-full text-stevens-white group py-4">
+                                <Send className="w-5 h-5 mr-2" />
+                                Apply Now
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                              </Button>
+                            </Link>
+                          );
+                        })()}
+                        
+                        {/* Secondary CTA - RFI */}
+                        <Button 
+                          size="lg" 
+                          variant="outline"
+                          className="w-full border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-white py-4"
+                          onClick={() => {
+                            handleCTAClick('request_info_calculator_mobile');
+                            setShowContactModal(true);
+                          }}
+                        >
+                          <Mail className="w-5 h-5 mr-2" />
+                          Request More Information
+                        </Button>
+                        
+                        <p className="text-center text-xs text-stevens-gray-600 pt-2">
+                          Questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-semibold">Talk to an advisor</a>
+                        </p>
+                      </div>
+                    )}
                   </Card>
                 </div>
 
                 {/* Right side - Cost Breakdown */}
-                <div className="lg:col-span-3 order-first lg:order-last">
+                <div className="hidden lg:block lg:col-span-3 order-first lg:order-last">
                   {calculatedCost ? (
                     <Card className="lg:sticky lg:top-4">
                       <CardHeader className="bg-stevens-primary text-stevens-white rounded-t-stevens-md">
@@ -1094,7 +1224,7 @@ const CorporateStudents = () => {
                           {calculatedCost.programName}
                         </p>
                       </CardHeader>
-                      <CardContent className="p-stevens-md lg:p-stevens-lg">
+                      <CardContent className="p-stevens-md lg:p-stevens-lg pt-stevens-md">
                         {/* Base Price */}
                         <div className="mb-stevens-lg pb-stevens-md border-b-2 pt-stevens-md">
                           <div className="flex justify-between items-center">
@@ -1389,209 +1519,6 @@ const CorporateStudents = () => {
               </Card>
             )}
           </div>
-
-          {/* Mobile Collapsible Price Menu */}
-          {showCalculator && selectedProgram && calculatedCost && (
-            <div className="fixed bottom-0 left-0 right-0 lg:hidden z-50">
-              <AnimatePresence mode="wait">
-                {!isMobilePriceExpanded ? (
-                  /* Collapsed State - Mini Bar */
-                  <motion.button
-                    key="collapsed"
-                    initial={{ y: 100 }}
-                    animate={{ y: 0 }}
-                    exit={{ y: 100 }}
-                    transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                    onClick={() => setIsMobilePriceExpanded(true)}
-                    className="w-full bg-stevens-primary text-white p-3 shadow-2xl"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">
-                        Your Cost: ${calculatedCost.finalPrice.toLocaleString()}
-                      </span>
-                      <span className="flex items-center text-sm opacity-90">
-                        Details <ChevronUp className="w-4 h-4 ml-1" />
-                      </span>
-                    </div>
-                    {/* Active Discounts Badges */}
-                    {(isWorkforcePartner || isHobokenResident || isStevensAlumni || annualReimbursement) && (
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {isWorkforcePartner && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-white/20 text-white">
-                            <Building className="w-3 h-3 mr-1" />
-                            Partner
-                          </span>
-                        )}
-                        {isStevensAlumni && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-white/20 text-white">
-                            <GraduationCap className="w-3 h-3 mr-1" />
-                            Alumni
-                          </span>
-                        )}
-                        {isHobokenResident && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-white/20 text-white">
-                            <Home className="w-3 h-3 mr-1" />
-                            Resident
-                          </span>
-                        )}
-                        {annualReimbursement && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-white/20 text-white">
-                            <Briefcase className="w-3 h-3 mr-1" />
-                            ${parseFloat(annualReimbursement).toLocaleString()}/yr
-                          </span>
-                        )}
-                      </div>
-                    )}
-                  </motion.button>
-                ) : (
-                  /* Expanded State - Full Panel */
-                  <motion.div
-                    key="expanded"
-                    initial={{ y: '100%' }}
-                    animate={{ y: 0 }}
-                    exit={{ y: '100%' }}
-                    transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                    className="bg-white border-t-2 border-stevens-primary shadow-2xl"
-                  >
-                    {/* Close Handle */}
-                    <button
-                      onClick={() => {
-                        setIsMobilePriceExpanded(false);
-                        setShowMobileBreakdown(false);
-                      }}
-                      className="w-full py-2 flex justify-center items-center text-stevens-gray-500 border-b border-stevens-gray-200 hover:bg-stevens-gray-50 transition-colors"
-                    >
-                      <ChevronDown className="w-5 h-5" />
-                    </button>
-                    
-                    {/* Price Summary Content */}
-                    <div className="p-4">
-                      <p className="text-sm text-stevens-gray-600 truncate">
-                        {calculatedCost.programName}
-                      </p>
-                      <div className="mt-2">
-                        <p className="text-xs text-stevens-gray-500 uppercase tracking-wide">Your Cost</p>
-                        <p className="text-3xl font-bold text-stevens-primary">
-                          ${calculatedCost.finalPrice.toLocaleString()}
-                        </p>
-                        
-                        {/* Collapsible Price Breakdown Button */}
-                        {calculatedCost.percentSaved > 0 && (
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setShowMobileBreakdown(!showMobileBreakdown);
-                            }}
-                            className="text-sm text-stevens-success font-medium mt-1 flex items-center hover:text-stevens-success/80 transition-colors"
-                          >
-                            <Star className="w-4 h-4 mr-1 fill-current" />
-                            Save {calculatedCost.percentSaved}%
-                            <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${showMobileBreakdown ? 'rotate-180' : ''}`} />
-                          </button>
-                        )}
-                        
-                        {/* Price Calculation Breakdown */}
-                        <AnimatePresence>
-                          {showMobileBreakdown && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.2 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="mt-3 pt-3 border-t border-stevens-gray-200 space-y-2">
-                                {/* Base Price */}
-                                <div className="flex justify-between text-sm">
-                                  <span className="text-stevens-gray-600">Program Cost</span>
-                                  <span className="text-stevens-gray-900">${calculatedCost.basePrice.toLocaleString()}</span>
-                                </div>
-                                
-                                {/* Discount Steps */}
-                                {calculatedCost.steps.map((step, index) => (
-                                  <div key={index} className="flex justify-between text-sm">
-                                    <span className="text-stevens-gray-600 flex items-center">
-                                      {step.icon === 'building' && <Building className="w-3 h-3 mr-1" />}
-                                      {step.icon === 'home' && <Home className="w-3 h-3 mr-1" />}
-                                      {step.icon === 'graduation-cap' && <GraduationCap className="w-3 h-3 mr-1" />}
-                                      {step.icon === 'briefcase' && <Briefcase className="w-3 h-3 mr-1" />}
-                                      {step.name}
-                                    </span>
-                                    <span className="text-stevens-success font-medium">
-                                      -${step.discountAmount.toLocaleString()}
-                                    </span>
-                                  </div>
-                                ))}
-                                
-                                {/* Final Total */}
-                                <div className="flex justify-between text-sm font-bold pt-2 border-t border-dashed border-stevens-gray-300">
-                                  <span className="text-stevens-gray-900">Final Cost</span>
-                                  <span className="text-stevens-primary">${calculatedCost.finalPrice.toLocaleString()}</span>
-                                </div>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                      
-                      {/* Apply Button */}
-                      <div className="mt-4">
-                        {(() => {
-                          const appConfig = selectedProgram.applicationConfig;
-                          const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
-                          
-                          if (appConfig?.standardLink || (appConfig?.type === 'direct' && appConfig?.link?.startsWith('http'))) {
-                            const baseUrl = appConfig.standardLink || appConfig.link;
-                            const separator = baseUrl.includes('?') ? '&' : '?';
-                            return (
-                              <a 
-                                href={`${baseUrl}${separator}${utmParams}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => {
-                                  trackEvent('cta_click', {
-                                    cta_type: 'apply_now_mobile_menu',
-                                    program_code: selectedProgram.code,
-                                    final_price: calculatedCost.finalPrice
-                                  });
-                                  trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                                }}
-                              >
-                                <Button className="w-full bg-stevens-primary hover:bg-stevens-maroon-dark text-white font-semibold py-3">
-                                  Apply Now
-                                  <ArrowRight className="w-4 h-4 ml-2" />
-                                </Button>
-                              </a>
-                            );
-                          }
-                          
-                          const internalPath = appConfig?.link || '/accelerated-application/';
-                          return (
-                            <Link 
-                              to={`${internalPath}?program=${selectedProgram.code}${corporateCode ? `&code=${corporateCode}` : ''}&${utmParams}`}
-                              onClick={() => {
-                                trackEvent('cta_click', {
-                                  cta_type: 'apply_now_mobile_menu',
-                                  program_code: selectedProgram.code,
-                                  final_price: calculatedCost.finalPrice
-                                });
-                                trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                              }}
-                            >
-                              <Button className="w-full bg-stevens-primary hover:bg-stevens-maroon-dark text-white font-semibold py-3">
-                                Apply Now
-                                <ArrowRight className="w-4 h-4 ml-2" />
-                              </Button>
-                            </Link>
-                          );
-                        })()}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          )}
         </section>
 
         {/* Your Learning Journey */}
