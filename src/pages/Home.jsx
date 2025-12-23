@@ -45,7 +45,7 @@ import { PageContextProvider } from "@/contexts/analytics/PageContext";
 const StatItem = ({ value, label, icon: Icon }) => (
 <div className="text-center flex flex-col items-center justify-center">
     <Icon className="w-10 h-10 mx-auto mb-3" />
-    <div className="text-3xl font-display font-bold">{value}</div>
+    <div className="text-3xl font-stevens-headers font-bold">{value}</div>
     <div className="uppercase tracking-wider text-stevens-base">{label}</div>
   </div>
 );
@@ -239,11 +239,11 @@ export default function Home() {
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
+              <h1 className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 Advance Your Career with a World-Class Online Master's Degree from
                 Stevens
               </h1>
-              <p className="text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
+              <p className="font-stevens-body text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
                 Our programs are designed for busy professionals ready to lead
                 in the tech-driven world. Let's find the perfect fit for your
                 ambition.
@@ -253,7 +253,7 @@ export default function Home() {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
-                  <button className="btn-stevens-primary">
+                  <button className="btn-stevens-primary font-stevens-body">
                     Explore Programs & Apply in Minutes
                   </button>
                 </Link>
@@ -435,7 +435,7 @@ export default function Home() {
                   at Stevens offers you a curriculum aligned with high-demand areas such as software development, web programming, mobile systems and applications, cloud computing, human-computer interaction, and enterprise software design.
                 </p>
                 <Link to={createPageUrl("online-masters-computer-science-mscs/")}>
-                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
                     LEARN MORE
                   </button>
                 </Link>
@@ -459,7 +459,7 @@ export default function Home() {
                    is an AACSB-accredited program offered part time through online courses. The Online MBA combines business knowledge with the technology and analytics necessary to excel in today's data-centric world. Students will build upon their managerial toolkits with analytical, data literacy, marketing and operations management skills that drive data-based decisions.
                 </p>
                 <Link to={createPageUrl("online-mba/")}>
-                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
                     LEARN MORE
                   </button>
                 </Link>
@@ -483,7 +483,7 @@ export default function Home() {
                   program are prepared to add value at the intersection of engineering and management and assume professional positions of increasing responsibility.
                 </p>
                 <Link to={createPageUrl("online-masters-engineering-management/")}>
-                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
                     LEARN MORE
                   </button>
                 </Link>
@@ -500,7 +500,7 @@ export default function Home() {
                   At Stevens, we are proud to offer an array of online programs that challenge the traditional frontiers of technology and business. Compare our programs to find the innovative graduate degree that is the right fit for your personal and professional goals.
                 </p>
                 <Link to={createPageUrl("compare-our-programs/")}>
-                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <button className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
                     LEARN MORE
                   </button>
                 </Link>
@@ -517,7 +517,7 @@ export default function Home() {
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <AnimatedSection className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center mb-stevens-xl">
             <div>
-              <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-display text-3xl font-bold text-gray-900 mb-4">
                 A Legacy of Innovation Meets Online Flexibility
               </h2>
               <p className="text-stevens-xl text-stevens-gray-900 mb-6">
@@ -545,7 +545,7 @@ export default function Home() {
               loading="lazy"
             />
             <div className="lg:order-2">
-              <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-headers text-3xl font-bold text-gray-900 mb-4">
                 A Community That Supports Your Success
               </h2>
               <p className="text-stevens-xl text-stevens-gray-900 mb-6">
@@ -557,7 +557,7 @@ export default function Home() {
                 connection.
               </p>
               <Link to={createPageUrl("OnlineLearning")}>
-                <Button className="btn-stevens-primary ">
+                <Button className="btn-stevens-primary font-stevens-body">
                   Explore the Student Experience 
                   <ArrowRight className="w-5 h-5 ml-stevens-sm" />
                 </Button>
@@ -598,7 +598,7 @@ export default function Home() {
       <section className="bg-stevens-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="font-stevens-headers text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                     Key Dates & Deadlines
                 </h2>
                 <p className="text-stevens-xl text-stevens-gray-900 max-w-3xl mx-auto">
@@ -753,7 +753,7 @@ export default function Home() {
             {/* View All Blogs Button */}
             <AnimatedSection className="text-center">
               <Link to={createPageUrl("blog/")}>
-                <Button variant="outline" className="btn-stevens-secondary">
+                <Button variant="outline" className="btn-stevens-secondary font-stevens-body">
                   View All Blog Posts
                 </Button>
               </Link>
@@ -767,7 +767,7 @@ export default function Home() {
         <section className="py-20 border-t">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-headers text-3xl font-bold text-gray-900 mb-4">
                 Application Support Events
               </h2>
               <p className="text-stevens-xl text-stevens-gray-900">
@@ -797,7 +797,7 @@ export default function Home() {
                         </div>
                       </div>
                       <a href={e.url} target="_blank" rel="noopener noreferrer" className="block mt-stevens-md">
-                        <Button className="bg-stevens-primary text-stevens-white hover:bg-stevens-maroon-dark transition-all duration-stevens-normal font-stevens-semibold px-stevens-lg py-stevens-md">
+                        <Button className="bg-stevens-primary text-stevens-white hover:bg-stevens-maroon-dark transition-all duration-stevens-normal font-stevens-body font-stevens-semibold px-stevens-lg py-stevens-md">
                           Watch Now
                         </Button>
                       </a>
@@ -808,7 +808,7 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection className="text-center">
               <Link to="/events/">
-                <Button variant="outline" className="btn-stevens-secondary">
+                <Button variant="outline" className="btn-stevens-secondary font-stevens-body">
                   View All Events
                 </Button>
               </Link>
@@ -860,7 +860,7 @@ export default function Home() {
               className="w-full"
                 onClick={() => setShowBrowseModal(false)}
               >
-                <Button className="w-full btn-secondary py-3 text-lg font-semibold hover:bg-red-800 hover:text-white transition-all duration-300">
+                <Button className="w-full btn-secondary py-3 text-lg font-stevens-body font-semibold hover:bg-red-800 hover:text-white transition-all duration-300">
                   Stevens Member
                 </Button>
               </a>
@@ -873,7 +873,7 @@ export default function Home() {
               >
                 <Button
                   variant="outline"
-                  className="w-full btn-outline-maroon py-3 text-lg font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300"
+                  className="w-full btn-outline-maroon py-3 text-lg font-stevens-body font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300"
                 >
                   Public Learner
                 </Button>

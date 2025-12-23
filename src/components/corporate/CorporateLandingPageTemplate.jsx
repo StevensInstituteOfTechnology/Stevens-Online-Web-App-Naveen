@@ -123,7 +123,7 @@ export default function CorporateLandingPageTemplate({
                                 <CardContent className="p-8">
                                     <div className="flex items-center gap-4 mb-6">
                                         <Building className="w-8 h-8 text-stevens-maroon" />
-                                        <h2 className="font-display text-3xl font-bold text-gray-900">
+                                        <h2 className="font-stevens-headers text-3xl font-bold text-gray-900">
                                             Stevens <span className="text-stevens-maroon">×</span> {partnerName}
                                         </h2>
                                     </div>
@@ -144,7 +144,7 @@ export default function CorporateLandingPageTemplate({
                             {/* Program Details Sections */}
                             {programDetails.map((section, index) => (
                                 <div key={index} className="space-y-4">
-                                    <h3 className="font-display text-2xl font-bold text-gray-900 flex items-center gap-2">
+                                    <h3 className="font-stevens-headers text-2xl font-bold text-gray-900 flex items-center gap-2">
                                         {section.icon || <BookOpen className="w-6 h-6 text-stevens-secondary" />}
                                         {section.title}
                                     </h3>
@@ -196,7 +196,7 @@ export default function CorporateLandingPageTemplate({
                             {showBodyAcceleratedApp && (
                                 <div id="apply-now" className="scroll-mt-24">
                                     <div className="text-center mb-8">
-                                        <h3 className="font-display text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h3>
+                                        <h3 className="font-stevens-headers text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h3>
                                         <p className="text-gray-600 text-lg">
                                             Complete the accelerated application form below to join the cohort.
                                         </p>

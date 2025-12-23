@@ -80,7 +80,7 @@ export default function PSEGPage() {
     const customContent = (
         <div className="space-y-12">
             <div>
-                <h3 className="font-display text-2xl font-bold text-gray-900 mb-6">Eligible Programs</h3>
+                <h3 className="font-stevens-headers text-2xl font-bold text-gray-900 mb-6">Eligible Programs</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                     {programs.map((program) => (
                         <div key={program.code} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full transition-all hover:shadow-lg">

@@ -19,13 +19,13 @@ export default function Certificates() {
            <p className="mt-2">To better serve our professional learners, we have centralized all of our certificates and short courses on our new Professional Education portal. Explore the full catalog to find courses in AI, data analytics, cybersecurity, and more.</p>
         </div>
 
-        <h2 className="font-display text-3xl font-bold mb-4">Explore Our Full Course Catalog</h2>
-        <p className="text-lg text-gray-600 mb-8">
+        <h2 className="font-stevens-headers text-3xl font-bold mb-4">Explore Our Full Course Catalog</h2>
+        <p className="font-stevens-body text-lg text-gray-600 mb-8">
           Our new Professional Education page is your one-stop destination for all non-degree programs. 
           Discover flexible, online courses designed to provide in-demand expertise for working professionals and current students.
         </p>
         <Link to={createPageUrl("ProfessionalEducation")}>
-          <Button size="lg" className="btn-secondary px-10 text-lg">
+          <Button size="lg" className="btn-secondary px-10 text-stevens-lg font-stevens-body">
             Go to Professional Education <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </Link>

@@ -640,21 +640,21 @@ const programData = {
     requirements: `
       <div class="space-y-6">
         <div>
-          <h4 class="font-bold text-lg mb-2">ACADEMIC TRANSCRIPTS</h4>
-          <p>Applicants must submit transcripts from all undergraduate and graduate institutions where credit was earned. You may submit unofficial transcripts during the application process. After admission, you will be required to submit official transcripts.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">ACADEMIC TRANSCRIPTS</h4>
+          <p class="font-stevens-body">Applicants must submit transcripts from all undergraduate and graduate institutions where credit was earned. You may submit unofficial transcripts during the application process. After admission, you will be required to submit official transcripts.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">PROFESSIONAL Résumé</h4>
-          <p class="mb-2">Work experience is not a requirement for the Online MBA program, but the admissions committee does value applicants with professional experience. You must include a résumé with your application that highlights:</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROFESSIONAL Résumé</h4>
+          <p class="font-stevens-body mb-stevens-sm">Work experience is not a requirement for the Online MBA program, but the admissions committee does value applicants with professional experience. You must include a résumé with your application that highlights:</p>
           <ul class="list-disc pl-5 space-y-1"><li>Academic record</li><li>Work and internship experience</li><li>Leadership abilities</li><li>Professional aspirations</li></ul>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">LETTERS OF RECOMMENDATION</h4>
-          <p>Your application must include two letters of recommendation. The strongest applications will include one letter from a current supervisor, and one from a former supervisor or previous employer who can speak to your leadership potential and discuss your professional performance.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">LETTERS OF RECOMMENDATION</h4>
+          <p class="font-stevens-body">Your application must include two letters of recommendation. The strongest applications will include one letter from a current supervisor, and one from a former supervisor or previous employer who can speak to your leadership potential and discuss your professional performance.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">GMAT/GRE</h4>
-          <p>Scores are not required.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">GMAT/GRE</h4>
+          <p class="font-stevens-body">Scores are not required.</p>
         </div>
       </div>
     `

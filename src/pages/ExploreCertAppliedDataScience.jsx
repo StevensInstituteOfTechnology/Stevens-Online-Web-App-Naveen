@@ -67,11 +67,11 @@ const ExploreCertAppliedDataScience = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "PRACTICAL AI & DATA SCIENCE EDUCATION",
     whyChooseStevensContent: `
-      <p>This certificate focuses on applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Every course is AI-enhanced, meaning you'll learn to use AI copilots responsibly to boost your productivity while building deep technical understanding.</p>
-      
-      <p>Stevens Institute of Technology brings 150+ years of engineering excellence to data science education. Located in the New York metropolitan area, Stevens combines world-class faculty with strong industry connections, ensuring your education reflects current industry practices and emerging technologies.</p>
-      
-      <p>The certificate bridges the gap between pure data analysis and enterprise AI deployment. You'll learn not just how AI systems work, but how to build them-from data wrangling to model deployment to explainability and ethics.</p>
+      <p class="font-stevens-body">This certificate focuses on applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Every course is AI-enhanced, meaning you'll learn to use AI copilots responsibly to boost your productivity while building deep technical understanding.</p>
+
+      <p class="font-stevens-body">Stevens Institute of Technology brings 150+ years of engineering excellence to data science education. Located in the New York metropolitan area, Stevens combines world-class faculty with strong industry connections, ensuring your education reflects current industry practices and emerging technologies.</p>
+
+      <p class="font-stevens-body">The certificate bridges the gap between pure data analysis and enterprise AI deployment. You'll learn not just how AI systems work, but how to build them-from data wrangling to model deployment to explainability and ethics.</p>
     `,
     
     // Program Benefits

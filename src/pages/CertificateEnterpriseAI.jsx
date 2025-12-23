@@ -213,20 +213,20 @@ const programData = {
     requirements: `
       <div class="space-y-6">
         <div>
-          <h4 class="font-bold text-lg mb-2">WHO SHOULD APPLY</h4>
-          <p>This certificate is designed for non-STEM and STEM professionals in product, operations, marketing, HR, finance, supply chain, or services who need to use AI at work. No prior coding experience is required.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">WHO SHOULD APPLY</h4>
+          <p class="font-stevens-body">This certificate is designed for non-STEM and STEM professionals in product, operations, marketing, HR, finance, supply chain, or services who need to use AI at work. No prior coding experience is required.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">PREREQUISITES</h4>
-          <p>None. The certificate is designed to be accessible to professionals from all backgrounds. No programming experience required-we'll teach you what you need to know.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PREREQUISITES</h4>
+          <p class="font-stevens-body">None. The certificate is designed to be accessible to professionals from all backgrounds. No programming experience required-we'll teach you what you need to know.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">APPLICATION PROCESS</h4>
-          <p>Apply through our streamlined Accelerated Application. Submit your resume or LinkedIn profile and unofficial transcripts. No letters of recommendation or entrance exams required.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">APPLICATION PROCESS</h4>
+          <p class="font-stevens-body">Apply through our streamlined Accelerated Application. Submit your resume or LinkedIn profile and unofficial transcripts. No letters of recommendation or entrance exams required.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">STACKABILITY</h4>
-          <p>All 9 credits apply toward existing Stevens graduate programs including the MBA and M.Eng. in Applied Data Science, per Registrar approval. This allows you to test the waters and continue toward a full master's degree if desired.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">STACKABILITY</h4>
+          <p class="font-stevens-body">All 9 credits apply toward existing Stevens graduate programs including the MBA and M.Eng. in Applied Data Science, per Registrar approval. This allows you to test the waters and continue toward a full master's degree if desired.</p>
         </div>
       </div>
     `
@@ -253,30 +253,30 @@ const programData = {
     ],
     description: `
       <div class="space-y-4">
-        <p class="font-bold text-lg text-stevens-gray-900">Smart Investment in Your Future</p>
-        <p class="text-left">At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
+        <p class="font-stevens-headers font-bold text-stevens-lg text-stevens-gray-900">Smart Investment in Your Future</p>
+        <p class="font-stevens-body text-left">At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Corporate Tuition Assistance</p>
-          <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
+          <p class="font-stevens-body text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Financial Aid & Funding Options</p>
-          <p class="text-stevens-sm mb-3 text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
-          <p class="text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
+          <p class="font-stevens-body text-stevens-sm mb-stevens-sm text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
+          <p class="font-stevens-body text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call for Funding Details
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
+        <p class="font-stevens-body text-stevens-xs text-stevens-gray-600 mt-stevens-md">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },

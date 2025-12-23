@@ -33,13 +33,13 @@ const programData = {
   overview: {
     title: "Program Overview",
     description: `
-      <p>The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
+      <p class="font-stevens-body">The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
       
-      <p class='my-5'>Through a curriculum grounded in engineering rigor and real-world application, you'll master <strong>AI model design, LLM fine-tuning, MLOps, and scalable data architectures</strong>. Learn to build end-to-end AI solutions: from data pipelines and feature engineering to model deployment and monitoring in production environments.</p>
+      <p class='font-stevens-body my-5'>Through a curriculum grounded in engineering rigor and real-world application, you'll master <strong>AI model design, LLM fine-tuning, MLOps, and scalable data architectures</strong>. Learn to build end-to-end AI solutions: from data pipelines and feature engineering to model deployment and monitoring in production environments.</p>
       
-      <p class='my-5'>This program bridges engineering precision with AI-driven innovation. You'll work with cutting-edge tools—PyTorch, TensorFlow, Hugging Face, cloud AI platforms—and learn to operationalize AI responsibly with ethics, explainability, and governance built in.</p>
+      <p class='font-stevens-body my-5'>This program bridges engineering precision with AI-driven innovation. You'll work with cutting-edge tools—PyTorch, TensorFlow, Hugging Face, cloud AI platforms—and learn to operationalize AI responsibly with ethics, explainability, and governance built in.</p>
       
-      <h3 class='text-lg'><strong>Program at a Glance:</strong></h3>
+      <h3 class='font-stevens-headers text-stevens-lg'><strong>Program at a Glance:</strong></h3>
 
       <ul class='my-5'>
         <li><strong>Format: 100% Online</strong></li>
@@ -75,7 +75,7 @@ const programData = {
         <li>Integrated data science and engineering curriculum</li>
         <li>Real-world capstone project</li>
       </ul>
-      <p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
+      <p class="font-stevens-body text-stevens-xs mt-stevens-sm">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
     `
   },
   // ==================================================================
@@ -204,7 +204,7 @@ const programData = {
     modules: [
       {
         title: "Mathematics & Foundations",
-        description: "<p>Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>",
+        description: "<p class=\"font-stevens-body\">Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>",
         skills: [
           "Apply concepts from multivariable calculus and linear algebra-such as vector spaces, eigenvalues, and matrix decompositions-to model and analyze data",
           "Use optimization and numerical methods to solve applied data science problems",
@@ -493,8 +493,8 @@ const programData = {
         { value: "$24,000", label: "Total Program Cost" }
       ],
       description: `
-        <h3 class="font-bold text-xl mb-4">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
-        <p class="mb-4">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
+        <h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
+        <p class="font-stevens-body mb-stevens-md">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm mb-4">
           <p class="font-semibold text-stevens-gray-900 mb-2">💡 Strong Return on Investment</p>

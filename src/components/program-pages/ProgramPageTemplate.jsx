@@ -542,7 +542,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 <div className="mt-8 grid grid-cols-3 gap-4">
                   {quickFacts.atAGlance.map((fact, index) => (
                       <div key={index} className="text-center bg-stevens-gray-100 p-3 rounded-stevens-md">
-                          <p className="font-display text-lg md:text-xl font-bold text-stevens-primary leading-tight">{fact.value}</p>
+                          <p className="font-stevens-headers text-lg md:text-xl font-bold text-stevens-primary leading-tight">{fact.value}</p>
                           <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-gray-600">{fact.label}</p>
                       </div>
                   ))}
@@ -821,7 +821,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             </div>
             {curriculum.completeCourseCatalog && (
               <div className="mt-12">
-                <h3 className="font-display text-2xl font-bold text-center mb-6">Complete Course Catalog</h3>
+                <h3 className="font-stevens-headers text-2xl font-bold text-center mb-6">Complete Course Catalog</h3>
                 <Card>
                   <CardContent className="p-6 overflow-x-auto">
                     <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: curriculum.completeCourseCatalog }} />
@@ -946,7 +946,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     <div className="prose" dangerouslySetInnerHTML={{ __html: option.description }}/>
                     {option.buttonText && !option.buttonGrayOut && (
                       <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                        <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                        <div className="flex justify-center items-center w-full btn-secondary font-stevens-body mt-2">
                           {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
                         </div>
                       </a>
@@ -961,7 +961,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     <div className='py-4' dangerouslySetInnerHTML={{__html:admissions.alertMessage.description}}/>
                     {admissions.alertMessage.url && (
                       <a href={admissions.alertMessage.url} target="_blank" rel="noopener noreferrer">
-                      <div variant="outline" className="btn-outline-white text-white inline-block">{admissions.alertMessage.buttonText}</div>
+                      <div variant="outline" className="btn-outline-white text-white font-stevens-body inline-block">{admissions.alertMessage.buttonText}</div>
                     </a>
                     )}
                   </div>
@@ -1046,7 +1046,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 {tuition.cards.map((card, i) => (
                   <Card key={i} className="shadow-md">
                     <CardHeader>
-                      <CardTitle className="font-display text-4xl text-stevens-primary">{card.value}</CardTitle>
+                      <CardTitle className="font-stevens-headers text-4xl text-stevens-primary">{card.value}</CardTitle>
                       <p className="font-semibold text-stevens-gray-900">{card.label}</p>
                     </CardHeader>
                   </Card>
@@ -1056,7 +1056,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             {tuition.description && <div className="text-center prose max-w-3xl mx-auto mt-8" dangerouslySetInnerHTML={{ __html: tuition.description }}/>}
             {tuition.grants && tuition.grants.length > 0 && (
               <div className="mt-10">
-                <h3 className="font-display text-2xl font-bold text-center mb-6">Grants & Scholarships</h3>
+                <h3 className="font-stevens-headers text-2xl font-bold text-center mb-6">Grants & Scholarships</h3>
                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   {tuition.grants.map((grant,i) => (
                     <Card key={i}>
@@ -1093,7 +1093,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       </div>
                       <div className="mt-auto">
                         <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          <Button className="btn-stevens-outline text-stevens-white">Watch Now</Button>
+                          <Button className="btn-stevens-outline text-stevens-white font-stevens-body">Watch Now</Button>
                         </a>
                       </div>
                     </CardContent>
@@ -1156,7 +1156,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     <p className="text-stevens-lg text-stevens-white mb-stevens-lg">Ready to advance your career? Fill out the form to get more information about the {programData.code.toUpperCase()} program, or start your application today.</p>
                     <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
                         <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer">
-                        <button className= "btn-stevens-secondary bg-stevens-white text-stevens-primary">Apply Now</button>
+                        <button className= "btn-stevens-secondary bg-stevens-white text-stevens-primary font-stevens-body">Apply Now</button>
                         </a>
                     </div>
                 </div>

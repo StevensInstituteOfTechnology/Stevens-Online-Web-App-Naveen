@@ -11,7 +11,7 @@ import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl }
 
 const FinancialAidOption = ({ title, children }) => (
   <AccordionItem value={title}>
-    <AccordionTrigger className="font-display text-xl text-left">{title}</AccordionTrigger>
+    <AccordionTrigger className="font-stevens-headers text-xl text-left">{title}</AccordionTrigger>
     <AccordionContent className="prose max-w-none text-gray-700 leading-relaxed">
       {children}
     </AccordionContent>
@@ -80,7 +80,7 @@ export default function Tuition() {
 
             {/* Grants */}
             <div className="text-center">
-              <h3 className="font-display text-2xl font-bold mb-2">Tuition Rate Support</h3>
+              <h3 className="font-stevens-headers text-2xl font-bold mb-2">Tuition Rate Support</h3>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">To support this transition, Stevens provides two grants that apply a reduced per-credit tuition rate to the first two asynchronous courses.</p>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="text-center shadow-lg">
@@ -89,7 +89,7 @@ export default function Tuition() {
                     <p className="text-sm text-gray-500">(for standard applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-display text-4xl font-bold text-stevens-maroon">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -99,7 +99,7 @@ export default function Tuition() {
                     <p className="text-sm text-gray-500">(for ASAP applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-display text-4xl font-bold text-stevens-maroon">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -108,7 +108,7 @@ export default function Tuition() {
 
             {/* Tuition and Fees Tabs */}
             <div>
-              <h2 className="font-display text-3xl font-bold mb-6 text-center">Tuition and Fees</h2>
+              <h2 className="font-stevens-headers text-3xl font-bold mb-6 text-center">Tuition and Fees</h2>
               <Tabs defaultValue="mscs" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="mscs">Online MSCS</TabsTrigger>
@@ -161,7 +161,7 @@ export default function Tuition() {
 
             {/* Average Cost Table */}
             <div>
-              <h2 className="font-display text-3xl font-bold mb-6 text-center">Average Cost of Stevens Online Programs</h2>
+              <h2 className="font-stevens-headers text-3xl font-bold mb-6 text-center">Average Cost of Stevens Online Programs</h2>
               <Card>
                 <Table>
                   <TableHeader>
@@ -190,12 +190,12 @@ export default function Tuition() {
 
             {/* Financial Aid Section */}
             <div>
-              <h2 className="font-display text-3xl font-bold mb-4">Financial Aid</h2>
+              <h2 className="font-stevens-headers text-3xl font-bold mb-4">Financial Aid</h2>
               <p className="mb-4 text-gray-700">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
               <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
                 Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
               </p>
-              <h3 className="font-display text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
+              <h3 className="font-stevens-headers text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <FinancialAidOption title="Dean’s Merit Scholar Program">
                   <p>Students in the Online MSCS and MEM programs may be eligible for up to $10,000 in scholarship support, while those in the Online MBA program may qualify for up to $25,000 - both based on academic merit. Contact your enrollment advisor to learn more about eligibility.</p>
@@ -219,7 +219,7 @@ export default function Tuition() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-display text-2xl">Alumni Benefits</CardTitle>
+                  <CardTitle className="font-stevens-headers text-2xl">Alumni Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className='mb-4'>Stevens alumni can take advantage of a 15% discount when they enroll in a Stevens Graduate program. Visit the <a href="https://www.stevens.edu/admission-aid/graduate-admissions" target="_blank" rel="noopener noreferrer" className="text-stevens-maroon hover:underline">Graduate Admissions page</a> for more information.</p>
@@ -227,7 +227,7 @@ export default function Tuition() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-display text-2xl">Veterans Services</CardTitle>
+                  <CardTitle className="font-stevens-headers text-2xl">Veterans Services</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4">With a strong commitment to our nation’s veterans, Stevens Institute of Technology is proud to participate in the Yellow Ribbon program and offer a suite of resources and support to active duty, veteran and dependent military communities.</p>
@@ -252,7 +252,7 @@ export default function Tuition() {
                 <CardContent>
                   <p className="text-gray-700 mb-2">Complete the FAFSA to apply for federal aid.</p>
                   <p className="text-sm">Stevens Institute of Technology College Code:</p>
-                  <p className="font-display text-4xl font-bold text-stevens-maroon my-2">002639</p>
+                  <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon my-2">002639</p>
                   <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button className="w-full btn-secondary mt-2">
                       Go to FAFSA Website <ArrowRight className="w-4 h-4 ml-2" />

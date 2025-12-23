@@ -209,20 +209,20 @@ const programData = {
     requirements: `
       <div class="space-y-6">
         <div>
-          <h4 class="font-bold text-lg mb-2">WHO SHOULD APPLY</h4>
-          <p>This certificate is designed for working professionals pivoting into data/AI roles; tech-adjacent managers upskilling in Python/SQL/ML; and early-career engineers and analysts seeking AI literacy and applied data fluency.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">WHO SHOULD APPLY</h4>
+          <p class="font-stevens-body">This certificate is designed for working professionals pivoting into data/AI roles; tech-adjacent managers upskilling in Python/SQL/ML; and early-career engineers and analysts seeking AI literacy and applied data fluency.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">PREREQUISITES</h4>
-          <p>No formal prerequisites. However, basic comfort with quantitative reasoning is helpful. We'll teach you the programming and mathematical concepts you need-no prior coding experience required.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PREREQUISITES</h4>
+          <p class="font-stevens-body">No formal prerequisites. However, basic comfort with quantitative reasoning is helpful. We'll teach you the programming and mathematical concepts you need-no prior coding experience required.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">APPLICATION PROCESS</h4>
-          <p>Apply through our streamlined Accelerated Application. Submit your resume or LinkedIn profile and unofficial transcripts. No letters of recommendation or entrance exams required.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">APPLICATION PROCESS</h4>
+          <p class="font-stevens-body">Apply through our streamlined Accelerated Application. Submit your resume or LinkedIn profile and unofficial transcripts. No letters of recommendation or entrance exams required.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">STACKABILITY TO MEADS</h4>
-          <p>All 9 credits apply toward Stevens' M.Eng. in Applied Data Science (MEADS), per Registrar approval. This certificate serves as a perfect on-ramp to the full master's program, allowing you to test your interest and aptitude before committing to the complete degree.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">STACKABILITY TO MEADS</h4>
+          <p class="font-stevens-body">All 9 credits apply toward Stevens' M.Eng. in Applied Data Science (MEADS), per Registrar approval. This certificate serves as a perfect on-ramp to the full master's program, allowing you to test your interest and aptitude before committing to the complete degree.</p>
         </div>
       </div>
     `
@@ -249,30 +249,30 @@ const programData = {
     ],
     description: `
       <div class="space-y-4">
-        <p class="font-bold text-lg text-stevens-gray-900">Invest in Your Data Science Future</p>
-        <p class="text-left">At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal choice if your company offers tuition assistance.</p>
+        <p class="font-stevens-headers font-bold text-stevens-lg text-stevens-gray-900">Invest in Your Data Science Future</p>
+        <p class="font-stevens-body text-left">At $5,250 for 9 graduate credits, this certificate represents exceptional value for a credential that can transform your career. The cost is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal choice if your company offers tuition assistance.</p>
         
         <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md  text-stevens-gray-900 mb-2">Employer Tuition Reimbursement</p>
-          <p class="text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate fits perfectly within that benefit—potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
+          <p class="font-stevens-body text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant graduate education. This certificate fits perfectly within that benefit—potentially allowing you to earn graduate-level data science credentials at little or no personal cost.</p>
         </div>
         
         <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Financial Aid & Funding Options</p>
-          <p class="text-stevens-sm mb-3 text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
-          <p class="text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
+          <p class="font-stevens-body text-stevens-sm mb-stevens-sm text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
+          <p class="font-stevens-body text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call for Funding Details
           </a>
         </div>
         
-        <p class="text-xs text-stevens-gray-600 mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
+        <p class="font-stevens-body text-stevens-xs text-stevens-gray-600 mt-stevens-md">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },

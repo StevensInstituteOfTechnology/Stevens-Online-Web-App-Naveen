@@ -37,7 +37,6 @@ import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import ChatbotButton from "@/components/chat/ChatbotButton";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
-import "@/globals.css";
 
 const graduateProgramItems = [
   { name: "Online MBA", page: "online-mba/" },
@@ -1523,7 +1522,7 @@ export default function Layout({ children, currentPageName }) {
                </Link>
             </div>
             <div className="lg:col-start-3">
-              <h3 className="font-display text-lg font-semibold mb-4 text-white">
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h3>
               <div className="space-y-2">
@@ -1560,7 +1559,7 @@ export default function Layout({ children, currentPageName }) {
               </div>
             </div>
              <div>
-              <h3 className="font-display text-lg font-semibold mb-4 text-white">
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Connect With Us
               </h3>
               {/* Social Media Icons Section - Connect With Us */}

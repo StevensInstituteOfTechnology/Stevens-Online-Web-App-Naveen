@@ -72,18 +72,18 @@ const ExploreMEM = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "CAREER-ALIGNED CURRICULUM",
     whyChooseStevensContent: `
-      <p>Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
-      
-      <p>Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
+      <p class="font-stevens-body">Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
+
+      <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     
     // New Fall 2025 Section
     newFall2025Badge: "NEW FOR FALL 2025",
     newFall2025Title: "START YOUR DEGREE WITH 2 ASYNCHRONOUS COURSES",
     newFall2025Description: `
-      <p>Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
-      
-      <p>Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
+      <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
+
+      <p class="font-stevens-body">Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
     `,
     newFall2025Benefits: [
       {
@@ -113,9 +113,9 @@ const ExploreMEM = () => {
     justLaunchedBadge: "Just Launched",
     justLaunchedTitle: "New Flexible Application Options",
     justLaunchedDescription: `
-      <p>We've introduced new application options designed to make enrollment more accessible. These options reduce prerequisite requirements and offer the opportunity to take trial courses.</p>
-      
-      <p>To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
+      <p class="font-stevens-body">We've introduced new application options designed to make enrollment more accessible. These options reduce prerequisite requirements and offer the opportunity to take trial courses.</p>
+
+      <p class="font-stevens-body">To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
     `,
     justLaunchedButtonText: "Request Flexible App Info",
     justLaunchedButtonLink: "/request-information/",

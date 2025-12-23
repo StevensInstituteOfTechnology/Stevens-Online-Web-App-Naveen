@@ -72,9 +72,9 @@ const ExploreMEADS = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "CAREER-ALIGNED CURRICULUM",
     whyChooseStevensContent: `
-      <p>Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
-      
-      <p>Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
+      <p class="font-stevens-body">Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
+
+      <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     whyChooseStevensVideo: "/assets/videos/Stevens Online Home - 1.mp4", // Placeholder
     whyChooseStevensVideoCover: "/assets/videos/video-cover-3.avif", // Placeholder
@@ -150,9 +150,9 @@ const ExploreMEADS = () => {
     newFall2025Badge: "NEW FOR FALL 2025",
     newFall2025Title: "START YOUR DEGREE WITH 2 ASYNCHRONOUS COURSES",
     newFall2025Description: `
-      <p>Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
-      
-      <p>Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
+      <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
+
+      <p class="font-stevens-body">Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
     `,
     newFall2025Benefits: [
       {
@@ -182,9 +182,9 @@ const ExploreMEADS = () => {
     justLaunchedBadge: "Just Launched",
     justLaunchedTitle: "Accelerated Application Now Available",
     justLaunchedDescription: `
-      <p>Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. This streamlined process removes traditional barriers while maintaining Stevens' academic standards.</p>
-      
-      <p>Get started immediately with no letters of recommendation required, upload unofficial transcripts, and submit your resume or LinkedIn profile. Official transcripts are due within one year of enrollment.</p>
+      <p class="font-stevens-body">Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. This streamlined process removes traditional barriers while maintaining Stevens' academic standards.</p>
+
+      <p class="font-stevens-body">Get started immediately with no letters of recommendation required, upload unofficial transcripts, and submit your resume or LinkedIn profile. Official transcripts are due within one year of enrollment.</p>
     `,
     justLaunchedButtonText: "Apply Now",
     justLaunchedButtonLink: "/accelerated-application/",

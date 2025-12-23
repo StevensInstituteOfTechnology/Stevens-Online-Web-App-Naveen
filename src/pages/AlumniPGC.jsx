@@ -128,7 +128,7 @@ const AlumniPGC = () => {
 
             {/* Certificate Programs Section */}
             <div>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                 Available Certificate Programs
               </h2>
               <div className="grid stevens-md:grid-cols-2 gap-stevens-lg">
@@ -176,7 +176,7 @@ const AlumniPGC = () => {
             {/* Combined Section: Why a Certificate & How to Get Started */}
             <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
               <div className="bg-stevens-primary px-4 sm:px-8 py-4 sm:py-6">
-                <h2 className="font-display text-xl sm:text-2xl font-bold text-white">
+                <h2 className="font-stevens-headers text-xl sm:text-2xl font-bold text-white">
                   Why a Professional Graduate Certificate and How to Get Started
                 </h2>
                 <p className="text-white/90 mt-2 text-sm sm:text-base">
@@ -187,7 +187,7 @@ const AlumniPGC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 p-4 sm:p-8">
                 {/* Program Benefits Column */}
                 <div>
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="font-stevens-headers text-lg sm:text-xl font-bold text-gray-900 mb-4">
                     Program Benefits
                   </h3>
                   <ul className="space-y-3">
@@ -205,7 +205,7 @@ const AlumniPGC = () => {
 
                 {/* Easy Application Column */}
                 <div>
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="font-stevens-headers text-lg sm:text-xl font-bold text-gray-900 mb-4">
                     Easy Application for Alumni
                   </h3>
                   <ul className="space-y-3">
@@ -223,7 +223,7 @@ const AlumniPGC = () => {
             {/* Application Form Section */}
             <div id="apply-now" className="scroll-mt-24">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h2>
+                <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h2>
                 <p className="text-gray-600 text-base sm:text-lg">
                   Complete the accelerated application form below to secure your 15% alumni discount.
                 </p>
@@ -240,7 +240,7 @@ const AlumniPGC = () => {
             {/* Secondary CTAs Section */}
             <div className="bg-stevens-gray-50 rounded-lg p-4 sm:p-8 border border-gray-200">
               <div className="text-center mb-6">
-                <h3 className="font-display text-lg sm:text-xl font-semibold text-gray-900">
+                <h3 className="font-stevens-headers text-lg sm:text-xl font-semibold text-gray-900">
                   Need More Information?
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 mt-1">

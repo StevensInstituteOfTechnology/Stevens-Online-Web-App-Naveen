@@ -5,24 +5,24 @@
  * Change fonts here and they'll be applied everywhere automatically.
  */
 
-// Google Fonts to load (add to index.html when changing)
-export const GOOGLE_FONTS_URL = "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap";
-
-// Central Font Configuration
+// Google Fonts to load (per CPE Brand Guidelines 2025)
+// Fonts: Saira Regular (headlines), IBM Plex Sans (body), IBM Plex Sans Condensed (optional)
+export const GOOGLE_FONTS_URL = "https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap";
+// Central Font Configuration (CPE Brand Guidelines 2025)
 export const FONTS = {
-  // Primary fonts - change these to update site-wide
-  header: ['Saira Extra Condensed', 'sans-serif'],
-  navigation: ['Saira Extra Condensed', 'sans-serif'], 
-  body: ['Open Sans', 'sans-serif'],
-  display: ['Montserrat', 'sans-serif'],
+  // Primary fonts - per CPE Brand Guidelines
+  header: ['Saira', 'sans-serif'],           // Saira Regular - for headlines (use lightest weights)
+  navigation: ['IBM Plex Sans', 'sans-serif'], // IBM Plex Sans - for nav items (per CPE guidelines)
+  body: ['IBM Plex Sans', 'sans-serif'],     // IBM Plex Sans - for body copy
+  display: ['Saira', 'sans-serif'],          // Saira Regular - for display text (per CPE guidelines)
   
   // Secondary/utility fonts
   serif: ['Georgia', 'Times New Roman', 'serif'],
-  sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+  sans: ['Arial', 'Helvetica Neue', 'sans-serif'],  // Arial is CPE fallback
   monospace: ['ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
   
-  // Legacy/specific use cases
-  bitter: ['Bitter', 'serif'],
+  // Legacy - mapped to brand-compliant fonts
+  bitter: ['IBM Plex Sans', 'sans-serif'],   // Replaced Bitter with IBM Plex Sans per CPE guidelines
 };
 
 // Font weights (consistent across the app)
@@ -38,11 +38,11 @@ export const FONT_WEIGHTS = {
   black: '900',
 };
 
-// Default font styles for different text types
+// Default font styles for different text types (CPE Brand Guidelines 2025)
 export const FONT_STYLES = {
   header: {
     fontFamily: FONTS.header,
-    fontWeight: FONT_WEIGHTS.bold, // Headers remain bold for hierarchy
+    fontWeight: FONT_WEIGHTS.light, // CPE guidelines: use lightest weights (100-300) for headlines
     fontStyle: 'normal',
   },
   navigation: {
@@ -57,18 +57,18 @@ export const FONT_STYLES = {
   },
   display: {
     fontFamily: FONTS.display,
-    fontWeight: FONT_WEIGHTS.normal, // Display text uses normal weight
+    fontWeight: FONT_WEIGHTS.light, // CPE guidelines: use lightest weights for display text
     fontStyle: 'normal',
   },
-  // New: Saira Extra Condensed for body-like content
+  // Saira Regular for body-like content
   content: {
-    fontFamily: FONTS.header, // Uses Saira Extra Condensed
+    fontFamily: FONTS.header, // Uses Saira Regular
     fontWeight: FONT_WEIGHTS.normal, // 400 weight
     fontStyle: 'normal',
   },
-  // New: Saira Extra Condensed for labels/captions
+  // Saira Regular for labels/captions
   label: {
-    fontFamily: FONTS.header, // Uses Saira Extra Condensed
+    fontFamily: FONTS.header, // Uses Saira Regular
     fontWeight: FONT_WEIGHTS.normal, // 400 weight
     fontStyle: 'normal',
   },

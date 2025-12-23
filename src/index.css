@@ -2,80 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
-
 @layer base {
   :root {
+    /* shadcn/ui CSS Variables */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -109,7 +38,37 @@ button:focus-visible {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Stevens Branding CSS Variables (CPE Brand Guidelines 2025) */
+    --stevens-maroon: #a32638;
+    --stevens-maroon-dark: #6b0000;
+    --stevens-gold: #ffd700;
+    --stevens-gray: #6b7280;
+    --stevens-light-gray: #f3f4f6;
+    
+    /* Font Family Variables - Centrally managed (CPE Brand Guidelines 2025) */
+    --font-header: 'Saira', sans-serif;
+    --font-navigation: 'IBM Plex Sans', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-display: 'Saira', sans-serif;
+    --font-content: 'Saira', sans-serif;
+    --font-label: 'Saira', sans-serif;
+    --font-serif: 'Georgia', 'Times New Roman', serif;
+    --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', 'Consolas', monospace;
+    --font-bitter: 'IBM Plex Sans', sans-serif; /* Replaced Bitter with IBM Plex Sans per CPE guidelines */
+    
+    /* Font Weight Variables */
+    --weight-thin: 100;
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+    --weight-black: 900;
   }
+  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -144,15 +103,727 @@ button:focus-visible {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-
-
-@layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-stevens-body;
   }
+  
+  /* Ensure paragraphs and other text elements inherit the body font */
+  p, span, div, li, td, th {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  /* Hide scrollbar for navigation */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  /* Desktop scrollbar hint */
+  @media (min-width: 768px) {
+    .scrollbar-hide {
+      scrollbar-width: thin; /* Firefox - show thin scrollbar on desktop */
+      scrollbar-color: rgba(139, 0, 0, 0.3) transparent; /* Firefox - Stevens red color */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: block; /* Show scrollbar on desktop */
+      height: 4px;
+    }
+    .scrollbar-hide::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .scrollbar-hide::-webkit-scrollbar-thumb {
+      background: rgba(139, 0, 0, 0.3); /* Stevens red with transparency */
+      border-radius: 2px;
+    }
+    .scrollbar-hide::-webkit-scrollbar-thumb:hover {
+      background: rgba(139, 0, 0, 0.5); /* Darker on hover */
+    }
+  }
+
+  /* Menu Item Link Styles */
+  .menu-item-link {
+    @apply relative transition-all duration-stevens-normal;
+  }
+  .menu-item-link:hover {
+    @apply underline decoration-2 underline-offset-2;
+  }
+
+  /* Video Player Slider Styles */
+  .slider {
+    background: transparent;
+  }
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #a32638;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #a32638;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Stevens Button Styles - Improved Sizing */
+  .btn-stevens-primary {
+    @apply bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md shadow-stevens-sm hover:shadow-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+  }
+
+  .btn-stevens-secondary {
+    @apply bg-white border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+  }
+
+  .btn-stevens-outline {
+    @apply border border-stevens-gray-300 text-stevens-gray-700 hover:bg-stevens-gray-50 font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+  }
+
+  /* Marquee Animation for ASAP Banner */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* ASAP Banner text hover shadow effect */
+  .asap-banner-text:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Stevens Form Styles - Improved Sizing */
+  .form-stevens-input {
+    @apply w-full px-stevens-md py-stevens-md border border-stevens-gray-200 rounded-stevens-md focus:ring-2 focus:ring-stevens-primary/20 focus:border-stevens-primary transition-colors duration-stevens-fast bg-stevens-white placeholder:text-stevens-gray-400 min-h-[44px];
+  }
+
+  .form-stevens-input:hover {
+    @apply border-stevens-gray-300;
+  }
+
+  .form-stevens-input-error {
+    @apply border-stevens-error focus:ring-stevens-error/20 focus:border-stevens-error;
+  }
+
+  .form-stevens-input-success {
+    @apply border-stevens-success focus:ring-stevens-success/20 focus:border-stevens-success;
+  }
+
+  .form-stevens-textarea {
+    @apply w-full px-stevens-md py-stevens-md border border-stevens-gray-200 rounded-stevens-md focus:ring-2 focus:ring-stevens-primary/20 focus:border-stevens-primary transition-colors duration-stevens-fast bg-stevens-white resize-y placeholder:text-stevens-gray-400 min-h-[100px];
+  }
+
+  .form-stevens-label {
+    @apply block text-stevens-sm font-medium text-stevens-gray-700 mb-stevens-sm;
+  }
+
+  .form-stevens-error-message {
+    @apply text-stevens-xs text-stevens-error mt-stevens-sm;
+  }
+
+  .form-stevens-help-text {
+    @apply text-stevens-xs text-stevens-gray-500 mt-stevens-sm;
+  }
+
+  /* Stevens Card Styles - Rounded Corners Default */
+  .card-stevens {
+    @apply bg-stevens-white rounded-stevens-md shadow-stevens-md border border-stevens-gray-100 p-stevens-lg;
+  }
+
+  .card-stevens-glass {
+    @apply bg-stevens-white/95 backdrop-blur-sm rounded-stevens-md shadow-stevens-md border border-stevens-gray-100 p-stevens-lg;
+  }
+
+  /* Stevens Navigation Styles - Official Style */
+  .nav-stevens-link {
+    @apply relative font-stevens-nav font-normal uppercase tracking-wider transition-all duration-stevens-normal text-stevens-white;
+  }
+
+  .nav-stevens-link:hover {
+    @apply text-stevens-white underline font-bold;
+  }
+
+  .nav-stevens-active {
+    @apply text-stevens-white/80;
+  }
+
+  /* Official Stevens Navigation Layout */
+  .stevens-nav-main {
+    @apply bg-stevens-red text-stevens-white;
+    font-family: 'IBM Plex Sans', sans-serif; /* Updated to IBM Plex Sans per CPE guidelines */
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.1em;
+  }
+
+  .stevens-nav-item {
+    @apply uppercase tracking-wider font-normal transition-colors duration-300;
+    font-family: 'IBM Plex Sans', sans-serif; /* Updated to IBM Plex Sans per CPE guidelines */
+    font-weight: 400;
+    padding: 1rem 0.75rem;
+  }
+
+  .stevens-nav-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Dropdown Hover Functionality */
+  .stevens-dropdown-trigger:hover + .stevens-dropdown-content,
+  .stevens-dropdown-content:hover {
+    display: block;
+  }
+
+  .stevens-dropdown-content {
+    display: none;
+  }
+
+  /* Enhanced Navigation Spacing */
+  .stevens-nav-spacing {
+    gap: 2rem; /* 32px spacing between nav items */
+  }
+
+  /* Simplified Navbar Styles */
+  .stevens-navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Stevens Loading & Skeleton States */
+  .skeleton-stevens {
+    @apply bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+  }
+
+  .skeleton-stevens-text {
+    @apply h-4 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+  }
+
+  .skeleton-stevens-title {
+    @apply h-6 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+  }
+
+  .skeleton-stevens-button {
+    @apply h-10 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+  }
+
+  .skeleton-stevens-card {
+    @apply bg-stevens-white border border-stevens-gray-100 rounded-stevens-none shadow-stevens-sm p-stevens-lg;
+  }
+
+  /* Loading Spinner */
+  .spinner-stevens {
+    @apply inline-block w-4 h-4 border-2 border-stevens-primary border-r-transparent rounded-full animate-spin;
+  }
+
+  .spinner-stevens-lg {
+    @apply inline-block w-6 h-6 border-2 border-stevens-primary border-r-transparent rounded-full animate-spin;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-stevens-maroon text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon-dark;
+}
+
+.btn-secondary {
+  @apply bg-stevens-primary text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon-dark;
+}
+
+.btn-outline-white {
+  @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-stevens-maroon;
+}
+
+.btn-outline-maroon {
+  @apply border-2 border-stevens-maroon text-stevens-maroon px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon hover:text-white;
+}
+
+.btn-ghost {
+  @apply bg-transparent text-gray-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 hover:text-gray-900;
+}
+
+/* Section styles */
+.section-dark {
+  @apply bg-gray-900 text-white;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Form input styles */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stevens-maroon focus:border-transparent;
+}
+
+/* Navigation link styles */
+.nav-link {
+  @apply relative transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--stevens-maroon);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Icon button styles */
+.icon-button {
+  @apply transition-all duration-300 hover:scale-110;
+}
+
+/* Text link styles */
+.text-link {
+  @apply transition-colors duration-300 hover:underline;
+}
+
+/* Legacy font-display class - maps to font-stevens-headers for backward compatibility */
+.font-display {
+  @apply font-stevens-headers;
+}
+
+/* Animation utilities */
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in animations */
+.slide-in-from-left {
+  animation: slideInFromLeft 0.7s ease-out forwards;
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 0.7s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom animations */
+.zoom-in {
+  animation: zoomIn 0.3s ease-out forwards;
+}
+
+.zoom-in-95 {
+  animation: zoomIn95 0.5s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn95 {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stevens-maroon);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stevens-maroon-dark);
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-2 outline-offset-2 outline-stevens-maroon;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Pentagon Badge Styling */
+.pentagon-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: auto;
+}
+
+.pentagon-shape {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 3rem; /* Base size for mobile */
+  width: auto;
+  object-fit: contain;
+}
+
+.pentagon-badge:hover .pentagon-shape {
+  transform: scale(1.02);
+}
+
+/* Responsive pentagon sizing to match Stevens proportions */
+@media (max-width: 640px) {
+  .pentagon-shape {
+    height: 2.75rem; /* 44px - Mobile */
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .pentagon-shape {
+    height: 3.25rem; /* 52px - Small tablet */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pentagon-shape {
+    height: 3.75rem; /* 60px - Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pentagon-shape {
+    height: 4rem; /* 64px - Desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .pentagon-shape {
+    height: 4.25rem; /* 68px - Large desktop */
+  }
+}
+
+/* Pentagon animation enhancement */
+.pentagon-badge {
+  overflow: visible;
+}
+
+.pentagon-shape {
+  transform-origin: center center;
+}
+
+/* Triangle responsive styling */
+.triangle-desktop {
+  border-left-width: 4.3rem; /* 68.8px */
+  border-right-width: 4.3rem; /* 68.8px */
+  border-top-width: 3rem; /* 48px */
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: white;
+}
+
+@media (max-width: 1024px) {
+  .triangle-mobile {
+    border-left-width: 2.5rem !important;
+    border-right-width: 2.5rem !important;
+    border-top-width: 2rem !important;
+  }
+}
+
+/* Logo responsive width for screens less than or equal to 1024px */
+@media (max-width: 1024px) {
+  .logo-responsive-width {
+    width: 80px !important;
+    height: 64px !important;
+  }
+}
+
+/* Main content responsive padding */
+.main-content-padding {
+  padding-top: 0;
+}
+
+@media (max-width: 1023px) {
+  .main-content-padding {
+    padding-top: 64px !important; /* 4rem - matches nav height on smaller screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content-padding {
+    padding-top: 60px !important; /* When ASAP banner is closed on desktop */
+  }
+}
+
+.pentagon-shape-extended {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* ensures no cropping; switch to 'cover' to fill by cropping */
+  display: block;
+  transform-origin: center center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 60;
+}
+
+/* Responsive pentagon extended sizing */
+@media (max-width: 640px) {
+  .pentagon-shape-extended {
+    height: 100px;
+    width: 80px;
+    object-fit: cover;
+  }
+  .pentagon-badge-wrapper {
+    height: 3rem; /* 48px */
+    aspect-ratio: 11 / 16; /* matches ~137.5:200 image ratio */
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .pentagon-shape-extended {
+    height: 100px;
+    width: 80px;
+    object-fit: cover;
+  }
+  .pentagon-badge-wrapper {
+    height: 3.5rem; /* 56px */
+    aspect-ratio: 11 / 16;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pentagon-shape-extended {
+    height: 100px;
+    width: 80px;
+    object-fit: cover;
+  }
+  .pentagon-badge-wrapper {
+    height: 4rem; /* 64px */
+    aspect-ratio: 11 / 16;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pentagon-shape-extended {
+    height: 178px;
+    width: 137.5px;
+  }
+  .pentagon-badge-wrapper {
+    height: 4rem; /* 64px */
+    aspect-ratio: 11 / 16;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pentagon-shape-extended {
+    height: 178px;
+    width: 137.5px;
+  }
+  .pentagon-badge-wrapper {
+    height: 40px; /* 64px */
+    aspect-ratio: 11 / 16;
+  }
+}
+
+/* Offset mobile sheet/menu below red nav bar */
+@media (max-width: 1024px) {
+  .mobile-menu-offset {
+    top: 4rem !important; /* match red nav height (h-16) */
+    height: calc(100vh - 4rem) !important; /* keep within viewport */
+  }
+  
+  /* Also offset the sheet overlay to start below the nav bar */
+  .mobile-menu-overlay {
+    top: 4rem !important;
+    height: calc(100vh - 4rem) !important;
+  }
+}
+
+/* Enhanced Course Item Styles (Official Website) */
+.course-item {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.course-item:hover {
+  background: #ebebeb;
+}
+
+.course-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: var(--font-header);
+  font-weight: var(--weight-bold);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.course-toggle:hover {
+  color: var(--stevens-maroon);
+}
+
+.course-arrow {
+  font-size: 0.875rem;
+  color: #666;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.course-toggle:hover .course-arrow {
+  color: var(--stevens-maroon);
+}
+
+.course-content {
+  padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+  background: #fafafa;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.course-content.hidden {
+  display: none;
+}
+
+/* Term Headers */
+.course-term-header {
+  font-family: var(--font-header);
+  font-weight: var(--weight-bold);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-top: 24px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+/* Foundational Section Header */
+.course-section-header {
+  font-family: var(--font-header);
+  font-weight: var(--weight-bold);
+  font-size: 1.875rem;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* Course intro text */
+.course-intro {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
 }

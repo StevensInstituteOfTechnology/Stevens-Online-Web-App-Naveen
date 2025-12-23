@@ -398,7 +398,7 @@ const programData = {
       { value: "$60", label: "Application Fee" },
       { value: "$250", label: "Enrollment Deposit" }
     ],
-    description: `<h3 class="font-bold text-xl mb-4">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="text-sm italic mt-2">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
+    description: `<h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p class="font-stevens-body">At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="font-stevens-body text-stevens-sm italic mt-stevens-sm">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
     grants: [
         { title: "Aspire Grant (for standard applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
         { title: "Pathway Grant (for ASAP applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },

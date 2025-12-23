@@ -68,9 +68,9 @@ const ExploreMBA = () => {
     whyChooseStevensTitle: "WHY CHOOSE STEVENS",
     whyChooseStevensSubtitle: "CAREER-ALIGNED CURRICULUM",
     whyChooseStevensContent: `
-      <p>Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
-      
-      <p>Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
+      <p class="font-stevens-body">Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
+
+      <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     
     // Program Benefits
@@ -125,7 +125,7 @@ const ExploreMBA = () => {
       title: "Concentrations",
       content: `
 
-            <p class="course-intro text-stevens-lg text-stevens-gray-700 leading-relaxed">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
+            <p class="course-intro font-stevens-body text-stevens-lg text-stevens-gray-700 leading-relaxed">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
             
             <ul class="list-disc pl-8 space-y-4">
               <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Business Intelligence & Analytics</li>
@@ -161,7 +161,7 @@ const ExploreMBA = () => {
     // FAQ
     faqs: [
       {
-        question: "IS THE ONLINE MBA ACCREDITED?",
+        question: "Is the Online MBA accredited?",
         answer: "Yes. Stevens MBA is an AACSB-accredited program. All Stevens' undergraduate and graduate business programs are accredited by AACSB, placing Stevens among the five percent of business schools globally to earn this distinction. AACSB provides internationally recognized, specialized accreditation for business and accounting programs at the bachelor's, master's and doctoral levels. The AACSB accreditation standards challenge post-secondary educators to pursue excellence and continuous improvement throughout their business programs. AACSB accreditation is known worldwide as the longest-standing, most recognized form of specialized/professional accreditation an institution and its business programs can earn."
       },
       {

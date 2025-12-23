@@ -122,24 +122,30 @@ module.exports = {
   			'stevens-scale': 'scale 0.3s ease-out'
   		},
   		// Stevens Typography System
-		fontFamily: {
-			// Global font configuration - managed in src/config/fonts.js
-			'stevens-headers': FONTS.header,
-			'stevens-nav': FONTS.navigation,
-			'stevens-body': FONTS.body,
-			'stevens-display': FONTS.display,
+		  fontFamily: {
+			// Default sans font - IBM Plex Sans (per CPE Brand Guidelines)
+			// This ensures all elements without explicit font classes inherit IBM Plex Sans
+			sans: FONTS.body,                   // IBM Plex Sans - default for all elements
 			
-			// Saira Extra Condensed for content (normal weight)
-			'stevens-content': FONTS.header, // Saira Extra Condensed for content text
-			'stevens-label': FONTS.header,   // Saira Extra Condensed for labels/captions
+			// Primary fonts - per CPE Brand Guidelines
+			'stevens-headers': FONTS.header,   // Saira Regular (use lightest weights for headlines)
+			'stevens-nav': FONTS.navigation,   // IBM Plex Sans (per CPE guidelines)
+			'stevens-body': FONTS.body,        // IBM Plex Sans
+			'stevens-display': FONTS.display,  // Saira Regular
+			
+			// Saira Regular for content (normal weight)
+			'stevens-content': FONTS.header,   // Saira Regular for content text
+			'stevens-label': FONTS.header,     // Saira Regular for labels/captions
 			
 			// Utility fonts
+			serif: FONTS.serif,
 			'stevens-serif': FONTS.serif,
-			'stevens-sans': FONTS.sans,
+			'stevens-sans': FONTS.sans,        // Arial (CPE fallback)
+			mono: FONTS.monospace,
 			'stevens-mono': FONTS.monospace,
 			
-			// Legacy/specific fonts
-			'stevens-bitter': FONTS.bitter,
+			// Legacy - mapped to IBM Plex Sans per CPE guidelines
+			'stevens-bitter': FONTS.bitter,    // Now uses IBM Plex Sans
 		},
 		fontSize: {
 			'stevens-xs': ['0.75rem', { lineHeight: '1rem' }],

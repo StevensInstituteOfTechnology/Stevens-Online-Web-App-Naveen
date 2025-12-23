@@ -225,7 +225,7 @@ export default function PageHero({
             {lines.length > 0 ? (
               <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 {lines.map((line, idx) => (
-                  <h1 key={idx} className="font-display font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
+                  <h1 key={idx} className="font-stevens-headers font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                     {line}
                   </h1>
                 ))}
