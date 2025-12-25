@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
 import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
+import Asterism from "@/components/shared/Asterism";
 import {
   GraduationCap,
   Users,
@@ -236,8 +237,31 @@ export default function Home() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent"></div>
-        <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
-          <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
+        
+        {/* Asterism overlay - CPE Brand Visual Element */}
+        <Asterism
+          centerX="32%"
+          centerY="68%"
+          rays={5}
+          angles={[25,90,  205,270, 335]}
+          color="stevens-white"
+          opacity={1}
+          rayLengths={["full", "full", "full", "full", 300]}
+          fadeRays={[0,4]} // index starts from 0
+          fadeDirection="out"
+          fadeOpacity={0}
+          length="full"
+          minLength={300}
+          maxLength={1800}
+          animate={true}
+          animationType="radiate"
+          animationDuration={1200}
+          animationDelay={300}
+          staggerDelay={150}
+        />
+        
+        <div className="relative min-h-[80vh] max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
+          {/* <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 Advance Your Career with a World-Class Online Master's Degree from
@@ -262,7 +286,7 @@ export default function Home() {
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
                   <LeadCaptureForm sourcePage="home" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
