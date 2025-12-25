@@ -154,7 +154,7 @@ export default function LeadCaptureForm({
   const FormCard = (
     <Card className={`w-full max-w-sm sm:max-w-md mx-auto shadow-stevens-xl rounded-stevens-lg overflow-hidden ${hideHeader ? 'shadow-none border-0' : ''}`}>
       {!hideHeader && (
-        <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white rounded-t-stevens-lg">
+        <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-lg">
           <CardTitle className="text-base sm:text-stevens-lg md:text-stevens-xl font-stevens-bold leading-tight">{title}</CardTitle>
           {subtitle && <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">{subtitle}</p>}
         </CardHeader>

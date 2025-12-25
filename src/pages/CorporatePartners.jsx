@@ -479,7 +479,7 @@ const CorporatePartners = () => {
         
 
         {/* Why Partner with Stevens - Constellation Layout */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-gradient-to-br from-stevens-white via-stevens-light-gray/30 to-stevens-white overflow-hidden">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white overflow-hidden">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="grid lg:grid-cols-[40%_60%] gap-stevens-3xl items-center">
               {/* Left Side: Headline & Description */}
@@ -832,7 +832,7 @@ const CorporatePartners = () => {
 
               {/* Right: Explanatory Text */}
               <div className="order-1 lg:order-2 mt-stevens-xl lg:mt-0 lg:border-l lg:border-stevens-light-gray lg:pl-stevens-2xl">
-                <div className="bg-gradient-to-br from-stevens-light-gray to-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
+                <div className="bg-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
                   <div className="mb-stevens-md">
                     
                     <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
@@ -943,7 +943,7 @@ const CorporatePartners = () => {
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
-                <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+                <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
                   <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
                     Let's Discuss Your Workforce Development Needs
                   </h2>

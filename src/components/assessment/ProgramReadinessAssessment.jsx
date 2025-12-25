@@ -148,7 +148,7 @@ function ProgramReadinessAssessment({ onComplete }) {
     const recommendedPage = programPageMap[showResults.topProgram];
     return (
       <Card className="w-full max-w-lg mx-auto shadow-stevens-lg animate-in zoom-in-95 duration-500 rounded-stevens-md">
-        <CardHeader className="bg-gradient-to-r from-stevens-red to-stevens-red text-stevens-white rounded-stevens-md">
+        <CardHeader className="bg-stevens-red text-stevens-white rounded-stevens-md">
           <CardTitle className="flex items-center gap-stevens-sm text-stevens-2xl font-stevens-display">
             <CheckCircle className="w-6 h-6 animate-in zoom-in duration-300" />
             Your Recommended Path
@@ -217,9 +217,9 @@ function ProgramReadinessAssessment({ onComplete }) {
 //  return(<h1>Program Readiness Assessment</h1>);
   return (
     <Card className="w-full max-w-lg mx-auto shadow-stevens-lg card-hover rounded-stevens-md">
-      <CardHeader className="bg-gradient-to-r from-gray-600 to-red-800 text-white rounded-stevens-md">
+      <CardHeader className="bg-stevens-dark-gray text-white rounded-stevens-md">
         <CardTitle className="text-stevens-3xl font-stevens-display">Find Your Perfect Program</CardTitle>
-        <div className="w-full bg-stevens-light-gray0 rounded-stevens-md h-2 mt-stevens-sm">
+        <div className="w-full bg-stevens-light-gray rounded-stevens-md h-2 mt-stevens-sm">
           <div
             className="bg-stevens-white h-2 rounded-stevens-md transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }} />

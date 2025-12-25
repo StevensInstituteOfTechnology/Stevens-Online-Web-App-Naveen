@@ -364,12 +364,12 @@
 }
 
 .btn-ghost {
-  @apply bg-transparent text-gray-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 hover:text-gray-900;
+  @apply bg-transparent text-stevens-dark-gray px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-stevens-light-gray hover:text-stevens-black;
 }
 
 /* Section styles */
 .section-dark {
-  @apply bg-gray-900 text-white;
+  @apply bg-stevens-black text-stevens-white;
 }
 
 /* Card hover effects */
@@ -379,7 +379,7 @@
 
 /* Form input styles */
 .form-input {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stevens-red focus:border-transparent;
+  @apply w-full px-3 py-2 border border-stevens-light-gray rounded-md focus:outline-none focus:ring-2 focus:ring-stevens-red focus:border-transparent;
 }
 
 /* Navigation link styles */

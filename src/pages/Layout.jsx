@@ -448,7 +448,7 @@ export default function Layout({ children, currentPageName }) {
   const isActive = (page) => currentPageName === page;
 
   return (
-    <div className="flex flex-col min-h-screen font-sans text-gray-800">
+    <div className="flex flex-col min-h-screen font-sans text-stevens-dark-gray">
       {/* Pentagon Badge Overlay - shows at top, hides when scrolled */}
       <div
         className={`fixed z-[9999] transition-all duration-50 ease-out w-full ${
@@ -1501,7 +1501,7 @@ export default function Layout({ children, currentPageName }) {
         {children}
       </main>
 
-      <footer className="bg-gray-950 text-white">
+      <footer className="bg-stevens-black text-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg py-stevens-section">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-stevens-gap-lg">
              <div className="lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
@@ -1528,31 +1528,31 @@ export default function Layout({ children, currentPageName }) {
               <div className="space-y-2">
                 <Link
                   to={createPageUrl("admissions/") + "#explore-programs"}
-                  className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Degrees
                 </Link>
                 {/* <Link
                   to={createPageUrl("Certificates")}
-                  className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Certificates & Short Courses
                 </Link> */}
                 <Link
                   to="/online-learning-experience/"
-                  className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   The Online Experience
                 </Link>
                 <Link
                   to={createPageUrl("Tuition")}
-                  className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Tuition & Financial Aid
                 </Link>
                 <Link
                   to={createPageUrl("RequestInfo")}
-                  className="block text-gray-300 hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Contact Us
                 </Link>
@@ -1569,7 +1569,7 @@ export default function Layout({ children, currentPageName }) {
                   href="https://www.facebook.com/Stevens1870"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-all duration-300 icon-button"
+                  className="text-stevens-light-gray hover:text-white transition-all duration-300 icon-button"
                   aria-label="Follow Stevens on Facebook"
                 >
                   <Facebook className="w-6 h-6" />
@@ -1580,7 +1580,7 @@ export default function Layout({ children, currentPageName }) {
                   href="https://x.com/followstevens"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-all duration-300 icon-button"
+                  className="text-stevens-light-gray hover:text-white transition-all duration-300 icon-button"
                   aria-label="Follow Stevens on Twitter/X"
                 >
                   <Twitter className="w-6 h-6" />
@@ -1591,7 +1591,7 @@ export default function Layout({ children, currentPageName }) {
                   href="https://www.instagram.com/followstevens/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-all duration-300 icon-button"
+                  className="text-stevens-light-gray hover:text-white transition-all duration-300 icon-button"
                   aria-label="Follow Stevens on Instagram"
                 >
                   <Instagram className="w-6 h-6" />
@@ -1602,7 +1602,7 @@ export default function Layout({ children, currentPageName }) {
                   href="https://www.linkedin.com/school/stevens-institute-of-technology/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-all duration-300 icon-button"
+                  className="text-stevens-light-gray hover:text-white transition-all duration-300 icon-button"
                   aria-label="Connect with Stevens on LinkedIn"
                 >
                   <Linkedin className="w-6 h-6" />
@@ -1613,7 +1613,7 @@ export default function Layout({ children, currentPageName }) {
                   href="https://www.youtube.com/c/stevensinstituteoftechnology"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-all duration-300 icon-button"
+                  className="text-stevens-light-gray hover:text-white transition-all duration-300 icon-button"
                   aria-label="Subscribe to Stevens on YouTube"
                 >
                   <Youtube className="w-6 h-6" />
@@ -1635,7 +1635,7 @@ export default function Layout({ children, currentPageName }) {
               </div>
             </div>
            </div>
-           <div className="border-t border-gray-400 mt-12 pt-8 text-center text-sm text-gray-300">
+           <div className="border-t border-stevens-light-gray mt-12 pt-8 text-center text-sm text-stevens-light-gray">
             <p>
               &copy; 2025 Stevens Institute of Technology. All rights reserved.
             </p>

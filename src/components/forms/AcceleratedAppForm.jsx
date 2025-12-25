@@ -173,7 +173,7 @@ export default function AcceleratedAppForm({
   return (
     <Card className={`shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden ${hideHeader ? 'shadow-none' : ''}`}>
       {!hideHeader && (
-        <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white rounded-t-stevens-md">
+        <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-md">
           <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-stevens-bold leading-tight">
             {title}
           </CardTitle>

@@ -12,7 +12,7 @@ import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl }
 const FinancialAidOption = ({ title, children }) => (
   <AccordionItem value={title}>
     <AccordionTrigger className="font-stevens-headers text-xl text-left">{title}</AccordionTrigger>
-    <AccordionContent className="prose max-w-none text-gray-700 leading-relaxed">
+    <AccordionContent className="prose max-w-none text-stevens-dark-gray leading-relaxed">
       {children}
     </AccordionContent>
   </AccordionItem>
@@ -54,7 +54,7 @@ export default function Tuition() {
             </div>
 
             {/* Tuition Structure Update */}
-            <Card className="bg-gray-50">
+            <Card className="bg-stevens-white">
               <CardHeader>
                 <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-red">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
               </CardHeader>
@@ -62,15 +62,15 @@ export default function Tuition() {
                 <p>Effective Spring & Summer 2026, the Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs will incorporate asynchronous course delivery for the initial phase of their curriculum. This change will impact the tuition rates for some courses.</p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-gray-800">Online M.S. in Computer Science</h4>
-                    <ul className="list-disc list-inside text-gray-600">
+                    <h4 className="font-semibold text-stevens-dark-gray">Online M.S. in Computer Science</h4>
+                    <ul className="list-disc list-inside text-stevens-dark-gray">
                       <li><span className="font-medium">Traditional Track:</span> First four courses are asynchronous.</li>
                       <li><span className="font-medium">Advanced Track:</span> First two courses are asynchronous.</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">Online MEM</h4>
-                    <ul className="list-disc list-inside text-gray-600">
+                    <h4 className="font-semibold text-stevens-dark-gray">Online MEM</h4>
+                    <ul className="list-disc list-inside text-stevens-dark-gray">
                       <li>First two courses are asynchronous.</li>
                     </ul>
                   </div>
@@ -81,26 +81,26 @@ export default function Tuition() {
             {/* Grants */}
             <div className="text-center">
               <h3 className="font-stevens-headers text-2xl font-bold mb-2">Tuition Rate Support</h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">To support this transition, Stevens provides two grants that apply a reduced per-credit tuition rate to the first two asynchronous courses.</p>
+              <p className="text-stevens-dark-gray mb-6 max-w-2xl mx-auto">To support this transition, Stevens provides two grants that apply a reduced per-credit tuition rate to the first two asynchronous courses.</p>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="text-center shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Aspire Grant</CardTitle>
-                    <p className="text-sm text-gray-500">(for standard applicants)</p>
+                    <p className="text-sm text-stevens-gray">(for standard applicants)</p>
                   </CardHeader>
                   <CardContent>
                     <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
-                    <p className="text-gray-600">in tuition support</p>
+                    <p className="text-stevens-dark-gray">in tuition support</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Pathway Grant</CardTitle>
-                    <p className="text-sm text-gray-500">(for ASAP applicants)</p>
+                    <p className="text-sm text-stevens-gray">(for ASAP applicants)</p>
                   </CardHeader>
                   <CardContent>
                     <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
-                    <p className="text-gray-600">in tuition support</p>
+                    <p className="text-stevens-dark-gray">in tuition support</p>
                   </CardContent>
                 </Card>
               </div>
@@ -123,7 +123,7 @@ export default function Tuition() {
                       </TableHeader>
                       <TableBody>
                         <TableRow><TableCell>Online MSCS</TableCell><TableCell>24</TableCell><TableCell>$1,395</TableCell><TableCell className="text-right">$33,480</TableCell></TableRow>
-                        <TableRow className="bg-gray-50"><TableCell>Online MSCS (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
+                        <TableRow className="bg-stevens-white"><TableCell>Online MSCS (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
                         <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$38,730</TableCell></TableRow>
                       </TableBody>
                     </Table>
@@ -137,7 +137,7 @@ export default function Tuition() {
                       </TableHeader>
                       <TableBody>
                         <TableRow><TableCell>Online MEM</TableCell><TableCell>24</TableCell><TableCell>$1,395</TableCell><TableCell className="text-right">$33,480</TableCell></TableRow>
-                        <TableRow className="bg-gray-50"><TableCell>Online MEM (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
+                        <TableRow className="bg-stevens-white"><TableCell>Online MEM (asynchronous)</TableCell><TableCell>6</TableCell><TableCell>$875</TableCell><TableCell className="text-right">$5,250</TableCell></TableRow>
                         <TableRow><TableCell colSpan="3" className="font-bold text-right">Total Estimated Tuition</TableCell><TableCell className="font-bold text-right">$38,730</TableCell></TableRow>
                       </TableBody>
                     </Table>
@@ -156,7 +156,7 @@ export default function Tuition() {
                   </Card>
                 </TabsContent>
               </Tabs>
-              <p className="p-4 text-center text-xs text-gray-600 italic">*Tuition estimates based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually. Additional program fees may apply.</p>
+              <p className="p-4 text-center text-xs text-stevens-dark-gray italic">*Tuition estimates based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually. Additional program fees may apply.</p>
             </div>
 
             {/* Average Cost Table */}
@@ -169,17 +169,17 @@ export default function Tuition() {
                   </TableHeader>
                   <TableBody>
                     <TableRow><TableCell>First two asynchronous courses: Online MSCS/Online MEM</TableCell><TableCell className="text-right">$2,625 per course</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>Tuition</TableCell><TableCell className="text-right">$1,395 per credit hour</TableCell></TableRow>
+                    <TableRow className="bg-stevens-white"><TableCell>Tuition</TableCell><TableCell className="text-right">$1,395 per credit hour</TableCell></TableRow>
                     <TableRow><TableCell>Tuition (First two asynchronous courses: Online MSCS/Online MEM)</TableCell><TableCell className="text-right">$875 per credit hour</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>Annual Health Insurance Fee*</TableCell><TableCell className="text-right">$2,204</TableCell></TableRow>
+                    <TableRow className="bg-stevens-white"><TableCell>Annual Health Insurance Fee*</TableCell><TableCell className="text-right">$2,204</TableCell></TableRow>
                     <TableRow><TableCell>Student Activity Fee**</TableCell><TableCell className="text-right">$275 per semester</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>General Services Fee – Part Time***</TableCell><TableCell className="text-right">$452 per semester</TableCell></TableRow>
+                    <TableRow className="bg-stevens-white"><TableCell>General Services Fee – Part Time***</TableCell><TableCell className="text-right">$452 per semester</TableCell></TableRow>
                     <TableRow><TableCell>General Services Fee – Full Time***</TableCell><TableCell className="text-right">$688 per semester</TableCell></TableRow>
-                    <TableRow className="bg-gray-50"><TableCell>Books</TableCell><TableCell className="text-right">$1,000</TableCell></TableRow>
+                    <TableRow className="bg-stevens-white"><TableCell>Books</TableCell><TableCell className="text-right">$1,000</TableCell></TableRow>
                     <TableRow><TableCell>Miscellaneous</TableCell><TableCell className="text-right">$1,050</TableCell></TableRow>
                   </TableBody>
                 </Table>
-                <CardContent className="text-xs text-gray-600 space-y-2 pt-4">
+                <CardContent className="text-xs text-stevens-dark-gray space-y-2 pt-4">
                   <p>Graduate costs are subject to change annually.</p>
                   <p>*Health Insurance can be waived online with proof of comparable insurance.</p>
                   <p>**Student Activity Fee is charged for students enrolled full-time (9 credits or more) on campus, online, or in Co-op.</p>
@@ -191,7 +191,7 @@ export default function Tuition() {
             {/* Financial Aid Section */}
             <div>
               <h2 className="font-stevens-headers text-3xl font-bold mb-4">Financial Aid</h2>
-              <p className="mb-4 text-gray-700">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
+              <p className="mb-4 text-stevens-dark-gray">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
               <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
                 Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
               </p>
@@ -250,7 +250,7 @@ export default function Tuition() {
                   <CardTitle className="flex items-center gap-3"><FileText className="w-6 h-6" /> FAFSA Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 mb-2">Complete the FAFSA to apply for federal aid.</p>
+                  <p className="text-stevens-dark-gray mb-2">Complete the FAFSA to apply for federal aid.</p>
                   <p className="text-sm">Stevens Institute of Technology College Code:</p>
                   <p className="font-stevens-headers text-4xl font-bold text-stevens-red my-2">002639</p>
                   <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
@@ -265,7 +265,7 @@ export default function Tuition() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3"><Building className="w-6 h-6" /> Student Service Center</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 text-gray-700">
+                <CardContent className="space-y-4 text-stevens-dark-gray">
                   <p className="font-semibold">Hours:</p>
                   <ul className="text-sm">
                     <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>

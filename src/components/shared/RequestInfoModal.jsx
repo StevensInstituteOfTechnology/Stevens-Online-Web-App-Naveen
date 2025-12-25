@@ -90,7 +90,7 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
           
 
           {/* Header */}
-          <div className="relative bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+          <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
             <h2 className="font-stevens-display text-lg sm:text-stevens-xl md:text-stevens-2xl lg:text-stevens-3xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
               Request Information
             </h2>

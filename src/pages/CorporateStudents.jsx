@@ -363,7 +363,7 @@ const CorporateStudents = () => {
     if (!showSeasonalBanner) return null;
     
     return (
-      <div className="bg-gradient-to-r from-stevens-dark-gray via-stevens-dark-gray to-stevens-dark-gray text-white py-3 px-4 relative border-b border-stevens-light-gray">
+      <div className="bg-stevens-dark-gray text-white py-3 px-4 relative border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-stevens-red" />
@@ -701,7 +701,7 @@ const CorporateStudents = () => {
                   className="group relative bg-stevens-white rounded-stevens-xl shadow-stevens-lg hover:shadow-stevens-2xl border-2 border-stevens-light-gray hover:border-stevens-red overflow-hidden transition-all duration-300"
                 >
                   {/* Image Section */}
-                  <div className="relative h-40 overflow-hidden bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray">
+                  <div className="relative h-40 overflow-hidden bg-stevens-light-gray">
                     {program.image ? (
                       <img
                         src={program.image}
@@ -709,7 +709,7 @@ const CorporateStudents = () => {
                         className="w-full h-full object-cover transition-transform duration-stevens-slow group-hover:scale-110"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray" />
+                      <div className="w-full h-full bg-stevens-light-gray" />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     
@@ -847,7 +847,7 @@ const CorporateStudents = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="mt-stevens-xl bg-gradient-to-r from-stevens-light-gray via-stevens-light-gray to-stevens-light-gray border border-stevens-light-gray p-8 rounded-2xl text-center"
+              className="mt-stevens-xl bg-stevens-light-gray border border-stevens-light-gray p-8 rounded-2xl text-center"
             >
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="flex items-center gap-3">
@@ -895,7 +895,7 @@ const CorporateStudents = () => {
         {/* Interactive Cost Calculator */}
         <section 
           id="cost-calculator"
-          className="py-stevens-section-sm lg:py-stevens-section bg-gradient-to-b from-stevens-white to-stevens-light-gray"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
@@ -1728,7 +1728,7 @@ const CorporateStudents = () => {
                 className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="relative bg-gradient-to-r from-stevens-dark-gray to-stevens-red text-stevens-white px-3 sm:px-stevens-md py-4 sm:py-stevens-lg rounded-t-stevens-lg">
+                <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-4 sm:py-stevens-lg rounded-t-stevens-lg">
                   <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
                     Request Information
                   </h2>

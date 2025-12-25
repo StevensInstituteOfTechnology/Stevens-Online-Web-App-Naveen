@@ -73,7 +73,7 @@ export default function OnlineExperience() {
           <Card className="shadow-stevens-2xl border border-stevens-light-gray rounded-stevens-lg overflow-hidden">
             <CardContent className="p-0">
               {/* Header with Dean's Photo and Title */}
-              <div className="bg-gradient-to-r from-gray-600 to-red-800 text-white p-stevens-lg stevens-md:p-stevens-xl">
+              <div className="bg-stevens-dark-gray text-white p-stevens-lg stevens-md:p-stevens-xl">
                 <div className="flex flex-col stevens-md:flex-row items-center gap-stevens-lg">
                   <img
                     src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"

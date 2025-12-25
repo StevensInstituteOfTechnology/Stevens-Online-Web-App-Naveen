@@ -213,10 +213,10 @@ export default function Events() {
       </div>
 
       {/* Event Spotlight */}
-      <div className="py-stevens-section bg-gradient-to-b from-stevens-light-gray to-stevens-white">
+      <div className="py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-xl text-center">Event Spotlight</h2>
-          <Card className="border-0 shadow-stevens-2xl overflow-hidden bg-gradient-to-br from-stevens-white to-stevens-light-gray">
+          <Card className="border-0 shadow-stevens-2xl overflow-hidden bg-stevens-white">
             <div className="stevens-md:flex">
               {/* Image */}
               <div className="stevens-md:w-2/5 overflow-hidden">
@@ -325,7 +325,7 @@ export default function Events() {
       </div>
 
       {/* Upcoming Virtual Events */}
-      <div className="py-stevens-section bg-gradient-to-b from-stevens-light-gray to-stevens-white border-t border-b border-stevens-light-gray">
+      <div className="py-stevens-section bg-stevens-white border-t border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
           <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">Upcoming Virtual Events</h2>
           <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-sm max-w-3xl mx-auto">Mark your calendar for upcoming live events. Attendees will receive an application fee waiver.</p>
@@ -334,7 +334,7 @@ export default function Events() {
       </div>
 
       {/* One-on-One CTA */}
-      <div className="py-stevens-section bg-gradient-to-br from-stevens-red to-stevens-dark-gray text-stevens-white relative overflow-hidden">
+      <div className="py-stevens-section bg-stevens-dark-gray text-stevens-white relative overflow-hidden">
        
         
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">

@@ -80,12 +80,12 @@ export default function PSEGPage() {
     const customContent = (
         <div className="space-y-12">
             <div>
-                <h3 className="font-stevens-headers text-2xl font-bold text-gray-900 mb-6">Eligible Programs</h3>
+                <h3 className="font-stevens-headers text-2xl font-bold text-stevens-black mb-6">Eligible Programs</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                     {programs.map((program) => (
-                        <div key={program.code} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full transition-all hover:shadow-lg">
+                        <div key={program.code} className="bg-white p-6 rounded-xl shadow-sm border border-stevens-light-gray flex flex-col h-full transition-all hover:shadow-lg">
                             <h4 className="font-bold text-lg text-stevens-red mb-2">{program.title}</h4>
-                            <p className="text-gray-600 text-sm mb-6 flex-grow">{program.description}</p>
+                            <p className="text-stevens-dark-gray text-sm mb-6 flex-grow">{program.description}</p>
                             <div className="mt-auto space-y-3">
                                 <Link to={program.exploreLink} target="_blank">
                                     <Button variant="outline" className="w-full text-stevens-red border-stevens-red hover:bg-stevens-red hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">

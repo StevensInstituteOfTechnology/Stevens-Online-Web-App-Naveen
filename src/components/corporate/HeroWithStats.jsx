@@ -41,7 +41,7 @@ const HeroWithStats = ({
           />
           {/* Gradient Overlay */}
           <div 
-            className="absolute inset-0 bg-gradient-to-r from-stevens-red to-stevens-dark-gray"
+            className="absolute inset-0 bg-stevens-dark-gray"
             style={{ opacity: overlayOpacity }}
           />
         </div>

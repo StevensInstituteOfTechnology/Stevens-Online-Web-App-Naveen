@@ -75,7 +75,7 @@ export default function TuitionOutcomes() {
         </div>
       </div>
       
-      <div className="py-20 bg-gray-50">
+      <div className="py-20 bg-stevens-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-12">
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">A Degree That Delivers Results</h2>

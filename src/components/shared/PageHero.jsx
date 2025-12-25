@@ -190,7 +190,7 @@ export default function PageHero({
   };
 
   return (
-    <section className="relative bg-gray-900 text-white overflow-hidden">
+    <section className="relative bg-stevens-black text-stevens-white overflow-hidden">
       {bgImage && (
         <img
           {...getHeroImageProps(bgImage)}
@@ -206,7 +206,7 @@ export default function PageHero({
           }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent" />
 
       <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
         {breadcrumbs && (
@@ -237,7 +237,7 @@ export default function PageHero({
             )}
 
             {subtitle && (
-              <p className="mt-stevens-lg text-base sm:text-lg md:text-xl text-gray-200 mb-6 md:mb-8 max-w-xl" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
+              <p className="mt-stevens-lg text-base sm:text-lg md:text-xl text-stevens-white mb-6 md:mb-8 max-w-xl" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
                 {subtitle}
               </p>
             )}

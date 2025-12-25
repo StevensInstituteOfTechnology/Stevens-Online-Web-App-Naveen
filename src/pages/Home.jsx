@@ -223,7 +223,7 @@ export default function Home() {
     <PageContextProvider pageType="home" pageName="Homepage">
     <div className="font-sans bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white overflow-hidden">
+      <section className="relative bg-stevens-black text-stevens-white overflow-hidden">
         <img
           {...getHeroImageProps('/assets/images/home/HEADER-0865.webp', { 
             widths: [640, 1024, 1280, 1920] 
@@ -235,7 +235,7 @@ export default function Home() {
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent"></div>
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
           <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
@@ -243,7 +243,7 @@ export default function Home() {
                 Advance Your Career with a World-Class Online Master's Degree from
                 Stevens
               </h1>
-              <p className="font-stevens-body text-xl text-gray-200 mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
+              <p className="font-stevens-body text-xl text-stevens-white mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
                 Our programs are designed for busy professionals ready to lead
                 in the tech-driven world. Let's find the perfect fit for your
                 ambition.
@@ -513,11 +513,11 @@ export default function Home() {
 
       
       {/* Why Stevens Section */}
-      <section className="py-stevens-section-sm lg:py-stevens-section bg-gray-50">
+      <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <AnimatedSection className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center mb-stevens-xl">
             <div>
-              <h2 className="font-stevens-display text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-display text-3xl font-bold text-stevens-black mb-4">
                 A Legacy of Innovation Meets Online Flexibility
               </h2>
               <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -545,7 +545,7 @@ export default function Home() {
               loading="lazy"
             />
             <div className="lg:order-2">
-              <h2 className="font-stevens-headers text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-headers text-3xl font-bold text-stevens-black mb-4">
                 A Community That Supports Your Success
               </h2>
               <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -598,7 +598,7 @@ export default function Home() {
       <section className="bg-stevens-light-gray py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
-                <h2 className="font-stevens-headers text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="font-stevens-headers text-3xl md:text-4xl font-bold text-stevens-black mb-4">
                     Key Dates & Deadlines
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
@@ -609,51 +609,51 @@ export default function Home() {
             <AnimatedSection>
               <Card className="shadow-xl border-0 overflow-hidden ">
                   <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-gray-300">
-                          <thead className="bg-gray-100">
+                <table className="w-full text-left border-collapse border border-stevens-light-gray">
+                          <thead className="bg-stevens-light-gray">
                               <tr>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         Term
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         Early Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         Priority Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         Final Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         Start of Classes
                       </th>
                               </tr>
                           </thead>
                           <tbody>
                     <tr className="bg-white">
-                      <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-gray-300">
+                      <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
                         {KEY_DATES.TERM.name}
                       </td>
-                      <td className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">
+                      <td className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">
                           {KEY_DATES.EARLY_SUBMIT.date}
                         </div>
                         <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
                           {KEY_DATES.EARLY_SUBMIT.details}
                         </div>
                       </td>
-                      <td className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">
+                      <td className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">
                           {KEY_DATES.PRIORITY_SUBMIT.date}
                         </div>
                         <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
                           {KEY_DATES.PRIORITY_SUBMIT.details}
                         </div>
                       </td>
-                      <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
+                      <td className="p-4 font-bold text-stevens-black whitespace-nowrap align-top border border-stevens-light-gray">
                         {KEY_DATES.FINAL_SUBMIT.date}
                                   </td>
-                      <td className="p-4 font-bold text-gray-900 whitespace-nowrap align-top border border-gray-300">
+                      <td className="p-4 font-bold text-stevens-black whitespace-nowrap align-top border border-stevens-light-gray">
                         {KEY_DATES.START_OF_CLASSES.date}
                                   </td>
                               </tr>
@@ -767,7 +767,7 @@ export default function Home() {
         <section className="py-20 border-t">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="font-stevens-headers text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="font-stevens-headers text-3xl font-bold text-stevens-black mb-4">
                 Application Support Events
               </h2>
               <p className="text-stevens-xl text-stevens-dark-gray">
@@ -841,12 +841,12 @@ export default function Home() {
           <div className="bg-white p-8 rounded-stevens-md shadow-xl w-full max-w-md relative">
             <button
             onClick={() => setShowBrowseModal(false)}
-            className="absolute top-4 right-4 text-gray-400 hover:text-stevens-dark-gray focus:outline-none transition-colors duration-300"
+            className="absolute top-4 right-4 text-stevens-gray hover:text-stevens-dark-gray focus:outline-none transition-colors duration-300"
               aria-label="Close modal"
             >
               <X className="w-6 h-6" />
             </button>
-            <h3 className="text-2xl font-bold mb-6 text-center text-gray-900">
+            <h3 className="text-2xl font-bold mb-6 text-center text-stevens-black">
               Browse Our Course Catalog
             </h3>
             <p className="text-stevens-dark-gray mb-6 text-center">

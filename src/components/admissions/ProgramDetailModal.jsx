@@ -61,7 +61,7 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
         </button>
 
         {/* Hero Image */}
-        <div className="relative h-64 bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray overflow-hidden">
+        <div className="relative h-64 bg-stevens-light-gray overflow-hidden">
           <img
             src={program.image}
             alt={program.name}

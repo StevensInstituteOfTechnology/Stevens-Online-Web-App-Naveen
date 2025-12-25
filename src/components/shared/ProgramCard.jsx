@@ -17,18 +17,18 @@ export default function ProgramCard({ program, showDetails = true }) {
   };
 
   return (
-    <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50">
+    <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-stevens-white">
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <Badge className="bg-red-100 text-red-800 mb-2">
               {program.code.toUpperCase()}
             </Badge>
-            <CardTitle className="text-2xl font-bold text-gray-900 leading-tight">
+            <CardTitle className="text-2xl font-bold text-stevens-black leading-tight">
               {program.title}
             </CardTitle>
             {program.subtitle && (
-              <p className="text-gray-600 mt-1 font-medium">{program.subtitle}</p>
+              <p className="text-stevens-dark-gray mt-1 font-medium">{program.subtitle}</p>
             )}
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function ProgramCard({ program, showDetails = true }) {
       
       <CardContent className="pt-0">
         {program.overview && (
-          <p className="text-gray-700 mb-6 leading-relaxed">
+          <p className="text-stevens-dark-gray mb-6 leading-relaxed">
             {program.overview.length > 150 
               ? `${program.overview.substring(0, 150)}...` 
               : program.overview
@@ -47,21 +47,21 @@ export default function ProgramCard({ program, showDetails = true }) {
         {showDetails && (
           <div className="space-y-3 mb-6">
             {program.credits && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-stevens-dark-gray">
                 <BookOpen className="w-4 h-4 mr-2 text-red-600" />
                 <span className="font-medium">Credits:</span>
                 <span className="ml-1">{program.credits}</span>
               </div>
             )}
             {program.duration && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-stevens-dark-gray">
                 <Clock className="w-4 h-4 mr-2 text-red-600" />
                 <span className="font-medium">Duration:</span>
                 <span className="ml-1">{program.duration}</span>
               </div>
             )}
             {program.delivery && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-stevens-dark-gray">
                 <Globe className="w-4 h-4 mr-2 text-red-600" />
                 <span className="font-medium">Format:</span>
                 <span className="ml-1">{program.delivery}</span>
@@ -72,7 +72,7 @@ export default function ProgramCard({ program, showDetails = true }) {
 
         {program.key_skills && program.key_skills.length > 0 && (
           <div className="mb-6">
-            <p className="text-sm font-semibold text-gray-900 mb-2">Key Skills:</p>
+            <p className="text-sm font-semibold text-stevens-black mb-2">Key Skills:</p>
             <div className="flex flex-wrap gap-1">
               {program.key_skills.slice(0, 3).map((skill, index) => (
                 <Badge key={index} variant="outline" className="text-xs">

@@ -38,7 +38,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
       className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-light-gray hover:border-stevens-red overflow-hidden transition-all duration-stevens-normal"
     >
       {/* Image Section */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray">
+      <div className="relative h-48 overflow-hidden bg-stevens-light-gray">
         <img
           src={program.image}
           alt={program.name}

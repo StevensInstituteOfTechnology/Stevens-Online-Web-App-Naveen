@@ -20,7 +20,7 @@ export default function Certificates() {
         </div>
 
         <h2 className="font-stevens-headers text-3xl font-bold mb-4">Explore Our Full Course Catalog</h2>
-        <p className="font-stevens-body text-lg text-gray-600 mb-8">
+        <p className="font-stevens-body text-lg text-stevens-dark-gray mb-8">
           Our new Professional Education page is your one-stop destination for all non-degree programs. 
           Discover flexible, online courses designed to provide in-demand expertise for working professionals and current students.
         </p>

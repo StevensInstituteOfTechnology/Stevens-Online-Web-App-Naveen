@@ -120,7 +120,7 @@ export default function ChatbotButton() {
             transition={{ duration: 0.4 }}
             className="absolute bottom-16 right-2 mb-2 pointer-events-none"
           >
-            <div className="bg-white text-gray-800 px-4 py-2 rounded-stevens-md shadow-lg border border-gray-200 relative">
+            <div className="bg-white text-stevens-dark-gray px-4 py-2 rounded-stevens-md shadow-lg border border-stevens-light-gray relative">
               <span className="text-sm font-medium">Hi! Need help? 👋</span>
               {/* Speech bubble tail */}
               <div className="absolute bottom-[-8px] right-6 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white"></div>
@@ -153,7 +153,7 @@ export default function ChatbotButton() {
           onClick={toggleChat}
           className={`w-14 h-14 !rounded-full shadow-2xl transition-all duration-300 hover:scale-110 ${
             isOpen 
-              ? 'bg-gray-600 hover:bg-gray-700' 
+              ? 'bg-stevens-dark-gray hover:bg-stevens-dark-gray' 
               : 'bg-red-600 hover:bg-red-700'
           }`}
         >

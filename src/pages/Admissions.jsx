@@ -133,11 +133,11 @@ export default function Admissions() {
           
           <Card className="shadow-xl border-0 overflow-hidden max-w-stevens-content-max mx-auto">
             <div className="overflow-x-auto">
-              <Table className="w-full text-left border-collapse border border-gray-300">
+              <Table className="w-full text-left border-collapse border border-stevens-light-gray">
                 <TableHeader>
                   <TableRow>
                     {keyDates.headers.map((header, index) => (
-                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                         {header}
                       </TableHead>
                     ))}
@@ -146,26 +146,26 @@ export default function Admissions() {
                 <TableBody>
                   {keyDates.rows.map((row, i) => (
                     <TableRow key={i} className="bg-white">
-                      <TableCell className="p-4 font-bold text-base whitespace-nowrap align-top border border-gray-300">
+                      <TableCell className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
                         {row.event}
                       </TableCell>
-                      <TableCell className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">{row.date}</div>
+                      <TableCell className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">{row.date}</div>
                         {row.details && (
                           <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.details}</div>
                         )}
                       </TableCell>
-                      <TableCell className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">{row.priorityDate || ''}</div>
+                      <TableCell className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">{row.priorityDate || ''}</div>
                         {row.priorityDetails && (
                           <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.priorityDetails}</div>
                         )}
                       </TableCell>
-                      <TableCell className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">{row.finalDate || ''}</div>
+                      <TableCell className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">{row.finalDate || ''}</div>
                       </TableCell>
-                      <TableCell className="p-4 align-top border border-gray-300">
-                        <div className="font-bold text-gray-900">{row.startDate || ''}</div>
+                      <TableCell className="p-4 align-top border border-stevens-light-gray">
+                        <div className="font-bold text-stevens-black">{row.startDate || ''}</div>
                       </TableCell>
                     </TableRow>
                   ))}

@@ -76,9 +76,8 @@ export default function ProfessionalEducation() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stevens-light-gray via-stevens-white to-stevens-light-gray relative overflow-hidden font-stevens-body">
+    <div className="min-h-screen bg-stevens-white relative overflow-hidden font-stevens-body">
       {/* Subtle background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-stevens-light-gray/50 via-transparent to-stevens-light-gray/30 pointer-events-none" />
       <div className="absolute top-stevens-section right-stevens-xl w-96 h-96 bg-stevens-light-gray/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-stevens-section left-stevens-xl w-80 h-80 bg-stevens-light-gray/30 rounded-full blur-3xl pointer-events-none" />
 
@@ -123,7 +122,7 @@ export default function ProfessionalEducation() {
       </div>
 
       {/* How It Works */}
-      <div className="py-stevens-section bg-gradient-to-b from-stevens-white to-stevens-light-gray">
+      <div className="py-stevens-section bg-stevens-light-gray">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-stevens-2xl">
             <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">A Simple Path to Certification</h2>
@@ -136,7 +135,7 @@ export default function ProfessionalEducation() {
               return (
                 <Card key={index} className="group text-center hover:shadow-stevens-2xl transition-all duration-stevens-normal border-0 shadow-stevens-lg bg-stevens-white/90 backdrop-blur-sm hover:-translate-y-2 rounded-stevens-md">
                   <CardContent className="p-stevens-lg">
-                    <div className="bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray p-stevens-md rounded-stevens-md w-fit mx-auto mb-stevens-md group-hover:scale-110 transition-transform duration-stevens-normal">
+                    <div className="bg-stevens-light-gray p-stevens-md rounded-stevens-md w-fit mx-auto mb-stevens-md group-hover:scale-110 transition-transform duration-stevens-normal">
                       <Icon className="w-10 h-10 text-stevens-red" />
                     </div>
                     <h3 className="font-stevens-display text-stevens-xl font-stevens-bold mb-stevens-md text-stevens-dark-gray">{step.title}</h3>
@@ -159,9 +158,9 @@ export default function ProfessionalEducation() {
           
           <div className="grid lg:grid-cols-2 gap-stevens-2xl items-start">
             {/* Public Learners Path */}
-            <Card className="group border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-stevens-light-gray/30">
+            <Card className="group border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-2xl transition-all duration-300 bg-stevens-white">
               <CardHeader className="text-center pb-6">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-stevens-md w-fit mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
+                <div className="bg-stevens-light-gray p-6 rounded-stevens-md w-fit mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
                   <Globe className="w-16 h-16 text-stevens-red" />
                 </div>
                 <CardTitle className="font-stevens-display text-2xl text-stevens-dark-gray mb-3">Public Learner</CardTitle>
@@ -194,9 +193,9 @@ export default function ProfessionalEducation() {
             </Card>
 
             {/* Stevens Community Path */}
-            <Card className="group border-2 border-red-100 hover:border-stevens-red hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-red-50/30">
+            <Card className="group border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-2xl transition-all duration-300 bg-stevens-white">
               <CardHeader className="text-center pb-6">
-                <div className="bg-gradient-to-br from-red-100 to-red-50 p-6 rounded-stevens-md w-fit mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
+                <div className="bg-stevens-light-gray p-6 rounded-stevens-md w-fit mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
                   <GraduationCap className="w-16 h-16 text-stevens-red" />
                 </div>
                 <CardTitle className="font-stevens-display text-2xl text-stevens-dark-gray mb-3">Stevens Learner</CardTitle>

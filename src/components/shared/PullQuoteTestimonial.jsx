@@ -61,7 +61,7 @@ const PullQuoteTestimonial = ({
 }) => {
   if (!testimonial) return null;
 
-  const sectionClasses = `py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-light-gray to-stevens-white ${sectionClassName}`.trim();
+  const sectionClasses = `py-stevens-section lg:py-stevens-section-lg bg-stevens-white ${sectionClassName}`.trim();
   const containerClasses = `max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg ${containerClassName}`.trim();
 
   const quoteContent = (

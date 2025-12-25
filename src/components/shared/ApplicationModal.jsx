@@ -95,7 +95,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
+          <div className="bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
             <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center leading-tight">
               Select the application option that works best for you
             </h2>
@@ -106,7 +106,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
 
           {/* ASAP Application - Featured */}
-          <div className="bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray border-2 border-stevens-red rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
+          <div className="bg-stevens-light-gray border-2 border-stevens-red rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
             {/* Recommended Badge */}
             <div className="absolute top-0 right-0 bg-stevens-red text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-stevens-bold uppercase tracking-wide">
               Recommended

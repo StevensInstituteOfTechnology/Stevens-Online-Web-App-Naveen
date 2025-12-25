@@ -636,7 +636,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <div className="bg-stevens-white rounded-stevens-xl shadow-stevens-2xl overflow-hidden border border-stevens-light-gray">
                     <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gradient-to-r from-stevens-light-gray to-stevens-light-gray border-b-2 border-stevens-light-gray">
+                        <TableRow className="bg-stevens-light-gray border-b-2 border-stevens-light-gray">
                           <TableHead className="font-stevens-bold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-left">
                             Job Title
                           </TableHead>
@@ -991,11 +991,11 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             
             <Card className="shadow-xl border-0 overflow-hidden max-w-7xl mx-auto">
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-gray-300">
-                  <thead className="bg-gray-100">
+                <table className="w-full text-left border-collapse border border-stevens-light-gray">
+                  <thead className="bg-stevens-light-gray">
                     <tr>
                       {keyDates.headers.map((header) => (
-                        <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
+                        <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
                           {header}
                         </th>
                       ))}
@@ -1004,28 +1004,28 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <tbody>
                   {keyDates.rows.map((row, i) => (
                       <tr key={i} className="bg-white">
-                        <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-gray-300">
+                        <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
                           {row.event}
                         </td>
-                        <td className="p-4 align-top border border-gray-300">
-                          <div className="font-bold text-gray-900">{row.date}</div>
+                        <td className="p-4 align-top border border-stevens-light-gray">
+                          <div className="font-bold text-stevens-black">{row.date}</div>
                           {row.details && (
                             <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.details}</div>
                           )}
                         </td>
                         {keyDates.headers.length > 2 && (
                           <>
-                            <td className="p-4 align-top border border-gray-300">
-                              <div className="font-bold text-gray-900">{row.priorityDate || ''}</div>
+                            <td className="p-4 align-top border border-stevens-light-gray">
+                              <div className="font-bold text-stevens-black">{row.priorityDate || ''}</div>
                               {row.priorityDetails && (
                                 <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.priorityDetails}</div>
                               )}
                             </td>
-                            <td className="p-4 align-top border border-gray-300">
-                              <div className="font-bold text-gray-900">{row.finalDate || ''}</div>
+                            <td className="p-4 align-top border border-stevens-light-gray">
+                              <div className="font-bold text-stevens-black">{row.finalDate || ''}</div>
                             </td>
-                            <td className="p-4 align-top border border-gray-300">
-                              <div className="font-bold text-gray-900">{row.startDate || ''}</div>
+                            <td className="p-4 align-top border border-stevens-light-gray">
+                              <div className="font-bold text-stevens-black">{row.startDate || ''}</div>
                             </td>
                           </>
                         )}
@@ -1128,7 +1128,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   className="w-full h-full object-cover opacity-30"
                   aria-hidden="true"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-stevens-dark-gray/90 to-stevens-dark-gray/70"></div>
+                <div className="absolute inset-0 bg-stevens-dark-gray/80"></div>
               </div>
               
               {/* Content */}
