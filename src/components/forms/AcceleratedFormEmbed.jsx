@@ -188,15 +188,15 @@ export default function AcceleratedFormEmbed({
               box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3) !important;
             }
           `}</style>
-          <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
+          <div className="bg-stevens-light-gray text-stevens-dark-gray ">
             <div
               id="form_89080626-7bc4-4c48-9437-fd47479d7371"
               className="min-h-[600px] w-full">
-              <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-gray-300 rounded-stevens-md bg-stevens-white">
+              <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-primary mx-auto mb-stevens-md"></div>
-                  <p className="text-stevens-gray-600 font-stevens-medium">Loading Application Form...</p>
-                  <p className="text-stevens-xs text-stevens-gray-500 mt-stevens-sm">This may take a moment</p>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                  <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
+                  <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                 </div>
               </div>
             </div>

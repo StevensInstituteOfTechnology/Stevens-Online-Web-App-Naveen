@@ -48,7 +48,7 @@ export default function Tuition() {
           <div className="lg:col-span-2 space-y-16">
             <div>
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Financing Your Degree</h2>
-              <p className="text-stevens-lg text-stevens-gray-700">
+              <p className="text-stevens-lg text-stevens-dark-gray">
                 Students have various options to fund their tuition. We have included some of the most frequently used funding options below, but encourage you to consult with the Office of Financial Aid or a financial advisor when determining the best way to fund your tuition.
               </p>
             </div>
@@ -56,7 +56,7 @@ export default function Tuition() {
             {/* Tuition Structure Update */}
             <Card className="bg-gray-50">
               <CardHeader>
-                <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-primary">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
+                <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-red">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>Effective Spring & Summer 2026, the Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs will incorporate asynchronous course delivery for the initial phase of their curriculum. This change will impact the tuition rates for some courses.</p>
@@ -85,21 +85,21 @@ export default function Tuition() {
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="text-center shadow-lg">
                   <CardHeader>
-                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-maroon" /> Aspire Grant</CardTitle>
+                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Aspire Grant</CardTitle>
                     <p className="text-sm text-gray-500">(for standard applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center shadow-lg">
                   <CardHeader>
-                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-maroon" /> Pathway Grant</CardTitle>
+                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Pathway Grant</CardTitle>
                     <p className="text-sm text-gray-500">(for ASAP applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
                     <p className="text-gray-600">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -222,7 +222,7 @@ export default function Tuition() {
                   <CardTitle className="font-stevens-headers text-2xl">Alumni Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className='mb-4'>Stevens alumni can take advantage of a 15% discount when they enroll in a Stevens Graduate program. Visit the <a href="https://www.stevens.edu/admission-aid/graduate-admissions" target="_blank" rel="noopener noreferrer" className="text-stevens-maroon hover:underline">Graduate Admissions page</a> for more information.</p>
+                  <p className='mb-4'>Stevens alumni can take advantage of a 15% discount when they enroll in a Stevens Graduate program. Visit the <a href="https://www.stevens.edu/admission-aid/graduate-admissions" target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline">Graduate Admissions page</a> for more information.</p>
                 </CardContent>
               </Card>
               <Card>
@@ -232,9 +232,9 @@ export default function Tuition() {
                 <CardContent>
                   <p className="mb-4">With a strong commitment to our nation’s veterans, Stevens Institute of Technology is proud to participate in the Yellow Ribbon program and offer a suite of resources and support to active duty, veteran and dependent military communities.</p>
                   <ul className="space-y-2">
-                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military/yellow-ribbon-program?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-maroon hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Yellow Ribbon Program Details</a></li>
-                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-maroon hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Student Veterans Office</a></li>
-                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military/using-gi-bill?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-maroon hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Using Your GI Bill® at Stevens</a></li>
+                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military/yellow-ribbon-program?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-red hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Yellow Ribbon Program Details</a></li>
+                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-red hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Student Veterans Office</a></li>
+                    <li><a href="https://www.stevens.edu/admission-aid/veterans-and-military/using-gi-bill?pg=2" target="_blank" rel="noopener noreferrer" className="flex items-center text-stevens-red hover:underline"><LinkIcon className="w-4 h-4 mr-2" /> Using Your GI Bill® at Stevens</a></li>
                   </ul>
                 </CardContent>
               </Card>
@@ -245,14 +245,14 @@ export default function Tuition() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-8">
-              <Card className="border-2 border-stevens-maroon">
+              <Card className="border-2 border-stevens-red">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3"><FileText className="w-6 h-6" /> FAFSA Information</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-2">Complete the FAFSA to apply for federal aid.</p>
                   <p className="text-sm">Stevens Institute of Technology College Code:</p>
-                  <p className="font-stevens-headers text-4xl font-bold text-stevens-maroon my-2">002639</p>
+                  <p className="font-stevens-headers text-4xl font-bold text-stevens-red my-2">002639</p>
                   <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
                     <Button className="w-full btn-secondary mt-2">
                       Go to FAFSA Website <ArrowRight className="w-4 h-4 ml-2" />

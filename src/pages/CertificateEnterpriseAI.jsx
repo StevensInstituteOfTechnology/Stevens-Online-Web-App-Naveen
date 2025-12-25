@@ -126,40 +126,40 @@ const programData = {
               <div class="course-item">
                 <button class="course-toggle" data-target="bia568">BIA 568 – Management of AI Technologies (3 credits)<span class="course-arrow">▼</span></button>
                 <div class="course-content hidden" id="bia568">
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Michael zur Muehlen</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Strategy, platforms, FATE (Fairness, Accountability, Transparency, Ethics), deployment patterns (in-the-loop/on-the-loop), project evaluation</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Map workflows to AI opportunities; compare in-the-loop vs. on-the-loop patterns; evaluate ROI and data readiness; select vendors and platforms.</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> AI Factory, FATE principles, deployment architectures, governance frameworks, agent/copilot patterns, vendor evaluation</p>
-                  <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Deliverable:</strong> Implementation playbook and architecture analysis report</p>
+                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Michael zur Muehlen</p>
+                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> Strategy, platforms, FATE (Fairness, Accountability, Transparency, Ethics), deployment patterns (in-the-loop/on-the-loop), project evaluation</p>
+                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Map workflows to AI opportunities; compare in-the-loop vs. on-the-loop patterns; evaluate ROI and data readiness; select vendors and platforms.</p>
+                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> AI Factory, FATE principles, deployment architectures, governance frameworks, agent/copilot patterns, vendor evaluation</p>
+                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Implementation playbook and architecture analysis report</p>
                 </div>
               </div>
             
             <div class="course-item">
               <button class="course-toggle" data-target="bia662">BIA 662 – Augmented Intelligence & Generative AI (3 credits)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="bia662">
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Alkiviadis Vazacopoulos</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> GenAI foundations, prompt engineering, proof-of-concept design with ethics considerations</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Learn GenAI basics and prompt engineering techniques; build a team PoC with a management-style plan and demonstration.</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> LLM fundamentals, prompt engineering, ethics and bias mitigation, prototyping patterns, PoC scoping and value articulation</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Deliverable:</strong> Team proof-of-concept with implementation plan, demo, and business case</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Alkiviadis Vazacopoulos</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> GenAI foundations, prompt engineering, proof-of-concept design with ethics considerations</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Learn GenAI basics and prompt engineering techniques; build a team PoC with a management-style plan and demonstration.</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> LLM fundamentals, prompt engineering, ethics and bias mitigation, prototyping patterns, PoC scoping and value articulation</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Team proof-of-concept with implementation plan, demo, and business case</p>
               </div>
             </div>
             
             <div class="course-item">
               <button class="course-toggle" data-target="pe810">PE 810 – Applied AI for Business (3 credits)<span class="course-arrow">▼</span></button>
               <div class="course-content hidden" id="pe810">
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Carlo Lipizzi</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Operational workflow development with LLMs as coding co-pilots; dashboards and NLP agents</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>What You'll Do:</strong> Use LLMs to co-write and harden Python utilities; design modular workflows; add guardrails; produce dashboards; ship a working NLP agent or reporting pipeline.</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed mb-3"><strong>Topics:</strong> AI-assisted coding, workflow design, data validation, guardrails and evaluation, dashboard creation, NLP agent deployment</p>
-                <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed"><strong>Deliverable:</strong> Running script/app with configuration, tests, logs, and operational demonstration</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Carlo Lipizzi</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> Operational workflow development with LLMs as coding co-pilots; dashboards and NLP agents</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Use LLMs to co-write and harden Python utilities; design modular workflows; add guardrails; produce dashboards; ship a working NLP agent or reporting pipeline.</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> AI-assisted coding, workflow design, data validation, guardrails and evaluation, dashboard creation, NLP agent deployment</p>
+                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Running script/app with configuration, tests, logs, and operational demonstration</p>
               </div>
             </div>
           </div>
           
-          <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-xl">
+          <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm mt-stevens-xl">
             <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">Recommended Sequence</h5>
-            <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
+            <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">
               <strong>BIA 568 → BIA 662 → PE 810</strong><br/>
               This sequence mirrors the AI implementation journey: strategy → proof-of-concept → operationalization. Each course builds essential skills for the next phase.
             </p>
@@ -253,30 +253,30 @@ const programData = {
     ],
     description: `
       <div class="space-y-4">
-        <p class="font-stevens-headers font-bold text-stevens-lg text-stevens-gray-900">Smart Investment in Your Future</p>
+        <p class="font-stevens-headers font-bold text-stevens-lg text-stevens-dark-gray">Smart Investment in Your Future</p>
         <p class="font-stevens-body text-left">At $5,250 for 9 graduate credits, this certificate is strategically priced to align with the <strong>IRS $5,250 annual tax-free employer tuition benefit</strong>—making it an ideal option for professionals whose companies offer tuition reimbursement.</p>
         
-        <div class="bg-stevens-primary/10 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Corporate Tuition Assistance</p>
+        <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-4 rounded-stevens-sm">
+          <p class="font-bold text-stevens-md text-stevens-dark-gray mb-2">Corporate Tuition Assistance</p>
           <p class="font-stevens-body text-stevens-sm text-left">Many employers reimburse up to $5,250 per year for job-relevant education. This certificate fits perfectly within that benefit, potentially allowing you to earn graduate credit at little to no out-of-pocket cost.</p>
         </div>
         
-        <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-4 rounded-stevens-sm">
-          <p class="font-bold text-stevens-md text-stevens-gray-900 mb-2">Financial Aid & Funding Options</p>
+        <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-4 rounded-stevens-sm">
+          <p class="font-bold text-stevens-md text-stevens-dark-gray mb-2">Financial Aid & Funding Options</p>
           <p class="font-stevens-body text-stevens-sm mb-stevens-sm text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
           <p class="font-stevens-body text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="/request-information/" class="inline-block bg-stevens-primary hover:bg-stevens-primary-dark text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="/request-information/" class="inline-block bg-stevens-red hover:bg-stevens-red-dark text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Request Information
           </a>
-          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-gray-700 hover:bg-stevens-gray-800 text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-dark-gray hover:bg-stevens-dark-gray text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
             Schedule a Call for Funding Details
           </a>
         </div>
         
-        <p class="font-stevens-body text-stevens-xs text-stevens-gray-600 mt-stevens-md">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
+        <p class="font-stevens-body text-stevens-xs text-stevens-dark-gray mt-stevens-md">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       </div>
     `
   },
@@ -298,7 +298,7 @@ const programData = {
   { q: "What's the time commitment?", a: "Each course typically runs 8 weeks with online asynchronous content plus weekly live sessions. Expect 8-12 hours per week per course. You can take courses sequentially or back-to-back depending on availability." },
   { q: "What will I be able to do after completing the certificate?", a: "You'll be able to: evaluate AI platforms and vendors, design GenAI proof-of-concepts with clear business value, build and deploy operational AI workflows with proper guardrails, and communicate AI strategies and results to stakeholders. These are the exact skills organizations need to move from AI experimentation to real value capture." }],
 
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Enterprise AI awards graduate credit that appears on your official Stevens transcript.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Enterprise AI awards graduate credit that appears on your official Stevens transcript.`
 };
 
 export default function CertificateEnterpriseAIPage() {

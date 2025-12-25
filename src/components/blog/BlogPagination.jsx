@@ -50,8 +50,8 @@ const BlogPagination = ({
         disabled={currentPage === 1}
         className={`flex items-center gap-1 ${
           currentPage === 1 
-            ? 'cursor-not-allowed opacity-50 hover:bg-transparent hover:border-stevens-gray-300 hover:text-stevens-gray-500' 
-            : 'hover:border-stevens-primary hover:text-stevens-white'
+            ? 'cursor-not-allowed opacity-50 hover:bg-transparent hover:border-stevens-light-gray hover:text-stevens-light-gray0' 
+            : 'hover:border-stevens-red hover:text-stevens-white'
         }`}
       >
         <ChevronLeft className="w-4 h-4" />
@@ -63,7 +63,7 @@ const BlogPagination = ({
         {visiblePages.map((page, index) => {
           if (page === '...') {
             return (
-              <span key={index} className="px-stevens-sm py-stevens-xs text-stevens-gray-500">
+              <span key={index} className="px-stevens-sm py-stevens-xs text-stevens-light-gray0">
                 <MoreHorizontal className="w-4 h-4" />
               </span>
             );
@@ -79,8 +79,8 @@ const BlogPagination = ({
               onClick={() => onPageChange(page)}
               className={`min-w-[40px] ${
                 isCurrentPage 
-                  ? 'bg-stevens-primary text-stevens-white hover:bg-stevens-maroon-dark' 
-                  : 'hover:border-stevens-primary hover:text-stevens-white'
+                  ? 'bg-stevens-red text-stevens-white hover:bg-stevens-dark-gray' 
+                  : 'hover:border-stevens-red hover:text-stevens-white'
               }`}
             >
               {page}
@@ -97,8 +97,8 @@ const BlogPagination = ({
         disabled={currentPage === totalPages}
         className={`flex items-center gap-1 ${
           currentPage === totalPages 
-            ? 'cursor-not-allowed opacity-50 hover:bg-transparent hover:border-stevens-gray-300 hover:text-stevens-gray-500' 
-            : 'hover:border-stevens-primary hover:text-stevens-white'
+            ? 'cursor-not-allowed opacity-50 hover:bg-transparent hover:border-stevens-light-gray hover:text-stevens-light-gray0' 
+            : 'hover:border-stevens-red hover:text-stevens-white'
         }`}
       >
         Next

@@ -40,11 +40,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Stevens Branding CSS Variables (CPE Brand Guidelines 2025) */
-    --stevens-maroon: #a32638;
-    --stevens-maroon-dark: #6b0000;
-    --stevens-gold: #ffd700;
-    --stevens-gray: #6b7280;
-    --stevens-light-gray: #f3f4f6;
+    --stevens-red: #a32638;
+    --stevens-dark-gray: #363D45;  /* Dark Gray (per CPE Brand Guidelines) */
+    --stevens-gray: #7F7F7F;        /* Stevens Gray */
+    --stevens-light-gray: #E4E5E6;  /* Light Gray */
     
     /* Font Family Variables - Centrally managed (CPE Brand Guidelines 2025) */
     --font-header: 'Saira', sans-serif;
@@ -183,16 +182,17 @@
   }
 
   /* Stevens Button Styles - Improved Sizing */
-  .btn-stevens-primary {
-    @apply bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md shadow-stevens-sm hover:shadow-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+  .btn-stevens-red {
+    @apply bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md shadow-stevens-sm hover:shadow-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
   }
 
+  /* Legacy btn-stevens-secondary - now maps to btn-stevens-outline for backward compatibility */
   .btn-stevens-secondary {
-    @apply bg-white border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+    @apply bg-white border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
   }
 
   .btn-stevens-outline {
-    @apply border border-stevens-gray-300 text-stevens-gray-700 hover:bg-stevens-gray-50 font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
+    @apply border border-stevens-light-gray text-stevens-dark-gray hover:bg-stevens-light-gray font-medium px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal min-h-[44px] flex items-center justify-center;
   }
 
   /* Marquee Animation for ASAP Banner */
@@ -220,44 +220,44 @@
 
   /* Stevens Form Styles - Improved Sizing */
   .form-stevens-input {
-    @apply w-full px-stevens-md py-stevens-md border border-stevens-gray-200 rounded-stevens-md focus:ring-2 focus:ring-stevens-primary/20 focus:border-stevens-primary transition-colors duration-stevens-fast bg-stevens-white placeholder:text-stevens-gray-400 min-h-[44px];
+    @apply w-full px-stevens-md py-stevens-md border border-stevens-light-gray rounded-stevens-md focus:ring-2 focus:ring-stevens-light-gray focus:border-stevens-red transition-colors duration-stevens-fast bg-stevens-white placeholder:text-stevens-gray min-h-[44px];
   }
 
   .form-stevens-input:hover {
-    @apply border-stevens-gray-300;
+    @apply border-stevens-light-gray;
   }
 
   .form-stevens-input-error {
-    @apply border-stevens-error focus:ring-stevens-error/20 focus:border-stevens-error;
+    @apply border-stevens-red focus:ring-stevens-light-gray focus:border-stevens-red;
   }
 
   .form-stevens-input-success {
-    @apply border-stevens-success focus:ring-stevens-success/20 focus:border-stevens-success;
+    @apply border-stevens-gray focus:ring-stevens-gray/20 focus:border-stevens-gray;
   }
 
   .form-stevens-textarea {
-    @apply w-full px-stevens-md py-stevens-md border border-stevens-gray-200 rounded-stevens-md focus:ring-2 focus:ring-stevens-primary/20 focus:border-stevens-primary transition-colors duration-stevens-fast bg-stevens-white resize-y placeholder:text-stevens-gray-400 min-h-[100px];
+    @apply w-full px-stevens-md py-stevens-md border border-stevens-light-gray rounded-stevens-md focus:ring-2 focus:ring-stevens-light-gray focus:border-stevens-red transition-colors duration-stevens-fast bg-stevens-white resize-y placeholder:text-stevens-gray min-h-[100px];
   }
 
   .form-stevens-label {
-    @apply block text-stevens-sm font-medium text-stevens-gray-700 mb-stevens-sm;
+    @apply block text-stevens-sm font-medium text-stevens-dark-gray mb-stevens-sm;
   }
 
   .form-stevens-error-message {
-    @apply text-stevens-xs text-stevens-error mt-stevens-sm;
+    @apply text-stevens-xs text-stevens-red mt-stevens-sm;
   }
 
   .form-stevens-help-text {
-    @apply text-stevens-xs text-stevens-gray-500 mt-stevens-sm;
+    @apply text-stevens-xs text-stevens-light-gray0 mt-stevens-sm;
   }
 
   /* Stevens Card Styles - Rounded Corners Default */
   .card-stevens {
-    @apply bg-stevens-white rounded-stevens-md shadow-stevens-md border border-stevens-gray-100 p-stevens-lg;
+    @apply bg-stevens-white rounded-stevens-md shadow-stevens-md border border-stevens-light-gray p-stevens-lg;
   }
 
   .card-stevens-glass {
-    @apply bg-stevens-white/95 backdrop-blur-sm rounded-stevens-md shadow-stevens-md border border-stevens-gray-100 p-stevens-lg;
+    @apply bg-stevens-white/95 backdrop-blur-sm rounded-stevens-md shadow-stevens-md border border-stevens-light-gray p-stevens-lg;
   }
 
   /* Stevens Navigation Styles - Official Style */
@@ -317,50 +317,50 @@
 
   /* Stevens Loading & Skeleton States */
   .skeleton-stevens {
-    @apply bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+    @apply bg-stevens-light-gray animate-pulse rounded-stevens-none;
   }
 
   .skeleton-stevens-text {
-    @apply h-4 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+    @apply h-4 bg-stevens-light-gray animate-pulse rounded-stevens-none;
   }
 
   .skeleton-stevens-title {
-    @apply h-6 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+    @apply h-6 bg-stevens-light-gray animate-pulse rounded-stevens-none;
   }
 
   .skeleton-stevens-button {
-    @apply h-10 bg-stevens-gray-200 animate-pulse rounded-stevens-none;
+    @apply h-10 bg-stevens-light-gray animate-pulse rounded-stevens-none;
   }
 
   .skeleton-stevens-card {
-    @apply bg-stevens-white border border-stevens-gray-100 rounded-stevens-none shadow-stevens-sm p-stevens-lg;
+    @apply bg-stevens-white border border-stevens-light-gray rounded-stevens-none shadow-stevens-sm p-stevens-lg;
   }
 
   /* Loading Spinner */
   .spinner-stevens {
-    @apply inline-block w-4 h-4 border-2 border-stevens-primary border-r-transparent rounded-full animate-spin;
+    @apply inline-block w-4 h-4 border-2 border-stevens-red border-r-transparent rounded-full animate-spin;
   }
 
   .spinner-stevens-lg {
-    @apply inline-block w-6 h-6 border-2 border-stevens-primary border-r-transparent rounded-full animate-spin;
+    @apply inline-block w-6 h-6 border-2 border-stevens-red border-r-transparent rounded-full animate-spin;
   }
 }
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-stevens-maroon text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon-dark;
+  @apply bg-stevens-red text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-dark-gray;
 }
 
 .btn-secondary {
-  @apply bg-stevens-primary text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon-dark;
+  @apply bg-stevens-red text-white px-6 py-3 rounded-stevens-lg font-semibold transition-all duration-300 hover:bg-stevens-dark-gray;
 }
 
 .btn-outline-white {
-  @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-stevens-maroon;
+  @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-stevens-red;
 }
 
 .btn-outline-maroon {
-  @apply border-2 border-stevens-maroon text-stevens-maroon px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-stevens-maroon hover:text-white;
+  @apply border-2 border-stevens-red text-stevens-red px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-stevens-red hover:text-white;
 }
 
 .btn-ghost {
@@ -379,7 +379,7 @@
 
 /* Form input styles */
 .form-input {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stevens-maroon focus:border-transparent;
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-stevens-red focus:border-transparent;
 }
 
 /* Navigation link styles */
@@ -394,7 +394,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--stevens-maroon);
+  background-color: var(--stevens-red);
   transition: width 0.3s ease;
 }
 
@@ -513,17 +513,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--stevens-maroon);
+  background: var(--stevens-red);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--stevens-maroon-dark);
+  background: var(--stevens-dark-gray);
 }
 
 /* Focus styles for accessibility */
 .focus-visible:focus {
-  @apply outline-2 outline-offset-2 outline-stevens-maroon;
+  @apply outline-2 outline-offset-2 outline-stevens-red;
 }
 
 /* Print styles */
@@ -768,7 +768,7 @@
 }
 
 .course-toggle:hover {
-  color: var(--stevens-maroon);
+  color: var(--stevens-red);
 }
 
 .course-arrow {
@@ -780,7 +780,7 @@
 }
 
 .course-toggle:hover .course-arrow {
-  color: var(--stevens-maroon);
+  color: var(--stevens-red);
 }
 
 .course-content {

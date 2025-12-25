@@ -97,7 +97,7 @@ export default function CorporateLandingPageTemplate({
             <PageHero
                 title={
                     <div className="flex flex-col gap-4">
-                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-maroon/90 text-white text-2xl font-bold tracking-wide uppercase shadow-md border border-white/20">
+                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-red text-white text-2xl font-bold tracking-wide uppercase shadow-md border border-white/20">
                             A Stevens × {partnerName} Partnership
                         </span>
                         <span>{heroTitle}</span>
@@ -119,12 +119,12 @@ export default function CorporateLandingPageTemplate({
                     <div className="lg:col-span-12">
                         <div className="space-y-12">
                             {/* Partner Welcome / Intro */}
-                            <Card className="border-t-4 border-t-stevens-maroon shadow-lg">
+                            <Card className="border-t-4 border-t-stevens-red shadow-lg">
                                 <CardContent className="p-8">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <Building className="w-8 h-8 text-stevens-maroon" />
+                                        <Building className="w-8 h-8 text-stevens-red" />
                                         <h2 className="font-stevens-headers text-3xl font-bold text-gray-900">
-                                            Stevens <span className="text-stevens-maroon">×</span> {partnerName}
+                                            Stevens <span className="text-stevens-red">×</span> {partnerName}
                                         </h2>
                                     </div>
                                     <p className="text-lg text-gray-700 leading-relaxed">
@@ -145,7 +145,7 @@ export default function CorporateLandingPageTemplate({
                             {programDetails.map((section, index) => (
                                 <div key={index} className="space-y-4">
                                     <h3 className="font-stevens-headers text-2xl font-bold text-gray-900 flex items-center gap-2">
-                                        {section.icon || <BookOpen className="w-6 h-6 text-stevens-secondary" />}
+                                        {section.icon || <BookOpen className="w-6 h-6 text-stevens-red" />}
                                         {section.title}
                                     </h3>
                                     <div className="prose max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: section.content }} />
@@ -166,10 +166,10 @@ export default function CorporateLandingPageTemplate({
 
                             {/* Pricing Section */}
                             {pricing && (
-                                <Card className="bg-stevens-gray-50 border-stevens-gray-200">
+                                <Card className="bg-stevens-light-gray border-stevens-light-gray">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2">
-                                            <Users className="w-6 h-6 text-stevens-primary" />
+                                            <Users className="w-6 h-6 text-stevens-red" />
                                             Tuition & Billing
                                         </CardTitle>
                                     </CardHeader>
@@ -178,7 +178,7 @@ export default function CorporateLandingPageTemplate({
                                             {pricing.items.map((item, index) => (
                                                 <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
                                                     <p className="text-sm text-gray-500 uppercase tracking-wide font-semibold">{item.label}</p>
-                                                    <p className="text-2xl font-bold text-stevens-primary mt-1">{item.value}</p>
+                                                    <p className="text-2xl font-bold text-stevens-red mt-1">{item.value}</p>
                                                     {item.note && <p className="text-xs text-gray-600 mt-2 italic">{item.note}</p>}
                                                 </div>
                                             ))}
@@ -196,7 +196,7 @@ export default function CorporateLandingPageTemplate({
                             {showBodyAcceleratedApp && (
                                 <div id="apply-now" className="scroll-mt-24">
                                     <div className="text-center mb-8">
-                                        <h3 className="font-stevens-headers text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h3>
+                                        <h3 className="font-stevens-headers text-3xl font-bold text-stevens-red mb-2">Ready to Apply?</h3>
                                         <p className="text-gray-600 text-lg">
                                             Complete the accelerated application form below to join the cohort.
                                         </p>

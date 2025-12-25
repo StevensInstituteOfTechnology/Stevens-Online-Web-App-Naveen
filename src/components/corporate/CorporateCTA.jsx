@@ -30,7 +30,7 @@ const CorporateCTA = ({
   primaryCta,
   secondaryCta,
   features = [],
-  backgroundColor = 'bg-stevens-primary',
+  backgroundColor = 'bg-stevens-red',
   textColor = 'text-stevens-white',
   formType = 'corporate_inquiry',
   corporateCode
@@ -193,7 +193,7 @@ const CorporateCTA = ({
               {primaryCta && (
                 <Button
                   size="lg"
-                  className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100"
+                  className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray"
                   onClick={primaryCta.onClick}
                 >
                   {primaryCta.label}
@@ -281,7 +281,7 @@ const CorporateCTA = ({
                 </p>
                 <Button
                   size="lg"
-                  className="w-full bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100"
+                  className="w-full bg-stevens-white text-stevens-red hover:bg-stevens-light-gray"
                   onClick={() => primaryCta?.onClick(enteredCode)}
                 >
                   Continue to Application
@@ -328,7 +328,7 @@ const CorporateCTA = ({
               {primaryCta && (
                 <Button
                   size="lg"
-                  className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100"
+                  className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray"
                   onClick={primaryCta.onClick}
                 >
                   {primaryCta.label}
@@ -368,12 +368,12 @@ const CorporateCTA = ({
           >
             <div className="p-stevens-xl">
               <div className="flex justify-between items-start mb-stevens-lg">
-                <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-primary">
+                <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-red">
                   Inquire About Partnership
                 </h3>
                 <button
                   onClick={() => setShowForm(false)}
-                  className="text-stevens-gray-500 hover:text-stevens-gray-700"
+                  className="text-stevens-light-gray0 hover:text-stevens-dark-gray"
                 >
                   ×
                 </button>

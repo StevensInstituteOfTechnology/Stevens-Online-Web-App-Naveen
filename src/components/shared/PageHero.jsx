@@ -41,8 +41,8 @@ export default function PageHero({
   const renderCta = (cta, variant = 'primary') => {
     if (!cta || !cta.label) return null;
     const baseClassName = variant === 'primary'
-      ? 'btn-stevens-primary w-full sm:w-auto'
-      : 'btn-stevens-secondary w-full sm:w-auto';
+      ? 'btn-stevens-red w-full sm:w-auto'
+      : 'btn-stevens-outline w-full sm:w-auto';
     const customClassName = variant === 'primary'
       ? primaryButtonClassName
       : secondaryButtonClassName;
@@ -210,7 +210,7 @@ export default function PageHero({
 
       <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
         {breadcrumbs && (
-          <div className="mb-stevens-md text-stevens-sm text-stevens-gray-300" style={{ textShadow: '0 0.5px 1px rgba(0, 0, 0, 0.5)' }}>
+          <div className="mb-stevens-md text-stevens-sm text-stevens-light-gray" style={{ textShadow: '0 0.5px 1px rgba(0, 0, 0, 0.5)' }}>
             {breadcrumbs.map((crumb, index) => (
               <span key={index}>
                 {index > 0 && ' / '}

@@ -148,61 +148,61 @@ function ProgramReadinessAssessment({ onComplete }) {
     const recommendedPage = programPageMap[showResults.topProgram];
     return (
       <Card className="w-full max-w-lg mx-auto shadow-stevens-lg animate-in zoom-in-95 duration-500 rounded-stevens-md">
-        <CardHeader className="bg-gradient-to-r from-stevens-primary to-stevens-primary text-stevens-white rounded-stevens-md">
+        <CardHeader className="bg-gradient-to-r from-stevens-red to-stevens-red text-stevens-white rounded-stevens-md">
           <CardTitle className="flex items-center gap-stevens-sm text-stevens-2xl font-stevens-display">
             <CheckCircle className="w-6 h-6 animate-in zoom-in duration-300" />
             Your Recommended Path
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-stevens-lg bg-stevens-gray-50 mt-stevens-lg ">
+        <CardContent className="p-stevens-lg bg-stevens-light-gray mt-stevens-lg ">
           <div className="text-center mb-stevens-lg">
             {showResults.topProgram === 'mba' &&
             <div className="animate-in slide-in-from-bottom duration-300 mt-stevens-lg">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Online MBA</h3>
-                <p className="text-stevens-gray-600">Perfect for aspiring business leaders in tech-driven industries.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">Online MBA</h3>
+                <p className="text-stevens-dark-gray">Perfect for aspiring business leaders in tech-driven industries.</p>
               </div>
             }
             {showResults.topProgram === 'mscs' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.S. in Computer Science</h3>
-                <p className="text-stevens-gray-600">Ideal for building advanced technical and software development skills.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">M.S. in Computer Science</h3>
+                <p className="text-stevens-dark-gray">Ideal for building advanced technical and software development skills.</p>
               </div>
             }
             {showResults.topProgram === 'mem' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.Eng. in Engineering Management</h3>
-                <p className="text-stevens-gray-600">Great for technical professionals ready to lead teams and projects.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">M.Eng. in Engineering Management</h3>
+                <p className="text-stevens-dark-gray">Great for technical professionals ready to lead teams and projects.</p>
               </div>
             }
             {showResults.topProgram === 'meads' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">M.Eng. in Applied Data Science</h3>
-                <p className="text-stevens-gray-600">Perfect for mastering data science, AI engineering, and machine learning.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">M.Eng. in Applied Data Science</h3>
+                <p className="text-stevens-dark-gray">Perfect for mastering data science, AI engineering, and machine learning.</p>
               </div>
             }
             {showResults.topProgram === 'cert-eai' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Professional Graduate Certificate in Enterprise AI</h3>
-                <p className="text-stevens-gray-600">Ideal for business professionals who need to implement AI workflows quickly.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">Professional Graduate Certificate in Enterprise AI</h3>
+                <p className="text-stevens-dark-gray">Ideal for business professionals who need to implement AI workflows quickly.</p>
               </div>
             }
             {showResults.topProgram === 'cert-ads' &&
             <div className="animate-in slide-in-from-bottom duration-300">
-                <h3 className="text-stevens-2xl font-bold text-stevens-gray-900 mb-stevens-sm">Applied Data Science Foundations Certificate</h3>
-                <p className="text-stevens-gray-600">Perfect for launching your data science career with Python, SQL, and ML skills.</p>
+                <h3 className="text-stevens-2xl font-bold text-stevens-dark-gray mb-stevens-sm">Applied Data Science Foundations Certificate</h3>
+                <p className="text-stevens-dark-gray">Perfect for launching your data science career with Python, SQL, and ML skills.</p>
               </div>
             }
           </div>
           
           <div className="flex flex-col gap-stevens-sm animate-in slide-in-from-bottom duration-500">
             <Link to={createPageUrl(recommendedPage)}>
-              <Button className="w-full bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white font-medium px-stevens-lg py-stevens-sm rounded-stevens-md shadow-stevens-sm hover:shadow-stevens-md transition-all duration-stevens-normal">
+              <Button className="w-full bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white font-medium px-stevens-lg py-stevens-sm rounded-stevens-md shadow-stevens-sm hover:shadow-stevens-md transition-all duration-stevens-normal">
                 Learn More About This Program
               </Button>
             </Link>
             <Button
               variant="outline"
-              className="w-full border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium px-stevens-lg py-stevens-sm rounded-stevens-md transition-all duration-stevens-normal"
+              className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white font-medium px-stevens-lg py-stevens-sm rounded-stevens-md transition-all duration-stevens-normal"
               onClick={restart}>
               Take Assessment Again
             </Button>
@@ -219,12 +219,12 @@ function ProgramReadinessAssessment({ onComplete }) {
     <Card className="w-full max-w-lg mx-auto shadow-stevens-lg card-hover rounded-stevens-md">
       <CardHeader className="bg-gradient-to-r from-gray-600 to-red-800 text-white rounded-stevens-md">
         <CardTitle className="text-stevens-3xl font-stevens-display">Find Your Perfect Program</CardTitle>
-        <div className="w-full bg-stevens-primary/50 rounded-stevens-md h-2 mt-stevens-sm">
+        <div className="w-full bg-stevens-light-gray0 rounded-stevens-md h-2 mt-stevens-sm">
           <div
             className="bg-stevens-white h-2 rounded-stevens-md transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }} />
         </div>
-        <p className="text-stevens-sm text-stevens-gray-200 mt-stevens-sm">
+        <p className="text-stevens-sm text-stevens-light-gray mt-stevens-sm">
           Step {currentStep + 1} of {questions.length}
         </p>
       </CardHeader>
@@ -238,7 +238,7 @@ function ProgramReadinessAssessment({ onComplete }) {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-stevens-xl font-semibold mb-stevens-lg text-stevens-gray-900 font-stevens-display">
+            <h3 className="text-stevens-xl font-semibold mb-stevens-lg text-stevens-dark-gray font-stevens-display">
               {currentQuestion.question}
             </h3>
             
@@ -249,8 +249,8 @@ function ProgramReadinessAssessment({ onComplete }) {
                 variant={answers[currentQuestion.id] === index ? "default" : "outline"}
                 className={`w-full text-left justify-start p-stevens-md h-auto min-h-[60px] transition-all duration-stevens-normal rounded-stevens-md text-wrap break-words text-stevens-sm stevens-md:text-stevens-base ${
                 answers[currentQuestion.id] === index ?
-                'bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white transform scale-105 shadow-stevens-sm' :
-                'border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white hover:border-stevens-primary'}`
+                'bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white transform scale-105 shadow-stevens-sm' :
+                'border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white hover:border-stevens-red'}`
                 }
                 onClick={() => handleAnswerSelect(currentQuestion.id, index)}>
                   {answer.text}
@@ -262,7 +262,7 @@ function ProgramReadinessAssessment({ onComplete }) {
             <Button
               variant="ghost"
               onClick={goBack}
-              className="mt-stevens-md text-stevens-gray-600 hover:bg-stevens-gray-100 hover:text-stevens-gray-800 rounded-stevens-md">
+              className="mt-stevens-md text-stevens-dark-gray hover:bg-stevens-light-gray hover:text-stevens-dark-gray rounded-stevens-md">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Previous Question
               </Button>

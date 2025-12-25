@@ -255,8 +255,8 @@ const TestimonialCarousel = ({
                     uppercase tracking-wider whitespace-nowrap pb-4
                     transition-all duration-300 relative
                     ${activeIndex === index 
-                      ? 'text-stevens-primary font-bold' 
-                      : 'text-stevens-gray-500 font-medium hover:text-stevens-gray-700'
+                      ? 'text-stevens-red font-bold' 
+                      : 'text-stevens-light-gray0 font-medium hover:text-stevens-dark-gray'
                     }
                   `}
                   aria-selected={activeIndex === index}
@@ -264,7 +264,7 @@ const TestimonialCarousel = ({
                 >
                   <span className={`
                     ${activeIndex === index 
-                      ? 'underline underline-offset-4 decoration-2 decoration-stevens-primary' 
+                      ? 'underline underline-offset-4 decoration-2 decoration-stevens-red' 
                       : ''
                     }
                   `}>
@@ -318,7 +318,7 @@ const TestimonialCarousel = ({
                   const prevIndex = activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1;
                   handleNavClick(prevIndex);
                 }}
-                className="text-stevens-primary hover:text-stevens-primary/80 transition-colors p-1 flex-shrink-0"
+                className="text-stevens-red hover:text-stevens-red transition-colors p-1 flex-shrink-0"
                 aria-label="Previous testimonial"
               >
                 <svg 
@@ -341,7 +341,7 @@ const TestimonialCarousel = ({
               
               {/* Current Person's Name - Centered */}
               <div className="flex-1 text-center min-w-0 px-2">
-                <h3 className="font-stevens-display text-xs sm:text-sm md:text-base uppercase tracking-wider text-stevens-gray-500 font-medium">
+                <h3 className="font-stevens-display text-xs sm:text-sm md:text-base uppercase tracking-wider text-stevens-light-gray0 font-medium">
                   {activeTestimonial.author}
                 </h3>
               </div>
@@ -367,7 +367,7 @@ const TestimonialCarousel = ({
                   const nextIndex = activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1;
                   handleNavClick(nextIndex);
                 }}
-                className="text-stevens-primary hover:text-stevens-primary/80 transition-colors p-1 flex-shrink-0"
+                className="text-stevens-red hover:text-stevens-red transition-colors p-1 flex-shrink-0"
                 aria-label="Next testimonial"
               >
                 <svg 

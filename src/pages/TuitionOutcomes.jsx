@@ -51,21 +51,21 @@ export default function TuitionOutcomes() {
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl grid stevens-md:grid-cols-2 gap-stevens-xl items-center">
             <div>
                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Tuition for Online Programs</h2>
-                 <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed mb-stevens-lg">
+                 <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-lg">
                     We are committed to providing a clear and transparent overview of the costs associated with our world-class online programs. Tuition for all online master's programs is calculated on a per-credit-hour basis.
                  </p>
-                 <Card className="bg-stevens-gray-50 border-stevens-gray-200 rounded-stevens-md">
+                 <Card className="bg-stevens-light-gray border-stevens-light-gray rounded-stevens-md">
                     <CardContent className="p-stevens-lg pt-stevens-lg text-center">
-                        <p className="text-stevens-gray-600 text-stevens-lg">Spring & Summer 2026</p>
-                        <p className="font-stevens-display text-stevens-5xl font-stevens-bold text-stevens-primary my-stevens-sm">$1,395</p>
-                        <p className="text-stevens-gray-600 text-stevens-lg">per credit hour</p>
-                        <p className="text-stevens-sm text-stevens-gray-500 mt-stevens-md">Most master's programs require 30 credits for completion. For detailed cost breakdowns and university fees, please visit the official Student Accounts page.</p>
+                        <p className="text-stevens-dark-gray text-stevens-lg">Spring & Summer 2026</p>
+                        <p className="font-stevens-display text-stevens-5xl font-stevens-bold text-stevens-red my-stevens-sm">$1,395</p>
+                        <p className="text-stevens-dark-gray text-stevens-lg">per credit hour</p>
+                        <p className="text-stevens-sm text-stevens-light-gray0 mt-stevens-md">Most master's programs require 30 credits for completion. For detailed cost breakdowns and university fees, please visit the official Student Accounts page.</p>
                     </CardContent>
                  </Card>
             </div>
             <div>
                 <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold mb-stevens-md">Financing Your Education</h3>
-                <p className="text-stevens-gray-600 mb-stevens-lg">Our Office of Financial Aid is dedicated to helping you find the resources you need to finance your education. Options include:</p>
+                <p className="text-stevens-dark-gray mb-stevens-lg">Our Office of Financial Aid is dedicated to helping you find the resources you need to finance your education. Options include:</p>
                 <ul className="space-y-4">
                     <li className="flex items-start gap-3"><Banknote className="w-6 h-6 text-green-600 mt-1" /><div><span className="font-semibold">Federal Loans:</span> Eligible students can apply for federal student loans by completing the FAFSA.</div></li>
                     <li className="flex items-start gap-3"><Banknote className="w-6 h-6 text-green-600 mt-1" /><div><span className="font-semibold">Employer Tuition Assistance:</span> Many companies offer tuition reimbursement. Check with your HR department.</div></li>
@@ -78,8 +78,8 @@ export default function TuitionOutcomes() {
       <div className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-12">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">A Degree That Delivers Results</h2>
-            <p className="text-stevens-xl text-stevens-gray-600">Stevens is consistently recognized for delivering an outstanding return on investment.</p>
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">A Degree That Delivers Results</h2>
+            <p className="text-stevens-xl text-stevens-dark-gray">Stevens is consistently recognized for delivering an outstanding return on investment.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {roiPoints.map((point, index) => {
@@ -87,9 +87,9 @@ export default function TuitionOutcomes() {
               return (
                 <Card key={index} className="text-center bg-stevens-white shadow-stevens-lg border-0 rounded-stevens-md">
                     <CardContent className="p-stevens-lg pt-stevens-lg">
-                        <Icon className="w-12 h-12 text-stevens-primary mx-auto mb-stevens-md" />
+                        <Icon className="w-12 h-12 text-stevens-red mx-auto mb-stevens-md" />
                         <h3 className="font-stevens-display text-stevens-xl font-stevens-bold mb-stevens-sm">{point.title}</h3>
-                        <p className="text-stevens-gray-600">{point.description}</p>
+                        <p className="text-stevens-dark-gray">{point.description}</p>
                     </CardContent>
                  </Card>);
 
@@ -101,7 +101,7 @@ export default function TuitionOutcomes() {
        <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
           <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Ready to Invest in Yourself?</h2>
-          <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed mb-stevens-lg">
+          <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-lg">
             Take the next step. Apply now or connect with an admissions advisor to discuss your future at Stevens.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

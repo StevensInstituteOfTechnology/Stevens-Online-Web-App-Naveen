@@ -104,10 +104,10 @@ export default function Admissions() {
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-xl text-center">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-xl text-center">
               Admissions Overview
             </h2>
-            <div className="prose prose-lg max-w-none text-stevens-gray-700 leading-relaxed space-y-stevens-lg">
+            <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg">
               <p>
                 Stevens is technology driven. Our faculty are experts in their fields and experienced in industry. We deliver that expertise and experience to you. Stevens takes theory and links it to practical applications that have societal impact. That's the DNA at Stevens.
               </p>
@@ -120,13 +120,13 @@ export default function Admissions() {
       </div>
 
       {/* Key Dates & Deadlines */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-100">
+      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
               Key Dates & Deadlines
             </h2>
-            <p className="text-stevens-lg text-stevens-gray-600">
+            <p className="text-stevens-lg text-stevens-dark-gray">
               Plan your application for the upcoming {KEY_DATES.TERM.name} term.
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function Admissions() {
                 <TableHeader>
                   <TableRow>
                     {keyDates.headers.map((header, index) => (
-                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-primary border border-gray-300">
+                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
                         {header}
                       </TableHead>
                     ))}
@@ -152,13 +152,13 @@ export default function Admissions() {
                       <TableCell className="p-4 align-top border border-gray-300">
                         <div className="font-bold text-gray-900">{row.date}</div>
                         {row.details && (
-                          <div className="text-stevens-gray-900 mt-1 text-stevens-sm">{row.details}</div>
+                          <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.details}</div>
                         )}
                       </TableCell>
                       <TableCell className="p-4 align-top border border-gray-300">
                         <div className="font-bold text-gray-900">{row.priorityDate || ''}</div>
                         {row.priorityDetails && (
-                          <div className="text-stevens-gray-900 mt-1 text-stevens-sm">{row.priorityDetails}</div>
+                          <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.priorityDetails}</div>
                         )}
                       </TableCell>
                       <TableCell className="p-4 align-top border border-gray-300">
@@ -175,7 +175,7 @@ export default function Admissions() {
           </Card>
           
           {keyDates.footnote && (
-            <p className="text-center text-stevens-sm text-stevens-gray-600 mt-stevens-lg italic">
+            <p className="text-center text-stevens-sm text-stevens-dark-gray mt-stevens-lg italic">
               {keyDates.footnote}
             </p>
           )}
@@ -186,10 +186,10 @@ export default function Admissions() {
       <div id="explore-programs" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
               Explore Our Graduate Programs
             </h2>
-            <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-4xl mx-auto">
               Choose a program to explore or apply directly. Each program page provides detailed information about curriculum, career outcomes, and admission requirements.
             </p>
           </div>
@@ -197,19 +197,19 @@ export default function Admissions() {
           <ProgramFilterGrid />
 
           {/* Consultation CTA */}
-          <div className="border-t border-stevens-gray-200 py-stevens-xl mt-stevens-2xl">
+          <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
             <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
               <div>
-                <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900">
+                <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-dark-gray">
                   Wondering Which Application Is Right for You?
                 </h3>
-                <p className="text-stevens-lg text-stevens-gray-700 mt-stevens-xs">
+                <p className="text-stevens-lg text-stevens-dark-gray mt-stevens-xs">
                   Schedule a one-on-one consultation with the enrollment team today.
                 </p>
               </div>
               <div className="stevens-md:text-right">
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
-                  <Button variant="outline" className="text-stevens-primary px-stevens-xl py-stevens-md rounded-stevens-md">
+                  <Button variant="outline" className="text-stevens-red px-stevens-xl py-stevens-md rounded-stevens-md">
                     Get In Touch
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -221,25 +221,25 @@ export default function Admissions() {
       </div>
 
       {/* Events */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-50">
+      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-gray-900 mb-stevens-lg">
+            <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg">
               Events
             </h2>
           </div>
           
           <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
             {events.map((event, index) => (
-              <Card key={index} className="h-full border-stevens-gray-100">
+              <Card key={index} className="h-full border-stevens-light-gray">
                 <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
-                  <h5 className="font-stevens-semibold text-stevens-gray-900 uppercase font-bold mb-stevens-xs hover:text-stevens-primary transition-colors duration-stevens-normal">
+                  <h5 className="font-stevens-semibold text-stevens-dark-gray uppercase font-bold mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">
                     {event.title}
                   </h5>
-                  <div className="text-stevens-sm text-stevens-gray-700 mb-stevens-md">
+                  <div className="text-stevens-sm text-stevens-dark-gray mb-stevens-md">
                     {event.type}
                   </div>
-                  <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-gray-700 mb-stevens-lg">
+                  <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-dark-gray mb-stevens-lg">
                     <Clock className="w-4 h-4"/> {event.duration}
                   </div>
                   <div className="mt-auto">
@@ -264,10 +264,10 @@ export default function Admissions() {
       </div>
 
       {/* Admissions FAQ */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray-100">
+      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
               Admissions FAQ
             </h2>
           </div>
@@ -276,10 +276,10 @@ export default function Admissions() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
-                  <AccordionTrigger className="text-left font-stevens-semibold text-stevens-lg text-stevens-gray-900">
+                  <AccordionTrigger className="text-left font-stevens-semibold text-stevens-lg text-stevens-dark-gray">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-stevens-base text-stevens-gray-700">
+                  <AccordionContent className="text-stevens-base text-stevens-dark-gray">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -290,7 +290,7 @@ export default function Admissions() {
       </div>
 
       {/* Request Information */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-primary">
+      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-red">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-stevens-xl items-center">
@@ -304,7 +304,7 @@ export default function Admissions() {
                 
                 {/* <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
                   <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}>
-                    <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary">
+                    <Button className="btn-stevens-outline bg-stevens-white text-stevens-red">
                       Apply Now
                     </Button>
                   </a>

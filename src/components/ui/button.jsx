@@ -5,20 +5,20 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-stevens-md font-stevens-bold transition-all duration-stevens-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-primary/20 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-stevens-md font-stevens-bold transition-all duration-stevens-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-light-gray disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-stevens-primary text-stevens-white shadow-stevens-md hover:bg-stevens-maroon-dark hover:shadow-stevens-lg",
+          "bg-stevens-red text-stevens-white shadow-stevens-md hover:bg-stevens-dark-gray hover:shadow-stevens-lg",
         destructive:
-          "bg-stevens-error text-stevens-white shadow-stevens-md hover:bg-stevens-error/90 hover:shadow-stevens-lg",
+          "bg-stevens-red text-stevens-white shadow-stevens-md hover:bg-stevens-dark-gray hover:shadow-stevens-lg",
         outline:
-          "border-2 border-stevens-primary bg-stevens-white text-stevens-primary shadow-stevens-sm hover:bg-stevens-primary hover:text-stevens-white hover:shadow-stevens-md",
+          "border-2 border-stevens-red bg-stevens-white text-stevens-red shadow-stevens-sm hover:bg-stevens-red hover:text-stevens-white hover:shadow-stevens-md",
         secondary:
-          "border-2 border-stevens-primary text-stevens-primary bg-stevens-white shadow-stevens-sm hover:bg-stevens-primary hover:text-stevens-white hover:shadow-stevens-md",
-        ghost: "hover:bg-stevens-gray-100 hover:text-stevens-gray-900",
-        link: "text-stevens-primary underline-offset-4 hover:underline",
+          "border-2 border-stevens-red text-stevens-red bg-stevens-white shadow-stevens-sm hover:bg-stevens-red hover:text-stevens-white hover:shadow-stevens-md",
+        ghost: "hover:bg-stevens-light-gray hover:text-stevens-dark-gray",
+        link: "text-stevens-red underline-offset-4 hover:underline",
       },
       size: {
         default: "h-12 px-stevens-lg py-stevens-md text-stevens-lg",

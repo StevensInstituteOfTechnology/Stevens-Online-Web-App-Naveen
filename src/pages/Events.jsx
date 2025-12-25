@@ -204,19 +204,19 @@ export default function Events() {
       />
 
       {/* Intro Section */}
-      <div className="py-stevens-2xl bg-stevens-white border-b border-stevens-gray-200">
+      <div className="py-stevens-2xl bg-stevens-white border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-          <p className="text-stevens-xl text-stevens-gray-800 leading-relaxed max-w-4xl mx-auto font-stevens-body">
+          <p className="text-stevens-xl text-stevens-dark-gray leading-relaxed max-w-4xl mx-auto font-stevens-body">
             Whether you're interested in learning about the application process, financial aid options, program overviews, or hearing from our thought leaders, alumni and program directors, join us for live and on-demand virtual events year-round.
           </p>
         </div>
       </div>
 
       {/* Event Spotlight */}
-      <div className="py-stevens-section bg-gradient-to-b from-stevens-gray-50 to-stevens-white">
+      <div className="py-stevens-section bg-gradient-to-b from-stevens-light-gray to-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-xl text-center">Event Spotlight</h2>
-          <Card className="border-0 shadow-stevens-2xl overflow-hidden bg-gradient-to-br from-stevens-white to-stevens-gray-50">
+          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-xl text-center">Event Spotlight</h2>
+          <Card className="border-0 shadow-stevens-2xl overflow-hidden bg-gradient-to-br from-stevens-white to-stevens-light-gray">
             <div className="stevens-md:flex">
               {/* Image */}
               <div className="stevens-md:w-2/5 overflow-hidden">
@@ -230,9 +230,9 @@ export default function Events() {
               
               {/* Content */}
               <CardContent className="stevens-md:w-3/5 p-stevens-xl stevens-lg:p-stevens-2xl flex flex-col justify-center">
-                <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-gray-900 mb-stevens-md leading-tight">{spotlight.title}</h3>
-                <div className="flex items-center gap-stevens-md text-stevens-base text-stevens-gray-600 mb-stevens-lg">
-                  <span className="flex items-center gap-stevens-xs font-stevens-semibold text-stevens-gray-600">
+                <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-dark-gray mb-stevens-md leading-tight">{spotlight.title}</h3>
+                <div className="flex items-center gap-stevens-md text-stevens-base text-stevens-dark-gray mb-stevens-lg">
+                  <span className="flex items-center gap-stevens-xs font-stevens-semibold text-stevens-dark-gray">
                     <PlayCircle className="w-5 h-5"/> {spotlight.status}
                   </span>
                   <span className="flex items-center gap-stevens-xs">
@@ -240,7 +240,7 @@ export default function Events() {
                   </span>
                 </div>
                 <a href={spotlight.url} target="_blank" rel="noopener noreferrer" className="inline-block">
-                  <Button className="btn-stevens-primary text-stevens-lg px-stevens-2xl py-stevens-lg">
+                  <Button className="btn-stevens-red text-stevens-lg px-stevens-2xl py-stevens-lg">
                     Explore the Student Experience
                   </Button>
                 </a>
@@ -251,22 +251,22 @@ export default function Events() {
       </div>
 
       {/* On-Demand Content */}
-      <div className="py-stevens-section bg-stevens-gray-50">
+      <div className="py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md text-center">Watch On-Demand Content</h2>
-          <p className="text-stevens-lg text-stevens-gray-700 mb-stevens-2xl max-w-4xl mx-auto text-center leading-relaxed">At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.</p>
+          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md text-center">Watch On-Demand Content</h2>
+          <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-2xl max-w-4xl mx-auto text-center leading-relaxed">At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.</p>
 
           <div className="space-y-stevens-2xl">
             {onDemandGroups.map((group) => (
               <div key={group.heading}>
-                <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary mb-stevens-lg uppercase tracking-tight">{group.heading}</h3>
+                <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-red mb-stevens-lg uppercase tracking-tight">{group.heading}</h3>
                 <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
                   {group.items.map((item) => (
-                    <Card key={item.title} className="h-full border-stevens-gray-100 ">
+                    <Card key={item.title} className="h-full border-stevens-light-gray ">
                       <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
-                        <h5 className="font-stevens-semibold text-stevens-gray-900 uppercase font-bold mb-stevens-xs hover:text-stevens-primary transition-colors duration-stevens-normal">{item.title}</h5>
-                        <div className="text-stevens-sm text-stevens-gray-700 mb-stevens-md">{item.status}</div>
-                        <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-gray-700 mb-stevens-lg">
+                        <h5 className="font-stevens-semibold text-stevens-dark-gray uppercase font-bold mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">{item.title}</h5>
+                        <div className="text-stevens-sm text-stevens-dark-gray mb-stevens-md">{item.status}</div>
+                        <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-dark-gray mb-stevens-lg">
                           <Clock className="w-4 h-4"/> {item.length}
                         </div>
                         <div className="mt-auto">
@@ -287,7 +287,7 @@ export default function Events() {
       {/* Application Support Events */}
       <div className="py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-xl text-center">Application Support Events</h2>
+          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-xl text-center">Application Support Events</h2>
           <div className="grid stevens-md:grid-cols-2 gap-stevens-xl max-w-5xl mx-auto">
             {supportEvents.map((e) => (
               <Card key={e.title} className="border-0 shadow-stevens-lg hover:shadow-stevens-2xl transition-all duration-stevens-normal bg-stevens-white group overflow-hidden h-full">
@@ -305,14 +305,14 @@ export default function Events() {
                   {/* Content */}
                   <CardContent className="stevens-md:w-3/5 p-stevens-lg flex flex-col justify-between flex-1">
                   <div>
-                      <p className="text-stevens-xs text-stevens-primary font-stevens-bold uppercase tracking-wider my-stevens-xs">On-Demand Event</p>
-                      <h3 className="font-stevens-display uppercase font-bold text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm leading-tight group-hover:text-stevens-primary transition-colors duration-stevens-normal">{e.title}</h3>
-                      <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-gray-600 mb-stevens-md">
+                      <p className="text-stevens-xs text-stevens-red font-stevens-bold uppercase tracking-wider my-stevens-xs">On-Demand Event</p>
+                      <h3 className="font-stevens-display uppercase font-bold text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm leading-tight group-hover:text-stevens-red transition-colors duration-stevens-normal">{e.title}</h3>
+                      <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-dark-gray mb-stevens-md">
                         <Clock className="w-4 h-4"/> {e.length}
                       </div>
                     </div>
                     <a href={e.url} target="_blank" rel="noopener noreferrer" className="block mt-stevens-md">
-                      <Button className="bg-stevens-primary text-stevens-white hover:bg-stevens-maroon-dark transition-all duration-stevens-normal font-stevens-semibold px-stevens-lg py-stevens-md">
+                      <Button className="bg-stevens-red text-stevens-white hover:bg-stevens-dark-gray transition-all duration-stevens-normal font-stevens-semibold px-stevens-lg py-stevens-md">
                         Watch Now
                     </Button>
                   </a>
@@ -325,23 +325,23 @@ export default function Events() {
       </div>
 
       {/* Upcoming Virtual Events */}
-      <div className="py-stevens-section bg-gradient-to-b from-stevens-gray-50 to-stevens-white border-t border-b border-stevens-gray-200">
+      <div className="py-stevens-section bg-gradient-to-b from-stevens-light-gray to-stevens-white border-t border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">Upcoming Virtual Events</h2>
-          <p className="text-stevens-lg text-stevens-gray-700 mb-stevens-sm max-w-3xl mx-auto">Mark your calendar for upcoming live events. Attendees will receive an application fee waiver.</p>
-          <p className="text-stevens-base text-stevens-gray-600 italic">Check back soon for more upcoming events.</p>
+          <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">Upcoming Virtual Events</h2>
+          <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-sm max-w-3xl mx-auto">Mark your calendar for upcoming live events. Attendees will receive an application fee waiver.</p>
+          <p className="text-stevens-base text-stevens-dark-gray italic">Check back soon for more upcoming events.</p>
         </div>
       </div>
 
       {/* One-on-One CTA */}
-      <div className="py-stevens-section bg-gradient-to-br from-stevens-primary to-stevens-maroon-dark text-stevens-white relative overflow-hidden">
+      <div className="py-stevens-section bg-gradient-to-br from-stevens-red to-stevens-dark-gray text-stevens-white relative overflow-hidden">
        
         
         <div className="relative max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
           <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Schedule a One-On-One Application Walkthrough</h2>
           <p className="text-stevens-lg text-stevens-white/90 mb-stevens-xl max-w-3xl mx-auto leading-relaxed">Take some of the stress out of applying. Connect with the enrollment team today for answers to your questions about eligibility, requirements, application best practices and more.</p>
           <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.MAKE_APPOINTMENT)}>
-            <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary hover: font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-lg flex-1">
+            <Button className="btn-stevens-outline bg-stevens-white text-stevens-red hover:bg-stevens-light-gray font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-lg flex-1">
               Make an Appointment
             </Button>
           </a>

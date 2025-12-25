@@ -37,7 +37,7 @@ const BlogCard = ({
 
   return (
     <Link to={`/blog/${id}/`} className="block">
-      <Card className={`flex flex-col hover:shadow-stevens-xl transition-all duration-300 hover:-translate-y-2 border border-stevens-gray-200 hover:border-stevens-primary/20 cursor-pointer ${className}`}>
+      <Card className={`flex flex-col hover:shadow-stevens-xl transition-all duration-300 hover:-translate-y-2 border border-stevens-light-gray hover:border-stevens-light-gray cursor-pointer ${className}`}>
         <CardHeader className="p-0">
           <div className="relative overflow-hidden">
             {/* Optimized image container - 3/5 of square size */}
@@ -54,15 +54,15 @@ const BlogCard = ({
         </CardHeader>
         
         <CardContent className="flex-grow p-stevens-xl">
-          <CardTitle className="font-stevens-display text-3xl text-stevens-primary mb-stevens-lg mt-stevens-lg line-clamp-2 leading-tight">
+          <CardTitle className="font-stevens-display text-3xl text-stevens-red mb-stevens-lg mt-stevens-lg line-clamp-2 leading-tight">
             {safeTitle}
           </CardTitle>
           
-          <p className="text-stevens-gray-600 line-clamp-3 mb-stevens-lg text-stevens-base leading-relaxed">
+          <p className="text-stevens-dark-gray line-clamp-3 mb-stevens-lg text-stevens-base leading-relaxed">
             {safeExcerpt}
           </p>
           
-          <div className="flex flex-wrap items-center gap-stevens-md text-stevens-sm text-stevens-gray-500 mb-stevens-lg">
+          <div className="flex flex-wrap items-center gap-stevens-md text-stevens-sm text-stevens-light-gray0 mb-stevens-lg">
             
             {showDate && created_date && (
               <span className="flex items-center gap-2">
@@ -80,7 +80,7 @@ const BlogCard = ({
         </CardContent>
         
         <CardFooter className="p-stevens-xl pt-0">
-          <div className="w-full border-2 border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-stevens-white font-medium py-stevens-md transition-all duration-300 group flex items-center justify-center">
+          <div className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white font-medium py-stevens-md transition-all duration-300 group flex items-center justify-center">
             Read More 
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </div>

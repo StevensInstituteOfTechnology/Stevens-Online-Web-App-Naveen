@@ -100,7 +100,7 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
             {/* Close Button - Fixed to modal */}
           <button
             onClick={onClose}
-            className="absolute top-2 right-2  z-50 text-stevens-gray-400 hover:text-stevens-gray-600 transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
+            className="absolute top-2 right-2  z-50 text-stevens-gray hover:text-stevens-dark-gray transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
             aria-label="Close modal"
           >
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -121,9 +121,9 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
           </div>
 
           {/* Footer */}
-          <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
-            <p className="text-stevens-xs sm:text-stevens-sm text-stevens-gray-600 text-center leading-tight">
-              Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Schedule a call</a> with our admissions team.
+          <div className="bg-stevens-light-gray px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-light-gray rounded-b-stevens-lg">
+            <p className="text-stevens-xs sm:text-stevens-sm text-stevens-dark-gray text-center leading-tight">
+              Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline font-stevens-semibold">Schedule a call</a> with our admissions team.
             </p>
           </div>
         </div>

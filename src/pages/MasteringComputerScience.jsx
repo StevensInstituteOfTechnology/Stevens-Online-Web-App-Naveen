@@ -93,15 +93,15 @@ const TopicList = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-3xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="text-center">
-            <h1 className="font-stevens-display text-stevens-hero text-stevens-primary mb-stevens-lg">
+            <h1 className="font-stevens-display text-stevens-hero text-stevens-red mb-stevens-lg">
               Tips, Tools and Techniques for Computer Science
             </h1>
             
             <div className="max-w-6xl mx-auto space-y-stevens-md text-left">
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 Computer science is a complex and constantly evolving field that requires a strong foundation in programming, algorithms and data structures. Whether you are a student, recent graduate, or seasoned professional, our Mastering Computer Science section provides a wealth of resources for those looking to develop their expertise and knowledge in this area.
               </p>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 On this page, you will find various tips, tools and techniques to help you stay ahead of the curve in this rapidly evolving discipline. Our articles cover everything from coding challenges and tutorials to interviews with industry experts, making it easy to find the information you need to succeed. Whether you're interested in machine learning, artificial intelligence or software engineering, our Mastering Computer Science resources have your answers.
               </p>
             </div>
@@ -113,7 +113,7 @@ const TopicList = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="flex flex-col items-center">
-            <h2 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
               Categories:
             </h2>
             <div className="flex flex-wrap justify-center gap-stevens-sm">
@@ -121,10 +121,10 @@ const TopicList = ({ posts }) => {
                 <button
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 hover:border-stevens-primary hover:text-stevens-primary transition-all duration-stevens-normal ${
+                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-light-gray bg-stevens-white text-stevens-dark-gray hover:border-stevens-red hover:text-stevens-red transition-all duration-stevens-normal ${
                     selectedCategory === category
-                      ? 'border-stevens-primary text-stevens-primary bg-stevens-primary/5'
-                      : 'hover:bg-stevens-gray-50'
+                      ? 'border-stevens-red text-stevens-red bg-stevens-light-gray'
+                      : 'hover:bg-stevens-light-gray'
                   }`}
                 >
                   {category}

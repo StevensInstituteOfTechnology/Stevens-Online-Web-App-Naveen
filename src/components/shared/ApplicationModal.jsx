@@ -106,39 +106,39 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
 
           {/* ASAP Application - Featured */}
-          <div className="bg-gradient-to-br from-stevens-primary/5 to-stevens-primary/10 border-2 border-stevens-primary rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
+          <div className="bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray border-2 border-stevens-red rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
             {/* Recommended Badge */}
-            <div className="absolute top-0 right-0 bg-stevens-primary text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-stevens-bold uppercase tracking-wide">
+            <div className="absolute top-0 right-0 bg-stevens-red text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-stevens-bold uppercase tracking-wide">
               Recommended
             </div>
 
             <div className="flex items-start gap-stevens-sm mb-stevens-sm mt-stevens-sm">
-              <div className="bg-stevens-primary/10 p-stevens-sm rounded-stevens-md">
-                <Zap className="w-5 h-5 text-stevens-primary" />
+              <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md">
+                <Zap className="w-5 h-5 text-stevens-red" />
               </div>
               <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
+                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-xs">
                   ASAP Application
                 </h3>
-                <p className="text-stevens-xs text-stevens-primary font-stevens-semibold">
+                <p className="text-stevens-xs text-stevens-red font-stevens-semibold">
                   Fast-track your admission
                 </p>
               </div>
             </div>
 
-            <p className="text-stevens-sm text-stevens-gray-900 mb-stevens-sm leading-relaxed">
+            <p className="text-stevens-sm text-stevens-dark-gray mb-stevens-sm leading-relaxed">
               Begin your graduate studies immediately by enrolling in two foundational courses. Earn a B or better and get full admission with credit in hand.
             </p>
 
             <div className="bg-stevens-white rounded-stevens-md p-stevens-sm mb-stevens-md">
-              <h4 className="font-stevens-bold text-stevens-xs uppercase tracking-wider text-stevens-gray-600 mb-stevens-xs">
+              <h4 className="font-stevens-bold text-stevens-xs uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">
                 Why Choose ASAP?
               </h4>
               <ul className="space-y-stevens-xs">
                 {asapBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-stevens-xs text-stevens-xs">
-                    <Check className="w-3 h-3 text-stevens-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-stevens-gray-700">{benefit}</span>
+                    <Check className="w-3 h-3 text-stevens-red mt-0.5 flex-shrink-0" />
+                    <span className="text-stevens-dark-gray">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -146,7 +146,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
 
             <Link 
               to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
-              className="btn-stevens-primary w-full text-center inline-block"
+              className="btn-stevens-red w-full text-center inline-block"
               onClick={() => {
                 // Store program in sessionStorage for persistence
                 sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
@@ -165,22 +165,22 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             </Link>
           </div>
           {/* Standard Application */}
-          <div className="bg-stevens-white border-2 border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-stevens-normal group">
+          <div className="bg-stevens-white border-2 border-stevens-light-gray rounded-stevens-md p-stevens-md hover:border-stevens-red hover:shadow-stevens-lg transition-all duration-stevens-normal group">
             <div className="flex items-start gap-stevens-sm mb-stevens-sm">
-              <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md group-hover:bg-stevens-primary/10 transition-colors duration-stevens-normal">
-                <ExternalLink className="w-5 h-5 text-stevens-gray-700 group-hover:text-stevens-primary transition-colors duration-stevens-normal" />
+              <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md group-hover:bg-stevens-light-gray transition-colors duration-stevens-normal">
+                <ExternalLink className="w-5 h-5 text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal" />
               </div>
               <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
+                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-xs">
                   Standard Application
                 </h3>
-                <p className="text-stevens-xs text-stevens-gray-600">
+                <p className="text-stevens-xs text-stevens-dark-gray">
                   Standard graduate application process
                 </p>
               </div>
             </div>
 
-            <p className="text-stevens-sm text-stevens-gray-700 mb-stevens-md leading-relaxed">
+            <p className="text-stevens-sm text-stevens-dark-gray mb-stevens-md leading-relaxed">
               Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
             </p>
 
@@ -188,7 +188,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
               href={traditionalLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-primary group-hover:text-stevens-white group-hover:border-stevens-primary transition-all duration-stevens-normal"
+              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-red group-hover:text-stevens-white group-hover:border-stevens-red transition-all duration-stevens-normal"
               onClick={() => {
                 trackEvent('application_option_selected', {
                   option: 'standard',
@@ -208,13 +208,13 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
           </div>
 
           {/* Footer */}
-          <div className="bg-stevens-gray-50 px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-gray-200 rounded-b-stevens-lg">
-            <p className="text-[10px] sm:text-stevens-xs text-stevens-gray-600 text-center mb-2 sm:mb-stevens-sm leading-tight">
-              Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-primary hover:underline font-stevens-semibold">Contact our admissions team</a>
+          <div className="bg-stevens-light-gray px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-light-gray rounded-b-stevens-lg">
+            <p className="text-[10px] sm:text-stevens-xs text-stevens-dark-gray text-center mb-2 sm:mb-stevens-sm leading-tight">
+              Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline font-stevens-semibold">Contact our admissions team</a>
             </p>
             <button
               onClick={onClose}
-              className="w-full px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm text-xs sm:text-stevens-sm rounded-stevens-md border-2 border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 font-stevens-semibold hover:bg-stevens-gray-100 transition-colors duration-stevens-normal"
+              className="w-full px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm text-xs sm:text-stevens-sm rounded-stevens-md border-2 border-stevens-light-gray bg-stevens-white text-stevens-dark-gray font-stevens-semibold hover:bg-stevens-light-gray transition-colors duration-stevens-normal"
             >
               Close
             </button>

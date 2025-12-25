@@ -109,30 +109,30 @@ const CareerPathExplorer = ({
                 {program.badge}
               </Badge>
             )}
-            <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-gray-900">
+            <CardTitle className="text-stevens-xl font-stevens-bold text-stevens-dark-gray">
               {program.title}
             </CardTitle>
             {program.subtitle && (
-              <p className="text-stevens-gray-600 text-stevens-sm mt-stevens-xs">
+              <p className="text-stevens-dark-gray text-stevens-sm mt-stevens-xs">
                 {program.subtitle}
               </p>
             )}
           </CardHeader>
           <CardContent className="space-y-stevens-md">
-            <p className="text-stevens-gray-700">
+            <p className="text-stevens-dark-gray">
               {program.description}
             </p>
 
             {/* Program Details */}
             <div className="space-y-stevens-sm">
               {program.duration && (
-                <div className="flex items-center text-stevens-sm text-stevens-gray-600">
+                <div className="flex items-center text-stevens-sm text-stevens-dark-gray">
                   <Clock className="w-4 h-4 mr-stevens-xs" />
                   <span>{program.duration}</span>
                 </div>
               )}
               {program.credits && (
-                <div className="flex items-center text-stevens-sm text-stevens-gray-600">
+                <div className="flex items-center text-stevens-sm text-stevens-dark-gray">
                   <Award className="w-4 h-4 mr-stevens-xs" />
                   <span>{program.credits} credits</span>
                 </div>
@@ -144,8 +144,8 @@ const CareerPathExplorer = ({
               <div className="space-y-stevens-xs">
                 {program.features.slice(0, 3).map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="w-4 h-4 text-stevens-primary mr-stevens-xs mt-0.5 flex-shrink-0" />
-                    <span className="text-stevens-sm text-stevens-gray-700">{feature}</span>
+                    <CheckCircle className="w-4 h-4 text-stevens-red mr-stevens-xs mt-0.5 flex-shrink-0" />
+                    <span className="text-stevens-sm text-stevens-dark-gray">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -153,17 +153,17 @@ const CareerPathExplorer = ({
 
             {/* ROI Metrics */}
             {(program.avgSalaryIncrease || program.promotionRate) && (
-              <div className="bg-stevens-primary/5 rounded-stevens-md p-stevens-sm">
+              <div className="bg-stevens-light-gray rounded-stevens-md p-stevens-sm">
                 <div className="flex items-center justify-between text-stevens-sm">
                   {program.avgSalaryIncrease && (
                     <div>
-                      <TrendingUp className="w-4 h-4 text-stevens-primary inline mr-1" />
+                      <TrendingUp className="w-4 h-4 text-stevens-red inline mr-1" />
                       <span className="font-stevens-medium">{program.avgSalaryIncrease} salary increase</span>
                     </div>
                   )}
                   {program.promotionRate && (
                     <div>
-                      <Award className="w-4 h-4 text-stevens-primary inline mr-1" />
+                      <Award className="w-4 h-4 text-stevens-red inline mr-1" />
                       <span className="font-stevens-medium">{program.promotionRate} promoted</span>
                     </div>
                   )}
@@ -216,21 +216,21 @@ const CareerPathExplorer = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
-        className="bg-stevens-primary/5 rounded-stevens-lg p-stevens-lg mb-stevens-xl"
+        className="bg-stevens-light-gray rounded-stevens-lg p-stevens-lg mb-stevens-xl"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg">
           <div>
-            <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+            <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
               {currentPath.name}
             </h3>
-            <p className="text-stevens-gray-700">
+            <p className="text-stevens-dark-gray">
               {currentPath.description}
             </p>
           </div>
           
           {currentPath.skills && (
             <div>
-              <h4 className="font-stevens-medium text-stevens-gray-900 mb-stevens-sm">
+              <h4 className="font-stevens-medium text-stevens-dark-gray mb-stevens-sm">
                 Key Skills
               </h4>
               <div className="flex flex-wrap gap-stevens-xs">
@@ -247,17 +247,17 @@ const CareerPathExplorer = ({
             <div className="grid grid-cols-2 gap-stevens-md">
               {currentPath.avgSalary && (
                 <div>
-                  <h4 className="font-stevens-medium text-stevens-gray-900 mb-stevens-xs">
+                  <h4 className="font-stevens-medium text-stevens-dark-gray mb-stevens-xs">
                     Avg. Salary
                   </h4>
-                  <p className="text-stevens-xl font-stevens-bold text-stevens-primary">
+                  <p className="text-stevens-xl font-stevens-bold text-stevens-red">
                     {currentPath.avgSalary}
                   </p>
                 </div>
               )}
               {currentPath.growth && (
                 <div>
-                  <h4 className="font-stevens-medium text-stevens-gray-900 mb-stevens-xs">
+                  <h4 className="font-stevens-medium text-stevens-dark-gray mb-stevens-xs">
                     Job Growth
                   </h4>
                   <p className="text-stevens-xl font-stevens-bold text-stevens-green-600">
@@ -283,12 +283,12 @@ const CareerPathExplorer = ({
         className="text-center mb-stevens-xl"
       >
         {title && (
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
             {title}
           </h2>
         )}
         {subtitle && (
-          <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+          <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
             {subtitle}
           </p>
         )}
@@ -356,7 +356,7 @@ const CareerPathExplorer = ({
           animate={{ opacity: 1 }}
           className="text-center py-stevens-2xl"
         >
-          <p className="text-stevens-gray-600">
+          <p className="text-stevens-dark-gray">
             No programs found for this career path. 
             <Button
               variant="link"

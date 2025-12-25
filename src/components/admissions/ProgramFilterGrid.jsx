@@ -67,7 +67,7 @@ export default function ProgramFilterGrid() {
     return (
       <>
         {beforeMatch}
-        <span className="bg-stevens-primary/20 text-stevens-primary font-stevens-semibold">{match}</span>
+        <span className="bg-stevens-light-gray text-stevens-red font-stevens-semibold">{match}</span>
         {afterMatch}
       </>
     );
@@ -199,7 +199,7 @@ export default function ProgramFilterGrid() {
       {/* Search Input */}
       <div className="relative mb-stevens-lg">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stevens-gray-400 w-5 h-5" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stevens-gray w-5 h-5" />
           <Input
             ref={searchInputRef}
             type="text"
@@ -212,7 +212,7 @@ export default function ProgramFilterGrid() {
           {searchQuery && (
             <button
               onClick={handleClearSearch}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stevens-gray-400 hover:text-stevens-gray-600"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stevens-gray hover:text-stevens-dark-gray"
               aria-label="Clear search"
             >
               <X className="w-5 h-5" />
@@ -229,19 +229,19 @@ export default function ProgramFilterGrid() {
           <div
             ref={suggestionsRef}
             data-search-suggestions="true"
-            className="absolute z-[10001] w-full mt-2 bg-stevens-white border border-stevens-gray-200 rounded-stevens-md shadow-stevens-2xl max-h-60 overflow-y-auto"
+            className="absolute z-[10001] w-full mt-2 bg-stevens-white border border-stevens-light-gray rounded-stevens-md shadow-stevens-2xl max-h-60 overflow-y-auto"
             style={{ zIndex: 10001 }} // Inline style as fallback protection
           >
             {suggestions.map((suggestion) => (
               <button
                 key={suggestion.id}
                 onClick={() => handleSuggestionClick(suggestion.id)}
-                className="w-full text-left px-4 py-3 hover:bg-stevens-gray-50 transition-colors duration-stevens-fast border-b border-stevens-gray-100 last:border-b-0"
+                className="w-full text-left px-4 py-3 hover:bg-stevens-light-gray transition-colors duration-stevens-fast border-b border-stevens-light-gray last:border-b-0"
               >
-                <div className="font-stevens-semibold text-stevens-gray-900">
+                <div className="font-stevens-semibold text-stevens-dark-gray">
                   {highlightText(suggestion.name, searchQuery)}
                 </div>
-                <div className="text-stevens-sm text-stevens-gray-600 mt-1">
+                <div className="text-stevens-sm text-stevens-dark-gray mt-1">
                   {highlightText(suggestion.shortName, searchQuery)}
                 </div>
               </button>
@@ -261,7 +261,7 @@ export default function ProgramFilterGrid() {
             />
             <Label
               htmlFor="graduate"
-              className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
+              className="text-stevens-base font-stevens-medium text-stevens-dark-gray cursor-pointer"
             >
               Masters
             </Label>
@@ -275,7 +275,7 @@ export default function ProgramFilterGrid() {
             />
             <Label
               htmlFor="certificate"
-              className="text-stevens-base font-stevens-medium text-stevens-gray-700 cursor-pointer"
+              className="text-stevens-base font-stevens-medium text-stevens-dark-gray cursor-pointer"
             >
               Certificates
             </Label>
@@ -285,7 +285,7 @@ export default function ProgramFilterGrid() {
 
       {/* Results Count */}
       <div className="mb-stevens-lg">
-        <p className="text-stevens-base text-stevens-gray-600">
+        <p className="text-stevens-base text-stevens-dark-gray">
           Showing {filteredPrograms.length} of {allPrograms.length} programs
         </p>
       </div>
@@ -293,10 +293,10 @@ export default function ProgramFilterGrid() {
       {/* Empty State */}
       {filteredPrograms.length === 0 && (
         <div className="text-center py-stevens-2xl">
-          <p className="text-stevens-lg text-stevens-gray-600">
+          <p className="text-stevens-lg text-stevens-dark-gray">
             No programs found matching your criteria.
           </p>
-          <p className="text-stevens-base text-stevens-gray-500 mt-stevens-xs">
+          <p className="text-stevens-base text-stevens-gray mt-stevens-xs">
             Try adjusting your filters or search terms.
           </p>
         </div>

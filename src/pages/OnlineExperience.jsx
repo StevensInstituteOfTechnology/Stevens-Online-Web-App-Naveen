@@ -68,9 +68,9 @@ export default function OnlineExperience() {
       />
       
       {/* Welcome Message from Dean Arshad */}
-      <div className="py-20 bg-stevens-gray-50">
+      <div className="py-20 bg-stevens-light-gray">
         <div className="max-w-5xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <Card className="shadow-stevens-2xl border border-stevens-gray-200 rounded-stevens-lg overflow-hidden">
+          <Card className="shadow-stevens-2xl border border-stevens-light-gray rounded-stevens-lg overflow-hidden">
             <CardContent className="p-0">
               {/* Header with Dean's Photo and Title */}
               <div className="bg-gradient-to-r from-gray-600 to-red-800 text-white p-stevens-lg stevens-md:p-stevens-xl">
@@ -93,10 +93,10 @@ export default function OnlineExperience() {
       
               {/* Letter Content */}
               <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
-                <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg">
+                <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
                 </h3>
                 
-                <div className="prose prose-lg max-w-none text-stevens-gray-700 leading-relaxed space-y-stevens-md">
+                <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-md">
                   <p>
                     Welcome to Stevens Online. For more than 150 years, Stevens Institute of Technology has been at the forefront of innovation, shaping the future through technology, research, and education. Stevens is consistently ranked among the nation's top universities for return on investment, reflecting both the quality and long-term value of a Stevens education.
                   </p>
@@ -118,10 +118,10 @@ export default function OnlineExperience() {
                     alt="Arshad Saiyed Signature"
                     className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
                   />
-                  <p className="font-stevens-semibold text-stevens-gray-900">
+                  <p className="font-stevens-semibold text-stevens-dark-gray">
                     Arshad Saiyed
               </p>
-                  <p className="text-stevens-sm text-stevens-gray-600">
+                  <p className="text-stevens-sm text-stevens-dark-gray">
                     Chief Online Learning Officer and Dean<br />
                     College of Professional Education <br />
                     Stevens Institute of Technology
@@ -135,10 +135,10 @@ export default function OnlineExperience() {
       
 
       
-      <div className="py-20 bg-stevens-gray-100">
+      <div className="py-20 bg-stevens-light-gray">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-16">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900">What to Expect as an Online Student</h2>
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray">What to Expect as an Online Student</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => {
@@ -147,12 +147,12 @@ export default function OnlineExperience() {
                 <Card key={index} className="border-0 shadow-stevens-lg hover:shadow-stevens-xl transition-shadow duration-stevens-normal rounded-stevens-md">
                   <CardContent className="p-stevens-lg pt-stevens-lg">
                     <div className="flex items-center gap-stevens-md">
-                      <div className="bg-stevens-gray-100 p-stevens-sm rounded-stevens-md">
-                        <Icon className="w-8 h-8 text-stevens-primary" />
+                      <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md">
+                        <Icon className="w-8 h-8 text-stevens-red" />
                       </div>
                       <h3 className="font-stevens-display text-stevens-2xl font-stevens-semibold">{feature.title}</h3>
                     </div>
-                    <p className="mt-stevens-md text-stevens-gray-600 leading-relaxed">{feature.description}</p>
+                    <p className="mt-stevens-md text-stevens-dark-gray leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -165,7 +165,7 @@ export default function OnlineExperience() {
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
               <img src="/assets/images/online-experience/online-experience-1.png" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Ready to Learn More?</h2>
-          <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed mb-stevens-lg">
+          <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-lg">
             Connect with our admissions team to get your questions answered and find out if an online program at Stevens is the right fit for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

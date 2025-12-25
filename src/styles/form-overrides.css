@@ -11,9 +11,9 @@
   --form-id-accelerated: form_89080626-7bc4-4c48-9437-fd47479d7371;
   
   /* Colors - Using Stevens brand colors */
-  --form-primary: var(--stevens-maroon, #a32638);
-  --form-primary-dark: var(--stevens-maroon-dark, #8b1e2f);
-  --form-primary-hover: #8b1e2f;
+  --form-primary: var(--stevens-red, #a32638);
+  --form-primary-dark: var(--stevens-dark-gray, #363D45);
+  --form-primary-hover: #363D45;
   --form-primary-rgb: 163, 38, 56; /* For rgba() usage */
   --form-background: #ffffff;
   --form-background-input: #ffffff; /* Changed from #f9fafb to white for cleaner look */

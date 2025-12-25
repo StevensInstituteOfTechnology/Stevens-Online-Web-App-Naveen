@@ -41,7 +41,7 @@ const HeroWithStats = ({
           />
           {/* Gradient Overlay */}
           <div 
-            className="absolute inset-0 bg-gradient-to-r from-stevens-primary to-stevens-primary/50"
+            className="absolute inset-0 bg-gradient-to-r from-stevens-red to-stevens-dark-gray"
             style={{ opacity: overlayOpacity }}
           />
         </div>
@@ -110,7 +110,7 @@ const HeroWithStats = ({
                 <Button
                   size="lg"
                   variant="default"
-                  className="bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100"
+                  className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray"
                   onClick={primaryCta.onClick}
                   asChild={primaryCta.to || primaryCta.href}
                 >

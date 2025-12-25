@@ -87,15 +87,15 @@ const BlogPageContent = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-3xl">
       <div className="max-w-7xl mx-auto px-stevens-md mt-stevens-lg">
           <div className="text-center">
-            <h1 className="font-stevens-display text-stevens-hero text-stevens-primary mb-stevens-lg">
+            <h1 className="font-stevens-display text-stevens-hero text-stevens-red mb-stevens-lg">
               Stevens Online Blog: Insights, Inspiration and Information
             </h1>
             
             <div className="max-w-6xl mx-auto space-y-stevens-md text-left">
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 Stevens Online education blogs are excellent resources for current and prospective students and professionals looking to stay up-to-date on the latest industry developments supported by our programs.
               </p>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 Through our blog, you can access in-depth articles, interviews and other resources that provide valuable insights into the skills and knowledge needed to succeed in today's rapidly-changing business, technology and engineering landscapes. Whether you are considering enrolling in one of our programs, want to explore a new career path or deepen your knowledge in your current field, the Stevens online blog is an excellent source of information and inspiration for you to take advantage of.
               </p>
             </div>
@@ -107,7 +107,7 @@ const BlogPageContent = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="flex flex-col items-center">
-            <h2 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
               Categories:
             </h2>
             <div className="flex flex-wrap justify-center gap-stevens-sm">
@@ -115,10 +115,10 @@ const BlogPageContent = ({ posts }) => {
                 <button
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 hover:border-stevens-primary hover:text-stevens-primary transition-all duration-stevens-normal ${
+                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-light-gray bg-stevens-white text-stevens-dark-gray hover:border-stevens-red hover:text-stevens-red transition-all duration-stevens-normal ${
                     selectedCategory === category
-                      ? 'border-stevens-primary text-stevens-primary bg-stevens-primary/5'
-                      : 'hover:bg-stevens-gray-50'
+                      ? 'border-stevens-red text-stevens-red bg-stevens-light-gray'
+                      : 'hover:bg-stevens-light-gray'
                   }`}
                 >
                   {category}

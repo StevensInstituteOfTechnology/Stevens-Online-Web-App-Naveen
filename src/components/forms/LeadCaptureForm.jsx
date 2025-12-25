@@ -164,7 +164,7 @@ export default function LeadCaptureForm({
           {/* Form styles are now in src/styles/form-overrides.css */}
           {/* Supports all form IDs: RFI, ASAP, Accelerated */}
 
-          <div className="bg-stevens-white text-stevens-gray-900">
+          <div className="bg-stevens-white text-stevens-dark-gray">
             <div
               id={FORM_IDS.RFI}
               className="min-h-[320px] w-full">
@@ -172,9 +172,9 @@ export default function LeadCaptureForm({
               {/* Loading state */}
               <div className="flex items-center justify-center py-12">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-primary mx-auto mb-stevens-md"></div>
-                  <p className="text-stevens-gray-600 font-stevens-medium">Loading Form...</p>
-                  <p className="text-stevens-xs text-stevens-gray-500 mt-stevens-sm">This may take a moment</p>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                  <p className="text-stevens-dark-gray font-stevens-medium">Loading Form...</p>
+                  <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function LeadCaptureForm({
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="btn-stevens-primary px-stevens-xl py-stevens-md rounded-stevens-md"
+          className="btn-stevens-red px-stevens-xl py-stevens-md rounded-stevens-md"
         >
           {triggerLabel}
         </button>
@@ -201,7 +201,7 @@ export default function LeadCaptureForm({
                 type="button"
                 aria-label="Close"
                 onClick={() => setOpen(false)}
-                className="absolute -top-3 -right-3 bg-stevens-white text-stevens-gray-700 rounded-full w-10 h-10 shadow-stevens-md"
+                className="absolute -top-3 -right-3 bg-stevens-white text-stevens-dark-gray rounded-full w-10 h-10 shadow-stevens-md"
               >
                 ×
               </button>

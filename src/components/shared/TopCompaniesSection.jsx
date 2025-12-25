@@ -22,7 +22,7 @@ export default function TopCompaniesSection({
         <div className="text-center">
           {/* Description */}
           {description && (
-            <p className="text-stevens-gray-600 mb-stevens-lg max-w-2xl mx-auto text-stevens-sm stevens-md:text-stevens-base">
+            <p className="text-stevens-dark-gray mb-stevens-lg max-w-2xl mx-auto text-stevens-sm stevens-md:text-stevens-base">
               {description}
             </p>
           )}
@@ -58,11 +58,11 @@ export default function TopCompaniesSection({
                     ) : null}
                     {/* Placeholder logo - shown when no logo or image fails */}
                     <div 
-                      className="logo-placeholder w-full h-full items-center justify-center bg-stevens-gray-50 rounded-stevens-sm"
+                      className="logo-placeholder w-full h-full items-center justify-center bg-stevens-light-gray rounded-stevens-sm"
                       style={{ display: companyLogo ? 'none' : 'flex' }}
                       aria-label={`${companyName} logo`}
                     >
-                      <div className="text-stevens-gray-400 font-stevens-bold text-stevens-base stevens-md:text-stevens-lg">
+                      <div className="text-stevens-gray font-stevens-bold text-stevens-base stevens-md:text-stevens-lg">
                         {companyName.substring(0, 2).toUpperCase()}
                       </div>
                     </div>

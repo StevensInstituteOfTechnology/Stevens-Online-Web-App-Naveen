@@ -61,7 +61,7 @@ const PullQuoteTestimonial = ({
 }) => {
   if (!testimonial) return null;
 
-  const sectionClasses = `py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-gray-50 to-stevens-white ${sectionClassName}`.trim();
+  const sectionClasses = `py-stevens-section lg:py-stevens-section-lg bg-gradient-to-b from-stevens-light-gray to-stevens-white ${sectionClassName}`.trim();
   const containerClasses = `max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg ${containerClassName}`.trim();
 
   const quoteContent = (
@@ -79,7 +79,7 @@ const PullQuoteTestimonial = ({
       />
       
       {/* Quote Text - Large, condensed typography */}
-      <blockquote className="font-stevens-content text-2xl md:text-4xl lg:text-stevens-6xl leading-tight md:leading-tight lg:leading-none font-normal text-stevens-gray-700">
+      <blockquote className="font-stevens-content text-2xl md:text-4xl lg:text-stevens-6xl leading-tight md:leading-tight lg:leading-none font-normal text-stevens-dark-gray">
         {testimonial.quote}
       </blockquote>
       
@@ -99,16 +99,16 @@ const PullQuoteTestimonial = ({
         {/* Attribution - Right-aligned style */}
         <div className="flex flex-col ml-3 md:ml-4 lg:ml-5">
           {/* Author Name - Bold, large */}
-          <span className="font-stevens-content text-xl md:text-2xl lg:text-stevens-4xl font-bold text-stevens-gray-700">
+          <span className="font-stevens-content text-xl md:text-2xl lg:text-stevens-4xl font-bold text-stevens-dark-gray">
             {testimonial.author}
           </span>
           {/* Title/Role */}
-          <span className="font-stevens-content text-base md:text-lg lg:text-stevens-2xl font-normal text-stevens-gray-900 mt-1">
+          <span className="font-stevens-content text-base md:text-lg lg:text-stevens-2xl font-normal text-stevens-dark-gray mt-1">
             {testimonial.title}
           </span>
           {/* Company */}
           {testimonial.company && (
-            <span className="text-stevens-sm md:text-stevens-base text-stevens-gray-600 mt-0.5 font-stevens-body">
+            <span className="text-stevens-sm md:text-stevens-base text-stevens-dark-gray mt-0.5 font-stevens-body">
               {testimonial.company}
             </span>
           )}
@@ -124,12 +124,12 @@ const PullQuoteTestimonial = ({
         {showHeader && (title || subtitle) && (
           <div className="text-center mb-stevens-3xl">
             {title && (
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-lg">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="text-stevens-lg md:text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-stevens-lg md:text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto leading-relaxed">
                 {subtitle}
               </p>
             )}

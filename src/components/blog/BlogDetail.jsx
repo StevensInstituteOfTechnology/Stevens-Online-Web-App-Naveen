@@ -29,12 +29,12 @@ const StructuredContentRenderer = ({ content }) => {
           case 'heading':
             const HeadingTag = `h${item.level}`;
             const headingClasses = {
-              1: 'text-stevens-hero font-stevens-display text-stevens-primary mb-stevens-xl',
-              2: 'text-stevens-3xl font-stevens-display text-stevens-primary mb-stevens-lg mt-stevens-2xl',
-              3: 'text-stevens-2xl font-stevens-display text-stevens-primary mb-stevens-md mt-stevens-xl',
-              4: 'text-stevens-xl font-stevens-display text-stevens-primary mb-stevens-md mt-stevens-lg',
-              5: 'text-stevens-lg font-stevens-display text-stevens-primary mb-stevens-sm mt-stevens-md',
-              6: 'text-stevens-md font-stevens-display text-stevens-primary mb-stevens-sm mt-stevens-md'
+              1: 'text-stevens-hero font-stevens-display text-stevens-red mb-stevens-xl',
+              2: 'text-stevens-3xl font-stevens-display text-stevens-red mb-stevens-lg mt-stevens-2xl',
+              3: 'text-stevens-2xl font-stevens-display text-stevens-red mb-stevens-md mt-stevens-xl',
+              4: 'text-stevens-xl font-stevens-display text-stevens-red mb-stevens-md mt-stevens-lg',
+              5: 'text-stevens-lg font-stevens-display text-stevens-red mb-stevens-sm mt-stevens-md',
+              6: 'text-stevens-md font-stevens-display text-stevens-red mb-stevens-sm mt-stevens-md'
             };
             
             return (
@@ -100,7 +100,7 @@ const renderTextWithFormatting = (text, bold = [], links = []) => {
       // Escape special regex characters in link text
       const escapedLinkText = link.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp(escapedLinkText, 'g');
-      processedText = processedText.replace(regex, `<a href="${actualUrl}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`);
+      processedText = processedText.replace(regex, `<a href="${actualUrl}" target="_blank" rel="noopener noreferrer" class="text-stevens-red hover:text-stevens-red underline">${link.text}</a>`);
     });
   }
   
@@ -150,7 +150,7 @@ const BlogDetail = ({
       <header className="mb-stevens-2xl">
         
         
-        <h1 className="font-stevens-display text-stevens-4xl md:text-stevens-hero  text-stevens-primary mb-stevens-lg leading-tight">
+        <h1 className="font-stevens-display text-stevens-4xl md:text-stevens-hero  text-stevens-red mb-stevens-lg leading-tight">
           {safeTitle}
         </h1>
 
@@ -159,7 +159,7 @@ const BlogDetail = ({
           <div className="mb-stevens-lg">
             <Link
               to={`/blog/?category=${encodeURIComponent(category)}`}
-              className="text-stevens-primary hover:text-stevens-maroon-dark underline hover:no-underline transition-colors duration-300 font-medium"
+              className="text-stevens-red hover:text-stevens-dark-gray underline hover:no-underline transition-colors duration-300 font-medium"
             >
               {category}
             </Link>
@@ -168,7 +168,7 @@ const BlogDetail = ({
         
 
         {/* Article Meta */}
-        <div className="flex flex-wrap items-center justify-between gap-stevens-lg text-stevens-gray-600 mb-stevens-lg">
+        <div className="flex flex-wrap items-center justify-between gap-stevens-lg text-stevens-dark-gray mb-stevens-lg">
           <div className="flex flex-wrap items-center gap-stevens-lg">
             {safeAuthor && (
               <div className="flex items-center gap-2">
@@ -198,7 +198,7 @@ const BlogDetail = ({
               href="https://www.facebook.com/Stevens1870"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
+              className="w-10 h-10 bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
               aria-label="Follow Stevens on Facebook"
             >
               <Facebook className="w-5 h-5" />
@@ -207,7 +207,7 @@ const BlogDetail = ({
               href="https://x.com/followstevens"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
+              className="w-10 h-10 bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
               aria-label="Follow Stevens on Twitter/X"
             >
               <Twitter className="w-5 h-5" />
@@ -216,7 +216,7 @@ const BlogDetail = ({
               href="https://www.linkedin.com/school/stevens-institute-of-technology/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
+              className="w-10 h-10 bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white rounded-full flex items-center justify-center transition-colors duration-300"
               aria-label="Connect with Stevens on LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -238,7 +238,7 @@ const BlogDetail = ({
       )}
 
       {/* Article Content */}
-      <div className="prose prose-xl max-w-none text-stevens-gray-700 mb-stevens-2xl text-stevens-lg leading-relaxed">
+      <div className="prose prose-xl max-w-none text-stevens-dark-gray mb-stevens-2xl text-stevens-lg leading-relaxed">
         {post.content && Array.isArray(post.content) ? (
           <StructuredContentRenderer content={post.content} />
         ) : (
@@ -250,28 +250,28 @@ const BlogDetail = ({
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="border-t border-stevens-gray-200 pt-stevens-2xl">
-          <h3 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+        <section className="border-t border-stevens-light-gray pt-stevens-2xl">
+          <h3 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
             Related Articles
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
             {relatedPosts.map((relatedPost) => (
-              <div key={relatedPost.id} className="border border-stevens-gray-200 rounded-stevens-md p-stevens-md hover:shadow-stevens-md transition-shadow">
+              <div key={relatedPost.id} className="border border-stevens-light-gray rounded-stevens-md p-stevens-md hover:shadow-stevens-md transition-shadow">
                 <img 
                   {...getThumbnailImageProps(relatedPost.featured_image_url, '400px')}
                   alt={relatedPost.title}
                   className="w-full h-32 object-cover rounded-stevens-sm mb-stevens-md"
                   loading="lazy"
                 />
-                <h4 className="font-stevens-display text-stevens-lg text-stevens-primary mb-stevens-sm line-clamp-2">
+                <h4 className="font-stevens-display text-stevens-lg text-stevens-red mb-stevens-sm line-clamp-2">
                   {relatedPost.title}
                 </h4>
-                <p className="text-stevens-sm text-stevens-gray-600 line-clamp-2">
+                <p className="text-stevens-sm text-stevens-dark-gray line-clamp-2">
                   {relatedPost.excerpt}
                 </p>
                        <Link
                          to={`/blog/${relatedPost.id}/`}
-                         className="text-stevens-primary text-stevens-sm font-medium hover:underline mt-stevens-sm inline-block"
+                         className="text-stevens-red text-stevens-sm font-medium hover:underline mt-stevens-sm inline-block"
                        >
                   Read More →
                 </Link>
@@ -283,7 +283,7 @@ const BlogDetail = ({
 
       {/* Updated Date */}
       {updated_date && updated_date !== created_date && (
-        <div className="text-stevens-sm text-stevens-gray-500 mt-stevens-2xl pt-stevens-lg border-t border-stevens-gray-200">
+        <div className="text-stevens-sm text-stevens-light-gray0 mt-stevens-2xl pt-stevens-lg border-t border-stevens-light-gray">
           Last updated: {format(new Date(updated_date), 'MMMM d, yyyy')}
         </div>
       )}

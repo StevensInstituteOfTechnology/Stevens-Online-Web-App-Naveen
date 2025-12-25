@@ -227,14 +227,14 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="em600">EM 600 Engineering Economics and Cost Analysis (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="em600">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course presents advanced techniques and analysis designed to permit managers to estimate and use cost information in decision making. Topics include: historical overview of the management accounting process, statistical cost estimation, cost allocation, and uses of cost information in evaluating decisions about pricing, quality, manufacturing processes (e.g., JIT, CIM), investments in new technologies, investment centers, the selection process for capital investments, both tangible and intangible, and how this process is structured and constrained by the time value of money, the source of funds, market demand, and competitive position.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course presents advanced techniques and analysis designed to permit managers to estimate and use cost information in decision making. Topics include: historical overview of the management accounting process, statistical cost estimation, cost allocation, and uses of cost information in evaluating decisions about pricing, quality, manufacturing processes (e.g., JIT, CIM), investments in new technologies, investment centers, the selection process for capital investments, both tangible and intangible, and how this process is structured and constrained by the time value of money, the source of funds, market demand, and competitive position.</p>
                   </div>
                 </div>
                 
                 <div class="course-item">
                   <button class="course-toggle" data-target="em612">EM 612 Project Management of Complex Systems (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="em612">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This project-based course exposes students to tools and methodologies useful for forming and managing an effective engineering design team in a business environment. Topics covered will include personality profiles for creating teams with balanced diversity; computational tools for project coordination and management; real-time electronic documentation as a critical design process variable; and methods for refining project requirements to ensure that the team addresses the right problem with the right solution.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This project-based course exposes students to tools and methodologies useful for forming and managing an effective engineering design team in a business environment. Topics covered will include personality profiles for creating teams with balanced diversity; computational tools for project coordination and management; real-time electronic documentation as a critical design process variable; and methods for refining project requirements to ensure that the team addresses the right problem with the right solution.</p>
                   </div>
                 </div>
               </div>
@@ -246,14 +246,14 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="em605">EM 605 Elements of Operations Research (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="em605">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course brings a strong modeling orientation to bear on the process of obtaining and utilizing resources to produce and deliver useful goods and services so as to meet the goals of the organization. Decision-oriented models such as linear programming, inventory control, and forecasting are discussed and then implemented utilizing spreadsheets and other commercial software. A review of the fundamentals of statistical analysis oriented toward business problems will also be conducted.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course brings a strong modeling orientation to bear on the process of obtaining and utilizing resources to produce and deliver useful goods and services so as to meet the goals of the organization. Decision-oriented models such as linear programming, inventory control, and forecasting are discussed and then implemented utilizing spreadsheets and other commercial software. A review of the fundamentals of statistical analysis oriented toward business problems will also be conducted.</p>
                   </div>
                 </div>
                 
                 <div class="course-item">
                   <button class="course-toggle" data-target="em624">EM 624 Data Exploration and Informatics for Engineering Management (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="em624">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course enables the engineering management student to acquire the knowledge and skills they will need to handle the variety and volume of information encountered in today’s workplace. The course uses Python, which is rapidly becoming the language of choice for information handling and data analysis. Students will work with both structured and semi-structured data.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course enables the engineering management student to acquire the knowledge and skills they will need to handle the variety and volume of information encountered in today’s workplace. The course uses Python, which is rapidly becoming the language of choice for information handling and data analysis. Students will work with both structured and semi-structured data.</p>
                   </div>
                 </div>
               </div>
@@ -265,21 +265,21 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="sys611">SYS 611 Systems Modeling and Simulation (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="sys611">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course emphasizes the development of modeling and simulation concepts and analysis skills necessary to design, program, implement, and use computers to solve complex systems/product analysis problems. The key emphasis is on problem formulation, model building, data analysis, solution techniques, and evaluation of alternative designs/ processes in complex systems/products. An overview of modeling techniques and methods used in decision analysis, including Monte Carlo and discrete event simulation is presented.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course emphasizes the development of modeling and simulation concepts and analysis skills necessary to design, program, implement, and use computers to solve complex systems/product analysis problems. The key emphasis is on problem formulation, model building, data analysis, solution techniques, and evaluation of alternative designs/ processes in complex systems/products. An overview of modeling techniques and methods used in decision analysis, including Monte Carlo and discrete event simulation is presented.</p>
                   </div>
                 </div>
                 
                 <div class="course-item">
                   <button class="course-toggle" data-target="sys660">SYS 660 Decision and Risk Analysis (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="sys660">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course is a study of analytic techniques for rational decision-making that addresses uncertainty, conflicting objectives, and risk attitudes. This course covers modeling uncertainty; rational decision-making principles; representing decision problems with value trees, decision trees, and influence diagrams; solving value hierarchies; defining and calculating the value of information; incorporating risk attitudes into the analysis; and conducting sensitivity analyses.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course is a study of analytic techniques for rational decision-making that addresses uncertainty, conflicting objectives, and risk attitudes. This course covers modeling uncertainty; rational decision-making principles; representing decision problems with value trees, decision trees, and influence diagrams; solving value hierarchies; defining and calculating the value of information; incorporating risk attitudes into the analysis; and conducting sensitivity analyses.</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <div class="mt-stevens-xl mb-stevens-lg">
-              <p class="text-stevens-gray-700 leading-relaxed">To meet the interests and career goals of students, the following courses are available as recommended electives during Terms 4 and 5. Alternately, students may take up to four courses that focus on a particular area of their choice including Construction Management, Mechanical Engineering, Electrical Engineering, and Systems & Software Engineering upon reviewing the specific courses with the faculty advisor or Program Director.*</p>
+              <p class="text-stevens-dark-gray leading-relaxed">To meet the interests and career goals of students, the following courses are available as recommended electives during Terms 4 and 5. Alternately, students may take up to four courses that focus on a particular area of their choice including Construction Management, Mechanical Engineering, Electrical Engineering, and Systems & Software Engineering upon reviewing the specific courses with the faculty advisor or Program Director.*</p>
             </div>
             
             <div>
@@ -288,26 +288,26 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="mgt612">MGT 612 Leader Development (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="mgt612">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Project success depends, largely, on the human side. Success in motivating project workers, organizing and leading project teams, communication and sharing information, and conflict resolution, are just a few areas that are critical for project success. However, being primarily technical people, many project managers tend to neglect these “soft” issues, assuming they are less important or that they should be addressed by direct functional managers. The purpose of this course is to increase awareness of project managers to the critical issues of managing people and to present some of the theories and practices of leading project workers and teams.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Project success depends, largely, on the human side. Success in motivating project workers, organizing and leading project teams, communication and sharing information, and conflict resolution, are just a few areas that are critical for project success. However, being primarily technical people, many project managers tend to neglect these “soft” issues, assuming they are less important or that they should be addressed by direct functional managers. The purpose of this course is to increase awareness of project managers to the critical issues of managing people and to present some of the theories and practices of leading project workers and teams.</p>
                   </div>
                 </div>
                 
                 <div class="mt-stevens-md">
-                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-primary mb-stevens-md">MANAGERIAL ANALYTICS ELECTIVE</h5>
+                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-red mb-stevens-md">MANAGERIAL ANALYTICS ELECTIVE</h5>
                   <div class="course-item">
                     <button class="course-toggle" data-target="em622">EM 622 Data Analysis and Visualization Techniques for Decision Making (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="em622">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course provides a hands-on introduction to the modern techniques for visualizing data and leverages such techniques with the corresponding problem solving skills necessary to complement data visualization into specific strategic decision making. The student will first learn to use the latest off the shelf software for data visualization. In specific the student will learn the following languages: R, D3, Google refine and Spot fire.</p>
+                      <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course provides a hands-on introduction to the modern techniques for visualizing data and leverages such techniques with the corresponding problem solving skills necessary to complement data visualization into specific strategic decision making. The student will first learn to use the latest off the shelf software for data visualization. In specific the student will learn the following languages: R, D3, Google refine and Spot fire.</p>
                     </div>
                   </div>
                 </div>
                 
                 <div class="mt-stevens-md">
-                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-primary mb-stevens-md">SUPPLY CHAIN AND LOGISTICS MANAGEMENT ELECTIVE</h5>
+                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-red mb-stevens-md">SUPPLY CHAIN AND LOGISTICS MANAGEMENT ELECTIVE</h5>
                   <div class="course-item">
                     <button class="course-toggle" data-target="sys640">SYS 640 System Supportability and Logistics (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="sys640">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">The supportability of a system can be defined as the ability of the system to be supported in a cost effective and timely manner, with a minimum of logistics support resources. The required resources might include test and support equipment, trained maintenance personnel, spare and repair parts, technical documentation and special facilities. For large complex systems, supportability considerations may be significant and often have a major impact upon life-cycle cost. It is therefore particularly important that these considerations be included early during the system design trade studies and design decision-making.</p>
+                      <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">The supportability of a system can be defined as the ability of the system to be supported in a cost effective and timely manner, with a minimum of logistics support resources. The required resources might include test and support equipment, trained maintenance personnel, spare and repair parts, technical documentation and special facilities. For large complex systems, supportability considerations may be significant and often have a major impact upon life-cycle cost. It is therefore particularly important that these considerations be included early during the system design trade studies and design decision-making.</p>
                     </div>
                   </div>
                 </div>
@@ -320,26 +320,26 @@ const programData = {
                 <div class="course-item">
                   <button class="course-toggle" data-target="em800">EM 800 Capstone (3)<span class="course-arrow">▼</span></button>
                   <div class="course-content hidden" id="em800">
-                    <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">The Capstone is a customized and personalized experience that allows students the opportunity to build innovative solutions for real-world engineering problems. Students will collaborate with a faculty member and tailor their projects to their areas of interest or use real-life issues at their current organizations.</p>
+                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">The Capstone is a customized and personalized experience that allows students the opportunity to build innovative solutions for real-world engineering problems. Students will collaborate with a faculty member and tailor their projects to their areas of interest or use real-life issues at their current organizations.</p>
                   </div>
                 </div>
                 
                 <div class="mt-stevens-md">
-                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-primary mb-stevens-md">MANAGERIAL ANALYTICS ELECTIVE</h5>
+                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-red mb-stevens-md">MANAGERIAL ANALYTICS ELECTIVE</h5>
                   <div class="course-item">
                     <button class="course-toggle" data-target="em623">EM 623 Data Science and Knowledge Discovery in Engineering Management (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="em623">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">Getting usable information from the vast amount of data we are immersed into requires a combination of methodologies, tools, techniques, algorithms and ingenuity. Creating views, extracting trends, defining patterns, identifying clusters are all elements we need to manage large data. The field of data mining has evolved from the disciplines of statistics and artificial intelligence. This course will examine methods that have emerged from both fields and proven to be of value in recognizing patterns and making predictions from an applications perspective. Final goal of the course is to provide the students with a “data toolbox” they can use in their activities. This “toolbox” contains methods and tools that students will use themselves during the course for real world applications. The course is hand-on, but no coding is required, using Open Source Data Science tools that are based on Graphical User Interfaces.</p>
+                      <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Getting usable information from the vast amount of data we are immersed into requires a combination of methodologies, tools, techniques, algorithms and ingenuity. Creating views, extracting trends, defining patterns, identifying clusters are all elements we need to manage large data. The field of data mining has evolved from the disciplines of statistics and artificial intelligence. This course will examine methods that have emerged from both fields and proven to be of value in recognizing patterns and making predictions from an applications perspective. Final goal of the course is to provide the students with a “data toolbox” they can use in their activities. This “toolbox” contains methods and tools that students will use themselves during the course for real world applications. The course is hand-on, but no coding is required, using Open Source Data Science tools that are based on Graphical User Interfaces.</p>
                     </div>
                   </div>
                 </div>
                 
                 <div class="mt-stevens-md">
-                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-primary mb-stevens-md">SUPPLY CHAIN AND LOGISTICS MANAGEMENT ELECTIVE</h5>
+                  <h5 class="font-stevens-bold text-stevens-lg text-stevens-red mb-stevens-md">SUPPLY CHAIN AND LOGISTICS MANAGEMENT ELECTIVE</h5>
                   <div class="course-item">
                     <button class="course-toggle" data-target="sys670">SYS 670 Forecasting and Demand Modeling Systems (3)<span class="course-arrow">▼</span></button>
                     <div class="course-content hidden" id="sys670">
-                      <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">This course covers the theory and application of modeling aggregate demand, fragmented demand and consumer behavior using statistical methods for analysis and forecasting for facilities, services and products. It also aims to provide students with both the conceptual basis and tools necessary to conduct market segmentation studies, defining and identifying criteria for effective segmentation, along with techniques for simultaneous profiling of segments and models for dynamic segmentation. All of this provides a window on the external environment, thereby contributing input and context to product, process and systems design decisions and their ongoing management.</p>
+                      <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers the theory and application of modeling aggregate demand, fragmented demand and consumer behavior using statistical methods for analysis and forecasting for facilities, services and products. It also aims to provide students with both the conceptual basis and tools necessary to conduct market segmentation studies, defining and identifying criteria for effective segmentation, along with techniques for simultaneous profiling of segments and models for dynamic segmentation. All of this provides a window on the external environment, thereby contributing input and context to product, process and systems design decisions and their ongoing management.</p>
                     </div>
                   </div>
                 </div>
@@ -347,8 +347,8 @@ const programData = {
             </div>
             
             <div class="mt-stevens-xl">
-              <p class="text-stevens-sm text-stevens-gray-600 mb-stevens-sm">*Applicants are not required to select a program concentration during the application process.</p>
-              <p class="text-stevens-sm text-stevens-gray-600">**Students lacking sufficient statistics coursework in their academic background will be required to take Probability and Statistics for Systems Engineering in lieu of an elective course in term 4 or term 5. Once enrolled, students will work with a student support coach to determine which courses to take.</p>
+              <p class="text-stevens-sm text-stevens-dark-gray mb-stevens-sm">*Applicants are not required to select a program concentration during the application process.</p>
+              <p class="text-stevens-sm text-stevens-dark-gray">**Students lacking sufficient statistics coursework in their academic background will be required to take Probability and Statistics for Systems Engineering in lieu of an elective course in term 4 or term 5. Once enrolled, students will work with a student support coach to determine which courses to take.</p>
             </div>
           </div>
         ` 
@@ -422,7 +422,7 @@ const programData = {
     { q: "Who should apply through the ASAP application?", a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required." },
     { q: "What resources are available to ASAP students?", a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses." }
   ],
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
 };
 
 export default function MEMPage() {

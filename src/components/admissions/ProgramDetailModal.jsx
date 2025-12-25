@@ -54,14 +54,14 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-stevens-md right-stevens-md z-10 bg-stevens-white/90 backdrop-blur-sm text-stevens-gray-700 hover:text-stevens-gray-900 rounded-full p-stevens-sm shadow-stevens-md transition-all duration-stevens-normal hover:scale-110"
+          className="absolute top-stevens-md right-stevens-md z-10 bg-stevens-white/90 backdrop-blur-sm text-stevens-dark-gray hover:text-stevens-dark-gray rounded-full p-stevens-sm shadow-stevens-md transition-all duration-stevens-normal hover:scale-110"
           aria-label="Close modal"
         >
           <X className="w-6 h-6" />
         </button>
 
         {/* Hero Image */}
-        <div className="relative h-64 bg-gradient-to-br from-stevens-gray-100 to-stevens-gray-200 overflow-hidden">
+        <div className="relative h-64 bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray overflow-hidden">
           <img
             src={program.image}
             alt={program.name}
@@ -72,7 +72,7 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
           {/* Title Overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-stevens-lg">
             <div className="mb-stevens-sm">
-              <span className="bg-stevens-primary text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
+              <span className="bg-stevens-red text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
                 {program.degree}
               </span>
             </div>
@@ -89,24 +89,24 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
         <div className="p-stevens-lg stevens-md:p-stevens-xl">
           {/* Description */}
           <div className="mb-stevens-xl">
-            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
               Program Overview
             </h3>
-            <p className="text-stevens-base text-stevens-gray-700 leading-relaxed">
+            <p className="text-stevens-base text-stevens-dark-gray leading-relaxed">
               {program.description}
             </p>
           </div>
 
           {/* Highlights */}
           <div className="mb-stevens-xl">
-            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
               Program Highlights
             </h3>
             <div className="grid stevens-md:grid-cols-2 gap-stevens-md">
               {program.highlights.map((highlight, index) => (
                 <div key={index} className="flex items-start gap-stevens-sm">
-                  <Check className="w-5 h-5 text-stevens-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-stevens-base text-stevens-gray-700">{highlight}</span>
+                  <Check className="w-5 h-5 text-stevens-red flex-shrink-0 mt-0.5" />
+                  <span className="text-stevens-base text-stevens-dark-gray">{highlight}</span>
                 </div>
               ))}
             </div>
@@ -114,16 +114,16 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
 
           {/* Stats Grid */}
           <div className="mb-stevens-xl">
-            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+            <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
               Program Details
             </h3>
             <div className="grid grid-cols-2 stevens-md:grid-cols-4 gap-stevens-md">
               {Object.entries(program.stats).map(([key, value]) => (
-                <div key={key} className="bg-stevens-gray-50 rounded-stevens-md p-stevens-md text-center">
-                  <p className="text-stevens-2xl font-stevens-bold text-stevens-primary mb-stevens-xs">
+                <div key={key} className="bg-stevens-light-gray rounded-stevens-md p-stevens-md text-center">
+                  <p className="text-stevens-2xl font-stevens-bold text-stevens-red mb-stevens-xs">
                     {value}
                   </p>
-                  <p className="text-stevens-sm text-stevens-gray-600 capitalize">
+                  <p className="text-stevens-sm text-stevens-dark-gray capitalize">
                     {key}
                   </p>
                 </div>
@@ -140,7 +140,7 @@ const ProgramDetailModal = ({ program, isOpen, onClose }) => {
           </div>
 
           {/* Links */}
-          <div className="grid stevens-md:grid-cols-2 gap-stevens-md pt-stevens-lg border-t border-stevens-gray-200">
+          <div className="grid stevens-md:grid-cols-2 gap-stevens-md pt-stevens-lg border-t border-stevens-light-gray">
             <Link 
               to={program.programPage}
               className="btn-stevens-outline flex items-center justify-center gap-stevens-sm group"

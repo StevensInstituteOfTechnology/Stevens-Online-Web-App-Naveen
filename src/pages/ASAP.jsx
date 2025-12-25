@@ -169,33 +169,33 @@ export default function ASAPPage() {
 
   return (
     <PageContextProvider pageType="application" pageName="ASAP">
-    <div className="bg-stevens-gray-50 font-stevens-body">
+    <div className="bg-stevens-light-gray font-stevens-body">
       <PageHero
         title="Advance Your Career with an Accelerated Master's Application (ASAP) Program"
         subtitle="Your Fast Track to a Master's Degree at Stevens" 
         bgImage="/assets/images/shared/asap-hero.webp"
         />
 
-      <div className="py-stevens-section bg-stevens-gray-50">
+      <div className="py-stevens-section bg-stevens-light-gray">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="grid lg:grid-cols-2 gap-stevens-2xl items-start">
             
             {/* Left Column - Info */}
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
                 Begin Your Graduate Journey
               </h2>
-              <p className="text-stevens-lg text-stevens-gray-900 mb-stevens-lg leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-lg leading-relaxed">
                 With our new ASAP (Accelerated Stevens Admission Process), you can begin your graduate studies by enrolling in two foundational courses. If you earn a B or better in both and submit proof of a qualifying bachelor's degree, you'll earn full admission into the degree program with credit already in hand.
               </p>
               
-              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose ASAP?</h3>
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-md">Why Choose ASAP?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                   <li key={index} className="flex items-start gap-stevens-md">
-                      <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-stevens-gray-900">{benefit}</span>
+                      <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
+                      <span className="text-stevens-dark-gray">{benefit}</span>
                     </li>
                   )}
                 </ul>
@@ -309,16 +309,16 @@ export default function ASAPPage() {
                         }
                       }
                     `}</style>
-                    <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
+                    <div className="bg-stevens-light-gray text-stevens-dark-gray ">
                       <div
                         id="form_9268876a-a7c7-484d-a41e-7d0cb4c5613c"
                         className="min-h-[600px] w-full">
 
-                        <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-gray-300 rounded-stevens-md bg-stevens-white">
+                        <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                           <div className="text-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-primary mx-auto mb-stevens-md"></div>
-                            <p className="text-stevens-gray-600 font-stevens-medium">Loading Application Form...</p>
-                            <p className="text-stevens-xs text-stevens-gray-500 mt-stevens-sm">This may take a moment</p>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                            <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
+                            <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                           </div>
                         </div>
                       </div>

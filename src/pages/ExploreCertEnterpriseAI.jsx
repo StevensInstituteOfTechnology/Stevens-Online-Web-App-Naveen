@@ -68,9 +68,9 @@ const ExploreCertEnterpriseAI = () => {
     whyChooseStevensSubtitle: "PRACTICAL AI SKILLS FOR BUSINESS PROFESSIONALS",
     whyChooseStevensContent: `
       <p class="font-stevens-body">Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain major challenges. This certificate's progression from strategy to proof-of-concept to operational workflow mirrors what AI adoption leaders say is required to capture real value.</p>
-
+      
       <p class="font-stevens-body">Unlike theoretical courses or short bootcamps, this graduate-level certificate provides rigorous training in both the technical and strategic aspects of AI implementation. You'll learn from PhD faculty who are active in AI research and industry consulting, ensuring you gain cutting-edge knowledge that translates directly to workplace applications.</p>
-
+      
       <p class="font-stevens-body">The certificate is designed for non-STEM and STEM professionals alike-no CS background required. Whether you're in product management, operations, marketing, HR, finance, or consulting, you'll learn to be an AI doer who can frame problems, build prototypes, and deploy solutions responsibly.</p>
     `,
     

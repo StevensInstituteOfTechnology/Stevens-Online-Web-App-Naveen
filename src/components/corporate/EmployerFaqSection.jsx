@@ -19,7 +19,7 @@ const faqItems = [
             href="https://www.irs.gov/publications/p15b"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal"
+            className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal"
           >
             IRS Publication of Fringe Benefits
           </a>
@@ -48,7 +48,7 @@ const faqItems = [
               href="https://corporate.walmart.com/about/working-at-walmart/live-better-u"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal"
+              className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal"
             >
               Walmart
             </a>
@@ -57,7 +57,7 @@ const faqItems = [
               href="https://www.archwaystoopportunity.com/tuition_assistance.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal"
+              className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal"
             >
               McDonald&apos;s
             </a>
@@ -66,7 +66,7 @@ const faqItems = [
               href="https://livemagenta.com/l3/Tuition-Assistance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal"
+              className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal"
             >
               T-Mobile
             </a>{' '}
@@ -75,7 +75,7 @@ const faqItems = [
               href="https://hiring.amazon.com/why-amazon/career-advancement/higher-education-support"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal"
+              className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal"
             >
               Amazon
             </a>{' '}
@@ -98,7 +98,7 @@ const EmployerFaqSection = ({
 }) => (
   <section className="bg-stevens-white py-stevens-section-sm lg:py-stevens-section">
     <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-      <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-gray-900 mb-stevens-lg text-center">
+      <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg text-center">
         {heading}
       </h2>
       <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">

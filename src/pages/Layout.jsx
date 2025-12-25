@@ -190,14 +190,14 @@ export default function Layout({ children, currentPageName }) {
     const priorityDate = formatPriorityDate(KEY_DATES.PRIORITY_SUBMIT.date);
     return (
     <>
-        <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>{priorityDate} Priority Deadline</strong> | <strong className="text-stevens-primary">Apply in Minutes →</strong>
+        <strong>Your Future Awaits</strong> | <strong>Secure Your Scholarship</strong> | Apply by <strong>{priorityDate} Priority Deadline</strong> | <strong className="text-stevens-red">Apply in Minutes →</strong>
     </>
   );
   };
   
   // Mobile banner message - simplified version
   const MobileBannerMessage = () => (
-    <strong className="text-stevens-primary">Apply in Minutes →</strong>
+    <strong className="text-stevens-red">Apply in Minutes →</strong>
   );
 
   React.useEffect(() => {
@@ -518,7 +518,7 @@ export default function Layout({ children, currentPageName }) {
         ></div>
         {/* Top Grey Navigation Bar */}
         <div
-          className={`bg-stevens-gray-800 text-stevens-white transition-all duration-stevens-normal z-[9996] ${
+          className={`bg-stevens-dark-gray text-stevens-white transition-all duration-stevens-normal z-[9996] ${
             showTopNav || isHoveringRedNav
               ? "translate-y-0"
               : "-translate-y-full"
@@ -651,7 +651,7 @@ export default function Layout({ children, currentPageName }) {
                     Info For <ChevronDown className="w-3 h-3 ml-1" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="bg-stevens-white border border-stevens-gray-200 shadow-stevens-lg z-[10001]"
+                    className="bg-stevens-white border border-stevens-light-gray shadow-stevens-lg z-[10001]"
                     sideOffset={10}
                     align="start"
                     onMouseEnter={() => {
@@ -669,7 +669,7 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/hr"
-                        className="text-stevens-gray-900  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
+                        className="text-stevens-dark-gray  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Faculty and Staff
                       </a>
@@ -677,7 +677,7 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/information-for-parents-and-families"
-                        className="text-stevens-gray-900 hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
+                        className="text-stevens-dark-gray hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Parents and Families
                       </a>
@@ -686,7 +686,7 @@ export default function Layout({ children, currentPageName }) {
                     <DropdownMenuItem>
                       <a
                         href="https://www.stevens.edu/media-relations"
-                        className="text-stevens-gray-900  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
+                        className="text-stevens-dark-gray  hover:underline hover:font-bold transition-colors duration-stevens-fast w-full block py-2 px-3"
                       >
                         Media
                       </a>
@@ -797,7 +797,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${graduateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-light-gray bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -822,14 +822,14 @@ export default function Layout({ children, currentPageName }) {
                     <div className="grid grid-cols-2 gap-stevens-xl">
                       {/* Section 1: Degrees */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Degrees</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Degrees</span>
                         </div>
                         {graduateProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               /*inline styles to prevent css injection overwriting from asap page */
                               style={{
                                 color: "#1f2937",
@@ -856,13 +856,13 @@ export default function Layout({ children, currentPageName }) {
                       
                       {/* Section 2: Compare Programs */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Compare</span>
                         </div>
                         <DropdownMenuItem asChild>
                           <Link
                             to="/compare-our-programs/"
-                            className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
+                            className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
                             style={{
                               color: "#1f2937",
                               backgroundColor: "transparent",
@@ -919,7 +919,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${certificateDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-light-gray bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -944,14 +944,14 @@ export default function Layout({ children, currentPageName }) {
                     <div className="grid grid-cols-2 gap-stevens-xl">
                       {/* Section 1: Certificate Programs */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Certificate Programs</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Certificate Programs</span>
                         </div>
                         {certificateProgramItems.map((item) => (
                         <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               style={{
                                 color: "#1f2937",
                                 backgroundColor: "transparent",
@@ -977,13 +977,13 @@ export default function Layout({ children, currentPageName }) {
                       
                       {/* Section 2: Compare Programs */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Compare</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Compare</span>
                         </div>
                         <DropdownMenuItem asChild>
                           <Link
                             to="/compare-our-programs/"
-                            className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
+                            className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast flex items-center text-stevens-base"
                             style={{
                               color: "#1f2937",
                               backgroundColor: "transparent",
@@ -1039,7 +1039,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${tuitionDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-[520px] p-stevens-md shadow-stevens-lg border border-stevens-light-gray bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -1064,14 +1064,14 @@ export default function Layout({ children, currentPageName }) {
                     <div className="grid grid-cols-2 gap-stevens-xl">
                       {/* Section 1: Admissions & Aid */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Admissions & Aid</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Admissions & Aid</span>
                         </div>
                         {admissionsAidItems.map((item) => (
                           <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               style={{
                                 color: "#1f2937",
                                 backgroundColor: "transparent",
@@ -1097,14 +1097,14 @@ export default function Layout({ children, currentPageName }) {
                       
                       {/* Section 2: Corporate & Alumni */}
                       <div className="flex flex-col space-y-2">
-                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-gray-300">
-                          <span className="text-stevens-sm font-stevens-bold text-stevens-gray-700 uppercase tracking-wide">Corporate & Alumni</span>
+                        <div className="px-stevens-sm pb-stevens-sm mb-stevens-sm border-b-2 border-stevens-light-gray">
+                          <span className="text-stevens-sm font-stevens-bold text-stevens-dark-gray uppercase tracking-wide">Corporate & Alumni</span>
                         </div>
                         {corporateAlumniItems.map((item) => (
                           <DropdownMenuItem key={item.name} asChild>
                             <Link
                               to={createPageUrl(item.page)}
-                              className="font-stevens-nav font-semibold text-stevens-gray-900 px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                              className="font-stevens-nav font-semibold text-stevens-dark-gray px-stevens-md py-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                               style={{
                                 color: "#1f2937",
                                 backgroundColor: "transparent",
@@ -1160,7 +1160,7 @@ export default function Layout({ children, currentPageName }) {
                     <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-stevens-normal ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-40 p-stevens-md shadow-stevens-lg border border-stevens-gray-100 bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
+                    className="w-40 p-stevens-md shadow-stevens-lg border border-stevens-light-gray bg-stevens-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-stevens-normal z-[10001]"
                     sideOffset={4}
                     align="start"
                     onMouseEnter={() => {
@@ -1187,7 +1187,7 @@ export default function Layout({ children, currentPageName }) {
                         <DropdownMenuItem key={item.name} asChild>
                           <Link
                             to={createPageUrl(item.page)}
-                            className=" font-stevens-nav font-semibold text-stevens-gray-900 p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
+                            className=" font-stevens-nav font-semibold text-stevens-dark-gray p-stevens-sm rounded-stevens-md transition-colors duration-stevens-fast text-stevens-base"
                             style={{ color: "#1f2937", backgroundColor: "transparent" }}
                             onMouseEnter={(e) => {
                               e.target.style.color = "#ffffff";
@@ -1273,23 +1273,23 @@ export default function Layout({ children, currentPageName }) {
                   </SheetTrigger>
               <SheetContent 
                 side="right" 
-                className="mobile-menu-offset w-full stevens-sm:w-80 bg-stevens-white p-0 border-l border-stevens-gray-200 overflow-y-auto"
+                className="mobile-menu-offset w-full stevens-sm:w-80 bg-stevens-white p-0 border-l border-stevens-light-gray overflow-y-auto"
               >
                     <div className="flex flex-col h-full">
                   {/* Mobile Menu Header */}
-                  <div className="flex h-16 items-center justify-between p-stevens-md border-b border-stevens-gray-200 bg-stevens-primary">
+                  <div className="flex h-16 items-center justify-between p-stevens-md border-b border-stevens-light-gray bg-stevens-red">
                     
                       </div>
 
                   {/* Mobile Menu CTA Buttons - Top */}
-                  <div className="p-stevens-md border-b border-stevens-gray-200 bg-stevens-gray-50 space-y-stevens-sm">
+                  <div className="p-stevens-md border-b border-stevens-light-gray bg-stevens-light-gray space-y-stevens-sm">
                     <a
                       href="https://www.stevens.edu/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      <Button className="w-full btn-stevens-secondary hover:text-stevens-primary bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
+                      <Button className="w-full btn-stevens-outline hover:text-stevens-red bg-stevens-white text-stevens-red hover:bg-stevens-light-gray font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
                         Stevens.edu
                       </Button>
                     </a>
@@ -1300,7 +1300,7 @@ export default function Layout({ children, currentPageName }) {
                       className="block"
                       onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
                     >
-                      <Button className="w-full btn-stevens-secondary hover:text-stevens-primary bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider border-0">
+                      <Button className="w-full btn-stevens-outline hover:text-stevens-red bg-stevens-white text-stevens-red hover:bg-stevens-light-gray font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider border-0">
                         Schedule a Call
                       </Button>
                       
@@ -1313,9 +1313,9 @@ export default function Layout({ children, currentPageName }) {
                           {mobileNavLinks.map((link) => {
                             if (link.isDropdown) {
                               return (
-                            <div key={link.name} className="border-b border-stevens-gray-200">
+                            <div key={link.name} className="border-b border-stevens-light-gray">
                               <button
-                                className="w-full px-stevens-md py-stevens-md text-left font-stevens-semibold text-stevens-gray-900 hover:bg-stevens-gray-50 transition-colors duration-stevens-normal flex items-center justify-between"
+                                className="w-full px-stevens-md py-stevens-md text-left font-stevens-semibold text-stevens-dark-gray hover:bg-stevens-light-gray transition-colors duration-stevens-normal flex items-center justify-between"
                                 onClick={(e) => {
                                   const content = e.currentTarget.nextElementSibling;
                                   const icon = e.currentTarget.querySelector('svg');
@@ -1331,15 +1331,15 @@ export default function Layout({ children, currentPageName }) {
                                 {link.name}
                                 <ChevronDown className="w-4 h-4 transition-transform duration-stevens-normal" />
                               </button>
-                              <div className="hidden bg-stevens-gray-50">
+                              <div className="hidden bg-stevens-light-gray">
                                 {link.items.map((item, index) => (
                                   <React.Fragment key={item.name}>
                                     {item.name === "Compare All Programs" && (
-                                      <div className="border-t border-stevens-gray-300 "></div>
+                                      <div className="border-t border-stevens-light-gray "></div>
                                     )}
                                     <Link
                                       to={createPageUrl(item.page)}
-                                    className="block px-stevens-lg py-stevens-sm text-stevens-gray-700 hover:text-stevens-primary hover:bg-stevens-white transition-colors duration-stevens-normal"
+                                    className="block px-stevens-lg py-stevens-sm text-stevens-dark-gray hover:text-stevens-red hover:bg-stevens-white transition-colors duration-stevens-normal"
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                         {item.name}
@@ -1356,7 +1356,7 @@ export default function Layout({ children, currentPageName }) {
                                 href={link.page}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block px-stevens-md py-stevens-md font-stevens-semibold text-stevens-gray-900 hover:bg-stevens-gray-50 border-b border-stevens-gray-200 transition-colors duration-stevens-normal"
+                                className="block px-stevens-md py-stevens-md font-stevens-semibold text-stevens-dark-gray hover:bg-stevens-light-gray border-b border-stevens-light-gray transition-colors duration-stevens-normal"
                                 onClick={() => setMobileMenuOpen(false)}
                               >
                                 {link.name}
@@ -1365,7 +1365,7 @@ export default function Layout({ children, currentPageName }) {
                               <Link
                                 key={link.name}
                                 to={createPageUrl(link.page)}
-                                className="block px-stevens-md py-stevens-md font-stevens-semibold text-stevens-gray-900 hover:bg-stevens-gray-50 border-b border-stevens-gray-200 transition-colors duration-stevens-normal"
+                                className="block px-stevens-md py-stevens-md font-stevens-semibold text-stevens-dark-gray hover:bg-stevens-light-gray border-b border-stevens-light-gray transition-colors duration-stevens-normal"
                                 onClick={() => setMobileMenuOpen(false)}
                               >
                                 {link.name}
@@ -1401,7 +1401,7 @@ export default function Layout({ children, currentPageName }) {
                   }}
                 >
                  
-                  <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary hover: font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
+                  <Button className="btn-stevens-outline bg-stevens-white text-stevens-red hover:bg-stevens-light-gray font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
                     STEVENS.EDU
                   </Button>
                 </a>
@@ -1426,7 +1426,7 @@ export default function Layout({ children, currentPageName }) {
                   }}
                 >
                  
-                  <Button className="btn-stevens-secondary bg-stevens-white text-stevens-primary hover: font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
+                  <Button className="btn-stevens-outline bg-stevens-white text-stevens-red hover:bg-stevens-light-gray font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-sm uppercase tracking-wider">
                     Schedule a Call
                   </Button>
                 </a>
@@ -1444,7 +1444,7 @@ export default function Layout({ children, currentPageName }) {
           data-gtm-element="promo-banner"
           data-gtm-category="promotion"
           data-gtm-action="banner-view"
-          className={`bg-stevens-gray-400 text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
+          className={`bg-stevens-gray text-stevens-dark-gray py-4 relative z-[9997] overflow-hidden ${
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
         >
@@ -1454,7 +1454,7 @@ export default function Layout({ children, currentPageName }) {
             data-gtm-action="banner-click"
           >
             <div className="flex items-center max-w-[200px]  md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-2xl mx-auto">
-              <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-gray-900 ml-stevens-md mr-stevens-sm" />
+              <BookOpen className="w-5 h-5 flex-shrink-0 text-stevens-dark-gray ml-stevens-md mr-stevens-sm" />
               <div className="flex-1 overflow-hidden">
                 {/* Mobile version - only show "Apply in Minutes →" */}
                 <div className="md:hidden flex items-center justify-center">
@@ -1464,16 +1464,16 @@ export default function Layout({ children, currentPageName }) {
               </div>
                 {/* Desktop version - full marquee */}
                 <div className="hidden md:inline-flex animate-marquee gap-16">
-                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-dark-gray whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-dark-gray whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-dark-gray whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
-                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-gray-900 whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
+                  <span className="asap-banner-text text-stevens-base lg:text-stevens-lg text-stevens-dark-gray whitespace-nowrap underline hover:no-underline transition-all duration-stevens-normal">
                     <BannerMessage />
                   </span>
             </div>
@@ -1486,7 +1486,7 @@ export default function Layout({ children, currentPageName }) {
               e.stopPropagation();
               setShowASAPBanner(false);
             }}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-gray-900 hover:text-stevens-gray-700 transition-colors duration-stevens-fast cursor-pointer z-[9999]"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-stevens-dark-gray hover:text-stevens-dark-gray transition-colors duration-stevens-fast cursor-pointer z-[9999]"
             aria-label="Close banner"
             data-gtm-action="banner-dismiss"
           >
@@ -1645,7 +1645,7 @@ export default function Layout({ children, currentPageName }) {
 
       {showBackToTop && (
       <button
-          className="fixed bottom-6 right-6 bg-stevens-maroon hover:bg-stevens-maroon-dark text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
+          className="fixed bottom-6 right-6 bg-stevens-red hover:bg-stevens-dark-gray text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
           onClick={() => {
             if (typeof window !== 'undefined') {
               window.scrollTo({ top: 0, behavior: "smooth" });

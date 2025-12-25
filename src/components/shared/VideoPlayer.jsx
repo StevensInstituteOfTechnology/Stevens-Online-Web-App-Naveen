@@ -188,7 +188,7 @@ const VideoPlayer = ({
   return (
     <div 
       ref={containerRef}
-      className={`video-container relative aspect-video bg-stevens-gray-900 group rounded-stevens-md overflow-hidden ${className}`}
+      className={`video-container relative aspect-video bg-stevens-black group rounded-stevens-md overflow-hidden ${className}`}
       onMouseEnter={() => setShowControlsOverlay(true)}
       onMouseLeave={() => setShowControlsOverlay(false)}
       tabIndex={0}
@@ -214,7 +214,7 @@ const VideoPlayer = ({
         {!isPlaying && (
           <button
             onClick={togglePlayPause}
-            className="w-20 h-20 bg-stevens-primary/90 hover:bg-stevens-primary rounded-full flex items-center justify-center transition-all duration-stevens-normal hover:scale-110 shadow-stevens-lg"
+            className="w-20 h-20 bg-stevens-dark-gray hover:bg-stevens-red rounded-full flex items-center justify-center transition-all duration-stevens-normal hover:scale-110 shadow-stevens-lg"
           >
             <PlayCircle className="w-10 h-10 text-stevens-white" />
           </button>
@@ -227,11 +227,11 @@ const VideoPlayer = ({
           {/* Progress Bar */}
           <div className="mb-stevens-sm">
             <div 
-              className="w-full h-1 bg-stevens-gray-600 rounded-full cursor-pointer hover:h-2 transition-all duration-stevens-normal"
+              className="w-full h-1 bg-stevens-dark-gray rounded-full cursor-pointer hover:h-2 transition-all duration-stevens-normal"
               onClick={handleSeek}
             >
               <div 
-                className="h-full bg-stevens-primary rounded-full transition-all duration-stevens-normal"
+                className="h-full bg-stevens-red rounded-full transition-all duration-stevens-normal"
                 style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
               ></div>
             </div>
@@ -243,7 +243,7 @@ const VideoPlayer = ({
               {/* Play/Pause */}
               <button
                 onClick={togglePlayPause}
-                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-primary transition-colors duration-stevens-normal"
+                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
                 aria-label={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? (
@@ -256,7 +256,7 @@ const VideoPlayer = ({
               {/* Skip Back */}
               <button
                 onClick={() => skipTime(-10)}
-                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-primary transition-colors duration-stevens-normal"
+                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
                 aria-label="Skip back 10 seconds"
               >
                 <SkipBack className="w-4 h-4" />
@@ -265,7 +265,7 @@ const VideoPlayer = ({
               {/* Skip Forward */}
               <button
                 onClick={() => skipTime(10)}
-                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-primary transition-colors duration-stevens-normal"
+                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
                 aria-label="Skip forward 10 seconds"
               >
                 <SkipForward className="w-4 h-4" />
@@ -282,7 +282,7 @@ const VideoPlayer = ({
               <div className="flex items-center gap-stevens-xs">
                 <button
                   onClick={toggleMute}
-                  className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-primary transition-colors duration-stevens-normal"
+                  className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
                   aria-label={isMuted ? 'Unmute' : 'Mute'}
                 >
                   {isMuted ? (
@@ -298,7 +298,7 @@ const VideoPlayer = ({
                   step="0.1"
                   value={isMuted ? 0 : volume}
                   onChange={handleVolumeChange}
-                  className="w-16 h-1 bg-stevens-gray-600 rounded-full appearance-none cursor-pointer slider"
+                  className="w-16 h-1 bg-stevens-dark-gray rounded-full appearance-none cursor-pointer slider"
                   aria-label="Volume control"
                 />
               </div>
@@ -306,7 +306,7 @@ const VideoPlayer = ({
               {/* Fullscreen */}
               <button
                 onClick={toggleFullscreen}
-                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-primary transition-colors duration-stevens-normal"
+                className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
                 aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
               >
                 <Maximize className="w-4 h-4" />

@@ -48,7 +48,7 @@ const TestimonialCarousel = ({
     return [...Array(5)].map((_, i) => (
       <Star 
         key={i} 
-        className={`w-4 h-4 ${i < rating ? 'fill-stevens-gold text-stevens-gold' : 'text-stevens-gray-300'}`}
+        className={`w-4 h-4 ${i < rating ? 'fill-stevens-red text-stevens-red' : 'text-stevens-light-gray'}`}
       />
     ));
   };
@@ -61,15 +61,15 @@ const TestimonialCarousel = ({
             <div className="flex justify-center mb-stevens-md">
               {renderStars(currentTestimonial.rating)}
             </div>
-            <blockquote className="text-stevens-lg text-stevens-gray-700 italic mb-stevens-lg">
+            <blockquote className="text-stevens-lg text-stevens-dark-gray italic mb-stevens-lg">
               "{currentTestimonial.quote}"
             </blockquote>
             <div>
-              <p className="font-stevens-medium text-stevens-gray-900">
+              <p className="font-stevens-medium text-stevens-dark-gray">
                 {currentTestimonial.author}
               </p>
               {currentTestimonial.title && (
-                <p className="text-stevens-sm text-stevens-gray-600">
+                <p className="text-stevens-sm text-stevens-dark-gray">
                   {currentTestimonial.title}
                   {currentTestimonial.company && `, ${currentTestimonial.company}`}
                 </p>
@@ -83,41 +83,41 @@ const TestimonialCarousel = ({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-stevens-xl items-center max-w-6xl mx-auto">
             <div className="lg:col-span-2 space-y-stevens-lg">
               <div className="flex items-start">
-                <Quote className="w-12 h-12 text-stevens-primary/20 -mt-2 mr-stevens-md flex-shrink-0" />
+                <Quote className="w-12 h-12 text-stevens-light-gray -mt-2 mr-stevens-md flex-shrink-0" />
                 <div>
                   <div className="flex items-center mb-stevens-md">
                     {renderStars(currentTestimonial.rating)}
                   </div>
-                  <blockquote className="text-stevens-xl text-stevens-gray-700 italic">
+                  <blockquote className="text-stevens-xl text-stevens-dark-gray italic">
                     {currentTestimonial.quote}
                   </blockquote>
                 </div>
               </div>
               
               <div className="pl-16">
-                <p className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900">
+                <p className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray">
                   {currentTestimonial.author}
                 </p>
                 {currentTestimonial.title && (
-                  <p className="text-stevens-gray-600">
+                  <p className="text-stevens-dark-gray">
                     {currentTestimonial.title}
                   </p>
                 )}
                 {currentTestimonial.company && (
-                  <p className="text-stevens-gray-600">
+                  <p className="text-stevens-dark-gray">
                     {currentTestimonial.company}
                   </p>
                 )}
                 {currentTestimonial.program && (
-                  <p className="text-stevens-primary font-stevens-medium mt-stevens-sm">
+                  <p className="text-stevens-red font-stevens-medium mt-stevens-sm">
                     {currentTestimonial.program}
                   </p>
                 )}
               </div>
 
               {currentTestimonial.outcome && (
-                <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md ml-16">
-                  <p className="text-stevens-primary font-stevens-bold">
+                <div className="bg-stevens-light-gray rounded-stevens-md p-stevens-md ml-16">
+                  <p className="text-stevens-red font-stevens-bold">
                     Outcome: {currentTestimonial.outcome}
                   </p>
                 </div>
@@ -158,23 +158,23 @@ const TestimonialCarousel = ({
                   <div className="flex items-start mb-stevens-md">
                     {renderStars(currentTestimonial.rating)}
                   </div>
-                  <blockquote className="text-stevens-lg text-stevens-gray-700 italic">
+                  <blockquote className="text-stevens-lg text-stevens-dark-gray italic">
                     "{currentTestimonial.quote}"
                   </blockquote>
                   
-                  <div className="pt-stevens-md border-t border-stevens-gray-200">
+                  <div className="pt-stevens-md border-t border-stevens-light-gray">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-stevens-medium text-stevens-gray-900">
+                        <p className="font-stevens-medium text-stevens-dark-gray">
                           {currentTestimonial.author}
                         </p>
                         {currentTestimonial.title && (
-                          <p className="text-stevens-sm text-stevens-gray-600">
+                          <p className="text-stevens-sm text-stevens-dark-gray">
                             {currentTestimonial.title}
                           </p>
                         )}
                         {currentTestimonial.company && (
-                          <p className="text-stevens-sm text-stevens-gray-600">
+                          <p className="text-stevens-sm text-stevens-dark-gray">
                             {currentTestimonial.company}
                           </p>
                         )}
@@ -220,12 +220,12 @@ const TestimonialCarousel = ({
           className="text-center mb-stevens-2xl"
         >
           {title && (
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
               {title}
             </h2>
           )}
           {subtitle && (
-            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+            <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}
@@ -279,8 +279,8 @@ const TestimonialCarousel = ({
                   onClick={() => goToTestimonial(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-stevens-normal ${
                     index === activeIndex 
-                      ? 'bg-stevens-primary w-8' 
-                      : 'bg-stevens-gray-300 hover:bg-stevens-gray-400'
+                      ? 'bg-stevens-red w-8' 
+                      : 'bg-stevens-light-gray hover:bg-stevens-gray'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

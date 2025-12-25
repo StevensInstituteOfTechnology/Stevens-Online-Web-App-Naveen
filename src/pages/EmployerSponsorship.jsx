@@ -178,14 +178,14 @@ const EmployerSponsorship = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-stevens-display text-stevens-primary sm:text-stevens-3xl md:text-stevens-3xl lg:text-stevens-4xl  font-stevens-bold uppercase tracking-wide mb-stevens-xl">
+            <h1 className="font-stevens-display text-stevens-red sm:text-stevens-3xl md:text-stevens-3xl lg:text-stevens-4xl  font-stevens-bold uppercase tracking-wide mb-stevens-xl">
               Everyone Wins With Employer Tuition Sponsorship
             </h1>
             <div className="max-w-7xl space-y-stevens-lg">
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 Both students and employers benefit from employer sponsorship programs that help enrollees pay for degrees. Students earn a degree with less debt, while their employers get to retain newly upskilled workers and market this benefit to attract more talent.
               </p>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                 Learn how employer sponsorship works, and how you or your organization can take advantage of it.
               </p>
             </div>
@@ -210,8 +210,8 @@ const EmployerSponsorship = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${
                     activeSection === item.id 
-                      ? 'border-stevens-primary text-stevens-primary' 
-                      : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'
+                      ? 'border-stevens-red text-stevens-red' 
+                      : 'border-transparent text-stevens-dark-gray hover:text-stevens-red'
                   }`}
                 >
                   {item.label}
@@ -246,23 +246,23 @@ const EmployerSponsorship = () => {
                   {/* Left column - Text content */}
                   <div className="space-y-stevens-lg">
                     <div>
-                      <h2 className="font-stevens-display text-stevens-4xl text-stevens-primary font-stevens-bold mb-stevens-md">
+                      <h2 className="font-stevens-display text-stevens-4xl text-stevens-red font-stevens-bold mb-stevens-md">
                         Employer Sponsorship for Students
                       </h2>
-                      <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+                      <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
                         Employer tuition assistance is not always as straightforward as grants or scholarships. Here we cover what employee sponsorship is, how to apply and why it might benefit your career to save money on Stevens Institute of Technology tuition.
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+                      <h3 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
                         What Is Employer Sponsorship?
                       </h3>
                       <div className="space-y-stevens-lg">
-                        <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                        <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                           At root, employer sponsorship is an exchange agreement. You agree to let your employing organization pay for a portion of your tuition costs in exchange for a promise to continue working for them for a set period after graduation.
                         </p>
-                        <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                        <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                           For example, your organization might offer the yearly tax-deductible limit of $5,250 per academic year if you agree to give them an additional two years of work with your new degree in hand.
                         </p>
                       </div>
@@ -284,10 +284,10 @@ const EmployerSponsorship = () => {
 
             {/* How Do You Apply */}
             <section className="bg-stevens-white rounded-stevens-lg shadow-stevens-md p-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl text-stevens-primary mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl text-stevens-red mb-stevens-lg">
                 How Do You Apply?
               </h2>
-              <div className="prose prose-lg max-w-none text-stevens-gray-700 mb-stevens-xl">
+              <div className="prose prose-lg max-w-none text-stevens-dark-gray mb-stevens-xl">
                 <p className="text-stevens-lg leading-relaxed">
                   You should first determine that your employer offers a tuition assistance program. Large organizations are more likely to offer this benefit than small employers, so ask an HR representative at your organization to be sure.
                 </p>
@@ -304,20 +304,20 @@ const EmployerSponsorship = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-stevens-gray-50 rounded-stevens-lg p-stevens-lg"
+                    className="bg-stevens-light-gray rounded-stevens-lg p-stevens-lg"
                   >
                     <div className="flex items-center mb-stevens-md">
-                      <div className="w-10 h-10 bg-stevens-primary rounded-full flex items-center justify-center text-stevens-white font-stevens-bold mr-stevens-md">
+                      <div className="w-10 h-10 bg-stevens-red rounded-full flex items-center justify-center text-stevens-white font-stevens-bold mr-stevens-md">
                         {index + 1}
                       </div>
-                      <h3 className="font-stevens-display text-stevens-lg text-stevens-gray-900 font-stevens-bold">
+                      <h3 className="font-stevens-display text-stevens-lg text-stevens-dark-gray font-stevens-bold">
                         {step.step}
                       </h3>
                     </div>
-                    <h4 className="font-stevens-display text-stevens-base text-stevens-gray-900 font-stevens-semibold mb-stevens-sm">
+                    <h4 className="font-stevens-display text-stevens-base text-stevens-dark-gray font-stevens-semibold mb-stevens-sm">
                       {step.title}
                     </h4>
-                    <p className="text-stevens-sm text-stevens-gray-700 leading-relaxed">
+                    <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -327,7 +327,7 @@ const EmployerSponsorship = () => {
 
             {/* Career Benefits */}
             <section className="bg-stevens-white rounded-stevens-lg shadow-stevens-md p-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl text-stevens-primary mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl text-stevens-red mb-stevens-lg">
                 What Are the Career Benefits?
               </h2>
               
@@ -335,10 +335,10 @@ const EmployerSponsorship = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-stevens-2xl items-start">
                 {/* Left column - Text content */}
                 <div className="space-y-stevens-lg">
-                  <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
-                    Each level of education you earn raises your lifetime earnings potential. According to the U.S. <a href="https://www.bls.gov/emp/chart-unemployment-earnings-education.htm" target="_blank" rel="noopener noreferrer" className="text-stevens-primary underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Bureau of Labor Statistics (BLS)</a>, professionals with master's degrees earn median annual salaries $12,600 higher than those who hold only bachelor's degrees. More education also leads to a lower likelihood of unemployment.
+                  <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
+                    Each level of education you earn raises your lifetime earnings potential. According to the U.S. <a href="https://www.bls.gov/emp/chart-unemployment-earnings-education.htm" target="_blank" rel="noopener noreferrer" className="text-stevens-red underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal">Bureau of Labor Statistics (BLS)</a>, professionals with master's degrees earn median annual salaries $12,600 higher than those who hold only bachelor's degrees. More education also leads to a lower likelihood of unemployment.
                   </p>
-                  <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                  <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                     Employer sponsorship can help you access these benefits at less cost, leaving you with less debt over time. The Stevens Institution of Technology offers a range of degrees that employers might be happy to help with, including online master's degrees in business administration, computer science and engineering management.
                   </p>
                 </div>
@@ -353,8 +353,8 @@ const EmployerSponsorship = () => {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="flex items-start gap-stevens-md"
                     >
-                      <CheckCircle className="w-6 h-6 text-stevens-primary flex-shrink-0 mt-1" />
-                      <p className="text-stevens-lg font-bold text-stevens-gray-900 leading-relaxed font-stevens-medium">
+                      <CheckCircle className="w-6 h-6 text-stevens-red flex-shrink-0 mt-1" />
+                      <p className="text-stevens-lg font-bold text-stevens-dark-gray leading-relaxed font-stevens-medium">
                         {benefit}
                       </p>
                     </motion.div>
@@ -382,23 +382,23 @@ const EmployerSponsorship = () => {
                 {/* Left column - Text content */}
                 <div className="space-y-stevens-lg">
                   <div>
-                    <h2 className="font-stevens-display text-stevens-4xl text-stevens-primary font-stevens-bold mb-stevens-lg">
+                    <h2 className="font-stevens-display text-stevens-4xl text-stevens-red font-stevens-bold mb-stevens-lg">
                       Tuition Reimbursement Benefits for Employers
                     </h2>
-                    <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                    <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                       Fostering a culture of lifelong learning is essential to navigating changes and embracing innovation, and education reimbursement can play a vital role in that.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+                    <h3 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
                       Why Stevens?
                     </h3>
                     <div className="space-y-stevens-lg">
-                      <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                      <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                         From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support our students' success beyond graduation.
                       </p>
-                      <p className="text-stevens-lg leading-relaxed text-stevens-gray-700">
+                      <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
                         Our faculty members produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.
                       </p>
                     </div>
@@ -419,8 +419,8 @@ const EmployerSponsorship = () => {
             </section>
 
             {/* Statistics */}
-            <section className="bg-stevens-gray-50 rounded-stevens-lg p-stevens-xl">
-              <h3 className="font-stevens-display uppercase font-bold text-stevens-4xl text-stevens-primary mb-stevens-xl text-center">
+            <section className="bg-stevens-light-gray rounded-stevens-lg p-stevens-xl">
+              <h3 className="font-stevens-display uppercase font-bold text-stevens-4xl text-stevens-red mb-stevens-xl text-center">
                 At a Glance
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-xl">
@@ -432,10 +432,10 @@ const EmployerSponsorship = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-stevens-4xl font-bold text-stevens-primary mb-stevens-md">
+                    <div className="text-stevens-4xl font-bold text-stevens-red mb-stevens-md">
                       {stat.number}
                     </div>
-                    <p className="text-stevens-sm text-stevens-gray-700 leading-relaxed">
+                    <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
                       {stat.description}
                     </p>
                   </motion.div>
@@ -449,12 +449,12 @@ const EmployerSponsorship = () => {
       </div>
 
       {/* Footer Note */}
-      <div className="bg-stevens-gray-50 py-stevens-xl">
+      <div className="bg-stevens-light-gray py-stevens-xl">
         <div className="max-w-7xl mx-auto px-stevens-md text-left">
-          <p className="text-stevens-sm text-stevens-gray-600">
-            <sup>1</sup><a href="https://www.edassist.com/insights/employee-benefits-study-2018" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">EdAssist study, 2018.</a><br />
+          <p className="text-stevens-sm text-stevens-dark-gray">
+            <sup>1</sup><a href="https://www.edassist.com/insights/employee-benefits-study-2018" target="_blank" rel="noopener noreferrer" className="text-stevens-dark-gray underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal">EdAssist study, 2018.</a><br />
             <sup>2</sup><a href="https://www.luminafoundation.org/news-and-views/2016-04-22-cigna-education-reimbursement-program
-" target="_blank" rel="noopener noreferrer" className="text-stevens-gray-700 underline hover:text-stevens-maroon-dark transition-colors duration-stevens-normal">Lumina Foundation for Education, 2016.</a><br />
+" target="_blank" rel="noopener noreferrer" className="text-stevens-dark-gray underline hover:text-stevens-dark-gray transition-colors duration-stevens-normal">Lumina Foundation for Education, 2016.</a><br />
           </p>
         </div>
       </div>

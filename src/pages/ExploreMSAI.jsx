@@ -74,7 +74,7 @@ const ExploreMSAI = () => {
     whyChooseStevensSubtitle: "JOIN A NETWORK OF VISIONARIES",
     whyChooseStevensContent: `
       <p class="font-stevens-body">Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
-
+      
       <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
@@ -196,7 +196,7 @@ const ExploreMSAI = () => {
     additionalWhyChooseStevensSubtitle: "JOIN A NETWORK OF VISIONARIES",
     additionalWhyChooseStevensContent: `
       <p class="font-stevens-body">Investing in your future with a graduate degree from Stevens is a smart choice. You will gain access to the same quality programs and distinguished faculty as on-campus graduate students while having the flexibility to study from anywhere in the world. From our nationally recognized stature, to studying with experienced faculty, to connecting with over 50,000 global alumni, we offer unique advantages to support your graduate study.</p>
-
+      
       <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     additionalWhyChooseStevensImage: "/assets/images/explore-msai/2-explore-msai.webp", // Placeholder - should be city skyline image

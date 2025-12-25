@@ -21,7 +21,7 @@ const Section = ({ id, title, children, container = true, el = 'section', refPro
   return (
     <Element id={id} ref={refProp} className={`${bgClassName} ${paddingClassName} scroll-mt-20`}>
       <div className={container ? "max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg" : ""}>
-        {title && <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-gray-900 mb-stevens-lg text-center">{title}</h2>}
+        {title && <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg text-center">{title}</h2>}
         {children}
       </div>
     </Element>
@@ -30,28 +30,28 @@ const Section = ({ id, title, children, container = true, el = 'section', refPro
 
 // Ranking Card Component - VERSION 5: Stevens Chevron Arrow Design (Pointing Down) with Hover Effects
 const RankingCard = ({ ranking, description, source, note }) => (
-  <div className="group bg-stevens-white p-stevens-lg rounded-stevens-sm border border-stevens-gray-300 text-center h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+  <div className="group bg-stevens-white p-stevens-lg rounded-stevens-sm border border-stevens-light-gray text-center h-full flex flex-col relative overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
     {/* Stevens Chevron Arrow - pointing down from top, full width, subtle background */}
     {/* Hover Effect: Opacity increases and slight scale animation */}
     <div className="absolute left-0 right-0 top-0 h-32 opacity-[0.12] group-hover:opacity-[0.15] pointer-events-none transition-all duration-300 group-hover:scale-105 origin-top">
       <svg viewBox="0 0 100 84" className="w-full h-full" preserveAspectRatio="none">
         {/* Chevron/Arrow shape pointing down - full width, reduced by 20% */}
-        <path d="M 0,0 L 100,0 L 100,70 L 50,84 L 0,70 Z" fill="currentColor" className="text-stevens-primary" />
+        <path d="M 0,0 L 100,0 L 100,70 L 50,84 L 0,70 Z" fill="currentColor" className="text-stevens-red" />
       </svg>
     </div>
     
     {/* Thin top border accent - grows thicker on hover */}
-    <div className="absolute top-0 left-0 right-0 h-[2px] bg-stevens-primary group-hover:h-[3px] transition-all duration-300"></div>
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-stevens-red group-hover:h-[3px] transition-all duration-300"></div>
     
     <div className="flex-grow relative z-10">
       {/* Large statistic number - scales up 20% on hover */}
-      <p className="font-stevens-display text-[3rem] md:text-[3rem] font-bold text-stevens-primary mb-stevens-xs leading-none transition-transform duration-300 group-hover:scale-[1.2]">{ranking}</p>
+      <p className="font-stevens-display text-[3rem] md:text-[3rem] font-bold text-stevens-red mb-stevens-xs leading-none transition-transform duration-300 group-hover:scale-[1.2]">{ranking}</p>
       {/* Description text */}
-      <p className="text-stevens-lg md:text-stevens-xl font-medium text-stevens-gray-900 mb-stevens-md leading-tight transition-colors duration-300 group-hover:text-stevens-gray-700">{description}</p>
+      <p className="text-stevens-lg md:text-stevens-xl font-medium text-stevens-dark-gray mb-stevens-md leading-tight transition-colors duration-300 group-hover:text-stevens-dark-gray">{description}</p>
     </div>
     {/* Source text */}
     {source && (
-      <p className="text-stevens-sm text-stevens-gray-700 mt-auto pt-stevens-sm relative z-10">
+      <p className="text-stevens-sm text-stevens-dark-gray mt-auto pt-stevens-sm relative z-10">
         {source} {note && <sup>{note}</sup>}
       </p>
     )}
@@ -69,12 +69,12 @@ const FacultyCard = ({ member }) => {
       {hasImage ? (
         <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-stevens-lg" loading="lazy"/>
       ) : (
-        <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-primary flex items-center justify-center shadow-stevens-lg">
+        <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-red flex items-center justify-center shadow-stevens-lg">
           <span className="text-stevens-white font-stevens-bold text-stevens-2xl">{initials}</span>
         </div>
       )}
-      <h4 className="font-stevens-semibold text-stevens-lg text-stevens-gray-900">{name}</h4>
-      <p className="text-stevens-sm text-stevens-primary">{title}</p>
+      <h4 className="font-stevens-semibold text-stevens-lg text-stevens-dark-gray">{name}</h4>
+      <p className="text-stevens-sm text-stevens-red">{title}</p>
     </div>
   );
 };
@@ -88,14 +88,14 @@ const SkillCardsGrid = ({ modules }) => {
       {modules.map((module, index) => {
         const Icon = module.icon;
         return (
-          <Card key={index} className="bg-stevens-white shadow-stevens-lg rounded-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal border border-stevens-gray-200">
+          <Card key={index} className="bg-stevens-white shadow-stevens-lg rounded-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal border border-stevens-light-gray">
             <CardHeader className="pb-stevens-sm">
               <div className="flex items-start gap-stevens-md mb-stevens-md">
-                <div className="bg-stevens-gray-100 p-stevens-md rounded-stevens-md border border-stevens-gray-300">
-                  {Icon && <Icon className="w-8 h-8 text-stevens-gray-700" />}
+                <div className="bg-stevens-light-gray p-stevens-md rounded-stevens-md border border-stevens-light-gray">
+                  {Icon && <Icon className="w-8 h-8 text-stevens-dark-gray" />}
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 leading-tight">
+                  <CardTitle className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray leading-tight">
                     {module.title}
                   </CardTitle>
                   {module.growth && (
@@ -110,17 +110,17 @@ const SkillCardsGrid = ({ modules }) => {
     <CardContent>
               {module.courses && module.courses.length > 0 && (
                 <div className="space-y-stevens-sm">
-                  <h4 className="font-stevens-bold text-stevens-sm uppercase tracking-wider text-stevens-gray-600 mb-stevens-md">
+                  <h4 className="font-stevens-bold text-stevens-sm uppercase tracking-wider text-stevens-dark-gray mb-stevens-md">
                     Example Courses:
                   </h4>
                   {module.courses.map((course, i) => (
-                    <div key={i} className="flex items-start gap-stevens-sm bg-stevens-gray-50 p-stevens-sm rounded-stevens-sm hover:bg-stevens-gray-100 transition-colors duration-stevens-normal">
-                      <Check className="w-4 h-4 text-stevens-primary flex-shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-stevens-sm bg-stevens-light-gray p-stevens-sm rounded-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal">
+                      <Check className="w-4 h-4 text-stevens-red flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-stevens-bold text-stevens-sm text-stevens-gray-900">
+                        <p className="font-stevens-bold text-stevens-sm text-stevens-dark-gray">
                           {course.code}
                         </p>
-                        <p className="text-stevens-xs text-stevens-gray-600">
+                        <p className="text-stevens-xs text-stevens-dark-gray">
                           {course.title}
                         </p>
                       </div>
@@ -172,9 +172,9 @@ const WhatYoullLearnCarousel = ({ modules }) => {
         >
           {modules.map((module, index) => (
             <div key={index} className="w-full flex-shrink-0 px-4">
-              <div className="bg-stevens-white rounded-stevens-lg shadow-stevens-xl border border-stevens-gray-200 overflow-hidden">
+              <div className="bg-stevens-white rounded-stevens-lg shadow-stevens-xl border border-stevens-light-gray overflow-hidden">
                 {/* Card Header */}
-                <div className="bg-stevens-gray-800 text-stevens-white p-stevens-lg">
+                <div className="bg-stevens-dark-gray text-stevens-white p-stevens-lg">
                   <h3 className="font-stevens-bold text-stevens-lg uppercase tracking-wide">
                     {module.title}
                   </h3>
@@ -184,20 +184,20 @@ const WhatYoullLearnCarousel = ({ modules }) => {
                 <div className="p-stevens-lg">
                   {module.description && (
                     <div 
-                      className="text-stevens-gray-700 mb-stevens-lg leading-relaxed prose max-w-none"
+                      className="text-stevens-dark-gray mb-stevens-lg leading-relaxed prose max-w-none"
                       dangerouslySetInnerHTML={{ __html: module.description }}
                     />
                   )}
                   
                   <div className="mb-stevens-md">
-                    <p className="font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+                    <p className="font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
                       You'll learn to:
                     </p>
                     <ul className="space-y-stevens-sm">
                       {module.skills.map((skill, skillIndex) => (
                         <li key={skillIndex} className="flex items-start gap-stevens-sm">
-                          <div className="flex-shrink-0 w-2 h-2 bg-stevens-primary rounded-full mt-2"></div>
-                          <span className="text-stevens-gray-700 text-stevens-sm leading-relaxed">
+                          <div className="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
+                          <span className="text-stevens-dark-gray text-stevens-sm leading-relaxed">
                             {skill}
                           </span>
                         </li>
@@ -215,10 +215,10 @@ const WhatYoullLearnCarousel = ({ modules }) => {
       <button
         onClick={prevSlide}
         disabled={isTransitioning}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-gray-50 transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Previous slide"
       >
-        <svg className="w-6 h-6 text-stevens-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6 text-stevens-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
@@ -226,10 +226,10 @@ const WhatYoullLearnCarousel = ({ modules }) => {
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-gray-50 transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Next slide"
       >
-        <svg className="w-6 h-6 text-stevens-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6 text-stevens-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
@@ -242,8 +242,8 @@ const WhatYoullLearnCarousel = ({ modules }) => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-stevens-normal ${
               index === currentIndex 
-                ? 'bg-stevens-primary scale-125' 
-                : 'bg-stevens-gray-300 hover:bg-stevens-gray-400'
+                ? 'bg-stevens-red scale-125' 
+                : 'bg-stevens-light-gray hover:bg-stevens-gray'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -441,7 +441,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
   if (!programData) return <div>Loading program data...</div>;
 
   return (
-    <div className="bg-stevens-gray-50 font-stevens-body">
+    <div className="bg-stevens-light-gray font-stevens-body">
       <PageHero 
         {...hero} 
         useApplicationModal={useApplicationModal}
@@ -478,7 +478,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <a 
                     key={item.id} 
                     href={href}
-                      className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${isActive ? 'border-stevens-primary text-stevens-primary' : 'border-transparent text-stevens-gray-600 hover:text-stevens-primary'}`}
+                      className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${isActive ? 'border-stevens-red text-stevens-red' : 'border-transparent text-stevens-dark-gray hover:text-stevens-red'}`}
                   >
                     {label}
                   </a>
@@ -496,8 +496,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         <Section id="overview" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.overview = el}>
           <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-5 gap-stevens-gap-lg">
             <div className="lg:col-span-3">
-              {overview.title && <h2 className="font-stevens-display text-stevens-3xl font-stevens-bold mb-stevens-md text-stevens-gray-900">{overview.title}</h2>}
-              {overview.description && <div className="prose max-w-none text-stevens-gray-900 leading-relaxed" dangerouslySetInnerHTML={{ __html: overview.description }} />}
+              {overview.title && <h2 className="font-stevens-display text-stevens-3xl font-stevens-bold mb-stevens-md text-stevens-dark-gray">{overview.title}</h2>}
+              {overview.description && <div className="prose max-w-none text-stevens-dark-gray leading-relaxed" dangerouslySetInnerHTML={{ __html: overview.description }} />}
               {overview.keySkills && overview.keySkills.length > 0 && (
                 <div className="mt-8">
                   <h3 className="font-semibold text-lg mb-2">Key Skills Developed:</h3>
@@ -509,7 +509,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               {overview.concentrations && overview.concentrations.length > 0 && (
                 <div className="mt-8">
                   <h3 className="font-semibold text-lg mb-2">Concentration Options:</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-stevens-gray-900 text-sm">
+                  <ul className="list-disc pl-5 space-y-1 text-stevens-dark-gray text-sm">
                     {overview.concentrations.map(conc => <li key={conc}>{conc}</li>)}
                   </ul>
                 </div>
@@ -517,23 +517,23 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             </div>
             <div className="lg:col-span-2">
               <Card className="shadow-stevens-xl rounded-stevens-md overflow-hidden bg-stevens-white">
-                <CardHeader className="bg-stevens-primary p-stevens-card">
+                <CardHeader className="bg-stevens-red p-stevens-card">
                   <CardTitle className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-white">
                     QUICK FACTS
                   </CardTitle>
                   
                 </CardHeader>
-                <CardContent className="p-stevens-card pt-stevens-card bg-stevens-gray-50">
+                <CardContent className="p-stevens-card pt-stevens-card bg-stevens-light-gray">
                   {quickFacts.termStartDate && (
                     <div className="mb-stevens-lg">
-                      <p className="font-stevens-bold text-stevens-base uppercase tracking-wider text-stevens-gray-900 mb-stevens-xs">Term Start Date</p>
-                      <p className="font-stevens-bold text-stevens-lg text-stevens-primary">{quickFacts.termStartDate}</p>
+                      <p className="font-stevens-bold text-stevens-base uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">Term Start Date</p>
+                      <p className="font-stevens-bold text-stevens-lg text-stevens-red">{quickFacts.termStartDate}</p>
                     </div>
                   )}
                   {quickFacts.details && (
-                    <div className="border-t border-stevens-gray-200 pt-stevens-md">
-                      <h4 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-sm uppercase">Overview</h4>
-                      <div className="prose prose-sm text-stevens-gray-900 space-y-stevens-sm" dangerouslySetInnerHTML={{ __html: quickFacts.details }} />
+                    <div className="border-t border-stevens-light-gray pt-stevens-md">
+                      <h4 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-sm uppercase">Overview</h4>
+                      <div className="prose prose-sm text-stevens-dark-gray space-y-stevens-sm" dangerouslySetInnerHTML={{ __html: quickFacts.details }} />
                     </div>
                   )}
                 </CardContent>
@@ -541,9 +541,9 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               {quickFacts.atAGlance && quickFacts.atAGlance.length > 0 && (
                 <div className="mt-8 grid grid-cols-3 gap-4">
                   {quickFacts.atAGlance.map((fact, index) => (
-                      <div key={index} className="text-center bg-stevens-gray-100 p-3 rounded-stevens-md">
-                          <p className="font-stevens-headers text-lg md:text-xl font-bold text-stevens-primary leading-tight">{fact.value}</p>
-                          <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-gray-600">{fact.label}</p>
+                      <div key={index} className="text-center bg-stevens-light-gray p-3 rounded-stevens-md">
+                          <p className="font-stevens-headers text-lg md:text-xl font-bold text-stevens-red leading-tight">{fact.value}</p>
+                          <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-dark-gray">{fact.label}</p>
                       </div>
                   ))}
                 </div>
@@ -554,9 +554,9 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         </Section>
 
         {videoSection && (
-          <Section id="video" title={videoSection.title} bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.video = el}>
+          <Section id="video" title={videoSection.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.video = el}>
             <div className="max-w-7xl mx-auto">
-              <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-gray-100">
+              <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
                 {/* Video Player Component */}
                 <VideoPlayer
                   src={videoSection.videoSrc}
@@ -573,7 +573,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
         
         {rankings && rankings.length > 0 && (
-          <Section id="rankings" title="By the Numbers" bgClassName="bg-stevens-gray-100" container={false} el="div" refProp={el => sectionRefs.current.rankings = el}>
+          <Section id="rankings" title="By the Numbers" bgClassName="bg-stevens-light-gray" container={false} el="div" refProp={el => sectionRefs.current.rankings = el}>
             <div className="max-w-7xl mx-auto  py-stevens-2xl">
               <div className=" px-stevens-lg">
                 {/* Flexbox layout to center odd number of cards in last row */}
@@ -585,7 +585,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   ))}
                 </div>
                 {programData.rankings_footnotes && programData.rankings_footnotes.length > 0 && (
-                  <div className="mt-stevens-xl max-w-4xl mx-auto text-stevens-sm text-stevens-gray-600 space-y-stevens-xs">
+                  <div className="mt-stevens-xl max-w-4xl mx-auto text-stevens-sm text-stevens-dark-gray space-y-stevens-xs">
                     {programData.rankings_footnotes.map((footnote, i) => (
                       <p key={i}>
                         <sup>{footnote.note}</sup> {footnote.text}
@@ -600,15 +600,15 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
 
         {career && (
           <Section id="career" title="Career Outlook" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.career = el}>
-            {career.description && <div className=" prose max-w-none text-stevens-gray-900 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: career.description }} />}
+            {career.description && <div className=" prose max-w-none text-stevens-dark-gray leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: career.description }} />}
             
             
           </Section>
         )}
         
         {whatYoullLearn && (
-          <Section id="what-youll-learn" title={whatYoullLearn.title} bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current['what-youll-learn'] = el}>
-            {whatYoullLearn.description && <div className="prose max-w-none text-stevens-gray-900 leading-relaxed mb-10 text-center" dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }} />}
+          <Section id="what-youll-learn" title={whatYoullLearn.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['what-youll-learn'] = el}>
+            {whatYoullLearn.description && <div className="prose max-w-none text-stevens-dark-gray leading-relaxed mb-10 text-center" dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }} />}
             {whatYoullLearn.modules && whatYoullLearn.modules.length > 0 && (
               whatYoullLearn.variant === 'skillCards' 
                 ? <SkillCardsGrid modules={whatYoullLearn.modules} />
@@ -623,29 +623,29 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             {career.jobTitles && career.jobTitles.length > 0 && (
               <>
                 <div className="text-center mb-stevens-xl">
-                  <p className="text-stevens-lg text-stevens-gray-600 max-w-3xl mx-auto">
+                  <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
                     Earning an online {programData.code.toUpperCase()} prepares you for career paths in management-level roles across industries. Explore <strong>top {programData.code.toUpperCase()} jobs</strong> for recent graduates.
                   </p>
                 </div>
                 
                 <div className="mb-stevens-lg">
-                  <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-center">
+                  <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg text-center">
                     Prospective Occupations for Online {programData.code.toUpperCase()} Graduates
                   </h3>
                   
-                  <div className="bg-stevens-white rounded-stevens-xl shadow-stevens-2xl overflow-hidden border border-stevens-gray-200">
+                  <div className="bg-stevens-white rounded-stevens-xl shadow-stevens-2xl overflow-hidden border border-stevens-light-gray">
                     <Table className="w-full">
                     <TableHeader>
-                        <TableRow className="bg-gradient-to-r from-stevens-gray-50 to-stevens-gray-100 border-b-2 border-stevens-gray-200">
-                          <TableHead className="font-stevens-bold text-stevens-gray-900 uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-left">
+                        <TableRow className="bg-gradient-to-r from-stevens-light-gray to-stevens-light-gray border-b-2 border-stevens-light-gray">
+                          <TableHead className="font-stevens-bold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-left">
                             Job Title
                           </TableHead>
                           {career.jobTitles[0]?.employed && (
-                            <TableHead className="font-stevens-bold text-stevens-gray-900 uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-center">
+                            <TableHead className="font-stevens-bold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-center">
                               Employed
                             </TableHead>
                           )}
-                          <TableHead className="font-stevens-bold text-stevens-gray-900 uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-center">
+                          <TableHead className="font-stevens-bold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-center">
                             Median or Average Annual Earnings
                           </TableHead>
                       </TableRow>
@@ -662,32 +662,32 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                             <TableRow 
                               key={job.title} 
                               className={`
-                                hover:bg-gradient-to-r hover:from-stevens-blue/5 hover:to-stevens-primary/5 
-                                transition-all duration-stevens-normal border-b border-stevens-gray-100
-                                ${index % 2 === 0 ? 'bg-stevens-white' : 'bg-stevens-gray-50/30'}
+                                hover:bg-stevens-light-gray 
+                                transition-all duration-stevens-normal border-b border-stevens-light-gray
+                                ${index % 2 === 0 ? 'bg-stevens-white' : 'bg-stevens-light-gray/30'}
                               `}
                             >
-                              <TableCell className="font-stevens-bold text-stevens-gray-900 text-stevens-base py-stevens-md px-stevens-xl">
+                              <TableCell className="font-stevens-bold text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl">
                                 <div className="flex items-center gap-stevens-sm">
-                                  <div className="w-2 h-2 bg-stevens-primary rounded-full flex-shrink-0"></div>
+                                  <div className="w-2 h-2 bg-stevens-red rounded-full flex-shrink-0"></div>
                                   {job.title}
                                 </div>
                               </TableCell>
                               {job.employed && (
-                                <TableCell className="text-stevens-gray-700 text-stevens-base py-stevens-md px-stevens-xl text-center font-stevens-semibold">
-                                  <span className="bg-stevens-gray-100 px-stevens-sm py-stevens-xs rounded-stevens-md">
+                                <TableCell className="text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl text-center font-stevens-semibold">
+                                  <span className="bg-stevens-light-gray px-stevens-sm py-stevens-xs rounded-stevens-md">
                                     {job.employed}
                                   </span>
                                 </TableCell>
                               )}
-                              <TableCell className="text-stevens-gray-700 py-stevens-md px-stevens-xl">
+                              <TableCell className="text-stevens-dark-gray py-stevens-md px-stevens-xl">
                                 <div className="flex flex-col gap-stevens-xs">
-                                  <span className="font-stevens-bold text-stevens-lg text-stevens-primary text-center">
+                                  <span className="font-stevens-bold text-stevens-lg text-stevens-red text-center">
                                     {job.salary}
                                   </span>
-                                  <div className="w-full bg-stevens-gray-200 rounded-full h-3 shadow-inner">
+                                  <div className="w-full bg-stevens-light-gray rounded-full h-3 shadow-inner">
                                     <div 
-                                      className="bg-stevens-primary h-3 rounded-full transition-all duration-stevens-normal shadow-sm"
+                                      className="bg-stevens-red h-3 rounded-full transition-all duration-stevens-normal shadow-sm"
                                       style={{ 
                                         width: `${Math.min(100, (parseFloat(job.salary.replace(/[$,]/g, '')) / maxSalary) * 100)}%` 
                                       }}
@@ -704,7 +704,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   </div>
                   
                   <div className="text-center mt-stevens-lg">
-                    <p className="text-stevens-sm text-stevens-gray-600 italic">Source: {career.source}</p>
+                    <p className="text-stevens-sm text-stevens-dark-gray italic">Source: {career.source}</p>
                   </div>
                 </div>
               </>
@@ -713,7 +713,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
 
         {topCompanies && (
-          <Section id="top-companies" title={topCompanies.title} bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current['top-companies'] = el}>
+          <Section id="top-companies" title={topCompanies.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['top-companies'] = el}>
             <TopCompaniesSection
               title={topCompanies.title || 'Stevens Alumni Drive Innovation at Top Companies'}
               description={topCompanies.description || 'Our graduates join leading organizations across technology, finance, healthcare, and consulting'}
@@ -728,7 +728,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="max-w-stevens-content-max mx-auto">
                 <div className="grid lg:grid-cols-2 gap-stevens-2xl items-center">
                   {/* Left Column - Text Content */}
-                  <div className="bg-stevens-primary text-stevens-white p-stevens-2xl rounded-stevens-lg">
+                  <div className="bg-stevens-red text-stevens-white p-stevens-2xl rounded-stevens-lg">
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold mb-stevens-lg">
                       {whyStevens.title}
                     </h2>
@@ -749,7 +749,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                         />
                         {whyStevens.video.caption && (
                           <div className="mt-stevens-md text-center">
-                            <p className="text-stevens-sm text-stevens-gray-600 italic">
+                            <p className="text-stevens-sm text-stevens-dark-gray italic">
                               {whyStevens.video.caption}
                             </p>
                           </div>
@@ -760,7 +760,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 </div>
               </div>
             ) : (
-              <div className="bg-stevens-primary text-stevens-white py-16 rounded-stevens-lg">
+              <div className="bg-stevens-red text-stevens-white py-16 rounded-stevens-lg">
                 <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
                   <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-lg text-stevens-white">{whyStevens.title}</h2>
                   <div className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
@@ -774,13 +774,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           <Section id="curriculum" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.curriculum = el}>
             <div className="max-w-stevens-content-max mx-auto">
               {/* Section Title */}
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-left uppercase tracking-tight">
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-tight">
                 {curriculum.title ? curriculum.title : `Online ${programData.code.toUpperCase()} Program Course Structure`}
               </h2>
               
               {/* Description */}
               {curriculum.description && (
-                <div className="mb-stevens-xl space-y-stevens-md text-stevens-gray-900 leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
+                <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
                   {curriculum.description.split('\n').map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
@@ -797,12 +797,12 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   {/* Right scroll indicator */}
                   <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
                   
-                  <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-gray-200 rounded-none h-auto p-0 gap-0">
+                  <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
                   {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
                     <TabsTrigger 
                       key={tabKey} 
                       value={tabKey}
-                        className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-primary rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-gray-700 data-[state=active]:text-stevens-gray-900 hover:text-stevens-primary transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                        className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
                     >
                       {curriculum.courseTabs[tabKey].title}
                     </TabsTrigger>
@@ -813,7 +813,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 {/* Tab Content */}
                 {Object.keys(curriculum.courseTabs).map(tabKey => (
                   <TabsContent key={tabKey} value={tabKey} className="mt-stevens-xl">
-                    <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-gray-900 [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-gray-900 [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-gray-700 [&_p]:leading-relaxed [&_p]:mb-stevens-lg" dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}/>
+                    <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg" dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}/>
                   </TabsContent>
                 ))}
               </Tabs>
@@ -833,23 +833,23 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
         
         {studentSpotlight && (
-          <Section id="student-spotlight" bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current['student-spotlight'] = el}>
+          <Section id="student-spotlight" bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['student-spotlight'] = el}>
             <div className="mx-auto text-center">
-              <User className="w-16 h-16 mx-auto mb-stevens-md text-stevens-primary" />
+              <User className="w-16 h-16 mx-auto mb-stevens-md text-stevens-red" />
               <h2 className="font-stevens-display text-stevens-3xl font-stevens-bold mb-stevens-md">Student Testimonial Spotlight</h2>
-              <blockquote className="text-stevens-2xl leading-snug italic text-stevens-gray-900 mb-stevens-md">
+              <blockquote className="text-stevens-2xl leading-snug italic text-stevens-dark-gray mb-stevens-md">
                   "{studentSpotlight.quote}"
                 </blockquote>
-              <cite className="not-italic font-stevens-semibold text-stevens-gray-600">- {studentSpotlight.name}</cite>
+              <cite className="not-italic font-stevens-semibold text-stevens-dark-gray">- {studentSpotlight.name}</cite>
             </div>
           </Section>
         )}
         
         {faculty && (
           <Section id="faculty" title={faculty.title || "Meet the Faculty"} refProp={el => sectionRefs.current.faculty = el} container={false} paddingClassName="py-stevens-section-sm lg:py-stevens-section">
-            {faculty.description && <p className="text-center text-stevens-xl text-stevens-gray-600 max-w-3xl mx-auto mb-stevens-xl px-stevens-md lg:px-stevens-lg">{faculty.description}</p>}
+            {faculty.description && <p className="text-center text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-xl px-stevens-md lg:px-stevens-lg">{faculty.description}</p>}
             <div className="relative overflow-visible w-full max-w-[77rem] mx-auto">
-              <div className="flex overflow-x-auto space-x-stevens-sm stevens-md:space-x-stevens-lg pb-stevens-lg pt-stevens-sm snap-x snap-mandatory scrollbar-thin scrollbar-thumb-stevens-primary scrollbar-track-stevens-primary/10 px-stevens-md">
+              <div className="flex overflow-x-auto space-x-stevens-sm stevens-md:space-x-stevens-lg pb-stevens-lg pt-stevens-sm snap-x snap-mandatory scrollbar-thin scrollbar-thumb-stevens-red scrollbar-track-stevens-light-gray px-stevens-md">
                 {faculty.members.map((member, i) => <FacultyCard key={i} member={member} />)}
               </div>
             </div>
@@ -857,7 +857,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
 
         {admissions && (admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines') && tuition ? (
-          <Section id="admissions" bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
+          <Section id="admissions" bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.admissions = el}>
             <div className="grid lg:grid-cols-5 gap-stevens-2xl items-start">
               {/* Left Column - Admissions */}
               <div className="lg:col-span-3">
@@ -865,11 +865,11 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 {admissions.requirements && (
                   <Card className="shadow-stevens-lg rounded-stevens-md">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-stevens-sm font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900">
+                      <CardTitle className="flex items-center gap-stevens-sm font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray">
                         <FileText /> Application Requirements
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="prose text-stevens-gray-900" dangerouslySetInnerHTML={{ __html: admissions.requirements }} />
+                    <CardContent className="prose text-stevens-dark-gray" dangerouslySetInnerHTML={{ __html: admissions.requirements }} />
                   </Card>
                 )}
               </div>
@@ -881,7 +881,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">Key Dates & Deadlines</h2>
                     <Card className="rounded-stevens-md mb-stevens-xl">
                       <CardHeader>
-                        <CardTitle className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900">
+                        <CardTitle className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray">
                           {keyDates.term || "Spring 2026"}
                         </CardTitle>
                       </CardHeader>
@@ -890,10 +890,10 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                           <TableBody>
                             {keyDates.rows.map((row) => (
                               <TableRow key={row.event}>
-                                <TableCell className="font-stevens-bold text-stevens-gray-900 group-hover:text-stevens-primary transition-colors duration-stevens-normal">
+                                <TableCell className="font-stevens-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal">
                                   {row.event}
                                 </TableCell>
-                                <TableCell className="text-stevens-gray-900">{row.date}</TableCell>
+                                <TableCell className="text-stevens-dark-gray">{row.date}</TableCell>
                               </TableRow>
                             ))}
                           </TableBody>
@@ -912,13 +912,13 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                           <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full">
                             {/* Top layer: Price */}
                             <div className="flex-1 flex items-center justify-center min-h-[60%]">
-                              <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-primary whitespace-nowrap">
+                              <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-red whitespace-nowrap">
                                 {card.value}
                               </p>
                             </div>
                             {/* Bottom layer: Label */}
                             <div className="flex-1 flex items-center justify-center min-h-[40%] pt-stevens-md">
-                              <p className="text-stevens-xs  mb-stevens-md stevens-sm:text-stevens-sm text-stevens-gray-600">
+                              <p className="text-stevens-xs  mb-stevens-md stevens-sm:text-stevens-sm text-stevens-dark-gray">
                                 {card.label}
                               </p>
                             </div>
@@ -927,7 +927,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       </div>
                     )}
                     {tuition.description && (
-                      <div className="prose text-center text-stevens-xs max-w-none mx-auto mt-stevens-md text-stevens-gray-900" dangerouslySetInnerHTML={{ __html: tuition.description }} />
+                      <div className="prose text-center text-stevens-xs max-w-none mx-auto mt-stevens-md text-stevens-dark-gray" dangerouslySetInnerHTML={{ __html: tuition.description }} />
                     )}
                   </>
                 )}
@@ -938,7 +938,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           <Section id="admissions" title={admissions.options && admissions.options.length === 1 ? "Application Option" : "Choose Your Application Option"} bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.admissions = el}>
             <div className={`flex flex-wrap justify-center ${admissions.options && admissions.options.length === 1 ? 'max-w-3xl mx-auto' : admissions.options && admissions.options.length === 2 ? 'max-w-6xl mx-auto' : ''} gap-8`}>
               {admissions.options && admissions.options.map((option, i) => (
-                <Card key={i} className={`w-full ${admissions.options.length === 1 ? '' : admissions.options.length === 2 ? 'md:w-[48%]' : 'md:w-[48%] lg:w-[31%]'} shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
+                <Card key={i} className={`w-full ${admissions.options.length === 1 ? '' : admissions.options.length === 2 ? 'md:w-[48%]' : 'md:w-[48%] lg:w-[31%]'} shadow-lg ${option.featured ? 'border-2 border-stevens-red' : ''}`}>
                   <CardHeader>
                     <CardTitle>{option.title}</CardTitle>
                   </CardHeader>
@@ -955,7 +955,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 </Card>
               ))}
               { admissions.alertMessage && (
-                <div className='w-full max-w-[75ch] mx-auto bg-stevens-maroon p-4 md:p-8 text-white border-2 border-stevens-maroon-dark rounded-md'>
+                <div className='w-full max-w-[75ch] mx-auto bg-stevens-red p-4 md:p-8 text-white border-2 border-stevens-dark-gray rounded-md'>
                   <div className='w-full '>
                     <h3 className='text-xl md:text-2xl font-bold'>{admissions.alertMessage.title}</h3>
                     <div className='py-4' dangerouslySetInnerHTML={{__html:admissions.alertMessage.description}}/>
@@ -982,9 +982,9 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         ) : null}
 
         {keyDates && (!(admissions?.variant === 'combinedWithTuition') || admissions?.variant === 'certificateWithDeadlines') && (
-          <Section id="deadlines" title="Key Dates & Deadlines" bgClassName="bg-stevens-gray-100" el="div" refProp={el => sectionRefs.current['deadlines'] = el}>
+          <Section id="deadlines" title="Key Dates & Deadlines" bgClassName="bg-stevens-light-gray" el="div" refProp={el => sectionRefs.current['deadlines'] = el}>
             <div className="text-center mb-stevens-xl">
-              <p className="text-stevens-xl text-stevens-gray-900 max-w-3xl mx-auto">
+              <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
                 Plan your application for the upcoming Spring 2026 term.
               </p>
             </div>
@@ -995,7 +995,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <thead className="bg-gray-100">
                     <tr>
                       {keyDates.headers.map((header) => (
-                        <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-primary border border-gray-300">
+                        <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-gray-300">
                           {header}
                         </th>
                       ))}
@@ -1010,7 +1010,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                         <td className="p-4 align-top border border-gray-300">
                           <div className="font-bold text-gray-900">{row.date}</div>
                           {row.details && (
-                            <div className="text-stevens-gray-900 mt-1 text-stevens-sm">{row.details}</div>
+                            <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.details}</div>
                           )}
                         </td>
                         {keyDates.headers.length > 2 && (
@@ -1018,7 +1018,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                             <td className="p-4 align-top border border-gray-300">
                               <div className="font-bold text-gray-900">{row.priorityDate || ''}</div>
                               {row.priorityDetails && (
-                                <div className="text-stevens-gray-900 mt-1 text-stevens-sm">{row.priorityDetails}</div>
+                                <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.priorityDetails}</div>
                               )}
                             </td>
                             <td className="p-4 align-top border border-gray-300">
@@ -1035,7 +1035,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 </table>
               </div>
             </Card>
-            {keyDates.footnote && <p className="text-center text-sm text-stevens-gray-600 mt-4 italic">{keyDates.footnote}</p>}
+            {keyDates.footnote && <p className="text-center text-sm text-stevens-dark-gray mt-4 italic">{keyDates.footnote}</p>}
           </Section>
         )}
         
@@ -1046,8 +1046,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 {tuition.cards.map((card, i) => (
                   <Card key={i} className="shadow-md">
                     <CardHeader>
-                      <CardTitle className="font-stevens-headers text-4xl text-stevens-primary">{card.value}</CardTitle>
-                      <p className="font-semibold text-stevens-gray-900">{card.label}</p>
+                      <CardTitle className="font-stevens-headers text-4xl text-stevens-red">{card.value}</CardTitle>
+                      <p className="font-semibold text-stevens-dark-gray">{card.label}</p>
                     </CardHeader>
                   </Card>
                 ))}
@@ -1075,20 +1075,20 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
 
         {events && (
-          <Section id="events" title={events.title || "On-Demand Events"} bgClassName="bg-stevens-gray-50" refProp={el => sectionRefs.current.events = el}>
-            {events.description && <p className="text-center text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">{events.description}</p>}
+          <Section id="events" title={events.title || "On-Demand Events"} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.events = el}>
+            {events.description && <p className="text-center text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">{events.description}</p>}
             {events.items && events.items.length > 0 ? (
               <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
                 {events.items.map((item, i) => (
-                  <Card key={i} className="h-full border-stevens-gray-100">
+                  <Card key={i} className="h-full border-stevens-light-gray">
                     <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
-                      <h5 className="font-stevens-semibold text-stevens-gray-900 uppercase font-bold mb-stevens-xs hover:text-stevens-primary transition-colors duration-stevens-normal">
+                      <h5 className="font-stevens-semibold text-stevens-dark-gray uppercase font-bold mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">
                         {item.title}
                       </h5>
-                      <div className="text-stevens-sm text-stevens-gray-700 mb-stevens-md">
+                      <div className="text-stevens-sm text-stevens-dark-gray mb-stevens-md">
                         {item.status || item.date}
                       </div>
-                      <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-gray-700 mb-stevens-lg">
+                      <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-dark-gray mb-stevens-lg">
                         <Clock className="w-4 h-4"/> {item.length}
                       </div>
                       <div className="mt-auto">
@@ -1100,7 +1100,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   </Card>
                 ))}
               </div>
-            ) : <p className="text-center text-stevens-gray-600">{events.fallbackText || "No upcoming events at this time."}</p>}
+            ) : <p className="text-center text-stevens-dark-gray">{events.fallbackText || "No upcoming events at this time."}</p>}
           </Section>
         )}
 
@@ -1119,7 +1119,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         
         {accreditation && (
           <Section id="accreditation" container={false} el="div" paddingClassName="pt-stevens-section-sm lg:pt-stevens-section" refProp={el => sectionRefs.current['accreditation'] = el}>
-            <div className="relative bg-stevens-gray-900 text-stevens-white overflow-hidden">
+            <div className="relative bg-stevens-dark-gray text-stevens-white overflow-hidden">
               {/* Background Image */}
               <div className="absolute inset-0">
                 <img 
@@ -1128,7 +1128,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   className="w-full h-full object-cover opacity-30"
                   aria-hidden="true"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-stevens-gray-900/90 to-stevens-gray-900/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-stevens-dark-gray/90 to-stevens-dark-gray/70"></div>
               </div>
               
               {/* Content */}
@@ -1149,14 +1149,14 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         {/* Request Information */}
         {/* disabled extra request information for now */}
         {/* <Section id="request-info" container={false} el="div" >
-          <div className="bg-stevens-primary py-20">
+          <div className="bg-stevens-red py-20">
             <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl grid stevens-md:grid-cols-2 gap-stevens-xl items-center">
                 <div className="text-stevens-white">
                     <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md text-stevens-white">Take the Next Step</h2>
                     <p className="text-stevens-lg text-stevens-white mb-stevens-lg">Ready to advance your career? Fill out the form to get more information about the {programData.code.toUpperCase()} program, or start your application today.</p>
                     <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
                         <a href="https://gradadmissions.stevens.edu/apply/?pk=GRNP" target="_blank" rel="noopener noreferrer">
-                        <button className= "btn-stevens-secondary bg-stevens-white text-stevens-primary font-stevens-body">Apply Now</button>
+                        <button className= "btn-stevens-outline bg-stevens-white text-stevens-red font-stevens-body">Apply Now</button>
                         </a>
                     </div>
                 </div>

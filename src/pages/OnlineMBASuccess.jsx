@@ -93,15 +93,15 @@ const TopicList = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-3xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="text-center">
-            <h1 className="font-stevens-display text-stevens-hero text-stevens-primary mb-stevens-lg">
+            <h1 className="font-stevens-display text-stevens-hero text-stevens-red mb-stevens-lg">
               Strategies for MBA Success
             </h1>
             
             <div className="max-w-6xl mx-auto space-y-stevens-md text-left">
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
               Pursuing an Online MBA is a significant investment in your education and career. However, balancing work, family and online coursework can be challenging. Our Online MBA Success page provides valuable resources for students looking for strategies for flourishing in this program.
               </p>
-              <p className="text-stevens-lg text-stevens-gray-700 leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
               In this section, you will find many tips, tools and techniques for succeeding in your Online MBA program. Our articles cover everything from study tips and time management strategies to career development and networking advice. Whether you are just starting your studies or are nearing graduation, our Online MBA Success category has something for everyone. We are committed to providing the resources you need to unlock your full potential and achieve your academic and professional goals.
               </p>
             </div>
@@ -113,7 +113,7 @@ const TopicList = ({ posts }) => {
       <section className="bg-stevens-white py-stevens-xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="flex flex-col items-center">
-            <h2 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
               Categories:
             </h2>
             <div className="flex flex-wrap justify-center gap-stevens-sm">
@@ -121,10 +121,10 @@ const TopicList = ({ posts }) => {
                 <button
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-gray-300 bg-stevens-white text-stevens-gray-700 hover:border-stevens-primary hover:text-stevens-primary transition-all duration-stevens-normal ${
+                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-light-gray bg-stevens-white text-stevens-dark-gray hover:border-stevens-red hover:text-stevens-red transition-all duration-stevens-normal ${
                     selectedCategory === category
-                      ? 'border-stevens-primary text-stevens-primary bg-stevens-primary/5'
-                      : 'hover:bg-stevens-gray-50'
+                      ? 'border-stevens-red text-stevens-red bg-stevens-light-gray'
+                      : 'hover:bg-stevens-light-gray'
                   }`}
                 >
                   {category}

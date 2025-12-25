@@ -14,7 +14,7 @@ const BlogList = ({
     return (
       <div className={`grid grid-cols-1 md:grid-cols-2 gap-stevens-xl ${className}`}>
         {Array.from({ length: 6 }).map((_, index) => (
-          <div key={index} className="skeleton-stevens-card border border-stevens-gray-200 rounded-stevens-md overflow-hidden">
+          <div key={index} className="skeleton-stevens-card border border-stevens-light-gray rounded-stevens-md overflow-hidden">
             <div className="aspect-square skeleton-stevens"></div>
             <div className="p-stevens-xl">
               <div className="skeleton-stevens-title mb-stevens-lg h-8"></div>
@@ -33,10 +33,10 @@ const BlogList = ({
   if (posts.length === 0) {
     return (
       <div className={`text-center py-stevens-3xl ${className}`}>
-        <h3 className="font-stevens-display text-stevens-2xl text-stevens-gray-600 mb-stevens-md">
+        <h3 className="font-stevens-display text-stevens-2xl text-stevens-dark-gray mb-stevens-md">
           No blog posts found
         </h3>
-        <p className="text-stevens-gray-500">
+        <p className="text-stevens-light-gray0">
           Check back later for new content.
         </p>
       </div>

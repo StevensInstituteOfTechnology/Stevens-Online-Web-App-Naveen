@@ -62,38 +62,32 @@ module.exports = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-			// Stevens Institute custom colors (matching official site)
-			'stevens-maroon': '#a32638',
-			'stevens-maroon-dark': '#6B0000', 
+			// Stevens Institute custom colors (CPE Brand Guidelines 2025)
+			
 			'stevens-red': '#a32638',
-			'stevens-gold': '#FFD700',
-  			'stevens-gray': '#6B7280',
-  			'stevens-light-gray': '#F3F4F6',
-  			// Extended Stevens brand colors
-  			'stevens-navy': '#1E3A8A',
-  			'stevens-silver': '#C0C0C0',
+			'stevens-dark-gray': '#363D45',  // Dark Gray (per CPE Brand Guidelines)
+  			'stevens-gray': '#7F7F7F',       // Stevens Gray
+  			'stevens-light-gray': '#E4E5E6', // Light Gray
   			'stevens-white': '#FFFFFF',
   			'stevens-black': '#000000',
-  			'stevens-yellow': '#ebc73b',
-			'stevens-blue': '#007aff',
   			// Semantic Stevens colors
-  			'stevens-primary': '#a32638',
-  			'stevens-secondary': '#FFD700',
-  			'stevens-success': '#10B981',
-  			'stevens-warning': '#F59E0B',
-  			'stevens-error': '#EF4444',
-  			'stevens-info': '#3B82F6',
-  			// Comprehensive Stevens gray system
-  			'stevens-gray-50': '#F9FAFB',
-  			'stevens-gray-100': '#F3F4F6',
-  			'stevens-gray-200': '#E5E7EB',
-  			'stevens-gray-300': '#D1D5DB',
-  			'stevens-gray-400': '#9CA3AF',
-  			'stevens-gray-500': '#6B7280',
-  			'stevens-gray-600': '#4B5563',
-  			'stevens-gray-700': '#374151',
-  			'stevens-gray-800': '#1F2937',
-  			'stevens-gray-900': '#111827'
+			'stevens-maroon': '#a32638', // Backup - Same as Stevens Red
+  			'stevens-primary': '#a32638',   // Stevens Red (primary accent)
+  			// Comprehensive Stevens gray system (BACKUP MAPPINGS - kept for backward compatibility)
+  			// All usages should be updated to use the five brand colors directly:
+  			// - stevens-gray-50/100/200/300 → stevens-light-gray (#E4E5E6)
+  			// - stevens-gray-400/500 → stevens-gray (#7F7F7F)
+  			// - stevens-gray-600/700/800/900 → stevens-dark-gray (#363D45) or stevens-black (#000000)
+  			'stevens-gray-50': '#E4E5E6',   // BACKUP - Maps to stevens-light-gray
+  			'stevens-gray-100': '#E4E5E6',  // BACKUP - Maps to stevens-light-gray
+  			'stevens-gray-200': '#E4E5E6',  // BACKUP - Maps to stevens-light-gray
+  			'stevens-gray-300': '#E4E5E6',  // BACKUP - Maps to stevens-light-gray
+  			'stevens-gray-400': '#7F7F7F',  // BACKUP - Maps to stevens-gray
+  			'stevens-gray-500': '#7F7F7F',  // BACKUP - Maps to stevens-gray
+  			'stevens-gray-600': '#363D45',  // BACKUP - Maps to stevens-dark-gray
+  			'stevens-gray-700': '#363D45',  // BACKUP - Maps to stevens-dark-gray
+  			'stevens-gray-800': '#363D45',  // BACKUP - Maps to stevens-dark-gray
+  			'stevens-gray-900': '#000000'   // BACKUP - Maps to stevens-black
   		},
   		keyframes: {
   			'accordion-down': {
@@ -122,7 +116,7 @@ module.exports = {
   			'stevens-scale': 'scale 0.3s ease-out'
   		},
   		// Stevens Typography System
-		  fontFamily: {
+		fontFamily: {
 			// Default sans font - IBM Plex Sans (per CPE Brand Guidelines)
 			// This ensures all elements without explicit font classes inherit IBM Plex Sans
 			sans: FONTS.body,                   // IBM Plex Sans - default for all elements

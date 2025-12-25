@@ -84,11 +84,11 @@ export default function PSEGPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                     {programs.map((program) => (
                         <div key={program.code} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full transition-all hover:shadow-lg">
-                            <h4 className="font-bold text-lg text-stevens-primary mb-2">{program.title}</h4>
+                            <h4 className="font-bold text-lg text-stevens-red mb-2">{program.title}</h4>
                             <p className="text-gray-600 text-sm mb-6 flex-grow">{program.description}</p>
                             <div className="mt-auto space-y-3">
                                 <Link to={program.exploreLink} target="_blank">
-                                    <Button variant="outline" className="w-full text-stevens-primary border-stevens-primary hover:bg-stevens-primary hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
+                                    <Button variant="outline" className="w-full text-stevens-red border-stevens-red hover:bg-stevens-red hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Explore Program <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -99,7 +99,7 @@ export default function PSEGPage() {
                                     className="block"
                                     onClick={(e) => handleApplyClick(e, program.applyLink, program.useModal)}
                                 >
-                                    <Button className="w-full bg-stevens-primary hover:bg-stevens-primary/90 text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
+                                    <Button className="w-full bg-stevens-red hover:bg-stevens-dark-gray text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Apply in Minutes
                                     </Button>
                                 </a>

@@ -60,19 +60,19 @@ const BenefitsGrid = ({
             variants={animate ? itemVariants : {}}
             className="group"
           >
-            <div className="text-center p-stevens-lg hover:bg-stevens-gray-50 rounded-stevens-lg transition-colors duration-stevens-normal">
+            <div className="text-center p-stevens-lg hover:bg-stevens-light-gray rounded-stevens-lg transition-colors duration-stevens-normal">
               {Icon && (
-                <div className="w-16 h-16 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center mx-auto mb-stevens-md group-hover:bg-stevens-primary/20 transition-colors">
-                  <Icon className="w-8 h-8 text-stevens-primary" />
+                <div className="w-16 h-16 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center mx-auto mb-stevens-md group-hover:bg-stevens-light-gray transition-colors">
+                  <Icon className="w-8 h-8 text-stevens-red" />
                 </div>
               )}
               {benefit.emoji && (
                 <div className="text-4xl mb-stevens-md">{benefit.emoji}</div>
               )}
-              <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+              <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
                 {benefit.title}
               </h3>
-              <p className="text-stevens-gray-700">
+              <p className="text-stevens-dark-gray">
                 {benefit.description}
               </p>
             </div>
@@ -86,18 +86,18 @@ const BenefitsGrid = ({
             variants={animate ? itemVariants : {}}
             className="group"
           >
-            <div className="border border-stevens-gray-200 rounded-stevens-lg p-stevens-lg h-full hover:border-stevens-primary transition-colors duration-stevens-normal">
+            <div className="border border-stevens-light-gray rounded-stevens-lg p-stevens-lg h-full hover:border-stevens-red transition-colors duration-stevens-normal">
               <div className="flex items-start space-x-stevens-md">
                 {Icon && (
-                  <div className="w-12 h-12 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-primary/20 transition-colors">
-                    <Icon className="w-6 h-6 text-stevens-primary" />
+                  <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-light-gray transition-colors">
+                    <Icon className="w-6 h-6 text-stevens-red" />
                   </div>
                 )}
                 <div>
-                  <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-gray-900 mb-stevens-sm">
+                  <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
                     {benefit.title}
                   </h3>
-                  <p className="text-stevens-gray-700 text-stevens-sm">
+                  <p className="text-stevens-dark-gray text-stevens-sm">
                     {benefit.description}
                   </p>
                 </div>
@@ -115,27 +115,27 @@ const BenefitsGrid = ({
             <Card className="h-full hover:shadow-stevens-lg transition-shadow duration-stevens-normal">
               <CardHeader className="pb-stevens-md">
                 {Icon && (
-                  <div className="w-12 h-12 bg-stevens-primary/10 rounded-stevens-md flex items-center justify-center mb-stevens-md">
-                    <Icon className="w-6 h-6 text-stevens-primary" />
+                  <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center mb-stevens-md">
+                    <Icon className="w-6 h-6 text-stevens-red" />
                   </div>
                 )}
                 {benefit.emoji && (
                   <div className="text-3xl mb-stevens-md">{benefit.emoji}</div>
                 )}
-                <CardTitle className="text-stevens-lg font-stevens-bold text-stevens-gray-900">
+                <CardTitle className="text-stevens-lg font-stevens-bold text-stevens-dark-gray">
                   {benefit.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-stevens-gray-700">
+                <p className="text-stevens-dark-gray">
                   {benefit.description}
                 </p>
                 {benefit.stats && (
-                  <div className="mt-stevens-md pt-stevens-md border-t border-stevens-gray-200">
-                    <p className="text-stevens-2xl font-stevens-bold text-stevens-primary">
+                  <div className="mt-stevens-md pt-stevens-md border-t border-stevens-light-gray">
+                    <p className="text-stevens-2xl font-stevens-bold text-stevens-red">
                       {benefit.stats.value}
                     </p>
-                    <p className="text-stevens-sm text-stevens-gray-600">
+                    <p className="text-stevens-sm text-stevens-dark-gray">
                       {benefit.stats.label}
                     </p>
                   </div>
@@ -166,12 +166,12 @@ const BenefitsGrid = ({
           className="text-center mb-stevens-2xl"
         >
           {title && (
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-primary mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
               {title}
             </h2>
           )}
           {subtitle && (
-            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+            <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}

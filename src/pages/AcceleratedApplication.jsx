@@ -198,7 +198,7 @@ export default function AcceleratedApplicationPage() {
 
   return (
     <PageContextProvider pageType="application" pageName="AcceleratedApplication">
-    <div className="bg-stevens-gray-50 font-stevens-body">
+    <div className="bg-stevens-light-gray font-stevens-body">
       <PageHero
         title="Accelerated Master's Application Requirements"
         subtitle="Fast-Track Your Graduate Education at Stevens" 
@@ -206,7 +206,7 @@ export default function AcceleratedApplicationPage() {
       />
 
       {/* Speed Emphasis Section */}
-      <div className="py-stevens-section-sm bg-gradient-to-br from-stevens-primary to-stevens-maroon-dark text-white">
+      <div className="py-stevens-section-sm bg-gradient-to-br from-stevens-red to-stevens-dark-gray text-white">
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg text-center">
           <div className="flex items-center justify-center gap-stevens-sm mb-stevens-md">
             <Zap className="w-8 h-8" />
@@ -242,10 +242,10 @@ export default function AcceleratedApplicationPage() {
       <div className="py-stevens-section bg-white">
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
               Eligible Programs
             </h2>
-            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+            <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
               The Accelerated Application is available for the following programs. Choose your program and get started today.
             </p>
           </div>
@@ -255,61 +255,61 @@ export default function AcceleratedApplicationPage() {
               <Link 
                 key={program.id}
                 to={program.path}
-                className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+                className="group bg-stevens-light-gray border-2 border-stevens-light-gray rounded-stevens-lg p-stevens-lg hover:border-stevens-red hover:shadow-stevens-lg transition-all duration-200"
               >
-                <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
-                <h3 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                <program.icon className="w-12 h-12 text-stevens-red mb-stevens-md mx-auto" />
+                <h3 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-xs text-center group-hover:text-stevens-red transition-colors">
                   {program.shortName}
                 </h3>
-                <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                <p className="text-stevens-sm text-stevens-dark-gray text-center">
                   {program.description}
                 </p>
               </Link>
             ))}
           </div>
 
-          <div className="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm">
-            <p className="text-stevens-base text-stevens-gray-900">
+          <div className="bg-stevens-light-gray border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm">
+            <p className="text-stevens-base text-stevens-dark-gray">
               <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="py-stevens-section bg-stevens-gray-50">
+      <div className="py-stevens-section bg-stevens-light-gray">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="grid lg:grid-cols-2 gap-stevens-2xl items-start">
             
             {/* Left Column - Info */}
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
                 Your Path to Graduate Success
               </h2>
-              <p className="text-stevens-lg text-stevens-gray-900 mb-stevens-lg leading-relaxed">
+              <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-lg leading-relaxed">
                 Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App streamlines the admissions process so you can get started immediately on your graduate education journey.
               </p>
               
-              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">What Makes It Different?</h3>
-                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-md">
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-sm">What Makes It Different?</h3>
+                <p className="text-stevens-base text-stevens-dark-gray mb-stevens-md">
                   We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated App removes traditional barriers while maintaining Stevens' academic standards.
                 </p>
               </div>
 
-              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose the Accelerated App?</h3>
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-md">Why Choose the Accelerated App?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                     <li key={index} className="flex items-start gap-stevens-md">
-                      <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-stevens-gray-900">{benefit}</span>
+                      <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
+                      <span className="text-stevens-dark-gray">{benefit}</span>
                     </li>
                   )}
                 </ul>
               </div>
 
-              <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md border border-stevens-primary/20">
-                <p className="text-stevens-sm text-stevens-gray-700">
+              <div className="bg-stevens-light-gray rounded-stevens-md p-stevens-md border border-stevens-light-gray">
+                <p className="text-stevens-sm text-stevens-dark-gray">
                   <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Stevens may request additional documentation if needed to confirm your academic or professional background.
                 </p>
               </div>
@@ -550,15 +550,15 @@ export default function AcceleratedApplicationPage() {
                         }
                       }
                     `}</style>
-                    <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
+                    <div className="bg-stevens-light-gray text-stevens-dark-gray ">
                       <div
                         id="form_89080626-7bc4-4c48-9437-fd47479d7371"
                         className="min-h-[600px] w-full">
-                        <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-gray-300 rounded-stevens-md bg-stevens-white">
+                        <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                           <div className="text-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-primary mx-auto mb-stevens-md"></div>
-                            <p className="text-stevens-gray-600 font-stevens-medium">Loading Application Form...</p>
-                            <p className="text-stevens-xs text-stevens-gray-500 mt-stevens-sm">This may take a moment</p>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                            <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
+                            <p className="text-stevens-xs text-stevens-gray mt-stevens-sm">This may take a moment</p>
                           </div>
                         </div>
                       </div>

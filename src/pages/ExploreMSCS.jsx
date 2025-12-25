@@ -73,7 +73,7 @@ const ExploreMSCS = () => {
     whyChooseStevensSubtitle: "CURRICULUM CO-CREATED WITH INDUSTRY",
     whyChooseStevensContent: `
       <p class="font-stevens-body"><strong>STEVENS GRADS LAND JOBS AT GOOGLE, BANK OF AMERICA, JPMORGAN CHASE</strong></p>
-
+      
       <p class="font-stevens-body">Computer science jobs are projected to grow 26% by 2033, according to the U.S. Bureau of Labor Statistics - more than five times the national average. In an increasingly connected world, you will learn in-demand computer science skills with the support of experienced faculty who consult for industry giants like Google, IBM, Bell Labs and Microsoft, and graduate with a competitive edge to meet the critical needs of an expanding job sector across various industries.</p>
     `,
     whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
@@ -84,7 +84,7 @@ const ExploreMSCS = () => {
     newFall2025Title: "START YOUR DEGREE WITH 2–4 ASYNCHRONOUS COURSES",
     newFall2025Description: `
       <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule. Depending on your track (traditional or advanced), your first two to four courses will now be asynchronous.</p>
-
+      
       <p class="font-stevens-body">Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
     `,
     newFall2025Benefits: [
@@ -116,7 +116,7 @@ const ExploreMSCS = () => {
     justLaunchedTitle: "NEW FLEXIBLE APPLICATION OPTIONS",
     justLaunchedDescription: `
       <p class="font-stevens-body">We've introduced new application options designed to make enrollment more accessible. These options reduce prerequisite requirements and offer the opportunity to take trial courses.</p>
-
+      
       <p class="font-stevens-body">To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
     `,
     justLaunchedButtonText: "Request Flexible App Info",

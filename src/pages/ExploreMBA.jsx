@@ -125,15 +125,15 @@ const ExploreMBA = () => {
       title: "Concentrations",
       content: `
 
-            <p class="course-intro font-stevens-body text-stevens-lg text-stevens-gray-700 leading-relaxed">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
+            <p class="course-intro font-stevens-body text-stevens-lg text-stevens-dark-gray leading-relaxed">Customize your MBA with one of seven concentrations designed for technology-focused careers. Each concentration provides specialized knowledge and skills to advance your career in specific industries and roles.</p>
             
             <ul class="list-disc pl-8 space-y-4">
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Business Intelligence & Analytics</li>
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Finance</li>
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Financial Analytics</li>
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Financial Engineering</li>
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Information Systems</li>
-              <li class="font-stevens-bold text-stevens-xl text-stevens-primary">Project Management</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Business Intelligence & Analytics</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Finance</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Financial Analytics</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Financial Engineering</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Information Systems</li>
+              <li class="font-stevens-bold text-stevens-xl text-stevens-red">Project Management</li>
             </ul>`
     },
     

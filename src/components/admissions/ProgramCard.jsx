@@ -35,10 +35,10 @@ const ProgramCard = ({ program, onApplyClick }) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
-      className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-gray-200 hover:border-stevens-primary overflow-hidden transition-all duration-stevens-normal"
+      className="group relative bg-stevens-white rounded-stevens-lg shadow-stevens-lg hover:shadow-stevens-2xl border border-stevens-light-gray hover:border-stevens-red overflow-hidden transition-all duration-stevens-normal"
     >
       {/* Image Section */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stevens-gray-100 to-stevens-gray-200">
+      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-stevens-light-gray to-stevens-light-gray">
         <img
           src={program.image}
           alt={program.name}
@@ -48,7 +48,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
         
         {/* Degree Badge */}
         <div className="absolute top-stevens-md left-stevens-md">
-          <div className="bg-stevens-primary/90 backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
+          <div className="bg-stevens-dark-gray backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
             {program.degree}
           </div>
         </div>
@@ -59,17 +59,17 @@ const ProgramCard = ({ program, onApplyClick }) => {
       {/* Content Section */}
       <div className="p-stevens-lg">
         {/* Title */}
-        <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs group-hover:text-stevens-primary transition-colors duration-stevens-normal">
+        <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-xs group-hover:text-stevens-red transition-colors duration-stevens-normal">
           {program.shortName}
         </h3>
 
         {/* Tagline */}
-        <p className="text-stevens-sm text-stevens-primary font-stevens-semibold mb-stevens-md">
+        <p className="text-stevens-sm text-stevens-red font-stevens-semibold mb-stevens-md">
           {program.tagline}
         </p>
 
         {/* Description */}
-        <p className="text-stevens-base text-stevens-gray-700 leading-relaxed mb-stevens-lg line-clamp-3">
+        <p className="text-stevens-base text-stevens-dark-gray leading-relaxed mb-stevens-lg line-clamp-3">
           {program.description}
         </p>
 
@@ -78,35 +78,35 @@ const ProgramCard = ({ program, onApplyClick }) => {
           {program.highlights.slice(0, 3).map((highlight, index) => (
             <span
               key={index}
-              className="inline-flex items-center gap-stevens-xs bg-stevens-gray-50 text-stevens-gray-700 px-stevens-sm py-stevens-xs rounded-stevens-sm text-stevens-xs font-stevens-medium"
+              className="inline-flex items-center gap-stevens-xs bg-stevens-light-gray text-stevens-dark-gray px-stevens-sm py-stevens-xs rounded-stevens-sm text-stevens-xs font-stevens-medium"
             >
-              <GraduationCap className="w-3 h-3 text-stevens-primary" />
+              <GraduationCap className="w-3 h-3 text-stevens-red" />
               {highlight}
             </span>
           ))}
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-stevens-md pt-stevens-md border-t border-stevens-gray-200">
+        <div className="grid grid-cols-2 gap-stevens-md pt-stevens-md border-t border-stevens-light-gray">
           <div>
-            <p className="text-stevens-xs text-stevens-gray-600 mb-stevens-xs">Duration</p>
-            <p className="font-stevens-semibold text-stevens-gray-900">{program.stats.duration}</p>
+            <p className="text-stevens-xs text-stevens-dark-gray mb-stevens-xs">Duration</p>
+            <p className="font-stevens-semibold text-stevens-dark-gray">{program.stats.duration}</p>
           </div>
           <div>
-            <p className="text-stevens-xs text-stevens-gray-600 mb-stevens-xs">Credits</p>
-            <p className="font-stevens-semibold text-stevens-gray-900">{program.stats.credits}</p>
+            <p className="text-stevens-xs text-stevens-dark-gray mb-stevens-xs">Credits</p>
+            <p className="font-stevens-semibold text-stevens-dark-gray">{program.stats.credits}</p>
           </div>
         </div>
 
         {/* CTAs - Two Buttons */}
-        <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200 flex gap-stevens-sm">
+        <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-light-gray flex gap-stevens-sm">
           {/* Explore Program Button - White bg, red text, red border */}
           <Link
             to={program.explorePage}
             className="flex-1"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="w-full btn-stevens-secondary text-stevens-sm">
+            <button className="w-full btn-stevens-outline text-stevens-sm">
               Explore
               <ArrowRight className="w-4 h-4 ml-1" />
             </button>
@@ -127,7 +127,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
                   application_type: 'custom_override'
                 });
               }}
-              className="flex-1 btn-stevens-primary text-stevens-sm"
+              className="flex-1 btn-stevens-red text-stevens-sm"
             >
               Apply Now
               <ArrowRight className="w-4 h-4 ml-1" />
@@ -147,7 +147,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
                   modal_options: 'standard,asap'
                 });
               }}
-              className="flex-1 btn-stevens-primary text-stevens-sm"
+              className="flex-1 btn-stevens-red text-stevens-sm"
             >
               Apply Now
               <ArrowRight className="w-4 h-4 ml-1" />
@@ -170,7 +170,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
                 });
               }}
             >
-              <button className="w-full btn-stevens-primary text-stevens-sm">
+              <button className="w-full btn-stevens-red text-stevens-sm">
                 Apply Now
                 <ArrowRight className="w-4 h-4 ml-1" />
               </button>
@@ -195,7 +195,7 @@ const ProgramCard = ({ program, onApplyClick }) => {
                 });
               }}
             >
-              <button className="w-full btn-stevens-primary text-stevens-sm">
+              <button className="w-full btn-stevens-red text-stevens-sm">
                 Apply Now
                 <ExternalLink className="w-4 h-4 ml-1" />
           </button>

@@ -92,7 +92,7 @@ const AlumniPGC = () => {
 
   return (
     <PageContextProvider pageType="landing" pageName="Alumni PGC">
-      <div className="min-h-screen bg-stevens-gray-50">
+      <div className="min-h-screen bg-stevens-light-gray">
         {/* Hero Section */}
         <PageHero
           title="Professional Graduate Certificates for Stevens Alumni"
@@ -107,10 +107,10 @@ const AlumniPGC = () => {
           }}
           bottomContent={
             <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-              <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-primary">
-                <p className="text-xs sm:text-sm font-semibold text-stevens-primary uppercase tracking-wide">Tuition-Reimbursement Friendly</p>
+              <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-red">
+                <p className="text-xs sm:text-sm font-semibold text-stevens-red uppercase tracking-wide">Tuition-Reimbursement Friendly</p>
                 <p className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
-                  Alumni rate: <span className="text-stevens-primary">$4,462.50</span>*
+                  Alumni rate: <span className="text-stevens-red">$4,462.50</span>*
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600 mt-1">
                   Aligning with many employer tuition reimbursement programs
@@ -146,7 +146,7 @@ const AlumniPGC = () => {
             </div>
 
             {/* Alumni Tuition & Savings Section - Moved Up */}
-            <Card className="border-stevens-gray-200 shadow-md">
+            <Card className="border-stevens-light-gray shadow-md">
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl sm:text-2xl">
                   Alumni Tuition & Savings
@@ -155,15 +155,15 @@ const AlumniPGC = () => {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {pricing.items.map((item, index) => (
-                    <div key={index} className={`p-4 sm:p-5 rounded-lg ${index === 1 ? 'bg-stevens-primary/10 border-2 border-stevens-primary' : 'bg-white border border-gray-200'}`}>
+                    <div key={index} className={`p-4 sm:p-5 rounded-lg ${index === 1 ? 'bg-stevens-light-gray border-2 border-stevens-red' : 'bg-white border border-gray-200'}`}>
                       <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide font-semibold">{item.label}</p>
-                      <p className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? 'text-stevens-primary' : 'text-gray-400 line-through'}`}>{item.value}</p>
+                      <p className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? 'text-stevens-red' : 'text-gray-400 line-through'}`}>{item.value}</p>
                       {item.note && <p className="text-xs text-gray-600 mt-2 italic">{item.note}</p>}
                     </div>
                   ))}
                 </div>
                 <div className="text-center pt-4 border-t border-gray-200">
-                  <p className="text-base sm:text-lg font-semibold text-stevens-primary">
+                  <p className="text-base sm:text-lg font-semibold text-stevens-red">
                     Save $787.50 with your alumni discount
                   </p>
                   <p className="text-xs sm:text-sm text-gray-600 mt-2">
@@ -175,7 +175,7 @@ const AlumniPGC = () => {
 
             {/* Combined Section: Why a Certificate & How to Get Started */}
             <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-              <div className="bg-stevens-primary px-4 sm:px-8 py-4 sm:py-6">
+              <div className="bg-stevens-red px-4 sm:px-8 py-4 sm:py-6">
                 <h2 className="font-stevens-headers text-xl sm:text-2xl font-bold text-white">
                   Why a Professional Graduate Certificate and How to Get Started
                 </h2>
@@ -193,7 +193,7 @@ const AlumniPGC = () => {
                   <ul className="space-y-3">
                     {programBenefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
                         <div>
                           <p className="font-semibold text-gray-900 text-sm sm:text-base">{benefit.label}</p>
                           <p className="text-xs sm:text-sm text-gray-600">{benefit.description}</p>
@@ -211,7 +211,7 @@ const AlumniPGC = () => {
                   <ul className="space-y-3">
                     {applicationBenefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-stevens-primary mt-0.5 flex-shrink-0" />
+                        <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
                         <p className="text-gray-800 text-sm sm:text-base">{benefit.label}</p>
                       </li>
                     ))}
@@ -223,7 +223,7 @@ const AlumniPGC = () => {
             {/* Application Form Section */}
             <div id="apply-now" className="scroll-mt-24">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-primary mb-2">Ready to Apply?</h2>
+                <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-red mb-2">Ready to Apply?</h2>
                 <p className="text-gray-600 text-base sm:text-lg">
                   Complete the accelerated application form below to secure your 15% alumni discount.
                 </p>
@@ -238,7 +238,7 @@ const AlumniPGC = () => {
             </div>
 
             {/* Secondary CTAs Section */}
-            <div className="bg-stevens-gray-50 rounded-lg p-4 sm:p-8 border border-gray-200">
+            <div className="bg-stevens-light-gray rounded-lg p-4 sm:p-8 border border-gray-200">
               <div className="text-center mb-6">
                 <h3 className="font-stevens-headers text-lg sm:text-xl font-semibold text-gray-900">
                   Need More Information?
@@ -254,7 +254,7 @@ const AlumniPGC = () => {
                     handleCTAClick('explore_certificate');
                     window.open('/certificates/enterprise-ai/', '_blank');
                   }}
-                  className="w-full sm:w-auto border-stevens-primary text-stevens-primary hover:bg-stevens-primary hover:text-white font-semibold px-6 py-3 transition-colors"
+                  className="w-full sm:w-auto border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white font-semibold px-6 py-3 transition-colors"
                 >
                   Explore Certificates
                 </Button>
