@@ -119,57 +119,6 @@ export default function AcceleratedAppForm({
     };
   }, [programCode, JSON.stringify(additionalUrlParams)]);
 
-  // Continuous protection against external script interference
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    
-    const addPentagonProtection = () => {
-      const style = document.createElement('style');
-      style.id = 'accelerated-pentagon-protection';
-      style.textContent = `
-        /* ULTRA AGGRESSIVE Pentagon Badge Protection for Accelerated Application page */
-        div[class*="z-[9999]"] {
-          z-index: 9999 !important;
-          position: fixed !important;
-          top: 3.5rem !important;
-          width: 100% !important;
-          pointer-events: none !important;
-        }
-        
-        div[class*="z-[9999]"] a,
-        div[class*="z-[9999]"] a * {
-          pointer-events: auto !important;
-          z-index: inherit !important;
-        }
-        
-        @media (max-width: 1024px) {
-          div[class*="z-[9999]"] {
-            top: 1rem !important;
-          }
-        }
-        
-        /* Override any external script interference */
-        div[class*="z-[9999]"] *:not(a):not(a *) {
-          pointer-events: none !important;
-        }
-      `;
-      
-      const existing = document.getElementById('accelerated-pentagon-protection');
-      if (existing) existing.remove();
-      
-      document.head.appendChild(style);
-    };
-
-    addPentagonProtection();
-    const protectionInterval = setInterval(addPentagonProtection, 5000);
-    
-    return () => {
-      clearInterval(protectionInterval);
-      const existing = document.getElementById('accelerated-pentagon-protection');
-      if (existing) existing.remove();
-    };
-  }, []);
-
   return (
     <Card className={`shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden ${hideHeader ? 'shadow-none' : ''}`}>
       {!hideHeader && (
@@ -230,36 +179,10 @@ export default function AcceleratedAppForm({
               z-index: 9996 !important;
               position: fixed !important;
             }
-
-            /* Pentagon Badge Protection - ULTRA AGGRESSIVE */
-            div[class*="z-[9999]"] {
-              z-index: 9999 !important;
-              position: fixed !important;
-              top: 3.5rem !important;
-              width: 100% !important;
-              pointer-events: none !important;
-            }
-            
-            div[class*="z-[9999]"] a,
-            div[class*="z-[9999]"] a * {
-              pointer-events: auto !important;
-              z-index: inherit !important;
-            }
-            
-            @media (max-width: 1024px) {
-              div[class*="z-[9999]"] {
-                top: 1rem !important;
-              }
-            }
-            
-            div[class*="z-[9999]"] *:not(a):not(a *) {
-              pointer-events: none !important;
-            }
             
             header[class*="z-[9997]"] *,
             div[class*="z-[9998]"] *,
-            div[class*="z-[9996]"] *,
-            div[class*="z-[9999]"] * {
+            div[class*="z-[9996]"] * {
               z-index: inherit !important;
               pointer-events: auto !important;
             }

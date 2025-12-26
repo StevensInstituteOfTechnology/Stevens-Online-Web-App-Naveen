@@ -100,36 +100,10 @@ export default function AcceleratedFormEmbed({
               z-index: 9996 !important;
               position: fixed !important;
             }
-
-            /* Pentagon Badge Protection */
-            div[class*="z-[9999]"] {
-              z-index: 9999 !important;
-              position: fixed !important;
-              top: 3.5rem !important;
-              width: 100% !important;
-              pointer-events: none !important;
-            }
-            
-            div[class*="z-[9999]"] a,
-            div[class*="z-[9999]"] a * {
-              pointer-events: auto !important;
-              z-index: inherit !important;
-            }
-            
-            @media (max-width: 1024px) {
-              div[class*="z-[9999]"] {
-                top: 1rem !important;
-              }
-            }
-            
-            div[class*="z-[9999]"] *:not(a):not(a *) {
-              pointer-events: none !important;
-            }
             
             header[class*="z-[9997]"] *,
             div[class*="z-[9998]"] *,
-            div[class*="z-[9996]"] *,
-            div[class*="z-[9999]"] * {
+            div[class*="z-[9996]"] * {
               z-index: inherit !important;
               pointer-events: auto !important;
             }
