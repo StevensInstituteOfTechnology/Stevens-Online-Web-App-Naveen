@@ -222,9 +222,9 @@ export default function Home() {
 
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
-    <div className="font-sans bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-stevens-black text-stevens-white overflow-hidden">
+    <div className="font-sans">
+      {/* Hero Section - negative margin pulls it up behind the fixed navbar */}
+      <section className="relative bg-stevens-black text-stevens-white overflow-hidden -mt-[87px] pt-[87px]">
         <img
           {...getHeroImageProps('/assets/images/home/HEADER-0865.webp', { 
             widths: [640, 1024, 1280, 1920] 

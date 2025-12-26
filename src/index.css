@@ -107,8 +107,17 @@
     @apply border-border outline-ring/50;
   }
   
+  html, body {
+    @apply m-0 p-0;
+  }
+  
   body {
     @apply bg-background text-foreground font-stevens-body;
+  }
+  
+  /* Ensure main content starts from top when using fixed navbar */
+  main > *:first-child {
+    margin-top: 0;
   }
   
   /* Ensure paragraphs and other text elements inherit the body font */
@@ -546,25 +555,11 @@
   }
 }
 
-/* Logo responsive width for screens less than or equal to 1024px */
+/* Offset mobile sheet overlay - updated for new navbar height (87px) */
 @media (max-width: 1024px) {
-  .logo-responsive-width {
-    width: 80px !important;
-    height: 64px !important;
-  }
-}
-
-/* Offset mobile sheet/menu below red nav bar */
-@media (max-width: 1024px) {
-  .mobile-menu-offset {
-    top: 4rem !important; /* match red nav height (h-16) */
-    height: calc(100vh - 4rem) !important; /* keep within viewport */
-  }
-  
-  /* Also offset the sheet overlay to start below the nav bar */
   .mobile-menu-overlay {
-    top: 4rem !important;
-    height: calc(100vh - 4rem) !important;
+    top: 87px !important;
+    height: calc(100vh - 87px) !important;
   }
 }
 

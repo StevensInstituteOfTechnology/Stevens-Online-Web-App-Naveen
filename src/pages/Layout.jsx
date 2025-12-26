@@ -17,14 +17,6 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import ChatbotButton from "@/components/chat/ChatbotButton";
 
 const graduateProgramItems = [
@@ -180,7 +172,7 @@ export default function Layout({ children, currentPageName }) {
         /* Global protection for navigation elements */
         header[class*="z-[9998]"] {
           z-index: 9998 !important;
-          position: sticky !important;
+          position: fixed !important;
           pointer-events: auto !important;
         }
         
@@ -223,20 +215,13 @@ export default function Layout({ children, currentPageName }) {
           }
           
           /* Keep red nav visible on mobile while overflow-x is hidden */
-          header.group.sticky {
+          header.group.fixed {
             position: fixed !important;
             top: 0 !important;
             left: 0;
             right: 0;
             z-index: 9998 !important;
           }
-
-          /* Compensate layout for fixed header height (approx 64px) */
-          body {
-            padding-top: 64px !important;
-          }
-          
-          
           
           /* Protect chatbot and back-to-top buttons from container overflow */
           button[class*="bottom-6"][class*="right-6"],
@@ -330,17 +315,31 @@ export default function Layout({ children, currentPageName }) {
   }, [location.pathname]);
 
   const isActive = (page) => currentPageName === page;
+  
+  // Check if we're on the home page by pathname (more reliable than currentPageName)
+  const isHomePage = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/home/";
+
+  // Navbar should be transparent without logo only on home page when not scrolled AND mega menu is closed
+  const showTransparentNav = isHomePage && !isScrolled && !mobileMenuOpen;
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-stevens-dark-gray">
-      {/* Main Red Navigation Bar */}
+      {/* Main Navigation Bar - transparent on home page at top, solid otherwise */}
       <header
-        className={`group sticky top-0 z-[9998] transition-all duration-stevens-normal bg-stevens-black ${isScrolled ? "shadow-stevens-lg" : ""}`}
+        className={`group fixed top-0 left-0 right-0 z-[9998] transition-all duration-500 ${
+          showTransparentNav 
+            ? "bg-transparent" 
+            : "bg-stevens-black shadow-stevens-lg"
+        }`}
       >
         <div className="w-full px-stevens-md lg:px-stevens-lg">
-            <div className="flex items-center justify-between h-[102px] w-full">
-            {/* Logo - Left */}
-            <div className="flex-shrink-0 overflow-visible">
+            <div className="flex items-center justify-between h-[87px] w-full">
+            {/* Logo - Left (hidden on home page when not scrolled) */}
+            <div className={`flex-shrink-0 overflow-visible transition-all duration-500 ${
+              showTransparentNav 
+                ? "opacity-0 -translate-x-4 pointer-events-none" 
+                : "opacity-100 translate-x-0"
+            }`}>
               <Link
                 to={createPageUrl("Home")}
                 className="flex items-center gap-2 stevens-md:gap-3 transition-opacity duration-stevens-normal hover:opacity-80"
@@ -350,7 +349,7 @@ export default function Layout({ children, currentPageName }) {
                   <img
                     src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.png"
                     alt="Stevens Institute of Technology Professional Education Logo" 
-                    className="h-[77px] stevens-md:h-[102px] w-auto"
+                    className="h-[65px] stevens-md:h-[87px] w-auto"
                   />
                 </div>
               </Link>
@@ -405,7 +404,7 @@ export default function Layout({ children, currentPageName }) {
             <>
               {/* Transparent backdrop - click to close */}
               <div 
-                className="fixed inset-0 top-[102px] z-[9990]"
+                className="fixed inset-0 top-[87px] z-[9990]"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-hidden="true"
               />
