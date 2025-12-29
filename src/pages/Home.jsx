@@ -236,7 +236,16 @@ export default function Home() {
           loading="eager"
           decoding="async"
         />
+        {/* Left-to-right gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent"></div>
+        
+        {/* Bottom fade-to-black overlay - blends into next section */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0) 45%, rgba(0,0,0,0.65) 75%, rgba(0,0,0,1) 100%)'
+          }}
+        />
         
         {/* Asterism overlay - CPE Brand Visual Element */}
         <Asterism
@@ -260,8 +269,8 @@ export default function Home() {
           staggerDelay={150}
         />
         
-        <div className="relative min-h-[80vh] max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
-          {/* <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
+        <div className="relative min-h-[80vh] max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-[80px]">
+          <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 Advance Your Career with a World-Class Online Master's Degree from
@@ -286,7 +295,7 @@ export default function Home() {
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
                   <LeadCaptureForm sourcePage="home" />
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
 

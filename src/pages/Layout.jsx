@@ -133,6 +133,16 @@ export default function Layout({ children, currentPageName }) {
   const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(initialWidth <= 1024);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = React.useState(null);
+  const [expandedMobileMenus, setExpandedMobileMenus] = React.useState([]); // For mobile accordion
+
+  // Toggle accordion item on mobile
+  const toggleMobileAccordion = (menuName) => {
+    setExpandedMobileMenus(prev => 
+      prev.includes(menuName) 
+        ? prev.filter(name => name !== menuName)
+        : [...prev, menuName]
+    );
+  };
 
   React.useEffect(() => {
     // Only run on client side
@@ -155,7 +165,7 @@ export default function Layout({ children, currentPageName }) {
 
     const handleScrollNow = () => {
       const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 10);
+      setIsScrolled(scrollY > 100);
       setShowBackToTop(scrollY > 300);
     };
 
@@ -172,7 +182,6 @@ export default function Layout({ children, currentPageName }) {
         /* Global protection for navigation elements */
         header[class*="z-[9998]"] {
           z-index: 9998 !important;
-          position: fixed !important;
           pointer-events: auto !important;
         }
         
@@ -214,9 +223,8 @@ export default function Layout({ children, currentPageName }) {
             overflow-x: hidden !important;
           }
           
-          /* Keep red nav visible on mobile while overflow-x is hidden */
-          header.group.fixed {
-            position: fixed !important;
+          /* Keep nav visible on mobile while overflow-x is hidden */
+          header.group {
             top: 0 !important;
             left: 0;
             right: 0;
@@ -294,9 +302,10 @@ export default function Layout({ children, currentPageName }) {
     };
   }, []);
 
-  // Close mobile menu when page changes
+  // Close mobile menu and reset accordion when page changes
   React.useEffect(() => {
     setMobileMenuOpen(false);
+    setExpandedMobileMenus([]);
   }, [location.pathname]);
 
   // Update canonical tag on route change
@@ -324,9 +333,16 @@ export default function Layout({ children, currentPageName }) {
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-stevens-dark-gray">
-      {/* Main Navigation Bar - transparent on home page at top, solid otherwise */}
+      {/* Main Navigation Bar
+          - Home page: fixed (for transparent overlay effect on hero)
+          - Other pages: sticky (content flows below naturally, no overlap)
+      */}
       <header
-        className={`group fixed top-0 left-0 right-0 z-[9998] transition-all duration-500 ${
+        className={`group z-[9998] ${
+          isHomePage
+            ? "fixed top-0 left-0 right-0"  // Fixed for home page
+            : "sticky top-0"                 // Sticky for other pages
+        } ${
           showTransparentNav 
             ? "bg-transparent" 
             : "bg-stevens-black shadow-stevens-lg"
@@ -335,7 +351,7 @@ export default function Layout({ children, currentPageName }) {
         <div className="w-full px-stevens-md lg:px-stevens-lg">
             <div className="flex items-center justify-between h-[87px] w-full">
             {/* Logo - Left (hidden on home page when not scrolled) */}
-            <div className={`flex-shrink-0 overflow-visible transition-all duration-500 ${
+            <div className={`flex-shrink-0 overflow-visible ${
               showTransparentNav 
                 ? "opacity-0 -translate-x-4 pointer-events-none" 
                 : "opacity-100 translate-x-0"
@@ -410,38 +426,81 @@ export default function Layout({ children, currentPageName }) {
               />
               
               {/* Mega Menu Content */}
-              <div className="absolute left-0 right-0 top-full bg-stevens-dark-gray z-[9991] shadow-2xl">
-                <div className="max-w-stevens-content-max mx-auto px-stevens-xl py-stevens-2xl">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-2xl">
-                    {/* Left Column - Main Navigation Links */}
-                    <div className="space-y-stevens-lg">
+              <div className="absolute left-0 right-0 top-full bg-stevens-dark-gray z-[9991] shadow-2xl max-h-[calc(100vh-87px)] overflow-y-auto">
+                <div className="max-w-stevens-content-max mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
+                  {/* Mobile: Single column accordion | Desktop: 3-column grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
+                    
+                    {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
+                    <div className="space-y-stevens-sm md:space-y-stevens-lg">
                       {mobileNavLinks.map((link) => {
                         if (link.isDropdown) {
+                          const isExpanded = expandedMobileMenus.includes(link.name);
                           return (
-                            <div
-                              key={link.name}
-                              className="group"
-                              onMouseEnter={() => setMegaMenuHoveredItem(link.name)}
-                            >
-                              <span className={`text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 ${
-                                megaMenuHoveredItem === link.name 
-                                  ? 'text-stevens-white' 
-                                  : 'text-stevens-light-gray hover:text-stevens-white'
-                              }`}>
-                                {link.name}
-                              </span>
+                            <div key={link.name} className="group">
+                              {/* Menu Item Header */}
+                              <button
+                                className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
+                                  megaMenuHoveredItem === link.name || isExpanded
+                                    ? 'text-stevens-white' 
+                                    : 'text-stevens-light-gray hover:text-stevens-white'
+                                }`}
+                                onClick={() => toggleMobileAccordion(link.name)}
+                                onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(link.name)}
+                              >
+                                <span>{link.name}</span>
+                                {/* Chevron icon - rotates when expanded (mobile only) */}
+                                <svg 
+                                  className={`w-5 h-5 md:hidden transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Accordion Content - Mobile Only */}
+                              {isExpanded && (
+                                <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
+                                  {link.items?.map((item) => (
+                                    item.external ? (
+                                      <a
+                                        key={item.name}
+                                        href={item.page}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                      >
+                                        {item.name}
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        key={item.name}
+                                        to={createPageUrl(item.page)}
+                                        className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    )
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           );
                         }
+                        // Regular link (not dropdown)
                         return link.external ? (
                           <a
                             key={link.name}
                             href={link.page}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                            className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                             onClick={() => setMobileMenuOpen(false)}
-                            onMouseEnter={() => setMegaMenuHoveredItem(null)}
+                            onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(null)}
                           >
                             {link.name}
                           </a>
@@ -449,9 +508,9 @@ export default function Layout({ children, currentPageName }) {
                           <Link
                             key={link.name}
                             to={createPageUrl(link.page)}
-                            className="block text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                            className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                             onClick={() => setMobileMenuOpen(false)}
-                            onMouseEnter={() => setMegaMenuHoveredItem(null)}
+                            onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(null)}
                           >
                             {link.name}
                           </Link>
@@ -459,8 +518,8 @@ export default function Layout({ children, currentPageName }) {
                       })}
                     </div>
 
-                    {/* Middle Column - Sub-links for hovered item */}
-                    <div className="space-y-stevens-md min-h-[200px]">
+                    {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
+                    <div className="hidden md:block space-y-stevens-md min-h-[200px]">
                       {megaMenuHoveredItem && mobileNavLinks.find(link => link.name === megaMenuHoveredItem)?.items?.map((item) => (
                         item.external ? (
                           <a
@@ -486,13 +545,13 @@ export default function Layout({ children, currentPageName }) {
                       ))}
                     </div>
 
-                    {/* Right Column - CPE Information */}
-                    <div className="space-y-stevens-lg">
+                    {/* Right Column - CPE Information (Hidden on small mobile, visible on tablet+) */}
+                    <div className="hidden sm:block space-y-stevens-lg pt-stevens-lg md:pt-0 border-t border-stevens-gray md:border-t-0">
                       <div>
-                        <h3 className="text-stevens-xl font-stevens-display text-stevens-white mb-stevens-md">
+                        <h3 className="text-stevens-lg md:text-stevens-xl font-stevens-display text-stevens-white mb-stevens-md">
                           College of Professional Education
                         </h3>
-                        <p className="text-stevens-base text-stevens-light-gray leading-relaxed">
+                        <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
                           Advance your career with Stevens' forward-looking vision for higher education—flexible online programs designed for working professionals.
                         </p>
                       </div>
