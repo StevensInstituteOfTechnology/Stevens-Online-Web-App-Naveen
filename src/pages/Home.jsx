@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
 import { getHeroImageProps, getContentImageProps, getCardImageProps } from "@/utils/responsiveImage";
 import Asterism from "@/components/shared/Asterism";
+import { AngledImage, AngledImageStack, AngledContainer } from "@/components/shared/angled-image";
 import {
   GraduationCap,
   Users,
@@ -270,7 +271,7 @@ export default function Home() {
         />
         
         <div className="relative min-h-[80vh] max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-[80px]">
-          <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
+          {/* <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
             <div>
               <h1 className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
                 Advance Your Career with a World-Class Online Master's Degree from
@@ -295,11 +296,127 @@ export default function Home() {
             <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
                   <LeadCaptureForm sourcePage="home" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
-
+{/* ===== DEMO: Angled Image Component ===== */}
+<section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section">
+        <div className=" mx-auto px-stevens-md lg:px-stevens-lg">
+          <AnimatedSection className="text-center mb-stevens-xl">
+            <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-light text-stevens-white mb-stevens-md tracking-tight">
+              Dimensional Imagery Demo
+            </h2>
+            <p className="text-stevens-gray text-stevens-lg max-w-2xl mx-auto">
+              CPE Brand Guidelines - 25° angled image containers
+            </p>
+          </AnimatedSection>
+          
+          {/* Horizontal Parallelogram (left/right edges angled) */}
+          <p className="text-stevens-red text-sm mb-4 uppercase tracking-wider">Horizontal Parallelogram (top/bottom horizontal)</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {/* Direction: Right */}
+            <div>
+              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">right</p>
+              <AngledImage
+                src="/assets/images/home/332_0006.webp"
+                alt="Student working"
+                direction="right"
+                aspectRatio="4/3"
+                className="w-full"
+              />
+            </div>
+            
+            {/* Direction: Left */}
+            <div>
+              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">left</p>
+              <AngledImage
+                src="/assets/images/shared/1-explore-msds.webp"
+                alt="Campus view"
+                direction="left"
+                aspectRatio="4/3"
+                className="w-full"
+              />
+            </div>
+            
+            {/* Direction: Vertical-Right */}
+            <div>
+              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">vertical-right</p>
+              <AngledImage
+                src="/assets/images/shared/1-omba-hero-scaled.webp"
+                alt="Students"
+                direction="vertical-right"
+                aspectRatio="4/3"
+                className="w-full"
+              />
+            </div>
+            
+            {/* Direction: Vertical-Left */}
+            <div>
+              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">vertical-left</p>
+              <AngledImage
+                src="/assets/images/shared/2-explore-msds.webp"
+                alt="Campus"
+                direction="vertical-left"
+                aspectRatio="4/3"
+                className="w-full"
+              />
+            </div>
+          </div>
+          
+          {/* Stacked Images Demo ) */}
+          <div className="mb-8">
+            <p className="text-stevens-light-gray text-sm mb-4 uppercase tracking-wider text-center">Layered Stack (like page-34 mockup)</p>
+            <AngledImageStack className="h-[500px] max-w-3xl mx-auto">
+              {/* Background layer - larger */}
+              <AngledImage
+                src="/assets/images/shared/2-explore-msds.webp"
+                alt="Background"
+                direction="right"
+                aspectRatio="16/9"
+                className="absolute top-0 left-0 w-3/4 z-10"
+              />
+              {/* Foreground layer - smaller, overlapping */}
+              <AngledImage
+                src="/assets/images/shared/3-explore-msds.webp"
+                alt="Foreground"
+                direction="left"
+                aspectRatio="16/9"
+                className="absolute bottom-0 right-0 w-2/3 z-20"
+              />
+            </AngledImageStack>
+          </div>
+          <div className="mb-8">
+            <p className="text-stevens-light-gray text-sm mb-4 uppercase tracking-wider text-center">Layered Stack (like page-34 mockup)</p>
+            <AngledImageStack className="h-[1000px]  mx-auto">
+              {/* Background layer - larger */}
+              <AngledImage
+                src="/assets/images/shared/2-explore-msds.webp"
+                alt="Background"
+                direction="vertical-left"
+                width="600px"
+                height="800px"
+                // scale/translateX/translateY: adjust which part of image is visible
+                // scale > 1 zooms in, translateX moves horizontally, translateY moves vertically
+                className="absolute top-0 left-0 w-3/4 z-10"
+              />
+              {/* Foreground layer - smaller, overlapping */}
+              <AngledImage
+                src="/assets/images/shared/3-explore-msds.webp"
+                alt="Foreground"
+                direction="vertical-right"
+                // Pan to show more of right side of image
+                scale={1.3} // Zoom in 30%
+                translateX={-35} // Shift left 15%
+                width="400px"
+                height="400px"
+                className="absolute bottom-0 left-60 w-2/3 z-20"
+              />
+            </AngledImageStack>
+          </div>
+        </div>
+      </section>
+      {/* ===== END DEMO ===== */}
       {/* Stats Bar */}
       <AnimatedSection className="section-dark py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -319,6 +436,8 @@ export default function Home() {
           </div>
         </div>
       </AnimatedSection>
+
+      
 
       {/* Redesigned Rankings & Proof Points Section */}
       <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
