@@ -112,7 +112,7 @@ export default function ProfessionalEducation() {
             </Button>
             <Button 
               onClick={() => setBrowseModalOpen(true)}
-              variant="outline" 
+              variant="outline-dark" 
               className="btn-stevens-outline px-stevens-xl py-stevens-md text-stevens-lg font-stevens-semibold"
             >
               Browse Courses
@@ -254,7 +254,7 @@ export default function ProfessionalEducation() {
               rel="noopener noreferrer"
               className="w-full"
               onClick={() => setBrowseModalOpen(false)}>
-              <Button variant="outline" className="w-full btn-stevens-outline py-stevens-md text-stevens-lg font-semibold transition-all duration-stevens-normal">
+              <Button variant="outline-dark" className="w-full btn-stevens-outline py-stevens-md text-stevens-lg font-semibold transition-all duration-stevens-normal">
                 Public Learner
               </Button>
             </a>
@@ -286,7 +286,7 @@ export default function ProfessionalEducation() {
               rel="noopener noreferrer"
               className="w-full"
               onClick={() => setSignInModalOpen(false)}>
-              <Button variant="outline" className="w-full btn-stevens-outline py-stevens-md text-stevens-lg font-semibold transition-all duration-stevens-normal">
+              <Button variant="outline-dark" className="w-full btn-stevens-outline py-stevens-md text-stevens-lg font-semibold transition-all duration-stevens-normal">
                 Public Learner
               </Button>
             </a>

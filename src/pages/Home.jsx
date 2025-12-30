@@ -286,9 +286,9 @@ export default function Home() {
                   to={createPageUrl("admissions/") + "#explore-programs"}
                   onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
                 >
-                  <button className="btn-stevens-red font-stevens-body">
+                  <Button variant="destructive" className="uppercase">
                     Explore Programs & Apply in Minutes
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -398,7 +398,7 @@ export default function Home() {
                       </Button>
                     </Link>
                     <Button
-                      variant="outline"
+                      variant="outline-dark"
                       className="btn-stevens-outline text-stevens-lg flex-1"
                       onClick={() => setShowBrowseModal(true)}
                     >
@@ -447,7 +447,7 @@ export default function Home() {
       </section>
       
       {/* Program Showcase Section */}
-      <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-red">
+      <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-black">
         <div className="max-w-6xl mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="grid md:grid-cols-2 gap-stevens-2xl">
             
@@ -468,9 +468,9 @@ export default function Home() {
                   at Stevens offers you a curriculum aligned with high-demand areas such as software development, web programming, mobile systems and applications, cloud computing, human-computer interaction, and enterprise software design.
                 </p>
                 <Link to={createPageUrl("online-masters-computer-science-mscs/")}>
-                  <button className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <Button variant="outline-white" className="uppercase">
                     LEARN MORE
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </AnimatedSection>
@@ -492,9 +492,9 @@ export default function Home() {
                    is an AACSB-accredited program offered part time through online courses. The Online MBA combines business knowledge with the technology and analytics necessary to excel in today's data-centric world. Students will build upon their managerial toolkits with analytical, data literacy, marketing and operations management skills that drive data-based decisions.
                 </p>
                 <Link to={createPageUrl("online-mba/")}>
-                  <button className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <Button variant="outline-white" className="uppercase">
                     LEARN MORE
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </AnimatedSection>
@@ -516,9 +516,9 @@ export default function Home() {
                   program are prepared to add value at the intersection of engineering and management and assume professional positions of increasing responsibility.
                 </p>
                 <Link to={createPageUrl("online-masters-engineering-management/")}>
-                  <button className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <Button variant="outline-white" className="uppercase">
                     LEARN MORE
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </AnimatedSection>
@@ -533,9 +533,9 @@ export default function Home() {
                   At Stevens, we are proud to offer an array of online programs that challenge the traditional frontiers of technology and business. Compare our programs to find the innovative graduate degree that is the right fit for your personal and professional goals.
                 </p>
                 <Link to={createPageUrl("compare-our-programs/")}>
-                  <button className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg">
+                  <Button variant="outline-white" className="uppercase">
                     LEARN MORE
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </AnimatedSection>
@@ -590,7 +590,7 @@ export default function Home() {
                 connection.
               </p>
               <Link to={createPageUrl("OnlineLearning")}>
-                <Button className="btn-stevens-red font-stevens-body">
+                <Button variant="default">
                   Explore the Student Experience 
                   <ArrowRight className="w-5 h-5 ml-stevens-sm" />
                 </Button>
@@ -602,7 +602,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <AnimatedSection className="bg-stevens-red py-stevens-section">
+      <AnimatedSection className="bg-stevens-black py-stevens-section">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="mx-auto text-center">
           <img
@@ -645,19 +645,19 @@ export default function Home() {
                 <table className="w-full text-left border-collapse border border-stevens-light-gray">
                           <thead className="bg-stevens-light-gray">
                               <tr>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
                         Term
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black border border-stevens-light-gray">
                         Early Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
                         Priority Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
                         Final Submit
                       </th>
-                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
                         Start of Classes
                       </th>
                               </tr>
@@ -786,7 +786,7 @@ export default function Home() {
             {/* View All Blogs Button */}
             <AnimatedSection className="text-center">
               <Link to={createPageUrl("blog/")}>
-                <Button variant="outline" className="btn-stevens-outline font-stevens-body">
+                <Button variant="outline-dark">
                   View All Blog Posts
                 </Button>
               </Link>
@@ -830,7 +830,7 @@ export default function Home() {
                         </div>
                       </div>
                       <a href={e.url} target="_blank" rel="noopener noreferrer" className="block mt-stevens-md">
-                        <Button className="bg-stevens-red text-stevens-white hover:bg-stevens-dark-gray transition-all duration-stevens-normal font-stevens-body font-stevens-semibold px-stevens-lg py-stevens-md">
+                        <Button>
                           Watch Now
                         </Button>
                       </a>
@@ -841,7 +841,7 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection className="text-center">
               <Link to="/events/">
-                <Button variant="outline" className="btn-stevens-outline font-stevens-body">
+                <Button variant="outline-dark">
                   View All Events
                 </Button>
               </Link>
@@ -905,7 +905,7 @@ export default function Home() {
                 onClick={() => setShowBrowseModal(false)}
               >
                 <Button
-                  variant="outline"
+                  variant="outline-dark"
                   className="w-full btn-outline-maroon py-3 text-lg font-stevens-body font-semibold hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300"
                 >
                   Public Learner

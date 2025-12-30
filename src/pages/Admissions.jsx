@@ -137,7 +137,7 @@ export default function Admissions() {
                 <TableHeader>
                   <TableRow>
                     {keyDates.headers.map((header, index) => (
-                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-red border border-stevens-light-gray">
+                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-gray border border-stevens-light-gray">
                         {header}
                       </TableHead>
                     ))}
@@ -209,7 +209,7 @@ export default function Admissions() {
               </div>
               <div className="stevens-md:text-right">
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
-                  <Button variant="outline" className="text-stevens-red px-stevens-xl py-stevens-md rounded-stevens-md">
+                  <Button variant="outline-dark" className="text-stevens-red px-stevens-xl py-stevens-md rounded-stevens-md">
                     Get In Touch
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -254,7 +254,7 @@ export default function Admissions() {
           
           <div className="text-center mt-stevens-xl">
             <Link to="/events/">
-              <Button variant="outline" className="btn-outline-maroon">
+              <Button variant="outline-dark" className="btn-outline-maroon">
                 View All Events
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -290,7 +290,7 @@ export default function Admissions() {
       </div>
 
       {/* Request Information */}
-      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-red">
+      <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-stevens-xl items-center">

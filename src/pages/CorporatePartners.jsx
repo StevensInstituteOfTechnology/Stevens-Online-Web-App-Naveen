@@ -887,7 +887,7 @@ const CorporatePartners = () => {
         <EmployerFaqSection accordionPrefix="corporate-partners" />
 
         {/* Final CTA Section */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-red text-stevens-white">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray text-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div
               initial={{ opacity: 0, y: 20 }}
@@ -992,7 +992,7 @@ const CorporatePartners = () => {
         }}>
           <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
             {/* Header with gradient background */}
-            <div className="bg-stevens-red text-white px-6 py-5 rounded-t-lg">
+            <div className="bg-stevens-gray text-white px-6 py-5 rounded-t-lg">
               <DialogHeader className="space-y-2">
                 <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-white">
                   Get in Touch

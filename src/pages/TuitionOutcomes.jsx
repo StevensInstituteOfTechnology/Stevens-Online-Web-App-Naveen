@@ -109,7 +109,7 @@ export default function TuitionOutcomes() {
                     <Button className="btn-secondary px-8 py-3 text-lg">Apply Now</Button>
                 </a>
                 <Button 
-                  variant="outline" 
+                  variant="outline-dark" 
                   className="btn-outline-maroon px-8 py-3 text-lg"
                   onClick={() => {
                     trackConversion(CONVERSION_LABELS.REQUEST_INFO);

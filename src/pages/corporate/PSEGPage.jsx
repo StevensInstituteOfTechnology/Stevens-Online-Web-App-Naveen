@@ -88,7 +88,7 @@ export default function PSEGPage() {
                             <p className="text-stevens-dark-gray text-sm mb-6 flex-grow">{program.description}</p>
                             <div className="mt-auto space-y-3">
                                 <Link to={program.exploreLink} target="_blank">
-                                    <Button variant="outline" className="w-full text-stevens-red border-stevens-red hover:bg-stevens-red hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
+                                    <Button variant="outline-dark" className="w-full text-stevens-red border-stevens-red hover:bg-stevens-red hover:text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]">
                                         Explore Program <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>

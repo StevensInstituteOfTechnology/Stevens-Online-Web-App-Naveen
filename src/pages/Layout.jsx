@@ -380,8 +380,10 @@ export default function Layout({ children, currentPageName }) {
                 rel="noopener noreferrer"
                 className="hidden sm:flex items-center text-stevens-white hover:text-stevens-white/80 transition-colors duration-200 text-sm font-medium tracking-wide"
               >
-                STEVENS.EDU
-                <ArrowUpRight className="h-4 w-4 ml-1" />
+                <span className="inline-flex items-center border-b-2 border-stevens-red pb-0.5 tracking-widest">
+                  STEVENS.EDU
+                  <ArrowUpRight className="h-4 w-4 ml-1" />
+                </span>
               </a>
 
               {/* Search Button - links to Stevens search */}
@@ -737,3 +739,4 @@ export default function Layout({ children, currentPageName }) {
     </div>
   );
 }
+

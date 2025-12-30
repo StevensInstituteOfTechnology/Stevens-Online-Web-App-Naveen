@@ -49,7 +49,7 @@ class BlogErrorBoundary extends React.Component {
                   Try Again
                 </Button>
                 <Button 
-                  variant="outline"
+                  variant="outline-dark"
                   onClick={() => window.location.reload()}
                   className="w-full"
                 >

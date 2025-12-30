@@ -170,11 +170,11 @@ export default function OnlineExperience() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)} className="w-full sm:w-auto">
-                  <Button className="w-full btn-secondary px-8 py-3 text-lg">Schedule a Call</Button>
+                  <Button variant="default" className="w-full uppercase">Schedule a Call</Button>
                 </a>
                 <Button 
-                  variant="outline" 
-                  className="w-full sm:w-auto btn-outline-maroon px-8 py-3 text-lg"
+                  variant="outline-dark" 
+                  className="w-full sm:w-auto uppercase"
                   onClick={() => {
                     trackConversion(CONVERSION_LABELS.REQUEST_INFO);
                     setShowRequestInfoModal(true);

@@ -38,7 +38,7 @@ export default function NotFound() {
             rel="noopener noreferrer"
           >
             <Button 
-              variant="outline" 
+              variant="outline-dark" 
               className="btn-stevens-outline text-stevens-lg flex items-center gap-2"
             >
               <Search className="w-5 h-5" />

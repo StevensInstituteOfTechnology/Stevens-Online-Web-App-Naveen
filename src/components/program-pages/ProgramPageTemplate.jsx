@@ -502,7 +502,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 <div className="mt-8">
                   <h3 className="font-semibold text-lg mb-2">Key Skills Developed:</h3>
                   <div className="flex flex-wrap gap-2">
-                    {overview.keySkills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                    {overview.keySkills.map(skill => <Badge key={skill} variant="outline-dark">{skill}</Badge>)}
                   </div>
                 </div>
               )}
@@ -728,7 +728,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               <div className="max-w-stevens-content-max mx-auto">
                 <div className="grid lg:grid-cols-2 gap-stevens-2xl items-center">
                   {/* Left Column - Text Content */}
-                  <div className="bg-stevens-red text-stevens-white p-stevens-2xl rounded-stevens-lg">
+                  <div className="bg-stevens-black text-stevens-white p-stevens-2xl rounded-stevens-lg">
                     <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold mb-stevens-lg">
                       {whyStevens.title}
                     </h2>
@@ -760,7 +760,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 </div>
               </div>
             ) : (
-              <div className="bg-stevens-red text-stevens-white py-16 rounded-stevens-lg">
+              <div className="bg-stevens-black text-stevens-white py-16 rounded-stevens-lg">
                 <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
                   <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-lg text-stevens-white">{whyStevens.title}</h2>
                   <div className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
@@ -973,7 +973,7 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                 <h3 className="text-xl font-semibold mb-2">{admissions.consultation.title}</h3>
                 {admissions.consultation.url && (
                   <a href={admissions.consultation.url} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="btn-outline-maroon">{admissions.consultation.buttonText}</Button>
+                    <Button variant="outline-dark" className="btn-outline-maroon">{admissions.consultation.buttonText}</Button>
                   </a>
                 )}
               </div>

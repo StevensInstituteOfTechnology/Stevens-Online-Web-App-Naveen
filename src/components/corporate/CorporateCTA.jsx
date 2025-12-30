@@ -203,7 +203,7 @@ const CorporateCTA = ({
               {secondaryCta && (
                 <Button
                   size="lg"
-                  variant="outline"
+                  variant="outline-dark"
                   className="border-stevens-white text-stevens-white hover:bg-stevens-white/10"
                   onClick={secondaryCta.onClick}
                 >
@@ -314,7 +314,7 @@ const CorporateCTA = ({
                 {features.map((feature, index) => (
                   <Badge
                     key={index}
-                    variant="secondary"
+                    variant="outline-dark"
                     className="bg-stevens-white/20 border-stevens-white/40 text-stevens-white"
                   >
                     <CheckCircle className="w-4 h-4 mr-stevens-xs" />
@@ -338,7 +338,7 @@ const CorporateCTA = ({
               {secondaryCta && (
                 <Button
                   size="lg"
-                  variant="outline"
+                  variant="outline-dark"
                   className="border-stevens-white text-stevens-white hover:bg-stevens-white/10"
                   onClick={secondaryCta.onClick}
                 >

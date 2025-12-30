@@ -127,7 +127,7 @@ const HeroWithStats = ({
               {secondaryCta && (
                 <Button
                   size="lg"
-                  variant="outline"
+                  variant="outline-dark"
                   className="border-stevens-white text-stevens-white hover:bg-stevens-white/10"
                   onClick={secondaryCta.onClick}
                   asChild={secondaryCta.to || secondaryCta.href}

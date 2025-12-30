@@ -175,7 +175,7 @@ const AlumniPGC = () => {
 
             {/* Combined Section: Why a Certificate & How to Get Started */}
             <div className="bg-white rounded-lg shadow-md border border-stevens-light-gray overflow-hidden">
-              <div className="bg-stevens-red px-4 sm:px-8 py-4 sm:py-6">
+              <div className="bg-stevens-gray px-4 sm:px-8 py-4 sm:py-6">
                 <h2 className="font-stevens-headers text-xl sm:text-2xl font-bold text-white">
                   Why a Professional Graduate Certificate and How to Get Started
                 </h2>
@@ -249,7 +249,7 @@ const AlumniPGC = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Button
-                  variant="outline"
+                  variant="outline-dark"
                   onClick={() => {
                     handleCTAClick('explore_certificate');
                     window.open('/certificates/enterprise-ai/', '_blank');
@@ -259,7 +259,7 @@ const AlumniPGC = () => {
                   Explore Certificates
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="outline-dark"
                   onClick={() => {
                     handleCTAClick('request_info_secondary');
                     setIsRFIModalOpen(true);

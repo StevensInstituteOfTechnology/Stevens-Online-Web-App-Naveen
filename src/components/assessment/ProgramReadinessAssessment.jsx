@@ -201,7 +201,7 @@ function ProgramReadinessAssessment({ onComplete }) {
               </Button>
             </Link>
             <Button
-              variant="outline"
+              variant="outline-dark"
               className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white font-medium px-stevens-lg py-stevens-sm rounded-stevens-md transition-all duration-stevens-normal"
               onClick={restart}>
               Take Assessment Again

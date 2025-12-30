@@ -1080,7 +1080,7 @@ const CorporateStudents = () => {
                     {calculatedCost && (
                       <div className="lg:hidden p-stevens-md pt-0 border-t border-stevens-light-gray">
                         {/* Final Price */}
-                        <div className="bg-stevens-red text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
+                        <div className="bg-stevens-gray text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
                           {calculatedCost.credits.type === 'variable' ? (
                             <>
                               <div className="flex justify-between items-center mb-2">
@@ -1193,7 +1193,7 @@ const CorporateStudents = () => {
                         {/* Secondary CTA - RFI */}
                         <Button 
                           size="lg" 
-                          variant="outline"
+                          variant="outline-dark"
                           className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white py-4"
                           onClick={() => {
                             handleCTAClick('request_info_calculator_mobile');
@@ -1216,7 +1216,7 @@ const CorporateStudents = () => {
                 <div className="hidden lg:block lg:col-span-3 order-first lg:order-last">
                   {calculatedCost ? (
                     <Card className="lg:sticky lg:top-4">
-                      <CardHeader className="bg-stevens-red text-stevens-white rounded-t-stevens-md">
+                      <CardHeader className="bg-stevens-gray text-stevens-white rounded-t-stevens-md">
                         <CardTitle className="text-stevens-xl md:text-stevens-2xl">
                           Your Investment Breakdown
                         </CardTitle>
@@ -1326,7 +1326,7 @@ const CorporateStudents = () => {
                         )}
 
                         {/* Final Price */}
-                        <div className="bg-stevens-red text-stevens-white p-stevens-md lg:p-stevens-lg rounded-stevens-md">
+                        <div className="bg-stevens-gray text-stevens-white p-stevens-md lg:p-stevens-lg rounded-stevens-md">
                           {calculatedCost.credits.type === 'variable' ? (
                             <>
                               <div className="flex justify-between items-center mb-2">
@@ -1463,7 +1463,7 @@ const CorporateStudents = () => {
                           {/* Secondary CTA - RFI */}
                           <Button 
                             size="lg" 
-                            variant="outline"
+                            variant="outline-dark"
                             className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white py-4"
                             onClick={() => {
                               handleCTAClick('request_info_calculator');
@@ -1648,7 +1648,7 @@ const CorporateStudents = () => {
         <EmployerFaqSection accordionPrefix="corporate-students" />
 
         {/* Final CTA Section */}
-        <section id="contact" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-red text-stevens-white">
+        <section id="contact" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray text-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1789,7 +1789,7 @@ const CorporateStudents = () => {
           if (!open) setCopiedItem(null);
         }}>
           <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
-            <div className="bg-stevens-red text-white px-6 py-5 rounded-t-lg">
+            <div className="bg-stevens-gray text-white px-6 py-5 rounded-t-lg">
               <DialogHeader className="space-y-2">
                 <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-white">
                   Get in Touch

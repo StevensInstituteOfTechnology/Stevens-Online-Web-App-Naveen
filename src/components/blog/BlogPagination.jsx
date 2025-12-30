@@ -44,7 +44,7 @@ const BlogPagination = ({
     <div className={`flex items-center justify-center gap-stevens-sm ${className}`}>
       {/* Previous Button */}
       <Button
-        variant="outline"
+        variant="outline-dark"
         size="sm"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -91,7 +91,7 @@ const BlogPagination = ({
 
       {/* Next Button */}
       <Button
-        variant="outline"
+        variant="outline-dark"
         size="sm"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
