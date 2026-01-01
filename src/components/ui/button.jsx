@@ -23,6 +23,9 @@ const buttonVariants = cva(
         // NEW: White outline button (for dark backgrounds) - per CPE Brand Guidelines page-34
         "outline-white":
           "border border-white bg-transparent text-white hover:bg-white hover:text-stevens-black",
+        // NEW: Red outline button (for dark backgrounds) - accent color per CPE Brand Guidelines
+        "outline-red":
+          "border border-stevens-red bg-transparent text-white hover:bg-stevens-red hover:text-white",
         // NEW: Dark outline button (for light backgrounds)
         "outline-dark":
           "border border-stevens-dark-gray bg-transparent !text-stevens-dark-gray hover:bg-stevens-dark-gray hover:!text-stevens-white",

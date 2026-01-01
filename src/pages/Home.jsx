@@ -238,7 +238,7 @@ export default function Home() {
           decoding="async"
         />
         {/* Left-to-right gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/100 via-stevens-black/30 to-transparent"></div>
         
         {/* Bottom fade-to-black overlay - blends into next section */}
         <div 
@@ -248,16 +248,35 @@ export default function Home() {
           }}
         />
         
+        {/* CPE Logo Area - Left side with backdrop blur (per Brand Guidelines) */}
+        {/* Using mask-image gradient to fade the blur edges for a softer transition */}
+        <div 
+          className="absolute left-0 top-0 h-full w-[380px] lg:w-[380px] z-20 hidden md:flex flex-col items-center justify-center backdrop-blur-md"
+          style={{
+            maskImage: 'linear-gradient(to right, black 0%, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, black 0%, black 60%, transparent 100%)',
+          }}
+        >
+          <img 
+            src="/assets/logos/Stevens-CPE-logo-RGB_Primary-WHT.png"
+            alt="Stevens College of Professional Education"
+            className="w-[180px] lg:w-[220px] h-auto -mt-[200px]"
+          />
+        </div>
+        
+        
+        
         {/* Asterism overlay - CPE Brand Visual Element */}
+        {/* Center point aligned with vertical separator for cohesive design */}
         <Asterism
-          centerX="32%"
+          centerX="33%"
           centerY="68%"
           rays={5}
           angles={[25,90,  205,270, 335]}
           color="stevens-white"
-          opacity={1}
-          rayLengths={["full", "full", "full", "full", 300]}
-          fadeRays={[0,4]} // index starts from 0
+          opacity={0.7}
+          rayLengths={["full", "full", "full","full", 300]}
+          fadeRays={[0, 4]}
           fadeDirection="out"
           fadeOpacity={0}
           length="full"
@@ -270,151 +289,95 @@ export default function Home() {
           staggerDelay={150}
         />
         
-        <div className="relative min-h-[80vh] max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-[80px]">
-          {/* <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
-            <div>
-              <h1 className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-in slide-in-from-left duration-700" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7)' }}>
-                Advance Your Career with a World-Class Online Master's Degree from
-                Stevens
-              </h1>
-              <p className="font-stevens-body text-xl text-stevens-white mb-8 max-w-xl animate-in slide-in-from-left duration-700" style={{ textShadow: '0 0.5px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.7)' }}>
-                Our programs are designed for busy professionals ready to lead
-                in the tech-driven world. Let's find the perfect fit for your
-                ambition.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-stevens-md animate-in slide-in-from-left duration-700 delay-400">
-                <Link
-                  to={createPageUrl("admissions/") + "#explore-programs"}
-                  onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
-                >
-                  <Button variant="destructive" className="uppercase">
-                    Explore Programs & Apply in Minutes
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="block lg:block mt-8 lg:mt-0 animate-in slide-in-from-right duration-700">
-                  <LeadCaptureForm sourcePage="home" />
-            </div>
-          </div> */}
+        <div className="relative min-h-[80vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-[80px] flex flex-col justify-end items-end">
+          {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
+          <div className="max-w-xl text-right pr-4 lg:pr-16">
+            <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6 text-stevens-white">
+              Move your<br />career forward
+            </h1>
+            <Link
+              to={createPageUrl("admissions/") + "#explore-programs"}
+              onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
+            >
+              <Button variant="outline-red" className="uppercase">
+              Explore Programs
+              </Button>
+            </Link>
+          </div>
         </div>
+      </section>
+      {/* Dimensional Imagery Section - CPE Brand Guidelines */}
+      <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden">
+        {/* Content container - z-10 to stay below asterism */}
+        <div className="mx-auto px-stevens-md lg:px-stevens-lg relative z-40">
+          <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
+            {/* Left: Layered Images */}
+            <AnimatedSection>
+              <AngledImageStack className="h-[600px] lg:h-[800px] relative">
+                {/* Background layer - larger */}
+                <AngledImage
+                  src="/assets/images/shared/2-explore-msds.webp"
+                  alt="Student studying"
+                  direction="vertical-left"
+                  width="100%"
+                  height="550px"
+                  className="absolute top-0 left-0 "
+                />
+                {/* Foreground layer - smaller, overlapping */}
+                <AngledImage
+                  src="/assets/images/shared/3-explore-msds.webp"
+                  alt="Campus life"
+                  direction="vertical-right"
+                  className="absolute bottom-0 right-0 w-[60%] sm:w-[55%] lg:w-[70%] h-[280px] sm:h-[300px] lg:h-[450px]"
+                />
+              </AngledImageStack>
+            </AnimatedSection>
+            
+            {/* Right: Content */}
+            <AnimatedSection delay={0.2} className="text-stevens-white">
+              <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-light tracking-tight mb-stevens-lg ">
+                This is a new kind of education, built around your goals, and designed to fit your life
+              </h2>
+              <p className="text-stevens-white text-stevens-lg mb-stevens-xl leading-relaxed">
+                The College of Professional Education at Stevens Institute of Technology 
+                offers flexible, future-focused learning that lorem ipsum dolor sit amet. 
+                Lorem ipsum dolor sit amet. Praesent mattis suscipit dapibus. Nunc 
+                volutpat libero augue, porttitor tempor risus fringilla in.
+              </p>
+              <Link to={createPageUrl("online-learning-experience/")}>
+                <Button variant="outline-red" className="uppercase">
+                  Online Learning Experience
+                </Button>
+              </Link>
+            </AnimatedSection>
+          </div>
+        </div>
+        
+        {/* Asterism overlay - AFTER content, z-20 to be on top */}
+        <Asterism
+          className="z-10"
+          centerX="33%"
+          centerY="68%"
+          rays={2}
+          angles={[90, 270]}
+          color="stevens-white"
+          opacity={0.7}
+          rayLengths={["full", "full"]}
+          fadeDirection="out"
+          length="full"
+          minLength={300}
+          maxLength={1800}
+          animate={true}
+          animationType="radiate"
+          animationDuration={1200}
+          animationDelay={300}
+          staggerDelay={150}
+        />
       </section>
 
 {/* ===== DEMO: Angled Image Component ===== */}
 <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section">
-        <div className=" mx-auto px-stevens-md lg:px-stevens-lg">
-          <AnimatedSection className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-light text-stevens-white mb-stevens-md tracking-tight">
-              Dimensional Imagery Demo
-            </h2>
-            <p className="text-stevens-gray text-stevens-lg max-w-2xl mx-auto">
-              CPE Brand Guidelines - 25° angled image containers
-            </p>
-          </AnimatedSection>
-          
-          {/* Horizontal Parallelogram (left/right edges angled) */}
-          <p className="text-stevens-red text-sm mb-4 uppercase tracking-wider">Horizontal Parallelogram (top/bottom horizontal)</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {/* Direction: Right */}
-            <div>
-              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">right</p>
-              <AngledImage
-                src="/assets/images/home/332_0006.webp"
-                alt="Student working"
-                direction="right"
-                aspectRatio="4/3"
-                className="w-full"
-              />
-            </div>
-            
-            {/* Direction: Left */}
-            <div>
-              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">left</p>
-              <AngledImage
-                src="/assets/images/shared/1-explore-msds.webp"
-                alt="Campus view"
-                direction="left"
-                aspectRatio="4/3"
-                className="w-full"
-              />
-            </div>
-            
-            {/* Direction: Vertical-Right */}
-            <div>
-              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">vertical-right</p>
-              <AngledImage
-                src="/assets/images/shared/1-omba-hero-scaled.webp"
-                alt="Students"
-                direction="vertical-right"
-                aspectRatio="4/3"
-                className="w-full"
-              />
-            </div>
-            
-            {/* Direction: Vertical-Left */}
-            <div>
-              <p className="text-stevens-light-gray text-sm mb-2 uppercase tracking-wider">vertical-left</p>
-              <AngledImage
-                src="/assets/images/shared/2-explore-msds.webp"
-                alt="Campus"
-                direction="vertical-left"
-                aspectRatio="4/3"
-                className="w-full"
-              />
-            </div>
-          </div>
-          
-          {/* Stacked Images Demo ) */}
-          <div className="mb-8">
-            <p className="text-stevens-light-gray text-sm mb-4 uppercase tracking-wider text-center">Layered Stack (like page-34 mockup)</p>
-            <AngledImageStack className="h-[500px] max-w-3xl mx-auto">
-              {/* Background layer - larger */}
-              <AngledImage
-                src="/assets/images/shared/2-explore-msds.webp"
-                alt="Background"
-                direction="right"
-                aspectRatio="16/9"
-                className="absolute top-0 left-0 w-3/4 z-10"
-              />
-              {/* Foreground layer - smaller, overlapping */}
-              <AngledImage
-                src="/assets/images/shared/3-explore-msds.webp"
-                alt="Foreground"
-                direction="left"
-                aspectRatio="16/9"
-                className="absolute bottom-0 right-0 w-2/3 z-20"
-              />
-            </AngledImageStack>
-          </div>
-          <div className="mb-8">
-            <p className="text-stevens-light-gray text-sm mb-4 uppercase tracking-wider text-center">Layered Stack (like page-34 mockup)</p>
-            <AngledImageStack className="h-[1000px]  mx-auto">
-              {/* Background layer - larger */}
-              <AngledImage
-                src="/assets/images/shared/2-explore-msds.webp"
-                alt="Background"
-                direction="vertical-left"
-                width="600px"
-                height="800px"
-                // scale/translateX/translateY: adjust which part of image is visible
-                // scale > 1 zooms in, translateX moves horizontally, translateY moves vertically
-                className="absolute top-0 left-0 w-3/4 z-10"
-              />
-              {/* Foreground layer - smaller, overlapping */}
-              <AngledImage
-                src="/assets/images/shared/3-explore-msds.webp"
-                alt="Foreground"
-                direction="vertical-right"
-                // Pan to show more of right side of image
-                scale={1.3} // Zoom in 30%
-                translateX={-35} // Shift left 15%
-                width="400px"
-                height="400px"
-                className="absolute bottom-0 left-60 w-2/3 z-20"
-              />
-            </AngledImageStack>
-          </div>
-        </div>
+       
       </section>
       {/* ===== END DEMO ===== */}
       {/* Stats Bar */}
@@ -747,7 +710,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Key Dates & Deadlines Section */}
-      <section className="bg-stevens-light-gray py-20">
+      <section className="bg-stevens-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
                 <h2 className="font-stevens-headers text-3xl md:text-4xl font-bold text-stevens-black mb-4">
