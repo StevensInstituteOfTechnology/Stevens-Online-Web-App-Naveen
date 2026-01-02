@@ -101,7 +101,7 @@ export default function Asterism({
   strokeWidth = 1,                   // Line thickness (should stay 1px per guidelines)
   
   // Gradient fading (at least one line should fade per guidelines)
-  fadeRays = [0, 2],                 // Which ray indices should fade
+  fadeRays = [],                 // Which ray indices should fade
   fadeDirection = 'out',             // 'out' (center to edge) or 'in' (edge to center)
   fadeOpacity = 0,                   // Opacity at fade end
   

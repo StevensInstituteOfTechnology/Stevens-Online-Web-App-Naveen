@@ -165,6 +165,14 @@ export default function Home() {
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
   const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  // Track window width for responsive Asterism
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Application Support Events (reuse same content as Events page)
   const supportEvents = [
@@ -316,25 +324,32 @@ export default function Home() {
               <AngledImageStack className="h-[600px] lg:h-[800px] relative">
                 {/* Background layer - larger */}
                 <AngledImage
-                  src="/assets/images/shared/2-explore-msds.webp"
+                  src="/assets/images/shared/3-explore-msds.webp"
                   alt="Student studying"
                   direction="vertical-left"
                   width="100%"
-                  height="550px"
+                  height="600px"
+                  translateY={0}
+                  translateX={5}
                   className="absolute top-0 left-0 "
                 />
                 {/* Foreground layer - smaller, overlapping */}
                 <AngledImage
-                  src="/assets/images/shared/3-explore-msds.webp"
+                  src="/assets/images/shared/2-explore-msds.webp"
+                  
                   alt="Campus life"
                   direction="vertical-right"
+                  
+                  // height="500px"
+                  translateY={6}
+                  translateX={15}
                   className="absolute bottom-0 right-0 w-[60%] sm:w-[55%] lg:w-[70%] h-[280px] sm:h-[300px] lg:h-[450px]"
                 />
               </AngledImageStack>
             </AnimatedSection>
             
             {/* Right: Content */}
-            <AnimatedSection delay={0.2} className="text-stevens-white">
+            <AnimatedSection delay={0.2} className="text-stevens-white pb-stevens-xl">
               <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-light tracking-tight mb-stevens-lg ">
                 This is a new kind of education, built around your goals, and designed to fit your life
               </h2>
@@ -357,15 +372,16 @@ export default function Home() {
         <Asterism
           className="z-10"
           centerX="33%"
-          centerY="68%"
+          centerY="58%"
           rays={2}
           angles={[90, 270]}
           color="stevens-white"
           opacity={0.7}
-          rayLengths={["full", "full"]}
+          rayLengths={["full", windowWidth < 1024 ? 10 : 300]}
+          fadeRays={[]} // Disable fading for vertical lines to ensure seamless connection with Hero section
           fadeDirection="out"
           length="full"
-          minLength={300}
+          minLength={10}
           maxLength={1800}
           animate={true}
           animationType="radiate"
@@ -375,13 +391,9 @@ export default function Home() {
         />
       </section>
 
-{/* ===== DEMO: Angled Image Component ===== */}
-<section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section">
-       
-      </section>
-      {/* ===== END DEMO ===== */}
+
       {/* Stats Bar */}
-      <AnimatedSection className="section-dark py-8">
+      {/* <AnimatedSection className="section-dark py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatItem
@@ -398,12 +410,109 @@ export default function Home() {
             <StatItem value="150+" label="Years of Innovation" icon={Library} />
           </div>
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
+      
+      
+      {/* Parallax Fixed Background Section */}
+      <section 
+        className="hidden lg:block relative w-full bg-fixed bg-top bg-cover bg-no-repeat"
+        style={{ 
+          height: "500px",
+          backgroundImage: "url('/assets/images/shared/1-explore-msds.webp')"
+        }}
+      >
+      </section>
+      {/* Background section that continues below parallax */}
+      <section className="relative bg-stevens-light-gray pt-1 pb-16">
+        {/* Overlapping Card - negative margin pulls it up into parallax section */}
+        <div className="relative z-10 mx-auto max-w-6xl bg-white shadow-xl -mt-32 px-10 py-16 lg:px-16 lg:py-20">
+          {/* Title */}
+          <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-bold text-stevens-dark-gray mb-4 tracking-tight leading-tight text-center">
+            A Degree That <span className="text-stevens-red">Pays Dividends</span>
+          </h2>
+          <p className="text-stevens-lg text-stevens-gray text-center mb-12 lg:mb-16">
+            Stevens is consistently recognized for academic excellence and ROI.
+          </p>
+          
+          {/* Optimized Layout: Hero Stat + Supporting Grid */}
+          <div className="flex flex-col">
+            
+            {/* Level 1: Hero Stat - The Primary Hook */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center mb-12 lg:mb-16 hover:scale-105 transition-transform duration-200 cursor-default"
+            >
+              <p className="font-stevens-display text-8xl lg:text-9xl font-bold text-stevens-red mb-6 leading-none tracking-tighter drop-shadow-sm">#1</p>
+              <h3 className="text-stevens-dark-gray font-bold text-2xl lg:text-3xl leading-tight max-w-2xl mx-auto">
+                Online MBA from a New Jersey school
+              </h3>
+              <p className="text-stevens-gray text-sm mt-3 font-medium uppercase tracking-wider">U.S. News & World Report 2025</p>
+            </motion.div>
 
+            {/* Visual Divider - Creates Breathing Room */}
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-full border-t border-stevens-light-gray/60 mb-12 lg:mb-16 origin-center"
+            ></motion.div>
+
+            {/* Level 2: Supporting Stats - The Reinforcement */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+              
+              {/* Stat 2 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="text-center group cursor-default"
+              >
+                <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">#1</p>
+                <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">In NJ for Graduate Earnings</p>
+                <p className="text-stevens-gray text-xs mt-2 text-opacity-80">U.S. Dept. of Education 2025</p>
+              </motion.div>
+              
+              {/* Stat 3 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="text-center group cursor-default"
+              >
+                <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">7x</p>
+                <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">Winner of 21st Century Award</p>
+                <p className="text-stevens-gray text-xs mt-2 text-opacity-80">USDLA Distance Learning</p>
+              </motion.div>
+              
+              {/* Stat 4 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="text-center group cursor-default"
+              >
+                <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">#9</p>
+                <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">Among 'Best ROI Colleges'</p>
+                <p className="text-stevens-gray text-xs mt-2 text-opacity-80">Based on 4-year degree cost</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
       
 
-      {/* Redesigned Rankings & Proof Points Section */}
-      <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
+      {/* Old Redesigned Rankings & Proof Points Section - TODO: Remove after testing */}
+      {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <AnimatedSection className="text-center mb-stevens-xl">
             <h2 className="font-stevens-display text-stevens-4xl stevens-lg:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
@@ -438,7 +547,7 @@ export default function Home() {
 
           
         </div>
-      </section>
+      </section> */}
 
       {/* Professional Education CTA */}
       <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray relative overflow-hidden">
@@ -949,6 +1058,8 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      
 
       {/* Browse Courses Modal */}
       {showBrowseModal && (
