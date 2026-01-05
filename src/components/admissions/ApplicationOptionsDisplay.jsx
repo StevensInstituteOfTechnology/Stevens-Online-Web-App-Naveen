@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ApplicationModal from '../shared/ApplicationModal';
+import { ApplicationModal } from '@/components/shared';
 
 /**
  * ApplicationOptionsDisplay - Displays application options based on program configuration

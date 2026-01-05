@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Users, Building2, DollarSign, TrendingUp, CheckCircle, Handshake, BookOpen, Award } from 'lucide-react';
-import PageHero from '@/components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';

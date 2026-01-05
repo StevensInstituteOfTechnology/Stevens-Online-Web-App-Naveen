@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { createPageUrl } from '@/utils';
 import { getHeroImageProps } from '@/utils/responsiveImage';
-import ApplicationModal from './ApplicationModal';
-import RequestInfoModal from './RequestInfoModal';
+import ApplicationModal from '../modals/ApplicationModal';
+import RequestInfoModal from '../modals/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 

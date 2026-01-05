@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import LeadCaptureForm from '../components/forms/LeadCaptureForm';
 import { BOOKING_URLS, CONTACT_INFO } from '@/config/constants';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';

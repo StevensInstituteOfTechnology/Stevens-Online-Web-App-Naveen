@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero, RequestInfoModal } from '@/components/shared';
 import { Card, CardContent } from '@/components/ui/card';
 import { Laptop, Users, LifeBuoy, Library, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { BOOKING_URLS } from '@/config/constants';
-import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';

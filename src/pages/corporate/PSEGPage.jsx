@@ -3,7 +3,7 @@ import CorporateLandingPageTemplate from '@/components/corporate/CorporateLandin
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ApplicationModal from '@/components/shared/ApplicationModal';
+import { ApplicationModal } from '@/components/shared';
 
 export default function PSEGPage() {
     const [applicationModalOpen, setApplicationModalOpen] = useState(false);

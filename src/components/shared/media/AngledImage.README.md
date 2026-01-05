@@ -41,7 +41,7 @@ Original:               scale(1.3):            translate(-15%, 0):
 ## Usage Examples
 
 ```jsx
-import { AngledImage, AngledImageStack } from '@/components/shared/angled-image';
+import { AngledImage, AngledImageStack } from '@/components/shared';
 
 // Basic usage
 <AngledImage 

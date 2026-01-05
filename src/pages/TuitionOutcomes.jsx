@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero, RequestInfoModal } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { DollarSign, TrendingUp, Award, Banknote, ArrowRight } from 'lucide-react';
-import RequestInfoModal from '../components/shared/RequestInfoModal';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';

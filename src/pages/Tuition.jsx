@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';

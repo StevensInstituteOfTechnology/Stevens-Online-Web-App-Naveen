@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import PageHero from "../components/shared/PageHero";
+import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URLS, KEY_DATES } from "@/config/constants";
@@ -7,27 +7,49 @@ import ProgramReadinessAssessment from "../components/assessment/ProgramReadines
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
-import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from "@/utils";
+import {
+  setPageTitle,
+  setMetaDescription,
+  setOpenGraphTags,
+  buildCanonicalUrl,
+} from "@/utils";
 
 export default function ComparePrograms() {
   usePageTracking({
-    pageType: 'comparison',
+    pageType: "comparison",
     additionalData: {
-      page_name: 'Compare Programs',
-      has_quiz: true
-    }
+      page_name: "Compare Programs",
+      has_quiz: true,
+    },
   });
+
+  // Handle hash navigation (scroll to section if hash is present in URL)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
 
   // Set SEO meta tags
   useEffect(() => {
-    setPageTitle('Compare Graduate Programs | Stevens Online');
-    setMetaDescription('Compare Stevens\' online graduate programs to find the master\'s degree that best fits your career goals and interests.');
+    setPageTitle("Compare Graduate Programs | Stevens Online");
+    setMetaDescription(
+      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests."
+    );
     setOpenGraphTags({
-      title: 'Compare Graduate Programs | Stevens Online',
-      description: 'Compare Stevens\' online graduate programs to find the master\'s degree that best fits your career goals and interests.',
-      image: buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
-      url: buildCanonicalUrl('/compare-our-programs/'),
-      type: 'website'
+      title: "Compare Graduate Programs | Stevens Online",
+      description:
+        "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
+      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      url: buildCanonicalUrl("/compare-our-programs/"),
+      type: "website",
     });
   }, []);
 
@@ -37,7 +59,10 @@ export default function ComparePrograms() {
     { label: "M.Eng. in Engineering Management", value: "mem" },
     { label: "M.Eng. in Applied Data Science", value: "meads" },
     { label: "Enterprise AI Certificate", value: "cert-eai" },
-    { label: "Applied Data Science Foundations Certificate", value: "cert-ads" },
+    {
+      label: "Applied Data Science Foundations Certificate",
+      value: "cert-ads",
+    },
   ];
 
   const [left, setLeft] = useState("mba");
@@ -106,7 +131,7 @@ export default function ComparePrograms() {
       curriculum:
         "Master data science and AI engineering through hands-on projects. Curriculum bridges engineering precision with AI-driven innovation, covering data pipelines, machine learning, and AI deployment.",
     },
-    'cert-eai': {
+    "cert-eai": {
       name: "Professional Graduate Certificate in Enterprise AI",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "8-16 weeks**",
@@ -116,7 +141,7 @@ export default function ComparePrograms() {
       curriculum:
         "Learn to frame, prototype, and deploy AI workflows safely. Progress from AI strategy and governance to GenAI proof-of-concepts to operational workflow deployment.",
     },
-    'cert-ads': {
+    "cert-ads": {
       name: "Applied Data Science Foundations Certificate",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "16-20 weeks**",
@@ -160,23 +185,24 @@ export default function ComparePrograms() {
         subtitle="Find your path" 
         bgImage="/assets/images/compare-programs/compare-hero.webp"
         rightContent={
-          <ProgramReadinessAssessment
-            onComplete={handleAssessmentComplete}
-          />
+            <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
         }
       />
 
       {/* Select Programs to Compare */}
-      <section className="py-16 bg-stevens-white">
+        <section
+          id="compare-programs"
+          className="py-16 bg-stevens-white scroll-mt-24"
+        >
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-stevens-xl">
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
               Select Programs to Compare
             </h2>
             <p className="text-stevens-dark-gray">
-              Earn a master’s degree from Stevens to gain a technical advantage
-              in your career. Our programs are 100% online and connect you to
-              renowned faculty and the Stevens alumni network.
+                Earn a master’s degree from Stevens to gain a technical
+                advantage in your career. Our programs are 100% online and
+                connect you to renowned faculty and the Stevens alumni network.
             </p>
           </div>
 
@@ -274,9 +300,9 @@ export default function ComparePrograms() {
                 </div>
               )}
               <p className="text-stevens-xs text-stevens-dark-gray mt-stevens-md">
-                *Tuition estimates based on Fall 2025 rates effective September
-                2025. Tuition and fees are subject to change annually.
-                Additional program fees may apply.
+                  *Tuition estimates based on Fall 2025 rates effective
+                  September 2025. Tuition and fees are subject to change
+                  annually. Additional program fees may apply.
               </p>
               <p className="text-stevens-xs text-stevens-dark-gray">
                 **Total program duration is subject to change based on course
@@ -288,7 +314,7 @@ export default function ComparePrograms() {
       </section>
 
       {/* Program Track Options */}
-      <section className="py-16 bg-stevens-light-gray">
+      <section className="py-16 bg-stevens-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
             Program Track Options
@@ -327,12 +353,12 @@ export default function ComparePrograms() {
           <div className="mt-stevens-sm space-y-stevens-xs text-stevens-xs text-stevens-dark-gray">
             <p>
               *Tuition estimates based on Fall 2025 rates effective September
-              2025. Tuition and fees are subject to change annually. Additional
-              program fees may apply. Effective Fall 2025, the Online M.S. in
-              Computer Science and Online Master of Engineering in Engineering
-              Management programs will incorporate asynchronous course delivery
-              for the initial phase of their curriculum. This change will impact
-              the tuition rates for some courses.
+                2025. Tuition and fees are subject to change annually.
+                Additional program fees may apply. Effective Fall 2025, the
+                Online M.S. in Computer Science and Online Master of Engineering
+                in Engineering Management programs will incorporate asynchronous
+                course delivery for the initial phase of their curriculum. This
+                change will impact the tuition rates for some courses.
             </p>
             <p>
               **Total program duration is subject to change based on course

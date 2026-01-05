@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import PageHero from '../shared/PageHero';
+import { PageHero, RequestInfoModal } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import LeadCaptureForm from '../forms/LeadCaptureForm';
 import AcceleratedFormEmbed from '../forms/AcceleratedFormEmbed';
-import RequestInfoModal from '../shared/RequestInfoModal';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { Check, ArrowRight, Building, Users, BookOpen, Phone, Mail, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';

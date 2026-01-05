@@ -21,15 +21,27 @@ import ChatbotButton from "@/components/chat/ChatbotButton";
 
 const graduateProgramItems = [
   { name: "Online MBA", page: "online-mba/" },
-  { name: "M.S. in Computer Science", page: "online-masters-computer-science-mscs/" },
+  {
+    name: "M.S. in Computer Science",
+    page: "online-masters-computer-science-mscs/",
+  },
   // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
-  { name: "M.Eng. in Applied Data Science", page: "online-masters-engineering-applied-data-science/" },
-  { name: "M.Eng. in Engineering Management", page: "online-masters-engineering-management/" },
+  {
+    name: "M.Eng. in Applied Data Science",
+    page: "online-masters-engineering-applied-data-science/",
+  },
+  {
+    name: "M.Eng. in Engineering Management",
+    page: "online-masters-engineering-management/",
+  },
 ];
 
 const certificateProgramItems = [
   { name: "Enterprise AI Certificate", page: "certificates/enterprise-ai/" },
-  { name: "Applied Data Science Foundations", page: "certificates/applied-data-science-foundations/" },
+  {
+    name: "Applied Data Science Foundations",
+    page: "certificates/applied-data-science-foundations/",
+  },
 ];
 
 const aboutItems = [
@@ -39,19 +51,43 @@ const aboutItems = [
 
 // Explore dropdown items - quick links for easy access
 const exploreItems = [
-  { name: 'Alumni', url: 'https://www.stevens.edu/development-alumni-engagement', external: true },
-  { name: 'Athletics', url: 'https://stevensducks.com/', external: true },
-  { name: 'Visit', url: 'https://www.stevens.edu/admission-aid/visit-stevens', external: true },
-  { name: 'Apply', url: 'https://www.stevens.edu/apply', external: true },
-  { name: 'Give', url: 'https://www.stevens.edu/development-alumni-engagement/give-to-stevens', external: true },
-  { name: 'myStevens', url: 'https://login.stevens.edu', external: true },
+  {
+    name: "Alumni",
+    url: "https://www.stevens.edu/development-alumni-engagement",
+    external: true,
+  },
+  { name: "Athletics", url: "https://stevensducks.com/", external: true },
+  {
+    name: "Visit",
+    url: "https://www.stevens.edu/admission-aid/visit-stevens",
+    external: true,
+  },
+  { name: "Apply", url: "https://www.stevens.edu/apply", external: true },
+  {
+    name: "Give",
+    url: "https://www.stevens.edu/development-alumni-engagement/give-to-stevens",
+    external: true,
+  },
+  { name: "myStevens", url: "https://login.stevens.edu", external: true },
 ];
 
 // Info For items (sub-dropdown within Explore)
 const infoForItems = [
-  { name: 'Faculty and Staff', url: 'https://www.stevens.edu/hr', external: true },
-  { name: 'Parents and Families', url: 'https://www.stevens.edu/information-for-parents-and-families', external: true },
-  { name: 'Media', url: 'https://www.stevens.edu/media-relations', external: true },
+  {
+    name: "Faculty and Staff",
+    url: "https://www.stevens.edu/hr",
+    external: true,
+  },
+  {
+    name: "Parents and Families",
+    url: "https://www.stevens.edu/information-for-parents-and-families",
+    external: true,
+  },
+  {
+    name: "Media",
+    url: "https://www.stevens.edu/media-relations",
+    external: true,
+  },
 ];
 
 const mainNavLinks = [
@@ -73,10 +109,7 @@ const corporateAlumniItems = [
 ];
 
 // Combined for mobile menu
-const tuitionAdmissionsItems = [
-  ...admissionsAidItems,
-  ...corporateAlumniItems,
-];
+const tuitionAdmissionsItems = [...admissionsAidItems, ...corporateAlumniItems];
 
 // Mobile menu items with Compare Programs added to dropdowns
 const mobileGraduateProgramItems = [
@@ -91,8 +124,16 @@ const mobileCertificateProgramItems = [
 
 // Combined explore items for mega menu (exploreItems + infoForItems)
 const mobileExploreItems = [
-  ...exploreItems.map(item => ({ name: item.name, page: item.url, external: item.external })),
-  ...infoForItems.map(item => ({ name: item.name, page: item.url, external: item.external })),
+  ...exploreItems.map((item) => ({
+    name: item.name,
+    page: item.url,
+    external: item.external,
+  })),
+  ...infoForItems.map((item) => ({
+    name: item.name,
+    page: item.url,
+    external: item.external,
+  })),
 ];
 
 const mobileNavLinks = [
@@ -128,25 +169,27 @@ export default function Layout({ children, currentPageName }) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [showBackToTop, setShowBackToTop] = React.useState(false);
-  const initialWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+  const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const [isMobile, setIsMobile] = React.useState(initialWidth < 768);
-  const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(initialWidth <= 1024);
+  const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(
+    initialWidth <= 1024
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = React.useState(null);
   const [expandedMobileMenus, setExpandedMobileMenus] = React.useState([]); // For mobile accordion
 
   // Toggle accordion item on mobile
   const toggleMobileAccordion = (menuName) => {
-    setExpandedMobileMenus(prev => 
+    setExpandedMobileMenus((prev) =>
       prev.includes(menuName) 
-        ? prev.filter(name => name !== menuName)
+        ? prev.filter((name) => name !== menuName)
         : [...prev, menuName]
     );
   };
 
   React.useEffect(() => {
     // Only run on client side
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     
     // Lightweight debounce using a single timer; avoids rapid state flips and extra renders
     let resizeTimer = null;
@@ -311,22 +354,26 @@ export default function Layout({ children, currentPageName }) {
   // Update canonical tag on route change
   React.useEffect(() => {
     // Only run on client side
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
     
     const canonicalHref = buildCanonicalUrl(location.pathname);
     let link = document.querySelector('link[rel="canonical"]');
     if (!link) {
-      link = document.createElement('link');
-      link.setAttribute('rel', 'canonical');
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
       document.head.appendChild(link);
     }
-    link.setAttribute('href', canonicalHref);
+    link.setAttribute("href", canonicalHref);
   }, [location.pathname]);
 
   const isActive = (page) => currentPageName === page;
   
   // Check if we're on the home page by pathname (more reliable than currentPageName)
-  const isHomePage = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/home/";
+  const isHomePage =
+    location.pathname === "/" ||
+    location.pathname === "/home" ||
+    location.pathname === "/home/";
 
   // Navbar should be transparent without logo only on home page when not scrolled AND mega menu is closed
   const showTransparentNav = isHomePage && !isScrolled && !mobileMenuOpen;
@@ -340,8 +387,8 @@ export default function Layout({ children, currentPageName }) {
       <header
         className={`group z-[9998] ${
           isHomePage
-            ? "fixed top-0 left-0 right-0"  // Fixed for home page
-            : "sticky top-0"                 // Sticky for other pages
+            ? "fixed top-0 left-0 right-0" // Fixed for home page
+            : "sticky top-0" // Sticky for other pages
         } ${
           showTransparentNav 
             ? "bg-transparent" 
@@ -351,11 +398,13 @@ export default function Layout({ children, currentPageName }) {
         <div className="w-full px-stevens-md lg:px-stevens-lg">
             <div className="flex items-center justify-between h-[87px] w-full">
             {/* Logo - Left (hidden on home page when not scrolled) */}
-            <div className={`flex-shrink-0 overflow-visible ${
+            <div
+              className={`flex-shrink-0 overflow-visible ${
               showTransparentNav 
                 ? "opacity-0 -translate-x-4 pointer-events-none" 
                 : "opacity-100 translate-x-0"
-            }`}>
+              }`}
+            >
               <Link
                 to={createPageUrl("Home")}
                 className="flex items-center gap-2 stevens-md:gap-3 transition-opacity duration-stevens-normal hover:opacity-80"
@@ -413,7 +462,6 @@ export default function Layout({ children, currentPageName }) {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </div>
-
             </div>
           </div>
           
@@ -432,40 +480,70 @@ export default function Layout({ children, currentPageName }) {
                 <div className="max-w-stevens-content-max mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
                   {/* Mobile: Single column accordion | Desktop: 3-column grid */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
-                    
                     {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
                     <div className="space-y-stevens-sm md:space-y-stevens-lg">
                       {mobileNavLinks.map((link) => {
                         if (link.isDropdown) {
-                          const isExpanded = expandedMobileMenus.includes(link.name);
+                        const isExpanded = expandedMobileMenus.includes(
+                          link.name
+                        );
                           return (
                             <div key={link.name} className="group">
                               {/* Menu Item Header */}
                               <button
                                 className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
                                   megaMenuHoveredItem === link.name || isExpanded
-                                    ? 'text-stevens-white' 
-                                    : 'text-stevens-light-gray hover:text-stevens-white'
+                                  ? "text-stevens-red"
+                                  : "text-stevens-light-gray hover:text-stevens-white"
                                 }`}
                                 onClick={() => toggleMobileAccordion(link.name)}
-                                onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(link.name)}
+                              onMouseEnter={() =>
+                                !isMobile && setMegaMenuHoveredItem(link.name)
+                              }
                               >
-                                <span>{link.name}</span>
-                                {/* Chevron icon - rotates when expanded (mobile only) */}
+                              <span className="flex items-center gap-2">
+                                {link.name}
+                                {/* Arrow icon for desktop - indicates sub-menu */}
                                 <svg 
-                                  className={`w-5 h-5 md:hidden transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                                  className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
+                                    megaMenuHoveredItem === link.name
+                                      ? "translate-x-1"
+                                      : ""
+                                  }`}
                                   fill="none" 
                                   stroke="currentColor" 
                                   viewBox="0 0 24 24"
                                 >
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </span>
+                              {/* Chevron icon - rotates when expanded (mobile only) */}
+                              <svg
+                                className={`w-5 h-5 md:hidden transition-transform duration-200 ${
+                                  isExpanded ? "rotate-180" : ""
+                                }`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
                                 </svg>
                               </button>
                               
                               {/* Accordion Content - Mobile Only */}
                               {isExpanded && (
                                 <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
-                                  {link.items?.map((item) => (
+                                {link.items?.map((item) =>
                                     item.external ? (
                                       <a
                                         key={item.name}
@@ -487,7 +565,7 @@ export default function Layout({ children, currentPageName }) {
                                         {item.name}
                                       </Link>
                                     )
-                                  ))}
+                                )}
                                 </div>
                               )}
                             </div>
@@ -502,7 +580,9 @@ export default function Layout({ children, currentPageName }) {
                             rel="noopener noreferrer"
                             className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                             onClick={() => setMobileMenuOpen(false)}
-                            onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(null)}
+                          onMouseEnter={() =>
+                            !isMobile && setMegaMenuHoveredItem(null)
+                          }
                           >
                             {link.name}
                           </a>
@@ -512,7 +592,9 @@ export default function Layout({ children, currentPageName }) {
                             to={createPageUrl(link.page)}
                             className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                             onClick={() => setMobileMenuOpen(false)}
-                            onMouseEnter={() => !isMobile && setMegaMenuHoveredItem(null)}
+                          onMouseEnter={() =>
+                            !isMobile && setMegaMenuHoveredItem(null)
+                          }
                           >
                             {link.name}
                           </Link>
@@ -522,7 +604,10 @@ export default function Layout({ children, currentPageName }) {
 
                     {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
                     <div className="hidden md:block space-y-stevens-md min-h-[200px]">
-                      {megaMenuHoveredItem && mobileNavLinks.find(link => link.name === megaMenuHoveredItem)?.items?.map((item) => (
+                    {megaMenuHoveredItem &&
+                      mobileNavLinks
+                        .find((link) => link.name === megaMenuHoveredItem)
+                        ?.items?.map((item) =>
                         item.external ? (
                           <a
                             key={item.name}
@@ -544,7 +629,7 @@ export default function Layout({ children, currentPageName }) {
                             {item.name}
                           </Link>
                         )
-                      ))}
+                        )}
                     </div>
 
                     {/* Right Column - CPE Information (Hidden on small mobile, visible on tablet+) */}
@@ -554,7 +639,9 @@ export default function Layout({ children, currentPageName }) {
                           College of Professional Education
                         </h3>
                         <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
-                          Advance your career with Stevens' forward-looking vision for higher education—flexible online programs designed for working professionals.
+                        Advance your career with Stevens' forward-looking vision
+                        for higher education—flexible online programs designed
+                        for working professionals.
                         </p>
                       </div>
                       <Link
@@ -563,8 +650,18 @@ export default function Layout({ children, currentPageName }) {
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Request Information
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                         </svg>
                       </Link>
                     </div>
@@ -575,9 +672,7 @@ export default function Layout({ children, currentPageName }) {
           )}
       </header>
       
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
 
       <footer className="bg-stevens-black text-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg py-stevens-section">
@@ -587,15 +682,15 @@ export default function Layout({ children, currentPageName }) {
                 to={createPageUrl("Home")}
                 className="mb-6 transition-opacity duration-300 hover:opacity-80"
                 onClick={() => {
-                  if (typeof window !== 'undefined') {
+                  if (typeof window !== "undefined") {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }
                 }}
               >
                 <img
-                  src="/assets/logos/Stevens-Wordmark-RGB_WHT.webp"
+                  src="/assets/logos/Stevens-CPE-logo-RGB_Abbreviated-WHT.png"
                   alt="Stevens Institute of Technology Logo"
-                  className="h-16 w-auto"
+                  className="h-48 w-auto"
                 />
                </Link>
             </div>
@@ -725,7 +820,7 @@ export default function Layout({ children, currentPageName }) {
       <button
           className="fixed bottom-6 right-6 bg-stevens-red hover:bg-stevens-dark-gray text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
           onClick={() => {
-            if (typeof window !== 'undefined') {
+            if (typeof window !== "undefined") {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
@@ -739,4 +834,3 @@ export default function Layout({ children, currentPageName }) {
     </div>
   );
 }
-

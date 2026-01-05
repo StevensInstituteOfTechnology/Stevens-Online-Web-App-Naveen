@@ -4,7 +4,7 @@ import { ArrowRight, GraduationCap, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
-import ApplicationModal from '../shared/ApplicationModal';
+import { ApplicationModal } from '@/components/shared';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**

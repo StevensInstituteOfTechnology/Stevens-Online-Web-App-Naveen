@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { X } from 'lucide-react';
-import LeadCaptureForm from '../forms/LeadCaptureForm';
+import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 
 /**

@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';

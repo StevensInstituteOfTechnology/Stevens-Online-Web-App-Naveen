@@ -25,9 +25,7 @@ import {
   Check,
   ExternalLink
 } from 'lucide-react';
-import PageHero from '@/components/shared/PageHero';
-import TopCompaniesSection from '@/components/shared/TopCompaniesSection';
-import PullQuoteTestimonial from '@/components/shared/PullQuoteTestimonial';
+import { PageHero, TopCompaniesSection, PullQuoteTestimonial } from '@/components/shared';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

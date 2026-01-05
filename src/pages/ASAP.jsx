@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import PageHero from '../components/shared/PageHero';
+import { PageHero } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';

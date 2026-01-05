@@ -63,7 +63,7 @@ Per CPE Brand Guidelines, **only these colors** are allowed (never red!):
 ## Usage Example
 
 ```jsx
-import Asterism from '@/components/shared/Asterism';
+import { Asterism } from '@/components/shared';
 
 <Asterism
   centerX="32%"
