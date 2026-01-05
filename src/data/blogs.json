@@ -5,11 +5,12 @@
       "title": "The Agentic Shift: Why Reliable AI Depends on Architecture, Not Bigger Models",
       "subtitle": "The artificial intelligence landscape is undergoing a fundamental transition. We are moving from stateless, prompt-based interactions to stateful, autonomous agentic systems. This evolution represents a departure from viewing Large Language Models as solitary oracles to treating them as cognitive engines within broader, engineered systems.",
       "excerpt": "The artificial intelligence landscape is undergoing a fundamental transition. We are moving from stateless, prompt-based interactions to stateful, autonomous agentic systems. This evolution represents a departure from viewing Large Language Models as solitary oracles to treating them as cognitive engines within broader, engineered systems.",
-      "featured_image_url": "/assets/blogs/ai-emerging-technology/the-agentic-shift-reliable-ai-architecture/featured.webp",
+      "featured_image_url": "/assets/blogs/ai-emerging-technology/the-agentic-shift-reliable-ai-architecture/1_dXbCvvSwYPe1ar75LiEEUA.webp",
+      "image_position": "center",
       "category": "AI & Emerging Technology",
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
-      "author_image": "/assets/blogs/ai-emerging-technology/naveen-mathews-renji.webp",
+      "author_image": "/assets/blogs/ai-emerging-technology/the-agentic-shift-reliable-ai-architecture/1_dXbCvvSwYPe1ar75LiEEUA.webp",
       "created_date": "2025-01-15T10:00:00.000Z",
       "updated_date": "2025-01-15T10:00:00.000Z",
       "read_time": 6,
@@ -92,6 +93,10 @@
             {
               "text": "Stevens Institute of Technology",
               "url": "https://www.stevens.edu"
+            },
+            {
+              "text": "Stevens Institute for Artificial Intelligence (SIAI)",
+              "url": "https://www.stevens.edu/stevens-institute-for-artificial-intelligence"
             }
           ],
           "bold": []
@@ -121,11 +126,12 @@
       "title": "Building Self-Healing AI: The Orchestrator-Workers and Reflexion Patterns",
       "subtitle": "To operationalize the agentic shift, developers and architects are coalescing around specific design patterns. These patterns solve the fundamental problems of coordination, error handling, and task decomposition that plague traditional AI implementations.",
       "excerpt": "To operationalize the agentic shift, developers and architects are coalescing around specific design patterns. These patterns solve the fundamental problems of coordination, error handling, and task decomposition that plague traditional AI implementations.",
-      "featured_image_url": "/assets/blogs/ai-emerging-technology/building-self-healing-ai-orchestrator-reflexion-patterns/featured.webp",
+      "featured_image_url": "/assets/blogs/ai-emerging-technology/building-self-healing-ai-orchestrator-reflexion-patterns/naveen-mathews-renji.webp",
+      "image_position": "50% 30%",
       "category": "AI & Emerging Technology",
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
-      "author_image": "/assets/blogs/ai-emerging-technology/naveen-mathews-renji.webp",
+      "author_image": "/assets/blogs/ai-emerging-technology/building-self-healing-ai-orchestrator-reflexion-patterns/naveen-mathews-renji.webp",
       "created_date": "2025-01-16T10:00:00.000Z",
       "updated_date": "2025-01-16T10:00:00.000Z",
       "read_time": 7,
@@ -213,7 +219,12 @@
         {
           "type": "paragraph",
           "text": "A prime example of this architecture in research is VIGIL, which stands for Verifiable Inspection and Guarded Iterative Learning. VIGIL acts as a reflective runtime that supervises a sibling agent. Instead of just retrying blindly, VIGIL ingests behavioral logs and diagnoses failure modes. It can even propose changes to the agent's prompt or code base to prevent future errors.",
-          "links": [],
+          "links": [
+            {
+              "text": "A prime example of this architecture in research is VIGIL",
+              "url": "https://www.arxiv.org/abs/2512.07094"
+            }
+          ],
           "bold": ["VIGIL"]
         },
         {
@@ -230,7 +241,12 @@
         {
           "type": "paragraph",
           "text": "To combat the non-deterministic nature of LLMs, modern architectures are re-introducing Finite State Machines (FSMs). By embedding the agent in an FSM, developers can strictly define valid transitions between states. An FSM defines a strict set of states such as Researching, Drafting, and Reviewing, along with the valid transitions between them.",
-          "links": [],
+          "links": [
+            {
+              "text": "Finite State Machines (FSMs)",
+              "url": "https://arxiv.org/html/2507.11222v1"
+            }
+          ],
           "bold": ["Finite State Machines"]
         },
         {
@@ -247,7 +263,10 @@
         {
           "type": "paragraph",
           "text": "The debate between frameworks like LangChain, AutoGen, and CrewAI is settling. Graph-based orchestrators like LangGraph are emerging as the superior choice for production reliability. Linear chains are insufficient for loops required by Reflexion patterns. Graph architectures allow developers to define cycles such as Action to Evaluate to Fail to Action. This explicit state management is necessary for self-healing systems.",
-          "links": [],
+          "links": [{
+            "text": "LangGraph",
+            "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+          }],
           "bold": ["LangGraph"]
         },
         {
@@ -264,11 +283,12 @@
       "title": "The Hidden Economics of AI Agents: Managing Token Costs and Latency Trade-offs",
       "subtitle": "The shift to agentic AI is not just technical. It is economic. The cost model of software is changing from fixed infrastructure to variable intelligence, and engineering leaders must understand the hidden economics that can make or break an AI deployment.",
       "excerpt": "The shift to agentic AI is not just technical. It is economic. The cost model of software is changing from fixed infrastructure to variable intelligence, and engineering leaders must understand the hidden economics that can make or break an AI deployment.",
-      "featured_image_url": "/assets/blogs/ai-emerging-technology/hidden-economics-ai-agents-token-costs-latency/featured.webp",
+      "featured_image_url": "/assets/blogs/ai-emerging-technology/hidden-economics-ai-agents-token-costs-latency/temp.webp",
+      "image_position": "center",
       "category": "AI & Emerging Technology",
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
-      "author_image": "/assets/blogs/ai-emerging-technology/naveen-mathews-renji.webp",
+      "author_image": "/assets/blogs/ai-emerging-technology/hidden-economics-ai-agents-token-costs-latency/temp.webp",
       "created_date": "2025-01-17T10:00:00.000Z",
       "updated_date": "2025-01-17T10:00:00.000Z",
       "read_time": 8,
@@ -340,13 +360,18 @@
         {
           "type": "paragraph",
           "text": "The most dangerous economic trap in agent design is quadratic token growth. In a multi-turn conversation, the cost accumulates rapidly. Turn 1 takes 100 input tokens and 100 output tokens for a total context of 200. Turn 2 takes 200 history tokens plus 100 new, adding 100 output. By Turn 3, the context has grown to 500 tokens and continues expanding.",
-          "links": [],
+          "links": [
+            
+          ],
           "bold": ["quadratic token growth"]
         },
         {
           "type": "paragraph",
           "text": "Because LLMs charge for every input token sent in every turn, the cost accumulates rapidly. A Reflexion loop that runs for 10 cycles can consume 50 times the tokens of a single linear pass. Research indicates that an unconstrained agent can cost 5 to 8 dollars per task to solve a software engineering issue.",
-          "links": [],
+          "links": [{
+            "text": "Research indicates that an unconstrained agent can cost 5 to 8 dollars per task ",
+            "url": "https://arxiv.org/html/2510.14278v1"
+          }],
           "bold": []
         },
         {
@@ -367,8 +392,11 @@
         },
         {
           "type": "paragraph",
-          "text": "If an agent always starts with the same 20-page system instruction or knowledge base, the LLM provider can cache these tokens. Subsequent calls reference the cache rather than reprocessing the text. This reduces input costs by approximately 90 percent and latency by approximately 85 percent. For an Orchestrator agent that spawns 50 workers all sharing the same context, caching effectively eliminates the redundancy penalty.",
-          "links": [],
+          "text": "If an agent always starts with the same 20-page system instruction or knowledge base, the LLM provider can cache these tokens. Subsequent calls reference the cache rather than reprocessing the text. This reduces input costs by approximately 90 percent and latency by approximately 75 percent. For an Orchestrator agent that spawns 50 workers all sharing the same context, caching effectively eliminates the redundancy penalty.",
+          "links": [{
+            "text": "approximately 90 percent",
+            "url": "https://sylphai.substack.com/p/the-complete-guide-to-prompt-caching"
+          }],
           "bold": ["Prompt Caching"]
         },
         {
