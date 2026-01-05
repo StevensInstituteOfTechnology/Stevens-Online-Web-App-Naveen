@@ -37,6 +37,7 @@ const TopicList = ({ posts }) => {
   
   const categories = [
     'All',
+    'AI & Emerging Technology',
     'Engineering Management', 
     'Mastering Computer Science',
     'Online MBA Success',
@@ -51,6 +52,9 @@ const TopicList = ({ posts }) => {
     
     // Navigate to the appropriate topic page
     switch (category) {
+      case 'AI & Emerging Technology':
+        navigate('/topics/ai-emerging-technology/');
+        break;
       case 'Engineering Management':
         navigate('/topics/engineering-essentials/');
         break;
