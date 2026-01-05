@@ -28,6 +28,7 @@ import EngineeringEssentials from "@/pages/EngineeringEssentials";
 import MasteringComputerScience from "@/pages/MasteringComputerScience";
 import OnlineMBASuccess from "@/pages/OnlineMBASuccess";
 import OtherPrograms from "@/pages/OtherPrograms";
+import AIEmergingTechnology from "@/pages/AIEmergingTechnology";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
 import Certificates from "@/pages/Certificates";
 import OnlineExperience from "@/pages/OnlineExperience";
@@ -122,6 +123,17 @@ const generateTopicRoutes = () => {
   routes.push({
     path: '/topics/uncategorized/:slug/',
     element: <OtherPrograms />
+  });
+
+  // AI & Emerging Technology topic routes
+  routes.push({
+    path: '/topics/ai-emerging-technology/',
+    element: <AIEmergingTechnology />
+  });
+
+  routes.push({
+    path: '/topics/ai-emerging-technology/:slug/',
+    element: <AIEmergingTechnology />
   });
 
   return routes;
