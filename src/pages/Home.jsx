@@ -785,7 +785,7 @@ export default function Home() {
         </section>
 
         {/* Program Showcase Carousel Section */}
-        <section className="bg-stevens-black relative ">
+        <section className="bg-stevens-black relative py-[20px] lg:py-stevens-section">
           <div className="flex flex-col lg:flex-row pb-16">
             {/* Left Content Panel */}
             <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
@@ -820,7 +820,7 @@ export default function Home() {
                     <Link
                       key={program.id}
                       to={createPageUrl(program.url)}
-                      className="flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[400px] snap-start group"
+                      className="flex-shrink-0 w-[345px] sm:w-[400px] lg:w-[460px] snap-start group"
                     >
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -840,7 +840,7 @@ export default function Home() {
                         {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" /> */}
 
                         {/* Label Box - Expandable on hover */}
-                        <div className="absolute bottom-0 left-4 right-4 bg-white p-6 transform translate-y-2 group-hover:translate-y-[-10px] transition-all duration-300 ease-out shadow-xl">
+                        <div className="absolute bottom-0 left-8 right-8 bg-white p-6 transform translate-y-2 group-hover:translate-y-[-10px] transition-all duration-300 ease-out shadow-xl">
                           <p className="text-stevens-gray text-xs font-bold uppercase tracking-wider mb-1">
                             {program.subtitle}
                           </p>
