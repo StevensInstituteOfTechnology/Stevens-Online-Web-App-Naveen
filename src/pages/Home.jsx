@@ -785,7 +785,7 @@ export default function Home() {
         </section>
 
         {/* Program Showcase Carousel Section */}
-        <section className="bg-stevens-black relative py-[20px] lg:py-stevens-section">
+        <section className="bg-stevens-black relative  lg:pt-stevens-section">
           <div className="flex flex-col lg:flex-row pb-16">
             {/* Left Content Panel */}
             <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
@@ -959,6 +959,86 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Angled Parallelogram Section - Testimonial */}
+        <section
+          className="relative py-24 lg:py-32 overflow-hidden"
+          style={{
+            background: "linear-gradient(to bottom, #000 50%, #fff 50%)",
+          }}
+        >
+          {/* Background layer with angled clip-path */}
+          <div
+            className="absolute inset-0 bg-stevens-light-gray"
+            style={{
+              clipPath: "polygon(0 8%, 100% 0%, 100% 92%, 0% 100%)",
+            }}
+          />
+          {/* Content layer - Grid: Testimonial Left, Image Right */}
+          <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Pull Quote Testimonial */}
+              <AnimatedSection className="order-2 lg:order-1">
+                <div className="relative">
+                  {/* Opening Quote Mark */}
+                  <svg
+                    className="w-12 h-12 lg:w-16 lg:h-16 text-stevens-red mb-6"
+                    viewBox="0 0 19 20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+                    />
+                  </svg>
+
+                  {/* Quote Text */}
+                  <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-dark-gray mb-8">
+                    The flexibility of Stevens Online allowed me to advance my
+                    career while balancing work and family. The program exceeded
+                    my expectations in every way.
+                  </blockquote>
+
+                  {/* Attribution */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-stevens-dark-gray overflow-hidden">
+                      <img
+                        src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                        alt="Sarah Chen"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-stevens-display text-lg font-bold text-stevens-dark-gray">
+                        Sarah Chen
+                      </p>
+                      <p className="text-stevens-gray text-sm">
+                        MBA Graduate, Class of 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Right: Featured Image */}
+              <AnimatedSection delay={0.2} className="order-1 lg:order-2">
+                <div className="relative">
+                  <img
+                    src="/assets/images/home/home-1.png"
+                    alt="Stevens Online student studying"
+                    className="w-full h-auto rounded-lg shadow-2xl"
+                    loading="lazy"
+                  />
+                  {/* Optional: Decorative accent */}
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-stevens-red/10 rounded-lg -z-10" />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+
         {/* Why Stevens Section */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
