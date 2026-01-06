@@ -10,6 +10,8 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import {
   createPageUrl,
@@ -268,6 +270,29 @@ export default function Home() {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
+
+  // Program showcase filter state
+  // Default: Both unchecked = show all programs
+  const [mastersChecked, setMastersChecked] = useState(false);
+  const [certificatesChecked, setCertificatesChecked] = useState(false);
+
+  // Generate a unique key that changes when filters change
+  // This forces React to re-mount the carousel and re-trigger animations
+  const filterKey = `${mastersChecked}-${certificatesChecked}`;
+
+  // Filter program showcase data based on selected filters
+  const filteredProgramShowcaseData = programShowcaseData.filter((program) => {
+    const isMasters =
+      program.subtitle.includes("MASTER") || program.subtitle.includes("MBA");
+    const isCertificate = program.subtitle.includes("CERTIFICATE");
+
+    // If no filter selected, show all programs
+    if (!mastersChecked && !certificatesChecked) return true;
+    // If filter(s) selected, show matching programs
+    if (mastersChecked && isMasters) return true;
+    if (certificatesChecked && isCertificate) return true;
+    return false;
+  });
 
   // Track window width for responsive Asterism
   useEffect(() => {
@@ -811,12 +836,16 @@ export default function Home() {
             {/* Right Carousel Panel */}
             <div className="lg:w-[65%] xl:w-[70%] relative">
               <div className="flex flex-col justify-between h-full">
-                <div
+                <motion.div
+                  key={filterKey}
                   id="program-carousel"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                   className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 pt-8 lg:pt-16 lg:pb-16 px-6 lg:pl-0 lg:pr-12"
                   style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
-                  {programShowcaseData.map((program, index) => (
+                  {filteredProgramShowcaseData.map((program, index) => (
                     <Link
                       key={program.id}
                       to={createPageUrl(program.url)}
@@ -927,33 +956,73 @@ export default function Home() {
                       <ArrowRight className="w-5 h-5 text-stevens-white/40 group-hover:text-stevens-red group-hover:translate-x-1 transition-all duration-300" />
                     </motion.div>
                   </a>
-                </div>
-                {/* Carousel Navigation */}
-                <div className="px-24 flex items-right justify-end gap-4">
-                  <button
-                    onClick={() => {
-                      const carousel =
-                        document.getElementById("program-carousel");
-                      if (carousel)
-                        carousel.scrollBy({ left: -400, behavior: "smooth" });
-                    }}
-                    className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white  flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
-                    aria-label="Previous"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => {
-                      const carousel =
-                        document.getElementById("program-carousel");
-                      if (carousel)
-                        carousel.scrollBy({ left: 400, behavior: "smooth" });
-                    }}
-                    className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
-                    aria-label="Next"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
+                </motion.div>
+                {/* Carousel Controls: Filters + Navigation */}
+                <div className="px-6 lg:px-24 flex items-center justify-between gap-4">
+                  {/* Left: Filter Checkboxes (same style as Admission page) */}
+                  <div className="flex flex-wrap gap-4 lg:gap-6 items-center">
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="masters-filter"
+                        checked={mastersChecked}
+                        onCheckedChange={(checked) =>
+                          setMastersChecked(checked)
+                        }
+                        className="border-stevens-white/50 data-[state=checked]:bg-stevens-white data-[state=checked]:text-stevens-black"
+                      />
+                      <Label
+                        htmlFor="masters-filter"
+                        className="text-stevens-white text-sm lg:text-base font-medium cursor-pointer"
+                      >
+                        Masters
+                      </Label>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="certificates-filter"
+                        checked={certificatesChecked}
+                        onCheckedChange={(checked) =>
+                          setCertificatesChecked(checked)
+                        }
+                        className="border-stevens-white/50 data-[state=checked]:bg-stevens-white data-[state=checked]:text-stevens-black"
+                      />
+                      <Label
+                        htmlFor="certificates-filter"
+                        className="text-stevens-white text-sm lg:text-base font-medium cursor-pointer"
+                      >
+                        Certificates
+                      </Label>
+                    </div>
+                  </div>
+
+                  {/* Right: Navigation Arrows */}
+                  <div className="flex gap-4">
+                    <button
+                      onClick={() => {
+                        const carousel =
+                          document.getElementById("program-carousel");
+                        if (carousel)
+                          carousel.scrollBy({ left: -400, behavior: "smooth" });
+                      }}
+                      className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
+                      aria-label="Previous"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={() => {
+                        const carousel =
+                          document.getElementById("program-carousel");
+                        if (carousel)
+                          carousel.scrollBy({ left: 400, behavior: "smooth" });
+                      }}
+                      className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
+                      aria-label="Next"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
