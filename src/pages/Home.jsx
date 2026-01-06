@@ -962,77 +962,94 @@ export default function Home() {
 
         {/* Angled Parallelogram Section - Testimonial */}
         <section
-          className="relative py-24 lg:py-32 overflow-hidden"
+          className="relative py-32 lg:py-44 overflow-hidden"
           style={{
             background: "linear-gradient(to bottom, #000 50%, #fff 50%)",
           }}
         >
-          {/* Background layer with angled clip-path */}
-          <div
-            className="absolute inset-0 bg-stevens-light-gray"
-            style={{
-              clipPath: "polygon(0 8%, 100% 0%, 100% 92%, 0% 100%)",
-            }}
+          {/* Background layer with AngledContainer (fixed 3° angle, auto-detect aspect ratio) */}
+          <AngledContainer
+            direction="vertical-left"
+            angle={3}
+            autoDetectAspectRatio={true}
+            width="100%"
+            height="100%"
+            className="absolute inset-0"
+            backgroundColor="bg-stevens-dark-gray"
           />
-          {/* Content layer - Grid: Testimonial Left, Image Right */}
+          {/* Content layer - Grid: Testimonial Left (2/3), Image Right (1/3) */}
           <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left: Pull Quote Testimonial */}
-              <AnimatedSection className="order-2 lg:order-1">
-                <div className="relative">
-                  {/* Opening Quote Mark */}
-                  <svg
-                    className="w-12 h-12 lg:w-16 lg:h-16 text-stevens-red mb-6"
-                    viewBox="0 0 19 20"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="currentColor"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
-                    />
-                  </svg>
+            <div className="grid xl:grid-cols-3 gap-12 xl:gap-16 items-center">
+              {/* Left: Pull Quote Testimonial - 2/3 width on xl+ */}
+              <AnimatedSection className="xl:col-span-2">
+                {/* Skewed container for angled border effect */}
+                <div className="transform -skew-y-3">
+                  {/* Border frame around quote content */}
+                  <div className="border-4 border-stevens-red p-8 lg:p-10">
+                    {/* Counter-skew content to keep it upright */}
+                    <div className="transform skew-y-3">
+                      {/* Opening Quote Mark */}
+                      <svg
+                        className="w-12 h-12 lg:w-16 lg:h-16 text-stevens-red mb-6"
+                        viewBox="0 0 19 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+                        />
+                      </svg>
 
-                  {/* Quote Text */}
-                  <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-dark-gray mb-8">
-                    The flexibility of Stevens Online allowed me to advance my
-                    career while balancing work and family. The program exceeded
-                    my expectations in every way.
-                  </blockquote>
+                      {/* Quote Text */}
+                      <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-white mb-8">
+                        Stevens Online delivers world-class technology education
+                        to working professionals, empowering them to advance
+                        their careers through flexible, industry-relevant online
+                        programs.
+                      </blockquote>
 
-                  {/* Attribution */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-stevens-dark-gray overflow-hidden">
-                      <img
-                        src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
-                        alt="Sarah Chen"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-stevens-display text-lg font-bold text-stevens-dark-gray">
-                        Sarah Chen
-                      </p>
-                      <p className="text-stevens-gray text-sm">
-                        MBA Graduate, Class of 2024
-                      </p>
+                      {/* Attribution */}
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-stevens-dark-gray overflow-hidden xl:hidden">
+                          <img
+                            src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                            alt="Sarah Chen"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p className="font-stevens-display text-lg font-bold text-stevens-white">
+                            Arshad Saiyed
+                          </p>
+                          <p className="text-stevens-light-gray text-sm">
+                            Chief Online Learning Officer and Dean of the
+                            College of Professional Education
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </AnimatedSection>
 
-              {/* Right: Featured Image */}
-              <AnimatedSection delay={0.2} className="order-1 lg:order-2">
-                <div className="relative">
-                  <img
-                    src="/assets/images/home/home-1.png"
-                    alt="Stevens Online student studying"
-                    className="w-full h-auto rounded-lg shadow-2xl"
-                    loading="lazy"
-                  />
-                  {/* Optional: Decorative accent */}
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-stevens-red/10 rounded-lg -z-10" />
+              {/* Right: Featured Image - 1/3 width with matching angle (only on xl+) */}
+              <AnimatedSection
+                delay={0.2}
+                className="hidden xl:block xl:order-2 xl:col-span-1"
+              >
+                {/* Skewed container to match testimonial angle - pulled up */}
+                <div className="transform -skew-y-3 -mt-12 lg:-mt-16">
+                  <div className="overflow-hidden shadow-2xl">
+                    {/* Counter-skew image to keep it upright */}
+                    <img
+                      src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                      alt="Arshad Saiyed - Dean of College of Professional Education"
+                      className="w-full h-auto transform skew-y-3 scale-110"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </AnimatedSection>
             </div>
@@ -1088,35 +1105,6 @@ export default function Home() {
             </AnimatedSection>
           </div>
         </section>
-
-        {/* Testimonial Section */}
-        <AnimatedSection className="bg-stevens-black py-stevens-section">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-            <div className="mx-auto text-center">
-              <img
-                src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
-                alt="Alumni portrait"
-                className="mb-4 mx-auto w-24 h-24 rounded-full object-cover border-4 border-stevens-white shadow-stevens-lg"
-                loading="lazy"
-              />
-              <blockquote className="text-stevens-2xl leading-snug italic text-stevens-white mb-stevens-md">
-                "Stevens Online is dedicated to delivering world-class
-                technology education to working professionals worldwide,
-                empowering them to advance their careers and drive innovation in
-                tomorrow's digital economy through flexible, accessible, and
-                industry-relevant online programs."
-              </blockquote>
-              <cite className="not-italic font-stevens-semibold text-stevens-white">
-                - Arshad Saiyed
-              </cite>
-              <br />
-              <cite className="not-italic font-stevens-semibold text-stevens-white">
-                Chief Online Learning Officer and Dean of the College of
-                Professional Education
-              </cite>
-            </div>
-          </div>
-        </AnimatedSection>
 
         {/* Key Dates & Deadlines Section */}
         <section className="bg-stevens-white py-20">

@@ -93,7 +93,7 @@ const infoForItems = [
 const mainNavLinks = [
   // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
- 
+
   { name: "Blog", page: "Blog/" },
 ];
 
@@ -181,7 +181,7 @@ export default function Layout({ children, currentPageName }) {
   // Toggle accordion item on mobile
   const toggleMobileAccordion = (menuName) => {
     setExpandedMobileMenus((prev) =>
-      prev.includes(menuName) 
+      prev.includes(menuName)
         ? prev.filter((name) => name !== menuName)
         : [...prev, menuName]
     );
@@ -190,7 +190,7 @@ export default function Layout({ children, currentPageName }) {
   React.useEffect(() => {
     // Only run on client side
     if (typeof window === "undefined") return;
-    
+
     // Lightweight debounce using a single timer; avoids rapid state flips and extra renders
     let resizeTimer = null;
     let scrollTimer = null;
@@ -356,7 +356,7 @@ export default function Layout({ children, currentPageName }) {
     // Only run on client side
     if (typeof window === "undefined" || typeof document === "undefined")
       return;
-    
+
     const canonicalHref = buildCanonicalUrl(location.pathname);
     let link = document.querySelector('link[rel="canonical"]');
     if (!link) {
@@ -368,7 +368,7 @@ export default function Layout({ children, currentPageName }) {
   }, [location.pathname]);
 
   const isActive = (page) => currentPageName === page;
-  
+
   // Check if we're on the home page by pathname (more reliable than currentPageName)
   const isHomePage =
     location.pathname === "/" ||
@@ -390,19 +390,19 @@ export default function Layout({ children, currentPageName }) {
             ? "fixed top-0 left-0 right-0" // Fixed for home page
             : "sticky top-0" // Sticky for other pages
         } ${
-          showTransparentNav 
-            ? "bg-transparent" 
+          showTransparentNav
+            ? "bg-transparent"
             : "bg-stevens-black shadow-stevens-lg"
         }`}
       >
         <div className="w-full px-stevens-md lg:px-stevens-lg">
-            <div className="flex items-center justify-between h-[87px] w-full">
+          <div className="flex items-center justify-between h-[87px] w-full">
             {/* Logo - Left (hidden on home page when not scrolled) */}
             <div
               className={`flex-shrink-0 overflow-visible ${
-              showTransparentNav 
-                ? "opacity-0 -translate-x-4 pointer-events-none" 
-                : "opacity-100 translate-x-0"
+                showTransparentNav
+                  ? "opacity-0 -translate-x-4 pointer-events-none"
+                  : "opacity-100 translate-x-0"
               }`}
             >
               <Link
@@ -413,7 +413,7 @@ export default function Layout({ children, currentPageName }) {
                   {/* Main Logo - 60% larger */}
                   <img
                     src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.png"
-                    alt="Stevens Institute of Technology Professional Education Logo" 
+                    alt="Stevens Institute of Technology Professional Education Logo"
                     className="h-[65px] stevens-md:h-[87px] w-auto"
                   />
                 </div>
@@ -427,7 +427,11 @@ export default function Layout({ children, currentPageName }) {
                 href="https://www.stevens.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:flex items-center text-stevens-white hover:text-stevens-white/80 transition-colors duration-200 text-sm font-medium tracking-wide"
+                className={`hidden sm:flex items-center transition-colors duration-200 text-sm font-medium tracking-wide ${
+                  showTransparentNav
+                    ? "text-stevens-black hover:text-stevens-black/70"
+                    : "text-stevens-white hover:text-stevens-white/80"
+                }`}
               >
                 <span className="inline-flex items-center border-b-2 border-stevens-red pb-0.5 tracking-widest">
                   STEVENS.EDU
@@ -440,7 +444,11 @@ export default function Layout({ children, currentPageName }) {
                 href="https://search.stevens.edu/s/search.html?collection=21772~sp-search"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stevens-white hover:text-stevens-white/80 hover:bg-stevens-white/10 h-10 w-10 inline-flex items-center justify-center rounded-md transition-colors"
+                className={`h-10 w-10 inline-flex items-center justify-center rounded-md transition-colors ${
+                  showTransparentNav
+                    ? "text-stevens-black hover:text-stevens-black/70 hover:bg-stevens-black/10"
+                    : "text-stevens-white hover:text-stevens-white/80 hover:bg-stevens-white/10"
+                }`}
               >
                 <Search className="h-6 w-6" />
                 <span className="sr-only">Search</span>
@@ -450,7 +458,11 @@ export default function Layout({ children, currentPageName }) {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-stevens-white hover:text-stevens-white/80 hover:bg-stevens-white/10 h-12 w-12"
+                className={`h-12 w-12 ${
+                  showTransparentNav
+                    ? "text-stevens-black hover:text-stevens-black/70 hover:bg-stevens-black/10"
+                    : "text-stevens-white hover:text-stevens-white/80 hover:bg-stevens-white/10"
+                }`}
                 onClick={() => {
                   const newMenuState = !mobileMenuOpen;
                   setMobileMenuOpen(newMenuState);
@@ -462,56 +474,56 @@ export default function Layout({ children, currentPageName }) {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </div>
-            </div>
           </div>
-          
-          {/* Mega Menu Overlay - click outside to close */}
-          {mobileMenuOpen && (
-            <>
-              {/* Transparent backdrop - click to close */}
-              <div 
-                className="fixed inset-0 top-[87px] z-[9990]"
-                onClick={() => setMobileMenuOpen(false)}
-                aria-hidden="true"
-              />
-              
-              {/* Mega Menu Content */}
-              <div className="absolute left-0 right-0 top-full bg-stevens-dark-gray z-[9991] shadow-2xl max-h-[calc(100vh-87px)] overflow-y-auto">
-                <div className="max-w-stevens-content-max mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
-                  {/* Mobile: Single column accordion | Desktop: 3-column grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
-                    {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
-                    <div className="space-y-stevens-sm md:space-y-stevens-lg">
-                      {mobileNavLinks.map((link) => {
-                        if (link.isDropdown) {
+        </div>
+
+        {/* Mega Menu Overlay - click outside to close */}
+        {mobileMenuOpen && (
+          <>
+            {/* Transparent backdrop - click to close */}
+            <div
+              className="fixed inset-0 top-[87px] z-[9990]"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+
+            {/* Mega Menu Content */}
+            <div className="absolute left-0 right-0 top-full bg-stevens-dark-gray z-[9991] shadow-2xl max-h-[calc(100vh-87px)] overflow-y-auto">
+              <div className="max-w-stevens-content-max mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
+                {/* Mobile: Single column accordion | Desktop: 3-column grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
+                  {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
+                  <div className="space-y-stevens-sm md:space-y-stevens-lg">
+                    {mobileNavLinks.map((link) => {
+                      if (link.isDropdown) {
                         const isExpanded = expandedMobileMenus.includes(
                           link.name
                         );
-                          return (
-                            <div key={link.name} className="group">
-                              {/* Menu Item Header */}
-                              <button
-                                className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
-                                  megaMenuHoveredItem === link.name || isExpanded
+                        return (
+                          <div key={link.name} className="group">
+                            {/* Menu Item Header */}
+                            <button
+                              className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
+                                megaMenuHoveredItem === link.name || isExpanded
                                   ? "text-stevens-red"
                                   : "text-stevens-light-gray hover:text-stevens-white"
-                                }`}
-                                onClick={() => toggleMobileAccordion(link.name)}
+                              }`}
+                              onClick={() => toggleMobileAccordion(link.name)}
                               onMouseEnter={() =>
                                 !isMobile && setMegaMenuHoveredItem(link.name)
                               }
-                              >
+                            >
                               <span className="flex items-center gap-2">
                                 {link.name}
                                 {/* Arrow icon for desktop - indicates sub-menu */}
-                                <svg 
+                                <svg
                                   className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
                                     megaMenuHoveredItem === link.name
                                       ? "translate-x-1"
                                       : ""
                                   }`}
-                                  fill="none" 
-                                  stroke="currentColor" 
+                                  fill="none"
+                                  stroke="currentColor"
                                   viewBox="0 0 24 24"
                                 >
                                   <path
@@ -537,119 +549,119 @@ export default function Layout({ children, currentPageName }) {
                                   strokeWidth={2}
                                   d="M19 9l-7 7-7-7"
                                 />
-                                </svg>
-                              </button>
-                              
-                              {/* Accordion Content - Mobile Only */}
-                              {isExpanded && (
-                                <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
-                                {link.items?.map((item) =>
-                                    item.external ? (
-                                      <a
-                                        key={item.name}
-                                        href={item.page}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                      >
-                                        {item.name}
-                                      </a>
-                                    ) : (
-                                      <Link
-                                        key={item.name}
-                                        to={createPageUrl(item.page)}
-                                        className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    )
-                                )}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        }
-                        // Regular link (not dropdown)
-                        return link.external ? (
-                          <a
-                            key={link.name}
-                            href={link.page}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
-                            onClick={() => setMobileMenuOpen(false)}
-                          onMouseEnter={() =>
-                            !isMobile && setMegaMenuHoveredItem(null)
-                          }
-                          >
-                            {link.name}
-                          </a>
-                        ) : (
-                          <Link
-                            key={link.name}
-                            to={createPageUrl(link.page)}
-                            className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
-                            onClick={() => setMobileMenuOpen(false)}
-                          onMouseEnter={() =>
-                            !isMobile && setMegaMenuHoveredItem(null)
-                          }
-                          >
-                            {link.name}
-                          </Link>
-                        );
-                      })}
-                    </div>
+                              </svg>
+                            </button>
 
-                    {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
-                    <div className="hidden md:block space-y-stevens-md min-h-[200px]">
+                            {/* Accordion Content - Mobile Only */}
+                            {isExpanded && (
+                              <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
+                                {link.items?.map((item) =>
+                                  item.external ? (
+                                    <a
+                                      key={item.name}
+                                      href={item.page}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {item.name}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      key={item.name}
+                                      to={createPageUrl(item.page)}
+                                      className="block text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  )
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+                      // Regular link (not dropdown)
+                      return link.external ? (
+                        <a
+                          key={link.name}
+                          href={link.page}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
+                          onClick={() => setMobileMenuOpen(false)}
+                          onMouseEnter={() =>
+                            !isMobile && setMegaMenuHoveredItem(null)
+                          }
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link
+                          key={link.name}
+                          to={createPageUrl(link.page)}
+                          className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
+                          onClick={() => setMobileMenuOpen(false)}
+                          onMouseEnter={() =>
+                            !isMobile && setMegaMenuHoveredItem(null)
+                          }
+                        >
+                          {link.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
+                  <div className="hidden md:block space-y-stevens-md min-h-[200px]">
                     {megaMenuHoveredItem &&
                       mobileNavLinks
                         .find((link) => link.name === megaMenuHoveredItem)
                         ?.items?.map((item) =>
-                        item.external ? (
-                          <a
-                            key={item.name}
-                            href={item.page}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </a>
-                        ) : (
-                          <Link
-                            key={item.name}
-                            to={createPageUrl(item.page)}
-                            className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        )
+                          item.external ? (
+                            <a
+                              key={item.name}
+                              href={item.page}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={item.name}
+                              to={createPageUrl(item.page)}
+                              className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          )
                         )}
-                    </div>
+                  </div>
 
-                    {/* Right Column - CPE Information (Hidden on small mobile, visible on tablet+) */}
-                    <div className="hidden sm:block space-y-stevens-lg pt-stevens-lg md:pt-0 border-t border-stevens-gray md:border-t-0">
-                      <div>
-                        <h3 className="text-stevens-lg md:text-stevens-xl font-stevens-display text-stevens-white mb-stevens-md">
-                          College of Professional Education
-                        </h3>
-                        <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
+                  {/* Right Column - CPE Information (Hidden on small mobile, visible on tablet+) */}
+                  <div className="hidden sm:block space-y-stevens-lg pt-stevens-lg md:pt-0 border-t border-stevens-gray md:border-t-0">
+                    <div>
+                      <h3 className="text-stevens-lg md:text-stevens-xl font-stevens-display text-stevens-white mb-stevens-md">
+                        College of Professional Education
+                      </h3>
+                      <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
                         Advance your career with Stevens' forward-looking vision
                         for higher education—flexible online programs designed
                         for working professionals.
-                        </p>
-                      </div>
-                      <Link
-                        to="/request-information/"
-                        className="inline-flex items-center text-stevens-red hover:text-stevens-white transition-colors duration-200 font-semibold"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Request Information
+                      </p>
+                    </div>
+                    <Link
+                      to="/request-information/"
+                      className="inline-flex items-center text-stevens-red hover:text-stevens-white transition-colors duration-200 font-semibold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Request Information
                       <svg
                         className="w-4 h-4 ml-2"
                         fill="none"
@@ -662,22 +674,22 @@ export default function Layout({ children, currentPageName }) {
                           strokeWidth={2}
                           d="M9 5l7 7-7 7"
                         />
-                        </svg>
-                      </Link>
-                    </div>
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </>
-          )}
+            </div>
+          </>
+        )}
       </header>
-      
+
       <main className="flex-grow">{children}</main>
 
       <footer className="bg-stevens-black text-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg py-stevens-section">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-stevens-gap-lg">
-             <div className="lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
               <Link
                 to={createPageUrl("Home")}
                 className="mb-6 transition-opacity duration-300 hover:opacity-80"
@@ -692,7 +704,7 @@ export default function Layout({ children, currentPageName }) {
                   alt="Stevens Institute of Technology Logo"
                   className="h-48 w-auto"
                 />
-               </Link>
+              </Link>
             </div>
             <div className="lg:col-start-3">
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
@@ -731,7 +743,7 @@ export default function Layout({ children, currentPageName }) {
                 </Link>
               </div>
             </div>
-             <div>
+            <div>
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Connect With Us
               </h3>
@@ -807,17 +819,17 @@ export default function Layout({ children, currentPageName }) {
                 </div>
               </div>
             </div>
-           </div>
-           <div className="border-t border-stevens-light-gray mt-12 pt-8 text-center text-sm text-stevens-light-gray">
+          </div>
+          <div className="border-t border-stevens-light-gray mt-12 pt-8 text-center text-sm text-stevens-light-gray">
             <p>
               &copy; 2025 Stevens Institute of Technology. All rights reserved.
             </p>
-           </div>
+          </div>
         </div>
       </footer>
 
       {showBackToTop && (
-      <button
+        <button
           className="fixed bottom-6 right-6 bg-stevens-red hover:bg-stevens-dark-gray text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
           onClick={() => {
             if (typeof window !== "undefined") {
@@ -828,7 +840,7 @@ export default function Layout({ children, currentPageName }) {
           <ArrowUp className="w-5 h-5" />
         </button>
       )}
-      
+
       {/* Interactive Chatbot Button */}
       <ChatbotButton />
     </div>
