@@ -1,0 +1,270 @@
+import React, { useState, useRef, useMemo, useCallback, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { AnimatedSection } from "@/components/shared";
+
+/**
+ * BlogCarousel - Infinite carousel component for blog posts
+ * 
+ * Features:
+ * - Infinite loop with clone technique
+ * - Transform-based animation
+ * - Responsive cards per view (1/2/3)
+ * - Keyboard navigation
+ * - Seamless reset on transition end
+ */
+const BlogCarousel = ({ items = [], maxItems = 5 }) => {
+  // State
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const trackRef = useRef(null);
+  const isInitialized = useRef(false);
+
+  // Derived values
+  const displayItems = useMemo(() => items.slice(0, maxItems), [items, maxItems]);
+  const N = displayItems.length;
+  const K = cardsPerView;
+
+  // Build extended array with clones: [last K] + [all items] + [first K]
+  const extendedItems = useMemo(() => {
+    if (N === 0) return [];
+    return [
+      ...displayItems.slice(-K).map((item, i) => ({ ...item, _key: `clone-end-${i}` })),
+      ...displayItems.map((item, i) => ({ ...item, _key: `original-${i}` })),
+      ...displayItems.slice(0, K).map((item, i) => ({ ...item, _key: `clone-start-${i}` })),
+    ];
+  }, [displayItems, N, K]);
+
+  // Calculate real index for display (1-based)
+  const realIndex = useMemo(() => {
+    if (N === 0) return 1;
+    return ((currentIndex - K + N) % N) + 1;
+  }, [currentIndex, N, K]);
+
+  // Card dimensions
+  const cardWidthPercent = 100 / cardsPerView;
+  const gapPercent = 1.5;
+
+  // Navigation handler
+  const navigate = useCallback((direction) => {
+    if (isAnimating || N === 0) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => prev + (direction === "next" ? 1 : -1));
+  }, [isAnimating, N]);
+
+  // Handle transition end for seamless reset
+  const handleTransitionEnd = useCallback(() => {
+    setIsAnimating(false);
+
+    // Reset position if in clone zone
+    if (currentIndex >= N + K) {
+      // Reached end clones → jump to real first item
+      if (trackRef.current) {
+        trackRef.current.style.transition = "none";
+      }
+      setCurrentIndex(K);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (trackRef.current) {
+            trackRef.current.style.transition = "transform 0.5s ease-in-out";
+          }
+        });
+      });
+    } else if (currentIndex < K) {
+      // Reached start clones → jump to real last item
+      if (trackRef.current) {
+        trackRef.current.style.transition = "none";
+      }
+      setCurrentIndex(N + K - 1);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (trackRef.current) {
+            trackRef.current.style.transition = "transform 0.5s ease-in-out";
+          }
+        });
+      });
+    }
+  }, [currentIndex, N, K]);
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      navigate("prev");
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      navigate("next");
+    }
+  }, [navigate]);
+
+  // Initialize carousel index
+  useEffect(() => {
+    if (N > 0 && !isInitialized.current) {
+      setCurrentIndex(K);
+      isInitialized.current = true;
+    }
+  }, [N, K]);
+
+  // Handle responsive cardsPerView
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setCardsPerView(1);
+      } else if (width < 1024) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(3);
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
+  // Reset index when cardsPerView changes
+  useEffect(() => {
+    if (N > 0 && isInitialized.current) {
+      setCurrentIndex(K);
+    }
+  }, [cardsPerView, N, K]);
+
+  // Don't render if no items
+  if (N === 0) return null;
+
+  return (
+    <div onKeyDown={handleKeyDown} tabIndex={0} className="focus:outline-none">
+      {/* Pagination + Navigation Row */}
+      <AnimatedSection className="flex items-center justify-between w-full mb-8">
+        {/* Left: Pagination */}
+        <span className="text-white/60 tabular-nums tracking-wide">
+          {realIndex} / {N}
+        </span>
+
+        {/* Right: Navigation Arrows */}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate("prev")}
+            className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
+              isAnimating
+                ? "border-white/20 text-white/30 cursor-not-allowed"
+                : "border-white/30 text-white/60 hover:border-white hover:text-white"
+            }`}
+            aria-label="Previous slide"
+            disabled={isAnimating}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => navigate("next")}
+            className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
+              isAnimating
+                ? "border-white/20 text-white/30 cursor-not-allowed"
+                : "border-white/30 text-white/60 hover:border-white hover:text-white"
+            }`}
+            aria-label="Next slide"
+            disabled={isAnimating}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </AnimatedSection>
+
+      {/* Carousel Container */}
+      <AnimatedSection delay={0.1} className="overflow-hidden">
+        {/* Carousel Track */}
+        <div
+          ref={trackRef}
+          onTransitionEnd={handleTransitionEnd}
+          className="flex"
+          style={{
+            transform: `translateX(-${currentIndex * (cardWidthPercent + gapPercent)}%)`,
+            transition: "transform 0.5s ease-in-out",
+            gap: `${gapPercent}%`,
+          }}
+        >
+          {extendedItems.map((blog) => (
+            <Link
+              key={blog._key}
+              to={`/blog/${blog.id}/`}
+              className="group cursor-pointer flex-shrink-0"
+              style={{ width: `${cardWidthPercent}%` }}
+            >
+              <article className="flex flex-col h-full">
+                {/* Image Container */}
+                <div className="aspect-[4/3] overflow-hidden rounded-sm mb-5">
+                  <img
+                    src={
+                      blog.featured_image_url ||
+                      "/assets/blogs/uncategorized/big-data-jobs-skills-youll-acquire-in-a-data-science-masters-program/image.webp"
+                    }
+                    alt={blog.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1">
+                  <h3 className="font-stevens-display text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug line-clamp-2 group-hover:text-white/80 transition-colors duration-200">
+                    {blog.title}
+                  </h3>
+
+                  {blog.created_date && (
+                    <p className="text-white/50 font-stevens-condensed mb-2">
+                      {new Date(blog.created_date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </p>
+                  )}
+
+                  {blog.author ? (
+                    <p className="text-white/50 font-stevens-condensed mb-4">
+                      By {blog.author}
+                    </p>
+                  ) : blog.read_time ? (
+                    <p className="text-white/50 mb-4">
+                      {blog.read_time} min read
+                    </p>
+                  ) : null}
+
+                  <p className="text-white/60 leading-relaxed line-clamp-3 mb-5">
+                    {blog.excerpt}
+                  </p>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </AnimatedSection>
+    </div>
+  );
+};
+
+export default BlogCarousel;
+

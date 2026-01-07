@@ -32,6 +32,7 @@ import {
   AngledImageStack,
   AngledContainer,
 } from "@/components/shared";
+import { BlogCarousel } from "@/components/blog";
 import {
   GraduationCap,
   Users,
@@ -334,7 +335,7 @@ export default function Home() {
       // Load recent blog posts
       try {
         const blogsData = await import("@/data/blogs.json");
-        const recentBlogs = blogsData.posts.slice(0, 3);
+        const recentBlogs = blogsData.posts.slice(0, 5);
         setBlogs(recentBlogs);
       } catch (error) {
         console.error("Error loading blogs:", error);
@@ -1255,145 +1256,35 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Blog Showcase Section - Editorial Layout */}
-        {blogs.length >= 3 && (
-          <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white border-t">
-            <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
-              {/* Section Header - With top-right CTA */}
-              <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
-                <div>
-                  <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-2">
-                    Latest from Our Blog
-                  </h2>
-                  <p className="text-stevens-lg text-stevens-gray max-w-2xl">
-                    Insights on online education, career advancement, and
-                    technology trends.
-                  </p>
-                </div>
-                <Link to={createPageUrl("blog/")}>
-                  <Button variant="link" className="p-0 h-auto text-sm">
-                    View all insights
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </Link>
-              </AnimatedSection>
-
-              {/* Featured + Grid Layout */}
-              <AnimatedSection className="grid lg:grid-cols-5 gap-8">
-                {/* Featured Card - Left (60% on lg) */}
-                <Link
-                  to={`/blog/${blogs[0].id}/`}
-                  className="lg:col-span-3 group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-dark-gray focus-visible:ring-offset-2"
+        {/* Blog Carousel  */}
+        <section className="bg-stevens-black py-20 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
+            <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
+              <div>
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-white mb-2">
+                  Latest from Our Blog
+                </h2>
+                <p className="text-stevens-lg text-stevens-white max-w-2xl">
+                  Insights on online education, career advancement, and
+                  technology trends.
+                </p>
+              </div>
+              <Link to={createPageUrl("blog/")}>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto  text-stevens-white"
                 >
-                  <div className="relative h-[369px] sm:h-[492px] lg:h-full lg:min-h-[554px] overflow-hidden border border-stevens-light-gray hover:border-stevens-gray hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                    {/* Background Image */}
-                    <img
-                      src={
-                        blogs[0].featured_image_url ||
-                        "/assets/blog/placeholder-blog.webp"
-                      }
-                      alt={blogs[0].title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    {/* Stronger Gradient Overlay - editorial style, deeper at bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black from-10% via-black/80 via-40% to-black/20" />
-                    {/* Content Overlay - Safe zone: left-bottom, max 65% width */}
-                    <div className="absolute bottom-0 left-0 p-6 lg:p-8 max-w-[65%]">
-                      {/* Title - Large, editorial tight line-height */}
-                      <h3 className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl font-semibold text-white mb-3 leading-[1.1] line-clamp-3 group-hover:text-stevens-light-gray transition-colors duration-300">
-                        {blogs[0].title}
-                      </h3>
-                      {/* Excerpt - clamped to 2 lines */}
-                      <p className="text-white/90  line-clamp-2 mb-4 leading-relaxed">
-                        {blogs[0].excerpt}
-                      </p>
-                      {/* Meta - Standardized format */}
-                      <div className="flex items-center gap-1 text-sm font-stevens-condensed text-white/70">
-                        {blogs[0].created_date && (
-                          <span>
-                            {new Date(blogs[0].created_date).toLocaleDateString(
-                              "en-US",
-                              {
-                                month: "short",
-                                day: "numeric",
-                                year: "numeric",
-                              }
-                            )}
-                          </span>
-                        )}
-                        {blogs[0].read_time && (
-                          <>
-                            <span>•</span>
-                            <span>{blogs[0].read_time} min read</span>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                  View all insights
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </AnimatedSection>
 
-                {/* Side Cards - Right (40% on lg) - "More reads" style */}
-                <div className="lg:col-span-2 flex flex-col gap-6 justify-between">
-                  {blogs.slice(1, 3).map((blog) => (
-                    <Link
-                      key={blog.id}
-                      to={`/blog/${blog.id}/`}
-                      className="group block flex-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-dark-gray focus-visible:ring-offset-2"
-                    >
-                      <div className="h-full min-h-[148px] flex gap-4 p-4 border border-stevens-light-gray hover:border-stevens-gray hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-white">
-                        {/* Thumbnail - Left, stretches to fill card height */}
-                        <div className="flex-shrink-0 w-28 sm:w-36 lg:w-32 xl:w-40 overflow-hidden">
-                          <img
-                            src={
-                              blog.featured_image_url ||
-                              "/assets/blog/placeholder-blog.webp"
-                            }
-                            alt={blog.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                        </div>
-                        {/* Content - Right, stretches and spreads content */}
-                        <div className="flex-1 flex flex-col justify-between min-w-0 py-1">
-                          {/* Title - smaller to not compete with Featured */}
-                          <h4 className="font-stevens-display text-lg lg:text-xl font-semibold text-stevens-dark-gray leading-snug line-clamp-2 mb-1 group-hover:text-stevens-red transition-colors duration-300">
-                            {blog.title}
-                          </h4>
-                          {/* Excerpt - 1 line only */}
-                          <p className="text-stevens-gray font-stevens-body text-stevens-md line-clamp-4 mb-2">
-                            {blog.excerpt}
-                          </p>
-                          {/* Meta - Standardized format */}
-                          <div className="flex items-center gap-1 text-sm font-stevens-condensed text-stevens-gray">
-                            {blog.created_date && (
-                              <span>
-                                {new Date(blog.created_date).toLocaleDateString(
-                                  "en-US",
-                                  {
-                                    month: "short",
-                                    day: "numeric",
-                                    year: "numeric",
-                                  }
-                                )}
-                              </span>
-                            )}
-                            {blog.read_time && (
-                              <>
-                                <span>•</span>
-                                <span>{blog.read_time} min read</span>
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </AnimatedSection>
-            </div>
-          </section>
-        )}
+            {/* Blog Carousel Component */}
+            <BlogCarousel items={blogs} maxItems={5} />
+          </div>
+        </section>
+
         {/* Upcoming Events */}
         <section className="bg-stevens-light-gray py-stevens-section">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
