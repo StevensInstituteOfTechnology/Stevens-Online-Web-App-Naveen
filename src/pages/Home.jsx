@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Program } from "@/api/entities";
 import { Event } from "@/api/entities";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,7 @@ import {
   AngledImage,
   AngledImageStack,
   AngledContainer,
+  CarouselNavButton,
 } from "@/components/shared";
 import { BlogCarousel } from "@/components/blog";
 import {
@@ -277,6 +278,10 @@ export default function Home() {
   const [mastersChecked, setMastersChecked] = useState(false);
   const [certificatesChecked, setCertificatesChecked] = useState(false);
 
+  // Program carousel nav button active state (for dashed circle effect)
+  const [programNavActiveButton, setProgramNavActiveButton] = useState(null);
+  const programNavButtonsRef = useRef(null);
+
   // Generate a unique key that changes when filters change
   // This forces React to re-mount the carousel and re-trigger animations
   const filterKey = `${mastersChecked}-${certificatesChecked}`;
@@ -300,6 +305,20 @@ export default function Home() {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Clear program nav active button when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        programNavButtonsRef.current &&
+        !programNavButtonsRef.current.contains(e.target)
+      ) {
+        setProgramNavActiveButton(null);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
   // Application Support Events (reuse same content as Events page)
@@ -998,31 +1017,31 @@ export default function Home() {
                   </div>
 
                   {/* Right: Navigation Arrows */}
-                  <div className="flex gap-4">
-                    <button
+                  <div ref={programNavButtonsRef} className="flex gap-4">
+                    <CarouselNavButton
+                      direction="prev"
                       onClick={() => {
+                        setProgramNavActiveButton("prev");
                         const carousel =
                           document.getElementById("program-carousel");
                         if (carousel)
                           carousel.scrollBy({ left: -400, behavior: "smooth" });
                       }}
-                      className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
-                      aria-label="Previous"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
+                      isActive={programNavActiveButton === "prev"}
+                      variant="dark"
+                    />
+                    <CarouselNavButton
+                      direction="next"
                       onClick={() => {
+                        setProgramNavActiveButton("next");
                         const carousel =
                           document.getElementById("program-carousel");
                         if (carousel)
                           carousel.scrollBy({ left: 400, behavior: "smooth" });
                       }}
-                      className="w-12 h-12 rounded-full border border-stevens-white/30 hover:border-stevens-white flex items-center justify-center text-stevens-white hover:bg-stevens-white/10 transition-colors"
-                      aria-label="Next"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
+                      isActive={programNavActiveButton === "next"}
+                      variant="dark"
+                    />
                   </div>
                 </div>
               </div>

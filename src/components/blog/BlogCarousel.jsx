@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { Link } from "react-router-dom";
-import { AnimatedSection } from "@/components/shared";
+import { AnimatedSection, CarouselNavButton } from "@/components/shared";
 
 /**
  * BlogCarousel - Infinite carousel component for blog posts
@@ -23,7 +23,9 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(3);
+  const [activeButton, setActiveButton] = useState(null); // Track which button is "focused"
   const trackRef = useRef(null);
+  const navButtonsRef = useRef(null); // Ref to detect clicks outside nav buttons
   const isInitialized = useRef(false);
 
   // Derived values
@@ -150,6 +152,17 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
     }
   }, [cardsPerView, N, K]);
 
+  // Clear active button when clicking outside nav buttons
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navButtonsRef.current && !navButtonsRef.current.contains(e.target)) {
+        setActiveButton(null);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   // Don't render if no items
   if (N === 0) return null;
 
@@ -163,53 +176,27 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
         </span>
 
         {/* Right: Navigation Arrows */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate("prev")}
-            className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
-              isAnimating
-                ? "border-white/20 text-white/30 cursor-not-allowed"
-                : "border-white/30 text-white/60 hover:border-white hover:text-white"
-            }`}
-            aria-label="Previous slide"
+        <div ref={navButtonsRef} className="flex items-center gap-3">
+          <CarouselNavButton
+            direction="prev"
+            onClick={() => {
+              setActiveButton("prev");
+              navigate("prev");
+            }}
+            isActive={activeButton === "prev"}
+            variant="dark"
             disabled={isAnimating}
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => navigate("next")}
-            className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
-              isAnimating
-                ? "border-white/20 text-white/30 cursor-not-allowed"
-                : "border-white/30 text-white/60 hover:border-white hover:text-white"
-            }`}
-            aria-label="Next slide"
+          />
+          <CarouselNavButton
+            direction="next"
+            onClick={() => {
+              setActiveButton("next");
+              navigate("next");
+            }}
+            isActive={activeButton === "next"}
+            variant="dark"
             disabled={isAnimating}
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
+          />
         </div>
       </AnimatedSection>
 

@@ -9,7 +9,8 @@
  *   ├── modals/      - Modal dialogs
  *   ├── cards/       - Card components
  *   ├── brand/       - Brand elements (Asterism)
- *   └── sections/    - Page section components
+ *   ├── sections/    - Page section components
+ *   └── navigation/  - Navigation components (CarouselNavButton)
  *
  * Usage:
  *   import { AnimatedSection, PageHero, VideoPlayer } from "@/components/shared";
@@ -46,3 +47,6 @@ export { default as Asterism, AsterismPresets } from "./brand/Asterism";
 
 // Section components
 export { default as TopCompaniesSection } from "./sections/TopCompaniesSection";
+
+// Navigation components
+export { CarouselNavButton } from "./navigation";
