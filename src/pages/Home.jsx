@@ -448,20 +448,24 @@ export default function Home() {
             staggerDelay={150}
           />
 
-          <div className="relative min-h-[80vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
+          <div className="relative min-h-[85vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
             <div className="max-w-xl text-right pr-4 lg:pr-16">
-              <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6 text-stevens-white">
+              <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
                 Move your
                 <br />
                 career forward
               </h1>
+              <p className="font-stevens-body text-lg md:text-xl text-stevens-white mb-6">
+                Expanding and building on 150 years of exceptional technology
+                education
+              </p>
               <Link
-                to={createPageUrl("admissions/") + "#explore-programs"}
-                onClick={() => trackConversion(CONVERSION_LABELS.APPLY_NOW)}
+                to="/request-information/"
+                onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
               >
                 <Button variant="outline-red" className="uppercase">
-                  Explore Programs
+                  Request Information
                 </Button>
               </Link>
             </div>
@@ -504,7 +508,7 @@ export default function Home() {
                 delay={0.2}
                 className="text-stevens-white pb-stevens-xl"
               >
-                <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-light tracking-tight mb-stevens-lg ">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light tracking-tight mb-stevens-lg ">
                   This is a new kind of education, built around your goals, and
                   designed to fit your life
                 </h2>
@@ -578,7 +582,7 @@ export default function Home() {
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
           <div className="relative z-10 mx-auto max-w-6xl bg-white shadow-xl -mt-16 lg:-mt-32 px-10 py-16 lg:px-16 lg:py-20 scale-[0.90] origin-top">
             {/* Title */}
-            <h2 className="font-stevens-display text-stevens-3xl lg:text-stevens-4xl font-bold text-stevens-dark-gray mb-4 tracking-tight leading-tight text-center">
+            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-4 tracking-tight leading-tight text-center">
               A Degree That{" "}
               <span className="text-stevens-red">Pays Dividends</span>
             </h2>
@@ -634,23 +638,23 @@ export default function Home() {
               ></motion.div>
 
               {/* Level 2: Supporting Stats - The Reinforcement */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
                 {/* Stat 2 */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="text-center group cursor-default"
+                  whileHover={{ y: -4 }}
+                  className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     #1
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">
+                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Online MBA from a New Jersey school
                   </p>
-                  <p className="text-stevens-gray text-xs mt-2 text-opacity-80">
+                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
                     U.S. News & World Report 2025
                   </p>
                 </motion.div>
@@ -659,18 +663,18 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="text-center group cursor-default"
+                  whileHover={{ y: -4 }}
+                  className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     7x
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">
+                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Winner of 21st Century Award
                   </p>
-                  <p className="text-stevens-gray text-xs mt-2 text-opacity-80">
+                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
                     USDLA Distance Learning
                   </p>
                 </motion.div>
@@ -679,18 +683,18 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                  className="text-center group cursor-default"
+                  whileHover={{ y: -4 }}
+                  className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors duration-300">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     #9
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-lg leading-snug">
+                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Among 'Best ROI Colleges'
                   </p>
-                  <p className="text-stevens-gray text-xs mt-2 text-opacity-80">
+                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
                     Based on 4-year degree cost
                   </p>
                 </motion.div>
@@ -703,7 +707,7 @@ export default function Home() {
         {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <AnimatedSection className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-4xl stevens-lg:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
+            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
               A Degree That <span className="text-stevens-red">Pays Dividends</span>
             </h2>
             <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
@@ -737,11 +741,9 @@ export default function Home() {
         </div>
       </section> */}
 
-        {/* Professional Education CTA */}
+        {/* THE STEVENS ONLINE ADVANTAGE */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray relative overflow-hidden">
           {/* Subtle background decoration */}
-          <div className="absolute top-stevens-xl right-stevens-2xl w-80 h-80 bg-stevens-light-gray rounded-full blur-3xl" />
-          <div className="absolute bottom-stevens-xl left-stevens-2xl w-64 h-64 bg-stevens-light-gray/30 rounded-full blur-3xl" />
 
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
@@ -788,42 +790,40 @@ export default function Home() {
                 </div>
               </AnimatedSection>
               <AnimatedSection>
-                <h2 className="font-stevens-display text-stevens-3xl stevens-lg:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-md tracking-tight leading-tight">
                   THE STEVENS ONLINE ADVANTAGE
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray mb-stevens-xl leading-relaxed">
-                  Our Online Master’s Degree Programs are designed to provide
-                  the same quality as our highly-ranked on-campus programs. We
-                  offer relevant courses, renowned faculty, and individualized
-                  support to each student.
-                </p>
-                <p className="text-stevens-xl text-stevens-dark-gray mb-stevens-xl leading-relaxed">
-                  Additional benefits of our StevensOnline programs include:
+                  World-class education, designed for working professionals.
                 </p>
 
-                {/* Benefits list to mirror official site */}
-                <ul className="space-y-stevens-md mb-stevens-xl text-stevens-lg text-stevens-dark-gray">
+                {/* Streamlined benefits - no redundancy */}
+                <ul className="space-y-stevens-md text-stevens-lg text-stevens-dark-gray">
                   <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-dark-gray" />
+                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
                     <span>
-                      Global cohort of classmates to learn with and from
+                      Same curriculum and faculty as on-campus programs
                     </span>
                   </li>
                   <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-dark-gray" />
-                    <span>Direct access to experienced faculty</span>
+                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
+                    <span>Flexible schedules — learn anytime, anywhere</span>
                   </li>
                   <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-dark-gray" />
-                    <span>Flexibility for how and where you study</span>
+                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
+                    <span>Global network of industry-connected peers</span>
+                  </li>
+                  <li className="flex items-start gap-stevens-sm">
+                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
+                    <span>Dedicated support from enrollment to graduation</span>
+                  </li>
+                  <li className="flex items-start gap-stevens-sm">
+                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
+                    <span>
+                      Courses taught by active researchers and practitioners
+                    </span>
                   </li>
                 </ul>
-
-                <p className="text-stevens-xl text-stevens-dark-gray mb-stevens-lg leading-relaxed">
-                  Through our online offerings, you will gain access to the same
-                  quality programs and distinguished faculty as on-campus
-                  students.
-                </p>
               </AnimatedSection>
             </div>
           </div>
@@ -1053,7 +1053,7 @@ export default function Home() {
         <section
           className="relative py-32 lg:py-44 overflow-hidden"
           style={{
-            background: "linear-gradient(to bottom, #000 50%, #fff 50%)",
+            background: "linear-gradient(to bottom, #000 50%, #000 50%)",
           }}
         >
           {/* Background layer with AngledContainer (fixed 3° angle, auto-detect aspect ratio) */}
@@ -1093,9 +1093,8 @@ export default function Home() {
 
                       {/* Quote Text */}
                       <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-white mb-8">
-                        Stevens Online delivers world-class technology education
-                        to working professionals, empowering them to advance
-                        their careers through flexible, industry-relevant online
+                        Stevens Online empowers working professionals to advance
+                        their careers through flexible, industry-relevant
                         programs.
                       </blockquote>
 
@@ -1104,7 +1103,7 @@ export default function Home() {
                         <div className="w-12 h-12 rounded-full bg-stevens-dark-gray overflow-hidden xl:hidden">
                           <img
                             src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
-                            alt="Sarah Chen"
+                            alt="Arshad Saiyed"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -1135,7 +1134,7 @@ export default function Home() {
                     <img
                       src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed - Dean of College of Professional Education"
-                      className="w-full h-auto transform skew-y-3 scale-110"
+                      className="w-full h-[418px] transform skew-y-3 scale-110"
                       loading="lazy"
                     />
                   </div>
@@ -1146,11 +1145,11 @@ export default function Home() {
         </section>
 
         {/* Why Stevens Section */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+        {/* <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center mb-stevens-xl">
               <div>
-                <h2 className="font-stevens-display text-3xl font-bold text-stevens-black mb-4">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
                   A Legacy of Innovation Meets Online Flexibility
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -1179,7 +1178,7 @@ export default function Home() {
                 loading="lazy"
               />
               <div className="lg:order-2">
-                <h2 className="font-stevens-headers text-3xl font-bold text-stevens-black mb-4">
+                <h2 className="font-stevens-headers text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
                   A Community That Supports Your Success
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -1193,13 +1192,13 @@ export default function Home() {
               </div>
             </AnimatedSection>
           </div>
-        </section>
+        </section> */}
 
         {/* Key Dates & Deadlines Section */}
-        <section className="bg-stevens-white py-20">
+        {/* <section className="bg-stevens-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="font-stevens-headers text-3xl md:text-4xl font-bold text-stevens-black mb-4">
+              <h2 className="font-stevens-headers text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
                 Key Dates & Deadlines
               </h2>
               <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
@@ -1273,14 +1272,14 @@ export default function Home() {
               apply.
             </AnimatedSection>
           </div>
-        </section>
+        </section> */}
 
         {/* Blog Carousel  */}
         <section className="bg-stevens-black py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
               <div>
-                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-white mb-2">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-white mb-2">
                   Latest from Our Blog
                 </h2>
                 <p className="text-stevens-lg text-stevens-white max-w-2xl">
@@ -1291,7 +1290,7 @@ export default function Home() {
               <Link to={createPageUrl("blog/")}>
                 <Button
                   variant="link"
-                  className="p-0 h-auto  text-stevens-white"
+                  className=" h-auto  text-stevens-white pb-0"
                 >
                   View all insights
                   <ArrowRight className="w-4 h-4 ml-1" />
@@ -1308,7 +1307,7 @@ export default function Home() {
         <section className="bg-stevens-light-gray py-stevens-section">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="mb-12">
-              <h2 className="font-stevens-display text-3xl md:text-4xl font-bold text-stevens-dark-gray mb-4">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-4">
                 Application Support Events
               </h2>
               <p className="text-stevens-lg text-stevens-gray mb-6">

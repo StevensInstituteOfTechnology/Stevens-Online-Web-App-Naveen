@@ -396,7 +396,7 @@ export default function Layout({ children, currentPageName }) {
         }`}
       >
         <div className="w-full px-stevens-md lg:px-stevens-lg">
-          <div className="flex items-center justify-between h-[87px] w-full">
+          <div className="flex items-center justify-between stevens-md:h-[87px] h-[65px] w-full">
             {/* Logo - Left (hidden on home page when not scrolled) */}
             <div
               className={`flex-shrink-0 overflow-visible ${
