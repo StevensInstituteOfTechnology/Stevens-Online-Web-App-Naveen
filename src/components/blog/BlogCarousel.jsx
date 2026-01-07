@@ -1,10 +1,16 @@
-import React, { useState, useRef, useMemo, useCallback, useEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useMemo,
+  useCallback,
+  useEffect,
+} from "react";
 import { Link } from "react-router-dom";
 import { AnimatedSection } from "@/components/shared";
 
 /**
  * BlogCarousel - Infinite carousel component for blog posts
- * 
+ *
  * Features:
  * - Infinite loop with clone technique
  * - Transform-based animation
@@ -21,7 +27,10 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
   const isInitialized = useRef(false);
 
   // Derived values
-  const displayItems = useMemo(() => items.slice(0, maxItems), [items, maxItems]);
+  const displayItems = useMemo(
+    () => items.slice(0, maxItems),
+    [items, maxItems]
+  );
   const N = displayItems.length;
   const K = cardsPerView;
 
@@ -29,9 +38,13 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
   const extendedItems = useMemo(() => {
     if (N === 0) return [];
     return [
-      ...displayItems.slice(-K).map((item, i) => ({ ...item, _key: `clone-end-${i}` })),
+      ...displayItems
+        .slice(-K)
+        .map((item, i) => ({ ...item, _key: `clone-end-${i}` })),
       ...displayItems.map((item, i) => ({ ...item, _key: `original-${i}` })),
-      ...displayItems.slice(0, K).map((item, i) => ({ ...item, _key: `clone-start-${i}` })),
+      ...displayItems
+        .slice(0, K)
+        .map((item, i) => ({ ...item, _key: `clone-start-${i}` })),
     ];
   }, [displayItems, N, K]);
 
@@ -41,16 +54,20 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
     return ((currentIndex - K + N) % N) + 1;
   }, [currentIndex, N, K]);
 
-  // Card dimensions
-  const cardWidthPercent = 100 / cardsPerView;
+  // Card dimensions - account for gaps to fit exactly in container
   const gapPercent = 1.5;
+  const totalGapWidth = (cardsPerView - 1) * gapPercent; // e.g., 2 gaps × 1.5% = 3%
+  const cardWidthPercent = (100 - totalGapWidth) / cardsPerView; // e.g., (100 - 3) / 3 = 32.33%
 
   // Navigation handler
-  const navigate = useCallback((direction) => {
-    if (isAnimating || N === 0) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => prev + (direction === "next" ? 1 : -1));
-  }, [isAnimating, N]);
+  const navigate = useCallback(
+    (direction) => {
+      if (isAnimating || N === 0) return;
+      setIsAnimating(true);
+      setCurrentIndex((prev) => prev + (direction === "next" ? 1 : -1));
+    },
+    [isAnimating, N]
+  );
 
   // Handle transition end for seamless reset
   const handleTransitionEnd = useCallback(() => {
@@ -87,15 +104,18 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
   }, [currentIndex, N, K]);
 
   // Keyboard navigation
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      navigate("prev");
-    } else if (e.key === "ArrowRight") {
-      e.preventDefault();
-      navigate("next");
-    }
-  }, [navigate]);
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        navigate("prev");
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        navigate("next");
+      }
+    },
+    [navigate]
+  );
 
   // Initialize carousel index
   useEffect(() => {
@@ -201,7 +221,9 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
           onTransitionEnd={handleTransitionEnd}
           className="flex"
           style={{
-            transform: `translateX(-${currentIndex * (cardWidthPercent + gapPercent)}%)`,
+            transform: `translateX(-${
+              currentIndex * (cardWidthPercent + gapPercent)
+            }%)`,
             transition: "transform 0.5s ease-in-out",
             gap: `${gapPercent}%`,
           }}
@@ -267,4 +289,3 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
 };
 
 export default BlogCarousel;
-
