@@ -126,6 +126,7 @@ module.exports = {
 			'stevens-nav': FONTS.navigation,   // IBM Plex Sans (per CPE guidelines)
 			'stevens-body': FONTS.body,        // IBM Plex Sans
 			'stevens-display': FONTS.display,  // Saira Regular
+			'stevens-condensed': FONTS.condensed, // IBM Plex Sans Condensed
 			
 			// Saira Regular for content (normal weight)
 			'stevens-content': FONTS.header,   // Saira Regular for content text

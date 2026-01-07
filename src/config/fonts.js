@@ -15,7 +15,7 @@ export const FONTS = {
   navigation: ['IBM Plex Sans', 'sans-serif'], // IBM Plex Sans - for nav items (per CPE guidelines)
   body: ['IBM Plex Sans', 'sans-serif'],     // IBM Plex Sans - for body copy
   display: ['Saira', 'sans-serif'],          // Saira Regular - for display text (per CPE guidelines)
-  
+  condensed: ['IBM Plex Sans Condensed', 'sans-serif'], // IBM Plex Sans Condensed - for condensed text (per CPE guidelines)
   // Secondary/utility fonts
   serif: ['Georgia', 'Times New Roman', 'serif'],
   sans: ['Arial', 'Helvetica Neue', 'sans-serif'],  // Arial is CPE fallback
