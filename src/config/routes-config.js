@@ -45,6 +45,7 @@ export const TOPIC_CATEGORIES = [
   'engineering-essentials',
   'mastering-computer-science',
   'online-mba-success',
-  'uncategorized'
+  'uncategorized',
+  'ai-emerging-technology'
 ];
 

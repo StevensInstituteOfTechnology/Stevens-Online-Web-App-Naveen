@@ -7,6 +7,9 @@
  */
 
 export const BLOG_SEO_META_DESCRIPTIONS = {
+  'the-agentic-shift-reliable-ai-architecture': 'Discover why reliable AI systems depend on systems architecture, not bigger models. Learn about the agentic shift transforming enterprise AI in 2025.',
+  'building-self-healing-ai-orchestrator-reflexion-patterns': 'Learn the Orchestrator-Workers and Reflexion patterns for building self-healing AI agents that automatically detect and correct their own errors.',
+  'hidden-economics-ai-agents-token-costs-latency': 'Understand the hidden costs of AI agents, from quadratic token growth to latency trade-offs. Get practical strategies for cost-effective agentic AI deployment.',
   'engineering-manager-or-tech-lead-choosing-your-path': 'Learn the key differences between an engineering manager and a tech lead — and which path fits your leadership goals.',
   'highest-paying-computer-science-skills': 'Discover the highest-paying computer science jobs and the top technical skills that boost your earning potential.',
   'origins-of-engineering-management-mem-degree': 'Explore the origins of the MEM degree and how engineering management bridges technical expertise with strategic leadership. Learn how MEM programs prepare professionals to lead complex engineering projects and drive innovation at the intersection of business and technology.',
