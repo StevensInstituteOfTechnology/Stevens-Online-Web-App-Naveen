@@ -11,8 +11,8 @@
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
       "author_image": "/assets/blogs/ai-emerging-technology/the-agentic-shift-reliable-ai-architecture/1_dXbCvvSwYPe1ar75LiEEUA.webp",
-      "created_date": "2025-01-15T10:00:00.000Z",
-      "updated_date": "2025-01-15T10:00:00.000Z",
+      "created_date": "2026-01-07T10:00:00.000Z",
+      "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 6,
       "tags": ["Artificial Intelligence", "AI Architecture", "Agentic AI", "Systems Engineering", "Enterprise AI"],
       "social_sharing": true,
@@ -108,7 +108,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The future belongs to AI Engineers who are, in reality, Systems Architects capable of designing the constraints and channels through which cognitive energy flows. The Agentic Shift of 2025 represents the maturation of Generative AI. We are moving past the novelty of chatting with a bot to the engineering reality of orchestrating a system.",
+          "text": "The future belongs to AI Engineers who are, in reality, Systems Architects capable of designing the constraints and channels through which cognitive energy flows. The Agentic Shift of 2026 represents the maturation of Generative AI. We are moving past the novelty of chatting with a bot to the engineering reality of orchestrating a system.",
           "links": [],
           "bold": []
         },
@@ -132,8 +132,8 @@
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
       "author_image": "/assets/blogs/ai-emerging-technology/building-self-healing-ai-orchestrator-reflexion-patterns/naveen-mathews-renji.webp",
-      "created_date": "2025-01-16T10:00:00.000Z",
-      "updated_date": "2025-01-16T10:00:00.000Z",
+      "created_date": "2026-01-07T10:00:00.000Z",
+      "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 7,
       "tags": ["AI Architecture", "Multi-Agent Systems", "Self-Healing AI", "Orchestrator Pattern", "Software Engineering"],
       "social_sharing": true,
@@ -289,8 +289,8 @@
       "author": "Naveen Mathews Renji",
       "author_bio": "Naveen Mathews Renji is the AI and BI Engineering Manager at Stevens Institute of Technology's College of Professional Education, where he leads the development of intelligent systems and data-driven solutions. His research focuses on AI systems and Human-AI interaction.",
       "author_image": "/assets/blogs/ai-emerging-technology/hidden-economics-ai-agents-token-costs-latency/temp.webp",
-      "created_date": "2025-01-17T10:00:00.000Z",
-      "updated_date": "2025-01-17T10:00:00.000Z",
+      "created_date": "2026-01-07T10:00:00.000Z",
+      "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 8,
       "tags": ["AI Economics", "LLM Costs", "Token Optimization", "Enterprise AI", "Agentic RAG"],
       "social_sharing": true,
@@ -325,7 +325,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In 2025, the primary engineering constraint for AI agents is the tension between latency and accuracy. Multi-agent systems are inherently slower. A single LLM call might take 800 milliseconds. An Orchestrator-Worker flow with a Reflexion loop might take 10 to 30 seconds. For user-facing applications like customer support, this latency is often unacceptable.",
+          "text": "In 2026, the primary engineering constraint for AI agents is the tension between latency and accuracy. Multi-agent systems are inherently slower. A single LLM call might take 800 milliseconds. An Orchestrator-Worker flow with a Reflexion loop might take 10 to 30 seconds. For user-facing applications like customer support, this latency is often unacceptable.",
           "links": [],
           "bold": []
         },
@@ -377,7 +377,7 @@
         {
           "type": "heading",
           "level": 2,
-          "text": "Optimization Strategies for 2025"
+          "text": "Optimization Strategies for 2026"
         },
         {
           "type": "paragraph",
