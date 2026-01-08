@@ -532,7 +532,7 @@ export default function Home() {
           <Asterism
             className="z-10"
             centerX="33%"
-            centerY="58%"
+            centerY="55%"
             rays={2}
             angles={[90, 270]}
             color="stevens-white"
