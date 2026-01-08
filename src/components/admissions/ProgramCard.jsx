@@ -100,9 +100,9 @@ const ProgramCard = ({ program, onApplyClick }) => {
 
         {/* CTAs - Two Buttons */}
         <div className="mt-stevens-lg pt-stevens-md border-t border-stevens-gray-200 flex gap-stevens-sm">
-          {/* Explore Program Button - White bg, red text, red border */}
+          {/* Explore Program Button - Links to full program page */}
           <Link
-            to={program.explorePage}
+            to={program.programPage}
             className="flex-1"
             onClick={(e) => e.stopPropagation()}
           >
