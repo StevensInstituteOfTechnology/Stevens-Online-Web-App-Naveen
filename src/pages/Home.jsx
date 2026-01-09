@@ -1058,7 +1058,7 @@ export default function Home() {
 
                       {/* Attribution */}
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-stevens-dark-gray overflow-hidden xl:hidden">
+                        <div className="w-20 h-20 rounded-full bg-stevens-dark-gray overflow-hidden xl:hidden ring-2 ring-white/50 shadow-lg">
                           <img
                             src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
                             alt="Arshad Saiyed"
