@@ -450,15 +450,14 @@ export default function Home() {
 
           <div className="relative min-h-[85vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
-            <div className="max-w-xl text-right pr-4 lg:pr-16">
+            <div className="max-w-2xl text-right pr-4 lg:pr-16">
               <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
                 Move your
                 <br />
                 career forward
               </h1>
-              <p className="font-stevens-body text-lg md:text-xl text-stevens-white mb-6">
-                Expanding and building on 150 years of exceptional technology
-                education
+              <p className="font-stevens-body text-base md:text-xl text-stevens-white mb-6">
+                A flexible, tailored education that drives competitive advantage
               </p>
               <Link
                 to="/request-information/"
@@ -509,21 +508,16 @@ export default function Home() {
                 className="text-stevens-white pb-stevens-xl"
               >
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light tracking-tight mb-stevens-lg ">
-                  This is a new kind of education, built around your goals, and
-                  designed to fit your life
+                  Expanding and building on 150 years of exceptional technology
+                  education
                 </h2>
                 <p className="text-stevens-white text-stevens-lg mb-stevens-xl leading-relaxed">
-                  The College of Professional Education at Stevens Institute of
-                  Technology offers flexible, future-focused learning designed
-                  for your career advancement. Gain the skills and credentials
-                  you need to lead in a technology-driven world, with programs
-                  built for working professionals.
+                  For more than a century, Stevens has delivered worldclass,
+                  technology-focused education that meets the moment. The
+                  College of Professional Education is an exciting new chapter -
+                  the chance for a whole new generation of working professionals
+                  to experience Stevens technology leadership and excellence.
                 </p>
-                <Link to={createPageUrl("online-learning-experience/")}>
-                  <Button variant="outline-red" className="uppercase">
-                    Online Learning Experience
-                  </Button>
-                </Link>
               </AnimatedSection>
             </div>
           </div>
@@ -745,9 +739,16 @@ export default function Home() {
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray relative overflow-hidden">
           {/* Subtle background decoration */}
 
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
-              <AnimatedSection className="relative">
+          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
+            {/* Section Header - Full Width */}
+            <AnimatedSection className="mb-8 lg:mb-12">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray tracking-tight leading-tight">
+                THE STEVENS ONLINE ADVANTAGE
+              </h2>
+            </AnimatedSection>
+
+            <div className="grid lg:grid-cols-3 gap-stevens-gap-lg items-center">
+              <AnimatedSection className="relative lg:col-span-2">
                 <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
                   {/* Video Player Component */}
                   <VideoPlayer
@@ -757,73 +758,30 @@ export default function Home() {
                     showControls={true}
                     muted={true}
                   />
-
-                  {/* Video Description */}
-                  <div className="p-stevens-xl">
-                    <h3 className="font-stevens-display text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-sm">
-                      Discover Your Future at Stevens
-                    </h3>
-                    <p className="text-stevens-dark-gray mb-stevens-lg">
-                      Watch how Stevens Online transforms careers through
-                      innovative education, expert faculty, and flexible
-                      learning designed for working professionals.
-                    </p>
-                    {/* Removed browse catalog and explore courses buttons */}
-                    {/* <div className="flex flex-col stevens-sm:flex-row gap-stevens-md">
-                    <Link
-                      to={createPageUrl("ProfessionalEducation")}
-                      className="flex-1"
-                    >
-                      <Button className="btn-stevens-red text-stevens-lg w-full">
-                        Explore Courses
-                      </Button>
-                    </Link>
-                    <Button
-                      variant="outline-dark"
-                      className="btn-stevens-outline text-stevens-lg flex-1"
-                      onClick={() => setShowBrowseModal(true)}
-                    >
-                      Browse Catalog
-                    </Button>
-                  </div> */}
-                  </div>
                 </div>
               </AnimatedSection>
+
               <AnimatedSection>
-                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-md tracking-tight leading-tight">
-                  THE STEVENS ONLINE ADVANTAGE
-                </h2>
-                <p className="text-stevens-xl text-stevens-dark-gray mb-stevens-xl leading-relaxed">
-                  World-class education, designed for working professionals.
+                <h3 className="font-stevens-display text-2xl lg:text-3xl font-bold text-stevens-dark-gray mb-6 leading-tight">
+                  Delivering the outcomes that drive career success
+                </h3>
+
+                <p className="text-stevens-lg text-stevens-dark-gray mb-8 leading-relaxed">
+                  The College of Professional Education is much more than
+                  courses and credentials - it's a powerful new model centered
+                  on giving working professionals at every stage of their
+                  careers the unique mix of skills and qualifications they need
+                  to excel in today's complex global economy.
                 </p>
 
-                {/* Streamlined benefits - no redundancy */}
-                <ul className="space-y-stevens-md text-stevens-lg text-stevens-dark-gray">
-                  <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
-                    <span>
-                      Same curriculum and faculty as on-campus programs
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
-                    <span>Flexible schedules — learn anytime, anywhere</span>
-                  </li>
-                  <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
-                    <span>Global network of industry-connected peers</span>
-                  </li>
-                  <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
-                    <span>Dedicated support from enrollment to graduation</span>
-                  </li>
-                  <li className="flex items-start gap-stevens-sm">
-                    <span className="mt-[6px] h-2 w-2 rounded-full bg-stevens-red flex-shrink-0" />
-                    <span>
-                      Courses taught by active researchers and practitioners
-                    </span>
-                  </li>
-                </ul>
+                {/* CTA Link */}
+                <Link
+                  to="/online-learning-experience/"
+                  className="inline-flex items-center text-stevens-red font-bold hover:underline underline-offset-4 group"
+                >
+                  Discover the online experience
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </AnimatedSection>
             </div>
           </div>

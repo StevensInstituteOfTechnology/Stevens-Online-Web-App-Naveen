@@ -1,9 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { PlayCircle, Pause, Volume2, VolumeX, Maximize, SkipBack, SkipForward } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  PlayCircle,
+  Pause,
+  Volume2,
+  VolumeX,
+  Maximize,
+  SkipBack,
+  SkipForward,
+} from "lucide-react";
 
-const VideoPlayer = ({ 
-  src, 
-  poster, 
+const VideoPlayer = ({
+  src,
+  poster,
   title = "Video Player",
   description = "",
   className = "",
@@ -12,7 +20,7 @@ const VideoPlayer = ({
   muted = true,
   onPlay,
   onPause,
-  onEnded
+  onEnded,
 }) => {
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isMuted, setIsMuted] = useState(muted);
@@ -28,7 +36,7 @@ const VideoPlayer = ({
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
   // Video event handlers
@@ -68,19 +76,19 @@ const VideoPlayer = ({
 
   const handleSeek = (e) => {
     if (!videoRef.current) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const width = rect.width;
     const newTime = (clickX / width) * duration;
-    
+
     videoRef.current.currentTime = newTime;
     setCurrentTime(newTime);
   };
 
   const skipTime = (seconds) => {
     if (!videoRef.current) return;
-    
+
     const newTime = Math.max(0, Math.min(duration, currentTime + seconds));
     videoRef.current.currentTime = newTime;
     setCurrentTime(newTime);
@@ -90,7 +98,7 @@ const VideoPlayer = ({
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
     setIsMuted(newVolume === 0);
-    
+
     if (videoRef.current) {
       videoRef.current.volume = newVolume;
       videoRef.current.muted = newVolume === 0;
@@ -112,7 +120,7 @@ const VideoPlayer = ({
 
   const toggleFullscreen = () => {
     if (!containerRef.current) return;
-    
+
     if (!isFullscreen) {
       if (containerRef.current.requestFullscreen) {
         containerRef.current.requestFullscreen();
@@ -137,25 +145,25 @@ const VideoPlayer = ({
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (!containerRef.current?.contains(document.activeElement)) return;
-      
+
       switch (e.code) {
-        case 'Space':
+        case "Space":
           e.preventDefault();
           togglePlayPause();
           break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           e.preventDefault();
           skipTime(-10);
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           e.preventDefault();
           skipTime(10);
           break;
-        case 'KeyM':
+        case "KeyM":
           e.preventDefault();
           toggleMute();
           break;
-        case 'KeyF':
+        case "KeyF":
           e.preventDefault();
           toggleFullscreen();
           break;
@@ -164,8 +172,8 @@ const VideoPlayer = ({
       }
     };
 
-    document.addEventListener('keydown', handleKeyPress);
-    return () => document.removeEventListener('keydown', handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
   }, [isPlaying, currentTime, duration, isMuted, volume]);
 
   // Fullscreen change listener
@@ -174,21 +182,27 @@ const VideoPlayer = ({
       setIsFullscreen(!!document.fullscreenElement);
     };
 
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('msfullscreenchange', handleFullscreenChange);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("msfullscreenchange", handleFullscreenChange);
 
     return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('msfullscreenchange', handleFullscreenChange);
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange
+      );
+      document.removeEventListener(
+        "msfullscreenchange",
+        handleFullscreenChange
+      );
     };
   }, []);
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className={`video-container relative aspect-video bg-stevens-black group rounded-stevens-md overflow-hidden ${className}`}
+      className={`video-container relative aspect-video bg-stevens-black group  overflow-hidden ${className}`}
       onMouseEnter={() => setShowControlsOverlay(true)}
       onMouseLeave={() => setShowControlsOverlay(false)}
       tabIndex={0}
@@ -208,35 +222,41 @@ const VideoPlayer = ({
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
+
       {/* Video Overlay */}
       <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
         {!isPlaying && (
           <button
             onClick={togglePlayPause}
-            className="w-20 h-20 bg-stevens-dark-gray hover:bg-stevens-red rounded-full flex items-center justify-center transition-all duration-stevens-normal hover:scale-110 shadow-stevens-lg"
+            className="w-14 h-14 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
           >
-            <PlayCircle className="w-10 h-10 text-stevens-white" />
+            <PlayCircle className="w-7 h-7 text-white/90" />
           </button>
         )}
       </div>
-      
+
       {/* Enhanced Video Controls */}
       {showControls && (
-        <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-stevens-md transition-opacity duration-stevens-normal ${showControlsOverlay || !isPlaying ? 'opacity-100' : 'opacity-0'}`}>
+        <div
+          className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-stevens-md transition-opacity duration-stevens-normal ${
+            showControlsOverlay || !isPlaying ? "opacity-100" : "opacity-0"
+          }`}
+        >
           {/* Progress Bar */}
           <div className="mb-stevens-sm">
-            <div 
+            <div
               className="w-full h-1 bg-stevens-dark-gray rounded-full cursor-pointer hover:h-2 transition-all duration-stevens-normal"
               onClick={handleSeek}
             >
-              <div 
+              <div
                 className="h-full bg-stevens-red rounded-full transition-all duration-stevens-normal"
-                style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+                style={{
+                  width: `${duration ? (currentTime / duration) * 100 : 0}%`,
+                }}
               ></div>
             </div>
           </div>
-          
+
           {/* Control Buttons */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-stevens-sm">
@@ -244,7 +264,7 @@ const VideoPlayer = ({
               <button
                 onClick={togglePlayPause}
                 className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
-                aria-label={isPlaying ? 'Pause' : 'Play'}
+                aria-label={isPlaying ? "Pause" : "Play"}
               >
                 {isPlaying ? (
                   <Pause className="w-5 h-5" />
@@ -252,7 +272,7 @@ const VideoPlayer = ({
                   <PlayCircle className="w-5 h-5" />
                 )}
               </button>
-              
+
               {/* Skip Back */}
               <button
                 onClick={() => skipTime(-10)}
@@ -261,7 +281,7 @@ const VideoPlayer = ({
               >
                 <SkipBack className="w-4 h-4" />
               </button>
-              
+
               {/* Skip Forward */}
               <button
                 onClick={() => skipTime(10)}
@@ -270,20 +290,20 @@ const VideoPlayer = ({
               >
                 <SkipForward className="w-4 h-4" />
               </button>
-              
+
               {/* Time Display */}
               <span className="text-stevens-white text-stevens-sm font-stevens-medium">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </span>
             </div>
-            
+
             <div className="flex items-center gap-stevens-sm">
               {/* Volume Control */}
               <div className="flex items-center gap-stevens-xs">
                 <button
                   onClick={toggleMute}
                   className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
-                  aria-label={isMuted ? 'Unmute' : 'Mute'}
+                  aria-label={isMuted ? "Unmute" : "Mute"}
                 >
                   {isMuted ? (
                     <VolumeX className="w-4 h-4" />
@@ -302,12 +322,14 @@ const VideoPlayer = ({
                   aria-label="Volume control"
                 />
               </div>
-              
+
               {/* Fullscreen */}
               <button
                 onClick={toggleFullscreen}
                 className="w-8 h-8 flex items-center justify-center text-stevens-white hover:text-stevens-red transition-colors duration-stevens-normal"
-                aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+                aria-label={
+                  isFullscreen ? "Exit fullscreen" : "Enter fullscreen"
+                }
               >
                 <Maximize className="w-4 h-4" />
               </button>
@@ -315,8 +337,6 @@ const VideoPlayer = ({
           </div>
         </div>
       )}
-      
-      
     </div>
   );
 };

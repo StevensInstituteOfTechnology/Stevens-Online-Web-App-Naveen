@@ -171,7 +171,7 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
       {/* Pagination + Navigation Row */}
       <AnimatedSection className="flex items-center justify-between w-full mb-8">
         {/* Left: Pagination */}
-        <span className="text-white/60 tabular-nums tracking-wide">
+        <span className="text-white/80 tabular-nums tracking-wide">
           {realIndex} / {N}
         </span>
 
@@ -238,12 +238,12 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
 
                 {/* Content */}
                 <div className="flex flex-col flex-1">
-                  <h3 className="font-stevens-display text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug line-clamp-2 group-hover:text-white/80 transition-colors duration-200">
+                  <h3 className="font-stevens-display text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug line-clamp-2 group-hover:text-stevens-red transition-colors duration-200">
                     {blog.title}
                   </h3>
 
                   {blog.created_date && (
-                    <p className="text-white/50 font-stevens-condensed mb-2">
+                    <p className="text-white/70 font-stevens-condensed mb-2">
                       {new Date(blog.created_date).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
@@ -253,16 +253,16 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
                   )}
 
                   {blog.author ? (
-                    <p className="text-white/50 font-stevens-condensed mb-4">
+                    <p className="text-white/70 font-stevens-condensed mb-4">
                       By {blog.author}
                     </p>
                   ) : blog.read_time ? (
-                    <p className="text-white/50 mb-4">
+                    <p className="text-white/70 mb-4">
                       {blog.read_time} min read
                     </p>
                   ) : null}
 
-                  <p className="text-white/60 leading-relaxed line-clamp-3 mb-5">
+                  <p className="text-white/80 leading-relaxed line-clamp-3 mb-5">
                     {blog.excerpt}
                   </p>
                 </div>
