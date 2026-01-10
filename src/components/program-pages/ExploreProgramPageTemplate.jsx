@@ -180,7 +180,7 @@ const ExploreProgramPageTemplate = ({
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <h3 className="font-stevens-headers text-stevens-4xl text-stevens-red mb-stevens-sm">
+                <h3 className="font-stevens-headers text-stevens-4xl text-stevens-black font-light mb-stevens-sm">
                   {stat.number}
                 </h3>
                 <h4 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray mb-stevens-sm">
@@ -210,7 +210,7 @@ const ExploreProgramPageTemplate = ({
                   {whyChooseStevensTitle}
                 </h2>
                 
-                <h3 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide">
+                <h3 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide">
                   {whyChooseStevensSubtitle}
                 </h3>
                 
@@ -265,8 +265,8 @@ const ExploreProgramPageTemplate = ({
               
               {/* Right Column - Text Content on Desktop, Image on Mobile */}
               <div className="space-y-stevens-lg lg:order-2 order-1">
-                <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide">
-                  <span className="inline-block bg-stevens-red text-stevens-white px-stevens-md py-stevens-sm rounded-stevens-sm">
+                <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide">
+                  <span className="inline-block bg-stevens-black text-stevens-white px-stevens-md py-stevens-sm rounded-stevens-sm">
                     {programBenefitsTitle}
                   </span>
                 </h2>
@@ -295,7 +295,7 @@ const ExploreProgramPageTemplate = ({
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="bg-stevens-light-gray p-stevens-lg rounded-stevens-md"
                       >
-                        <h3 className="font-stevens-headers text-stevens-xl text-stevens-red mb-stevens-md">
+                        <h3 className="font-stevens-headers text-stevens-xl text-stevens-black font-light mb-stevens-md">
                           {highlight.title}
                         </h3>
                         <p className=" text-stevens-dark-gray">
@@ -320,7 +320,7 @@ const ExploreProgramPageTemplate = ({
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <h3 className="font-stevens-headers text-stevens-3xl text-stevens-red mb-stevens-sm">
+                <h3 className="font-stevens-headers text-stevens-3xl text-stevens-black font-light mb-stevens-sm">
                   {detail.value}
                 </h3>
                 <p className="font-stevens-body text-stevens-lg text-stevens-dark-gray">
@@ -347,10 +347,10 @@ const ExploreProgramPageTemplate = ({
                     className="text-left"
                   >
                     <div className="flex items-center gap-stevens-md mb-stevens-md">
-                      <div className="w-12 h-12 bg-stevens-red rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-stevens-black rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="w-6 h-6 text-stevens-white" />
                       </div>
-                      <h3 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray font-stevens-bold uppercase tracking-wide">
+                      <h3 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray font-light uppercase tracking-wide">
                         {item.title}
                       </h3>
                     </div>
@@ -379,13 +379,13 @@ const ExploreProgramPageTemplate = ({
                 <div className="space-y-stevens-lg">
                   {/* Red Badge */}
                   <div className="inline-block">
-                    <span className="bg-stevens-red text-stevens-white px-stevens-md py-stevens-sm text-stevens-sm font-stevens-bold uppercase tracking-wide rounded-stevens-sm">
+                    <span className="bg-stevens-white text-stevens-black px-stevens-md py-stevens-sm text-stevens-sm font-semibold uppercase tracking-wide rounded-stevens-sm">
                       {newFall2025Badge}
                     </span>
                   </div>
                   
                   {/* Main Title */}
-                  <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-white font-stevens-bold uppercase tracking-wide leading-tight">
+                  <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-white font-light uppercase tracking-wide leading-tight">
                     {newFall2025Title}
                   </h2>
                   
@@ -410,8 +410,8 @@ const ExploreProgramPageTemplate = ({
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="flex items-start gap-stevens-md"
                           >
-                            <div className="flex-shrink-0 w-8 h-8 bg-stevens-red rounded-full flex items-center justify-center">
-                              <IconComponent className="w-4 h-4 text-stevens-white" />
+                            <div className="flex-shrink-0 w-8 h-8 bg-stevens-white rounded-full flex items-center justify-center">
+                              <IconComponent className="w-4 h-4 text-stevens-black" />
                             </div>
                             <p className="font-stevens-body text-stevens-white text-stevens-sm font-stevens-medium uppercase tracking-wide">
                               {benefit.text}
@@ -454,13 +454,13 @@ const ExploreProgramPageTemplate = ({
                 <div className="space-y-stevens-lg">
                   {/* Gold Badge */}
                   <div className="inline-block">
-                     <span className="bg-stevens-red text-stevens-white px-stevens-md py-stevens-sm text-stevens-sm font-stevens-bold uppercase tracking-wide rounded-stevens-sm">
+                     <span className="bg-stevens-black text-stevens-white px-stevens-md py-stevens-sm text-stevens-sm font-semibold uppercase tracking-wide rounded-stevens-sm">
                       {justLaunchedBadge}
                     </span>
                   </div>
                   
                   {/* Main Title */}
-                  <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide leading-tight">
+                  <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide leading-tight">
                     {justLaunchedTitle}
                   </h2>
                   
@@ -477,7 +477,7 @@ const ExploreProgramPageTemplate = ({
                     <div className="pt-stevens-md">
                       <a 
                         href={justLaunchedButtonLink} 
-                        className="btn-stevens-outline border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-semibold transition-all duration-stevens-normal inline-block"
+                        className="inline-block border border-stevens-dark-gray bg-transparent text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-stevens-white px-stevens-lg py-stevens-md rounded-stevens-md font-semibold transition-all duration-stevens-normal"
                       >
                         {justLaunchedButtonText}
                       </a>
@@ -512,11 +512,11 @@ const ExploreProgramPageTemplate = ({
               transition={{ duration: 0.8 }}
             >
               {concentrations.title && (
-                <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-red font-stevens-bold uppercase tracking-wide mb-stevens-3xl text-center">
+                <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide mb-stevens-3xl text-center">
                   {concentrations.title}
                 </h2>
               )}
-              <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-headers [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:font-stevens-body [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg [&_.course-item]:mb-stevens-md [&_.course-toggle]:w-full [&_.course-toggle]:text-left [&_.course-toggle]:px-stevens-md [&_.course-toggle]:py-stevens-sm [&_.course-toggle]:bg-stevens-light-gray [&_.course-toggle]:border [&_.course-toggle]:border-stevens-light-gray [&_.course-toggle]:rounded-stevens-sm [&_.course-toggle]:font-stevens-bold [&_.course-toggle]:text-stevens-base [&_.course-toggle]:text-stevens-dark-gray [&_.course-toggle]:hover:bg-stevens-light-gray [&_.course-toggle]:transition-colors [&_.course-content]:px-stevens-md [&_.course-content]:py-stevens-md [&_.course-content]:bg-stevens-white [&_.course-content]:border-l-4 [&_.course-content]:border-stevens-red]" dangerouslySetInnerHTML={{ __html: concentrations.content }} />
+              <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-headers [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-stevens-bold [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-tight [&_h5]:font-stevens-bold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:font-stevens-body [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg [&_.course-item]:mb-stevens-md [&_.course-toggle]:w-full [&_.course-toggle]:text-left [&_.course-toggle]:px-stevens-md [&_.course-toggle]:py-stevens-sm [&_.course-toggle]:bg-stevens-light-gray [&_.course-toggle]:border [&_.course-toggle]:border-stevens-light-gray [&_.course-toggle]:rounded-stevens-sm [&_.course-toggle]:font-stevens-bold [&_.course-toggle]:text-stevens-base [&_.course-toggle]:text-stevens-dark-gray [&_.course-toggle]:hover:bg-stevens-light-gray [&_.course-toggle]:transition-colors [&_.course-content]:px-stevens-md [&_.course-content]:py-stevens-md [&_.course-content]:bg-stevens-white [&_.course-content]:border-l-4 [&_.course-content]:border-stevens-black]" dangerouslySetInnerHTML={{ __html: concentrations.content }} />
             </motion.div>
           </div>
         </section>
@@ -532,11 +532,11 @@ const ExploreProgramPageTemplate = ({
           >
             {/* Header Section with more spacing */}
             <div className="mb-stevens-3xl">
-              <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide mb-stevens-md text-left">
+              <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide mb-stevens-md text-left">
                 Key Dates & Deadlines
               </h2>
               
-              <h3 className="font-stevens-headers text-stevens-2xl stevens-md:text-stevens-3xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide text-left">
+              <h3 className="font-stevens-headers text-stevens-2xl stevens-md:text-stevens-3xl text-stevens-dark-gray font-light uppercase tracking-wide text-left">
                 {keyDatesTerm}
               </h3>
             </div>
@@ -567,7 +567,7 @@ const ExploreProgramPageTemplate = ({
                     
                     {/* Content with responsive spacing */}
                     <div className="text-left lg:pt-stevens-2xl pl-stevens-3xl lg:pl-0">
-                      <h4 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray font-stevens-bold uppercase tracking-wide mb-stevens-md">
+                      <h4 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray font-light uppercase tracking-wide mb-stevens-md">
                         {date.label}
                       </h4>
                       <p className="font-stevens-body text-stevens-base text-stevens-dark-gray font-stevens-medium mb-stevens-md">
@@ -605,7 +605,7 @@ const ExploreProgramPageTemplate = ({
                 {/* Left Column - Text Content */}
                 <div className="space-y-stevens-lg">
                   <h2 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray uppercase tracking-wide">{additionalWhyChooseStevensSubtitle}</h2>
-                  <h3 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-stevens-bold uppercase tracking-wide">{additionalWhyChooseStevensTitle}</h3>
+                  <h3 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide">{additionalWhyChooseStevensTitle}</h3>
                   <div className="prose prose-lg max-w-none text-stevens-dark-gray">
                     <div className="font-stevens-body text-stevens-lg leading-relaxed space-y-stevens-lg" dangerouslySetInnerHTML={{ __html: additionalWhyChooseStevensContent }} />
                   </div>
@@ -637,7 +637,7 @@ const ExploreProgramPageTemplate = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="font-stevens-headers text-stevens-3xl text-stevens-red mb-stevens-xl text-center">
+              <h2 className="font-stevens-headers text-stevens-3xl text-stevens-dark-gray font-light mb-stevens-xl text-center">
                 Frequently Asked Questions
               </h2>
               
@@ -664,14 +664,14 @@ const ExploreProgramPageTemplate = ({
       ))}
 
       {/* Contact Section */}
-      <section className="py-stevens-3xl bg-stevens-red text-stevens-white">
+      <section className="py-stevens-3xl bg-stevens-black text-stevens-white">
         <div className="max-w-4xl mx-auto px-stevens-md text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-stevens-headers text-stevens-3xl mb-stevens-lg">
+            <h2 className="font-stevens-headers text-stevens-3xl font-light mb-stevens-lg">
               {contactTitle}
             </h2>
             <p className="font-stevens-body text-stevens-lg mb-stevens-xl">
@@ -681,7 +681,7 @@ const ExploreProgramPageTemplate = ({
               href={BOOKING_URLS.SCHEDULE_CALL} 
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-stevens-outline bg-stevens-white text-stevens-red hover:bg-stevens-light-gray hover:text-stevens-dark-gray px-stevens-lg rounded-stevens-md font-stevens-body font-stevens-semibold transition-all duration-stevens-normal inline-block"
+              className="inline-block border border-white bg-transparent text-white hover:bg-white hover:text-stevens-black px-stevens-lg py-stevens-md rounded-stevens-md font-stevens-body font-semibold transition-all duration-stevens-normal"
               onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
             >
               {contactButtonText}
