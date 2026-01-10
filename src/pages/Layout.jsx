@@ -230,57 +230,11 @@ export default function Layout({ children, currentPageName }) {
         
         header[class*="z-[9998]"] * {
           pointer-events: auto !important;
-          z-index: inherit !important;
-        }
-        
-        div[class*="z-[9996]"] {
-          z-index: 9996 !important;
-          position: fixed !important;
-          pointer-events: auto !important;
-        }
-        
-        div[class*="z-[9996]"] * {
-          pointer-events: auto !important;
-          z-index: inherit !important;
-        }
-        
-        div[class*="z-[9997]"] {
-          z-index: 9997 !important;
-          position: relative !important;
-          pointer-events: auto !important;
-        }
-        
-        div[class*="z-[9997]"] * {
-          pointer-events: auto !important;
-          z-index: inherit !important;
         }
         
         /* Ensure buttons, links, and form elements remain clickable */
         button, a, [role="button"], input, select, textarea, label, [role="dialog"], [role="dialog"] * {
           pointer-events: auto !important;
-        }
-        
-        /* Fix horizontal overflow issues on mobile that affect button positioning */
-        @media (max-width: 768px) {
-          body, html {
-            overflow-x: hidden !important;
-          }
-          
-          /* Keep nav visible on mobile while overflow-x is hidden */
-          header.group {
-            top: 0 !important;
-            left: 0;
-            right: 0;
-            z-index: 9998 !important;
-          }
-          
-          /* Protect chatbot and back-to-top buttons from container overflow */
-          button[class*="bottom-6"][class*="right-6"],
-          button[class*="bottom-20"][class*="right-6"],
-          .chat-button-container {
-            position: fixed !important;
-            right: 1.5rem !important;
-          }
         }
         
         /* Dropdown menu protection - ensure they appear above all navigation elements */
@@ -289,11 +243,10 @@ export default function Layout({ children, currentPageName }) {
         [role="menu"],
         .dropdown-content {
           z-index: 10001 !important;
-          position: fixed !important;
           pointer-events: auto !important;
         }
         
-        /* Search suggestions protection - allow absolute positioning relative to input */
+        /* Search suggestions protection */
         [data-search-suggestions="true"] {
           z-index: 10001 !important;
           position: absolute !important;
@@ -306,13 +259,6 @@ export default function Layout({ children, currentPageName }) {
         .dropdown-content *,
         [data-search-suggestions="true"] * {
           pointer-events: auto !important;
-          z-index: inherit !important;
-        }
-        
-        
-        /* Reset external script z-index interference */
-        *:not(header):not(header *):not([class*="z-[9"]):not([data-radix-popper-content-wrapper]):not([data-radix-dropdown-menu-content]):not([role="menu"]):not([data-search-suggestions="true"]) {
-          z-index: auto !important;
         }
       `;
 

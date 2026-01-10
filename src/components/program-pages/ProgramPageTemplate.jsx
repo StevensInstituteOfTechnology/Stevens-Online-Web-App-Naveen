@@ -1,25 +1,91 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Check, Star, Award, Globe, GraduationCap, ArrowRight, User, ExternalLink, PlayCircle, FileText, DollarSign, Briefcase, BrainCircuit, LineChart, TrendingUp, Target, Users, Clock } from 'lucide-react';
-import { VideoPlayer, PageHero, TopCompaniesSection } from '@/components/shared';
-import LeadCaptureForm from '../forms/LeadCaptureForm';
-import { Link, useLocation } from 'react-router-dom';
-import { createPageUrl, setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
-import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Check,
+  Star,
+  Award,
+  Globe,
+  GraduationCap,
+  ArrowRight,
+  User,
+  ExternalLink,
+  PlayCircle,
+  FileText,
+  DollarSign,
+  Briefcase,
+  BrainCircuit,
+  LineChart,
+  TrendingUp,
+  Target,
+  Users,
+  Clock,
+  MoreHorizontal,
+  ChevronDown,
+} from "lucide-react";
+import {
+  VideoPlayer,
+  PageHero,
+  TopCompaniesSection,
+} from "@/components/shared";
+import LeadCaptureForm from "../forms/LeadCaptureForm";
+import { Link, useLocation } from "react-router-dom";
+import {
+  createPageUrl,
+  setPageTitle,
+  setMetaDescription,
+  setOpenGraphTags,
+  buildCanonicalUrl,
+} from "@/utils";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
 // Section Component for consistent styling
 // Added paddingClassName to allow per-section padding control (e.g., remove bottom padding)
-const Section = ({ id, title, children, container = true, el = 'section', refProp, bgClassName = 'bg-stevens-white', paddingClassName = 'py-stevens-section-sm lg:py-stevens-section' }) => {
+const Section = ({
+  id,
+  title,
+  children,
+  container = true,
+  el = "section",
+  refProp,
+  bgClassName = "bg-stevens-white",
+  paddingClassName = "py-stevens-section-sm lg:py-stevens-section",
+}) => {
   const Element = el;
   return (
-    <Element id={id} ref={refProp} className={`${bgClassName} ${paddingClassName} scroll-mt-20`}>
-      <div className={container ? "max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg" : ""}>
-        {title && <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-center uppercase tracking-wide">{title}</h2>}
+    <Element
+      id={id}
+      ref={refProp}
+      className={`${bgClassName} ${paddingClassName} scroll-mt-20`}
+    >
+      <div
+        className={
+          container
+            ? "max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg"
+            : ""
+        }
+      >
+        {title && (
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-center uppercase tracking-wide">
+            {title}
+          </h2>
+        )}
         {children}
       </div>
     </Element>
@@ -30,12 +96,16 @@ const Section = ({ id, title, children, container = true, el = 'section', refPro
 const RankingCard = ({ ranking, description, source, note }) => (
   <div className="group bg-stevens-white p-stevens-lg text-center h-full flex flex-col relative overflow-hidden border-t-4 border-stevens-black hover:border-stevens-red transition-all duration-300">
     {/* Top accent border - black default, red on hover */}
-    
+
     <div className="flex-grow">
       {/* Large statistic number - B&W emphasis, red on hover */}
-      <p className="font-stevens-display text-[3rem] md:text-[4rem] font-light text-stevens-black mb-stevens-sm leading-none transition-all duration-300 group-hover:text-stevens-red group-hover:scale-105">{ranking}</p>
+      <p className="font-stevens-display text-[3rem] md:text-[4rem] font-light text-stevens-black mb-stevens-sm leading-none transition-all duration-300 group-hover:text-stevens-red group-hover:scale-105">
+        {ranking}
+      </p>
       {/* Description text */}
-      <p className="text-stevens-lg md:text-stevens-xl font-medium text-stevens-dark-gray mb-stevens-md leading-tight">{description}</p>
+      <p className="text-stevens-lg md:text-stevens-xl font-medium text-stevens-dark-gray mb-stevens-md leading-tight">
+        {description}
+      </p>
     </div>
     {/* Source text */}
     {source && (
@@ -49,19 +119,32 @@ const RankingCard = ({ ranking, description, source, note }) => (
 // Faculty Card Component - CPE Brand: Clean B&W design
 const FacultyCard = ({ member }) => {
   const { name, title, image } = member;
-  const hasImage = image && image.trim() !== '';
-  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
-  
+  const hasImage = image && image.trim() !== "";
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <div className="text-center snap-center flex-shrink-0 w-[180px] stevens-md:w-[220px] group">
       {hasImage ? (
-        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-md transition-shadow duration-300 group-hover:shadow-lg" loading="lazy"/>
+        <img
+          src={image}
+          alt={name}
+          className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-md transition-shadow duration-300 group-hover:shadow-lg"
+          loading="lazy"
+        />
       ) : (
         <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-dark-gray flex items-center justify-center shadow-md transition-shadow duration-300 group-hover:shadow-lg">
-          <span className="text-stevens-white font-stevens-display font-light text-stevens-2xl">{initials}</span>
+          <span className="text-stevens-white font-stevens-display font-light text-stevens-2xl">
+            {initials}
+          </span>
         </div>
       )}
-      <h4 className="font-stevens-display font-light text-stevens-lg text-stevens-dark-gray">{name}</h4>
+      <h4 className="font-stevens-display font-light text-stevens-lg text-stevens-dark-gray">
+        {name}
+      </h4>
       <p className="text-stevens-sm text-stevens-gray">{title}</p>
     </div>
   );
@@ -70,13 +153,16 @@ const FacultyCard = ({ member }) => {
 // What You'll Learn - Skill Cards Variant (for MBA)
 const SkillCardsGrid = ({ modules }) => {
   if (!modules || modules.length === 0) return null;
-  
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-stevens-lg">
       {modules.map((module, index) => {
         const Icon = module.icon;
         return (
-          <Card key={index} className="bg-stevens-white shadow-stevens-lg rounded-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal border border-stevens-light-gray">
+          <Card
+            key={index}
+            className="bg-stevens-white shadow-stevens-lg rounded-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal border border-stevens-light-gray"
+          >
             <CardHeader className="pb-stevens-sm">
               <div className="flex items-start gap-stevens-md mb-stevens-md">
                 <div className="bg-stevens-light-gray p-stevens-md rounded-stevens-md border border-stevens-light-gray">
@@ -94,15 +180,18 @@ const SkillCardsGrid = ({ modules }) => {
                   )}
                 </div>
               </div>
-    </CardHeader>
-    <CardContent>
+            </CardHeader>
+            <CardContent>
               {module.courses && module.courses.length > 0 && (
                 <div className="space-y-stevens-sm">
                   <h4 className="font-stevens-bold text-stevens-sm uppercase tracking-wider text-stevens-dark-gray mb-stevens-md">
                     Example Courses:
                   </h4>
                   {module.courses.map((course, i) => (
-                    <div key={i} className="flex items-start gap-stevens-sm bg-stevens-light-gray p-stevens-sm rounded-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal">
+                    <div
+                      key={i}
+                      className="flex items-start gap-stevens-sm bg-stevens-light-gray p-stevens-sm rounded-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal"
+                    >
                       <Check className="w-4 h-4 text-stevens-red flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-stevens-bold text-stevens-sm text-stevens-dark-gray">
@@ -116,9 +205,9 @@ const SkillCardsGrid = ({ modules }) => {
                   ))}
                 </div>
               )}
-    </CardContent>
-  </Card>
-);
+            </CardContent>
+          </Card>
+        );
       })}
     </div>
   );
@@ -154,7 +243,7 @@ const WhatYoullLearnCarousel = ({ modules }) => {
     <div className="relative max-w-6xl mx-auto">
       {/* Carousel Container */}
       <div className="relative overflow-hidden rounded-stevens-lg">
-        <div 
+        <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
@@ -167,23 +256,26 @@ const WhatYoullLearnCarousel = ({ modules }) => {
                     {module.title}
                   </h3>
                 </div>
-                
+
                 {/* Card Content */}
                 <div className="p-stevens-lg">
                   {module.description && (
-                    <div 
+                    <div
                       className="text-stevens-dark-gray mb-stevens-lg leading-relaxed prose max-w-none"
                       dangerouslySetInnerHTML={{ __html: module.description }}
                     />
                   )}
-                  
+
                   <div className="mb-stevens-md">
                     <p className="font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
                       You'll learn to:
                     </p>
                     <ul className="space-y-stevens-sm">
                       {module.skills.map((skill, skillIndex) => (
-                        <li key={skillIndex} className="flex items-start gap-stevens-sm">
+                        <li
+                          key={skillIndex}
+                          className="flex items-start gap-stevens-sm"
+                        >
                           <div className="flex-shrink-0 w-2 h-2 bg-stevens-black rounded-full mt-2"></div>
                           <span className="text-stevens-dark-gray text-stevens-sm leading-relaxed">
                             {skill}
@@ -206,19 +298,39 @@ const WhatYoullLearnCarousel = ({ modules }) => {
         className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Previous slide"
       >
-        <svg className="w-6 h-6 text-stevens-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-6 h-6 text-stevens-dark-gray"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
-      
+
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-stevens-white shadow-stevens-lg rounded-full p-stevens-sm hover:bg-stevens-light-gray transition-colors duration-stevens-normal disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Next slide"
       >
-        <svg className="w-6 h-6 text-stevens-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-6 h-6 text-stevens-dark-gray"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
 
@@ -229,9 +341,9 @@ const WhatYoullLearnCarousel = ({ modules }) => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-stevens-normal ${
-              index === currentIndex 
-                ? 'bg-stevens-red scale-125' 
-                : 'bg-stevens-light-gray hover:bg-stevens-gray'
+              index === currentIndex
+                ? "bg-stevens-red scale-125"
+                : "bg-stevens-light-gray hover:bg-stevens-gray"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -241,150 +353,293 @@ const WhatYoullLearnCarousel = ({ modules }) => {
   );
 };
 
-export default function ProgramPageTemplate({ programData, useApplicationModal = false, useRequestInfoModal = true }) {
-  const { code, seo, hero, quickFacts, overview, videoSection, rankings, career, curriculum, whyStevens, studentSpotlight, faculty, admissions, keyDates, tuition, events, faqs, accreditation, whatYoullLearn, commonJobTitles, topCompanies } = programData;
+export default function ProgramPageTemplate({
+  programData,
+  useApplicationModal = false,
+  useRequestInfoModal = true,
+}) {
+  const {
+    code,
+    seo,
+    hero,
+    quickFacts,
+    overview,
+    videoSection,
+    rankings,
+    career,
+    curriculum,
+    whyStevens,
+    studentSpotlight,
+    faculty,
+    admissions,
+    keyDates,
+    tuition,
+    events,
+    faqs,
+    accreditation,
+    whatYoullLearn,
+    commonJobTitles,
+    topCompanies,
+  } = programData;
   const location = useLocation();
   const sectionRefs = useRef({});
-  const [activeSection, setActiveSection] = useState('overview');
+  const [activeSection, setActiveSection] = useState("overview");
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const moreMenuRef = useRef(null);
+
+  // Close "More" dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target)) {
+        setMoreMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Set SEO meta tags
   useEffect(() => {
     if (!seo) return;
-    
+
     setPageTitle(seo.title);
     setMetaDescription(seo.description);
     setOpenGraphTags({
       title: seo.title,
       description: seo.description,
-      image: seo.ogImage ? buildCanonicalUrl(seo.ogImage) : buildCanonicalUrl('/assets/logos/stevens-crest.webp'),
+      image: seo.ogImage
+        ? buildCanonicalUrl(seo.ogImage)
+        : buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
       url: buildCanonicalUrl(seo.url),
-      type: 'website'
+      type: "website",
     });
-    
+
     return () => {
-      setPageTitle('Stevens Online');
+      setPageTitle("Stevens Online");
     };
   }, [seo]);
-  
+
   // Handle collapsible course toggles (for MBA-style curriculum)
   // Using event delegation for reliable click handling regardless of DOM changes
   useEffect(() => {
     const handleCourseToggle = (e) => {
       // Use event delegation - check if clicked element is or is inside a .course-toggle
-      const button = e.target.closest('.course-toggle');
+      const button = e.target.closest(".course-toggle");
       if (!button) return;
-      
-      const targetId = button.getAttribute('data-target');
+
+      const targetId = button.getAttribute("data-target");
       if (targetId) {
         const content = document.getElementById(targetId);
-        const arrow = button.querySelector('.course-arrow');
+        const arrow = button.querySelector(".course-arrow");
         if (content && arrow) {
-          const isHidden = content.classList.contains('hidden');
+          const isHidden = content.classList.contains("hidden");
           if (isHidden) {
-            content.classList.remove('hidden');
-            arrow.textContent = '▲';
+            content.classList.remove("hidden");
+            arrow.textContent = "▲";
           } else {
-            content.classList.add('hidden');
-            arrow.textContent = '▼';
+            content.classList.add("hidden");
+            arrow.textContent = "▼";
           }
         }
       }
     };
 
     // Single event listener on document using event delegation
-    document.addEventListener('click', handleCourseToggle);
+    document.addEventListener("click", handleCourseToggle);
 
     return () => {
-      document.removeEventListener('click', handleCourseToggle);
+      document.removeEventListener("click", handleCourseToggle);
     };
   }, []);
 
   const navItems = useMemo(() => {
     const items = [
-      { id: 'overview', label: 'Overview' },
-      { id: 'video', label: 'Video' },
-      { id: 'rankings', label: 'Rankings' },
-      { id: 'career', label: 'Career Outlook' },
-      { id: 'what-youll-learn', label: 'What You\'ll Learn' },
-      { id: 'common-job-titles', label: 'Common Job Titles' },
-      { id: 'top-companies', label: 'Top Companies' },
-      { id: 'curriculum', label: 'Curriculum' },
-      { id: 'student-spotlight', label: 'Student Spotlight' },
-    { id: 'faculty', label: 'Faculty' },
-    { id: 'admissions', label: 'Admissions' },
-    { id: 'deadlines', label: 'Deadlines' },
-    { id: 'tuition', label: 'Tuition' },
-      { id: 'events', label: 'Events' },
-      { id: 'faqs', label: 'FAQs' },
-      { id: 'accreditation', label: 'Accreditation' }
+      { id: "overview", label: "Overview" },
+      { id: "video", label: "Video" },
+      { id: "rankings", label: "Rankings" },
+      { id: "career", label: "Career Outlook" },
+      { id: "what-youll-learn", label: "What You'll Learn" },
+      { id: "common-job-titles", label: "Common Job Titles" },
+      { id: "top-companies", label: "Top Companies" },
+      { id: "curriculum", label: "Curriculum" },
+      { id: "student-spotlight", label: "Student Spotlight" },
+      { id: "faculty", label: "Faculty" },
+      { id: "admissions", label: "Admissions" },
+      { id: "deadlines", label: "Deadlines" },
+      { id: "tuition", label: "Tuition" },
+      { id: "events", label: "Events" },
+      { id: "faqs", label: "FAQs" },
+      { id: "accreditation", label: "Accreditation" },
     ];
-    const filtered = items.filter(item => {
-      switch(item.id) {
-        case 'overview': return overview && (overview.description || (overview.keySkills && overview.keySkills.length > 0) || (overview.concentrations && overview.concentrations.length > 0));
-        case 'video': return videoSection && videoSection.videoSrc;
-        case 'rankings': return rankings && rankings.length > 0;
-        case 'career': return career && (career.description || career.jobTitlesTable || career.topCompanies);
-        case 'what-youll-learn': return whatYoullLearn && (whatYoullLearn.description || (whatYoullLearn.modules && whatYoullLearn.modules.length > 0));
-        case 'common-job-titles': return commonJobTitles && (commonJobTitles.jobs && commonJobTitles.jobs.length > 0);
-        case 'top-companies': return topCompanies && (topCompanies.companies && topCompanies.companies.length > 0);
-        case 'curriculum': return curriculum && (curriculum.description || curriculum.courseTabs || curriculum.completeCourseCatalog);
-        case 'student-spotlight': return studentSpotlight && (studentSpotlight.quote || studentSpotlight.author);
-        case 'faculty': return faculty && (faculty.description || (faculty.members && faculty.members.length > 0));
-        case 'deadlines': return keyDates && (keyDates.headers && keyDates.rows && keyDates.rows.length > 0);
-        case 'admissions': return admissions && (admissions.options && admissions.options.length > 0) && !(admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines');
-        case 'tuition': return tuition && (tuition.cards || tuition.description || (tuition.grants && tuition.grants.length > 0));
-        case 'events': return events && (events.items && events.items.length > 0);
-        case 'faqs': return faqs && faqs.length > 0;
-        case 'accreditation': return accreditation && (typeof accreditation === 'string' ? accreditation.trim() : (accreditation.description || accreditation.text));
-        default: return true;
+    const filtered = items.filter((item) => {
+      switch (item.id) {
+        case "overview":
+          return (
+            overview &&
+            (overview.description ||
+              (overview.keySkills && overview.keySkills.length > 0) ||
+              (overview.concentrations && overview.concentrations.length > 0))
+          );
+        case "video":
+          return videoSection && videoSection.videoSrc;
+        case "rankings":
+          return rankings && rankings.length > 0;
+        case "career":
+          return (
+            career &&
+            (career.description || career.jobTitlesTable || career.topCompanies)
+          );
+        case "what-youll-learn":
+          return (
+            whatYoullLearn &&
+            (whatYoullLearn.description ||
+              (whatYoullLearn.modules && whatYoullLearn.modules.length > 0))
+          );
+        case "common-job-titles":
+          return (
+            commonJobTitles &&
+            commonJobTitles.jobs &&
+            commonJobTitles.jobs.length > 0
+          );
+        case "top-companies":
+          return (
+            topCompanies &&
+            topCompanies.companies &&
+            topCompanies.companies.length > 0
+          );
+        case "curriculum":
+          return (
+            curriculum &&
+            (curriculum.description ||
+              curriculum.courseTabs ||
+              curriculum.completeCourseCatalog)
+          );
+        case "student-spotlight":
+          return (
+            studentSpotlight &&
+            (studentSpotlight.quote || studentSpotlight.author)
+          );
+        case "faculty":
+          return (
+            faculty &&
+            (faculty.description ||
+              (faculty.members && faculty.members.length > 0))
+          );
+        case "deadlines":
+          return (
+            keyDates &&
+            keyDates.headers &&
+            keyDates.rows &&
+            keyDates.rows.length > 0
+          );
+        case "admissions":
+          return (
+            admissions &&
+            admissions.options &&
+            admissions.options.length > 0 &&
+            !(
+              admissions.variant === "combinedWithTuition" ||
+              admissions.variant === "certificateWithDeadlines"
+            )
+          );
+        case "tuition":
+          return (
+            tuition &&
+            (tuition.cards ||
+              tuition.description ||
+              (tuition.grants && tuition.grants.length > 0))
+          );
+        case "events":
+          return events && events.items && events.items.length > 0;
+        case "faqs":
+          return faqs && faqs.length > 0;
+        case "accreditation":
+          return (
+            accreditation &&
+            (typeof accreditation === "string"
+              ? accreditation.trim()
+              : accreditation.description || accreditation.text)
+          );
+        default:
+          return true;
       }
     });
-    
+
     // For certificate pages, ensure tuition (relabeled as Admissions) appears before deadlines
-    if (admissions?.variant === 'certificateWithDeadlines') {
-      const tuitionIndex = filtered.findIndex(item => item.id === 'tuition');
-      const deadlinesIndex = filtered.findIndex(item => item.id === 'deadlines');
-      if (tuitionIndex !== -1 && deadlinesIndex !== -1 && tuitionIndex > deadlinesIndex) {
+    if (admissions?.variant === "certificateWithDeadlines") {
+      const tuitionIndex = filtered.findIndex((item) => item.id === "tuition");
+      const deadlinesIndex = filtered.findIndex(
+        (item) => item.id === "deadlines"
+      );
+      if (
+        tuitionIndex !== -1 &&
+        deadlinesIndex !== -1 &&
+        tuitionIndex > deadlinesIndex
+      ) {
         const tuitionItem = filtered[tuitionIndex];
         filtered.splice(tuitionIndex, 1);
         filtered.splice(deadlinesIndex, 0, tuitionItem);
       }
     }
-    
+
     return filtered;
-  }, [overview, rankings, career, whatYoullLearn, commonJobTitles, topCompanies, curriculum, studentSpotlight, faculty, keyDates, admissions, tuition, events, faqs, accreditation]);
+  }, [
+    overview,
+    rankings,
+    career,
+    whatYoullLearn,
+    commonJobTitles,
+    topCompanies,
+    curriculum,
+    studentSpotlight,
+    faculty,
+    keyDates,
+    admissions,
+    tuition,
+    events,
+    faqs,
+    accreditation,
+  ]);
 
   useEffect(() => {
     const currentRefs = sectionRefs.current;
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
       { rootMargin: "-30% 0px -70% 0px" }
-    );  
+    );
 
-    navItems.forEach(item => {
+    navItems.forEach((item) => {
       const el = currentRefs[item.id];
       if (el) observer.observe(el);
-      
+
       // For certificate pages, also observe admissions section when tuition button exists
-      if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+      if (
+        item.id === "tuition" &&
+        (admissions?.variant === "combinedWithTuition" ||
+          admissions?.variant === "certificateWithDeadlines")
+      ) {
         const admissionsEl = currentRefs.admissions;
         if (admissionsEl) observer.observe(admissionsEl);
       }
     });
 
     return () => {
-      navItems.forEach(item => {
+      navItems.forEach((item) => {
         const el = currentRefs[item.id];
         if (el) observer.unobserve(el);
-        
+
         // Unobserve admissions section for certificate pages
-        if (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines')) {
+        if (
+          item.id === "tuition" &&
+          (admissions?.variant === "combinedWithTuition" ||
+            admissions?.variant === "certificateWithDeadlines")
+        ) {
           const admissionsEl = currentRefs.admissions;
           if (admissionsEl) observer.unobserve(admissionsEl);
         }
@@ -395,34 +650,35 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
   // Handle hash navigation - scroll to section when page loads with hash
   useEffect(() => {
     if (!location.hash) return;
-    
+
     // Remove the # from hash
     const hashId = location.hash.substring(1);
-    
+
     // Wait for DOM to be ready and sections to be rendered
     const scrollToHash = () => {
       const element = sectionRefs.current[hashId];
       if (element) {
         // Use scrollIntoView with smooth behavior and offset for fixed header
         const yOffset = -100; // Offset for fixed header
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
         return true; // Successfully scrolled
       }
       return false; // Element not found yet
     };
-    
+
     // Try immediately
     if (scrollToHash()) return;
-    
+
     // If element not found, try again after delays (sections may still be rendering)
     const timeout1 = setTimeout(() => {
       if (scrollToHash()) return;
-      
+
       // Final attempt after longer delay
       setTimeout(scrollToHash, 200);
     }, 100);
-    
+
     return () => clearTimeout(timeout1);
   }, [location.hash, navItems]);
 
@@ -430,8 +686,8 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
 
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
-      <PageHero 
-        {...hero} 
+      <PageHero
+        {...hero}
         useApplicationModal={useApplicationModal}
         useRequestInfoModal={useRequestInfoModal}
         requestInfoProgramCode={code}
@@ -439,69 +695,167 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
       />
 
       {navItems.length > 0 && (
-        <div className="sticky top-[63px] bg-stevens-white/90 backdrop-blur-sm z-[9990] shadow-stevens-md">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <nav className="relative flex justify-start items-center -mb-px space-x-stevens-xs sm:space-x-stevens-sm md:space-x-stevens-md overflow-x-auto scrollbar-hide group">
-              {/* Left scroll indicator */}
-              <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white/90 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal"></div>
-              
-              {/* Right scroll indicator */}
-              <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white/90 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal"></div>
-              
-              <div className="flex space-x-stevens-xs sm:space-x-stevens-sm md:space-x-stevens-md">
-              {navItems.map(item => {
-                // When tuition is combined with admissions, redirect tuition link to admissions and change label
-                const isCombinedTuition = (item.id === 'tuition' && (admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines'));
-                const href = isCombinedTuition 
-                  ? '#admissions' 
-                  : `#${item.id}`;
-                const label = isCombinedTuition 
-                  ? 'Admissions' 
-                  : item.label;
-                // When combined, highlight tuition button when admissions section is active
-                const isActive = isCombinedTuition 
-                  ? activeSection === 'admissions' 
+        <div className="sticky top-[65px] md:top-[87px] bg-white z-[9990] shadow-md">
+          <div className="max-w-stevens-content-max mx-auto px-2 md:px-stevens-md lg:px-stevens-lg">
+            {/* Responsive grid: 4 cols on mobile (3 tabs + More), 5 cols on desktop (4 tabs + More) */}
+            <nav className="grid grid-cols-4 md:grid-cols-5 items-center">
+              {/* First 4 tabs - 4th tab hidden on mobile */}
+              {navItems.slice(0, 4).map((item, index) => {
+                const isCombinedTuition =
+                  item.id === "tuition" &&
+                  (admissions?.variant === "combinedWithTuition" ||
+                    admissions?.variant === "certificateWithDeadlines");
+                const href = isCombinedTuition ? "#admissions" : `#${item.id}`;
+                const label = isCombinedTuition ? "Admissions" : item.label;
+                const isActive = isCombinedTuition
+                  ? activeSection === "admissions"
                   : activeSection === item.id;
+
+                // Hide 4th tab (index 3) on mobile - it goes into More dropdown
+                const isHiddenOnMobile = index === 3;
+
                 return (
-                  <a 
-                    key={item.id} 
+                  <a
+                    key={item.id}
                     href={href}
-                      className={`py-stevens-md px-stevens-xs sm:px-stevens-sm md:px-stevens-md text-stevens-xs sm:text-stevens-sm md:text-stevens-base font-stevens-medium whitespace-nowrap border-b-2 transition-colors duration-stevens-normal flex-shrink-0 ${isActive ? 'border-stevens-red text-stevens-red' : 'border-transparent text-stevens-dark-gray hover:text-stevens-red'}`}
+                    className={`group relative py-4 md:py-5 text-center text-sm md:text-base lg:text-lg whitespace-nowrap transition-all duration-300 ${
+                      isHiddenOnMobile ? "hidden md:block" : ""
+                    } ${
+                      isActive
+                        ? "text-stevens-black font-semibold"
+                        : "text-stevens-gray hover:text-stevens-black"
+                    }`}
                   >
                     {label}
+                    {/* Active indicator - underline */}
+                    <span
+                      className={`absolute bottom-0 left-2 right-2 md:left-1/4 md:right-1/4 h-[3px] bg-stevens-red transition-all duration-300 ${
+                        isActive
+                          ? "opacity-100 scale-x-100"
+                          : "opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-100"
+                      }`}
+                    />
                   </a>
                 );
               })}
-              </div>
-              
+
+              {/* "More" dropdown - last column */}
+              {navItems.length > 4 && (
+                <div className="relative flex justify-center" ref={moreMenuRef}>
+                  <button
+                    onClick={() => setMoreMenuOpen(!moreMenuOpen)}
+                    className={`flex items-center justify-center gap-1 md:gap-2 py-2 md:py-3 px-2 md:px-4 text-sm md:text-base lg:text-lg whitespace-nowrap transition-all duration-300 border-2 rounded-lg ${
+                      moreMenuOpen ||
+                      navItems
+                        .slice(3) // Check from index 3 on mobile (4th tab + rest)
+                        .some((item) => activeSection === item.id)
+                        ? "text-stevens-black bg-white border-stevens-dark-gray shadow-md"
+                        : "text-stevens-gray border-stevens-light-gray hover:text-stevens-black hover:border-stevens-dark-gray hover:shadow-sm"
+                    }`}
+                  >
+                    <MoreHorizontal className="w-4 h-4 md:w-5 md:h-5" />
+                    <span className="font-medium hidden sm:inline">More</span>
+                    <ChevronDown
+                      className={`w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 ${
+                        moreMenuOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown Menu - includes 4th tab on mobile */}
+                  {moreMenuOpen && (
+                    <div className="absolute top-full right-0 mt-2 bg-white rounded-xl shadow-2xl border border-stevens-light-gray py-2 md:py-3 min-w-[200px] md:min-w-[240px] z-[9999] animate-in fade-in slide-in-from-top-2 duration-200">
+                      {/* On mobile, include 4th tab (index 3) in dropdown */}
+                      {navItems.slice(3).map((item, index) => {
+                        const isCombinedTuition =
+                          item.id === "tuition" &&
+                          (admissions?.variant === "combinedWithTuition" ||
+                            admissions?.variant === "certificateWithDeadlines");
+                        const href = isCombinedTuition
+                          ? "#admissions"
+                          : `#${item.id}`;
+                        const label = isCombinedTuition
+                          ? "Admissions"
+                          : item.label;
+                        const isActive = isCombinedTuition
+                          ? activeSection === "admissions"
+                          : activeSection === item.id;
+
+                        // First item (4th tab) should be hidden on desktop since it's visible in nav
+                        const isHiddenOnDesktop = index === 0;
+
+                        return (
+                          <a
+                            key={item.id}
+                            href={href}
+                            onClick={() => setMoreMenuOpen(false)}
+                            className={`flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-3 text-sm md:text-base transition-all duration-200 ${
+                              isHiddenOnDesktop ? "md:hidden" : ""
+                            } ${
+                              isActive
+                                ? "text-stevens-red bg-red-50 font-semibold border-l-4 border-stevens-red"
+                                : "text-stevens-dark-gray hover:text-stevens-black hover:bg-stevens-light-gray border-l-4 border-transparent hover:border-stevens-gray"
+                            }`}
+                          >
+                            {label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              )}
             </nav>
-            
           </div>
         </div>
       )}
 
       <main>
-        <Section id="overview" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.overview = el}>
+        <Section
+          id="overview"
+          bgClassName="bg-stevens-white"
+          refProp={(el) => (sectionRefs.current.overview = el)}
+        >
           <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-5 gap-stevens-gap-lg">
             <div className="lg:col-span-3">
-              {overview.title && <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md text-stevens-dark-gray uppercase tracking-wide">{overview.title}</h2>}
-              {overview.description && <div className="prose max-w-none text-stevens-dark-gray leading-relaxed" dangerouslySetInnerHTML={{ __html: overview.description }} />}
+              {overview.title && (
+                <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md text-stevens-dark-gray uppercase tracking-wide">
+                  {overview.title}
+                </h2>
+              )}
+              {overview.description && (
+                <div
+                  className="prose max-w-none text-stevens-dark-gray leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: overview.description }}
+                />
+              )}
               {overview.keySkills && overview.keySkills.length > 0 && (
                 <div className="mt-8">
-                  <h3 className="font-semibold text-lg mb-2">Key Skills Developed:</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Key Skills Developed:
+                  </h3>
                   <div className="flex flex-wrap gap-2">
-                    {overview.keySkills.map(skill => <Badge key={skill} variant="outline-dark">{skill}</Badge>)}
+                    {overview.keySkills.map((skill) => (
+                      <Badge key={skill} variant="outline-dark">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               )}
-              {overview.concentrations && overview.concentrations.length > 0 && (
-                <div className="mt-8">
-                  <h3 className="font-semibold text-lg mb-2">Concentration Options:</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-stevens-dark-gray text-sm">
-                    {overview.concentrations.map(conc => <li key={conc}>{conc}</li>)}
-                  </ul>
-                </div>
-              )}
+              {overview.concentrations &&
+                overview.concentrations.length > 0 && (
+                  <div className="mt-8">
+                    <h3 className="font-semibold text-lg mb-2">
+                      Concentration Options:
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-1 text-stevens-dark-gray text-sm">
+                      {overview.concentrations.map((conc) => (
+                        <li key={conc}>{conc}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
             </div>
             <div className="lg:col-span-2">
               <Card className="shadow-stevens-xl rounded-stevens-md overflow-hidden bg-stevens-white">
@@ -509,19 +863,27 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <CardTitle className="font-stevens-display text-stevens-2xl font-light text-stevens-white">
                     QUICK FACTS
                   </CardTitle>
-                  
                 </CardHeader>
                 <CardContent className="p-stevens-card pt-stevens-card bg-stevens-light-gray">
                   {quickFacts.termStartDate && (
                     <div className="mb-stevens-lg">
-                      <p className="font-stevens-bold text-stevens-base uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">Term Start Date</p>
-                      <p className="font-stevens-bold text-stevens-lg text-stevens-red">{quickFacts.termStartDate}</p>
+                      <p className="font-stevens-bold text-stevens-base uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">
+                        Term Start Date
+                      </p>
+                      <p className="font-stevens-bold text-stevens-lg text-stevens-red">
+                        {quickFacts.termStartDate}
+                      </p>
                     </div>
                   )}
                   {quickFacts.details && (
                     <div className="border-t border-stevens-light-gray pt-stevens-md">
-                      <h4 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-sm uppercase">Overview</h4>
-                      <div className="prose prose-sm text-stevens-dark-gray space-y-stevens-sm" dangerouslySetInnerHTML={{ __html: quickFacts.details }} />
+                      <h4 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-sm uppercase">
+                        Overview
+                      </h4>
+                      <div
+                        className="prose prose-sm text-stevens-dark-gray space-y-stevens-sm"
+                        dangerouslySetInnerHTML={{ __html: quickFacts.details }}
+                      />
                     </div>
                   )}
                 </CardContent>
@@ -529,20 +891,31 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
               {quickFacts.atAGlance && quickFacts.atAGlance.length > 0 && (
                 <div className="mt-8 grid grid-cols-3 gap-4">
                   {quickFacts.atAGlance.map((fact, index) => (
-                      <div key={index} className="text-center bg-stevens-light-gray p-3 rounded-stevens-md">
-                          <p className="font-stevens-display text-lg md:text-xl font-light text-stevens-red leading-tight">{fact.value}</p>
-                          <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-dark-gray">{fact.label}</p>
-                      </div>
+                    <div
+                      key={index}
+                      className="text-center bg-stevens-light-gray p-3 rounded-stevens-md"
+                    >
+                      <p className="font-stevens-display text-lg md:text-xl font-light text-stevens-red leading-tight">
+                        {fact.value}
+                      </p>
+                      <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-dark-gray">
+                        {fact.label}
+                      </p>
+                    </div>
                   ))}
                 </div>
               )}
-              
             </div>
           </div>
         </Section>
 
         {videoSection && (
-          <Section id="video" title={videoSection.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.video = el}>
+          <Section
+            id="video"
+            title={videoSection.title}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current.video = el)}
+          >
             <div className="max-w-7xl mx-auto">
               <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
                 {/* Video Player Component */}
@@ -553,73 +926,110 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   showControls={videoSection.showControls}
                   muted={videoSection.muted}
                 />
-
-                
               </div>
             </div>
           </Section>
         )}
-        
+
         {rankings && rankings.length > 0 && (
-          <Section id="rankings" title="By the Numbers" bgClassName="bg-stevens-light-gray" container={false} el="div" refProp={el => sectionRefs.current.rankings = el}>
+          <Section
+            id="rankings"
+            title="By the Numbers"
+            bgClassName="bg-stevens-light-gray"
+            container={false}
+            el="div"
+            refProp={(el) => (sectionRefs.current.rankings = el)}
+          >
             <div className="max-w-7xl mx-auto  py-stevens-2xl">
               <div className=" px-stevens-lg">
                 {/* Flexbox layout to center odd number of cards in last row */}
                 <div className="flex flex-wrap justify-center gap-stevens-lg">
                   {rankings.map((rank, i) => (
-                    <div key={i} className="w-full sm:w-[calc(100%-2rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.25rem)] max-w-[400px]">
+                    <div
+                      key={i}
+                      className="w-full sm:w-[calc(100%-2rem)] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.25rem)] max-w-[400px]"
+                    >
                       <RankingCard {...rank} />
                     </div>
                   ))}
                 </div>
-                {programData.rankings_footnotes && programData.rankings_footnotes.length > 0 && (
-                  <div className="mt-stevens-xl max-w-4xl mx-auto text-stevens-sm text-stevens-dark-gray space-y-stevens-xs">
-                    {programData.rankings_footnotes.map((footnote, i) => (
-                      <p key={i}>
-                        <sup>{footnote.note}</sup> {footnote.text}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                {programData.rankings_footnotes &&
+                  programData.rankings_footnotes.length > 0 && (
+                    <div className="mt-stevens-xl max-w-4xl mx-auto text-stevens-sm text-stevens-dark-gray space-y-stevens-xs">
+                      {programData.rankings_footnotes.map((footnote, i) => (
+                        <p key={i}>
+                          <sup>{footnote.note}</sup> {footnote.text}
+                        </p>
+                      ))}
+                    </div>
+                  )}
               </div>
             </div>
           </Section>
         )}
 
         {career && (
-          <Section id="career" title="Career Outlook" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.career = el}>
-            {career.description && <div className=" prose max-w-none text-stevens-dark-gray leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: career.description }} />}
-            
-            
-          </Section>
-        )}
-        
-        {whatYoullLearn && (
-          <Section id="what-youll-learn" title={whatYoullLearn.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['what-youll-learn'] = el}>
-            {whatYoullLearn.description && <div className="prose max-w-none text-stevens-dark-gray leading-relaxed mb-10 text-center" dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }} />}
-            {whatYoullLearn.modules && whatYoullLearn.modules.length > 0 && (
-              whatYoullLearn.variant === 'skillCards' 
-                ? <SkillCardsGrid modules={whatYoullLearn.modules} />
-                : <WhatYoullLearnCarousel modules={whatYoullLearn.modules} />
+          <Section
+            id="career"
+            title="Career Outlook"
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.career = el)}
+          >
+            {career.description && (
+              <div
+                className=" prose max-w-none text-stevens-dark-gray leading-relaxed mb-10"
+                dangerouslySetInnerHTML={{ __html: career.description }}
+              />
             )}
           </Section>
         )}
 
+        {whatYoullLearn && (
+          <Section
+            id="what-youll-learn"
+            title={whatYoullLearn.title}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current["what-youll-learn"] = el)}
+          >
+            {whatYoullLearn.description && (
+              <div
+                className="prose max-w-none text-stevens-dark-gray leading-relaxed mb-10 text-center"
+                dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }}
+              />
+            )}
+            {whatYoullLearn.modules &&
+              whatYoullLearn.modules.length > 0 &&
+              (whatYoullLearn.variant === "skillCards" ? (
+                <SkillCardsGrid modules={whatYoullLearn.modules} />
+              ) : (
+                <WhatYoullLearnCarousel modules={whatYoullLearn.modules} />
+              ))}
+          </Section>
+        )}
+
         {commonJobTitles && (
-          <Section id="common-job-titles" title={commonJobTitles.title} bgClassName="bg-stevens-white" refProp={el => sectionRefs.current['common-job-titles'] = el}>
-            
+          <Section
+            id="common-job-titles"
+            title={commonJobTitles.title}
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current["common-job-titles"] = el)}
+          >
             {career.jobTitles && career.jobTitles.length > 0 && (
               <>
                 <div className="text-center mb-stevens-xl">
                   <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
-                    Earning an online {programData.code.toUpperCase()} prepares you for career paths in management-level roles across industries. Explore <strong>top {programData.code.toUpperCase()} jobs</strong> for recent graduates.
+                    Earning an online {programData.code.toUpperCase()} prepares
+                    you for career paths in management-level roles across
+                    industries. Explore{" "}
+                    <strong>top {programData.code.toUpperCase()} jobs</strong>{" "}
+                    for recent graduates.
                   </p>
                 </div>
-                
+
                 <div className="mb-stevens-lg">
                   <div className="bg-stevens-white rounded-stevens-md overflow-hidden border border-stevens-light-gray shadow-md">
                     <Table className="w-full">
-                    <TableHeader>
+                      <TableHeader>
                         <TableRow className="bg-stevens-light-gray border-b-2 border-stevens-light-gray">
                           <TableHead className="font-semibold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-left">
                             Job Title
@@ -632,63 +1042,78 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                           <TableHead className="font-semibold text-stevens-dark-gray uppercase tracking-wider text-stevens-sm py-stevens-md px-stevens-xl text-center">
                             Median or Average Annual Earnings
                           </TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
                         {(() => {
                           // Calculate max salary from jobTitles array - highest salary will be 100% width
-                          const maxSalary = Math.max(...career.jobTitles.map(job => 
-                            parseFloat(job.salary.replace(/[$,]/g, ''))
-                          ));
-                          
+                          const maxSalary = Math.max(
+                            ...career.jobTitles.map((job) =>
+                              parseFloat(job.salary.replace(/[$,]/g, ""))
+                            )
+                          );
+
                           return career.jobTitles.map((job, index) => {
-                          return (
-                            <TableRow 
-                              key={job.title} 
-                              className={`
+                            return (
+                              <TableRow
+                                key={job.title}
+                                className={`
                                 hover:bg-stevens-light-gray 
                                 transition-all duration-stevens-normal border-b border-stevens-light-gray
-                                ${index % 2 === 0 ? 'bg-stevens-white' : 'bg-stevens-light-gray/30'}
+                                ${
+                                  index % 2 === 0
+                                    ? "bg-stevens-white"
+                                    : "bg-stevens-light-gray/30"
+                                }
                               `}
-                            >
-                              <TableCell className="font-medium text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl">
-                                <div className="flex items-center gap-stevens-sm">
-                                  <div className="w-2 h-2 bg-stevens-black rounded-full flex-shrink-0"></div>
-                                  {job.title}
-                                </div>
-                              </TableCell>
-                              {job.employed && (
-                                <TableCell className="text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl text-center font-stevens-semibold">
-                                  <span className="bg-stevens-light-gray px-stevens-sm py-stevens-xs rounded-stevens-md">
-                                    {job.employed}
-                                  </span>
-                                </TableCell>
-                              )}
-                              <TableCell className="text-stevens-dark-gray py-stevens-md px-stevens-xl">
-                                <div className="flex flex-col gap-stevens-xs">
-                                  <span className="font-stevens-bold text-stevens-lg text-stevens-black text-center">
-                                    {job.salary}
-                                  </span>
-                                  <div className="w-full bg-stevens-light-gray rounded-full h-3 shadow-inner">
-                                    <div 
-                                      className="bg-stevens-black h-3 rounded-full transition-all duration-stevens-normal shadow-sm"
-                                      style={{ 
-                                        width: `${Math.min(100, (parseFloat(job.salary.replace(/[$,]/g, '')) / maxSalary) * 100)}%` 
-                                      }}
-                                    ></div>
+                              >
+                                <TableCell className="font-medium text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl">
+                                  <div className="flex items-center gap-stevens-sm">
+                                    <div className="w-2 h-2 bg-stevens-black rounded-full flex-shrink-0"></div>
+                                    {job.title}
                                   </div>
-                                </div>
-                              </TableCell>
-                        </TableRow>
-                          );
+                                </TableCell>
+                                {job.employed && (
+                                  <TableCell className="text-stevens-dark-gray text-stevens-base py-stevens-md px-stevens-xl text-center font-stevens-semibold">
+                                    <span className="bg-stevens-light-gray px-stevens-sm py-stevens-xs rounded-stevens-md">
+                                      {job.employed}
+                                    </span>
+                                  </TableCell>
+                                )}
+                                <TableCell className="text-stevens-dark-gray py-stevens-md px-stevens-xl">
+                                  <div className="flex flex-col gap-stevens-xs">
+                                    <span className="font-stevens-bold text-stevens-lg text-stevens-black text-center">
+                                      {job.salary}
+                                    </span>
+                                    <div className="w-full bg-stevens-light-gray rounded-full h-3 shadow-inner">
+                                      <div
+                                        className="bg-stevens-black h-3 rounded-full transition-all duration-stevens-normal shadow-sm"
+                                        style={{
+                                          width: `${Math.min(
+                                            100,
+                                            (parseFloat(
+                                              job.salary.replace(/[$,]/g, "")
+                                            ) /
+                                              maxSalary) *
+                                              100
+                                          )}%`,
+                                        }}
+                                      ></div>
+                                    </div>
+                                  </div>
+                                </TableCell>
+                              </TableRow>
+                            );
                           });
                         })()}
-                    </TableBody>
-                  </Table>
+                      </TableBody>
+                    </Table>
                   </div>
-                  
+
                   <div className="text-center mt-stevens-lg">
-                    <p className="text-stevens-sm text-stevens-dark-gray italic">Source: {career.source}</p>
+                    <p className="text-stevens-sm text-stevens-dark-gray italic">
+                      Source: {career.source}
+                    </p>
                   </div>
                 </div>
               </>
@@ -697,18 +1122,34 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
 
         {topCompanies && (
-          <Section id="top-companies" title={topCompanies.title} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['top-companies'] = el}>
+          <Section
+            id="top-companies"
+            title={topCompanies.title}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current["top-companies"] = el)}
+          >
             <TopCompaniesSection
-              title={topCompanies.title || 'Stevens Alumni Drive Innovation at Top Companies'}
-              description={topCompanies.description || 'Our graduates join leading organizations across technology, finance, healthcare, and consulting'}
+              title={
+                topCompanies.title ||
+                "Stevens Alumni Drive Innovation at Top Companies"
+              }
+              description={
+                topCompanies.description ||
+                "Our graduates join leading organizations across technology, finance, healthcare, and consulting"
+              }
               companies={topCompanies.companies || career?.topCompanies || []}
             />
           </Section>
         )}
 
         {whyStevens && (
-          <Section id="why-stevens" bgClassName="bg-stevens-white" paddingClassName="py-stevens-section-sm lg:py-stevens-section" refProp={el => sectionRefs.current['why-stevens'] = el}>
-            {whyStevens.variant === 'splitWithVideo' ? (
+          <Section
+            id="why-stevens"
+            bgClassName="bg-stevens-white"
+            paddingClassName="py-stevens-section-sm lg:py-stevens-section"
+            refProp={(el) => (sectionRefs.current["why-stevens"] = el)}
+          >
+            {whyStevens.variant === "splitWithVideo" ? (
               <div className="max-w-stevens-content-max mx-auto">
                 <div className="grid lg:grid-cols-2 gap-stevens-2xl items-center">
                   {/* Left Column - Text Content */}
@@ -716,9 +1157,14 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                     <h2 className="font-stevens-display text-stevens-4xl font-light mb-stevens-lg uppercase tracking-wide">
                       {whyStevens.title}
                     </h2>
-                    <div className="prose prose-lg prose-invert max-w-none [&_p]:text-stevens-lg [&_p]:leading-relaxed [&_p]:mb-stevens-lg" dangerouslySetInnerHTML={{ __html: whyStevens.description }} />
+                    <div
+                      className="prose prose-lg prose-invert max-w-none [&_p]:text-stevens-lg [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
+                      dangerouslySetInnerHTML={{
+                        __html: whyStevens.description,
+                      }}
+                    />
                   </div>
-                  
+
                   {/* Right Column - Video Player */}
                   <div className="relative">
                     {whyStevens.video && (
@@ -746,106 +1192,167 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             ) : (
               <div className="bg-stevens-black text-stevens-white py-16 rounded-stevens-lg">
                 <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light mb-stevens-lg text-stevens-white uppercase tracking-wide">{whyStevens.title}</h2>
-                  <div className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white" dangerouslySetInnerHTML={{ __html: whyStevens.description }}/>
+                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light mb-stevens-lg text-stevens-white uppercase tracking-wide">
+                    {whyStevens.title}
+                  </h2>
+                  <div
+                    className="prose prose-invert max-w-none mx-auto text-left text-stevens-base stevens-md:text-stevens-lg [&_p]:text-stevens-white [&_li]:text-stevens-white"
+                    dangerouslySetInnerHTML={{ __html: whyStevens.description }}
+                  />
                 </div>
               </div>
             )}
           </Section>
         )}
-        
+
         {curriculum && (
-          <Section id="curriculum" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.curriculum = el}>
+          <Section
+            id="curriculum"
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.curriculum = el)}
+          >
             <div className="max-w-stevens-content-max mx-auto">
               {/* Section Title */}
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
-                {curriculum.title ? curriculum.title : `Online ${programData.code.toUpperCase()} Program Course Structure`}
+                {curriculum.title
+                  ? curriculum.title
+                  : `Online ${programData.code.toUpperCase()} Program Course Structure`}
               </h2>
-              
+
               {/* Description */}
               {curriculum.description && (
                 <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
-                  {curriculum.description.split('\n').map((paragraph, i) => (
+                  {curriculum.description.split("\n").map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
                 </div>
               )}
-            
-            {curriculum.courseTabs && (
-              <Tabs defaultValue={Object.keys(curriculum.courseTabs)[0]} className="w-full">
-                {/* Tabs Navigation */}
-                <div className="relative overflow-x-auto scrollbar-hide group">
-                  {/* Left scroll indicator */}
-                  <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-                  
-                  {/* Right scroll indicator */}
-                  <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-                  
-                  <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
-                  {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
-                    <TabsTrigger 
-                      key={tabKey} 
+
+              {curriculum.courseTabs && (
+                <Tabs
+                  defaultValue={Object.keys(curriculum.courseTabs)[0]}
+                  className="w-full"
+                >
+                  {/* Tabs Navigation */}
+                  <div className="relative overflow-x-auto scrollbar-hide group">
+                    {/* Left scroll indicator */}
+                    <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+
+                    {/* Right scroll indicator */}
+                    <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+
+                    <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
+                      {Object.keys(curriculum.courseTabs).map(
+                        (tabKey, index) => (
+                          <TabsTrigger
+                            key={tabKey}
+                            value={tabKey}
+                            className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                          >
+                            {curriculum.courseTabs[tabKey].title}
+                          </TabsTrigger>
+                        )
+                      )}
+                    </TabsList>
+                  </div>
+
+                  {/* Tab Content */}
+                  {Object.keys(curriculum.courseTabs).map((tabKey) => (
+                    <TabsContent
+                      key={tabKey}
                       value={tabKey}
-                        className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                      className="mt-stevens-xl"
                     >
-                      {curriculum.courseTabs[tabKey].title}
-                    </TabsTrigger>
+                      <div
+                        className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
+                        dangerouslySetInnerHTML={{
+                          __html: curriculum.courseTabs[tabKey].content,
+                        }}
+                      />
+                    </TabsContent>
                   ))}
-                </TabsList>
-                </div>
-                
-                {/* Tab Content */}
-                {Object.keys(curriculum.courseTabs).map(tabKey => (
-                  <TabsContent key={tabKey} value={tabKey} className="mt-stevens-xl">
-                    <div className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg" dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}/>
-                  </TabsContent>
-                ))}
-              </Tabs>
-            )}
+                </Tabs>
+              )}
             </div>
             {curriculum.completeCourseCatalog && (
               <div className="mt-12">
-                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">Complete Course Catalog</h3>
+                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
+                  Complete Course Catalog
+                </h3>
                 <Card>
                   <CardContent className="p-6 overflow-x-auto">
-                    <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: curriculum.completeCourseCatalog }} />
+                    <div
+                      className="prose max-w-none"
+                      dangerouslySetInnerHTML={{
+                        __html: curriculum.completeCourseCatalog,
+                      }}
+                    />
                   </CardContent>
                 </Card>
               </div>
             )}
           </Section>
         )}
-        
+
         {studentSpotlight && (
-          <Section id="student-spotlight" bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current['student-spotlight'] = el}>
+          <Section
+            id="student-spotlight"
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current["student-spotlight"] = el)}
+          >
             <div className="mx-auto text-center">
               <User className="w-16 h-16 mx-auto mb-stevens-md text-stevens-red" />
-              <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md uppercase tracking-wide">Student Testimonial Spotlight</h2>
+              <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md uppercase tracking-wide">
+                Student Testimonial Spotlight
+              </h2>
               <blockquote className="text-stevens-2xl leading-snug italic text-stevens-dark-gray mb-stevens-md">
-                  "{studentSpotlight.quote}"
-                </blockquote>
-              <cite className="not-italic font-stevens-semibold text-stevens-dark-gray">- {studentSpotlight.name}</cite>
+                "{studentSpotlight.quote}"
+              </blockquote>
+              <cite className="not-italic font-stevens-semibold text-stevens-dark-gray">
+                - {studentSpotlight.name}
+              </cite>
             </div>
           </Section>
         )}
-        
+
         {faculty && (
-          <Section id="faculty" title={faculty.title || "Meet the Faculty"} refProp={el => sectionRefs.current.faculty = el} container={false} paddingClassName="py-stevens-section-sm lg:py-stevens-section">
-            {faculty.description && <p className="text-center text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-xl px-stevens-md lg:px-stevens-lg">{faculty.description}</p>}
+          <Section
+            id="faculty"
+            title={faculty.title || "Meet the Faculty"}
+            refProp={(el) => (sectionRefs.current.faculty = el)}
+            container={false}
+            paddingClassName="py-stevens-section-sm lg:py-stevens-section"
+          >
+            {faculty.description && (
+              <p className="text-center text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-xl px-stevens-md lg:px-stevens-lg">
+                {faculty.description}
+              </p>
+            )}
             <div className="relative overflow-visible w-full max-w-[77rem] mx-auto">
               <div className="flex overflow-x-auto space-x-stevens-sm stevens-md:space-x-stevens-lg pb-stevens-lg pt-stevens-sm snap-x snap-mandatory scrollbar-thin scrollbar-thumb-stevens-dark-gray scrollbar-track-stevens-light-gray px-stevens-md">
-                {faculty.members.map((member, i) => <FacultyCard key={i} member={member} />)}
+                {faculty.members.map((member, i) => (
+                  <FacultyCard key={i} member={member} />
+                ))}
               </div>
             </div>
           </Section>
         )}
 
-        {admissions && (admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines') && tuition ? (
-          <Section id="admissions" bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.admissions = el}>
+        {admissions &&
+        (admissions.variant === "combinedWithTuition" ||
+          admissions.variant === "certificateWithDeadlines") &&
+        tuition ? (
+          <Section
+            id="admissions"
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current.admissions = el)}
+          >
             <div className="grid lg:grid-cols-5 gap-stevens-2xl items-start">
               {/* Left Column - Admissions */}
               <div className="lg:col-span-3">
-                <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">Admissions</h2>
+                <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">
+                  Admissions
+                </h2>
                 {admissions.requirements && (
                   <Card className="shadow-stevens-lg rounded-stevens-md">
                     <CardHeader>
@@ -853,47 +1360,62 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                         <FileText /> Application Requirements
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="prose text-stevens-dark-gray" dangerouslySetInnerHTML={{ __html: admissions.requirements }} />
+                    <CardContent
+                      className="prose text-stevens-dark-gray"
+                      dangerouslySetInnerHTML={{
+                        __html: admissions.requirements,
+                      }}
+                    />
                   </Card>
                 )}
               </div>
-              
+
               {/* Right Column - Key Dates & Tuition */}
               <div className="lg:col-span-2">
-                {keyDates && admissions.variant !== 'certificateWithDeadlines' && (
-                  <>
-                    <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">Key Dates & Deadlines</h2>
-                    <Card className="rounded-stevens-md mb-stevens-xl">
-                      <CardHeader>
-                        <CardTitle className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray">
-                          {keyDates.term || "Spring 2026"}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <Table>
-                          <TableBody>
-                            {keyDates.rows.map((row) => (
-                              <TableRow key={row.event}>
-                                <TableCell className="font-stevens-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal">
-                                  {row.event}
-                                </TableCell>
-                                <TableCell className="text-stevens-dark-gray">{row.date}</TableCell>
-                              </TableRow>
-                            ))}
-                          </TableBody>
-                        </Table>
-                      </CardContent>
-                    </Card>
-                  </>
-                )}
-                
+                {keyDates &&
+                  admissions.variant !== "certificateWithDeadlines" && (
+                    <>
+                      <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">
+                        Key Dates & Deadlines
+                      </h2>
+                      <Card className="rounded-stevens-md mb-stevens-xl">
+                        <CardHeader>
+                          <CardTitle className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray">
+                            {keyDates.term || "Spring 2026"}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <Table>
+                            <TableBody>
+                              {keyDates.rows.map((row) => (
+                                <TableRow key={row.event}>
+                                  <TableCell className="font-stevens-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal">
+                                    {row.event}
+                                  </TableCell>
+                                  <TableCell className="text-stevens-dark-gray">
+                                    {row.date}
+                                  </TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </CardContent>
+                      </Card>
+                    </>
+                  )}
+
                 {tuition && (
                   <>
-                    <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">Tuition</h2>
+                    <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">
+                      Tuition
+                    </h2>
                     {tuition.cards && tuition.cards.length > 0 && (
                       <div className="grid grid-cols-2 gap-stevens-md text-center">
                         {tuition.cards.map((card) => (
-                          <Card key={card.label} className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full">
+                          <Card
+                            key={card.label}
+                            className="p-stevens-sm stevens-md:p-stevens-md rounded-stevens-md flex flex-col h-full"
+                          >
                             {/* Top layer: Price */}
                             <div className="flex-1 flex items-center justify-center min-h-[60%]">
                               <p className="font-stevens-display text-stevens-lg stevens-sm:text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-red whitespace-nowrap">
@@ -911,7 +1433,12 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                       </div>
                     )}
                     {tuition.description && (
-                      <div className="prose text-center text-stevens-xs max-w-none mx-auto mt-stevens-md text-stevens-dark-gray" dangerouslySetInnerHTML={{ __html: tuition.description }} />
+                      <div
+                        className="prose text-center text-stevens-xs max-w-none mx-auto mt-stevens-md text-stevens-dark-gray"
+                        dangerouslySetInnerHTML={{
+                          __html: tuition.description,
+                        }}
+                      />
                     )}
                   </>
                 )}
@@ -919,33 +1446,84 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             </div>
           </Section>
         ) : admissions ? (
-          <Section id="admissions" title={admissions.options && admissions.options.length === 1 ? "Application Option" : "Choose Your Application Option"} bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.admissions = el}>
-            <div className={`flex flex-wrap justify-center ${admissions.options && admissions.options.length === 1 ? 'max-w-3xl mx-auto' : admissions.options && admissions.options.length === 2 ? 'max-w-6xl mx-auto' : ''} gap-8`}>
-              {admissions.options && admissions.options.map((option, i) => (
-                <Card key={i} className={`w-full ${admissions.options.length === 1 ? '' : admissions.options.length === 2 ? 'md:w-[48%]' : 'md:w-[48%] lg:w-[31%]'} shadow-lg ${option.featured ? 'border-2 border-stevens-red' : ''}`}>
-                  <CardHeader>
-                    <CardTitle>{option.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="prose" dangerouslySetInnerHTML={{ __html: option.description }}/>
-                    {option.buttonText && !option.buttonGrayOut && (
-                      <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                        <Button variant="default" className="w-full mt-2">
-                          {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
-                        </Button>
-                      </a>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-              { admissions.alertMessage && (
-                <div className='w-full max-w-[75ch] mx-auto bg-stevens-red p-4 md:p-8 text-white border-2 border-stevens-dark-gray rounded-md'>
-                  <div className='w-full '>
-                    <h3 className='text-xl md:text-2xl font-bold'>{admissions.alertMessage.title}</h3>
-                    <div className='py-4' dangerouslySetInnerHTML={{__html:admissions.alertMessage.description}}/>
+          <Section
+            id="admissions"
+            title={
+              admissions.options && admissions.options.length === 1
+                ? "Application Option"
+                : "Choose Your Application Option"
+            }
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.admissions = el)}
+          >
+            <div
+              className={`flex flex-wrap justify-center ${
+                admissions.options && admissions.options.length === 1
+                  ? "max-w-3xl mx-auto"
+                  : admissions.options && admissions.options.length === 2
+                  ? "max-w-6xl mx-auto"
+                  : ""
+              } gap-8`}
+            >
+              {admissions.options &&
+                admissions.options.map((option, i) => (
+                  <Card
+                    key={i}
+                    className={`w-full ${
+                      admissions.options.length === 1
+                        ? ""
+                        : admissions.options.length === 2
+                        ? "md:w-[48%]"
+                        : "md:w-[48%] lg:w-[31%]"
+                    } shadow-lg ${
+                      option.featured ? "border-2 border-stevens-red" : ""
+                    }`}
+                  >
+                    <CardHeader>
+                      <CardTitle>{option.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div
+                        className="prose"
+                        dangerouslySetInnerHTML={{ __html: option.description }}
+                      />
+                      {option.buttonText && !option.buttonGrayOut && (
+                        <a
+                          href={option.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full"
+                        >
+                          <Button variant="default" className="w-full mt-2">
+                            {option.buttonText}{" "}
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </a>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              {admissions.alertMessage && (
+                <div className="w-full max-w-[75ch] mx-auto bg-stevens-red p-4 md:p-8 text-white border-2 border-stevens-dark-gray rounded-md">
+                  <div className="w-full ">
+                    <h3 className="text-xl md:text-2xl font-bold">
+                      {admissions.alertMessage.title}
+                    </h3>
+                    <div
+                      className="py-4"
+                      dangerouslySetInnerHTML={{
+                        __html: admissions.alertMessage.description,
+                      }}
+                    />
                     {admissions.alertMessage.url && (
-                      <a href={admissions.alertMessage.url} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline-white">{admissions.alertMessage.buttonText}</Button>
+                      <a
+                        href={admissions.alertMessage.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="outline-white">
+                          {admissions.alertMessage.buttonText}
+                        </Button>
                       </a>
                     )}
                   </div>
@@ -954,10 +1532,18 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
             </div>
             {admissions.consultation && (
               <div className="text-center mt-12">
-                <h3 className="text-xl font-semibold mb-2">{admissions.consultation.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {admissions.consultation.title}
+                </h3>
                 {admissions.consultation.url && (
-                  <a href={admissions.consultation.url} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline-dark">{admissions.consultation.buttonText}</Button>
+                  <a
+                    href={admissions.consultation.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline-dark">
+                      {admissions.consultation.buttonText}
+                    </Button>
                   </a>
                 )}
               </div>
@@ -965,102 +1551,158 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
           </Section>
         ) : null}
 
-        {keyDates && (!(admissions?.variant === 'combinedWithTuition') || admissions?.variant === 'certificateWithDeadlines') && (
-          <Section id="deadlines" title="Key Dates & Deadlines" bgClassName="bg-stevens-light-gray" el="div" refProp={el => sectionRefs.current['deadlines'] = el}>
-            <div className="text-center mb-stevens-xl">
-              <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
-                Plan your application for the upcoming Spring 2026 term.
-              </p>
-            </div>
-            
-            <Card className="shadow-xl border-0 overflow-hidden max-w-7xl mx-auto">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-stevens-light-gray">
-                  <thead className="bg-stevens-light-gray">
-                    <tr>
-                      {keyDates.headers.map((header) => (
-                        <th key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black border border-stevens-light-gray">
-                          {header}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {keyDates.rows.map((row, i) => (
-                      <tr key={i} className="bg-white">
-                        <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
-                          {row.event}
-                        </td>
-                        <td className="p-4 align-top border border-stevens-light-gray">
-                          <div className="font-bold text-stevens-black">{row.date}</div>
-                          {row.details && (
-                            <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.details}</div>
-                          )}
-                        </td>
-                        {keyDates.headers.length > 2 && (
-                          <>
-                            <td className="p-4 align-top border border-stevens-light-gray">
-                              <div className="font-bold text-stevens-black">{row.priorityDate || ''}</div>
-                              {row.priorityDetails && (
-                                <div className="text-stevens-dark-gray mt-1 text-stevens-sm">{row.priorityDetails}</div>
-                              )}
-                            </td>
-                            <td className="p-4 align-top border border-stevens-light-gray">
-                              <div className="font-bold text-stevens-black">{row.finalDate || ''}</div>
-                            </td>
-                            <td className="p-4 align-top border border-stevens-light-gray">
-                              <div className="font-bold text-stevens-black">{row.startDate || ''}</div>
-                            </td>
-                          </>
-                        )}
+        {keyDates &&
+          (!(admissions?.variant === "combinedWithTuition") ||
+            admissions?.variant === "certificateWithDeadlines") && (
+            <Section
+              id="deadlines"
+              title="Key Dates & Deadlines"
+              bgClassName="bg-stevens-light-gray"
+              el="div"
+              refProp={(el) => (sectionRefs.current["deadlines"] = el)}
+            >
+              <div className="text-center mb-stevens-xl">
+                <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
+                  Plan your application for the upcoming Spring 2026 term.
+                </p>
+              </div>
+
+              <Card className="shadow-xl border-0 overflow-hidden max-w-7xl mx-auto">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse border border-stevens-light-gray">
+                    <thead className="bg-stevens-light-gray">
+                      <tr>
+                        {keyDates.headers.map((header) => (
+                          <th
+                            key={header}
+                            className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black border border-stevens-light-gray"
+                          >
+                            {header}
+                          </th>
+                        ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Card>
-            {keyDates.footnote && <p className="text-center text-sm text-stevens-dark-gray mt-4 italic">{keyDates.footnote}</p>}
-          </Section>
-        )}
-        
-        {tuition && !(admissions?.variant === 'combinedWithTuition' || admissions?.variant === 'certificateWithDeadlines') && (
-          <Section id="tuition" title="Tuition & Financial Aid" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.tuition = el}>
-            {tuition.cards && tuition.cards.length > 0 && (
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
-                {tuition.cards.map((card, i) => (
-                  <Card key={i} className="shadow-md">
-                    <CardHeader>
-                      <CardTitle className="font-stevens-display text-4xl font-light text-stevens-red">{card.value}</CardTitle>
-                      <p className="font-semibold text-stevens-dark-gray">{card.label}</p>
-                    </CardHeader>
-                  </Card>
-                ))}
-              </div>
-            )}
-            {tuition.description && <div className="text-center prose max-w-3xl mx-auto mt-8" dangerouslySetInnerHTML={{ __html: tuition.description }}/>}
-            {tuition.grants && tuition.grants.length > 0 && (
-              <div className="mt-10">
-                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">Grants & Scholarships</h3>
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  {tuition.grants.map((grant,i) => (
-                    <Card key={i}>
+                    </thead>
+                    <tbody>
+                      {keyDates.rows.map((row, i) => (
+                        <tr key={i} className="bg-white">
+                          <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
+                            {row.event}
+                          </td>
+                          <td className="p-4 align-top border border-stevens-light-gray">
+                            <div className="font-bold text-stevens-black">
+                              {row.date}
+                            </div>
+                            {row.details && (
+                              <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
+                                {row.details}
+                              </div>
+                            )}
+                          </td>
+                          {keyDates.headers.length > 2 && (
+                            <>
+                              <td className="p-4 align-top border border-stevens-light-gray">
+                                <div className="font-bold text-stevens-black">
+                                  {row.priorityDate || ""}
+                                </div>
+                                {row.priorityDetails && (
+                                  <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
+                                    {row.priorityDetails}
+                                  </div>
+                                )}
+                              </td>
+                              <td className="p-4 align-top border border-stevens-light-gray">
+                                <div className="font-bold text-stevens-black">
+                                  {row.finalDate || ""}
+                                </div>
+                              </td>
+                              <td className="p-4 align-top border border-stevens-light-gray">
+                                <div className="font-bold text-stevens-black">
+                                  {row.startDate || ""}
+                                </div>
+                              </td>
+                            </>
+                          )}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+              {keyDates.footnote && (
+                <p className="text-center text-sm text-stevens-dark-gray mt-4 italic">
+                  {keyDates.footnote}
+                </p>
+              )}
+            </Section>
+          )}
+
+        {tuition &&
+          !(
+            admissions?.variant === "combinedWithTuition" ||
+            admissions?.variant === "certificateWithDeadlines"
+          ) && (
+            <Section
+              id="tuition"
+              title="Tuition & Financial Aid"
+              bgClassName="bg-stevens-white"
+              refProp={(el) => (sectionRefs.current.tuition = el)}
+            >
+              {tuition.cards && tuition.cards.length > 0 && (
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-center">
+                  {tuition.cards.map((card, i) => (
+                    <Card key={i} className="shadow-md">
                       <CardHeader>
-                        <CardTitle>{grant.title}</CardTitle>
+                        <CardTitle className="font-stevens-display text-4xl font-light text-stevens-red">
+                          {card.value}
+                        </CardTitle>
+                        <p className="font-semibold text-stevens-dark-gray">
+                          {card.label}
+                        </p>
                       </CardHeader>
-                      <CardContent>
-                        <p>{grant.description}</p>
-                      </CardContent>
                     </Card>
                   ))}
                 </div>
-              </div>
-            )}
-          </Section>
-        )}
+              )}
+              {tuition.description && (
+                <div
+                  className="text-center prose max-w-3xl mx-auto mt-8"
+                  dangerouslySetInnerHTML={{ __html: tuition.description }}
+                />
+              )}
+              {tuition.grants && tuition.grants.length > 0 && (
+                <div className="mt-10">
+                  <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
+                    Grants & Scholarships
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    {tuition.grants.map((grant, i) => (
+                      <Card key={i}>
+                        <CardHeader>
+                          <CardTitle>{grant.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p>{grant.description}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Section>
+          )}
 
         {events && (
-          <Section id="events" title={events.title || "On-Demand Events"} bgClassName="bg-stevens-light-gray" refProp={el => sectionRefs.current.events = el}>
-            {events.description && <p className="text-center text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">{events.description}</p>}
+          <Section
+            id="events"
+            title={events.title || "On-Demand Events"}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current.events = el)}
+          >
+            {events.description && (
+              <p className="text-center text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">
+                {events.description}
+              </p>
+            )}
             {events.items && events.items.length > 0 ? (
               <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
                 {events.items.map((item, i) => (
@@ -1073,10 +1715,14 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                         {item.status || item.date}
                       </div>
                       <div className="flex items-center gap-stevens-xs text-stevens-sm text-stevens-dark-gray mb-stevens-lg">
-                        <Clock className="w-4 h-4"/> {item.length}
+                        <Clock className="w-4 h-4" /> {item.length}
                       </div>
                       <div className="mt-auto">
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Button variant="default">Watch Now</Button>
                         </a>
                       </div>
@@ -1084,46 +1730,70 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   </Card>
                 ))}
               </div>
-            ) : <p className="text-center text-stevens-dark-gray">{events.fallbackText || "No upcoming events at this time."}</p>}
+            ) : (
+              <p className="text-center text-stevens-dark-gray">
+                {events.fallbackText || "No upcoming events at this time."}
+              </p>
+            )}
           </Section>
         )}
 
         {faqs && faqs.length > 0 && (
-          <Section id="faqs" title="Frequently Asked Questions" bgClassName="bg-stevens-white" refProp={el => sectionRefs.current.faqs = el}>
-            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+          <Section
+            id="faqs"
+            title="Frequently Asked Questions"
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.faqs = el)}
+          >
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full max-w-3xl mx-auto"
+            >
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`}>
-                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                  <AccordionTrigger className="text-left">
+                    {faq.q}
+                  </AccordionTrigger>
                   <AccordionContent>{faq.a}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </Section>
         )}
-        
+
         {accreditation && (
-          <Section id="accreditation" container={false} el="div" paddingClassName="pt-stevens-section-sm lg:pt-stevens-section" refProp={el => sectionRefs.current['accreditation'] = el}>
+          <Section
+            id="accreditation"
+            container={false}
+            el="div"
+            paddingClassName="pt-stevens-section-sm lg:pt-stevens-section"
+            refProp={(el) => (sectionRefs.current["accreditation"] = el)}
+          >
             <div className="relative bg-stevens-dark-gray text-stevens-white overflow-hidden">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <img 
-                  src="/assets/images/shared/accreditation.webp" 
-                  alt="" 
+                <img
+                  src="/assets/images/shared/accreditation.webp"
+                  alt=""
                   className="w-full h-full object-cover opacity-30"
                   aria-hidden="true"
                 />
                 <div className="absolute inset-0 bg-stevens-dark-gray/80"></div>
               </div>
-              
+
               {/* Content */}
               <div className="relative max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center pt-stevens-section-sm lg:pt-stevens-section pb-[60px] ">
                 <h2 className="font-stevens-display uppercase text-stevens-3xl stevens-md:text-stevens-4xl font-light mb-stevens-lg text-stevens-white tracking-wide">
                   Accreditation Statement
                 </h2>
-                <div 
+                <div
                   className="text-stevens-lg text-stevens-white/90 leading-relaxed"
-                  dangerouslySetInnerHTML={{ 
-                    __html: typeof accreditation === 'string' ? accreditation : accreditation.description || accreditation.text 
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      typeof accreditation === "string"
+                        ? accreditation
+                        : accreditation.description || accreditation.text,
                   }}
                 />
               </div>

@@ -857,9 +857,9 @@ const CorporatePartners = () => {
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
                       <Link to="/admissions/#explore-programs">
                         <Button variant="default" className="gap-2">
-                          <GraduationCap className="w-5 h-5" />
-                          Explore Our Programs
-                          <ArrowRight className="w-4 h-4" />
+                        <GraduationCap className="w-5 h-5" />
+                        Explore Our Programs
+                        <ArrowRight className="w-4 h-4" />
                         </Button>
                       </Link>
                       <p className="text-stevens-sm text-stevens-light-gray0 mt-stevens-sm">

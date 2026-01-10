@@ -310,13 +310,13 @@ export default function Events() {
                   className="h-full flex flex-col bg-transparent"
                 >
                   <div className="aspect-video w-full overflow-hidden shadow-sm">
-                    <img
+                    <img 
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover transform group-hover:scale-[1.15] transition-transform duration-500"
-                      loading="lazy"
+                      loading="lazy" 
                     />
-                  </div>
+          </div>
                   <div className="relative mx-6 -mt-8 hover:-mt-12 bg-white p-6 transition-all duration-300 flex flex-col flex-grow z-10 shadow-md group-hover:shadow-xl">
                     <div className="min-h-[180px]">
                       <p className="text-lg text-stevens-red font-bold uppercase tracking-wider mb-2">
@@ -334,11 +334,11 @@ export default function Events() {
                       <Button variant="link" className="pl-0 text-sm">
                         Watch now
                         <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
-                      </Button>
+                    </Button>
                     </div>
                   </div>
-                </a>
-              </div>
+                  </a>
+                </div>
             ))}
           </div>
         </div>
