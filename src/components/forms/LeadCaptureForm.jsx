@@ -172,7 +172,7 @@ export default function LeadCaptureForm({
               {/* Loading state */}
               <div className="flex items-center justify-center py-12">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-black mx-auto mb-stevens-md"></div>
                   <p className="text-stevens-dark-gray font-stevens-medium">Loading Form...</p>
                   <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                 </div>

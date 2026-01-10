@@ -125,7 +125,7 @@ export default function ASAPPage() {
             
             {/* Left Column - Info */}
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                 Begin Your Graduate Journey
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-lg leading-relaxed">
@@ -133,11 +133,11 @@ export default function ASAPPage() {
               </p>
               
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-md">Why Choose ASAP?</h3>
+                <h3 className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray mb-stevens-md">Why Choose ASAP?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                   <li key={index} className="flex items-start gap-stevens-md">
-                      <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-stevens-black mt-0.5 flex-shrink-0" />
                       <span className="text-stevens-dark-gray">{benefit}</span>
                     </li>
                   )}
@@ -149,7 +149,7 @@ export default function ASAPPage() {
             <div className="lg:sticky lg:top-8">
               <Card className="shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden">
                 <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-md">
-                  <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-stevens-bold leading-tight">Submit Your ASAP Application</CardTitle>
+                  <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-light leading-tight">Submit Your ASAP Application</CardTitle>
                   <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below to get started</p>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -230,7 +230,7 @@ export default function ASAPPage() {
 
                         <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                           <div className="text-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-black mx-auto mb-stevens-md"></div>
                             <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
                             <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                           </div>

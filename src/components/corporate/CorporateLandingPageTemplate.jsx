@@ -96,7 +96,7 @@ export default function CorporateLandingPageTemplate({
             <PageHero
                 title={
                     <div className="flex flex-col gap-4">
-                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-red text-white text-2xl font-bold tracking-wide uppercase shadow-md border border-white/20">
+                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-black text-white text-2xl font-light tracking-wide uppercase shadow-md border border-white/20">
                             A Stevens × {partnerName} Partnership
                         </span>
                         <span>{heroTitle}</span>
@@ -118,12 +118,12 @@ export default function CorporateLandingPageTemplate({
                     <div className="lg:col-span-12">
                         <div className="space-y-12">
                             {/* Partner Welcome / Intro */}
-                            <Card className="border-t-4 border-t-stevens-red shadow-lg">
+                            <Card className="border-t-4 border-t-stevens-black shadow-lg">
                                 <CardContent className="p-8">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <Building className="w-8 h-8 text-stevens-red" />
-                                        <h2 className="font-stevens-headers text-3xl font-bold text-stevens-black">
-                                            Stevens <span className="text-stevens-red">×</span> {partnerName}
+                                        <Building className="w-8 h-8 text-stevens-black" />
+                                        <h2 className="font-stevens-display text-3xl font-light uppercase tracking-wide text-stevens-black">
+                                            Stevens <span className="text-stevens-black">×</span> {partnerName}
                                         </h2>
                                     </div>
                                     <p className="text-lg text-stevens-dark-gray leading-relaxed">
@@ -143,8 +143,8 @@ export default function CorporateLandingPageTemplate({
                             {/* Program Details Sections */}
                             {programDetails.map((section, index) => (
                                 <div key={index} className="space-y-4">
-                                    <h3 className="font-stevens-headers text-2xl font-bold text-stevens-black flex items-center gap-2">
-                                        {section.icon || <BookOpen className="w-6 h-6 text-stevens-red" />}
+                                    <h3 className="font-stevens-display text-2xl font-light uppercase tracking-wide text-stevens-black flex items-center gap-2">
+                                        {section.icon || <BookOpen className="w-6 h-6 text-stevens-black" />}
                                         {section.title}
                                     </h3>
                                     <div className="prose max-w-none text-stevens-dark-gray" dangerouslySetInnerHTML={{ __html: section.content }} />
@@ -154,7 +154,7 @@ export default function CorporateLandingPageTemplate({
                                         <ul className="grid gap-3 mt-4">
                                             {section.items.map((item, i) => (
                                                 <li key={i} className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-stevens-light-gray">
-                                                    <Check className="w-5 h-5 text-stevens-green mt-0.5 flex-shrink-0" />
+                                                    <Check className="w-5 h-5 text-stevens-black mt-0.5 flex-shrink-0" />
                                                     <span className="text-stevens-dark-gray">{item}</span>
                                                 </li>
                                             ))}
@@ -167,8 +167,8 @@ export default function CorporateLandingPageTemplate({
                             {pricing && (
                                 <Card className="bg-stevens-light-gray border-stevens-light-gray">
                                     <CardHeader>
-                                        <CardTitle className="flex items-center gap-2">
-                                            <Users className="w-6 h-6 text-stevens-red" />
+                                        <CardTitle className="flex items-center gap-2 font-stevens-display font-light uppercase tracking-wide">
+                                            <Users className="w-6 h-6 text-stevens-black" />
                                             Tuition & Billing
                                         </CardTitle>
                                     </CardHeader>
@@ -177,7 +177,7 @@ export default function CorporateLandingPageTemplate({
                                             {pricing.items.map((item, index) => (
                                                 <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
                                                     <p className="text-sm text-stevens-gray uppercase tracking-wide font-semibold">{item.label}</p>
-                                                    <p className="text-2xl font-bold text-stevens-red mt-1">{item.value}</p>
+                                                    <p className="text-2xl font-light text-stevens-black mt-1">{item.value}</p>
                                                     {item.note && <p className="text-xs text-stevens-dark-gray mt-2 italic">{item.note}</p>}
                                                 </div>
                                             ))}
@@ -195,7 +195,7 @@ export default function CorporateLandingPageTemplate({
                             {showBodyAcceleratedApp && (
                                 <div id="apply-now" className="scroll-mt-24">
                                     <div className="text-center mb-8">
-                                        <h3 className="font-stevens-headers text-3xl font-bold text-stevens-red mb-2">Ready to Apply?</h3>
+                                        <h3 className="font-stevens-display text-3xl font-light uppercase tracking-wide text-stevens-black mb-2">Ready to Apply?</h3>
                                         <p className="text-stevens-dark-gray text-lg">
                                             Complete the accelerated application form below to join the cohort.
                                         </p>

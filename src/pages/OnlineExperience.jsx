@@ -80,7 +80,7 @@ export default function OnlineExperience() {
                     className="w-32 h-32 stevens-md:w-40 stevens-md:h-40 rounded-full object-cover border-4 border-white shadow-stevens-xl"
                   />
                   <div className="text-center stevens-md:text-left">
-                    <h2 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold mb-stevens-xs">
+                    <h2 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light mb-stevens-xs">
                       Arshad Saiyed
             </h2>
                     <p className="text-stevens-base stevens-md:text-stevens-lg font-stevens-medium text-white/90">
@@ -137,7 +137,7 @@ export default function OnlineExperience() {
       <div className="py-20 bg-stevens-light-gray">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-16">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray">What to Expect as an Online Student</h2>
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray">What to Expect as an Online Student</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {features.map((feature, index) => {
@@ -147,9 +147,9 @@ export default function OnlineExperience() {
                   <CardContent className="p-stevens-lg pt-stevens-lg">
                     <div className="flex items-center gap-stevens-md">
                       <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md">
-                        <Icon className="w-8 h-8 text-stevens-red" />
+                        <Icon className="w-8 h-8 text-stevens-black" />
                       </div>
-                      <h3 className="font-stevens-display text-stevens-2xl font-stevens-semibold">{feature.title}</h3>
+                      <h3 className="font-stevens-display text-stevens-2xl font-light">{feature.title}</h3>
                     </div>
                     <p className="mt-stevens-md text-stevens-dark-gray leading-relaxed">{feature.description}</p>
                   </CardContent>
@@ -163,7 +163,7 @@ export default function OnlineExperience() {
        <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
               <img src="/assets/images/online-experience/online-experience-1.png" alt="Students collaborating online" className="rounded-stevens-md shadow-xl mb-8" />
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Ready to Learn More?</h2>
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">Ready to Learn More?</h2>
           <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-lg">
             Connect with our admissions team to get your questions answered and find out if an online program at Stevens is the right fit for you.
           </p>

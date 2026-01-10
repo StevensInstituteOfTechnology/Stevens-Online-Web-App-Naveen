@@ -104,7 +104,7 @@ export default function Admissions() {
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-xl text-center">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
               Admissions Overview
             </h2>
             <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg">
@@ -123,7 +123,7 @@ export default function Admissions() {
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
               Key Dates & Deadlines
             </h2>
             <p className="text-stevens-lg text-stevens-dark-gray">
@@ -137,7 +137,7 @@ export default function Admissions() {
                 <TableHeader>
                   <TableRow>
                     {keyDates.headers.map((header, index) => (
-                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-gray border border-stevens-light-gray">
+                      <TableHead key={header} className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black border border-stevens-light-gray">
                         {header}
                       </TableHead>
                     ))}
@@ -186,7 +186,7 @@ export default function Admissions() {
       <div id="explore-programs" className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
               Explore Our Graduate Programs
             </h2>
             <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-4xl mx-auto">
@@ -200,7 +200,7 @@ export default function Admissions() {
           <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
             <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
               <div>
-                <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-dark-gray">
+                <h3 className="font-stevens-display text-stevens-2xl font-light text-stevens-dark-gray">
                   Wondering Which Application Is Right for You?
                 </h3>
                 <p className="text-stevens-lg text-stevens-dark-gray mt-stevens-xs">
@@ -209,7 +209,7 @@ export default function Admissions() {
               </div>
               <div className="stevens-md:text-right">
                 <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}>
-                  <Button variant="outline-dark" className="text-stevens-red px-stevens-xl py-stevens-md rounded-stevens-md">
+                  <Button variant="outline-dark" className="px-stevens-xl py-stevens-md">
                     Get In Touch
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -224,7 +224,7 @@ export default function Admissions() {
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
               Events
             </h2>
           </div>
@@ -233,7 +233,7 @@ export default function Admissions() {
             {events.map((event, index) => (
               <Card key={index} className="h-full border-stevens-light-gray">
                 <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
-                  <h5 className="font-stevens-semibold text-stevens-dark-gray uppercase font-bold mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">
+                  <h5 className="font-stevens-display text-stevens-dark-gray font-light mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">
                     {event.title}
                   </h5>
                   <div className="text-stevens-sm text-stevens-dark-gray mb-stevens-md">
@@ -244,7 +244,7 @@ export default function Admissions() {
                   </div>
                   <div className="mt-auto">
                     <a href={event.url} target="_blank" rel="noopener noreferrer">
-                      <Button className="btn-stevens-outline text-stevens-white">Watch Now</Button>
+                      <Button variant="default">Watch Now</Button>
                     </a>
                   </div>
                 </CardContent>
@@ -254,7 +254,7 @@ export default function Admissions() {
           
           <div className="text-center mt-stevens-xl">
             <Link to="/events/">
-              <Button variant="outline-dark" className="btn-outline-maroon">
+              <Button variant="outline-dark">
                 View All Events
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -267,7 +267,7 @@ export default function Admissions() {
       <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-2xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
               Admissions FAQ
             </h2>
           </div>
@@ -295,7 +295,7 @@ export default function Admissions() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-stevens-xl items-center">
               <div className="text-stevens-white">
-                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md text-stevens-white">
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md text-stevens-white">
                   Request Information
                 </h2>
                 <p className="text-stevens-lg text-stevens-white mb-stevens-lg">

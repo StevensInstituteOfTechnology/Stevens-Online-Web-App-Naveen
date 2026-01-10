@@ -103,7 +103,7 @@ const EmploymentGrowthChart = () => {
   return (
     <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
       <div className="mb-stevens-md">
-        <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-xs">
+        <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
           Projected Employment Growth (2024–2034)
         </h3>
        
@@ -488,7 +488,7 @@ const CorporatePartners = () => {
                 viewport={{ once: true }}
                 className="text-left"
               >
-                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-bold text-stevens-red mb-stevens-lg leading-tight">
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
                 Education That Moves at the Speed of Industry
               </h2>
                 <p className="text-stevens-base md:text-stevens-lg text-stevens-dark-gray leading-relaxed">
@@ -548,7 +548,7 @@ const CorporatePartners = () => {
                       viewport={{ once: true }}
                       className="text-center px-stevens-md"
                     >
-                      <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
+                      <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
                           {benefit.title}
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
@@ -607,7 +607,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.5, delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
+                      <h3 className="font-stevens-display text-stevens-xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
                         Built for Employers
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
@@ -624,7 +624,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.5, delay: 0.3 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
+                      <h3 className="font-stevens-display text-stevens-xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
                         Integrated Talent Solutions
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
@@ -641,7 +641,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.5, delay: 0.4 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
+                      <h3 className="font-stevens-display text-stevens-xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
                         Co-Developed Education
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
@@ -658,7 +658,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.5, delay: 0.5 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="font-stevens-display text-stevens-xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
+                      <h3 className="font-stevens-display text-stevens-xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors duration-300">
                         Agile by Design
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
@@ -698,7 +698,7 @@ const CorporatePartners = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-stevens-bold mb-4 sm:mb-stevens-md md:mb-stevens-lg tracking-tight">
+              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-4 sm:mb-stevens-md md:mb-stevens-lg">
                 A University Built for the Future of Work
               </h2>
               <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed px-2 sm:px-0">
@@ -750,7 +750,7 @@ const CorporatePartners = () => {
         <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Trusted by leading organizations
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
@@ -767,7 +767,7 @@ const CorporatePartners = () => {
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Co-Design Workforce Education That Fits Your Organization
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
@@ -790,11 +790,11 @@ const CorporatePartners = () => {
                   >
                     <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg h-full shadow-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal transform group-hover:-translate-y-1">
                       <div className="flex items-start space-x-stevens-md">
-                        <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-light-gray transition-colors">
-                          <Icon className="w-6 h-6 text-stevens-red" />
+                        <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
+                          <Icon className="w-6 h-6 text-stevens-black group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
+                          <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
                             {offering.title}
                           </h3>
                           <p className="text-stevens-dark-gray">
@@ -814,7 +814,7 @@ const CorporatePartners = () => {
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Build Expertise in High-Demand Fields
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
@@ -833,7 +833,7 @@ const CorporatePartners = () => {
                 <div className="bg-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
                   <div className="mb-stevens-md">
                     
-                    <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+                    <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                       Prepare for Careers Growing Faster Than Average
                     </h3>
                         </div>
@@ -855,13 +855,12 @@ const CorporatePartners = () => {
                     
                     {/* CTA Button to Explore Programs */}
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
-                      <Link 
-                        to="/admissions/#explore-programs"
-                        className="inline-flex items-center gap-2 bg-stevens-red hover:bg-stevens-dark-gray text-white font-stevens-semibold px-stevens-lg py-stevens-md rounded-stevens-md transition-all duration-stevens-normal shadow-stevens-md hover:shadow-stevens-lg"
-                      >
-                        <GraduationCap className="w-5 h-5" />
-                        Explore Our Programs
-                        <ArrowRight className="w-4 h-4" />
+                      <Link to="/admissions/#explore-programs">
+                        <Button variant="default" className="gap-2">
+                          <GraduationCap className="w-5 h-5" />
+                          Explore Our Programs
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
                       </Link>
                       <p className="text-stevens-sm text-stevens-light-gray0 mt-stevens-sm">
                         Browse masters degrees and certificates available for your workforce
@@ -894,7 +893,7 @@ const CorporatePartners = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">
                 Ready to Build the Future of Work Together?
               </h2>
               <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto opacity-90">
@@ -904,8 +903,8 @@ const CorporatePartners = () => {
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
                   size="lg"
-                  variant="default"
-                  className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray w-full sm:w-auto min-w-[280px]"
+                  variant="outline-white"
+                  className="w-full sm:w-auto min-w-[280px]"
                   onClick={() => {
                     handleCTAClick('request_info_footer');
                     setShowContactModal(true);
@@ -915,8 +914,8 @@ const CorporatePartners = () => {
                 </Button>
                 <Button
                   size="lg"
-                  variant="default"
-                  className="bg-stevens-white text-stevens-red hover:bg-stevens-light-gray w-full sm:w-auto min-w-[280px]"
+                  variant="outline-white"
+                  className="w-full sm:w-auto min-w-[280px]"
                   onClick={() => {
                     handleCTAClick('schedule_consultation_footer');
                     setShowContactOptionsModal(true);
@@ -942,7 +941,7 @@ const CorporatePartners = () => {
             >
                 {/* Header */}
                 <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
-                  <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
+                  <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-light uppercase tracking-wide text-center pr-6 sm:pr-8 leading-tight">
                     Let's Discuss Your Workforce Development Needs
                   </h2>
                   <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
@@ -992,7 +991,7 @@ const CorporatePartners = () => {
             {/* Header with gradient background */}
             <div className="bg-stevens-gray text-white px-6 py-5 rounded-t-lg">
               <DialogHeader className="space-y-2">
-                <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-white">
+                <DialogTitle className="text-xl sm:text-2xl font-light uppercase tracking-wide text-center text-white">
                   Get in Touch
                 </DialogTitle>
               
@@ -1010,7 +1009,7 @@ const CorporatePartners = () => {
                   window.open(BOOKING_URLS.SCHEDULE_CALL, '_blank', 'noopener,noreferrer');
                   setShowContactOptionsModal(false);
                 }}
-                className="w-full p-5 rounded-xl bg-stevens-red text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
+                className="w-full p-5 rounded-xl bg-stevens-black text-white hover:shadow-lg hover:bg-stevens-dark-gray transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
               >
                 
                 <div className="flex items-center gap-4">
@@ -1018,7 +1017,7 @@ const CorporatePartners = () => {
                     <Calendar className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1 text-left">
-                    <h3 className="font-bold text-lg mb-1">
+                    <h3 className="font-light uppercase tracking-wide text-lg mb-1">
                       Schedule a Call
                     </h3>
                     <p className="text-sm text-white/80">

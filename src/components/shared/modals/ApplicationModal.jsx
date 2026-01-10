@@ -96,7 +96,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
         >
           {/* Header */}
           <div className="bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
-            <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center leading-tight">
+            <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-light uppercase tracking-wide text-center leading-tight">
               Select the application option that works best for you
             </h2>
           </div>
@@ -106,21 +106,21 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
             <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
 
           {/* ASAP Application - Featured */}
-          <div className="bg-stevens-light-gray border-2 border-stevens-red rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
+          <div className="bg-stevens-light-gray border-2 border-stevens-black rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
             {/* Recommended Badge */}
-            <div className="absolute top-0 right-0 bg-stevens-red text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-stevens-bold uppercase tracking-wide">
+            <div className="absolute top-0 right-0 bg-stevens-black text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-light uppercase tracking-wide">
               Recommended
             </div>
 
             <div className="flex items-start gap-stevens-sm mb-stevens-sm mt-stevens-sm">
               <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md">
-                <Zap className="w-5 h-5 text-stevens-red" />
+                <Zap className="w-5 h-5 text-stevens-black" />
               </div>
               <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-xs">
+                <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
                   ASAP Application
                 </h3>
-                <p className="text-stevens-xs text-stevens-red font-stevens-semibold">
+                <p className="text-stevens-xs text-stevens-black font-semibold">
                   Fast-track your admission
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
               <ul className="space-y-stevens-xs">
                 {asapBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-stevens-xs text-stevens-xs">
-                    <Check className="w-3 h-3 text-stevens-red mt-0.5 flex-shrink-0" />
+                    <Check className="w-3 h-3 text-stevens-black mt-0.5 flex-shrink-0" />
                     <span className="text-stevens-dark-gray">{benefit}</span>
                   </li>
                 ))}
@@ -171,7 +171,7 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
                 <ExternalLink className="w-5 h-5 text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal" />
               </div>
               <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-xs">
+                <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
                   Standard Application
                 </h3>
                 <p className="text-stevens-xs text-stevens-dark-gray">

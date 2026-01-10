@@ -98,7 +98,7 @@ const EmployerFaqSection = ({
 }) => (
   <section className="bg-stevens-white py-stevens-section-sm lg:py-stevens-section">
     <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-      <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-bold text-stevens-dark-gray mb-stevens-lg text-center">
+      <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg text-center">
         {heading}
       </h2>
       <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">

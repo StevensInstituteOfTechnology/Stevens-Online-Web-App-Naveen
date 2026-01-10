@@ -983,7 +983,7 @@ export default function Home() {
                         const carousel =
                           document.getElementById("program-carousel");
                         if (carousel)
-                          carousel.scrollBy({ left: -400, behavior: "smooth" });
+                          carousel.scrollBy({ left: -1000, behavior: "smooth" });
                       }}
                       isActive={programNavActiveButton === "prev"}
                       variant="dark"
@@ -995,7 +995,7 @@ export default function Home() {
                         const carousel =
                           document.getElementById("program-carousel");
                         if (carousel)
-                          carousel.scrollBy({ left: 400, behavior: "smooth" });
+                          carousel.scrollBy({ left: 1000, behavior: "smooth" });
                       }}
                       isActive={programNavActiveButton === "next"}
                       variant="dark"

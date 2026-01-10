@@ -47,7 +47,7 @@ export default function Tuition() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-16">
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold mb-stevens-md">Financing Your Degree</h2>
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">Financing Your Degree</h2>
               <p className="text-stevens-lg text-stevens-dark-gray">
                 Students have various options to fund their tuition. We have included some of the most frequently used funding options below, but encourage you to consult with the Office of Financial Aid or a financial advisor when determining the best way to fund your tuition.
               </p>
@@ -56,7 +56,7 @@ export default function Tuition() {
             {/* Tuition Structure Update */}
             <Card className="bg-stevens-white">
               <CardHeader>
-                <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-red">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
+                <CardTitle className="font-stevens-display text-stevens-2xl text-stevens-dark-gray font-light">Tuition Structure Update: For Online M.S. in Computer Science and Online MEM Programs</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>Effective Spring & Summer 2026, the Online M.S. in Computer Science and Online Master of Engineering in Engineering Management programs will incorporate asynchronous course delivery for the initial phase of their curriculum. This change will impact the tuition rates for some courses.</p>
@@ -80,26 +80,26 @@ export default function Tuition() {
 
             {/* Grants */}
             <div className="text-center">
-              <h3 className="font-stevens-headers text-2xl font-bold mb-2">Tuition Rate Support</h3>
+              <h3 className="font-stevens-display text-2xl font-light uppercase tracking-wide mb-2">Tuition Rate Support</h3>
               <p className="text-stevens-dark-gray mb-6 max-w-2xl mx-auto">To support this transition, Stevens provides two grants that apply a reduced per-credit tuition rate to the first two asynchronous courses.</p>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="text-center shadow-lg">
                   <CardHeader>
-                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Aspire Grant</CardTitle>
+                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-black" /> Aspire Grant</CardTitle>
                     <p className="text-sm text-stevens-gray">(for standard applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-light text-stevens-black">$3,120</p>
                     <p className="text-stevens-dark-gray">in tuition support</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center shadow-lg">
                   <CardHeader>
-                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-red" /> Pathway Grant</CardTitle>
+                    <CardTitle className="flex items-center justify-center gap-3"><Award className="text-stevens-black" /> Pathway Grant</CardTitle>
                     <p className="text-sm text-stevens-gray">(for ASAP applicants)</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-stevens-headers text-4xl font-bold text-stevens-red">$3,120</p>
+                    <p className="font-stevens-headers text-4xl font-light text-stevens-black">$3,120</p>
                     <p className="text-stevens-dark-gray">in tuition support</p>
                   </CardContent>
                 </Card>
@@ -108,7 +108,7 @@ export default function Tuition() {
 
             {/* Tuition and Fees Tabs */}
             <div>
-              <h2 className="font-stevens-headers text-3xl font-bold mb-6 text-center">Tuition and Fees</h2>
+              <h2 className="font-stevens-display text-3xl font-light uppercase tracking-wide mb-6 text-center">Tuition and Fees</h2>
               <Tabs defaultValue="mscs" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="mscs">Online MSCS</TabsTrigger>
@@ -161,7 +161,7 @@ export default function Tuition() {
 
             {/* Average Cost Table */}
             <div>
-              <h2 className="font-stevens-headers text-3xl font-bold mb-6 text-center">Average Cost of Stevens Online Programs</h2>
+              <h2 className="font-stevens-display text-3xl font-light uppercase tracking-wide mb-6 text-center">Average Cost of Stevens Online Programs</h2>
               <Card>
                 <Table>
                   <TableHeader>
@@ -190,12 +190,12 @@ export default function Tuition() {
 
             {/* Financial Aid Section */}
             <div>
-              <h2 className="font-stevens-headers text-3xl font-bold mb-4">Financial Aid</h2>
+              <h2 className="font-stevens-display text-3xl font-light uppercase tracking-wide mb-4">Financial Aid</h2>
               <p className="mb-4 text-stevens-dark-gray">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
-              <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
+              <p className="text-sm p-4 bg-stevens-light-gray border-l-4 border-stevens-black text-stevens-dark-gray">
                 Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
               </p>
-              <h3 className="font-stevens-headers text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
+              <h3 className="font-stevens-display text-2xl font-light mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <FinancialAidOption title="Dean’s Merit Scholar Program">
                   <p>Students in the Online MSCS and MEM programs may be eligible for up to $10,000 in scholarship support, while those in the Online MBA program may qualify for up to $25,000 - both based on academic merit. Contact your enrollment advisor to learn more about eligibility.</p>
@@ -219,7 +219,7 @@ export default function Tuition() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-stevens-headers text-2xl">Alumni Benefits</CardTitle>
+                  <CardTitle className="font-stevens-display text-2xl font-light">Alumni Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className='mb-4'>Stevens alumni can take advantage of a 15% discount when they enroll in a Stevens Graduate program. Visit the <a href="https://www.stevens.edu/admission-aid/graduate-admissions" target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline">Graduate Admissions page</a> for more information.</p>
@@ -227,7 +227,7 @@ export default function Tuition() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-stevens-headers text-2xl">Veterans Services</CardTitle>
+                  <CardTitle className="font-stevens-display text-2xl font-light">Veterans Services</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4">With a strong commitment to our nation’s veterans, Stevens Institute of Technology is proud to participate in the Yellow Ribbon program and offer a suite of resources and support to active duty, veteran and dependent military communities.</p>
@@ -245,16 +245,16 @@ export default function Tuition() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-8">
-              <Card className="border-2 border-stevens-red">
+              <Card className="border-2 border-stevens-black">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3"><FileText className="w-6 h-6" /> FAFSA Information</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-stevens-dark-gray mb-2">Complete the FAFSA to apply for federal aid.</p>
                   <p className="text-sm">Stevens Institute of Technology College Code:</p>
-                  <p className="font-stevens-headers text-4xl font-bold text-stevens-red my-2">002639</p>
+                  <p className="font-stevens-headers text-4xl font-light text-stevens-black my-2">002639</p>
                   <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button className="w-full btn-secondary mt-2">
+                    <Button variant="default" className="w-full mt-2">
                       Go to FAFSA Website <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </a>

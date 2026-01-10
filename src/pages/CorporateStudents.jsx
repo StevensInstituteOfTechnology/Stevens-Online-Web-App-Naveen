@@ -429,7 +429,7 @@ const CorporateStudents = () => {
           </div>
           <Button
             size="sm"
-            className="bg-stevens-red hover:bg-stevens-dark-gray text-white font-semibold"
+            variant="default"
             onClick={() => scrollToSection("#programs-section")}
           >
             Get Started
@@ -476,13 +476,13 @@ const CorporateStudents = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mb-stevens-xl">
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-red mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
                   50+
                 </p>
                 <p className="text-sm text-white/70">Corporate Partners</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-red mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
                   $5,250
                 </p>
                 <p className="text-sm text-white/70">
@@ -490,13 +490,13 @@ const CorporateStudents = () => {
                 </p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-red mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
                   100%
                 </p>
                 <p className="text-sm text-white/70">Online & Flexible</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-red mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
                   Top 20
                 </p>
                 <p className="text-sm text-white/70">Nationally Ranked</p>
@@ -516,7 +516,7 @@ const CorporateStudents = () => {
                   key={index}
                   className="flex items-center gap-3 text-white/90"
                 >
-                  <CheckCircle className="w-5 h-5 text-stevens-red flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-stevens-black flex-shrink-0" />
                   <span className="text-sm">{item.text}</span>
                 </div>
               ))}
@@ -542,11 +542,11 @@ const CorporateStudents = () => {
               {/* Deadline Card */}
               <div className="absolute bottom-6 left-6 right-6 bg-white text-stevens-dark-gray p-5 rounded-lg shadow-xl">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-stevens-red flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-stevens-black flex items-center justify-center flex-shrink-0">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-stevens-red">
+                    <p className="font-light uppercase tracking-wide text-lg text-stevens-black">
                       Spring 2026 Deadlines
                     </p>
                     <p className="text-sm text-stevens-dark-gray">
@@ -576,10 +576,10 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-red border-none">
+              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none">
                 Step 1 of 2
               </Badge>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray">
@@ -597,8 +597,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
-                    <BarChart3 className="w-7 h-7 text-stevens-dark-gray group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
+                    <BarChart3 className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -628,8 +628,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
-                    <Wrench className="w-7 h-7 text-stevens-dark-gray group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
+                    <Wrench className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -671,10 +671,10 @@ const CorporateStudents = () => {
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 Back
               </button>
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-red border-none ml-4">
+              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none ml-4">
                 Step 2 of 2
               </Badge>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray">
@@ -692,8 +692,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
-                    <GraduationCap className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
+                    <GraduationCap className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -718,8 +718,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
-                    <Award className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
+                    <Award className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -761,11 +761,11 @@ const CorporateStudents = () => {
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 Back
               </button>
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-red border-none ml-4">
+              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none ml-4">
                 <CheckCircle className="w-3 h-3 mr-1" />
                 Personalized Recommendations
               </Badge>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray">
@@ -845,7 +845,8 @@ const CorporateStudents = () => {
                     )}
 
                     <Button
-                      className="w-full bg-stevens-red hover:bg-stevens-dark-gray text-stevens-white"
+                      variant="default"
+                      className="w-full"
                       onClick={() => handleProgramSelect(program)}
                     >
                       <Calculator className="w-4 h-4 mr-2" />
@@ -916,7 +917,7 @@ const CorporateStudents = () => {
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Exclusive Benefits for Partner Employees
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-5xl mx-auto">
@@ -936,12 +937,12 @@ const CorporateStudents = () => {
                     className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-light-gray flex flex-col"
                   >
                     <div className="mb-stevens-md flex justify-center">
-                      <div className="w-16 h-16 bg-stevens-red rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-dark-gray group-hover:scale-105">
+                      <div className="w-16 h-16 bg-stevens-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-dark-gray group-hover:scale-105">
                         <Icon className="w-8 h-8 text-stevens-white" />
                       </div>
                     </div>
 
-                    <h3 className="font-stevens-display text-stevens-base lg:text-stevens-lg font-stevens-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors flex items-center justify-center text-center">
+                    <h3 className="font-stevens-display text-stevens-base lg:text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray group-hover:text-stevens-red transition-colors flex items-center justify-center text-center">
                       {benefit.title}
                     </h3>
                   </div>
@@ -959,7 +960,7 @@ const CorporateStudents = () => {
             >
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-stevens-red rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-stevens-black rounded-full flex items-center justify-center">
                     <Calculator className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-left">
@@ -1012,7 +1013,7 @@ const CorporateStudents = () => {
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Your Education, Made More Affordable
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-5xl mx-auto">
@@ -1042,7 +1043,7 @@ const CorporateStudents = () => {
                           <CardContent className="p-stevens-md">
                             <div className="flex items-start justify-between">
                               <div>
-                                <Badge className="mt-2 bg-stevens-red">
+                                <Badge className="mt-2 bg-stevens-black text-white">
                                   {selectedProgram.degree}
                                 </Badge>
                                 <p className="font-semibold text-stevens-dark-gray">
@@ -1103,7 +1104,7 @@ const CorporateStudents = () => {
                                 htmlFor="workforce-partner"
                                 className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
                               >
-                                <Building className="w-4 h-4 mr-1.5 text-stevens-red" />
+                                <Building className="w-4 h-4 mr-1.5 text-stevens-black" />
                                 Is your employer a Stevens workforce development
                                 partner?
                               </label>
@@ -1355,7 +1356,7 @@ const CorporateStudents = () => {
                         <Button
                           size="lg"
                           variant="outline-dark"
-                          className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white py-4"
+                          className="w-full py-4"
                           onClick={() => {
                             handleCTAClick("request_info_calculator_mobile");
                             setShowContactModal(true);
@@ -1691,7 +1692,7 @@ const CorporateStudents = () => {
                           <Button
                             size="lg"
                             variant="outline-dark"
-                            className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white py-4"
+                            className="w-full py-4"
                             onClick={() => {
                               handleCTAClick("request_info_calculator");
                               setShowContactModal(true);
@@ -1765,7 +1766,7 @@ const CorporateStudents = () => {
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-red mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 How to Apply for Admission & Receive Your Benefits
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
@@ -1925,7 +1926,8 @@ const CorporateStudents = () => {
                 <Button
                   size="lg"
                   variant="default"
-                  className="group bg-stevens-white text-stevens-red hover:bg-stevens-light-gray w-full sm:w-auto min-w-[280px] font-semibold py-4 text-base"
+                  className="group w-full sm:w-auto min-w-[280px] py-4 text-base"
+                  variant="outline-white"
                   onClick={() => {
                     handleCTAClick("request_info_footer");
                     setShowContactModal(true);
@@ -1938,7 +1940,8 @@ const CorporateStudents = () => {
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="bg-white/10 border-2 border-white text-white hover:bg-white hover:text-stevens-red w-full sm:w-auto min-w-[280px] py-4"
+                  className="w-full sm:w-auto min-w-[280px] py-4"
+                  variant="outline-white"
                   onClick={() => {
                     handleCTAClick("schedule_consultation_footer");
                     setShowContactOptionsModal(true);
@@ -2078,7 +2081,7 @@ const CorporateStudents = () => {
                   );
                   setShowContactOptionsModal(false);
                 }}
-                className="w-full p-5 rounded-xl bg-stevens-red text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
+                className="w-full p-5 rounded-xl bg-stevens-black text-white hover:shadow-lg hover:bg-stevens-dark-gray transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">

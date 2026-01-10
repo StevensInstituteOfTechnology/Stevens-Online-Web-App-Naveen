@@ -153,7 +153,7 @@ export default function AcceleratedApplicationPage() {
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg text-center">
           <div className="flex items-center justify-center gap-stevens-sm mb-stevens-md">
             <Zap className="w-8 h-8" />
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide">
               Complete in Minutes, Not Hours
             </h2>
           </div>
@@ -164,17 +164,17 @@ export default function AcceleratedApplicationPage() {
           <div className="grid md:grid-cols-3 gap-stevens-lg max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
               <Clock className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">5-10 Minutes</h3>
+              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">5-10 Minutes</h3>
               <p className="text-stevens-sm opacity-90">Quick application process</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
               <FileCheck className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">Unofficial Transcripts</h3>
+              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">Unofficial Transcripts</h3>
               <p className="text-stevens-sm opacity-90">Get started immediately</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
               <Zap className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-stevens-bold text-stevens-lg mb-stevens-xs">Fast Review</h3>
+              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">Fast Review</h3>
               <p className="text-stevens-sm opacity-90">Hear back quickly</p>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function AcceleratedApplicationPage() {
       <div className="py-stevens-section bg-white">
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
               Eligible Programs
             </h2>
             <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
@@ -200,8 +200,8 @@ export default function AcceleratedApplicationPage() {
                 to={program.path}
                 className="group bg-stevens-light-gray border-2 border-stevens-light-gray rounded-stevens-lg p-stevens-lg hover:border-stevens-red hover:shadow-stevens-lg transition-all duration-200"
               >
-                <program.icon className="w-12 h-12 text-stevens-red mb-stevens-md mx-auto" />
-                <h3 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-xs text-center group-hover:text-stevens-red transition-colors">
+                <program.icon className="w-12 h-12 text-stevens-black mb-stevens-md mx-auto" />
+                <h3 className="font-semibold text-stevens-lg text-stevens-dark-gray mb-stevens-xs text-center group-hover:text-stevens-red transition-colors">
                   {program.shortName}
                 </h3>
                 <p className="text-stevens-sm text-stevens-dark-gray text-center">
@@ -211,7 +211,7 @@ export default function AcceleratedApplicationPage() {
             ))}
           </div>
 
-          <div className="bg-stevens-light-gray border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm">
+          <div className="bg-stevens-light-gray border-l-4 border-stevens-black p-stevens-lg rounded-stevens-sm">
             <p className="text-stevens-base text-stevens-dark-gray">
               <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
             </p>
@@ -225,7 +225,7 @@ export default function AcceleratedApplicationPage() {
             
             {/* Left Column - Info */}
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                 Your Path to Graduate Success
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-lg leading-relaxed">
@@ -233,18 +233,18 @@ export default function AcceleratedApplicationPage() {
               </p>
               
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-sm">What Makes It Different?</h3>
+                <h3 className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray mb-stevens-sm">What Makes It Different?</h3>
                 <p className="text-stevens-base text-stevens-dark-gray mb-stevens-md">
                   We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated App removes traditional barriers while maintaining Stevens' academic standards.
                 </p>
               </div>
 
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-dark-gray mb-stevens-md">Why Choose the Accelerated App?</h3>
+                <h3 className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray mb-stevens-md">Why Choose the Accelerated App?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                     <li key={index} className="flex items-start gap-stevens-md">
-                      <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-stevens-black mt-0.5 flex-shrink-0" />
                       <span className="text-stevens-dark-gray">{benefit}</span>
                     </li>
                   )}
@@ -262,7 +262,7 @@ export default function AcceleratedApplicationPage() {
             <div className="lg:sticky lg:top-8">
               <Card className="shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden">
                 <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-md">
-                  <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-stevens-bold leading-tight">Submit Your Application</CardTitle>
+                  <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-light leading-tight">Submit Your Application</CardTitle>
                   <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below to get started</p>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -473,7 +473,7 @@ export default function AcceleratedApplicationPage() {
                         className="min-h-[600px] w-full">
                         <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                           <div className="text-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-black mx-auto mb-stevens-md"></div>
                             <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
                             <p className="text-stevens-xs text-stevens-gray mt-stevens-sm">This may take a moment</p>
                           </div>

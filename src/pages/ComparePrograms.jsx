@@ -196,7 +196,7 @@ export default function ComparePrograms() {
         >
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-stevens-bold text-stevens-dark-gray mb-stevens-sm">
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
               Select Programs to Compare
             </h2>
             <p className="text-stevens-dark-gray">
@@ -253,7 +253,8 @@ export default function ComparePrograms() {
 
                 <div className="stevens-md:justify-self-end">
                   <Button
-                    className="btn-stevens-red w-full stevens-md:w-auto"
+                    variant="default"
+                    className="w-full stevens-md:w-auto"
                     onClick={handleCompare}
                   >
                     Compare
@@ -316,7 +317,7 @@ export default function ComparePrograms() {
       {/* Program Track Options */}
       <section className="py-16 bg-stevens-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
+          <h3 className="font-stevens-display text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
             Program Track Options
           </h3>
           <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
@@ -371,7 +372,7 @@ export default function ComparePrograms() {
       {/* CTA */}
       <section className="py-16 bg-stevens-white">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-          <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-stevens-bold text-stevens-dark-gray mb-stevens-md">
+          <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-dark-gray mb-stevens-md">
             Ready to discuss how our programs can help you achieve your goals?
           </h3>
           <a
@@ -380,7 +381,7 @@ export default function ComparePrograms() {
             rel="noopener noreferrer"
             onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
           >
-            <Button className="btn-stevens-red">Connect With Us</Button>
+            <Button variant="default">Connect With Us</Button>
           </a>
         </div>
       </section>

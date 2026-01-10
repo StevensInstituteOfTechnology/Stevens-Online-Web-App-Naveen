@@ -178,7 +178,7 @@ const EmployerSponsorship = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-stevens-display text-stevens-red sm:text-stevens-3xl md:text-stevens-3xl lg:text-stevens-4xl  font-stevens-bold uppercase tracking-wide mb-stevens-xl">
+            <h1 className="font-stevens-display text-stevens-black sm:text-stevens-3xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-xl">
               Everyone Wins With Employer Tuition Sponsorship
             </h1>
             <div className="max-w-7xl space-y-stevens-lg">
@@ -246,7 +246,7 @@ const EmployerSponsorship = () => {
                   {/* Left column - Text content */}
                   <div className="space-y-stevens-lg">
                     <div>
-                      <h2 className="font-stevens-display text-stevens-4xl text-stevens-red font-stevens-bold mb-stevens-md">
+                      <h2 className="font-stevens-display text-stevens-4xl text-stevens-black font-light uppercase tracking-wide mb-stevens-md">
                         Employer Sponsorship for Students
                       </h2>
                       <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
@@ -255,7 +255,7 @@ const EmployerSponsorship = () => {
                     </div>
                     
                     <div>
-                      <h3 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
+                      <h3 className="font-stevens-display text-stevens-2xl text-stevens-black font-light uppercase tracking-wide mb-stevens-lg">
                         What Is Employer Sponsorship?
                       </h3>
                       <div className="space-y-stevens-lg">
@@ -284,7 +284,7 @@ const EmployerSponsorship = () => {
 
             {/* How Do You Apply */}
             <section className="bg-stevens-white rounded-stevens-lg shadow-stevens-md p-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl text-stevens-red mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl text-stevens-black font-light uppercase tracking-wide mb-stevens-lg">
                 How Do You Apply?
               </h2>
               <div className="prose prose-lg max-w-none text-stevens-dark-gray mb-stevens-xl">
@@ -307,7 +307,7 @@ const EmployerSponsorship = () => {
                     className="bg-stevens-light-gray rounded-stevens-lg p-stevens-lg"
                   >
                     <div className="flex items-center mb-stevens-md">
-                      <div className="w-10 h-10 bg-stevens-red rounded-full flex items-center justify-center text-stevens-white font-stevens-bold mr-stevens-md">
+                      <div className="w-10 h-10 bg-stevens-black rounded-full flex items-center justify-center text-stevens-white font-light mr-stevens-md">
                         {index + 1}
                       </div>
                       <h3 className="font-stevens-display text-stevens-lg text-stevens-dark-gray font-stevens-bold">
@@ -327,7 +327,7 @@ const EmployerSponsorship = () => {
 
             {/* Career Benefits */}
             <section className="bg-stevens-white rounded-stevens-lg shadow-stevens-md p-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl text-stevens-red mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl text-stevens-black font-light uppercase tracking-wide mb-stevens-lg">
                 What Are the Career Benefits?
               </h2>
               
@@ -353,7 +353,7 @@ const EmployerSponsorship = () => {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="flex items-start gap-stevens-md"
                     >
-                      <CheckCircle className="w-6 h-6 text-stevens-red flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-6 h-6 text-stevens-black flex-shrink-0 mt-1" />
                       <p className="text-stevens-lg font-bold text-stevens-dark-gray leading-relaxed font-stevens-medium">
                         {benefit}
                       </p>
@@ -382,7 +382,7 @@ const EmployerSponsorship = () => {
                 {/* Left column - Text content */}
                 <div className="space-y-stevens-lg">
                   <div>
-                    <h2 className="font-stevens-display text-stevens-4xl text-stevens-red font-stevens-bold mb-stevens-lg">
+                    <h2 className="font-stevens-display text-stevens-4xl text-stevens-black font-light uppercase tracking-wide mb-stevens-lg">
                       Tuition Reimbursement Benefits for Employers
                     </h2>
                     <p className="text-stevens-lg leading-relaxed text-stevens-dark-gray">
@@ -391,7 +391,7 @@ const EmployerSponsorship = () => {
                   </div>
                   
                   <div>
-                    <h3 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
+                    <h3 className="font-stevens-display text-stevens-2xl text-stevens-black font-light uppercase tracking-wide mb-stevens-lg">
                       Why Stevens?
                     </h3>
                     <div className="space-y-stevens-lg">
@@ -420,7 +420,7 @@ const EmployerSponsorship = () => {
 
             {/* Statistics */}
             <section className="bg-stevens-light-gray rounded-stevens-lg p-stevens-xl">
-              <h3 className="font-stevens-display uppercase font-bold text-stevens-4xl text-stevens-red mb-stevens-xl text-center">
+              <h3 className="font-stevens-display uppercase font-light text-stevens-4xl text-stevens-black mb-stevens-xl text-center tracking-wide">
                 At a Glance
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stevens-xl">
@@ -432,7 +432,7 @@ const EmployerSponsorship = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-stevens-4xl font-bold text-stevens-red mb-stevens-md">
+                    <div className="text-stevens-4xl font-light text-stevens-black mb-stevens-md">
                       {stat.number}
                     </div>
                     <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
