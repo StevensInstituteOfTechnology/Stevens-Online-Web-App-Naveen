@@ -18,6 +18,7 @@ import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
  * - title: Main title (string or array of lines)
  * - subtitle: Subtitle text below title (optional)
  * - badges: Array of { text, icon } for trust badges
+ * - tuitionCards: Array of { value, label } for pricing display (optional)
  * - bgImage: Background image URL
  * - bgImagePosition: CSS object-position (default: "center center")
  * - formTitle: Title for the form card
@@ -31,6 +32,7 @@ export function HeroSection({
   title,
   subtitle,
   badges = [],
+  tuitionCards = [],
   bgImage,
   bgImagePosition = "center center",
   formTitle = "Request Information",
@@ -76,7 +78,7 @@ export function HeroSection({
             <Badge
               key={index}
               variant="outline"
-              className={`${textAreaStyles.badge} text-sm py-1.5 px-4 rounded-stevens-md cursor-default uppercase tracking-wide font-semibold`}
+              className={`${textAreaStyles.badge} text-sm py-1.5 px-4 rounded-stevens-md cursor-default uppercase tracking-wide font-semibold transition-all duration-300 hover:scale-105`}
             >
               {Icon && <Icon className="w-4 h-4 mr-2" />}
               <span>{badge.text}</span>
@@ -96,7 +98,7 @@ export function HeroSection({
             <Badge
               key={index}
               variant="outline"
-              className="text-white border-white/60 bg-white/20 backdrop-blur-md text-sm py-1.5 px-4 rounded-stevens-md cursor-default uppercase tracking-wide font-semibold"
+              className="text-white border-white/60 bg-white/20 backdrop-blur-md text-sm py-1.5 px-4 rounded-stevens-md cursor-default uppercase tracking-wide font-semibold transition-all duration-300 hover:bg-white/30 hover:border-white/80 hover:scale-105"
               style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)" }}
             >
               {Icon && <Icon className="w-4 h-4 mr-2" />}
@@ -104,6 +106,32 @@ export function HeroSection({
             </Badge>
           );
         })}
+      </div>
+    );
+
+  // Tuition cards rendering (same frosted glass style as badges)
+  const renderTuitionCards = () =>
+    tuitionCards.length > 0 && (
+      <div className="flex flex-wrap gap-8 mb-stevens-md">
+        {tuitionCards.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white/20 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-white/30 hover:border-white/80 hover:scale-105 cursor-default"
+          >
+            <div
+              className="text-2xl lg:text-3xl font-bold text-white"
+              style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
+            >
+              {card.value}
+            </div>
+            <div
+              className="text-sm text-white/90 mt-0.5 uppercase tracking-wide font-semibold"
+              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)" }}
+            >
+              {card.label}
+            </div>
+          </div>
+        ))}
       </div>
     );
 
@@ -136,6 +164,9 @@ export function HeroSection({
           <div className="hidden lg:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
             <div className="animate-in slide-in-from-left duration-700">
               {renderDesktopBadges()}
+
+              {/* Tuition Cards (Desktop) - Above title */}
+              {renderTuitionCards()}
 
               {/* Title */}
               <div className="space-y-1">
@@ -171,6 +202,9 @@ export function HeroSection({
         >
           <div className="animate-in slide-in-from-bottom duration-500">
             {renderMobileBadges()}
+
+            {/* Tuition Cards (Mobile) - Above title */}
+            {renderTuitionCards()}
 
             {/* Title */}
             <div className="space-y-1">

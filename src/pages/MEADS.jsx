@@ -23,6 +23,10 @@ const programData = {
     bgImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
     primaryCta: { label: 'Request Information', to: 'RequestInfo' },
     secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
+    tuitionCards: [
+      { value: "$800", label: "Per Credit" },
+      { value: "$24,000", label: "Total Program Cost" }
+    ],
     // badges: [
     //   { text: "Industry-Ready Skills", icon: Award },
     //   { text: "Cutting-Edge Curriculum", icon: Star },

@@ -49,7 +49,7 @@ export function StickyNav({
       : activeSection === item.id;
 
   return (
-    <div className="sticky top-[65px] md:top-[87px] bg-white z-[9990] shadow-md">
+    <div className="sticky top-[65px] md:top-[87px] bg-white z-[9990] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]">
       <div className="max-w-stevens-content-max mx-auto px-2 md:px-stevens-md lg:px-stevens-lg">
         {/* Responsive grid: 4 cols on mobile (3 tabs + More), 5 cols on desktop (4 tabs + More) */}
         <nav className="grid grid-cols-4 md:grid-cols-5 items-center">

@@ -128,6 +128,7 @@ export function CertificateTemplate({
         title={hero?.titleLines || hero?.title}
         subtitle={hero?.subtitle}
         badges={hero?.badges}
+        tuitionCards={hero?.tuitionCards}
         bgImage={hero?.bgImage}
         bgImagePosition={hero?.bgImagePosition}
         formTitle="Enroll Now"

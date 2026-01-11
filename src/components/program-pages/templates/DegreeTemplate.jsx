@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { PageHero } from "@/components/shared";
 import { useLocation } from "react-router-dom";
 import {
   setPageTitle,
@@ -10,6 +9,7 @@ import {
 
 // Import sections
 import {
+  HeroSection,
   FAQSection,
   AccreditationSection,
   RankingsSection,
@@ -58,6 +58,7 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  */
 export function DegreeTemplate({
   programData,
+  formTheme = "dark",
   useApplicationModal = false,
   useRequestInfoModal = true,
 }) {
@@ -156,13 +157,20 @@ export function DegreeTemplate({
 
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
-      {/* Hero Section */}
-      <PageHero
-        {...hero}
-        useApplicationModal={useApplicationModal}
-        useRequestInfoModal={useRequestInfoModal}
-        requestInfoProgramCode={code}
-        requestInfoSourcePage={`${code}_program_page`}
+      {/* Hero Section with Embedded Form */}
+      <HeroSection
+        programCode={code}
+        sourcePage={`${code}_program_page`}
+        title={hero?.titleLines}
+        subtitle={hero?.subtitle}
+        badges={hero?.badges}
+        tuitionCards={hero?.tuitionCards}
+        bgImage={hero?.bgImage}
+        bgImagePosition={hero?.bgImagePosition}
+        formTitle="Request Information"
+        formSubtitle="Take the next step in your career."
+        variant="degree"
+        formTheme={formTheme}
       />
 
       {/* Sticky Navigation */}
