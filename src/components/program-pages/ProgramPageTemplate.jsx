@@ -452,16 +452,25 @@ export default function ProgramPageTemplate({
     };
   }, []);
 
+  // Detect if this is a certificate page based on admissions variant or code prefix
+  const isCertificate = 
+    admissions?.variant === "certificateWithDeadlines" || 
+    code?.startsWith("cert-");
+
   const navItems = useMemo(() => {
-    const items = [
+    // Section order differs between degree and certificate pages per design spec
+    // DEGREE: overview → rankings → video → curriculum → career outcomes → faculty → admissions → tuition → events → faqs
+    // CERTIFICATE: overview → skills → career outcomes → curriculum → faculty → admissions → tuition → dates → faqs
+    const degreeItems = [
       { id: "overview", label: "Overview" },
-      { id: "video", label: "Video" },
       { id: "rankings", label: "Rankings" },
+      { id: "video", label: "Video" },
+      { id: "curriculum", label: "Curriculum" },
       { id: "career", label: "Career Outlook" },
       { id: "what-youll-learn", label: "What You'll Learn" },
       { id: "common-job-titles", label: "Common Job Titles" },
       { id: "top-companies", label: "Top Companies" },
-      { id: "curriculum", label: "Curriculum" },
+      { id: "why-stevens", label: "Why Stevens" },
       { id: "student-spotlight", label: "Student Spotlight" },
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
@@ -471,6 +480,25 @@ export default function ProgramPageTemplate({
       { id: "faqs", label: "FAQs" },
       { id: "accreditation", label: "Accreditation" },
     ];
+
+    const certificateItems = [
+      { id: "overview", label: "Overview" },
+      { id: "rankings", label: "Rankings" },
+      { id: "what-youll-learn", label: "What You'll Learn" },
+      { id: "career", label: "Career Outlook" },
+      { id: "common-job-titles", label: "Common Job Titles" },
+      { id: "top-companies", label: "Top Companies" },
+      { id: "curriculum", label: "Curriculum" },
+      { id: "why-stevens", label: "Why Stevens" },
+      { id: "faculty", label: "Faculty" },
+      { id: "admissions", label: "Admissions" },
+      { id: "tuition", label: "Tuition" },
+      { id: "deadlines", label: "Deadlines" },
+      { id: "faqs", label: "FAQs" },
+      { id: "accreditation", label: "Accreditation" },
+    ];
+
+    const items = isCertificate ? certificateItems : degreeItems;
     const filtered = items.filter((item) => {
       switch (item.id) {
         case "overview":
@@ -560,6 +588,11 @@ export default function ProgramPageTemplate({
               ? accreditation.trim()
               : accreditation.description || accreditation.text)
           );
+        case "why-stevens":
+          return (
+            whyStevens &&
+            (whyStevens.description || whyStevens.video)
+          );
         default:
           return true;
       }
@@ -584,12 +617,15 @@ export default function ProgramPageTemplate({
 
     return filtered;
   }, [
+    isCertificate,
     overview,
     rankings,
+    videoSection,
     career,
     whatYoullLearn,
     commonJobTitles,
     topCompanies,
+    whyStevens,
     curriculum,
     studentSpotlight,
     faculty,
@@ -909,28 +945,7 @@ export default function ProgramPageTemplate({
           </div>
         </Section>
 
-        {videoSection && (
-          <Section
-            id="video"
-            title={videoSection.title}
-            bgClassName="bg-stevens-light-gray"
-            refProp={(el) => (sectionRefs.current.video = el)}
-          >
-            <div className="max-w-7xl mx-auto">
-              <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
-                {/* Video Player Component */}
-                <VideoPlayer
-                  src={videoSection.videoSrc}
-                  poster={videoSection.posterSrc}
-                  title={videoSection.title}
-                  showControls={videoSection.showControls}
-                  muted={videoSection.muted}
-                />
-              </div>
-            </div>
-          </Section>
-        )}
-
+        {/* Rankings - comes early for both templates (position 2-3) */}
         {rankings && rankings.length > 0 && (
           <Section
             id="rankings"
@@ -968,6 +983,122 @@ export default function ProgramPageTemplate({
           </Section>
         )}
 
+        {/* DEGREE ONLY: Video section after Rankings */}
+        {!isCertificate && videoSection && (
+          <Section
+            id="video"
+            title={videoSection.title}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current.video = el)}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
+                <VideoPlayer
+                  src={videoSection.videoSrc}
+                  poster={videoSection.posterSrc}
+                  title={videoSection.title}
+                  showControls={videoSection.showControls}
+                  muted={videoSection.muted}
+                />
+              </div>
+            </div>
+          </Section>
+        )}
+
+        {/* DEGREE ONLY: Curriculum comes BEFORE career content per design spec */}
+        {!isCertificate && curriculum && (
+          <Section
+            id="curriculum"
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.curriculum = el)}
+          >
+            <div className="max-w-stevens-content-max mx-auto">
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
+                {curriculum.title
+                  ? curriculum.title
+                  : `Online ${programData.code.toUpperCase()} Program Course Structure`}
+              </h2>
+              {curriculum.description && (
+                <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
+                  {curriculum.description.split("\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              {curriculum.courseTabs && (
+                <Tabs
+                  defaultValue={Object.keys(curriculum.courseTabs)[0]}
+                  className="w-full"
+                >
+                  <div className="relative overflow-x-auto scrollbar-hide group">
+                    <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                    <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                    <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
+                      {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
+                        <TabsTrigger
+                          key={tabKey}
+                          value={tabKey}
+                          className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                        >
+                          {curriculum.courseTabs[tabKey].title}
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                  </div>
+                  {Object.keys(curriculum.courseTabs).map((tabKey) => (
+                    <TabsContent key={tabKey} value={tabKey} className="mt-stevens-xl">
+                      <div
+                        className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
+                        dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}
+                      />
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              )}
+            </div>
+            {curriculum.completeCourseCatalog && (
+              <div className="mt-12">
+                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
+                  Complete Course Catalog
+                </h3>
+                <Card>
+                  <CardContent className="p-6 overflow-x-auto">
+                    <div
+                      className="prose max-w-none"
+                      dangerouslySetInnerHTML={{ __html: curriculum.completeCourseCatalog }}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </Section>
+        )}
+
+        {/* CERTIFICATE ONLY: What You'll Learn comes BEFORE career per design spec */}
+        {isCertificate && whatYoullLearn && (
+          <Section
+            id="what-youll-learn"
+            title={whatYoullLearn.title}
+            bgClassName="bg-stevens-light-gray"
+            refProp={(el) => (sectionRefs.current["what-youll-learn"] = el)}
+          >
+            {whatYoullLearn.description && (
+              <div
+                className="prose max-w-none text-stevens-dark-gray leading-relaxed mb-10 text-center"
+                dangerouslySetInnerHTML={{ __html: whatYoullLearn.description }}
+              />
+            )}
+            {whatYoullLearn.modules &&
+              whatYoullLearn.modules.length > 0 &&
+              (whatYoullLearn.variant === "skillCards" ? (
+                <SkillCardsGrid modules={whatYoullLearn.modules} />
+              ) : (
+                <WhatYoullLearnCarousel modules={whatYoullLearn.modules} />
+              ))}
+          </Section>
+        )}
+
+        {/* Career Outlook - same position for both templates */}
         {career && (
           <Section
             id="career"
@@ -984,7 +1115,8 @@ export default function ProgramPageTemplate({
           </Section>
         )}
 
-        {whatYoullLearn && (
+        {/* DEGREE ONLY: What You'll Learn comes AFTER career */}
+        {!isCertificate && whatYoullLearn && (
           <Section
             id="what-youll-learn"
             title={whatYoullLearn.title}
@@ -1142,6 +1274,76 @@ export default function ProgramPageTemplate({
           </Section>
         )}
 
+        {/* CERTIFICATE ONLY: Curriculum comes AFTER career content per design spec */}
+        {isCertificate && curriculum && (
+          <Section
+            id="curriculum"
+            bgClassName="bg-stevens-white"
+            refProp={(el) => (sectionRefs.current.curriculum = el)}
+          >
+            <div className="max-w-stevens-content-max mx-auto">
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
+                {curriculum.title
+                  ? curriculum.title
+                  : `Online ${programData.code.toUpperCase()} Program Course Structure`}
+              </h2>
+              {curriculum.description && (
+                <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
+                  {curriculum.description.split("\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              {curriculum.courseTabs && (
+                <Tabs
+                  defaultValue={Object.keys(curriculum.courseTabs)[0]}
+                  className="w-full"
+                >
+                  <div className="relative overflow-x-auto scrollbar-hide group">
+                    <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                    <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+                    <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
+                      {Object.keys(curriculum.courseTabs).map((tabKey, index) => (
+                        <TabsTrigger
+                          key={tabKey}
+                          value={tabKey}
+                          className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                        >
+                          {curriculum.courseTabs[tabKey].title}
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                  </div>
+                  {Object.keys(curriculum.courseTabs).map((tabKey) => (
+                    <TabsContent key={tabKey} value={tabKey} className="mt-stevens-xl">
+                      <div
+                        className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
+                        dangerouslySetInnerHTML={{ __html: curriculum.courseTabs[tabKey].content }}
+                      />
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              )}
+            </div>
+            {curriculum.completeCourseCatalog && (
+              <div className="mt-12">
+                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
+                  Complete Course Catalog
+                </h3>
+                <Card>
+                  <CardContent className="p-6 overflow-x-auto">
+                    <div
+                      className="prose max-w-none"
+                      dangerouslySetInnerHTML={{ __html: curriculum.completeCourseCatalog }}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </Section>
+        )}
+
+        {/* Why Stevens / Experiential Learning - same position for both */}
         {whyStevens && (
           <Section
             id="why-stevens"
@@ -1205,95 +1407,7 @@ export default function ProgramPageTemplate({
           </Section>
         )}
 
-        {curriculum && (
-          <Section
-            id="curriculum"
-            bgClassName="bg-stevens-white"
-            refProp={(el) => (sectionRefs.current.curriculum = el)}
-          >
-            <div className="max-w-stevens-content-max mx-auto">
-              {/* Section Title */}
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
-                {curriculum.title
-                  ? curriculum.title
-                  : `Online ${programData.code.toUpperCase()} Program Course Structure`}
-              </h2>
-
-              {/* Description */}
-              {curriculum.description && (
-                <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
-                  {curriculum.description.split("\n").map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
-                  ))}
-                </div>
-              )}
-
-              {curriculum.courseTabs && (
-                <Tabs
-                  defaultValue={Object.keys(curriculum.courseTabs)[0]}
-                  className="w-full"
-                >
-                  {/* Tabs Navigation */}
-                  <div className="relative overflow-x-auto scrollbar-hide group">
-                    {/* Left scroll indicator */}
-                    <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-
-                    {/* Right scroll indicator */}
-                    <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-
-                    <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
-                      {Object.keys(curriculum.courseTabs).map(
-                        (tabKey, index) => (
-                          <TabsTrigger
-                            key={tabKey}
-                            value={tabKey}
-                            className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
-                          >
-                            {curriculum.courseTabs[tabKey].title}
-                          </TabsTrigger>
-                        )
-                      )}
-                    </TabsList>
-                  </div>
-
-                  {/* Tab Content */}
-                  {Object.keys(curriculum.courseTabs).map((tabKey) => (
-                    <TabsContent
-                      key={tabKey}
-                      value={tabKey}
-                      className="mt-stevens-xl"
-                    >
-                      <div
-                        className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
-                        dangerouslySetInnerHTML={{
-                          __html: curriculum.courseTabs[tabKey].content,
-                        }}
-                      />
-                    </TabsContent>
-                  ))}
-                </Tabs>
-              )}
-            </div>
-            {curriculum.completeCourseCatalog && (
-              <div className="mt-12">
-                <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
-                  Complete Course Catalog
-                </h3>
-                <Card>
-                  <CardContent className="p-6 overflow-x-auto">
-                    <div
-                      className="prose max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: curriculum.completeCourseCatalog,
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-          </Section>
-        )}
-
+        {/* Student Spotlight - typically for degree pages */}
         {studentSpotlight && (
           <Section
             id="student-spotlight"
