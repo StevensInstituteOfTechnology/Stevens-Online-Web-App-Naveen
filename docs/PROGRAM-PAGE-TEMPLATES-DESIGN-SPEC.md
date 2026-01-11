@@ -600,6 +600,26 @@ This enables consistent nav generation and scroll tracking.
 
 ---
 
+## Implementation: Folder Structure
+
+```
+src/components/program-pages/
+├── templates/      # Page templates (DegreeTemplate, CertificateTemplate)
+├── sections/       # Section components (Overview, Curriculum, FAQ, etc.)
+├── primitives/     # Small reusable components (Section wrapper, Cards, etc.)
+└── navigation/     # Sticky nav and scroll tracking (StickyNav, useSectionNavigation)
+```
+
+**Architecture:**
+- **Templates** define section order and page layout
+- **Sections** are self-contained, handle their own conditional rendering
+- **Primitives** are shared UI building blocks
+- **Navigation** manages sticky nav items and active section detection
+
+Each program page (`MBA.jsx`, `MSCS.jsx`, etc.) passes `programData` to a template, which renders sections in order.
+
+---
+
 ## Success Metrics
 
 ### Program Pages
