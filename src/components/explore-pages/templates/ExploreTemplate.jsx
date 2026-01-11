@@ -8,8 +8,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Check, Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { PageHero, ApplicationModal, VideoPlayer } from '@/components/shared';
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
+import { ApplicationModal, VideoPlayer } from '@/components/shared';
+import { HeroSection } from '../sections';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { BOOKING_URLS } from '@/config/constants';
@@ -21,14 +21,15 @@ export function ExploreTemplate({
   heroSubtitle,
   programName,
   bgImage,
+  bgImagePosition = "center center",
   badges = [],
+  tuitionCards = [],
   programCode = '',
   seo,
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
-  useRequestInfoModal = true, // Default to true - use modal for Request Info
-  heroBottomContent, // New prop for pricing cards in hero
+  formTheme = "dark", // Theme for the form area
   
   // Statistics Props
   statistics,
@@ -149,29 +150,20 @@ export function ExploreTemplate({
 
   return (
     <div className="min-h-screen bg-stevens-white">
-      {/* PageHero Component */}
-      <PageHero
-        titleLines={[heroTitle, programName]}
+      {/* HeroSection Component */}
+      <HeroSection
+        programCode={programCode}
+        sourcePage={`explore_${programCode}_page`}
+        title={[heroTitle, programName]}
         subtitle={heroSubtitle}
-        bgImage={bgImage}
         badges={badges}
-        primaryCta={null}
-        secondaryCta={secondaryCta || { label: 'Apply In Minutes', href: traditionalAppLink }}
-        useApplicationModal={useApplicationModal}
-        useRequestInfoModal={useRequestInfoModal}
-        requestInfoProgramCode={programCode}
-        requestInfoSourcePage={`explore_${programCode}_page`}
-        bottomContent={heroBottomContent}
-        rightContent={
-          <div className="w-full flex justify-center lg:justify-end">
-            <LeadCaptureForm 
-              title="Request Information"
-              subtitle="Get detailed program information and connect with an enrollment advisor."
-              sourcePage={`explore_${programCode}_page`}
-              programOfInterest={programCode}
-            />
-          </div>
-        }
+        tuitionCards={tuitionCards}
+        bgImage={bgImage}
+        bgImagePosition={bgImagePosition}
+        formTitle="Request Information"
+        formSubtitle="Get detailed program information and connect with an enrollment advisor."
+        variant="degree"
+        formTheme={formTheme}
       />
 
       

@@ -6,9 +6,11 @@
  * 
  * Structure:
  * - templates/   - ExploreTemplate
- * - sections/    - (future: extracted sections)
+ * - sections/    - HeroSection and other sections
  * - primitives/  - (future: small reusable components)
+ * - navigation/  - (future: navigation components)
  */
 
 // Re-export from submodules
 export * from './templates';
+export * from './sections';
