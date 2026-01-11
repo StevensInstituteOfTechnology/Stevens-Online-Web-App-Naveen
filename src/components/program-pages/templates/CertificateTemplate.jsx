@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { PageHero } from "@/components/shared";
 import { useLocation } from "react-router-dom";
 import {
   setPageTitle,
@@ -10,6 +9,7 @@ import {
 
 // Import sections
 import {
+  HeroSection,
   FAQSection,
   AccreditationSection,
   RankingsSection,
@@ -56,6 +56,7 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  */
 export function CertificateTemplate({
   programData,
+  formTheme = "light",
   useApplicationModal = false,
   useRequestInfoModal = true,
 }) {
@@ -121,13 +122,18 @@ export function CertificateTemplate({
 
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
-      {/* Hero Section - price/tuition may be passed via hero.bottomContent */}
-      <PageHero
-        {...hero}
-        useApplicationModal={useApplicationModal}
-        useRequestInfoModal={useRequestInfoModal}
-        requestInfoProgramCode={code}
-        requestInfoSourcePage={`${code}_program_page`}
+      {/* Hero Section - Minimal style with form */}
+      <HeroSection
+        programCode={code}
+        title={hero?.titleLines || hero?.title}
+        subtitle={hero?.subtitle}
+        badges={hero?.badges}
+        bgImage={hero?.bgImage}
+        bgImagePosition={hero?.bgImagePosition}
+        formTitle="Enroll Now"
+        formSubtitle="Get program details and start your application."
+        variant="certificate"
+        formTheme={formTheme}
       />
 
       {/* Sticky Navigation */}
@@ -162,10 +168,7 @@ export function CertificateTemplate({
         />
 
         {/* 4. Career & Skill Outcomes */}
-        <CareerSection
-          career={career}
-          ref={registerSectionRef("career")}
-        />
+        <CareerSection career={career} ref={registerSectionRef("career")} />
 
         {/* 5. Common Job Titles */}
         <JobTitlesSection
@@ -196,10 +199,7 @@ export function CertificateTemplate({
         />
 
         {/* 9. Faculty (Minimal) */}
-        <FacultySection
-          faculty={faculty}
-          ref={registerSectionRef("faculty")}
-        />
+        <FacultySection faculty={faculty} ref={registerSectionRef("faculty")} />
 
         {/* 10. Admissions Section (combined with Tuition & Key Dates for certificates) */}
         <AdmissionsSection
@@ -211,10 +211,7 @@ export function CertificateTemplate({
         />
 
         {/* 11. FAQ Section */}
-        <FAQSection
-          faqs={faqs}
-          ref={registerSectionRef("faqs")}
-        />
+        <FAQSection faqs={faqs} ref={registerSectionRef("faqs")} />
 
         {/* 12. Accreditation Section */}
         <AccreditationSection

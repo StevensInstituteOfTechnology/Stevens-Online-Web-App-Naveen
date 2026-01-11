@@ -458,9 +458,7 @@ export default function CertificateEnterpriseAIPage() {
   // Add bottomContent to hero for certificate pages
   const heroWithTuitionCards = {
     ...programData.hero,
-    bottomContent: (
-      <TuitionCardsHero cards={programData.tuition.cards} />
-    ),
+    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
 
   return (
@@ -472,6 +470,7 @@ export default function CertificateEnterpriseAIPage() {
       >
         <CertificateTemplate
           programData={{ ...programData, hero: heroWithTuitionCards }}
+          formTheme="light"
         />
       </ProgramContextProvider>
     </PageContextProvider>

@@ -5,7 +5,10 @@
  * Each section is self-contained and handles its own conditional rendering.
  */
 
-// Sections will be exported here as they are created
+// Hero Section (minimal style with form)
+export { HeroSection } from "./HeroSection";
+
+// Content Sections
 export { FAQSection } from "./FAQSection";
 export { AccreditationSection } from "./AccreditationSection";
 export { RankingsSection } from "./RankingsSection";

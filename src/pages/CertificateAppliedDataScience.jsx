@@ -1,118 +1,213 @@
-import React from 'react';
+import React from "react";
 import {
-  Globe, Award, Check, Briefcase, DollarSign, GraduationCap, TrendingUp,
-  Target, BookOpen, Users, Code, Database, LineChart } from 'lucide-react';
-import { CertificateTemplate } from '../components/program-pages/templates';
-import { TuitionCardsHero } from '../components/program-pages/primitives';
-import { KEY_DATES, BOOKING_URLS } from '@/config/constants';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
+  Globe,
+  Award,
+  Check,
+  Briefcase,
+  DollarSign,
+  GraduationCap,
+  TrendingUp,
+  Target,
+  BookOpen,
+  Users,
+  Code,
+  Database,
+  LineChart,
+} from "lucide-react";
+import { CertificateTemplate } from "../components/program-pages/templates";
+import { TuitionCardsHero } from "../components/program-pages/primitives";
+import { KEY_DATES, BOOKING_URLS } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const programData = {
-  code: 'cert-ads',
+  code: "cert-ads",
   seo: {
-    title: 'Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology',
-    description: 'Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.',
-    ogImage: '/assets/images/certificate-applied-data-science/certificate-ADS-1.webp',
-    url: '/certificates/applied-data-science-foundations/'
+    title:
+      "Professional Graduate Certificate in Applied Data Science Foundations | Stevens Institute of Technology",
+    description:
+      "Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.",
+    ogImage:
+      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+    url: "/certificates/applied-data-science-foundations/",
   },
   hero: {
-    titleLines: ['Professional Graduate Certificate', 'in Applied Data Science Foundations'],
-    subtitle: "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
-    bgImage: "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
-    primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply In Minutes', href: '/accelerated-application/' },
+    titleLines: [
+      "Professional Graduate Certificate",
+      "in Applied Data Science Foundations",
+    ],
+    subtitle:
+      "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
+    bgImage:
+      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+    primaryCta: { label: "Request Information", to: "RequestInfo" },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "/accelerated-application/",
+    },
     badges: [
-    { text: "100% Online", icon: Globe },
-    { text: "Graduate Credit", icon: Award },
-      { text: "AI-First Curriculum", icon: TrendingUp }
-    ]
+      { text: "100% Online", icon: Globe },
+      { text: "Graduate Credit", icon: Award },
+      { text: "AI-First Curriculum", icon: TrendingUp },
+    ],
   },
   quickFacts: {
     atAGlance: [
-    { value: "$5,250", label: "Total Cost", icon: DollarSign },
-    { value: "9 Credits", label: "3 Courses", icon: BookOpen },
-    { value: "100%", label: "Online", icon: Globe },
-    { value: "Stackable", label: "To MEADS", icon: GraduationCap },
-    { value: KEY_DATES.TERM.name, label: "Launch", icon: TrendingUp },
-    { value: "Portfolio", label: "Projects", icon: Briefcase }],
+      { value: "$5,250", label: "Total Cost", icon: DollarSign },
+      { value: "9 Credits", label: "3 Courses", icon: BookOpen },
+      { value: "100%", label: "Online", icon: Globe },
+      { value: "Stackable", label: "To MEADS", icon: GraduationCap },
+      { value: KEY_DATES.TERM.name, label: "Launch", icon: TrendingUp },
+      { value: "Portfolio", label: "Projects", icon: Briefcase },
+    ],
 
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-24 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`
+    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-24 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`,
   },
   overview: {
     title: "Certificate Overview",
     description: `<p class="mb-4">This certificate is designed to launch your career in applied AI and data science. In today's data-driven economy, organizations need professionals who can build and deploy machine learning solutions-not just analyze data, but create AI-powered systems that solve real business problems.</p><p class="mb-4">The Applied Data Science Foundations certificate provides an <strong>AI-first, project-driven curriculum</strong> where you'll master Python, SQL, and machine learning through hands-on work with real datasets. Each course delivers a portfolio artifact tied to an AI/ML use case, ensuring you graduate with tangible evidence of your capabilities.</p><p>Whether you're pivoting into data science, upskilling for AI roles, or preparing for further graduate study, this certificate provides the technical foundation and graduate-level credential that employers value. All 9 credits stack toward Stevens' M.Eng. in Applied Data Science, giving you a clear pathway to continue your education.</p>`,
-    keySkills: ["Python Programming", "SQL & Databases", "Machine Learning", "Data Pipelines", "AI Ethics & Explainability"],
-    concentrations: []
+    keySkills: [
+      "Python Programming",
+      "SQL & Databases",
+      "Machine Learning",
+      "Data Pipelines",
+      "AI Ethics & Explainability",
+    ],
+    concentrations: [],
   },
- 
+
   rankings: [
-  { ranking: "$140K+", description: "MEDIAN ML ENGINEER SALARY", source: "Machine Learning Engineers earn a median salary of over $140,000 annually, with strong growth projected through 2033 (U.S. Bureau of Labor Statistics, 2025)." },
-  { ranking: "Top 10", description: "FASTEST GROWING TECH SKILL", source: "Data science and AI skills consistently rank in the top 10 fastest-growing tech skills, with demand spanning all industries from healthcare to finance (LinkedIn Learning, 2025)." },
-  { ranking: "$5,250", description: "ALIGNS WITH TUITION BENEFITS", source: "The 9-credit certificate cost aligns perfectly with the IRS $5,250 tax-free employer tuition reimbursement limit, making it accessible for corporate-sponsored learners." }],
+    {
+      ranking: "$140K+",
+      description: "MEDIAN ML ENGINEER SALARY",
+      source:
+        "Machine Learning Engineers earn a median salary of over $140,000 annually, with strong growth projected through 2033 (U.S. Bureau of Labor Statistics, 2025).",
+    },
+    {
+      ranking: "Top 10",
+      description: "FASTEST GROWING TECH SKILL",
+      source:
+        "Data science and AI skills consistently rank in the top 10 fastest-growing tech skills, with demand spanning all industries from healthcare to finance (LinkedIn Learning, 2025).",
+    },
+    {
+      ranking: "$5,250",
+      description: "ALIGNS WITH TUITION BENEFITS",
+      source:
+        "The 9-credit certificate cost aligns perfectly with the IRS $5,250 tax-free employer tuition reimbursement limit, making it accessible for corporate-sponsored learners.",
+    },
+  ],
 
   career: {
     description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek-Python, SQL, ML frameworks-while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [
-    { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
-    { title: "ML Engineer Associate", employed: "Growing", salary: "$135,690" },
-    { title: "AI Solutions Specialist", employed: "Emerging", salary: "$132,480" },
-    { title: "Business Intelligence Developer", employed: "In Demand", salary: "$100,360" },
-    { title: "Applied Data Scientist", employed: "High Growth", salary: "$115,280" }],
+      { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
+      {
+        title: "ML Engineer Associate",
+        employed: "Growing",
+        salary: "$135,690",
+      },
+      {
+        title: "AI Solutions Specialist",
+        employed: "Emerging",
+        salary: "$132,480",
+      },
+      {
+        title: "Business Intelligence Developer",
+        employed: "In Demand",
+        salary: "$100,360",
+      },
+      {
+        title: "Applied Data Scientist",
+        employed: "High Growth",
+        salary: "$115,280",
+      },
+    ],
 
-    source: "Salary data shown are based on market research from sources such as LinkedIn Economic Graph and Lightcast (2025). Exact figures for emerging AI roles vary widely by industry, company size, and experience level.",
-    topCompanies: ["Google", "Amazon", "Microsoft", "IBM", "Meta", "Apple"]
+    source:
+      "Salary data shown are based on market research from sources such as LinkedIn Economic Graph and Lightcast (2025). Exact figures for emerging AI roles vary widely by industry, company size, and experience level.",
+    topCompanies: ["Google", "Amazon", "Microsoft", "IBM", "Meta", "Apple"],
   },
   whatYoullLearn: {
-    variant: 'skillCards',
+    variant: "skillCards",
     title: "Curriculum: From Math to ML",
-    description: "The certificate follows a strategic progression: master the mathematical foundations for ML, build data pipelines with Python and SQL, then apply machine learning to real-world problems. Each course includes hands-on labs and a portfolio project.",
+    description:
+      "The certificate follows a strategic progression: master the mathematical foundations for ML, build data pipelines with Python and SQL, then apply machine learning to real-world problems. Each course includes hands-on labs and a portfolio project.",
     modules: [
-    {
-      title: "Applied Math for AI",
-      growth: "MA 574 – Applied Math for Data Science",
-      icon: LineChart,
-      courses: [
-      { code: "Core Topics", title: "Linear algebra, calculus, optimization for ML/AI" },
-      { code: "Hands-On", title: "Code-driven labs: PCA, regression, gradient descent" },
-      { code: "Project", title: "Train and interpret an ML model with AI insight report" }]
-
-    },
-    {
-      title: "Python & Data Pipelines",
-      growth: "CS 563 – Python and Databases",
-      icon: Database,
-      courses: [
-      { code: "Core Topics", title: "Python for data science, SQL, ETL/ELT, APIs" },
-      { code: "Hands-On", title: "Build AI-ready pipelines from raw data to training datasets" },
-      { code: "Project", title: "End-to-end pipeline published to Streamlit app" }]
-
-    },
-    {
-      title: "Machine Learning & AI",
-      growth: "CS 559 – Machine Learning: Fundamentals & Applications",
-      icon: Code,
-      courses: [
-      { code: "Core Topics", title: "Regression, classification, ensembles, neural networks, explainability" },
-      { code: "Hands-On", title: "Build and evaluate AI solutions with SHAP/LIME for transparency" },
-      { code: "Project", title: "Deploy an ML model with reproducible code and stakeholder narrative" }]
-
-    }]
-
+      {
+        title: "Applied Math for AI",
+        growth: "MA 574 – Applied Math for Data Science",
+        icon: LineChart,
+        courses: [
+          {
+            code: "Core Topics",
+            title: "Linear algebra, calculus, optimization for ML/AI",
+          },
+          {
+            code: "Hands-On",
+            title: "Code-driven labs: PCA, regression, gradient descent",
+          },
+          {
+            code: "Project",
+            title: "Train and interpret an ML model with AI insight report",
+          },
+        ],
+      },
+      {
+        title: "Python & Data Pipelines",
+        growth: "CS 563 – Python and Databases",
+        icon: Database,
+        courses: [
+          {
+            code: "Core Topics",
+            title: "Python for data science, SQL, ETL/ELT, APIs",
+          },
+          {
+            code: "Hands-On",
+            title:
+              "Build AI-ready pipelines from raw data to training datasets",
+          },
+          {
+            code: "Project",
+            title: "End-to-end pipeline published to Streamlit app",
+          },
+        ],
+      },
+      {
+        title: "Machine Learning & AI",
+        growth: "CS 559 – Machine Learning: Fundamentals & Applications",
+        icon: Code,
+        courses: [
+          {
+            code: "Core Topics",
+            title:
+              "Regression, classification, ensembles, neural networks, explainability",
+          },
+          {
+            code: "Hands-On",
+            title:
+              "Build and evaluate AI solutions with SHAP/LIME for transparency",
+          },
+          {
+            code: "Project",
+            title:
+              "Deploy an ML model with reproducible code and stakeholder narrative",
+          },
+        ],
+      },
+    ],
   },
   whyStevens: {
-   
     title: "Why Choose Stevens for Data Science?",
     description: `<p>Stevens Institute of Technology is ranked among the top institutions for data science and AI education. Located in the heart of the New York metropolitan area, Stevens combines world-class faculty expertise with strong industry connections.</p><p>This certificate emphasizes applied learning-you'll work with real datasets, build production-ready pipelines, and deploy ML models, not just study theory. Our faculty are active researchers and practitioners who bring cutting-edge insights directly into the classroom.</p><p>Plus, the certificate is fully stackable toward our M.Eng. in Applied Data Science (MEADS), giving you flexibility to test the waters and continue toward a full master's degree if desired.</p>`,
-    
   },
   curriculum: {
-    description: "The Applied Data Science Foundations Certificate consists of three courses (9 graduate credits total) designed to take you from mathematical foundations to deploying machine learning models. You'll learn industry-standard tools including Python, pandas, scikit-learn, SQL, and cloud data platforms. Every course includes hands-on labs with AI-enhanced learning tools.",
+    description:
+      "The Applied Data Science Foundations Certificate consists of three courses (9 graduate credits total) designed to take you from mathematical foundations to deploying machine learning models. You'll learn industry-standard tools including Python, pandas, scikit-learn, SQL, and cloud data platforms. Every course includes hands-on labs with AI-enhanced learning tools.",
     courseTabs: {
       foundations: {
-          title: "Course Sequence",
+        title: "Course Sequence",
         content: `
             <h4 class="course-section-header">Certificate Courses (9 Credits)</h4>
             <p class="course-intro">Complete all three courses. The sequence is designed to build your skills progressively, from mathematical foundations through practical ML deployment.</p>
@@ -160,52 +255,53 @@ const programData = {
           </div>
           
           
-        `
-      }
-    }
+        `,
+      },
+    },
   },
-  
+
   commonJobTitles: {
-    title: "Career Paths in Data Science & AI"
+    title: "Career Paths in Data Science & AI",
   },
   topCompanies: {
     title: "Where Stevens Alumni Work",
-    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    description:
+      "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
       {
         name: "Google",
         logo: "/assets/company_logo/Google_2015_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Amazon",
         logo: "/assets/company_logo/Amazon_logo.svg.webp",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Microsoft",
         logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "IBM",
         logo: "/assets/company_logo/IBM_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Meta",
         logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Apple",
         logo: "/assets/company_logo/Apple_logo_black.svg.png",
-        industry: "Technology"
-      }
-    ]
+        industry: "Technology",
+      },
+    ],
   },
   admissions: {
-    variant: 'certificateWithDeadlines',
+    variant: "certificateWithDeadlines",
     requirements: `
       <div class="space-y-6">
         <div>
@@ -225,27 +321,34 @@ const programData = {
           <p class="font-stevens-body">All 9 credits apply toward Stevens' M.Eng. in Applied Data Science (MEADS), per Registrar approval. This certificate serves as a perfect on-ramp to the full master's program, allowing you to test your interest and aptitude before committing to the complete degree.</p>
         </div>
       </div>
-    `
+    `,
   },
   keyDates: {
-    headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
+    headers: [
+      "Term",
+      "Early Submit",
+      "Priority Submit",
+      "Final Submit",
+      "Start of Classes",
+    ],
     rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date
-      }
+        startDate: KEY_DATES.START_OF_CLASSES.date,
+      },
     ],
-    footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
   },
   tuition: {
     cards: [
-      { value: "$5,250", label: "Total Certificate Cost" }, 
-      { value: "$583", label: "Per Credit" }
+      { value: "$5,250", label: "Total Certificate Cost" },
+      { value: "$583", label: "Per Credit" },
     ],
     description: `
       <div class="space-y-4">
@@ -274,59 +377,95 @@ const programData = {
         
         <p class="font-stevens-body text-stevens-xs text-stevens-dark-gray mt-stevens-md">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       </div>
-    `
+    `,
   },
-  
 
   faculty: {
     title: "Meet Your Data Science Faculty",
-    description: "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
+    description:
+      "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
     members: [
-      { name: "Upendra Prasad", title: "Senior Lecturer", image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif" },
-      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/certificate-ADS-avatar/skim2.webp" },
-      { name: "David Landaeta", title: "", image: "" }
-    ]
+      {
+        name: "Upendra Prasad",
+        title: "Senior Lecturer",
+        image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif",
+      },
+      {
+        name: "Samuel Kim",
+        title: "Teaching Professor",
+        image: "/assets/avatars/certificate-ADS-avatar/skim2.webp",
+      },
+      { name: "David Landaeta", title: "", image: "" },
+    ],
   },
   faqs: [
-  { q: "Do I need programming experience?", a: "No. The certificate is designed to take you from fundamentals to applied ML. We start with the basics in each course and scaffold your learning with templates, AI copilots, and extensive lab support." },
-  { q: "What programming languages will I learn?", a: "You'll focus primarily on Python, which is the industry standard for data science and machine learning. You'll also learn SQL for database work and data manipulation." },
-  { q: "Will this help with tuition reimbursement?", a: "Yes. The $5,250 total cost aligns with the IRS tax-free employer benefit limit that many companies offer. Our enrollment team can help you navigate your company's specific reimbursement process." },
-  { q: "Can these credits count toward a master's degree?", a: "Yes. All 9 credits are fully stackable toward Stevens' M.Eng. in Applied Data Science (MEADS), subject to Registrar approval. This gives you a clear pathway from certificate to master's degree." },
-  { q: "What tools and technologies will I use?", a: "You'll work with industry-standard tools including Python (pandas, NumPy, scikit-learn), SQL (PostgreSQL), Jupyter notebooks, Git/GitHub, cloud platforms, and visualization tools like Streamlit and Matplotlib." },
-  { q: "How is this different from online courses or bootcamps?", a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer." },
-  { q: "What can I do with this certificate?", a: "Graduates are prepared for roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, Business Intelligence Developer, and Applied Data Scientist. The three portfolio projects you build demonstrate your capabilities to employers and serve as talking points in job interviews." }],
+    {
+      q: "Do I need programming experience?",
+      a: "No. The certificate is designed to take you from fundamentals to applied ML. We start with the basics in each course and scaffold your learning with templates, AI copilots, and extensive lab support.",
+    },
+    {
+      q: "What programming languages will I learn?",
+      a: "You'll focus primarily on Python, which is the industry standard for data science and machine learning. You'll also learn SQL for database work and data manipulation.",
+    },
+    {
+      q: "Will this help with tuition reimbursement?",
+      a: "Yes. The $5,250 total cost aligns with the IRS tax-free employer benefit limit that many companies offer. Our enrollment team can help you navigate your company's specific reimbursement process.",
+    },
+    {
+      q: "Can these credits count toward a master's degree?",
+      a: "Yes. All 9 credits are fully stackable toward Stevens' M.Eng. in Applied Data Science (MEADS), subject to Registrar approval. This gives you a clear pathway from certificate to master's degree.",
+    },
+    {
+      q: "What tools and technologies will I use?",
+      a: "You'll work with industry-standard tools including Python (pandas, NumPy, scikit-learn), SQL (PostgreSQL), Jupyter notebooks, Git/GitHub, cloud platforms, and visualization tools like Streamlit and Matplotlib.",
+    },
+    {
+      q: "How is this different from online courses or bootcamps?",
+      a: "This is a graduate-level certificate with transcripted credit from an accredited institution. You'll learn from PhD faculty, work on complex projects, and earn credentials that stack toward a master's degree-something bootcamps cannot offer.",
+    },
+    {
+      q: "What can I do with this certificate?",
+      a: "Graduates are prepared for roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, Business Intelligence Developer, and Applied Data Scientist. The three portfolio projects you build demonstrate your capabilities to employers and serve as talking points in job interviews.",
+    },
+  ],
 
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Applied Data Science Foundations awards graduate credit that appears on your official Stevens transcript.`,
 };
 
 export default function CertificateAppliedDataSciencePage() {
   usePageTracking({
-    pageType: 'program',
-    programCode: 'cert-ads',
+    pageType: "program",
+    programCode: "cert-ads",
     additionalData: {
-      program_name: 'Professional Graduate Certificate in Applied Data Science Foundations',
+      program_name:
+        "Professional Graduate Certificate in Applied Data Science Foundations",
       has_rfi_modal: true,
       has_pricing_cards: true,
-      program_type: 'certificate'
-    }
+      program_type: "certificate",
+    },
   });
 
   // Add bottomContent to hero for certificate pages
   const heroWithTuitionCards = {
     ...programData.hero,
-    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />
+    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
-  
+
   return (
-    <PageContextProvider pageType="program" pageName="CertificateAppliedDataScience">
-      <ProgramContextProvider 
+    <PageContextProvider
+      pageType="program"
+      pageName="CertificateAppliedDataScience"
+    >
+      <ProgramContextProvider
         programCode="cert-ads"
         programName="Professional Graduate Certificate in Applied Data Science Foundations"
         programType="certificate"
       >
-        <CertificateTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />
+        <CertificateTemplate
+          programData={{ ...programData, hero: heroWithTuitionCards }}
+          formTheme="dark"
+        />
       </ProgramContextProvider>
     </PageContextProvider>
   );
 }
-

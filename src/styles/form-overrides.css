@@ -5,75 +5,50 @@
    ============================================ */
 
 :root {
-  /* Form Container IDs - Managed in src/config/formIds.js */
-  --form-id-rfi: form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532;
-  --form-id-asap: form_9268876a-a7c7-484d-a41e-7d0cb4c5613c;
-  --form-id-accelerated: form_89080626-7bc4-4c48-9437-fd47479d7371;
-  
-  /* Colors - Using Stevens brand colors */
+  /* Colors - Dark theme for B/W aesthetic */
   --form-primary: var(--stevens-red, #a32638);
-  --form-primary-dark: var(--stevens-dark-gray, #363D45);
-  --form-primary-hover: #363D45;
-  --form-primary-rgb: 163, 38, 56; /* For rgba() usage */
-  --form-background: #ffffff;
-  --form-background-input: #ffffff; /* Changed from #f9fafb to white for cleaner look */
-  --form-border: #d1d5db;
-  --form-border-focus: var(--form-primary); /* Use brand color for focus */
-  --form-text: #1f2937;
-  --form-text-muted: #6b7280;
-  --form-error: #dc2626;
-  --form-error-bg: rgba(220, 38, 38, 0.1);
-  
-  /* Button Colors */
-  --form-button-secondary-bg: #ffffff;
-  --form-button-secondary-border: #d1d5db;
-  --form-button-secondary-text: #6b7280;
-  --form-button-secondary-hover-bg: #f9fafb;
-  --form-button-secondary-hover-border: #9ca3af;
-  
+  --form-primary-dark: var(--stevens-dark-gray, #363d45);
+  --form-primary-hover: #c73a4d;
+  --form-background-input: #2a2a2a; /* Slightly lighter dark for inputs */
+  --form-text: #ffffff; /* White text */
+  --form-error: #ef4444;
+  --form-error-bg: rgba(239, 68, 68, 0.15);
+
   /* Disclaimer/Legal Text */
-  --form-disclaimer-color: var(--form-primary);
   --form-disclaimer-font-size: 0.75rem; /* 12px */
   --form-disclaimer-line-height: 1.5;
-  
-  /* Info Message (GRE/GMAT Not Required) */
-  --form-info-color: var(--form-primary);
-  --form-info-font-size: 0.875rem; /* 14px - smaller than before */
-  --form-info-font-weight: 600;
-  
+
   /* Typography */
-  --form-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --form-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
   --form-font-size-label: 13px;
   --form-font-size-input: 15px;
   --form-font-size-button: 14px;
   --form-font-weight-label: 400;
   --form-font-weight-button: 600;
   --form-line-height: 1.4;
-  
+
   /* Spacing */
   --form-padding-container: 1.5rem;
-  --form-padding-input: 0.75rem 1rem; /* Increased for better touch targets */
-  --form-padding-button: 0.875rem 1.5rem; /* Slightly increased */
-  --form-margin-label: 0.375rem; /* Increased spacing */
-  --form-margin-field: 1rem; /* Increased spacing between fields */
+  --form-padding-input: 0.75rem 1rem;
+  --form-padding-button: 0.875rem 1.5rem;
+  --form-margin-label: 0.375rem;
+  --form-margin-field: 1rem;
   --form-gap-buttons: 1rem;
-  --form-margin-info: 1rem; /* Spacing for info messages */
-  
+
   /* Border & Radius */
-  --form-border-radius: 4px;
-  --form-border-radius-button: 6px;
-  --form-border-radius-container: 8px;
-  --form-border-width: 1px;
-  
+  --form-border-radius: 12px;
+  --form-border-radius-button: 12px;
+
   /* Transitions */
   --form-transition: all 0.15s ease-in-out;
   --form-transition-button: all 0.2s ease-in-out;
-  
+
   /* Shadows */
-  --form-shadow-button-hover: 0 4px 12px rgba(163, 38, 56, 0.3);
+  --form-shadow-button-hover: 0 6px 20px rgba(163, 38, 56, 0.35);
   --form-shadow-button-active: 0 2px 4px rgba(163, 38, 56, 0.2);
   --form-shadow-error: 0 0 0 3px var(--form-error-bg);
-  
+
   /* Z-index */
   --form-z-index: 1;
 }
@@ -117,8 +92,9 @@
   min-height: 0 !important;
   z-index: var(--form-z-index) !important;
   position: relative !important;
-  border-radius: 0 0 var(--form-border-radius-container) var(--form-border-radius-container) !important;
+  border-radius: 0 !important;
   pointer-events: auto !important;
+  background: transparent !important;
 }
 
 /* ============================================
@@ -131,8 +107,24 @@
   width: 100% !important;
   max-width: 100% !important;
   padding: var(--form-padding-container) !important;
-  background: var(--form-background) !important;
+  background: transparent !important;
   border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Force all containers/wrappers to be transparent */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c,
+#form_89080626-7bc4-4c48-9437-fd47479d7371,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 > *,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c > *,
+#form_89080626-7bc4-4c48-9437-fd47479d7371 > *,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 div,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c div,
+#form_89080626-7bc4-4c48-9437-fd47479d7371 div {
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 /* Hide unwanted headings */
@@ -148,11 +140,11 @@
   display: none !important;
 }
 
-/* Labels */
+/* Labels - White text for dark theme */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label,
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c label,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
-  color: var(--form-text) !important;
+  color: #e0e0e0 !important; /* Light gray for labels */
   font-weight: var(--form-font-weight-label) !important;
   font-size: var(--form-font-size-label) !important;
   margin-bottom: var(--form-margin-label) !important;
@@ -163,7 +155,7 @@
   cursor: default !important;
 }
 
-/* Input Fields */
+/* Input Fields - Dark theme with subtle styling */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"],
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="email"],
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="tel"],
@@ -181,11 +173,14 @@
 #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
   width: 100% !important;
   padding: var(--form-padding-input) !important;
-  border: var(--form-border-width) solid var(--form-border) !important;
+  border: 1px solid #404040 !important; /* Subtle dark border */
   border-radius: var(--form-border-radius) !important;
   font-size: var(--form-font-size-input) !important;
   color: var(--form-text) !important;
-  background-color: var(--form-background-input) !important;
+  background-color: var(
+    --form-background-input
+  ) !important; /* Dark input background */
+  box-shadow: none !important;
   transition: var(--form-transition) !important;
   outline: none !important;
   font-family: var(--form-font-family) !important;
@@ -193,7 +188,7 @@
   cursor: text !important;
 }
 
-/* Input Focus States */
+/* Input Focus States - Red glow on dark background */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"]:focus,
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="email"]:focus,
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="tel"]:focus,
@@ -209,9 +204,9 @@
 #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="tel"]:focus,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 select:focus,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea:focus {
-  border-color: var(--form-border-focus) !important;
-  background-color: var(--form-background) !important;
-  box-shadow: 0 0 0 3px rgba(var(--form-primary-rgb), 0.1) !important; /* Brand-colored focus ring */
+  background-color: #333333 !important; /* Slightly lighter on focus */
+  border-color: var(--form-primary) !important; /* Red border on focus */
+  box-shadow: 0 0 0 3px rgba(163, 38, 56, 0.25) !important; /* Red glow */
   outline: none !important;
 }
 
@@ -226,27 +221,28 @@
   box-shadow: var(--form-shadow-error) !important;
 }
 
-/* Submit Buttons */
+/* Submit Buttons - Red on dark background */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="submit"],
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="submit"],
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c button[type="submit"],
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input[type="submit"],
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
 #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
-  background: var(--form-primary) !important;
-  color: var(--form-background) !important;
+  background: var(--form-primary) !important; /* Solid red */
+  color: #ffffff !important; /* White text */
   border: none !important;
-  padding: var(--form-padding-button) !important;
+  padding: 1rem 1.5rem !important;
   border-radius: var(--form-border-radius-button) !important;
   font-size: var(--form-font-size-button) !important;
   font-weight: var(--form-font-weight-button) !important;
   cursor: pointer !important;
   transition: var(--form-transition-button) !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.025em !important;
+  letter-spacing: 0.05em !important;
   width: 100% !important;
-  margin-top: 0.75rem !important;
+  margin-top: 1rem !important;
   pointer-events: auto !important;
+  box-shadow: 0 4px 14px rgba(163, 38, 56, 0.4) !important;
 }
 
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="submit"]:hover,
@@ -270,16 +266,16 @@
   box-shadow: var(--form-shadow-button-active) !important;
 }
 
-/* Back Buttons - Secondary Style (Ghost/Outline) */
+/* Back Buttons - Ghost style for dark theme */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="button"],
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button:not([type="submit"]),
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c button[type="button"],
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c button:not([type="submit"]),
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
-  background: var(--form-button-secondary-bg) !important;
-  color: var(--form-button-secondary-text) !important;
-  border: var(--form-border-width) solid var(--form-button-secondary-border) !important;
+  background: transparent !important;
+  color: #999999 !important;
+  border: 1px solid #505050 !important;
   padding: var(--form-padding-button) !important;
   border-radius: var(--form-border-radius-button) !important;
   font-size: var(--form-font-size-button) !important;
@@ -295,19 +291,19 @@
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="button"]:hover,
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c button[type="button"]:hover,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover {
-  background: var(--form-button-secondary-hover-bg) !important;
-  border-color: var(--form-button-secondary-hover-border) !important;
-  color: var(--form-text) !important;
+  background: #333333 !important;
+  border-color: #666666 !important;
+  color: #ffffff !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Select Dropdowns */
+/* Select Dropdowns - Light arrow for dark theme */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 select,
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c select,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 select {
   appearance: none !important;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") !important;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23999' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") !important;
   background-repeat: no-repeat !important;
   background-position: right 0.7rem center !important;
   background-size: 0.65rem auto !important;
@@ -339,18 +335,18 @@
   margin-bottom: var(--form-margin-field) !important;
 }
 
-/* Links */
+/* Links - Red accent on dark background */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 a,
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c a,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 a {
-  color: var(--form-primary) !important;
+  color: #e05265 !important; /* Lighter red for dark bg */
   text-decoration: underline !important;
 }
 
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 a:hover,
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c a:hover,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 a:hover {
-  color: var(--form-primary-dark) !important;
+  color: #f07080 !important; /* Even lighter on hover */
 }
 
 /* Error Messages */
@@ -362,7 +358,7 @@
   margin-top: var(--form-margin-label) !important;
 }
 
-/* Privacy Text / Legal Disclaimer - Improved Readability */
+/* Privacy Text / Legal Disclaimer - HIDDEN (we render our own in React) */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .privacy-text,
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 small,
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .disclaimer,
@@ -375,14 +371,7 @@
 #form_89080626-7bc4-4c48-9437-fd47479d7371 small,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 .disclaimer,
 #form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="disclaimer"] {
-  font-size: var(--form-disclaimer-font-size) !important;
-  color: var(--form-disclaimer-color) !important;
-  line-height: var(--form-disclaimer-line-height) !important;
-  margin-top: 1rem !important;
-  margin-bottom: 0.5rem !important;
-  text-transform: none !important; /* Remove uppercase for better readability */
-  font-weight: 400 !important; /* Normal weight instead of bold */
-  letter-spacing: normal !important;
+  display: none !important;
 }
 
 /* ============================================
@@ -395,7 +384,7 @@
   #form_89080626-7bc4-4c48-9437-fd47479d7371 {
     font-size: 14px !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 form,
   #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c form,
   #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
@@ -409,19 +398,19 @@
   #form_89080626-7bc4-4c48-9437-fd47479d7371 {
     font-size: 12px !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 form,
   #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c form,
   #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
     padding: 1rem !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label,
   #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c label,
   #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
     font-size: 12px !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"],
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="email"],
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="tel"],
@@ -448,13 +437,13 @@
   #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
     padding: 0.875rem !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 label,
   #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c label,
   #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
     font-size: 11px !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="text"],
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="email"],
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 input[type="tel"],
@@ -473,7 +462,7 @@
     font-size: 16px !important;
     padding: 0.5rem !important;
   }
-  
+
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 small,
   #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .privacy-text,
   #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c small,
@@ -489,39 +478,23 @@
    ============================================ */
 
 /* RFI Form Specific Styles */
-/* Info Messages (e.g., "GRE/GMAT NOT REQUIRED") - More Subtle */
-#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 #form_question_35db045c-d1d1-428c-86fe-55fd24c44d88 .form_label,
-#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form_p .form_label,
-#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 [class*="info"] .form_label,
-#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 [class*="message"] .form_label {
-  color: var(--form-info-color) !important;
-  font-size: var(--form-info-font-size) !important;
-  font-weight: var(--form-info-font-weight) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  padding: 0.5rem 0 !important;
-  text-align: center !important;
-  margin-bottom: var(--form-margin-info) !important;
-  margin-top: var(--form-margin-info) !important;
-  opacity: 0.9 !important; /* Slightly reduced opacity for less aggressive appearance */
+/* Info Messages (e.g., "GRE/GMAT NOT REQUIRED") - HIDDEN */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532
+  #form_question_35db045c-d1d1-428c-86fe-55fd24c44d88,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 .form_p,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 [class*="info"],
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 [class*="message"] {
+  display: none !important;
 }
 
 /* Accelerated Form Specific Styles */
-/* Info Messages - More Subtle */
-#form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header .form_label,
-#form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label,
-#form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="info"] .form_label,
-#form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="message"] .form_label {
-  color: var(--form-info-color) !important;
-  font-size: var(--form-info-font-size) !important;
-  font-weight: var(--form-info-font-weight) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  padding: 0.5rem 0 !important;
-  text-align: center !important;
-  margin-bottom: var(--form-margin-info) !important;
-  margin-top: var(--form-margin-info) !important;
-  opacity: 0.9 !important; /* Slightly reduced opacity for less aggressive appearance */
+/* Info Messages - HIDDEN */
+#form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header,
+#form_89080626-7bc4-4c48-9437-fd47479d7371
+  #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
+#form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="info"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="message"] {
+  display: none !important;
 }
 
 /* Button Container - Ensure proper layout */
@@ -561,3 +534,122 @@
   flex: 0 0 auto !important; /* Don't grow, maintain size */
 }
 
+/* ============================================
+   LIGHT THEME OVERRIDES
+   Applied when form container has data-theme="light"
+   Uses high specificity to override dark theme defaults
+   ============================================ */
+
+/* Light theme input backgrounds - using form IDs for specificity */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="text"],
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="email"],
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="tel"],
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="number"],
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] select,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] textarea,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="text"],
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="email"],
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="tel"],
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="number"],
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] select,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] textarea,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="text"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="email"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="tel"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="number"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] select,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] textarea {
+  background-color: #f3f4f6 !important; /* Light gray background */
+  color: #1f2937 !important; /* Dark text */
+  border: 1px solid #e5e7eb !important; /* Subtle border */
+}
+
+/* Light theme input focus */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="text"]:focus,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="email"]:focus,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="tel"]:focus,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="number"]:focus,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] select:focus,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] textarea:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="text"]:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="email"]:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="tel"]:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="number"]:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] select:focus,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] textarea:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="text"]:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="email"]:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="tel"]:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="number"]:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] select:focus,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] textarea:focus {
+  border-color: var(--form-primary) !important;
+  box-shadow: 0 0 0 3px rgba(163, 38, 56, 0.1) !important;
+}
+
+/* Light theme labels */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] label,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] label,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] label {
+  color: #6b7280 !important; /* Gray label text */
+}
+
+/* Light theme links */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] a,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] a,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] a {
+  color: var(--form-primary) !important;
+}
+
+/* Light theme buttons - outline style */
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] button,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="submit"],
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] button,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="submit"],
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] button,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="submit"] {
+  background: transparent !important;
+  color: #1f2937 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"] button:hover,
+#form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532[data-theme="light"]
+  input[type="submit"]:hover,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"] button:hover,
+#form_9268876a-a7c7-484d-a41e-7d0cb4c5613c[data-theme="light"]
+  input[type="submit"]:hover,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"] button:hover,
+#form_89080626-7bc4-4c48-9437-fd47479d7371[data-theme="light"]
+  input[type="submit"]:hover {
+  background: #f3f4f6 !important;
+  color: #000000 !important; /* Black text on hover */
+  border-color: #9ca3af !important;
+}

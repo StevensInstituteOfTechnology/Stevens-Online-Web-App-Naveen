@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
   CheckCircle,
   Clock,
   DollarSign,
@@ -75,13 +75,13 @@ const CorporateStudents = () => {
   const [copiedItem, setCopiedItem] = useState(null);
   const [companyName, setCompanyName] = useState(null);
   const [corporateCode, setCorporateCode] = useState(null);
-  
+
   // Questionnaire States
   const [questionnaireStep, setQuestionnaireStep] = useState(0); // 0: interest, 1: credential, 2: program selection
   const [selectedInterest, setSelectedInterest] = useState(null); // 'management' or 'engineering'
   const [selectedCredentialType, setSelectedCredentialType] = useState(null); // 'masters' or 'certificate'
   const [recommendedPrograms, setRecommendedPrograms] = useState([]);
-  
+
   // Cost Calculator States
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [isWorkforcePartner, setIsWorkforcePartner] = useState(false);
@@ -133,7 +133,7 @@ const CorporateStudents = () => {
   useEffect(() => {
     const company = searchParams.get("company");
     const code = searchParams.get("code");
-    
+
     if (company) {
       setCompanyName(decodeURIComponent(company));
     }
@@ -171,10 +171,10 @@ const CorporateStudents = () => {
         isStevensAlumni,
         annualReimbursement: annualReimbursement || undefined,
       };
-      
+
       const result = calculateProgramCost(selectedProgram.code, options);
       setCalculatedCost(result);
-      
+
       trackEvent("cost_calculator_used", {
         program: selectedProgram.code,
         has_workforce_partner: isWorkforcePartner,
@@ -239,7 +239,7 @@ const CorporateStudents = () => {
       quote:
         "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
       author: "Sara Swanson '22",
-    
+
       imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
       imageAlt: "Sara Swanson",
       buttonText: "Read More",
@@ -312,7 +312,7 @@ const CorporateStudents = () => {
   const scrollToSection = (targetId) => {
     const element = document.querySelector(targetId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -325,7 +325,7 @@ const CorporateStudents = () => {
       cta_type: ctaType,
       company: companyName || "unknown",
     });
-    
+
     if (ctaType === "request_info") {
       trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
     }
@@ -352,14 +352,14 @@ const CorporateStudents = () => {
     setIsHobokenResident(false);
     setIsStevensAlumni(false);
     setAnnualReimbursement("");
-    
+
     setTimeout(() => {
       document.getElementById("cost-calculator")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }, 100);
-    
+
     trackEvent("program_selected_from_questionnaire", {
       program_code: program.code,
       interest: selectedInterest,
@@ -373,7 +373,7 @@ const CorporateStudents = () => {
     setSelectedCredentialType(null);
     setRecommendedPrograms([]);
   };
-  
+
   // Lock body scroll when modal is open
   useEffect(() => {
     if (showContactModal) {
@@ -381,7 +381,7 @@ const CorporateStudents = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-    
+
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -394,11 +394,11 @@ const CorporateStudents = () => {
         setShowContactModal(false);
       }
     };
-    
+
     if (showContactModal) {
       window.addEventListener("keydown", handleEsc);
     }
-    
+
     return () => {
       window.removeEventListener("keydown", handleEsc);
     };
@@ -407,7 +407,7 @@ const CorporateStudents = () => {
   // Seasonal Banner Component - Year-End Campaign (Stevens Brand Colors)
   const SeasonalBanner = () => {
     if (!showSeasonalBanner) return null;
-    
+
     return (
       <div className="bg-stevens-dark-gray text-white py-3 px-4 relative border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
@@ -427,8 +427,8 @@ const CorporateStudents = () => {
               Spring 2026 Enrollment Open
             </span>
           </div>
-          <Button 
-            size="sm" 
+          <Button
+            size="sm"
             variant="default"
             onClick={() => scrollToSection("#programs-section")}
           >
@@ -436,7 +436,7 @@ const CorporateStudents = () => {
             <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
         </div>
-        <button 
+        <button
           onClick={() => setShowSeasonalBanner(false)}
           className="absolute right-2 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-1"
           aria-label="Dismiss banner"
@@ -472,7 +472,7 @@ const CorporateStudents = () => {
               world-class graduate education that's accessible, affordable, and
               designed for immediate career impact.
             </p>
-            
+
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mb-stevens-xl">
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
@@ -532,13 +532,13 @@ const CorporateStudents = () => {
             className="relative"
           >
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/assets/images/shared/accreditation.webp" 
+              <img
+                src="/assets/images/shared/accreditation.webp"
                 alt="Stevens Institute of Technology - Top-ranked university for working professionals"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stevens-dark-gray/90 via-transparent to-transparent" />
-              
+
               {/* Deadline Card */}
               <div className="absolute bottom-6 left-6 right-6 bg-white text-stevens-dark-gray p-5 rounded-lg shadow-xl">
                 <div className="flex items-start gap-4">
@@ -587,7 +587,7 @@ const CorporateStudents = () => {
                 recommendations.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-stevens-lg">
               {/* Management Option */}
               <motion.button
@@ -664,7 +664,7 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <button 
+              <button
                 onClick={() => setQuestionnaireStep(0)}
                 className="inline-flex items-center text-stevens-red hover:text-stevens-red mb-stevens-md transition-colors"
               >
@@ -682,7 +682,7 @@ const CorporateStudents = () => {
                 certificate.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Master's Degree Option */}
               <motion.button
@@ -754,7 +754,7 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <button 
+              <button
                 onClick={() => setQuestionnaireStep(1)}
                 className="inline-flex items-center text-stevens-red hover:text-stevens-red mb-stevens-md transition-colors"
               >
@@ -783,7 +783,7 @@ const CorporateStudents = () => {
                 </span>
               </p>
             </div>
-            
+
             <div
               className={`grid gap-stevens-lg ${
                 recommendedPrograms.length === 1
@@ -813,7 +813,7 @@ const CorporateStudents = () => {
                       <div className="w-full h-full bg-stevens-light-gray" />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    
+
                     <div className="absolute top-stevens-md left-stevens-md">
                       <div className="bg-stevens-dark-gray backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
                         {program.degree}
@@ -826,7 +826,7 @@ const CorporateStudents = () => {
                     <h4 className="font-stevens-display text-stevens-lg font-stevens-bold text-stevens-dark-gray mb-stevens-sm group-hover:text-stevens-red transition-colors">
                       {program.shortName || program.name}
                     </h4>
-                    
+
                     {program.stats && (
                       <div className="flex flex-wrap gap-stevens-sm text-xs text-stevens-dark-gray mb-stevens-md">
                         {program.stats.duration && (
@@ -844,7 +844,7 @@ const CorporateStudents = () => {
                       </div>
                     )}
 
-                      <Button 
+                    <Button
                       variant="default"
                       className="w-full"
                       onClick={() => handleProgramSelect(program)}
@@ -858,7 +858,7 @@ const CorporateStudents = () => {
             </div>
 
             <div className="text-center mt-stevens-xl">
-              <button 
+              <button
                 onClick={resetQuestionnaire}
                 className="text-stevens-red hover:text-stevens-red underline text-sm transition-colors"
               >
@@ -881,7 +881,7 @@ const CorporateStudents = () => {
         <PageHero
           titleLines={["Invest in Your Future", "with Stevens Online"]}
           subtitle={
-            companyName 
+            companyName
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. Spring 2026 enrollment is now open.`
               : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. Spring 2026 enrollment is now open."
           }
@@ -932,8 +932,8 @@ const CorporateStudents = () => {
               {partnerBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div 
-                    key={benefit.title} 
+                  <div
+                    key={benefit.title}
                     className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-light-gray flex flex-col"
                   >
                     <div className="mb-stevens-md flex justify-center">
@@ -951,7 +951,7 @@ const CorporateStudents = () => {
             </div>
 
             {/* Mid-section CTA */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -972,7 +972,7 @@ const CorporateStudents = () => {
                     </p>
                   </div>
                 </div>
-                <Button 
+                <Button
                   size="lg"
                   className="text-white"
                   onClick={() => scrollToSection("#programs-section")}
@@ -1007,7 +1007,7 @@ const CorporateStudents = () => {
         </section>
 
         {/* Interactive Cost Calculator */}
-        <section 
+        <section
           id="cost-calculator"
           className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
         >
@@ -1092,29 +1092,29 @@ const CorporateStudents = () => {
                       {/* Workforce Partner Discount - Only show for master's programs */}
                       {selectedProgram &&
                         !selectedProgram.code.startsWith("cert-") && (
-                        <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-stevens-light-gray rounded-lg border border-stevens-light-gray">
-                          <Checkbox
-                            id="workforce-partner"
-                            checked={isWorkforcePartner}
-                            onCheckedChange={setIsWorkforcePartner}
-                            className="mt-0.5"
-                          />
-                          <div className="flex-1">
-                            <label
-                              htmlFor="workforce-partner"
-                              className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
-                            >
+                          <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-stevens-light-gray rounded-lg border border-stevens-light-gray">
+                            <Checkbox
+                              id="workforce-partner"
+                              checked={isWorkforcePartner}
+                              onCheckedChange={setIsWorkforcePartner}
+                              className="mt-0.5"
+                            />
+                            <div className="flex-1">
+                              <label
+                                htmlFor="workforce-partner"
+                                className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
+                              >
                                 <Building className="w-4 h-4 mr-1.5 text-stevens-black" />
                                 Is your employer a Stevens workforce development
                                 partner?
-                            </label>
-                            <p className="text-xs text-stevens-dark-gray mt-1">
+                              </label>
+                              <p className="text-xs text-stevens-dark-gray mt-1">
                                 {discountInfo.workforcePartner.percentage}%
                                 discount (average savings of ~20%)
-                            </p>
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
 
                       {/* Hoboken Resident Discount */}
                       <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-stevens-light-gray rounded-lg">
@@ -1196,7 +1196,7 @@ const CorporateStudents = () => {
                         </p>
                         {annualReimbursement &&
                           calculatedCost?.durationYears && (
-                          <p className="text-xs text-stevens-red mt-1 font-medium">
+                            <p className="text-xs text-stevens-red mt-1 font-medium">
                               $
                               {parseFloat(annualReimbursement).toLocaleString()}
                               /year × {calculatedCost.durationYears} year
@@ -1206,11 +1206,11 @@ const CorporateStudents = () => {
                                 calculatedCost.durationYears
                               ).toLocaleString()}{" "}
                               total
-                          </p>
-                        )}
+                            </p>
+                          )}
                       </div>
                     </CardContent>
-                    
+
                     {/* Mobile Price Summary - Only visible on mobile */}
                     {calculatedCost && (
                       <div className="lg:hidden p-stevens-md pt-0 border-t border-stevens-light-gray">
@@ -1258,7 +1258,7 @@ const CorporateStudents = () => {
                               )}
                             </>
                           )}
-                          
+
                           {calculatedCost.percentSaved > 0 && (
                             <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
                               <Star className="w-4 h-4 mr-2 fill-current" />
@@ -1270,7 +1270,7 @@ const CorporateStudents = () => {
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Mobile CTA Buttons - Only visible on mobile */}
                     {calculatedCost && (
                       <div className="lg:hidden p-stevens-md pt-0 space-y-stevens-md border-t border-stevens-light-gray">
@@ -1279,7 +1279,7 @@ const CorporateStudents = () => {
                           // Build the correct application URL based on program config
                           const appConfig = selectedProgram.applicationConfig;
                           const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
-                          
+
                           // External application (Stevens grad admissions)
                           if (
                             appConfig?.standardLink ||
@@ -1290,9 +1290,9 @@ const CorporateStudents = () => {
                               appConfig.standardLink || appConfig.link;
                             const separator = baseUrl.includes("?") ? "&" : "?";
                             const fullUrl = `${baseUrl}${separator}${utmParams}`;
-                            
+
                             return (
-                              <a 
+                              <a
                                 href={fullUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -1318,12 +1318,12 @@ const CorporateStudents = () => {
                               </a>
                             );
                           }
-                          
+
                           // Internal accelerated application
                           const internalPath =
                             appConfig?.link || "/accelerated-application/";
                           return (
-                            <Link 
+                            <Link
                               to={`${internalPath}?program=${
                                 selectedProgram.code
                               }${
@@ -1351,10 +1351,10 @@ const CorporateStudents = () => {
                             </Link>
                           );
                         })()}
-                        
+
                         {/* Secondary CTA - RFI */}
-                        <Button 
-                          size="lg" 
+                        <Button
+                          size="lg"
                           variant="outline-dark"
                           className="w-full py-4"
                           onClick={() => {
@@ -1365,7 +1365,7 @@ const CorporateStudents = () => {
                           <Mail className="w-5 h-5 mr-2" />
                           Request More Information
                         </Button>
-                        
+
                         <p className="text-center text-xs text-stevens-dark-gray pt-2">
                           Questions?{" "}
                           <a
@@ -1485,7 +1485,7 @@ const CorporateStudents = () => {
                                   : step.icon === "briefcase"
                                   ? Briefcase
                                   : CheckCircle;
-                              
+
                               return (
                                 <div key={index}>
                                   <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-stevens-light-gray rounded-lg border border-stevens-light-gray">
@@ -1559,7 +1559,7 @@ const CorporateStudents = () => {
                               )}
                             </>
                           )}
-                          
+
                           {calculatedCost.percentSaved > 0 && (
                             <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
                               <Star className="w-5 h-5 mr-2 fill-current" />
@@ -1568,7 +1568,7 @@ const CorporateStudents = () => {
                               </span>
                             </div>
                           )}
-                          
+
                           {/* Prompt to add reimbursement if not entered */}
                           {!calculatedCost.steps.find(
                             (s) => s.type === "reimbursement"
@@ -1589,19 +1589,19 @@ const CorporateStudents = () => {
                               </div>
                             </div>
                           )}
-                          
+
                           {/* Certificate FREE message */}
                           {calculatedCost.programCode.startsWith("cert-") &&
                             calculatedCost.finalPrice === 0 && (
-                            <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
-                              <div className="flex items-center text-stevens-white">
-                                <CheckCircle className="w-6 h-6 mr-2 fill-current" />
-                                <span className="text-lg font-bold">
-                                  Fully covered by employer benefits!
-                                </span>
+                              <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
+                                <div className="flex items-center text-stevens-white">
+                                  <CheckCircle className="w-6 h-6 mr-2 fill-current" />
+                                  <span className="text-lg font-bold">
+                                    Fully covered by employer benefits!
+                                  </span>
+                                </div>
                               </div>
-                            </div>
-                          )}
+                            )}
                         </div>
 
                         {/* CTA Buttons */}
@@ -1611,7 +1611,7 @@ const CorporateStudents = () => {
                             // Build the correct application URL based on program config
                             const appConfig = selectedProgram.applicationConfig;
                             const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
-                            
+
                             // External application (Stevens grad admissions)
                             if (
                               appConfig?.standardLink ||
@@ -1624,9 +1624,9 @@ const CorporateStudents = () => {
                                 ? "&"
                                 : "?";
                               const fullUrl = `${baseUrl}${separator}${utmParams}`;
-                              
+
                               return (
-                                <a 
+                                <a
                                   href={fullUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
@@ -1654,12 +1654,12 @@ const CorporateStudents = () => {
                                 </a>
                               );
                             }
-                            
+
                             // Internal accelerated application
                             const internalPath =
                               appConfig?.link || "/accelerated-application/";
                             return (
-                              <Link 
+                              <Link
                                 to={`${internalPath}?program=${
                                   selectedProgram.code
                                 }${
@@ -1687,10 +1687,10 @@ const CorporateStudents = () => {
                               </Link>
                             );
                           })()}
-                          
+
                           {/* Secondary CTA - RFI */}
-                          <Button 
-                            size="lg" 
+                          <Button
+                            size="lg"
                             variant="outline-dark"
                             className="w-full py-4"
                             onClick={() => {
@@ -1701,7 +1701,7 @@ const CorporateStudents = () => {
                             <Mail className="w-5 h-5 mr-2" />
                             Request More Information
                           </Button>
-                          
+
                           <p className="text-center text-xs text-stevens-dark-gray pt-2">
                             Questions?{" "}
                             <a
@@ -1750,7 +1750,7 @@ const CorporateStudents = () => {
                         ?.scrollIntoView({
                           behavior: "smooth",
                           block: "start",
-                      });
+                        });
                     }}
                   >
                     Find Your Program
@@ -1791,7 +1791,7 @@ const CorporateStudents = () => {
                   </thead>
                   <tbody>
                     {applicationSteps.map((step, index) => (
-                      <tr 
+                      <tr
                         key={step.step}
                         className={`border-b border-stevens-light-gray transition-all duration-300 cursor-default group ${
                           index % 2 === 0
@@ -1845,8 +1845,8 @@ const CorporateStudents = () => {
               {/* Mobile Card View */}
               <div className="lg:hidden divide-y divide-stevens-light-gray">
                 {applicationSteps.map((step) => (
-                  <div 
-                    key={step.step} 
+                  <div
+                    key={step.step}
                     className="p-stevens-lg transition-all duration-300 hover:bg-stevens-light-gray group"
                   >
                     <div className="mb-stevens-md">
@@ -1916,7 +1916,7 @@ const CorporateStudents = () => {
                 through Stevens workforce development programs. Your employer
                 benefits are ready to be used.
               </p>
-              
+
               {/* Deadline Notice */}
               <p className="text-sm text-stevens-red font-medium mb-stevens-xl">
                 Spring 2026: Priority Deadline Dec 15 • Final Deadline Jan 10
@@ -1925,9 +1925,8 @@ const CorporateStudents = () => {
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
                   size="lg"
-                  variant="default"
-                  className="group w-full sm:w-auto min-w-[280px] py-4 text-base"
                   variant="outline-white"
+                  className="group w-full sm:w-auto min-w-[280px] py-4 text-base"
                   onClick={() => {
                     handleCTAClick("request_info_footer");
                     setShowContactModal(true);
@@ -1939,9 +1938,8 @@ const CorporateStudents = () => {
                 </Button>
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="w-full sm:w-auto min-w-[280px] py-4"
                   variant="outline-white"
+                  className="w-full sm:w-auto min-w-[280px] py-4"
                   onClick={() => {
                     handleCTAClick("schedule_consultation_footer");
                     setShowContactOptionsModal(true);
@@ -1975,7 +1973,7 @@ const CorporateStudents = () => {
 
         {/* Contact Modal */}
         {showContactModal && (
-          <div 
+          <div
             className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
             onClick={() => setShowContactModal(false)}
           >
@@ -1999,7 +1997,7 @@ const CorporateStudents = () => {
                     <X className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </div>
-                
+
                 <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
                   <LeadCaptureForm
                     formType="rfi"
@@ -2054,8 +2052,8 @@ const CorporateStudents = () => {
         <Dialog
           open={showContactOptionsModal}
           onOpenChange={(open) => {
-          setShowContactOptionsModal(open);
-          if (!open) setCopiedItem(null);
+            setShowContactOptionsModal(open);
+            if (!open) setCopiedItem(null);
           }}
         >
           <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
@@ -2066,7 +2064,7 @@ const CorporateStudents = () => {
                 </DialogTitle>
               </DialogHeader>
             </div>
-            
+
             <div className="p-6 space-y-4">
               <button
                 onClick={() => {

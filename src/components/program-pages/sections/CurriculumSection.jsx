@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { Card, CardContent } from '../../ui/card';
 import { Section } from '../primitives';
@@ -11,7 +11,7 @@ import { Section } from '../primitives';
  * - Dynamic title with program code fallback
  * - Description paragraphs (newline separated)
  * - Horizontal scrollable tabs for course categories
- * - HTML content in tab panels
+ * - HTML content in tab panels with collapsible course items
  * - Optional Complete Course Catalog section
  * 
  * Used in: Both Degree and Certificate pages
@@ -30,6 +30,45 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
   { curriculum, programCode },
   ref
 ) {
+  const sectionRef = useRef(null);
+
+  // Handle collapsible course toggles
+  // Using event delegation for reliable click handling regardless of DOM changes
+  useEffect(() => {
+    const handleCourseToggle = (e) => {
+      // Use event delegation - check if clicked element is or is inside a .course-toggle
+      const button = e.target.closest('.course-toggle');
+      if (!button) return;
+      
+      const targetId = button.getAttribute('data-target');
+      if (targetId) {
+        const content = document.getElementById(targetId);
+        if (content) {
+          content.classList.toggle('hidden');
+          // Rotate arrow indicator
+          const arrow = button.querySelector('.course-arrow');
+          if (arrow) {
+            arrow.style.transform = content.classList.contains('hidden') 
+              ? 'rotate(0deg)' 
+              : 'rotate(180deg)';
+          }
+        }
+      }
+    };
+
+    // Attach listener to the section container for event delegation
+    const container = sectionRef.current;
+    if (container) {
+      container.addEventListener('click', handleCourseToggle);
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('click', handleCourseToggle);
+      }
+    };
+  }, [curriculum]); // Re-attach when curriculum changes
+
   if (!curriculum) return null;
 
   return (
@@ -38,7 +77,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
       bgClassName="bg-stevens-white"
       ref={ref}
     >
-      <div className="max-w-stevens-content-max mx-auto">
+      <div className="max-w-stevens-content-max mx-auto" ref={sectionRef}>
         <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
           {curriculum.title
             ? curriculum.title
