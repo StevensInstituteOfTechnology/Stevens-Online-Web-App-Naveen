@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
-import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
-import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { ExploreTemplate } from '../components/explore-pages';
+import { TuitionCardsHero } from '../components/program-pages/primitives';
 import { KEY_DATES } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
@@ -203,9 +203,9 @@ const ExploreMEADS = () => {
         programName="Master of Engineering in Applied Data Science"
         programType="degree"
       >
-        <ExploreProgramPageTemplate 
+        <ExploreTemplate 
           {...meadsData} 
-          heroBottomContent={<CertificateTuitionCardsHero cards={[
+          heroBottomContent={<TuitionCardsHero cards={[
             { value: "$800", label: "Per Credit" },
             { value: "$24,000", label: "Total Program Cost" }
           ]} />}

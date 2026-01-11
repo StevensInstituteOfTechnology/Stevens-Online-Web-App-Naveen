@@ -1,8 +1,8 @@
 import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, GraduationCap } from 'lucide-react';
-import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
-import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { ExploreTemplate } from '../components/explore-pages';
+import { TuitionCardsHero } from '../components/program-pages/primitives';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -183,9 +183,9 @@ const ExploreCertEnterpriseAI = () => {
         programName="Professional Graduate Certificate in Enterprise AI"
         programType="certificate"
       >
-        <ExploreProgramPageTemplate 
+        <ExploreTemplate 
           {...certData}
-          heroBottomContent={<CertificateTuitionCardsHero cards={[
+          heroBottomContent={<TuitionCardsHero cards={[
             { value: "$5,250", label: "Total Certificate Cost" },
             { value: "$583", label: "Per Credit" }
           ]} />}

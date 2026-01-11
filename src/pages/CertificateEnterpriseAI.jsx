@@ -12,8 +12,8 @@ import {
   Users,
   BrainCircuit,
 } from "lucide-react";
-import ProgramPageTemplate from "../components/program-pages/ProgramPageTemplate";
-import CertificateTuitionCardsHero from "../components/program-pages/CertificateTuitionCardsHero";
+import { CertificateTemplate } from "../components/program-pages/templates";
+import { TuitionCardsHero } from "../components/program-pages/primitives";
 import { KEY_DATES, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
@@ -459,7 +459,7 @@ export default function CertificateEnterpriseAIPage() {
   const heroWithTuitionCards = {
     ...programData.hero,
     bottomContent: (
-      <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+      <TuitionCardsHero cards={programData.tuition.cards} />
     ),
   };
 
@@ -470,7 +470,7 @@ export default function CertificateEnterpriseAIPage() {
         programName="Professional Graduate Certificate in Enterprise AI"
         programType="certificate"
       >
-        <ProgramPageTemplate
+        <CertificateTemplate
           programData={{ ...programData, hero: heroWithTuitionCards }}
         />
       </ProgramContextProvider>

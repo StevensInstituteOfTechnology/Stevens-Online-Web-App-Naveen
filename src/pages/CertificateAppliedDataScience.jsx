@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Globe, Award, Check, Briefcase, DollarSign, GraduationCap, TrendingUp,
   Target, BookOpen, Users, Code, Database, LineChart } from 'lucide-react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
-import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { CertificateTemplate } from '../components/program-pages/templates';
+import { TuitionCardsHero } from '../components/program-pages/primitives';
 import { KEY_DATES, BOOKING_URLS } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
@@ -314,7 +314,7 @@ export default function CertificateAppliedDataSciencePage() {
   // Add bottomContent to hero for certificate pages
   const heroWithTuitionCards = {
     ...programData.hero,
-    bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />
   };
   
   return (
@@ -324,7 +324,7 @@ export default function CertificateAppliedDataSciencePage() {
         programName="Professional Graduate Certificate in Applied Data Science Foundations"
         programType="certificate"
       >
-        <ProgramPageTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />
+        <CertificateTemplate programData={{ ...programData, hero: heroWithTuitionCards }} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

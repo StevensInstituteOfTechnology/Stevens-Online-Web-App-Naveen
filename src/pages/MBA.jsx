@@ -3,7 +3,7 @@ import {
   Globe, Award, Check, Briefcase, DollarSign, BrainCircuit, LineChart,
   Target, TrendingUp, Users
 } from 'lucide-react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { DegreeTemplate } from '../components/program-pages/templates';
 import { KEY_DATES } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
@@ -759,7 +759,7 @@ export default function MBAPage() {
         programName="Master of Business Administration"
         programType="degree"
       >
-        <ProgramPageTemplate programData={programData} />
+        <DegreeTemplate programData={programData} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

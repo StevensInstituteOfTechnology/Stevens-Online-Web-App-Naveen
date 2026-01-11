@@ -1,7 +1,7 @@
 import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp, Code } from 'lucide-react';
-import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { ExploreTemplate } from '../components/explore-pages';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -222,7 +222,7 @@ const ExploreMSCS = () => {
         programName="Master of Science in Computer Science"
         programType="degree"
       >
-        <ExploreProgramPageTemplate {...mscsData} />
+        <ExploreTemplate {...mscsData} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

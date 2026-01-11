@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { DegreeTemplate } from '../components/program-pages/templates';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
@@ -670,7 +670,7 @@ export default function MSCSPage() {
         programName="Master of Science in Computer Science"
         programType="degree"
       >
-        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+        <DegreeTemplate programData={programData} useApplicationModal={true} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

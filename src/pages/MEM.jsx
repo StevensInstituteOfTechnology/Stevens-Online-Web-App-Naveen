@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
+import { DegreeTemplate } from '../components/program-pages/templates';
 import { Globe, Check, Award } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES } from '@/config/constants';
@@ -444,7 +444,7 @@ export default function MEMPage() {
         programName="Master of Engineering in Engineering Management"
         programType="degree"
       >
-        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+        <DegreeTemplate programData={programData} useApplicationModal={true} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

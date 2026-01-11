@@ -1,6 +1,6 @@
 import React from 'react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
-import CertificateTuitionCardsHero from '../components/program-pages/CertificateTuitionCardsHero';
+import { DegreeTemplate } from '../components/program-pages/templates';
+import { TuitionCardsHero } from '../components/program-pages/primitives';
 import { Award, Check, Star } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { KEY_DATES, BOOKING_URLS } from '@/config/constants';
@@ -553,7 +553,7 @@ export default function MEADS() {
   // Add pricing cards to hero section
   const heroWithPricing = {
     ...programData.hero,
-    bottomContent: <CertificateTuitionCardsHero cards={programData.tuition.cards} />
+    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />
   };
   
   return (
@@ -563,7 +563,7 @@ export default function MEADS() {
         programName="Master of Engineering in Applied Data Science"
         programType="degree"
       >
-        <ProgramPageTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />
+        <DegreeTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

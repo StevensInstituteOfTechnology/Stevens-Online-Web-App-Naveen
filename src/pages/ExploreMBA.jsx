@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Globe, Star } from 'lucide-react';
-import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { ExploreTemplate } from '../components/explore-pages';
 import { KEY_DATES } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
@@ -199,7 +199,7 @@ const ExploreMBA = () => {
         programName="Master of Business Administration"
         programType="degree"
       >
-        <ExploreProgramPageTemplate {...mbaData} />
+        <ExploreTemplate {...mbaData} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

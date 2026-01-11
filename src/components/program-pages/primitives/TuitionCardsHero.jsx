@@ -2,10 +2,12 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 
 /**
- * Tuition Cards Component for Certificate Page Hero Section
- * Displays tuition cards in a 2-column grid for the PageHero bottomContent
+ * Tuition Cards Component for Hero Section
+ * Displays tuition/pricing cards in a 2-column grid for the PageHero bottomContent
+ * 
+ * Used by: Certificate pages, MEADS, Explore pages
  */
-export default function CertificateTuitionCardsHero({ cards }) {
+export function TuitionCardsHero({ cards }) {
   if (!cards || cards.length === 0) {
     return null;
   }
@@ -40,3 +42,5 @@ export default function CertificateTuitionCardsHero({ cards }) {
   );
 }
 
+// Backward compatible alias
+export const CertificateTuitionCardsHero = TuitionCardsHero;

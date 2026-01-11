@@ -11,3 +11,4 @@ export { RankingCard } from './RankingCard';
 export { FacultyCard } from './FacultyCard';
 export { SkillCardsGrid } from './SkillCardsGrid';
 export { SkillCarousel } from './SkillCarousel';
+export { TuitionCardsHero, CertificateTuitionCardsHero } from './TuitionCardsHero';

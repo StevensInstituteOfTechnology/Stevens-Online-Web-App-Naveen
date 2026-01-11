@@ -1,14 +1,21 @@
+/**
+ * ExploreTemplate - Marketing/Landing Page Template
+ * 
+ * Used for Explore pages (ExploreMBA, ExploreMSCS, etc.)
+ * These are simplified, marketing-focused versions of the main program pages.
+ */
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Check, Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { PageHero, ApplicationModal, VideoPlayer } from '@/components/shared';
-import LeadCaptureForm from '../forms/LeadCaptureForm';
+import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { BOOKING_URLS } from '@/config/constants';
 import { getContentImageProps } from '@/utils/responsiveImage';
-const ExploreProgramPageTemplate = ({
+
+export function ExploreTemplate({
   // Hero Section Props
   heroTitle,
   heroSubtitle,
@@ -85,7 +92,7 @@ const ExploreProgramPageTemplate = ({
   justLaunchedButtonText = "",
   justLaunchedButtonLink = "#",
   justLaunchedImage = "/assets/images/shared/stevens-campus.webp"
-}) => {
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Set SEO meta tags
@@ -698,6 +705,7 @@ const ExploreProgramPageTemplate = ({
       />
     </div>
   );
-};
+}
 
-export default ExploreProgramPageTemplate;
+// Backward compatible alias
+export default ExploreTemplate;

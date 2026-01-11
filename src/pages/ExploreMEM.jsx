@@ -1,7 +1,7 @@
 import React from 'react';
 import { KEY_DATES } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
-import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
+import { ExploreTemplate } from '../components/explore-pages';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -197,7 +197,7 @@ const ExploreMEM = () => {
         programName="Master of Engineering in Engineering Management"
         programType="degree"
       >
-        <ExploreProgramPageTemplate {...memData} />
+        <ExploreTemplate {...memData} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

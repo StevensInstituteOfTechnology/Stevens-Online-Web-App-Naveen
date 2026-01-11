@@ -16,6 +16,3 @@ export * from './templates';
 export * from './sections';
 export * from './primitives';
 export * from './navigation';
-
-// Legacy export - will be removed after migration
-export { default as ProgramPageTemplate } from './ProgramPageTemplate';
