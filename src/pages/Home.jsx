@@ -672,13 +672,25 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-center pb-12 lg:pb-16"
+              className="text-center pb-8 lg:pb-12"
             >
-              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold italic text-stevens-red leading-tight tracking-tight">
+              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold italic text-stevens-red leading-tight tracking-tight mb-4">
                 #1 In NJ for
                 <br />
                 Graduate Earnings
               </h2>
+              <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mb-4">
+                U.S. Dept. of Education 2025
+              </p>
+              <a
+                href="https://www.stevens.edu/news/stevens-ranks-no-1-in-new-jersey-for-graduate-earnings-in-new-federal-salary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-stevens-red transition-colors font-medium group"
+              >
+                Read the full report
+                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
             </motion.div>
 
             {/* Horizontal Divider */}
@@ -701,7 +713,7 @@ export default function Home() {
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
               >
                 <div>
-                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight ">
                     #1
                   </p>
                   <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
@@ -712,7 +724,7 @@ export default function Home() {
                     Jersey School
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
                   U.S. News & World Report 2025
                 </p>
               </motion.div>
@@ -737,7 +749,7 @@ export default function Home() {
                     Award
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
                   USDLA Distance Learning
                 </p>
               </motion.div>
@@ -760,7 +772,7 @@ export default function Home() {
                     ROI Colleges'
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
                   Based on 4-year degree cost
                 </p>
               </motion.div>
@@ -1317,7 +1329,9 @@ export default function Home() {
         </section>
 
         {/* SARA Accreditation Logo Section */}
-        <section className="py-20 border-t bg-white">
+        <section className="pb-20 bg-stevens-black">
+          {/* 80% width border */}
+          <div className="w-[80%] mx-auto h-px bg-white/20 mb-[60px]" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center">
               <div className="space-y-4">

@@ -46,6 +46,7 @@ const programData = {
       { text: "Graduate Credit", icon: Award },
       { text: "Stackable to Masters", icon: GraduationCap },
     ],
+    
   },
   quickFacts: {
     atAGlance: [
@@ -470,7 +471,7 @@ export default function CertificateEnterpriseAIPage() {
       >
         <CertificateTemplate
           programData={{ ...programData, hero: heroWithTuitionCards }}
-          theme="light"
+          theme="dark"
         />
       </ProgramContextProvider>
     </PageContextProvider>

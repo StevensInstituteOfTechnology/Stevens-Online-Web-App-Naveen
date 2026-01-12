@@ -593,7 +593,7 @@ export default function MEMPage() {
       >
         <DegreeTemplate
           programData={programData}
-          theme="light"
+          theme="dark"
           useApplicationModal={true}
         />
       </ProgramContextProvider>

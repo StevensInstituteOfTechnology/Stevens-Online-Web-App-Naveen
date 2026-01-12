@@ -894,7 +894,7 @@ export default function MBAPage() {
         programName="Master of Business Administration"
         programType="degree"
       >
-        <DegreeTemplate programData={programData} theme="light" />
+        <DegreeTemplate programData={programData} theme="dark" />
       </ProgramContextProvider>
     </PageContextProvider>
   );
