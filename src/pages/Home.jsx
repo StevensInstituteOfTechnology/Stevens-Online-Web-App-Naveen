@@ -657,19 +657,19 @@ export default function Home() {
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"
-          className="h-[256px] lg:h-[500px]"
+          className="h-[256px] lg:h-[350px]"
         />
 
         {/* Background section that continues below parallax */}
         <section className="relative bg-stevens-black pt-1 pb-16">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
-          <div className="relative z-10 mx-auto max-w-6xl bg-white shadow-xl -mt-16 lg:-mt-32 px-10 py-16 lg:px-16 lg:py-20 scale-[0.90] origin-top">
+          <div className="relative z-10 mx-auto max-w-6xl bg-stevens-dark-gray shadow-2xl -mt-16 lg:-mt-32 px-10 py-16 lg:px-16 lg:py-20 scale-[0.90] origin-top border border-white/10">
             {/* Title */}
-            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-4 tracking-tight leading-tight text-center">
+            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight leading-tight text-center">
               A Degree That{" "}
               <span className="text-stevens-red">Pays Dividends</span>
             </h2>
-            <p className="text-stevens-lg text-stevens-gray text-center mb-8">
+            <p className="text-stevens-lg text-white/70 text-center mb-8">
               Stevens is consistently recognized for academic excellence and
               ROI.
             </p>
@@ -693,17 +693,17 @@ export default function Home() {
                   <p className="font-stevens-display text-8xl lg:text-9xl font-bold text-stevens-red mb-6 leading-none tracking-tighter drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
                     #1
                   </p>
-                  <h3 className="text-stevens-dark-gray font-bold text-2xl lg:text-3xl leading-tight max-w-2xl mx-auto group-hover:text-stevens-red transition-colors">
+                  <h3 className="text-white font-bold text-2xl lg:text-3xl leading-tight max-w-2xl mx-auto group-hover:text-stevens-red transition-colors">
                     In NJ for Graduate Earnings
                   </h3>
-                  <p className="text-stevens-gray text-sm mt-3 font-medium uppercase tracking-wider">
+                  <p className="text-white/60 text-sm mt-3 font-medium uppercase tracking-wider">
                     U.S. Dept. of Education 2025
                   </p>
                   {/* Clickable indicator */}
                   <Button
                     variant="link"
                     size="sm"
-                    className="mt-4 p-0 h-auto opacity-1 "
+                    className="mt-4 p-0 h-auto opacity-1 text-stevens-red hover:text-white"
                   >
                     Read the full report
                     <ExternalLink className="w-4 h-4 ml-1" />
@@ -717,7 +717,7 @@ export default function Home() {
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeInOut" }}
                 viewport={{ once: true }}
-                className="w-full border-t border-stevens-light-gray/60 mb-12 lg:mb-16 origin-center"
+                className="w-full border-t border-white/20 mb-12 lg:mb-16 origin-center"
               ></motion.div>
 
               {/* Level 2: Supporting Stats - The Reinforcement */}
@@ -731,13 +731,13 @@ export default function Home() {
                   whileHover={{ y: -4 }}
                   className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     #1
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
+                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Online MBA from a New Jersey school
                   </p>
-                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
+                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
                     U.S. News & World Report 2025
                   </p>
                 </motion.div>
@@ -751,13 +751,13 @@ export default function Home() {
                   whileHover={{ y: -4 }}
                   className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     7x
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
+                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Winner of 21st Century Award
                   </p>
-                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
+                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
                     USDLA Distance Learning
                   </p>
                 </motion.div>
@@ -771,13 +771,13 @@ export default function Home() {
                   whileHover={{ y: -4 }}
                   className="text-center group cursor-default px-2"
                 >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-stevens-dark-gray mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
                     #9
                   </p>
-                  <p className="text-stevens-dark-gray font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
+                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
                     Among 'Best ROI Colleges'
                   </p>
-                  <p className="text-stevens-gray text-xs mt-3 uppercase tracking-wider">
+                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
                     Based on 4-year degree cost
                   </p>
                 </motion.div>
