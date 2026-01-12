@@ -662,127 +662,108 @@ export default function Home() {
         />
 
         {/* Background section that continues below parallax */}
-        <section className="relative bg-stevens-black pt-1 pb-16">
+        <section className="relative bg-stevens-black pt-1 ">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
-          <div className="relative z-10 mx-auto max-w-6xl bg-stevens-dark-gray shadow-2xl -mt-16 lg:-mt-32 px-10 py-16 lg:px-16 lg:py-20 scale-[0.90] origin-top border border-white/10">
-            {/* Title */}
-            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight leading-tight text-center">
-              A Degree That{" "}
-              <span className="text-stevens-red">Pays Dividends</span>
-            </h2>
-            <p className="text-stevens-lg text-white/70 text-center mb-8">
-              Stevens is consistently recognized for academic excellence and
-              ROI.
-            </p>
+          {/* By the Numbers - Dark Mode Premium Design */}
+          <div className="relative z-10 mx-auto max-w-7xl bg-stevens-black -mt-16  px-8 pt-16 lg:px-16 lg:pt-24 scale-[0.90] origin-top">
+            {/* Hero Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center pb-12 lg:pb-16"
+            >
+              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold italic text-stevens-red leading-tight tracking-tight">
+                #1 In NJ for
+                <br />
+                Graduate Earnings
+              </h2>
+            </motion.div>
 
-            {/* Optimized Layout: Hero Stat + Supporting Grid */}
-            <div className="flex flex-col">
-              {/* Level 1: Hero Stat - The Primary Hook (Clickable) */}
-              <a
-                href="https://www.stevens.edu/news/stevens-ranks-no-1-in-new-jersey-for-graduate-earnings-in-new-federal-salary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  className="text-center mb-4  hover:scale-105 transition-transform duration-200 cursor-pointer"
-                >
-                  <p className="font-stevens-display text-8xl lg:text-9xl font-bold text-stevens-red mb-6 leading-none tracking-tighter drop-shadow-sm group-hover:scale-110 transition-transform duration-300">
-                    #1
-                  </p>
-                  <h3 className="text-white font-bold text-2xl lg:text-3xl leading-tight max-w-2xl mx-auto group-hover:text-stevens-red transition-colors">
-                    In NJ for Graduate Earnings
-                  </h3>
-                  <p className="text-white/60 text-sm mt-3 font-medium uppercase tracking-wider">
-                    U.S. Dept. of Education 2025
-                  </p>
-                  {/* Clickable indicator */}
-                  <Button
-                    variant="link"
-                    size="sm"
-                    className="mt-4 p-0 h-auto opacity-1 text-stevens-red hover:text-white"
-                  >
-                    Read the full report
-                    <ExternalLink className="w-4 h-4 ml-1" />
-                  </Button>
-                </motion.div>
-              </a>
+            {/* Horizontal Divider */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-full h-px bg-[#333333] origin-center"
+            />
 
-              {/* Visual Divider - Creates Breathing Room */}
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              {/* Stat 1 */}
               <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="w-full border-t border-white/20 mb-12 lg:mb-16 origin-center"
-              ></motion.div>
-
-              {/* Level 2: Supporting Stats - The Reinforcement */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
-                {/* Stat 2 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  className="text-center group cursor-default px-2"
-                >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
+              >
+                <div>
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     #1
                   </p>
-                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
-                    Online MBA from a New Jersey school
+                  <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
+                    Online MBA
+                    <br />
+                    from a New
+                    <br />
+                    Jersey School
                   </p>
-                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
-                    U.S. News & World Report 2025
-                  </p>
-                </motion.div>
+                </div>
+                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                  U.S. News & World Report 2025
+                </p>
+              </motion.div>
 
-                {/* Stat 3 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  className="text-center group cursor-default px-2"
-                >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+              {/* Stat 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
+              >
+                <div>
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     7x
                   </p>
-                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
-                    Winner of 21st Century Award
+                  <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
+                    Winner of
+                    <br />
+                    21st Century
+                    <br />
+                    Award
                   </p>
-                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
-                    USDLA Distance Learning
-                  </p>
-                </motion.div>
+                </div>
+                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                  USDLA Distance Learning
+                </p>
+              </motion.div>
 
-                {/* Stat 4 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  className="text-center group cursor-default px-2"
-                >
-                  <p className="font-stevens-display text-5xl lg:text-6xl font-bold text-white mb-4 group-hover:text-stevens-red transition-colors duration-300 leading-none">
+              {/* Stat 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px]"
+              >
+                <div>
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     #9
                   </p>
-                  <p className="text-white font-semibold text-base lg:text-lg leading-snug min-h-[48px] flex items-center justify-center">
-                    Among 'Best ROI Colleges'
+                  <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
+                    Among 'Best
+                    <br />
+                    ROI Colleges'
                   </p>
-                  <p className="text-white/60 text-xs mt-3 uppercase tracking-wider">
-                    Based on 4-year degree cost
-                  </p>
-                </motion.div>
-              </div>
+                </div>
+                <p className="text-[10px] sm:text-xs text-[#999999] uppercase tracking-wider mt-6">
+                  Based on 4-year degree cost
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -1283,41 +1264,38 @@ export default function Home() {
                   <AnimatedSection
                     key={event.title}
                     delay={0.1 * (index + 1)}
-                    className="group cursor-pointer bg-stevens-dark-gray border border-white/10"
+                    className="group cursor-pointer"
                   >
                     <a
                       href={event.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-full flex flex-col bg-transparent"
+                      className="h-full flex flex-col bg-white/[0.08] backdrop-blur-md border border-white/10 overflow-hidden hover:bg-white/[0.12] hover:border-white/20 transition-all duration-300"
                     >
-                      <div className="aspect-video w-full overflow-hidden shadow-sm">
+                      <div className="aspect-video w-full overflow-hidden">
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-full object-cover transform group-hover:scale-[1.15] transition-transform duration-500"
+                          className="w-full h-full object-cover transform group-hover:scale-[1.08] transition-transform duration-500"
                         />
                       </div>
-                      <div className="relative mx-6 -mt-8 hover:-mt-12 bg-stevens-gray border border-white/10 p-6 transition-all duration-300 flex flex-col flex-grow z-10 ">
-                        <div className="min-h-[180px]">
-                          <p className="text-lg text-stevens-red font-bold uppercase tracking-wider mb-2">
+                      <div className="p-6 flex flex-col flex-grow">
+                        <div className="flex-grow">
+                          <p className="text-sm text-stevens-red font-bold uppercase tracking-wider mb-3">
                             On-Demand Event
                           </p>
-                          <h3 className="font-stevens-display text-xl font-bold text-white mb-3 group-hover: transition-colors">
+                          <h3 className="font-stevens-display text-lg lg:text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors leading-tight">
                             {event.title}
                           </h3>
-                          <div className="flex items-center text-xs text-white mb-6 uppercase tracking-wider font-medium">
+                          <div className="flex items-center text-xs text-white/50 uppercase tracking-wider font-medium">
                             <span>{event.length}</span>
                           </div>
                         </div>
-                        <div className="mt-auto pt-4 border-t border-white/20">
-                          <Button
-                            variant="link"
-                            className="pl-0 text-sm text-stevens-white hover:text-stevens-red"
-                          >
+                        <div className="mt-6 pt-4 border-t border-white/10">
+                          <span className="inline-flex items-center text-sm text-white/70 group-hover:text-stevens-red transition-colors font-medium">
                             Watch now
-                            <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                          </Button>
+                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                          </span>
                         </div>
                       </div>
                     </a>

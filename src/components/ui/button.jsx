@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
   // Base styles: IBM Plex Sans font (per CPE Brand Guidelines), flexible layout
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-stevens-md font-stevens-body font-semibold tracking-wider transition-all duration-stevens-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-light-gray disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap  font-stevens-body font-semibold tracking-wider transition-all duration-stevens-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-light-gray disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
