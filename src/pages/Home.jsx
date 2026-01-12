@@ -508,8 +508,9 @@ export default function Home() {
                 className="text-stevens-white pb-stevens-xl"
               >
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light tracking-tight mb-stevens-lg ">
-                  Expanding and building on 150 years of exceptional technology
-                  education
+                  Expanding and building on{" "}
+                  <span className="text-stevens-red">150 years</span> of
+                  exceptional technology education
                 </h2>
                 <p className="text-stevens-white text-stevens-lg mb-stevens-xl leading-relaxed">
                   For more than a century, Stevens has delivered worldclass,
@@ -1264,13 +1265,13 @@ export default function Home() {
         </section>
 
         {/* Upcoming Events */}
-        <section className="bg-stevens-light-gray py-stevens-section">
+        <section className="bg-stevens-black py-stevens-section">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-4">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white mb-4">
                 Application Support Events
               </h2>
-              <p className="text-stevens-lg text-stevens-gray mb-6">
+              <p className="text-stevens-lg text-white/70 mb-6">
                 Join us for a live webinar to learn more.
               </p>
               <div className="w-16 h-1 bg-stevens-red"></div>
@@ -1282,7 +1283,7 @@ export default function Home() {
                   <AnimatedSection
                     key={event.title}
                     delay={0.1 * (index + 1)}
-                    className="group cursor-pointer bg-stevens-white"
+                    className="group cursor-pointer bg-stevens-dark-gray border border-white/10"
                   >
                     <a
                       href={event.url}
@@ -1297,20 +1298,23 @@ export default function Home() {
                           className="w-full h-full object-cover transform group-hover:scale-[1.15] transition-transform duration-500"
                         />
                       </div>
-                      <div className="relative mx-6 -mt-8 hover:-mt-12 bg-white p-6 transition-all duration-300 flex flex-col flex-grow z-10 ">
+                      <div className="relative mx-6 -mt-8 hover:-mt-12 bg-stevens-gray border border-white/10 p-6 transition-all duration-300 flex flex-col flex-grow z-10 ">
                         <div className="min-h-[180px]">
                           <p className="text-lg text-stevens-red font-bold uppercase tracking-wider mb-2">
                             On-Demand Event
                           </p>
-                          <h3 className="font-stevens-display text-xl font-bold text-stevens-dark-gray mb-3 group-hover:text-stevens-red transition-colors">
+                          <h3 className="font-stevens-display text-xl font-bold text-white mb-3 group-hover: transition-colors">
                             {event.title}
                           </h3>
-                          <div className="flex items-center text-xs text-stevens-gray mb-6 uppercase tracking-wider font-medium">
+                          <div className="flex items-center text-xs text-white mb-6 uppercase tracking-wider font-medium">
                             <span>{event.length}</span>
                           </div>
                         </div>
-                        <div className="mt-auto pt-4 border-t border-stevens-light-gray">
-                          <Button variant="link" className="pl-0 text-sm">
+                        <div className="mt-auto pt-4 border-t border-white/20">
+                          <Button
+                            variant="link"
+                            className="pl-0 text-sm text-stevens-white hover:text-stevens-red"
+                          >
                             Watch now
                             <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                           </Button>
@@ -1323,7 +1327,12 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection className="text-center mt-stevens-xl">
               <Link to="/events/">
-                <Button variant="outline-dark">View All Events</Button>
+                <Button
+                  variant="outline-white"
+                  className="border-white text-white hover:bg-white hover:text-stevens-black"
+                >
+                  View All Events
+                </Button>
               </Link>
             </AnimatedSection>
           </div>
