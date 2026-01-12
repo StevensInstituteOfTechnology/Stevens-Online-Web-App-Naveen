@@ -565,6 +565,95 @@ export default function Home() {
         </div>
       </AnimatedSection> */}
 
+        {/* Old Redesigned Rankings & Proof Points Section - TODO: Remove after testing */}
+        {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
+        <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+          <AnimatedSection className="text-center mb-stevens-xl">
+            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
+              A Degree That <span className="text-stevens-red">Pays Dividends</span>
+            </h2>
+            <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
+              Stevens is consistently recognized for academic excellence and
+              delivering an outstanding return on investment.
+            </p>
+          </AnimatedSection>
+          
+          <div className="grid lg:grid-cols-2 gap-x-stevens-gap-lg gap-y-stevens-xl items-center">
+            <AnimatedSection>
+              <div className="flex flex-col gap-stevens-xs">
+                {textRankings.map((point, index) => (
+                <TextRankingItem key={index} {...point} />
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="flex flex-col gap-stevens-md">
+                {badgeRankings.map((ranking, index) => (
+                <BadgeRankingItem key={index} {...ranking} />
+                ))}
+                <p className="text-center font-stevens-semibold text-stevens-dark-gray mt-stevens-sm italic">
+                  Source: U.S. News & World Report 2025
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          
+        </div>
+      </section> */}
+
+        {/* THE STEVENS ONLINE ADVANTAGE */}
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-black relative overflow-hidden">
+          {/* Subtle background decoration */}
+
+          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
+            {/* Section Header - Full Width */}
+            <AnimatedSection className="mb-8 lg:mb-12">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+                THE STEVENS ONLINE ADVANTAGE
+              </h2>
+            </AnimatedSection>
+
+            <div className="grid lg:grid-cols-3 gap-stevens-gap-lg items-center">
+              <AnimatedSection className="relative lg:col-span-2">
+                <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-white/20">
+                  {/* Video Player Component */}
+                  <VideoPlayer
+                    src="/assets/videos/Stevens Online Home - 1.mp4"
+                    poster="/assets/videos/video-cover-3.avif"
+                    title=""
+                    showControls={true}
+                    muted={true}
+                  />
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection>
+                <h3 className="font-stevens-display text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
+                  Delivering the outcomes that drive career success
+                </h3>
+
+                <p className="text-stevens-lg text-white/80 mb-8 leading-relaxed">
+                  The College of Professional Education is much more than
+                  courses and credentials - it's a powerful new model centered
+                  on giving working professionals at every stage of their
+                  careers the unique mix of skills and qualifications they need
+                  to excel in today's complex global economy.
+                </p>
+
+                {/* CTA Link */}
+                <Link
+                  to="/online-learning-experience/"
+                  className="inline-flex items-center text-stevens-red font-bold hover:underline underline-offset-4 group"
+                >
+                  Discover the online experience
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"
@@ -572,7 +661,7 @@ export default function Home() {
         />
 
         {/* Background section that continues below parallax */}
-        <section className="relative bg-stevens-light-gray pt-1 pb-16">
+        <section className="relative bg-stevens-black pt-1 pb-16">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
           <div className="relative z-10 mx-auto max-w-6xl bg-white shadow-xl -mt-16 lg:-mt-32 px-10 py-16 lg:px-16 lg:py-20 scale-[0.90] origin-top">
             {/* Title */}
@@ -693,96 +782,6 @@ export default function Home() {
                   </p>
                 </motion.div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Old Redesigned Rankings & Proof Points Section - TODO: Remove after testing */}
-        {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
-        <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-          <AnimatedSection className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
-              A Degree That <span className="text-stevens-red">Pays Dividends</span>
-            </h2>
-            <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
-              Stevens is consistently recognized for academic excellence and
-              delivering an outstanding return on investment.
-            </p>
-          </AnimatedSection>
-          
-          <div className="grid lg:grid-cols-2 gap-x-stevens-gap-lg gap-y-stevens-xl items-center">
-            <AnimatedSection>
-              <div className="flex flex-col gap-stevens-xs">
-                {textRankings.map((point, index) => (
-                <TextRankingItem key={index} {...point} />
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="flex flex-col gap-stevens-md">
-                {badgeRankings.map((ranking, index) => (
-                <BadgeRankingItem key={index} {...ranking} />
-                ))}
-                <p className="text-center font-stevens-semibold text-stevens-dark-gray mt-stevens-sm italic">
-                  Source: U.S. News & World Report 2025
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          
-        </div>
-      </section> */}
-
-        {/* THE STEVENS ONLINE ADVANTAGE */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray relative overflow-hidden">
-          {/* Subtle background decoration */}
-
-          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
-            {/* Section Header - Full Width */}
-            <AnimatedSection className="mb-8 lg:mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray tracking-tight leading-tight">
-                THE STEVENS ONLINE ADVANTAGE
-              </h2>
-            </AnimatedSection>
-
-            <div className="grid lg:grid-cols-3 gap-stevens-gap-lg items-center">
-              <AnimatedSection className="relative lg:col-span-2">
-                <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-stevens-light-gray">
-                  {/* Video Player Component */}
-                  <VideoPlayer
-                    src="/assets/videos/Stevens Online Home - 1.mp4"
-                    poster="/assets/videos/video-cover-3.avif"
-                    title=""
-                    showControls={true}
-                    muted={true}
-                  />
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection>
-                <h3 className="font-stevens-display text-2xl lg:text-3xl font-bold text-stevens-dark-gray mb-6 leading-tight">
-                  Delivering the outcomes that drive career success
-                </h3>
-
-                <p className="text-stevens-lg text-stevens-dark-gray mb-8 leading-relaxed">
-                  The College of Professional Education is much more than
-                  courses and credentials - it's a powerful new model centered
-                  on giving working professionals at every stage of their
-                  careers the unique mix of skills and qualifications they need
-                  to excel in today's complex global economy.
-                </p>
-
-                {/* CTA Link */}
-                <Link
-                  to="/online-learning-experience/"
-                  className="inline-flex items-center text-stevens-red font-bold hover:underline underline-offset-4 group"
-                >
-                  Discover the online experience
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </AnimatedSection>
             </div>
           </div>
         </section>
@@ -983,7 +982,10 @@ export default function Home() {
                         const carousel =
                           document.getElementById("program-carousel");
                         if (carousel)
-                          carousel.scrollBy({ left: -1000, behavior: "smooth" });
+                          carousel.scrollBy({
+                            left: -1000,
+                            behavior: "smooth",
+                          });
                       }}
                       isActive={programNavActiveButton === "prev"}
                       variant="dark"
