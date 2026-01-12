@@ -463,7 +463,7 @@ export default function CertificateAppliedDataSciencePage() {
       >
         <CertificateTemplate
           programData={{ ...programData, hero: heroWithTuitionCards }}
-          formTheme="dark"
+          theme="dark"
         />
       </ProgramContextProvider>
     </PageContextProvider>

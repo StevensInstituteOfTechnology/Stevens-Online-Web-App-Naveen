@@ -29,7 +29,7 @@ export function ExploreTemplate({
   secondaryCta,
   useApplicationModal = false,
   traditionalAppLink = 'https://gradadmissions.stevens.edu/apply/?pk=GRNP',
-  formTheme = "dark", // Theme for the form area
+  theme = "light", // Theme for the form and nav
   
   // Statistics Props
   statistics,
@@ -163,7 +163,7 @@ export function ExploreTemplate({
         formTitle="Request Information"
         formSubtitle="Get detailed program information and connect with an enrollment advisor."
         variant="degree"
-        formTheme={formTheme}
+        theme={theme}
       />
 
       

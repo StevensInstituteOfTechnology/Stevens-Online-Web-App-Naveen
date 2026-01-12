@@ -25,7 +25,7 @@ import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
  * - formSubtitle: Subtitle for the form card
  * - sourcePage: Source page for analytics tracking
  * - variant: "degree" | "certificate" - affects styling
- * - formTheme: "light" | "dark" - theme for the form area (default: "dark")
+ * - theme: "light" | "dark" - theme for the form and nav (default: "light")
  */
 export function HeroSection({
   programCode,
@@ -39,7 +39,7 @@ export function HeroSection({
   formSubtitle = "Get detailed program information and connect with an enrollment advisor.",
   sourcePage,
   variant = "degree",
-  formTheme = "light",
+  theme = "light",
 }) {
   // Convert title to array if string
   const titleLines = Array.isArray(title) ? title : [title];
@@ -48,9 +48,9 @@ export function HeroSection({
   const effectiveSourcePage = sourcePage || `${programCode}_program_page`;
 
   // Theme-based styles
-  const isDarkForm = formTheme === "dark";
+  const isDarkForm = theme === "dark";
 
-  // Form area styles (based on formTheme)
+  // Form area styles (based on theme)
   const formAreaStyles = {
     container: isDarkForm ? "bg-stevens-black" : "bg-white",
     title: isDarkForm ? "text-white" : "text-stevens-black",
@@ -58,7 +58,7 @@ export function HeroSection({
     divider: isDarkForm ? "bg-gray-700" : "bg-gray-300",
   };
 
-  // Text area styles (OPPOSITE of formTheme for mobile)
+  // Text area styles (OPPOSITE of theme for mobile)
   const textAreaStyles = {
     container: isDarkForm ? "bg-white" : "bg-stevens-black",
     title: isDarkForm ? "text-stevens-black" : "text-stevens-white",
@@ -260,7 +260,7 @@ export function HeroSection({
               sourcePage={effectiveSourcePage}
               programOfInterest={programCode}
               hideHeader={true}
-              variant={formTheme}
+              theme={theme}
             />
           </div>
         </div>

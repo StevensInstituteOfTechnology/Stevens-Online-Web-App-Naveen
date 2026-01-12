@@ -56,7 +56,7 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  */
 export function CertificateTemplate({
   programData,
-  formTheme = "light",
+  theme = "light",
   useApplicationModal = false,
   useRequestInfoModal = true,
 }) {
@@ -120,6 +120,9 @@ export function CertificateTemplate({
 
   if (!programData) return <div>Loading program data...</div>;
 
+  // Opposite theme for sticky nav
+  const navTheme = theme === "dark" ? "light" : "dark";
+
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
       {/* Hero Section - Minimal style with form */}
@@ -134,7 +137,7 @@ export function CertificateTemplate({
         formTitle="Enroll Now"
         formSubtitle="Get program details and start your application."
         variant="certificate"
-        formTheme={formTheme}
+        theme={theme}
       />
 
       {/* Sticky Navigation */}
@@ -145,6 +148,7 @@ export function CertificateTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
+        theme={navTheme}
       />
 
       <main>

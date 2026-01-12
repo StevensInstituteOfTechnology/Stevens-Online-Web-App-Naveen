@@ -1,33 +1,40 @@
-
-import React from 'react';
-import { DegreeTemplate } from '../components/program-pages/templates';
-import { Globe, Check, Award } from 'lucide-react';
-import { createPageUrl } from '@/utils';
-import { KEY_DATES } from '@/config/constants';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import React from "react";
+import { DegreeTemplate } from "../components/program-pages/templates";
+import { Globe, Check, Award } from "lucide-react";
+import { createPageUrl } from "@/utils";
+import { KEY_DATES } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const programData = {
-  code: 'mem',
+  code: "mem",
   seo: {
-    title: 'Online Master’s in Engineering Management (MEM) | Stevens Online',
-    description: 'Earn your Master of Engineering Management online from Stevens. Gain leadership, analytics, and project management skills in a flexible STEM program.',
-    ogImage: '/assets/images/mem/1-mem-hero-scaled.webp',
-    url: '/online-masters-engineering-management/'
+    title: "Online Master’s in Engineering Management (MEM) | Stevens Online",
+    description:
+      "Earn your Master of Engineering Management online from Stevens. Gain leadership, analytics, and project management skills in a flexible STEM program.",
+    ogImage: "/assets/images/mem/1-mem-hero-scaled.webp",
+    url: "/online-masters-engineering-management/",
   },
   hero: {
-    titleLines: ["Earn Your Master of Engineering Management (MEM) Online", "Lead Engineering Teams Anywhere."],
-    subtitle: "Tech-driven leadership. 100% online. Designed for working engineers.",
+    titleLines: [
+      "Earn Your Master of Engineering Management (MEM) Online",
+      "Lead Engineering Teams Anywhere.",
+    ],
+    subtitle:
+      "Tech-driven leadership. 100% online. Designed for working engineers.",
     bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
-    primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
-    
+    primaryCta: { label: "Request Information", to: "RequestInfo" },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+    },
+
     badges: [
       { text: "100% Online", icon: Globe },
       { text: "ASAP Application Available", icon: Check },
-      { text: "#6 in the Nation", icon: Award }
-    ]
+      { text: "#6 in the Nation", icon: Award },
+    ],
   },
   quickFacts: {
     atAGlance: [
@@ -57,15 +64,39 @@ const programData = {
       "Leverage advanced techniques and analysis to estimate and use cost information in decision making.",
       "Form and manage an effective engineering design team in a business environment.",
       "Handle and process information using tools such as Python.",
-      "Master the fundamentals of system dynamics and build system dynamic models."
-    ]
+      "Master the fundamentals of system dynamics and build system dynamic models.",
+    ],
   },
   rankings: [
-    { ranking: "No. 6", description: "In the Nation", source: "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025)." },
-    { ranking: "No. 15", description: "For Best Value", source: "Ranks No. 15 among \"Best Value Colleges\" By Payscale (2024)." },
-    { ranking: "#12", description: "For Best Career Placement", source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)." },
-    { ranking: "100%", description: "Employment", source: "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers.¹" },
-    { ranking: "No. 1", description: "In N.J.", source: "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022)." },
+    {
+      ranking: "No. 6",
+      description: "In the Nation",
+      source:
+        "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025).",
+    },
+    {
+      ranking: "No. 15",
+      description: "For Best Value",
+      source: 'Ranks No. 15 among "Best Value Colleges" By Payscale (2024).',
+    },
+    {
+      ranking: "#12",
+      description: "For Best Career Placement",
+      source:
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+    },
+    {
+      ranking: "100%",
+      description: "Employment",
+      source:
+        "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers.¹",
+    },
+    {
+      ranking: "No. 1",
+      description: "In N.J.",
+      source:
+        "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022).",
+    },
   ],
   career: {
     description: `
@@ -78,147 +109,169 @@ const programData = {
       { title: "Materials Engineer", salary: "$108,310" },
       { title: "Electrical Engineer", salary: "$111,910" },
       { title: "Industrial Engineer", salary: "$101,140" },
-      { title: "Project Management Specialist", salary: "$100,750" }
+      { title: "Project Management Specialist", salary: "$100,750" },
     ],
     source: "U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["BMW", "Goldman Sachs", "Lockheed Martin", "Exxon", "IBM", "UPS"]
+    topCompanies: [
+      "BMW",
+      "Goldman Sachs",
+      "Lockheed Martin",
+      "Exxon",
+      "IBM",
+      "UPS",
+    ],
   },
   whatYoullLearn: {
     title: "Mastering Engineering Leadership Skills",
-    description: "The Online Master of Engineering in Engineering Management program equips you with the essential skills to bridge the gap between technical expertise and business leadership. Our curriculum is designed to develop both analytical and managerial capabilities that are crucial for success in today's engineering-driven organizations.",
+    description:
+      "The Online Master of Engineering in Engineering Management program equips you with the essential skills to bridge the gap between technical expertise and business leadership. Our curriculum is designed to develop both analytical and managerial capabilities that are crucial for success in today's engineering-driven organizations.",
     modules: [
       {
         title: "Engineering Economics and Cost Analysis",
-        description: "Students develop expertise in financial decision-making for engineering projects, learning to evaluate costs, benefits, and risks in technical contexts.",
+        description:
+          "Students develop expertise in financial decision-making for engineering projects, learning to evaluate costs, benefits, and risks in technical contexts.",
         skills: [
           "Apply economic principles to engineering project evaluation and selection",
           "Perform cost-benefit analysis and risk assessment for technical investments",
-          "Utilize financial modeling techniques for engineering decision-making"
-        ]
+          "Utilize financial modeling techniques for engineering decision-making",
+        ],
       },
       {
         title: "Project Management and Systems Engineering",
-        description: "Master the art of managing complex engineering projects from conception to completion, with emphasis on systems thinking and stakeholder management.",
+        description:
+          "Master the art of managing complex engineering projects from conception to completion, with emphasis on systems thinking and stakeholder management.",
         skills: [
           "Lead cross-functional engineering teams through complex project lifecycles",
           "Apply systems engineering principles to optimize project outcomes",
-          "Manage project scope, timeline, and resources effectively"
-        ]
+          "Manage project scope, timeline, and resources effectively",
+        ],
       },
       {
         title: "Operations Research and Data Analytics",
-        description: "Develop analytical skills to solve complex engineering problems using quantitative methods, optimization techniques, and data-driven decision making.",
+        description:
+          "Develop analytical skills to solve complex engineering problems using quantitative methods, optimization techniques, and data-driven decision making.",
         skills: [
           "Apply mathematical modeling and optimization techniques to engineering problems",
           "Utilize data analytics tools for process improvement and decision support",
-          "Implement statistical methods for quality control and performance measurement"
-        ]
+          "Implement statistical methods for quality control and performance measurement",
+        ],
       },
       {
         title: "Leadership and Organizational Management",
-        description: "Build essential leadership capabilities to manage engineering teams, drive innovation, and navigate organizational challenges in technical environments.",
+        description:
+          "Build essential leadership capabilities to manage engineering teams, drive innovation, and navigate organizational challenges in technical environments.",
         skills: [
           "Develop leadership strategies for engineering teams and technical organizations",
           "Apply change management principles in engineering contexts",
-          "Foster innovation and continuous improvement in technical environments"
-        ]
+          "Foster innovation and continuous improvement in technical environments",
+        ],
       },
       {
         title: "Strategic Engineering Management",
-        description: "Learn to align engineering capabilities with business strategy, making strategic decisions that drive organizational success in technology-driven markets.",
+        description:
+          "Learn to align engineering capabilities with business strategy, making strategic decisions that drive organizational success in technology-driven markets.",
         skills: [
           "Develop strategic plans that integrate engineering capabilities with business objectives",
           "Evaluate technology trends and their impact on organizational strategy",
-          "Make informed decisions about technology investments and resource allocation"
-        ]
-      }
-    ]
+          "Make informed decisions about technology investments and resource allocation",
+        ],
+      },
+    ],
   },
   commonJobTitles: {
     title: "Prospective Occupations for Online MEM Graduates",
-    description: "Explore the diverse career opportunities available to graduates of our Online Master of Engineering in Engineering Management program.",
+    description:
+      "Explore the diverse career opportunities available to graduates of our Online Master of Engineering in Engineering Management program.",
     jobs: [
       {
         title: "Engineering Manager",
         salary: 159920,
-        description: "Plan, direct, and coordinate activities in architectural and engineering companies."
+        description:
+          "Plan, direct, and coordinate activities in architectural and engineering companies.",
       },
       {
         title: "Project Manager",
         salary: 101610,
-        description: "Plan, initiate, and manage information technology projects."
+        description:
+          "Plan, initiate, and manage information technology projects.",
       },
       {
         title: "Operations Manager",
         salary: 103650,
-        description: "Plan, direct, and coordinate the operations of public or private sector organizations."
+        description:
+          "Plan, direct, and coordinate the operations of public or private sector organizations.",
       },
       {
         title: "Systems Engineer",
         salary: 103650,
-        description: "Design and implement complex systems and infrastructure solutions."
+        description:
+          "Design and implement complex systems and infrastructure solutions.",
       },
       {
         title: "Quality Assurance Manager",
         salary: 115640,
-        description: "Plan, direct, and coordinate quality assurance programs and formulate quality control policies."
+        description:
+          "Plan, direct, and coordinate quality assurance programs and formulate quality control policies.",
       },
       {
         title: "Technical Program Manager",
         salary: 131450,
-        description: "Plan and direct technical programs and projects, ensuring they meet quality standards and deadlines."
-      }
+        description:
+          "Plan and direct technical programs and projects, ensuring they meet quality standards and deadlines.",
+      },
     ],
-    source: "U.S. Bureau of Labor Statistics, 2025."
+    source: "U.S. Bureau of Labor Statistics, 2025.",
   },
   topCompanies: {
     title: "Stevens Alumni Drive Innovation at Top Companies",
-    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    description:
+      "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
       {
         name: "BMW",
         logo: "/assets/company_logo/BMW.svg.png",
-        industry: "Manufacturing"
+        industry: "Manufacturing",
       },
       {
         name: "Goldman Sachs",
         logo: "/assets/company_logo/Goldman_Sachs_2022_Black.svg.png",
-        industry: "Finance"
+        industry: "Finance",
       },
       {
         name: "Lockheed Martin",
         logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
-        industry: "Aerospace & Defense"
+        industry: "Aerospace & Defense",
       },
       {
         name: "Exxon",
         logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
-        industry: "Energy"
+        industry: "Energy",
       },
       {
         name: "IBM",
         logo: "/assets/company_logo/IBM_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "UPS",
         logo: "/assets/company_logo/United_Parcel_Service_logo_2014.svg.png",
-        industry: "Logistics"
-      }
-    ]
+        industry: "Logistics",
+      },
+    ],
   },
   whyStevens: {
     title: "Why Choose an Online MEM from Stevens?",
     description: `
       <p>At Stevens, you'll receive a cutting-edge engineering management education that seamlessly integrates technical proficiency with business acumen. Our comprehensive curriculum bridges the gap between engineering and management, equipping you with the skills to lead in a dynamic engineering environment.</p>
       <p>Customize your learning path with electives that align with your career aspirations, ensuring you gain the knowledge and confidence to succeed in leadership roles. With our new ASAP application, you can bypass the standard application process and start learning immediately by completing two introductory courses.</p>
-    `
+    `,
   },
   curriculum: {
-    description: "The Online MEM program consists of 30 credit hours across 10 courses, all delivered 100% online, with the first two courses delivered asynchronously. Coursework is built on three pillars: management for engineers, data science and management, and engineering modeling and risk analysis.",
+    description:
+      "The Online MEM program consists of 30 credit hours across 10 courses, all delivered 100% online, with the first two courses delivered asynchronously. Coursework is built on three pillars: management for engineers, data science and management, and engineering modeling and risk analysis.",
     courseTabs: {
-      programCoursework: { 
-        title: "Program Coursework", 
+      programCoursework: {
+        title: "Program Coursework",
         content: `
           <div class="space-y-stevens-xl">
             <div>
@@ -351,100 +404,198 @@ const programData = {
               <p class="text-stevens-sm text-stevens-dark-gray">**Students lacking sufficient statistics coursework in their academic background will be required to take Probability and Statistics for Systems Engineering in lieu of an elective course in term 4 or term 5. Once enrolled, students will work with a student support coach to determine which courses to take.</p>
             </div>
           </div>
-        ` 
-      }
-    }
+        `,
+      },
+    },
   },
   studentSpotlight: {
     name: "Sarah Chen '23",
-    quote: "The MEM program gave me the perfect blend of technical skills and leadership capabilities. I was promoted to Engineering Manager within six months of graduation."
+    quote:
+      "The MEM program gave me the perfect blend of technical skills and leadership capabilities. I was promoted to Engineering Manager within six months of graduation.",
   },
   faculty: {
-    description: "The School of Systems and Enterprises (SSE) faculty is made up of experienced educators and active researchers who offer industry insights to Engineering Management students.",
+    description:
+      "The School of Systems and Enterprises (SSE) faculty is made up of experienced educators and active researchers who offer industry insights to Engineering Management students.",
     members: [
-      { name: "Carlo Lipizzi", title: "MEM Program Director & Professor", image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.webp" },
-      { name: "Chong Ee", title: "Adjunct Professor", image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.webp" },
-      { name: "Alparslan Emrah Bayrak", title: "Assistant Professor", image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.webp" },
-      { name: "Teresa Zigh", title: "Teaching Associate Professor", image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp" },
-      { name: "Yeganeh Hayeri", title: "Professor", image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.webp" },
-    ]
+      {
+        name: "Carlo Lipizzi",
+        title: "MEM Program Director & Professor",
+        image: "/assets/avatars/mem-avatar/carlo-lipizzi-stevens-faculty.webp",
+      },
+      {
+        name: "Chong Ee",
+        title: "Adjunct Professor",
+        image: "/assets/avatars/mem-avatar/chong-ee-stevens-faculty.webp",
+      },
+      {
+        name: "Alparslan Emrah Bayrak",
+        title: "Assistant Professor",
+        image: "/assets/avatars/mem-avatar/alparslan-emrah-bayrak.webp",
+      },
+      {
+        name: "Teresa Zigh",
+        title: "Teaching Associate Professor",
+        image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp",
+      },
+      {
+        name: "Yeganeh Hayeri",
+        title: "Professor",
+        image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.webp",
+      },
+    ],
   },
   admissions: {
     options: [
-      { title: "Standard Application", featured: false, description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`, buttonText: "Apply Now", url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP" },
-      { title: "ASAP Application", featured: true, description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`, buttonText: "Apply Now", url: createPageUrl('ASAP') }
+      {
+        title: "Standard Application",
+        featured: false,
+        description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
+        buttonText: "Apply Now",
+        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      },
+      {
+        title: "ASAP Application",
+        featured: true,
+        description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`,
+        buttonText: "Apply Now",
+        url: createPageUrl("ASAP"),
+      },
     ],
-    consultation: { title: "Wondering Which Application Is Right for You?", buttonText: "Get In Touch", url: createPageUrl('RequestInfo') }
+    consultation: {
+      title: "Wondering Which Application Is Right for You?",
+      buttonText: "Get In Touch",
+      url: createPageUrl("RequestInfo"),
+    },
   },
   keyDates: {
-    headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
+    headers: [
+      "Term",
+      "Early Submit",
+      "Priority Submit",
+      "Final Submit",
+      "Start of Classes",
+    ],
     rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date
-      }
+        startDate: KEY_DATES.START_OF_CLASSES.date,
+      },
     ],
-    footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
   },
   tuition: {
     cards: [
       { value: "$1,395", label: "Per Credit (Standard)" },
       { value: "$875", label: "Per Credit (Async)*" },
       { value: "$60", label: "Application Fee" },
-      { value: "$250", label: "Enrollment Deposit" }
+      { value: "$250", label: "Enrollment Deposit" },
     ],
     description: `<h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p class="font-stevens-body">At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="font-stevens-body text-stevens-sm italic mt-stevens-sm">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
     grants: [
-        { title: "Aspire Grant (for standard applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
-        { title: "Pathway Grant (for ASAP applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
-        { title: "Dean’s Merit Scholar Program", description: "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more." }
-    ]
+      {
+        title: "Aspire Grant (for standard applicants)",
+        description:
+          "$3,120 in tuition support for the first two asynchronous courses.",
+      },
+      {
+        title: "Pathway Grant (for ASAP applicants)",
+        description:
+          "$3,120 in tuition support for the first two asynchronous courses.",
+      },
+      {
+        title: "Dean’s Merit Scholar Program",
+        description:
+          "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more.",
+      },
+    ],
   },
   events: {
     title: "On-Demand Content",
-    description: "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
+    description:
+      "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
     fallbackText: "Check back soon for more upcoming events.",
     items: [
-      { title: "Student Voices: Real Stories From Stevens Graduate Programs", status: "Ongoing", length: "45 minutes", url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE" },
-      { title: "Start With Two Courses. Step Into Engineering Leadership", status: "Ongoing", length: "30 minutes", url: "https://event.on24.com/wcc/r/4970047/F7AEF7F7E214EFD9A417BC81BE6BA906" },
-      { title: "Financial Aid Overview: Stevens Institute of Technology", status: "Ongoing", length: "10 minutes", url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2" },
-      { title: "Exploring the Online Master's in Engineering Management at Stevens", status: "Ongoing", length: "19 minutes", url: "https://event.on24.com/wcc/r/4666985/156784FFB13710F1FFCF29E5C6DBAD13" },
-      { title: "Application Overview: Online Master's in Engineering Management", status: "Ongoing", length: "24 minutes", url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810?pg=2" }
-    ]
+      {
+        title: "Student Voices: Real Stories From Stevens Graduate Programs",
+        status: "Ongoing",
+        length: "45 minutes",
+        url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE",
+      },
+      {
+        title: "Start With Two Courses. Step Into Engineering Leadership",
+        status: "Ongoing",
+        length: "30 minutes",
+        url: "https://event.on24.com/wcc/r/4970047/F7AEF7F7E214EFD9A417BC81BE6BA906",
+      },
+      {
+        title: "Financial Aid Overview: Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "10 minutes",
+        url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2",
+      },
+      {
+        title:
+          "Exploring the Online Master's in Engineering Management at Stevens",
+        status: "Ongoing",
+        length: "19 minutes",
+        url: "https://event.on24.com/wcc/r/4666985/156784FFB13710F1FFCF29E5C6DBAD13",
+      },
+      {
+        title:
+          "Application Overview: Online Master's in Engineering Management",
+        status: "Ongoing",
+        length: "24 minutes",
+        url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810?pg=2",
+      },
+    ],
   },
   faqs: [
-    { q: "What is the ASAP application?", a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree." },
-    { q: "Who should apply through the ASAP application?", a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required." },
-    { q: "What resources are available to ASAP students?", a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses." }
+    {
+      q: "What is the ASAP application?",
+      a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree.",
+    },
+    {
+      q: "Who should apply through the ASAP application?",
+      a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required.",
+    },
+    {
+      q: "What resources are available to ASAP students?",
+      a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses.",
+    },
   ],
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
 };
 
 export default function MEMPage() {
   usePageTracking({
-    pageType: 'program',
-    programCode: 'mem',
+    pageType: "program",
+    programCode: "mem",
     additionalData: {
-      program_name: 'Master of Engineering in Engineering Management',
+      program_name: "Master of Engineering in Engineering Management",
       has_video: true,
       has_rfi_modal: true,
-      has_application_modal: true
-    }
+      has_application_modal: true,
+    },
   });
 
   return (
     <PageContextProvider pageType="program" pageName="MEM">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="mem"
         programName="Master of Engineering in Engineering Management"
         programType="degree"
       >
-        <DegreeTemplate programData={programData} useApplicationModal={true} />
+        <DegreeTemplate
+          programData={programData}
+          theme="light"
+          useApplicationModal={true}
+        />
       </ProgramContextProvider>
     </PageContextProvider>
   );

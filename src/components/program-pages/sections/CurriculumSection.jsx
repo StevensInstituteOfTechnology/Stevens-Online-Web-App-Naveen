@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../ui/tabs';
 import { Card, CardContent } from '../../ui/card';
 import { Section } from '../primitives';
@@ -30,10 +30,8 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
   { curriculum, programCode },
   ref
 ) {
-  const sectionRef = useRef(null);
-
   // Handle collapsible course toggles
-  // Using event delegation for reliable click handling regardless of DOM changes
+  // Using document-level event delegation for reliable click handling
   useEffect(() => {
     const handleCourseToggle = (e) => {
       // Use event delegation - check if clicked element is or is inside a .course-toggle
@@ -43,31 +41,28 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
       const targetId = button.getAttribute('data-target');
       if (targetId) {
         const content = document.getElementById(targetId);
-        if (content) {
-          content.classList.toggle('hidden');
-          // Rotate arrow indicator
-          const arrow = button.querySelector('.course-arrow');
-          if (arrow) {
-            arrow.style.transform = content.classList.contains('hidden') 
-              ? 'rotate(0deg)' 
-              : 'rotate(180deg)';
+        const arrow = button.querySelector('.course-arrow');
+        
+        if (content && arrow) {
+          const isHidden = content.classList.contains('hidden');
+          if (isHidden) {
+            content.classList.remove('hidden');
+            arrow.textContent = '▲';
+          } else {
+            content.classList.add('hidden');
+            arrow.textContent = '▼';
           }
         }
       }
     };
 
-    // Attach listener to the section container for event delegation
-    const container = sectionRef.current;
-    if (container) {
-      container.addEventListener('click', handleCourseToggle);
-    }
+    // Attach listener to document for reliable event delegation
+    document.addEventListener('click', handleCourseToggle);
 
     return () => {
-      if (container) {
-        container.removeEventListener('click', handleCourseToggle);
-      }
+      document.removeEventListener('click', handleCourseToggle);
     };
-  }, [curriculum]); // Re-attach when curriculum changes
+  }, []); // Empty dependency - runs once on mount
 
   if (!curriculum) return null;
 
@@ -77,7 +72,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
       bgClassName="bg-stevens-white"
       ref={ref}
     >
-      <div className="max-w-stevens-content-max mx-auto" ref={sectionRef}>
+      <div className="max-w-stevens-content-max mx-auto">
         <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
           {curriculum.title
             ? curriculum.title

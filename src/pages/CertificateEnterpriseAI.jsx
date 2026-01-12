@@ -470,7 +470,7 @@ export default function CertificateEnterpriseAIPage() {
       >
         <CertificateTemplate
           programData={{ ...programData, hero: heroWithTuitionCards }}
-          formTheme="light"
+          theme="light"
         />
       </ProgramContextProvider>
     </PageContextProvider>

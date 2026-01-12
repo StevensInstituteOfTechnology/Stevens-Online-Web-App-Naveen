@@ -58,7 +58,7 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  */
 export function DegreeTemplate({
   programData,
-  formTheme = "dark",
+  theme = "dark",
   useApplicationModal = false,
   useRequestInfoModal = true,
 }) {
@@ -123,37 +123,15 @@ export function DegreeTemplate({
     };
   }, [seo]);
 
-  // Handle collapsible course toggles (for MBA-style curriculum)
-  useEffect(() => {
-    const handleCourseToggle = (e) => {
-      const button = e.target.closest(".course-toggle");
-      if (!button) return;
-
-      const targetId = button.getAttribute("data-target");
-      if (targetId) {
-        const content = document.getElementById(targetId);
-        const arrow = button.querySelector(".course-arrow");
-        if (content && arrow) {
-          const isHidden = content.classList.contains("hidden");
-          if (isHidden) {
-            content.classList.remove("hidden");
-            arrow.textContent = "▲";
-          } else {
-            content.classList.add("hidden");
-            arrow.textContent = "▼";
-          }
-        }
-      }
-    };
-
-    document.addEventListener("click", handleCourseToggle);
-    return () => document.removeEventListener("click", handleCourseToggle);
-  }, []);
+  // Note: Collapsible course toggles are handled by CurriculumSection component
 
   if (!programData) return <div>Loading program data...</div>;
 
   // Check if admissions is combined with tuition/dates
   const isCombinedAdmissions = admissions?.variant === "combinedWithTuition";
+
+  // Opposite theme for sticky nav
+  const navTheme = theme === "dark" ? "light" : "dark";
 
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
@@ -170,7 +148,7 @@ export function DegreeTemplate({
         formTitle="Request Information"
         formSubtitle="Take the next step in your career."
         variant="degree"
-        formTheme={formTheme}
+        theme={theme}
       />
 
       {/* Sticky Navigation */}
@@ -181,6 +159,7 @@ export function DegreeTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
+        theme={navTheme}
       />
 
       <main>

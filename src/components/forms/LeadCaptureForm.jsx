@@ -25,9 +25,9 @@ export default function LeadCaptureForm({
   triggerLabel = "Request Info",
   hideHeader = false,
   additionalUrlParams = {},
-  variant = "light", // "light" or "dark" theme variant
+  theme = "light", // "light" or "dark" theme
 }) {
-  const isDark = variant === "dark";
+  const isDark = theme === "dark";
   const [open, setOpen] = useState(false);
   const [showMirrorButtons, setShowMirrorButtons] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -333,7 +333,7 @@ export default function LeadCaptureForm({
           >
             <div
               id={FORM_IDS.RFI}
-              data-theme={variant}
+              data-theme={theme}
               className="min-h-[320px] w-full"
             >
               {/* Loading state */}
