@@ -239,7 +239,7 @@ export function HeroSection({
             {/* Form Header */}
             <div className="text-center mb-stevens-md lg:mb-stevens-lg">
               <h2
-                className={`text-stevens-lg lg:text-stevens-2xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 lg:mb-2`}
+                className={`text-stevens-2xl lg:text-stevens-4xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 lg:mb-2`}
               >
                 {formTitle}
               </h2>

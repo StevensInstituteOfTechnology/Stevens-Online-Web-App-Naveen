@@ -308,7 +308,7 @@ export default function LeadCaptureForm({
     >
       {!hideHeader && (
         <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-lg">
-          <CardTitle className="text-base sm:text-stevens-lg md:text-stevens-xl font-stevens-bold leading-tight">
+          <CardTitle className="text-stevens-lg sm:text-stevens-xl md:text-stevens-2xl font-stevens-bold leading-tight">
             {title}
           </CardTitle>
           {subtitle && (
