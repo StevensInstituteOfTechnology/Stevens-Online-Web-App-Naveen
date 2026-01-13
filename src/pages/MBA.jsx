@@ -1,33 +1,46 @@
-import React from 'react';
+import React from "react";
 import {
-  Globe, Award, Check, Briefcase, DollarSign, BrainCircuit, LineChart,
-  Target, TrendingUp, Users
-} from 'lucide-react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
-import { KEY_DATES } from '@/config/constants';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
+  Globe,
+  Award,
+  Check,
+  Briefcase,
+  DollarSign,
+  BrainCircuit,
+  LineChart,
+  Target,
+  TrendingUp,
+  Users,
+} from "lucide-react";
+import ProgramPageTemplate from "../components/program-pages/ProgramPageTemplate";
+import { KEY_DATES_SUMMER } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const programData = {
-  code: 'mba',
+  code: "mba",
   seo: {
-    title: 'Online MBA Program | Stevens Online',
-    description: 'Earn your 100% online MBA from Stevens Institute of Technology. A tech-driven program designed for business leaders in innovation and strategy.',
-    ogImage: '/assets/images/mba/1-omba-hero-scaled.webp',
-    url: '/online-mba/'
+    title: "Online MBA Program | Stevens Online",
+    description:
+      "Earn your 100% online MBA from Stevens Institute of Technology. A tech-driven program designed for business leaders in innovation and strategy.",
+    ogImage: "/assets/images/mba/1-omba-hero-scaled.webp",
+    url: "/online-mba/",
   },
   hero: {
-    titleLines: ['Earn Your MBA Online.', 'Build Your Career Anywhere.'],
-    subtitle: "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
+    titleLines: ["Earn Your MBA Online.", "Build Your Career Anywhere."],
+    subtitle:
+      "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
     bgImage: "/assets/images/mba/1-omba-hero-scaled.webp",
-    primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    primaryCta: { label: "Request Information", to: "RequestInfo" },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+    },
     badges: [
       { text: "100% Online", icon: Globe },
       { text: "AACSB Accredited", icon: Award },
-      { text: "No GMAT/GRE Required", icon: Check }
-    ]
+      { text: "No GMAT/GRE Required", icon: Check },
+    ],
   },
   quickFacts: {
     atAGlance: [
@@ -36,35 +49,87 @@ const programData = {
       { value: "No GMAT/GRE", label: "Required", icon: Check },
       { value: "Career-Driven", label: "Outcomes", icon: Briefcase },
       { value: "Expert", label: "Faculty", icon: Users },
-      { value: "Merit", label: "Scholarships Available", icon: Award }],
+      { value: "Merit", label: "Scholarships Available", icon: Award },
+    ],
 
-    termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`
+    termStartDate: `${KEY_DATES_SUMMER.TERM.nameUppercase}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
+    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`,
   },
   overview: {
     title: "MBA Program Overview",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
-    keySkills: ["Marketing", "Financial Management", "Data Analysis", "Accounting", "Project Management", "Leader Development"],
-    concentrations: ["Business Intelligence & Analytics", "Finance", "Financial Analytics", "Financial Engineering", "Information Systems", "Project Management", "Artificial Intelligence"]
+    keySkills: [
+      "Marketing",
+      "Financial Management",
+      "Data Analysis",
+      "Accounting",
+      "Project Management",
+      "Leader Development",
+    ],
+    concentrations: [
+      "Business Intelligence & Analytics",
+      "Finance",
+      "Financial Analytics",
+      "Financial Engineering",
+      "Information Systems",
+      "Project Management",
+      "Artificial Intelligence",
+    ],
   },
   videoSection: {
     title: "Discover Your Future at Stevens",
-    description: "Watch how Stevens Online transforms careers through innovative education, expert faculty, and flexible learning designed for working professionals.",
+    description:
+      "Watch how Stevens Online transforms careers through innovative education, expert faculty, and flexible learning designed for working professionals.",
     videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.avif",
     showControls: true,
-    muted: true
+    muted: true,
   },
   rankings: [
-    { ranking: "100%", description: "EMPLOYMENT", source: "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.", note: "1" },
-    { ranking: "#15", description: "FOR BEST VALUE", source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).', note: "2" },
-    { ranking: "#1", description: "ONLINE MBA IN N.J.", source: "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024)." },
-    { ranking: "#14", description: "FOR ECONOMIC RETURN", source: "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).", note: "2" },
-    { ranking: "#12", description: "FOR BEST CAREER PLACEMENT", source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)." }],
+    {
+      ranking: "100%",
+      description: "EMPLOYMENT",
+      source:
+        "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.",
+      note: "1",
+    },
+    {
+      ranking: "#15",
+      description: "FOR BEST VALUE",
+      source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
+      note: "2",
+    },
+    {
+      ranking: "#1",
+      description: "ONLINE MBA IN N.J.",
+      source:
+        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
+    },
+    {
+      ranking: "#14",
+      description: "FOR ECONOMIC RETURN",
+      source:
+        "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).",
+      note: "2",
+    },
+    {
+      ranking: "Top 20",
+      description: "FOR BEST CAREER PLACEMENT",
+      source:
+        "Ranked among the top private schools for best career placement by The Princeton Review (2024).",
+    },
+  ],
 
   rankings_footnotes: [
-    { note: "1", text: "Based on data from 82% of the 2021-2022 full-time program graduates." },
-    { note: "2", text: "Based on the cost of a four-year bachelor's degree program." }],
+    {
+      note: "1",
+      text: "Based on data from 82% of the 2021-2022 full-time program graduates.",
+    },
+    {
+      note: "2",
+      text: "Based on the cost of a four-year bachelor's degree program.",
+    },
+  ],
 
   career: {
     description: `<p class="mb-4">The Stevens Online MBA program prepares you for many leadership roles in companies based in New York City and other business hubs across the country. According to 2025 data from the U.S. Bureau of Labor Statistics, NYC is one of the top-paying regions for management professionals - financial managers in the greater metropolitan area, for instance, earn over $247,000 annually. It's also the region hiring the greatest number of management professionals - the area employs over 187,000 general and operations managers.</p><p class="mb-4">The outlook for management positions is very positive. Some, like financial managers, are projected to grow much faster than average. Employment of financial managers is forecast to grow by 17% by 2033 (with around 75,100 job openings each year). Others, like sales managers, are also projected to grow faster than the national average over the next decade. An Online MBA from Stevens provides students with transferable skills valuable in any industry and prepares them for professional success throughout their careers.</p><p>According to data from the labor market analytics experts at Lightcast, a skills gap exists among MBA occupations, resulting in a demand for graduates with finance, accounting, project management, auditing and data analysis skills. Our comprehensive curriculum and specialized concentrations focus on these essential and highly sought-after skills, preparing you for professional success in your chosen field.</p>`,
@@ -72,16 +137,29 @@ const programData = {
       { title: "Chief Executive", employed: "211,230", salary: "$206,420" },
       { title: "Financial Manager", employed: "837,100", salary: "$161,700" },
       { title: "Marketing Manager", employed: "411,300", salary: "$159,660" },
-      { title: "Human Resources Manager", employed: "208,900", salary: "$140,030" },
-      { title: "Sales Manager", employed: "584,800", salary: "$138,060" }],
+      {
+        title: "Human Resources Manager",
+        employed: "208,900",
+        salary: "$140,030",
+      },
+      { title: "Sales Manager", employed: "584,800", salary: "$138,060" },
+    ],
 
     source: "U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Microsoft", "Verizon", "JPMorgan Chase", "Amazon", "Deloitte", "Accenture"]
+    topCompanies: [
+      "Microsoft",
+      "Verizon",
+      "JPMorgan Chase",
+      "Amazon",
+      "Deloitte",
+      "Accenture",
+    ],
   },
   whatYoullLearn: {
-    variant: 'skillCards',
+    variant: "skillCards",
     title: "A Skill Set Designed for Impact",
-    description: "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills - broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
+    description:
+      "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills - broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
     modules: [
       {
         title: "Financial Management",
@@ -91,8 +169,8 @@ const programData = {
           { code: "FIN 500", title: "Financial and Managerial Accounting" },
           { code: "FIN 523", title: "Financial Management" },
           { code: "FIN 638", title: "Corporate Finance" },
-          { code: "MGT 506", title: "Economics for Managers" }]
-
+          { code: "MGT 506", title: "Economics for Managers" },
+        ],
       },
       {
         title: "Project Management",
@@ -100,38 +178,46 @@ const programData = {
         icon: Briefcase,
         courses: [
           { code: "MGT 609", title: "Project Management Fundamentals" },
-          { code: "MGT 610", title: "Strategic Perspectives on Project Management" },
+          {
+            code: "MGT 610",
+            title: "Strategic Perspectives on Project Management",
+          },
           { code: "MGT 611", title: "Project Analytics" },
-          { code: "MGT 619", title: "Leading Across Projects" }]
-
+          { code: "MGT 619", title: "Leading Across Projects" },
+        ],
       },
       {
         title: "Data Analysis",
         growth: "+25.8% Projected Growth Until 2035",
         icon: LineChart,
         courses: [
-          { code: "BIA 500", title: "Business Analytics: Data, Models and Decisions" },
+          {
+            code: "BIA 500",
+            title: "Business Analytics: Data, Models and Decisions",
+          },
           { code: "BIA 568", title: "Management of AI Technologies" },
           { code: "BIA 672", title: "Marketing Analytics" },
           { code: "BIA 674", title: "Supply Chain Analytics" },
-          { code: "BIA 658", title: "Social Network Analytics" }]
-
-      }]
-
+          { code: "BIA 658", title: "Social Network Analytics" },
+        ],
+      },
+    ],
   },
   whyStevens: {
-    variant: 'splitWithVideo',
+    variant: "splitWithVideo",
     title: "Why Choose an Online MBA from Stevens?",
     description: `<p>The Stevens Online MBA delivers high-impact skills that employers seek across industries, especially in tech-forward roles. Our program combines rigorous academic coursework with real-world applications.</p><p>Develop leadership capabilities, analytical thinking, and collaborative skills that drive innovation. Choose from multiple concentrations and participate in on-campus immersions to enhance your learning experience.</p><p>Join a community of ambitious professionals who are transforming their careers with technology-focused business education.</p>`,
     video: {
       src: "/assets/videos/Stevens Online MBA - 2.mp4",
       poster: "/assets/videos/video-cover-2.avif",
       title: "",
-      caption: "Hear from our students about their transformative Stevens Online MBA experience"
-    }
+      caption:
+        "Hear from our students about their transformative Stevens Online MBA experience",
+    },
   },
   curriculum: {
-    description: "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
+    description:
+      "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
     courseTabs: {
       foundations: {
         title: "Foundational Courses",
@@ -231,7 +317,7 @@ const programData = {
           </div>
           
           <h4 class="course-term-header">Terms 5 & 6: Electives</h4>
-          <p class="text-stevens-gray-600">Terms 5 and 6 are elective-only; see Concentrations for course options.</p>`
+          <p class="text-stevens-gray-600">Terms 5 and 6 are elective-only; see Concentrations for course options.</p>`,
       },
 
       concentrations: {
@@ -514,7 +600,7 @@ const programData = {
                   </div>
                 </div>
               </div>
-            </div>`
+            </div>`,
       },
       immersions: {
         title: "Immersion",
@@ -588,55 +674,57 @@ const programData = {
               Each immersion experience carries 1.5 credit hours and the related tuition. A total of 3 credit hours will count toward your degree upon completion of both immersions. Students are responsible for travel to the Hoboken area. Accommodations are included in the tuition cost.
             </p>
           </div>
-        `
-      }
-    }
+        `,
+      },
+    },
   },
   studentSpotlight: {
     name: "Olivia Fellbaum '25",
-    quote: "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network."
+    quote:
+      "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network.",
   },
   commonJobTitles: {
-    title: "Common Job Titles for MBA Graduates"
+    title: "Common Job Titles for MBA Graduates",
   },
   topCompanies: {
     title: "Top Companies Hiring Stevens Alumni",
-    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    description:
+      "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
       {
         name: "Microsoft",
         logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Verizon",
         logo: "/assets/company_logo/Verizon_2024.svg.png",
-        industry: "Telecommunications"
+        industry: "Telecommunications",
       },
       {
         name: "JPMorgan Chase",
         logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
-        industry: "Finance"
+        industry: "Finance",
       },
       {
         name: "Amazon",
         logo: "/assets/company_logo/Amazon_logo.svg.webp",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Deloitte",
         logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
-        industry: "Consulting"
+        industry: "Consulting",
       },
       {
         name: "Accenture",
         logo: "/assets/company_logo/Accenture_logo.svg.png",
-        industry: "Consulting"
-      }
-    ]
+        industry: "Consulting",
+      },
+    ],
   },
   admissions: {
-    variant: 'combinedWithTuition',
+    variant: "combinedWithTuition",
     requirements: `
       <div class="space-y-6">
         <div>
@@ -657,99 +745,149 @@ const programData = {
           <p>Scores are not required.</p>
         </div>
       </div>
-    `
+    `,
   },
   keyDates: {
-    term: KEY_DATES.TERM.name,
+    term: KEY_DATES_SUMMER.TERM.name,
     rows: [
-      { event: "Early Submit", date: KEY_DATES.EARLY_SUBMIT.date },
-      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
-      { event: "Final Submit", date: KEY_DATES.FINAL_SUBMIT.date },
-      { event: "Start of Classes", date: KEY_DATES.START_OF_CLASSES.date }
-    ]
+      { event: "Early Submit", date: KEY_DATES_SUMMER.EARLY_SUBMIT.date },
+      { event: "Priority Submit", date: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date },
+      { event: "Final Submit", date: KEY_DATES_SUMMER.FINAL_SUBMIT.date },
+      {
+        event: "Start of Classes",
+        date: KEY_DATES_SUMMER.START_OF_CLASSES.date,
+      },
+    ],
   },
   tuition: {
-    cards: [{ value: "$1,395", label: "Per Credit" }, { value: "$60", label: "Application Fee" }, { value: "$250", label: "Enrollment Deposit" }],
-    description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`
+    cards: [
+      { value: "$1,395", label: "Per Credit" },
+      { value: "$60", label: "Application Fee" },
+      { value: "$250", label: "Enrollment Deposit" },
+    ],
+    description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`,
   },
   events: {
     title: "On-Demand Content",
-    description: "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
+    description:
+      "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
     fallbackText: "Check back soon for more upcoming events.",
     items: [
       {
-        title: 'Student Voices: Real Stories From Stevens Graduate Programs',
-        status: 'Ongoing',
-        length: '45 minutes',
-        url: 'https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE'
+        title: "Student Voices: Real Stories From Stevens Graduate Programs",
+        status: "Ongoing",
+        length: "45 minutes",
+        url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE",
       },
       {
-        title: 'Depth and Breadth: Exploring MBA Concentrations at Stevens',
-        status: 'Ongoing',
-        length: '30 minutes',
-        url: 'https://event.on24.com/wcc/r/4970049/94A0379A4671307D3BD1329BF230A114'
+        title: "Depth and Breadth: Exploring MBA Concentrations at Stevens",
+        status: "Ongoing",
+        length: "30 minutes",
+        url: "https://event.on24.com/wcc/r/4970049/94A0379A4671307D3BD1329BF230A114",
       },
       {
-        title: 'Upskilling Your MBA: Bringing Technology and Business Together',
-        status: 'Ongoing',
-        length: '30 minutes',
-        url: 'https://event.on24.com/wcc/r/4631559/8DACF3B1055C849FFDC65E94FFFA4C4A'
+        title: "Upskilling Your MBA: Bringing Technology and Business Together",
+        status: "Ongoing",
+        length: "30 minutes",
+        url: "https://event.on24.com/wcc/r/4631559/8DACF3B1055C849FFDC65E94FFFA4C4A",
       },
       {
-        title: 'A Technology-Focused MBA With Stevens Online',
-        status: 'Ongoing',
-        length: '30 minutes',
-        url: 'https://event.on24.com/wcc/r/4791542/DAB3D7D2D76CEC991DF5B0C71A91E4CF'
+        title: "A Technology-Focused MBA With Stevens Online",
+        status: "Ongoing",
+        length: "30 minutes",
+        url: "https://event.on24.com/wcc/r/4791542/DAB3D7D2D76CEC991DF5B0C71A91E4CF",
       },
       {
-        title: 'On Demand Application Overview: Online MBA',
-        status: 'Ongoing',
-        length: '18 minutes',
-        url: 'https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE'
+        title: "On Demand Application Overview: Online MBA",
+        status: "Ongoing",
+        length: "18 minutes",
+        url: "https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE",
       },
       {
-        title: 'Exploring the Online MBA at Stevens Institute of Technology: On-Demand Overview',
-        status: 'Ongoing',
-        length: '11 minutes',
-        url: 'https://event.on24.com/wcc/r/4670733/9A69E9F6E360B7E9F5C93DDFD5682712?pg=2'
+        title:
+          "Exploring the Online MBA at Stevens Institute of Technology: On-Demand Overview",
+        status: "Ongoing",
+        length: "11 minutes",
+        url: "https://event.on24.com/wcc/r/4670733/9A69E9F6E360B7E9F5C93DDFD5682712?pg=2",
       },
       {
-        title: 'Financial Aid Overview: Stevens Institute of Technology',
-        status: 'Ongoing',
-        length: '10 minutes',
-        url: 'https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2'
-      }
-    ]
+        title: "Financial Aid Overview: Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "10 minutes",
+        url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2",
+      },
+    ],
   },
   faculty: {
     title: "Meet the Online MBA Faculty",
-    description: "Our faculty are experienced educators and active researchers who offer industry insights.",
+    description:
+      "Our faculty are experienced educators and active researchers who offer industry insights.",
     members: [
-      { name: "Brian Rothschild", title: "Online MBA Program Director", image: "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.webp" },
-      { name: "Pranav Garg, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.webp" },
-      { name: "Peter Dominick, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.webp" },
-      { name: "Bei Yan, Ph.D.", title: "Assistant Professor", image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.webp" },
-      { name: "Alkiviadis Vazacopoulos, Ph.D.", title: "Teaching Associate Professor", image: "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.webp" },
-      { name: "Ann Murphy, Ph.D.", title: "Associate Professor", image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.webp" },
-      { name: "Wei Zheng, Ph.D.", title: "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership", image: "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.webp" }
-    ]
+      {
+        name: "Brian Rothschild",
+        title: "Online MBA Program Director",
+        image:
+          "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.webp",
+      },
+      {
+        name: "Pranav Garg, Ph.D.",
+        title: "Assistant Professor",
+        image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.webp",
+      },
+      {
+        name: "Peter Dominick, Ph.D.",
+        title: "Teaching Associate Professor",
+        image:
+          "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.webp",
+      },
+      {
+        name: "Bei Yan, Ph.D.",
+        title: "Assistant Professor",
+        image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.webp",
+      },
+      {
+        name: "Alkiviadis Vazacopoulos, Ph.D.",
+        title: "Teaching Associate Professor",
+        image:
+          "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.webp",
+      },
+      {
+        name: "Ann Murphy, Ph.D.",
+        title: "Associate Professor",
+        image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.webp",
+      },
+      {
+        name: "Wei Zheng, Ph.D.",
+        title:
+          "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership",
+        image:
+          "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.webp",
+      },
+    ],
   },
   faqs: [
-    { q: "What jobs can you get with an MBA?", a: "An MBA qualifies you for leadership positions in virtually every industry, such as financial or sales manager, and later in executive positions, such as CEO or CFO." },
-    { q: "Is an online MBA worth it?", a: "Yes. The Stevens Online MBA gives students an edge by developing their analytical and emotional intelligence skills and focusing on the complex technologies informing business decisions and strategy." }],
+    {
+      q: "What jobs can you get with an MBA?",
+      a: "An MBA qualifies you for leadership positions in virtually every industry, such as financial or sales manager, and later in executive positions, such as CEO or CFO.",
+    },
+    {
+      q: "Is an online MBA worth it?",
+      a: "Yes. The Stevens Online MBA gives students an edge by developing their analytical and emotional intelligence skills and focusing on the complex technologies informing business decisions and strategy.",
+    },
+  ],
 
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027. The school of business is also accredited by the <a href="https://www.aacsb.edu/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-primary transition-colors duration-stevens-normal">AACSB</a>, placing Stevens among the five percent of business schools globally to earn this distinction.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027. The school of business is also accredited by the <a href="https://www.aacsb.edu/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-primary transition-colors duration-stevens-normal">AACSB</a>, placing Stevens among the five percent of business schools globally to earn this distinction.`,
 };
 
 export default function MBAPage() {
   usePageTracking({
-    pageType: 'program',
-    programCode: 'mba',
+    pageType: "program",
+    programCode: "mba",
     additionalData: {
-      program_name: 'Master of Business Administration',
+      program_name: "Master of Business Administration",
       has_video: true,
-      has_rfi_modal: true
-    }
+      has_rfi_modal: true,
+    },
   });
 
   return (

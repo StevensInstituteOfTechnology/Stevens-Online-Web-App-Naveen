@@ -1,32 +1,39 @@
-
-import React from 'react';
-import ProgramPageTemplate from '../components/program-pages/ProgramPageTemplate';
-import { Award, Check, Star } from 'lucide-react';
-import { createPageUrl } from '@/utils';
-import { KEY_DATES } from '@/config/constants';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import React from "react";
+import ProgramPageTemplate from "../components/program-pages/ProgramPageTemplate";
+import { Award, Check, Star } from "lucide-react";
+import { createPageUrl } from "@/utils";
+import { KEY_DATES_SUMMER } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const programData = {
-  code: 'mscs',
+  code: "mscs",
   seo: {
-    title: "Online Master's in Computer Science | Stevens Institute of Technology",
-    description: "Earn your online Master's in Computer Science (MSCS) from Stevens. Build advanced coding and AI skills for the modern tech workforce.",
-    ogImage: '/assets/images/mscs/bg_program.webp',
-    url: '/online-masters-computer-science-mscs/'
+    title:
+      "Online Master's in Computer Science | Stevens Institute of Technology",
+    description:
+      "Earn your online Master's in Computer Science (MSCS) from Stevens. Build advanced coding and AI skills for the modern tech workforce.",
+    ogImage: "/assets/images/mscs/bg_program.webp",
+    url: "/online-masters-computer-science-mscs/",
   },
   hero: {
-    titleLines: ["Earn Your Master of Science in Computer Science (MSCS) Online", "Build What's Next."],
+    titleLines: [
+      "Earn Your Master of Science in Computer Science (MSCS) Online",
+      "Build What's Next.",
+    ],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
     bgImage: "/assets/images/mscs/bg_program.webp",
-    primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
+    primaryCta: { label: "Request Information", to: "RequestInfo" },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+    },
     badges: [
       { text: "99% Employment Rate", icon: Award },
       { text: "ASAP Application Available", icon: Check },
       // { text: "#1 in New Jersey", icon: Star }
-    ]
+    ],
   },
   quickFacts: {
     atAGlance: [
@@ -35,7 +42,7 @@ const programData = {
       { value: "Pivot", label: "Your Career" },
       { value: "In-Demand", label: "Focus Areas" },
     ],
-    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
+    termStartDate: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
     details: `
       <ul>
         <li>30 Credit Hours</li>
@@ -58,20 +65,44 @@ const programData = {
       "Mobile application development and cloud computing",
       "Agile development methods",
       "Algorithm design and testing",
-      "Machine learning in support of providing software development leaders and high-quality coders"
+      "Machine learning in support of providing software development leaders and high-quality coders",
     ],
     concentrations: [
       "AI and Machine Learning",
       "Business Intelligence and Analytics",
-      "Software Development"
-    ]
+      "Software Development",
+    ],
   },
   rankings: [
-    { ranking: "99%", description: "Employment", source: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating." },
-    { ranking: "#1", description: "In N.J.", source: "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024)." },
-    { ranking: "7x", description: "Winner", source: "U.S. Distance Learning Association’s 21st Century Award for Best Practices in Distance Learning." },
-    { ranking: "#12", description: "For Best Career Placement", source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)." },
-    { ranking: "#15", description: "For Best Value", source: "Payscale (2024)" },
+    {
+      ranking: "99%",
+      description: "Employment",
+      source:
+        "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.",
+    },
+    {
+      ranking: "#1",
+      description: "In N.J.",
+      source:
+        "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024).",
+    },
+    {
+      ranking: "7x",
+      description: "Winner",
+      source:
+        "U.S. Distance Learning Association’s 21st Century Award for Best Practices in Distance Learning.",
+    },
+    {
+      ranking: "#13",
+      description: "In The Nation",
+      source:
+        "The Princeton Review, Top 20 U.S. Private Schools for Best Career Placement (2022).",
+    },
+    {
+      ranking: "#15",
+      description: "For Best Value",
+      source: "Payscale (2024)",
+    },
   ],
   career: {
     description: `
@@ -86,151 +117,171 @@ const programData = {
     `,
     jobTitles: [
       { title: "Computer and Information Systems Manager", salary: "$171,200" },
-      { title: "Computer and Information Research Scientist", salary: "$140,910" },
+      {
+        title: "Computer and Information Research Scientist",
+        salary: "$140,910",
+      },
       { title: "Database Architect", salary: "$135,980" },
       { title: "Software Developer", salary: "$131,450" },
       { title: "Information Security Analyst", salary: "$124,910" },
-      { title: "Computer Systems Analyst", salary: "$103,800" }
+      { title: "Computer Systems Analyst", salary: "$103,800" },
     ],
-    source: "¹ U.S. Bureau of Labor Statistics, 2025. ² Glassdoor, April 2024. ³ U.S. Bureau of Labor Statistics, 2025.",
-    topCompanies: ["Microsoft", "Google", "Amazon", "Meta", "IBM", "Apple"]
+    source:
+      "¹ U.S. Bureau of Labor Statistics, 2025. ² Glassdoor, April 2024. ³ U.S. Bureau of Labor Statistics, 2025.",
+    topCompanies: ["Microsoft", "Google", "Amazon", "Meta", "IBM", "Apple"],
   },
   whatYoullLearn: {
     title: "Helping You Master Cutting-Edge Skills",
-    description: "According to Lightcast's 2025 \"The Speed of Skill Change\" report, the pace of job skill change is accelerating, with AI leading this disruption more than any other trend. Among nearly 600 occupations assessed, computer scientists rank highest on the Skill Disruption Index, scoring 93.7. Our Online M.S. in Computer Science program can equip you with the expertise to lead in this dynamic environment.",
+    description:
+      'According to Lightcast\'s 2025 "The Speed of Skill Change" report, the pace of job skill change is accelerating, with AI leading this disruption more than any other trend. Among nearly 600 occupations assessed, computer scientists rank highest on the Skill Disruption Index, scoring 93.7. Our Online M.S. in Computer Science program can equip you with the expertise to lead in this dynamic environment.',
     modules: [
       {
         title: "Enterprise software design and engineering",
-        description: "Students build a foundation in the architecture, development and deployment of complex software systems, with an emphasis on scalability, performance and systems-level thinking.",
+        description:
+          "Students build a foundation in the architecture, development and deployment of complex software systems, with an emphasis on scalability, performance and systems-level thinking.",
         skills: [
           "Design and implement backend services for cloud-based, distributed systems",
           "Analyze and work with operating systems, memory management and I/O systems",
-          "Apply database design principles using relational models, SQL and normalization techniques"
-        ]
+          "Apply database design principles using relational models, SQL and normalization techniques",
+        ],
       },
       {
         title: "Mobile application development and cloud computing",
-        description: "To support the explosive growth of mobile-first and cloud-integrated applications, students learn to develop applications that run across devices while leveraging scalable cloud infrastructure and services.",
+        description:
+          "To support the explosive growth of mobile-first and cloud-integrated applications, students learn to develop applications that run across devices while leveraging scalable cloud infrastructure and services.",
         skills: [
           "Build mobile applications using platforms such as Android and iOS while exploring location-aware and privacy-conscious design",
           "Implement cloud-based services and architectures using REST, WebSockets and NoSQL databases like Cassandra",
-          "Explore the implications of distributed systems through technologies like blockchain and the CAP Theorem"
-        ]
+          "Explore the implications of distributed systems through technologies like blockchain and the CAP Theorem",
+        ],
       },
       {
         title: "Agile development methods",
-        description: "Students develop the soft and technical skills necessary to thrive in agile environments, gaining experience in iterative development, team collaboration and real-world project execution.",
+        description:
+          "Students develop the soft and technical skills necessary to thrive in agile environments, gaining experience in iterative development, team collaboration and real-world project execution.",
         skills: [
           "Apply agile frameworks like Scrum, XP and Lean to real-world software development projects",
           "Manage the full development lifecycle, from initial concept to deployment, using iterative and test-driven approaches",
-          "Evaluate and compare agile and traditional methodologies to choose the most effective approach for a given project"
-        ]
+          "Evaluate and compare agile and traditional methodologies to choose the most effective approach for a given project",
+        ],
       },
       {
         title: "Algorithm design and testing",
-        description: "A strong emphasis on computational thinking and problem-solving enables students to build efficient, scalable software. This forms the intellectual core for technical interviews and system design roles.",
+        description:
+          "A strong emphasis on computational thinking and problem-solving enables students to build efficient, scalable software. This forms the intellectual core for technical interviews and system design roles.",
         skills: [
           "Design and analyze advanced algorithms, including graph traversal, hashing and complex sorting",
           "Implement and test data structures like balanced search trees and understand asymptotic complexity",
-          "Translate high-level design into low-level, performance-aware code using systems programming techniques"
-        ]
+          "Translate high-level design into low-level, performance-aware code using systems programming techniques",
+        ],
       },
       {
-        title: "Machine learning in support of providing software development leadership",
-        description: "The program introduces machine learning as a tool for solving real-world problems, equipping students with the skills to lead software development projects that integrate intelligent systems.",
+        title:
+          "Machine learning in support of providing software development leadership",
+        description:
+          "The program introduces machine learning as a tool for solving real-world problems, equipping students with the skills to lead software development projects that integrate intelligent systems.",
         skills: [
           "Understand and implement foundational ML techniques like decision trees, neural networks and reinforcement learning",
           "Apply ensemble learning methods and simulation techniques to build effective predictive models",
-          "Translate ML theory into practical solutions through hands-on coding and real-world datasets"
-        ]
-      }
-    ]
+          "Translate ML theory into practical solutions through hands-on coding and real-world datasets",
+        ],
+      },
+    ],
   },
   commonJobTitles: {
     title: "Prospective Occupations for Online MSCS Graduates",
-    description: "Explore the diverse career opportunities available to graduates of our Online Master of Science in Computer Science program.",
+    description:
+      "Explore the diverse career opportunities available to graduates of our Online Master of Science in Computer Science program.",
     jobs: [
       {
         title: "Computer and Information Systems Manager",
         salary: 171200,
-        description: "Plan, coordinate, and direct computer-related activities in an organization."
+        description:
+          "Plan, coordinate, and direct computer-related activities in an organization.",
       },
       {
         title: "Computer and Information Research Scientist",
         salary: 140910,
-        description: "Invent and design new approaches to computing technology and find innovative uses for existing technology."
+        description:
+          "Invent and design new approaches to computing technology and find innovative uses for existing technology.",
       },
       {
         title: "Database Architect",
         salary: 135980,
-        description: "Design and implement large-scale database systems and data management solutions."
+        description:
+          "Design and implement large-scale database systems and data management solutions.",
       },
       {
         title: "Software Developer",
         salary: 131450,
-        description: "Design, develop, and maintain software applications and systems."
+        description:
+          "Design, develop, and maintain software applications and systems.",
       },
       {
         title: "Information Security Analyst",
         salary: 124910,
-        description: "Plan and carry out security measures to protect an organization's computer networks and systems."
+        description:
+          "Plan and carry out security measures to protect an organization's computer networks and systems.",
       },
       {
         title: "Computer Systems Analyst",
         salary: 103800,
-        description: "Study an organization's current computer systems and procedures and design information systems solutions."
-      }
+        description:
+          "Study an organization's current computer systems and procedures and design information systems solutions.",
+      },
     ],
-    source: "U.S. Bureau of Labor Statistics, 2025."
+    source: "U.S. Bureau of Labor Statistics, 2025.",
   },
   topCompanies: {
     title: "Stevens Alumni Drive Innovation at Top Companies",
-    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    description:
+      "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
       {
         name: "Microsoft",
         logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Google",
         logo: "/assets/company_logo/Google_2015_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Amazon",
         logo: "/assets/company_logo/Amazon_logo.svg.webp",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Meta",
         logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "IBM",
         logo: "/assets/company_logo/IBM_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Apple",
         logo: "/assets/company_logo/Apple_logo_black.svg.png",
-        industry: "Technology"
-      }
-    ]
+        industry: "Technology",
+      },
+    ],
   },
   whyStevens: {
     title: "Why Choose an Online MSCS from Stevens?",
     description: `
       <p>At Stevens, you'll receive an unparalleled computer science education, learning to innovate in a rapidly evolving tech landscape. Our cutting-edge curriculum is continuously updated, blending rigor, depth and real-world relevance to prepare you for what's new and next in the field.</p>
       <p>With renowned faculty and industry-aligned coursework, you'll develop the theoretical foundation and practical experience needed to excel. Plus, our ASAP application allows you to complete two trial courses before fully committing to the program, ensuring a perfect fit for your educational and career goals.</p>
-    `
+    `,
   },
   curriculum: {
-    description: "The MSCS program consists of 30 credit hours, with 10 courses, and is 100% online. The curriculum offers traditional and advanced tracks, with the first four courses in the Traditional track and the first two in the Advanced track delivered asynchronously. Students engage with current and emerging topics to develop skills as innovative software development leaders and proficient, high-quality coders. Additionally, students can specialize in high-demand areas through coursework in AI and machine learning, business intelligence and analytics, and software development.",
+    description:
+      "The MSCS program consists of 30 credit hours, with 10 courses, and is 100% online. The curriculum offers traditional and advanced tracks, with the first four courses in the Traditional track and the first two in the Advanced track delivered asynchronously. Students engage with current and emerging topics to develop skills as innovative software development leaders and proficient, high-quality coders. Additionally, students can specialize in high-demand areas through coursework in AI and machine learning, business intelligence and analytics, and software development.",
     courseTabs: {
-      traditional: { 
-        title: "Traditional Coursework", 
+      traditional: {
+        title: "Traditional Coursework",
         content: `
           <div class="space-y-stevens-lg">
             <div>
@@ -330,10 +381,10 @@ const programData = {
               </div>
             </div>
           </div>
-        ` 
+        `,
       },
-      advanced: { 
-        title: "Advanced Coursework", 
+      advanced: {
+        title: "Advanced Coursework",
         content: `
           <div class="space-y-stevens-lg">
             <div>
@@ -432,10 +483,10 @@ The objective of this course is to give students a basic grounding in designing 
               </div>
             </div>
           </div>
-        ` 
+        `,
       },
-      focusAreas: { 
-        title: "Areas of Focus", 
+      focusAreas: {
+        title: "Areas of Focus",
         content: `
           <p class="course-intro">Depending on your background and your postgraduate aspirations, you may have the option to choose additional courses from three in-demand areas of focus to develop additional professional expertise: AI and machine learning, business intelligence and analytics, and software development. A sample of available courses is below.</p>
           
@@ -574,103 +625,210 @@ The objective of this course is to give students a basic grounding in designing 
               </div>
             </div>
           </div>
-        ` 
-      }
-    }
+        `,
+      },
+    },
   },
   studentSpotlight: {
     name: "Jaeson Valles ’22",
-    quote: "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree."
+    quote:
+      "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree.",
   },
   faculty: {
-    description: "Our faculty includes National Science Foundation (NSF) CAREER winners as well as researchers who consult for companies such as Microsoft, IBM, Google, Bell Labs and other top industry firms.",
+    description:
+      "Our faculty includes National Science Foundation (NSF) CAREER winners as well as researchers who consult for companies such as Microsoft, IBM, Google, Bell Labs and other top industry firms.",
     members: [
-      { name: "Shudong Hao", title: "Assoc. Chair for Graduate Studies", image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp" },
-      { name: "Reza Peyrovian", title: "Senior Lecturer", image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp" },
-      { name: "Patrick Hill", title: "Lecturer", image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp" },
-      { name: "Dominic Duggan", title: "Associate Professor", image: "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.webp" },
-      { name: "Samuel Kim", title: "Teaching Professor", image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp" },
-    ]
+      {
+        name: "Shudong Hao",
+        title: "Assoc. Chair for Graduate Studies",
+        image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp",
+      },
+      {
+        name: "Reza Peyrovian",
+        title: "Senior Lecturer",
+        image: "/assets/avatars/mscs-avatar/Reza_Peyrovian.webp",
+      },
+      {
+        name: "Patrick Hill",
+        title: "Lecturer",
+        image: "/assets/avatars/mscs-avatar/Patrick_Hill-768x768.webp",
+      },
+      {
+        name: "Dominic Duggan",
+        title: "Associate Professor",
+        image:
+          "/assets/avatars/mscs-avatar/dominic-duggan-online-mscs-stevens-faculty.webp",
+      },
+      {
+        name: "Samuel Kim",
+        title: "Teaching Professor",
+        image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
+      },
+    ],
   },
   admissions: {
     options: [
-      { title: "Standard Application", featured: false, description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`, buttonText: "Apply Now", url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP" },
-      { title: "ASAP Application", featured: true, description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`, buttonText: "Apply Now", url: createPageUrl('ASAP') }
+      {
+        title: "Standard Application",
+        featured: false,
+        description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
+        buttonText: "Apply Now",
+        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      },
+      {
+        title: "ASAP Application",
+        featured: true,
+        description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`,
+        buttonText: "Apply Now",
+        url: createPageUrl("ASAP"),
+      },
     ],
-    consultation: { title: "Wondering Which Application Is Right for You?", buttonText: "Get In Touch", url: createPageUrl('RequestInfo') }
+    consultation: {
+      title: "Wondering Which Application Is Right for You?",
+      buttonText: "Get In Touch",
+      url: createPageUrl("RequestInfo"),
+    },
   },
   keyDates: {
-    headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
-    rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
-        details: KEY_DATES.EARLY_SUBMIT.details,
-        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date
-      }
+    headers: [
+      "Term",
+      "Early Submit",
+      "Priority Submit",
+      "Final Submit",
+      "Start of Classes",
     ],
-    footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
+    rows: [
+      {
+        event: KEY_DATES_SUMMER.TERM.name,
+        date: KEY_DATES_SUMMER.EARLY_SUBMIT.date,
+        details: KEY_DATES_SUMMER.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES_SUMMER.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES_SUMMER.FINAL_SUBMIT.date,
+        startDate: KEY_DATES_SUMMER.START_OF_CLASSES.date,
+      },
+    ],
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
   },
   tuition: {
     cards: [
       { value: "$1,395", label: "Per Credit (Standard)" },
       { value: "$875", label: "Per Credit (Async)*" },
       { value: "$60", label: "Application Fee" },
-      { value: "$250", label: "Enrollment Deposit" }
+      { value: "$250", label: "Enrollment Deposit" },
     ],
     description: `<h3 class="font-bold text-xl mb-4">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="text-sm italic mt-2">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
     grants: [
-        { title: "Aspire Grant (for standard applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
-        { title: "Pathway Grant (for ASAP applicants)", description: "$3,120 in tuition support for the first two asynchronous courses." },
-        { title: "Dean’s Merit Scholar Program", description: "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more." }
-    ]
+      {
+        title: "Aspire Grant (for standard applicants)",
+        description:
+          "$3,120 in tuition support for the first two asynchronous courses.",
+      },
+      {
+        title: "Pathway Grant (for ASAP applicants)",
+        description:
+          "$3,120 in tuition support for the first two asynchronous courses.",
+      },
+      {
+        title: "Dean’s Merit Scholar Program",
+        description:
+          "Eligible students may qualify for scholarship support based on academic merit. Contact your enrollment advisor to learn more.",
+      },
+    ],
   },
   events: {
     title: "On-Demand Content",
-    description: "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
+    description:
+      "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
     fallbackText: "Check back soon for more upcoming events.",
     items: [
-      { title: "Exploring the Online M.S. in Computer Science at Stevens Institute of Technology", status: "Ongoing", length: "11 minutes", url: "https://event.on24.com/wcc/r/4455089/34FF45D9104354C225403F6B63A29F26" },
-      { title: "Student Voices: Real Stories From Stevens Graduate Programs", status: "Ongoing", length: "45 minutes", url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE" },
-      { title: "Start With Two Courses. Step Into Computer Science", status: "Ongoing", length: "30 minutes", url: "https://event.on24.com/wcc/r/4970040/A6ED251C21B790E2D79369BFB149380A" },
-      { title: "Online M.S. in Computer Science: Areas of Focus", status: "Ongoing", length: "12 minutes", url: "https://event.on24.com/wcc/r/4894227/042446D9C5E18BF3F4D7CD9A7604B1EA" },
-      { title: "Financial Aid Overview: Stevens Institute of Technology", status: "Ongoing", length: "10 minutes", url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2" },
-      { title: "Application Walkthrough: Data Science and Computer Science", status: "Ongoing", length: "24 minutes", url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29" },
-      { title: "Exploring the Online M.S. in Computer Science at Stevens Institute of Technology", status: "Ongoing", length: "23 minutes", url: "https://event.on24.com/wcc/r/4455089/34FF45D9104354C225403F6B63A29F26?pg=2" }
-    ]
+      {
+        title:
+          "Exploring the Online M.S. in Computer Science at Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "11 minutes",
+        url: "https://event.on24.com/wcc/r/4455089/34FF45D9104354C225403F6B63A29F26",
+      },
+      {
+        title: "Student Voices: Real Stories From Stevens Graduate Programs",
+        status: "Ongoing",
+        length: "45 minutes",
+        url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE",
+      },
+      {
+        title: "Start With Two Courses. Step Into Computer Science",
+        status: "Ongoing",
+        length: "30 minutes",
+        url: "https://event.on24.com/wcc/r/4970040/A6ED251C21B790E2D79369BFB149380A",
+      },
+      {
+        title: "Online M.S. in Computer Science: Areas of Focus",
+        status: "Ongoing",
+        length: "12 minutes",
+        url: "https://event.on24.com/wcc/r/4894227/042446D9C5E18BF3F4D7CD9A7604B1EA",
+      },
+      {
+        title: "Financial Aid Overview: Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "10 minutes",
+        url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2",
+      },
+      {
+        title: "Application Walkthrough: Data Science and Computer Science",
+        status: "Ongoing",
+        length: "24 minutes",
+        url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29",
+      },
+      {
+        title:
+          "Exploring the Online M.S. in Computer Science at Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "23 minutes",
+        url: "https://event.on24.com/wcc/r/4455089/34FF45D9104354C225403F6B63A29F26?pg=2",
+      },
+    ],
   },
   faqs: [
-    { q: "What is the ASAP application?", a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree." },
-    { q: "Who should apply through the ASAP application?", a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required." },
-    { q: "What resources are available to ASAP students?", a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses." }
+    {
+      q: "What is the ASAP application?",
+      a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree.",
+    },
+    {
+      q: "Who should apply through the ASAP application?",
+      a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required.",
+    },
+    {
+      q: "What resources are available to ASAP students?",
+      a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses.",
+    },
   ],
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
 };
-
 
 export default function MSCSPage() {
   usePageTracking({
-    pageType: 'program',
-    programCode: 'mscs',
+    pageType: "program",
+    programCode: "mscs",
     additionalData: {
-      program_name: 'Master of Science in Computer Science',
+      program_name: "Master of Science in Computer Science",
       has_video: true,
       has_rfi_modal: true,
-      has_application_modal: true
-    }
+      has_application_modal: true,
+    },
   });
 
   return (
     <PageContextProvider pageType="program" pageName="MSCS">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="mscs"
         programName="Master of Science in Computer Science"
         programType="degree"
       >
-        <ProgramPageTemplate programData={programData} useApplicationModal={true} />
+        <ProgramPageTemplate
+          programData={programData}
+          useApplicationModal={true}
+        />
       </ProgramContextProvider>
     </PageContextProvider>
   );
