@@ -31,7 +31,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
   return (
     <Section id="overview" bgClassName="bg-stevens-white" ref={ref}>
-      <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-6 gap-stevens-gap-lg">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-6 gap-x-16 gap-y-8">
         {/* Left Column - Overview Content */}
         <div className="lg:col-span-4">
           {/* Program Type Label */}

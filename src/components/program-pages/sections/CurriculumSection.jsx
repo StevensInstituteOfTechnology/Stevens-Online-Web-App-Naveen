@@ -121,29 +121,23 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
           </div>
         )}
 
-        {/* Expand/Collapse Button */}
-        {tabsData.length > 0 && (
+        {/* View Course List Button (shown when collapsed) */}
+        {tabsData.length > 0 && !isExpanded && (
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-center gap-2 py-4 px-6 mb-stevens-lg border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
+            onClick={() => setIsExpanded(true)}
+            className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
           >
-            {isExpanded ? (
-              <>
-                Hide Course List
-                <ChevronUp className="w-5 h-5" />
-              </>
-            ) : (
-              <>
-                View Course List
-                <ChevronDown className="w-5 h-5" />
-              </>
-            )}
+            View Course List
+            <ChevronDown className="w-5 h-5" />
           </button>
         )}
 
         {/* Collapsible Course Content */}
         {tabsData.length > 0 && isExpanded && (
-          <Tabs defaultValue={tabsData[0].id} className="w-full animate-in fade-in slide-in-from-top-4 duration-300">
+          <Tabs
+            defaultValue={tabsData[0].id}
+            className="w-full animate-in fade-in slide-in-from-top-4 duration-300"
+          >
             <div className="relative overflow-x-auto scrollbar-hide group">
               <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
               <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
@@ -227,6 +221,19 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
               />
             </CardContent>
           </Card>
+        </div>
+      )}
+
+      {/* Hide Course List Button (shown at bottom when expanded) */}
+      {tabsData.length > 0 && isExpanded && (
+        <div className="max-w-stevens-content-max mx-auto mt-stevens-xl">
+          <button
+            onClick={() => setIsExpanded(false)}
+            className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
+          >
+            Close Course List
+            <ChevronUp className="w-5 h-5" />
+          </button>
         </div>
       )}
     </Section>
