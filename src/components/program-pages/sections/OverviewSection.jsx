@@ -56,7 +56,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
                   <Badge
                     key={skill}
                     variant="outline-dark"
-                    className="text-sm py-2 px-4"
+                    className="text-sm font-medium py-3 px-6 border-2 border-stevens-black bg-white text-stevens-black rounded-full"
                   >
                     {skill}
                   </Badge>
