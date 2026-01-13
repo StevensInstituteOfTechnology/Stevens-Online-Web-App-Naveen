@@ -27,6 +27,7 @@ import {
   TuitionSection,
   KeyDatesSection,
   AdmissionsSection,
+  QuickStatsBar,
 } from "../sections";
 
 // Import navigation
@@ -163,12 +164,16 @@ export function DegreeTemplate({
       />
 
       <main>
+         {/* Quick Stats Bar - Full width stats display */}
+         <QuickStatsBar stats={quickFacts?.quickStats} />
+
         {/* 1. Overview Section */}
         <OverviewSection
           overview={overview}
           quickFacts={quickFacts}
           ref={registerSectionRef("overview")}
         />
+       
 
         {/* 2. Rankings Section (By the Numbers) */}
         <RankingsSection

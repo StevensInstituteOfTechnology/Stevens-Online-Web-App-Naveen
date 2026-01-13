@@ -22,6 +22,7 @@ import {
   CurriculumSection,
   WhyStevensSection,
   AdmissionsSection,
+  QuickStatsBar,
 } from "../sections";
 
 // Import navigation
@@ -152,6 +153,9 @@ export function CertificateTemplate({
       />
 
       <main>
+        {/* Quick Stats Bar - Full width stats display */}
+        <QuickStatsBar stats={quickFacts?.quickStats} />
+
         {/* 1. Overview Section (with Quick Facts) */}
         <OverviewSection
           overview={overview}

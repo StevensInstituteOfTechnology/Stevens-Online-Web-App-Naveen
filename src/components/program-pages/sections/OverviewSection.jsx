@@ -1,27 +1,27 @@
-import React, { forwardRef } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
-import { Badge } from '../../ui/badge';
-import { Section } from '../primitives';
+import React, { forwardRef } from "react";
+import { Badge } from "../../ui/badge";
+import { Button } from "../../ui/button";
+import { Section } from "../primitives";
 
 /**
- * OverviewSection - Program overview with Quick Facts sidebar
- * 
+ * OverviewSection - Program overview with simplified Quick Facts card
+ *
  * Design: CPE Brand Guidelines - Two-column layout
  * Features:
  * - Left column (3/5): Title, description (HTML), key skills badges, concentration list
- * - Right column (2/5): Quick Facts card with term start date, details, at-a-glance stats
- * 
- * Used in: Both Degree and Certificate pages (position 1 after Hero)
- * 
+ * - Right column (2/5): Simplified Quick Facts card (term start, tuition, apply button)
+ *
+ * Note: QuickStatsBar is now a separate component rendered before this section
+ *
  * @param {Object} overview - Overview content
  * @param {string} overview.title - Section title
  * @param {string} overview.description - HTML description
  * @param {Array} overview.keySkills - Array of skill strings for badges
  * @param {Array} overview.concentrations - Array of concentration options
- * @param {Object} quickFacts - Quick facts sidebar data
- * @param {string} quickFacts.termStartDate - Next term start date
- * @param {string} quickFacts.details - HTML details content
- * @param {Array} quickFacts.atAGlance - Array of {value, label} stat objects
+ * @param {Object} quickFacts - Quick facts data
+ * @param {string} quickFacts.termStart - Term start info (e.g., "Spring 2026: Jan 20")
+ * @param {string} quickFacts.tuition - Tuition info (e.g., "$5,250 Total")
+ * @param {string} quickFacts.applyUrl - URL for Apply Now button
  */
 export const OverviewSection = forwardRef(function OverviewSection(
   { overview, quickFacts },
@@ -30,11 +30,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
   if (!overview) return null;
 
   return (
-    <Section
-      id="overview"
-      bgClassName="bg-stevens-white"
-      ref={ref}
-    >
+    <Section id="overview" bgClassName="bg-stevens-white" ref={ref}>
       <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-5 gap-stevens-gap-lg">
         {/* Left Column - Overview Content */}
         <div className="lg:col-span-3">
@@ -49,83 +45,94 @@ export const OverviewSection = forwardRef(function OverviewSection(
               dangerouslySetInnerHTML={{ __html: overview.description }}
             />
           )}
+          {/* Key Skills Developed */}
           {overview.keySkills && overview.keySkills.length > 0 && (
-            <div className="mt-8">
-              <h3 className="font-semibold text-lg mb-2">
-                Key Skills Developed:
+            <div className="mt-10">
+              <h3 className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-black mb-4">
+                Key Skills Developed
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {overview.keySkills.map((skill) => (
-                  <Badge key={skill} variant="outline-dark">
+                  <Badge
+                    key={skill}
+                    variant="outline-dark"
+                    className="text-sm py-2 px-4"
+                  >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
           )}
+
+          {/* Concentration Options - Two Column Grid */}
           {overview.concentrations && overview.concentrations.length > 0 && (
-            <div className="mt-8">
-              <h3 className="font-semibold text-lg mb-2">
-                Concentration Options:
+            <div className="mt-10">
+              <h3 className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-black mb-4">
+                Concentration Options
               </h3>
-              <ul className="list-disc pl-5 space-y-1 text-stevens-dark-gray text-sm">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-3">
                 {overview.concentrations.map((conc) => (
-                  <li key={conc}>{conc}</li>
+                  <div key={conc} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-stevens-black rounded-full mt-1.5 flex-shrink-0" />
+                    <span className="text-stevens-dark-gray text-sm leading-relaxed">
+                      {conc}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Right Column - Quick Facts */}
+        {/* Right Column - Simplified Quick Facts Card */}
         <div className="lg:col-span-2">
-          <Card className="shadow-stevens-xl rounded-stevens-md overflow-hidden bg-stevens-white">
-            <CardHeader className="bg-stevens-black p-stevens-card">
-              <CardTitle className="font-stevens-display text-stevens-2xl font-light text-stevens-white">
-                QUICK FACTS
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-stevens-card pt-stevens-card bg-stevens-light-gray">
-              {quickFacts?.termStartDate && (
-                <div className="mb-stevens-lg">
-                  <p className="font-stevens-bold text-stevens-base uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">
-                    Term Start Date
-                  </p>
-                  <p className="font-stevens-bold text-stevens-lg text-stevens-red">
-                    {quickFacts.termStartDate}
-                  </p>
-                </div>
-              )}
-              {quickFacts?.details && (
-                <div className="border-t border-stevens-light-gray pt-stevens-md">
-                  <h4 className="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-sm uppercase">
-                    Overview
-                  </h4>
-                  <div
-                    className="prose prose-sm text-stevens-dark-gray space-y-stevens-sm"
-                    dangerouslySetInnerHTML={{ __html: quickFacts.details }}
-                  />
-                </div>
-              )}
-            </CardContent>
-          </Card>
-          {quickFacts?.atAGlance && quickFacts.atAGlance.length > 0 && (
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {quickFacts.atAGlance.map((fact, index) => (
-                <div
-                  key={index}
-                  className="text-center bg-stevens-light-gray p-3 rounded-stevens-md"
-                >
-                  <p className="font-stevens-display text-lg md:text-xl font-light text-stevens-red leading-tight">
-                    {fact.value}
-                  </p>
-                  <p className="text-[10px] md:text-xs uppercase tracking-wider text-stevens-dark-gray">
-                    {fact.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="bg-stevens-light-gray p-6 lg:p-8 sticky top-56">
+            {/* Card Title */}
+            <h3 className="font-stevens-display text-sm font-medium text-stevens-dark-gray uppercase tracking-[0.2em] mb-6">
+              Quick Facts
+            </h3>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-stevens-gray/30 mb-6" />
+
+            {/* Term Start */}
+            {quickFacts?.termStart && (
+              <div className="mb-4">
+                <p className="text-xs uppercase tracking-wider text-stevens-gray mb-1">
+                  Upcoming Start
+                </p>
+                <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-black italic">
+                  {quickFacts.termStart}
+                </p>
+              </div>
+            )}
+
+            {/* Tuition */}
+            {quickFacts?.tuition && (
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-wider text-stevens-gray mb-1">
+                  Program Tuition
+                </p>
+                <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-red italic">
+                  {quickFacts.tuition}
+                </p>
+              </div>
+            )}
+
+            {/* Apply Now Button */}
+            <Button
+              variant="dark"
+              className="w-full py-3 text-sm uppercase tracking-wider"
+              onClick={() => {
+                if (quickFacts?.applyUrl) {
+                  window.open(quickFacts.applyUrl, "_blank");
+                }
+              }}
+            >
+              Apply Now
+            </Button>
+          </div>
         </div>
       </div>
     </Section>

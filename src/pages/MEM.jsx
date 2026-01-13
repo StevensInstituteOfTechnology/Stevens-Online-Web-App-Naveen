@@ -37,23 +37,21 @@ const programData = {
     ],
   },
   quickFacts: {
-    atAGlance: [
-      { value: "Advanced", label: "Techniques" },
-      { value: "Assemble", label: "Teams" },
-      { value: "Analyze", label: "Data" },
-      { value: "Build", label: "Models" },
+    // Quick Stats Bar
+    quickStats: [
+      { value: "30", label: "Credits" },
+      { value: "10", label: "Courses" },
+      { value: "100%", label: "Online" },
+      { value: "2 Yrs", label: "or Less" },
     ],
+
+    // Simplified Card
+    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    tuition: "Contact for Pricing",
+    applyUrl: "#",
+
+    // Legacy
     termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `
-      <ul>
-        <li>30 Credit Hours</li>
-        <li>10 Courses</li>
-        <li>100% Online</li>
-        <li>2 Years or Less Completion Time*</li>
-        <li>Two application options (standard and ASAP)</li>
-      </ul>
-      <p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
-    `,
   },
   overview: {
     title: "Program Overview",
@@ -61,10 +59,12 @@ const programData = {
       <p>The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for leadership roles by combining technical expertise with business management principles. Through an innovative curriculum that bridges engineering and business, you’ll develop analytical and social intelligence to manage projects effectively. Customize your learning with core coursework in management, data science and engineering analysis, and tailor electives to your interests. With our new ASAP application, you can bypass the traditional application process and secure your spot in the program by successfully completing two trial courses.</p>
     `,
     keySkills: [
-      "Leverage advanced techniques and analysis to estimate and use cost information in decision making.",
-      "Form and manage an effective engineering design team in a business environment.",
-      "Handle and process information using tools such as Python.",
-      "Master the fundamentals of system dynamics and build system dynamic models.",
+      "Engineering Management",
+      "Cost Analysis",
+      "Team Leadership",
+      "System Dynamics",
+      "Data Analysis",
+      "Python",
     ],
   },
   rankings: [

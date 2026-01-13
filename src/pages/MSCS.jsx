@@ -29,23 +29,21 @@ const programData = {
     ]
   },
   quickFacts: {
-    atAGlance: [
-      { value: "99%", label: "Employment" },
-      { value: "No CS", label: "Background Req." },
-      { value: "Pivot", label: "Your Career" },
-      { value: "In-Demand", label: "Focus Areas" },
+    // Quick Stats Bar
+    quickStats: [
+      { value: "30", label: "Credits" },
+      { value: "10", label: "Courses" },
+      { value: "100%", label: "Online" },
+      { value: "2 Yrs", label: "or Less" },
     ],
+
+    // Simplified Card
+    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    tuition: "Contact for Pricing",
+    applyUrl: "#",
+
+    // Legacy
     termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `
-      <ul>
-        <li>30 Credit Hours</li>
-        <li>10 Courses</li>
-        <li>100% Online</li>
-        <li>2 Years or Less Completion Time*</li>
-        <li>Two application options (standard and ASAP)</li>
-      </ul>
-      <p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
-    `,
   },
   overview: {
     title: "Program Overview",
@@ -54,11 +52,12 @@ const programData = {
       <p>With our new ASAP application, you can bypass the standard application process and secure your spot in the program by successfully completing two trial courses.</p>
     `,
     keySkills: [
-      "Enterprise software design and engineering",
-      "Mobile application development and cloud computing",
-      "Agile development methods",
-      "Algorithm design and testing",
-      "Machine learning in support of providing software development leaders and high-quality coders"
+      "Software Engineering",
+      "Cloud Computing",
+      "Mobile Development",
+      "Machine Learning",
+      "Agile Methods",
+      "Algorithm Design",
     ],
     concentrations: [
       "AI and Machine Learning",

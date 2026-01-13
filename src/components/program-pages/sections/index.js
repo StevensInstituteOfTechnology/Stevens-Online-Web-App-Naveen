@@ -21,6 +21,7 @@ export { FacultySection } from "./FacultySection";
 export { SkillsSection } from "./SkillsSection";
 export { JobTitlesSection } from "./JobTitlesSection";
 export { OverviewSection } from "./OverviewSection";
+export { QuickStatsBar } from "./QuickStatsBar";
 export { CurriculumSection } from "./CurriculumSection";
 export { WhyStevensSection } from "./WhyStevensSection";
 export { TuitionSection } from "./TuitionSection";

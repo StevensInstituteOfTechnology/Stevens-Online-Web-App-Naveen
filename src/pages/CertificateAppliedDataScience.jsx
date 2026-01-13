@@ -53,17 +53,21 @@ const programData = {
     ],
   },
   quickFacts: {
-    atAGlance: [
-      { value: "$5,250", label: "Total Cost", icon: DollarSign },
-      { value: "9 Credits", label: "3 Courses", icon: BookOpen },
-      { value: "100%", label: "Online", icon: Globe },
-      { value: "Stackable", label: "To MEADS", icon: GraduationCap },
-      { value: KEY_DATES.TERM.name, label: "Launch", icon: TrendingUp },
-      { value: "Portfolio", label: "Projects", icon: Briefcase },
+    // Top Stats Bar
+    quickStats: [
+      { value: "9", label: "Credits" },
+      { value: "3", label: "Courses" },
+      { value: "100%", label: "Online" },
+      { value: "16-24", label: "Weeks" },
     ],
 
+    // Simplified Card
+    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    tuition: "$5,250 Total",
+    applyUrl: "#",
+
+    // Legacy fields (keep for backward compatibility if needed)
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>9 Graduate Credits</li><li>3 Courses (3 credits each)</li><li>100% Online with Live Labs</li><li>16-24 Week Completion Time*</li><li>Stackable toward M.Eng. in Applied Data Science graduate degrees</li><li>Three Portfolio Artifacts</li><li>Aligns with $5,250 IRS tax-free employer benefit</li></ul><p class="text-xs mt-2">*Completion time varies based on course scheduling and student pace.</p>`,
   },
   overview: {
     title: "Certificate Overview",

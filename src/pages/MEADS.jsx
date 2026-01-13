@@ -54,33 +54,33 @@ const programData = {
       
     `,
     keySkills: [
-      "Machine Learning Engineering", "LLM Fine-Tuning & Deployment", "AI Model Design", "MLOps & Model Monitoring",
-      "Data Pipeline Engineering", "Cloud AI Architecture", "Distributed Systems", "AI Ethics & Explainability",
-      "Python", "PyTorch", "TensorFlow", "Hugging Face", "Spark", "Kubernetes", "Docker", "AWS"
+      "Machine Learning",
+      "LLM & GenAI",
+      "Data Pipelines",
+      "MLOps",
+      "Cloud Architecture",
+      "Python",
+      "PyTorch/TensorFlow",
+      "AI Ethics",
     ]
   },
   // ==================================================================
   quickFacts: {
-    atAGlance: [
-      // { value: "30", label: "Credit Hours" },
-      // { value: "10", label: "Courses" },
+    // Quick Stats Bar
+    quickStats: [
+      { value: "30", label: "Credits" },
+      { value: "10", label: "Courses" },
       { value: "100%", label: "Online" },
-      // { value: "1-2 Years", label: "Completion" },
-      { value: "Hands-On", label: "Projects" },
-      { value: "Industry", label: "Focused" }
+      { value: "1-2", label: "Years" },
     ],
-    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `
-      <ul>
-        <li>30 Credit Hours</li>
-        <li>10 Courses</li>
-        <li>100% Online</li>
-        <li>1 to 2 Years Completion Time*</li>
-        <li>Integrated data science and engineering curriculum</li>
-        <li>Real-world capstone project</li>
-      </ul>
-      <p class="font-stevens-body text-stevens-xs mt-stevens-sm">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
-    `
+
+    // Simplified Card
+    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    tuition: "Contact for Pricing",
+    applyUrl: "#",
+
+    // Legacy
+    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`
   },
   // ==================================================================
   rankings: [

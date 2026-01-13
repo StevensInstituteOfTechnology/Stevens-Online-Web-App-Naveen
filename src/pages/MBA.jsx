@@ -43,17 +43,21 @@ const programData = {
     ],
   },
   quickFacts: {
-    atAGlance: [
-      { value: "100%", label: "Online", icon: Globe },
-      { value: "Tech-Focused", label: "Curriculum", icon: BrainCircuit },
-      { value: "No GMAT/GRE", label: "Required", icon: Check },
-      { value: "Career-Driven", label: "Outcomes", icon: Briefcase },
-      { value: "Expert", label: "Faculty", icon: Users },
-      { value: "Merit", label: "Scholarships Available", icon: Award },
+    // Quick Stats Bar
+    quickStats: [
+      { value: "36-45", label: "Credits" },
+      { value: "12-15", label: "Courses" },
+      { value: "100%", label: "Online" },
+      { value: "2.5-3", label: "Years" },
     ],
 
+    // Simplified Card
+    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    tuition: "Contact for Pricing",
+    applyUrl: "#",
+
+    // Legacy
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
-    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`,
   },
   overview: {
     title: "MBA Program Overview",
