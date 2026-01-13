@@ -1,5 +1,5 @@
 import React from 'react';
-import { KEY_DATES } from '@/config/constants';
+import { KEY_DATES_FALL } from '@/config/constants';
 import { Award, Globe, Star, Target, Clock, Network, ThumbsUp } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
@@ -161,25 +161,25 @@ const ExploreMEM = () => {
     ],
     
     // Key Dates
-    keyDatesTerm: KEY_DATES.TERM.nameUppercase,
+    keyDatesTerm: KEY_DATES_FALL.TERM.nameUppercase,
     keyDates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
-        description: KEY_DATES.EARLY_SUBMIT.details
+        date: KEY_DATES_FALL.EARLY_SUBMIT.date,
+        description: KEY_DATES_FALL.EARLY_SUBMIT.details
       },
       {
         label: "Priority Submit", 
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
-        description: KEY_DATES.PRIORITY_SUBMIT.details
+        date: KEY_DATES_FALL.PRIORITY_SUBMIT.date,
+        description: KEY_DATES_FALL.PRIORITY_SUBMIT.details
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date
+        date: KEY_DATES_FALL.FINAL_SUBMIT.date
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date
+        date: KEY_DATES_FALL.START_OF_CLASSES.date
       }
     ],
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply. Contact admissions for more information.",

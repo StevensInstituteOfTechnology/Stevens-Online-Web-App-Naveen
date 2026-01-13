@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Globe, Star } from 'lucide-react';
 import ExploreProgramPageTemplate from '../components/program-pages/ExploreProgramPageTemplate';
-import { KEY_DATES } from '@/config/constants';
+import { KEY_DATES_SUMMER } from '@/config/constants';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -141,19 +141,19 @@ const ExploreMBA = () => {
     keyDates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date
+        date: KEY_DATES_SUMMER.EARLY_SUBMIT.date
       },
       {
         label: "Priority Submit", 
-        date: KEY_DATES.PRIORITY_SUBMIT.date
+        date: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date
+        date: KEY_DATES_SUMMER.FINAL_SUBMIT.date
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date
+        date: KEY_DATES_SUMMER.START_OF_CLASSES.date
       }
     ],
     keyDatesNote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive tuition discounts are not eligible. Other eligibility conditions may apply.",
