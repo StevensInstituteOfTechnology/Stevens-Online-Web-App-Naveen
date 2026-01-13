@@ -308,173 +308,155 @@ const programData = {
   // ==================================================================
   curriculum: {
     title: "Program Curriculum",
-    // description: "The M.S. in Data Science and Engineering program combines rigorous data science fundamentals with practical software engineering skills. Students will complete 30 credit hours across 10 courses, all delivered 100% online. The curriculum is designed to prepare graduates for leadership roles in data-intensive organizations.",
-    courseTabs: {
-      traditional: {
+    variant: "degree",
+    tabs: [
+      {
+        id: "coursework",
         title: "Coursework",
-        content: `
-          <div class="space-y-stevens-lg">
-            <div>
-              <h4 class="course-section-header">TERM 1 - Foundations</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse501">MA 574: Mathematical Foundations of Data Science<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse501">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course provides students with the essential background in calculus and linear algebra needed to pursue the study of Data Science. Topics include derivatives and integrals of (multivariable) functions; vectors and matrices; vector spaces and subspaces; norms and projections; the eigendecomposition (diagonalization) of a matrix; the singular value decomposition (SVD) of a matrix; continuous optimization; mappings between Euclidean spaces; and Taylor approximation. Throughout, various applications to Data Science are considered, with hands-on numerical and coding exercises supplementing the theory.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse502">CS 563: Python and Data Bases<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse502">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers Python programming fundamentals and database management systems. Students learn to design, implement, and query relational databases while developing proficiency in Python for data manipulation and analysis.</p>
-                  </div>
-                </div>
-
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse503">CS 559: Machine Learning: Fundamentals and Applications<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse503">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers foundational principles that drive machine learning applications and provides practice implementing algorithms. Topics include maximum likelihood estimation, dimension reduction, supervised and unsupervised learning, neural networks, and non-parametric methods. Students gain tools to address new ML problems, applying techniques such as regression, SVMs, decision trees, clustering, and backpropagation, with an emphasis on practical problem-solving using software libraries and real data.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 2 - Advanced Techniques</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse520">MA 521: Statistical Foundations of Data Science OR FA 590: Statistical Learning<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse520">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>MA 521:</strong> This course provides a comprehensive foundation in statistical methods for data science. Topics include probability theory, statistical inference, hypothesis testing, and regression analysis.<br/><br/><strong>FA 590:</strong> An advanced course focusing on statistical learning methods and their applications. Students explore modern statistical techniques for prediction and classification.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse521">CS 583: Deep Learning<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse521">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course introduces deep learning concepts and methodologies, covering both theoretical foundations and practical applications. Topics include model selection, neural networks, backpropagation, convolutional neural networks (CNNs), recurrent neural networks (RNNs), attention models, and reinforcement learning from human feedback (RLHF). Students complete programming assignments and a final project involving design and implementation of deep learning models.</p>
-                  </div>
-                </div>
-
-                 <div class="course-item">
-                  <button class="course-toggle" data-target="dse522">BIA 568: Management of AI Technologies<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse522">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries-such as autonomous transportation, fraud detection, and machine translation-while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 3 - Capstone & Specialization</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse530">BIA 662: Augmented Intelligence and Generative AI<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse530">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course explores the integration of augmented intelligence, generative AI, natural language processing, and deep learning in data-driven business contexts. Students gain foundational and practical knowledge in LLMs, prompt engineering, and AI ethics. A major team project involves developing a proof-of-concept business solution leveraging generative AI to create measurable value.</p>
-                  </div>
-                </div>
-
-                <div class="course-item">
-                  <button class="course-toggle" data-target="dse531">MA 899: Data Science Capstone Project<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="dse531">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">A culminating project where students apply their knowledge to solve real-world data science problems. Working individually or in teams, students complete an end-to-end data science project.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Sample Electives</h4>
-              <div class="space-y-stevens-md">
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-4">Sample electives available to customize your degree - *actual elective list will be available in Spring:</p>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec1">MA 641: Time Series Analysis I<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec1">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course provides a foundational introduction to modern time series analysis from both theoretical and applied perspectives. Emphasizing the Box–Jenkins methodology, it covers ARMA and ARIMA models, parameter estimation, model diagnostics, forecasting, seasonal (SARMA) models, and time series models of heteroscedasticity (ARCH and GARCH). Students apply these methods using statistical software (R) and real-world datasets, developing skills to analyze, forecast, and interpret time-dependent data.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec2">CS 513: Data Mining using Python<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec2">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course introduces the principles and practice of data mining and machine learning. Students explore statistical and computational techniques to analyze, classify, and model data. Topics include data preprocessing, decision trees, k-nearest neighbor algorithms, Naïve Bayes, clustering (k-means, hierarchical), regression, neural networks, and advanced methods such as boosting and recommendation systems. The course emphasizes both theoretical understanding and applied learning using Python and real-world datasets.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec3">BIA 678: Big Data Technologies<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec3">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">The field of Big Data is explored through both business and technical lenses. Students learn to manage the volume, velocity, and variety of data using modern technologies such as Spark, Python, and Dataiku. The course covers big data strategy, governance, AI ethics, and applications of machine learning and IoT within big data ecosystems, preparing students to design scalable solutions for enterprise environments.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec4">MIS 636: Data Integration for BI&A<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec4">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course focuses on the design, management, and use of data warehouse (DW) and business intelligence (BI) systems. The DW is the central element in collecting, integrating, and making sense of an organization's data. BI concerns the full range of analytical applications and their delivery to users. Students learn the business value of data, planning and requirements gathering, data architecture and modeling, and integration processes. Practical examples and case studies highlight the implementation of BI systems and data integration for improved organizational decision-making.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec5">BIA 660: Web Mining<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec5">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Students learn through hands-on experience how to extract and analyze data from the web using distributed computing. The course covers web scraping, text mining, recommender systems, clustering, and natural language processing. Students apply methods widely used by companies like Amazon and Google to analyze web-scale data, culminating in applications to real scientific or business questions.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec6">BIA 672: Marketing Analytics<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec6">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course develops students' analytical ability to understand consumer and customer behavior using marketing models, analytics, and data management techniques. Topics include customer analytics, product analytics, promotion and digital analytics, channel analytics, and marketing mix optimization. Students use SAS and Python tools to build realistic models, forecast consumer behavior, and formulate marketing strategies based on data-driven insights.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec7">FA 550: Data Visualization Application<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec7">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Effective visualization of complex data allows for meaningful insight and informed decision-making. This course investigates visualization methods from multiple perspectives and teaches students to use tools such as Tableau, Julius.ai, Python, R, and Power BI to refine data and communicate results effectively. Ethical visualization practices and design theory are also emphasized.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="elec8">BIA 665: Applied Reinforcement Learning<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="elec8">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers reinforcement learning theory and applications, including Markov decision processes, dynamic programming, temporal-difference learning, and deep reinforcement learning. Students implement algorithms and apply them to real-world problems.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <p>Note: Actual course order may vary based on term availability.</p>
-          </div>
-        `,
+        sections: [
+          {
+            title: "TERM 1 - Foundations",
+            courses: [
+              {
+                code: "MA 574",
+                name: "Mathematical Foundations of Data Science",
+                description:
+                  "This course provides students with the essential background in calculus and linear algebra needed to pursue the study of Data Science. Topics include derivatives and integrals of (multivariable) functions; vectors and matrices; vector spaces and subspaces; norms and projections; the eigendecomposition (diagonalization) of a matrix; the singular value decomposition (SVD) of a matrix; continuous optimization; mappings between Euclidean spaces; and Taylor approximation. Throughout, various applications to Data Science are considered, with hands-on numerical and coding exercises supplementing the theory.",
+              },
+              {
+                code: "CS 563",
+                name: "Python and Data Bases",
+                description:
+                  "This course covers Python programming fundamentals and database management systems. Students learn to design, implement, and query relational databases while developing proficiency in Python for data manipulation and analysis.",
+              },
+              {
+                code: "CS 559",
+                name: "Machine Learning: Fundamentals and Applications",
+                description:
+                  "This course covers foundational principles that drive machine learning applications and provides practice implementing algorithms. Topics include maximum likelihood estimation, dimension reduction, supervised and unsupervised learning, neural networks, and non-parametric methods. Students gain tools to address new ML problems, applying techniques such as regression, SVMs, decision trees, clustering, and backpropagation, with an emphasis on practical problem-solving using software libraries and real data.",
+              },
+            ],
+          },
+          {
+            title: "Term 2 - Advanced Techniques",
+            courses: [
+              {
+                code: "MA 521 / FA 590",
+                name: "Statistical Foundations of Data Science OR Statistical Learning",
+                description:
+                  "MA 521: This course provides a comprehensive foundation in statistical methods for data science. Topics include probability theory, statistical inference, hypothesis testing, and regression analysis. FA 590: An advanced course focusing on statistical learning methods and their applications. Students explore modern statistical techniques for prediction and classification.",
+              },
+              {
+                code: "CS 583",
+                name: "Deep Learning",
+                description:
+                  "This course introduces deep learning concepts and methodologies, covering both theoretical foundations and practical applications. Topics include model selection, neural networks, backpropagation, convolutional neural networks (CNNs), recurrent neural networks (RNNs), attention models, and reinforcement learning from human feedback (RLHF). Students complete programming assignments and a final project involving design and implementation of deep learning models.",
+              },
+              {
+                code: "BIA 568",
+                name: "Management of AI Technologies",
+                description:
+                  "This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries-such as autonomous transportation, fraud detection, and machine translation-while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.",
+              },
+            ],
+          },
+          {
+            title: "Term 3 - Capstone & Specialization",
+            courses: [
+              {
+                code: "BIA 662",
+                name: "Augmented Intelligence and Generative AI",
+                description:
+                  "This course explores the integration of augmented intelligence, generative AI, natural language processing, and deep learning in data-driven business contexts. Students gain foundational and practical knowledge in LLMs, prompt engineering, and AI ethics. A major team project involves developing a proof-of-concept business solution leveraging generative AI to create measurable value.",
+              },
+              {
+                code: "MA 899",
+                name: "Data Science Capstone Project",
+                description:
+                  "A culminating project where students apply their knowledge to solve real-world data science problems. Working individually or in teams, students complete an end-to-end data science project.",
+              },
+            ],
+          },
+          {
+            title: "Sample Electives",
+            intro:
+              "Sample electives available to customize your degree - *actual elective list will be available in Spring:",
+            courses: [
+              {
+                code: "MA 641",
+                name: "Time Series Analysis I",
+                description:
+                  "This course provides a foundational introduction to modern time series analysis from both theoretical and applied perspectives. Emphasizing the Box–Jenkins methodology, it covers ARMA and ARIMA models, parameter estimation, model diagnostics, forecasting, seasonal (SARMA) models, and time series models of heteroscedasticity (ARCH and GARCH). Students apply these methods using statistical software (R) and real-world datasets, developing skills to analyze, forecast, and interpret time-dependent data.",
+              },
+              {
+                code: "CS 513",
+                name: "Data Mining using Python",
+                description:
+                  "This course introduces the principles and practice of data mining and machine learning. Students explore statistical and computational techniques to analyze, classify, and model data. Topics include data preprocessing, decision trees, k-nearest neighbor algorithms, Naïve Bayes, clustering (k-means, hierarchical), regression, neural networks, and advanced methods such as boosting and recommendation systems. The course emphasizes both theoretical understanding and applied learning using Python and real-world datasets.",
+              },
+              {
+                code: "BIA 678",
+                name: "Big Data Technologies",
+                description:
+                  "The field of Big Data is explored through both business and technical lenses. Students learn to manage the volume, velocity, and variety of data using modern technologies such as Spark, Python, and Dataiku. The course covers big data strategy, governance, AI ethics, and applications of machine learning and IoT within big data ecosystems, preparing students to design scalable solutions for enterprise environments.",
+              },
+              {
+                code: "MIS 636",
+                name: "Data Integration for BI&A",
+                description:
+                  "This course focuses on the design, management, and use of data warehouse (DW) and business intelligence (BI) systems. The DW is the central element in collecting, integrating, and making sense of an organization's data. BI concerns the full range of analytical applications and their delivery to users. Students learn the business value of data, planning and requirements gathering, data architecture and modeling, and integration processes. Practical examples and case studies highlight the implementation of BI systems and data integration for improved organizational decision-making.",
+              },
+              {
+                code: "BIA 660",
+                name: "Web Mining",
+                description:
+                  "Students learn through hands-on experience how to extract and analyze data from the web using distributed computing. The course covers web scraping, text mining, recommender systems, clustering, and natural language processing. Students apply methods widely used by companies like Amazon and Google to analyze web-scale data, culminating in applications to real scientific or business questions.",
+              },
+              {
+                code: "BIA 672",
+                name: "Marketing Analytics",
+                description:
+                  "This course develops students' analytical ability to understand consumer and customer behavior using marketing models, analytics, and data management techniques. Topics include customer analytics, product analytics, promotion and digital analytics, channel analytics, and marketing mix optimization. Students use SAS and Python tools to build realistic models, forecast consumer behavior, and formulate marketing strategies based on data-driven insights.",
+              },
+              {
+                code: "FA 550",
+                name: "Data Visualization Application",
+                description:
+                  "Effective visualization of complex data allows for meaningful insight and informed decision-making. This course investigates visualization methods from multiple perspectives and teaches students to use tools such as Tableau, Julius.ai, Python, R, and Power BI to refine data and communicate results effectively. Ethical visualization practices and design theory are also emphasized.",
+              },
+              {
+                code: "BIA 665",
+                name: "Applied Reinforcement Learning",
+                description:
+                  "This course covers reinforcement learning theory and applications, including Markov decision processes, dynamic programming, temporal-difference learning, and deep reinforcement learning. Students implement algorithms and apply them to real-world problems.",
+              },
+            ],
+          },
+        ],
+        footer: {
+          content:
+            "Note: Actual course order may vary based on term availability.",
+        },
       },
-      advanced: {
+      {
+        id: "capstone",
         title: "Capstone Experience",
-        content: `
-          <div class="space-y-stevens-lg">
-            <div>
-              <h4 class="course-section-header">Apply Data Science to a Real-World Challenge</h4>
-              <div class="space-y-stevens-md">
-                <p>In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.</p>
-                
-                <h5><strong>Sample Project Topics:</strong></h5>
-                <ul class='list-disc pl-5'>
-                  <li>Predictive modeling for renewable energy forecasting</li>
-                  <li>AI-driven optimization of financial portfolio performance</li>
-                  <li>Natural language processing for sentiment and risk analysis</li>
-                  <li>Generative AI solutions for marketing and product innovation</li>
-                </ul>
-              </div>
-            </div>
-            
-          </div>
-        `,
+        sections: [
+          {
+            title: "Apply Data Science to a Real-World Challenge",
+            intro:
+              "In the culminating capstone project, students collaborate to solve a real business or societal problem using advanced analytics and AI-driven solutions. Projects focus on measurable outcomes-ranging from optimizing supply chains to developing predictive health systems.",
+            bulletTitle: "Sample Project Topics:",
+            bulletItems: [
+              "Predictive modeling for renewable energy forecasting",
+              "AI-driven optimization of financial portfolio performance",
+              "Natural language processing for sentiment and risk analysis",
+              "Generative AI solutions for marketing and product innovation",
+            ],
+          },
+        ],
       },
-    },
+    ],
   },
   // ==================================================================
   faculty: {

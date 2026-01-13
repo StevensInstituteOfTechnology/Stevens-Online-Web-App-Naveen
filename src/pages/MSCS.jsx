@@ -307,355 +307,355 @@ const programData = {
   curriculum: {
     description:
       "The MSCS program consists of 30 credit hours, with 10 courses, and is 100% online. The curriculum offers traditional and advanced tracks, with the first four courses in the Traditional track and the first two in the Advanced track delivered asynchronously. Students engage with current and emerging topics to develop skills as innovative software development leaders and proficient, high-quality coders. Additionally, students can specialize in high-demand areas through coursework in AI and machine learning, business intelligence and analytics, and software development.",
-    courseTabs: {
-      traditional: {
-        title: "Traditional Coursework",
-        content: `
-          <div class="space-y-stevens-lg">
-            <div>
-              <h4 class="course-section-header">Term 1</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs501">CS 501 Introduction to Java Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs501">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Introduces Java programming to students with little experience, covering fundamental concepts like program structure, Java syntax, data types, object-oriented programming, abstract classes, interfaces, control flow, exception handling, recursion, event-driven programming. Students will write, compile, and execute programs on arrays/strings, including graphical user interfaces.</p>
-                    <p class="text-stevens-sm text-stevens-dark-gray mt-stevens-sm italic">Note: This is a foundational course to be taken by students who did not have the relevant background.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs570">CS 570 Data Structures (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs570">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Introduces common data structures and sorting algorithms using Java. Covers arrays, lists, stacks, queues, trees, priority queues, maps (e.g., hash tables). Principles include encapsulation, interfaces, testing, and asymptotic complexity analysis. Students implement and test programs using data structures with algorithms like insertion, selection, merge, and quick sort.</p>
-                    <p class="text-stevens-sm text-stevens-dark-gray mt-stevens-sm italic">Note: This is a foundational course to be taken by students who did not have the relevant background.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 2</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs590">CS 590 Algorithms (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs590">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other “classic” algorithms that serve as examples of design techniques.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs525">CS 525 Systems Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs525">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">In this course, students will learn to develop complex system-level software in the C programming language while gaining an intimate understanding of the UNIX family of operating systems and their programming environment. Topics include the user/kernel interface, fundamental concepts of UNIX, user authentication, basic and advanced input/output (I/O), file systems, signals, process relationships and interprocess communication. Fundamental concepts of software development and maintenance on UNIX systems will also be covered.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 3</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs550-trad">CS 550 Computer Organization & Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs550-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide an intensive introduction to material on computer organization and assembly language programming. Topics include structure of stored program computers; linking and loading; assembly language programming, with an emphasis on translation of high-level language constructs; data representation and arithmetic algorithms; basics of logic design; processor design; data path; hardwired control and microprogrammed control. Students will be given assembly language programming assignments on a regular basis.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs561-trad">CS 561 Database Management Systems I (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs561-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas; keys and foreign key references; relational algebra (as an introduction to SQL); SQL in depth; Entity-Relationship (ER) database design; translating from ER models to relational schemas and from relational schemas to ER models; functional dependencies; and normalization.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 4</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs520-trad">CS 520 Introduction to Operating Systems (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs520-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will focus on the use and internals of modern operating systems. Primary topics include the process concept; concurrency and how to program with threads; memory management techniques, including virtual memory and shared libraries; file system data structures and input/output (I/O).</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs546-trad">CS 546 Web Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs546-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide students with a first approach to internet programming. It will give the basic knowledge on how the internet works and how to create advanced web sites by the use of script languages, after learning the basics of HTML. In this course, the student will learn how to create a complex global site through the creation of individual working modules, providing them the interpersonal skills required in business settings such as team building and cooperation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 5</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs522-trad">CS 522 Mobile Systems and Applications (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs522-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today’s distributed systems. “Cloud computing” provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cpe595-trad">CPE 595 Applied Machine Learning (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cpe595-trad">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This is an introductory course for machine learning theory, algorithms and applications. The content aims to provide students with the knowledge to understand key elements of how to design algorithms/systems that automatically learn, improve and accumulate knowledge with experience. Topics covered in this course include decision tree learning, neural networks, Bayesian learning, reinforcement learning, ensembling multiple learning algorithms and various application problems. Students will be provided opportunities to simulate their algorithms in a programming language and apply them to solve real-world problems. Cross-listed with: EE 595, AAI 595.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `,
+    variant: "degree",
+    tabs: [
+      {
+        id: "traditional",
+        title: "Traditional Coursework", 
+        sections: [
+          {
+            title: "Term 1",
+            courses: [
+              {
+                code: "CS 501",
+                name: "Introduction to Java Programming",
+                credits: 3,
+                description:
+                  "Introduces Java programming to students with little experience, covering fundamental concepts like program structure, Java syntax, data types, object-oriented programming, abstract classes, interfaces, control flow, exception handling, recursion, event-driven programming. Students will write, compile, and execute programs on arrays/strings, including graphical user interfaces.",
+                note: "This is a foundational course to be taken by students who did not have the relevant background.",
+              },
+              {
+                code: "CS 570",
+                name: "Data Structures",
+                credits: 3,
+                description:
+                  "Introduces common data structures and sorting algorithms using Java. Covers arrays, lists, stacks, queues, trees, priority queues, maps (e.g., hash tables). Principles include encapsulation, interfaces, testing, and asymptotic complexity analysis. Students implement and test programs using data structures with algorithms like insertion, selection, merge, and quick sort.",
+                note: "This is a foundational course to be taken by students who did not have the relevant background.",
+              },
+            ],
+          },
+          {
+            title: "Term 2",
+            courses: [
+              {
+                code: "CS 590",
+                name: "Algorithms",
+                credits: 3,
+                description:
+                  'This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other "classic" algorithms that serve as examples of design techniques.',
+              },
+              {
+                code: "CS 525",
+                name: "Systems Programming",
+                credits: 3,
+                description:
+                  "In this course, students will learn to develop complex system-level software in the C programming language while gaining an intimate understanding of the UNIX family of operating systems and their programming environment. Topics include the user/kernel interface, fundamental concepts of UNIX, user authentication, basic and advanced input/output (I/O), file systems, signals, process relationships and interprocess communication.",
+              },
+            ],
+          },
+          {
+            title: "Term 3",
+            courses: [
+              {
+                code: "CS 550",
+                name: "Computer Organization & Programming",
+                credits: 3,
+                description:
+                  "This course will provide an intensive introduction to material on computer organization and assembly language programming. Topics include structure of stored program computers; linking and loading; assembly language programming, with an emphasis on translation of high-level language constructs; data representation and arithmetic algorithms; basics of logic design; processor design; data path; hardwired control and microprogrammed control.",
+              },
+              {
+                code: "CS 561",
+                name: "Database Management Systems I",
+                credits: 3,
+                description:
+                  "This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas; keys and foreign key references; relational algebra (as an introduction to SQL); SQL in depth; Entity-Relationship (ER) database design; translating from ER models to relational schemas and from relational schemas to ER models; functional dependencies; and normalization.",
+              },
+            ],
+          },
+          {
+            title: "Term 4",
+            courses: [
+              {
+                code: "CS 520",
+                name: "Introduction to Operating Systems",
+                credits: 3,
+                description:
+                  "This course will focus on the use and internals of modern operating systems. Primary topics include the process concept; concurrency and how to program with threads; memory management techniques, including virtual memory and shared libraries; file system data structures and input/output (I/O).",
+              },
+              {
+                code: "CS 546",
+                name: "Web Programming",
+                credits: 3,
+                description:
+                  "This course will provide students with a first approach to internet programming. It will give the basic knowledge on how the internet works and how to create advanced web sites by the use of script languages, after learning the basics of HTML. Students will learn how to create a complex global site through the creation of individual working modules.",
+              },
+            ],
+          },
+          {
+            title: "Term 5",
+            courses: [
+              {
+                code: "CS 522",
+                name: "Mobile Systems and Applications",
+                credits: 3,
+                description:
+                  "Personal computing is now mobile and cloud-based. This course reviews the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed.",
+              },
+              {
+                code: "CPE 595",
+                name: "Applied Machine Learning",
+                credits: 3,
+                description:
+                  "This is an introductory course for machine learning theory, algorithms and applications. Topics covered include decision tree learning, neural networks, Bayesian learning, reinforcement learning, ensembling multiple learning algorithms and various application problems. Students will simulate their algorithms and apply them to solve real-world problems.",
+              },
+            ],
+          },
+        ],
       },
-      advanced: {
-        title: "Advanced Coursework",
-        content: `
-          <div class="space-y-stevens-lg">
-            <div>
-              <h4 class="course-section-header">Term 1</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs590-adv">CS 590 Algorithms (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs590-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other “classic” algorithms that serve as examples of design techniques.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs525-adv">CS 525 Systems Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs525-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-The objective of this course is to give students a basic grounding in designing and implementing distributed and cloud systems, including issues in the implementation of backend services in the cloud itself. What are global consensus and Paxos, and what is their application in building cloud systems? What are the advantages and disadvantages of using distributed NoSQL stores such as Cassandra instead of relational stores such as MySQL? What are strong and weak consistency, what are the “CAP Theorem” and the “CALM Theorem” and what are their implications for building highly available services? What is a blockchain, such as the Bitcoin blockchain, and how does it relate to issues in coordinating distributed systems? What are the roles of REST, Websockets and stream processing in cloud applications? This course will combine hands-on experience in developing cloud services, with a firm grounding in the tools and principles for building distributed and cloud applications, including advanced architectures such as peer-to-peer and publish-subscribe. Besides cloud services, we will also be looking at cloud support for batch processing, such as the Hadoop framework, and its use with NoSQL data stores, such as Cassandra.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 2</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs550-adv">CS 550 Computer Organization & Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs550-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide an intensive introduction to material on computer organization and assembly language programming. Topics include structure of stored program computers; linking and loading; assembly language programming, with an emphasis on translation of high-level language constructs; data representation and arithmetic algorithms; basics of logic design; processor design; data path; hardwired control and microprogrammed control. Students will be given assembly language programming assignments on a regular basis.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs561-adv">CS 561 Database Management Systems I (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs561-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas, keys and foreign key references, relational algebra (as an introduction to SQL), SQL in depth, Entity-Relationship (ER) database design, translating from ER models to relational schemas and from relational schemas to ER models, functional dependencies and normalization.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 3</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs520-adv">CS 520 Introduction to Operating Systems (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs520-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will focus on the use and internals of modern operating systems. Primary topics include the process concept; concurrency and how to program with threads; memory management techniques, including virtual memory and shared libraries; file system data structures and input/output (I/O).</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs546-adv">CS 546 Web Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs546-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Provides a first approach to internet programming, covering how the internet works, creating advanced websites using script languages after learning HTML basics. Students will learn to create complex global sites through individual working modules, fostering interpersonal skills for business settings like team building and cooperation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 4</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cpe595-adv">CPE 595 Applied Machine Learning (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cpe595-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This is an introductory course for machine learning theory, algorithms and applications. The content aims to provide students with the knowledge to understand key elements of how to design algorithms/systems that automatically learn, improve and accumulate knowledge with experience. Topics covered in this course include decision tree learning, neural networks, Bayesian learning, reinforcement learning, ensembling multiple learning algorithms and various application problems. Students will be provided opportunities to simulate their algorithms in a programming language and apply them to solve real-world problems. Cross-listed with: EE 595, AAI 595.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs522-adv">CS 522 Mobile Systems and Applications (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs522-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today’s distributed systems. “Cloud computing” provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="course-section-header">Term 5</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs555-adv">CS 555 Agile Methods for Software Development (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs555-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">In software problem areas that require exploratory development efforts, those with complex requirements and high levels of change, agile software development practices are highly effective when deployed in a collaborative, people-centered organizational culture. This course examines agile methods, including Extreme Programming (XP), Scrum, Lean, Crystal, Dynamic Systems Development Method and Feature-Driven Development to understand how rapid realization of software occurs most effectively. The ability of agile development teams to rapidly develop high quality, customer-valued software is examined and contrasted with teams following more traditional methodologies that emphasize planning and documentation. Students will learn agile development principles and techniques covering the entire software development process from problem conception through development, testing and deployment, and will be able to effectively participate in and manage agile software developments as a result of their successfully completing this course. Case studies and software development projects are used throughout.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs545-adv">CS 545 Human Computer Interaction (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs545-adv">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This is an introduction to Human Computer Interaction (HCI). It covers basic concepts, principles, and frameworks in HCI; models of interaction; and design guidelines and methodologies. The course includes extensive readings and reports, as well as work on projects involving interface design and development.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `,
+      {
+        id: "advanced",
+        title: "Advanced Coursework", 
+        sections: [
+          {
+            title: "Term 1",
+            courses: [
+              {
+                code: "CS 590",
+                name: "Algorithms",
+                credits: 3,
+                description:
+                  'This course will provide focus on more complex data structures, and algorithm design and analysis. Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other "classic" algorithms.',
+              },
+              {
+                code: "CS 525",
+                name: "Systems Programming",
+                credits: 3,
+                description:
+                  "This course gives students a basic grounding in designing and implementing distributed and cloud systems. Topics include global consensus and Paxos, NoSQL stores, CAP Theorem, CALM Theorem, blockchain, REST, Websockets and stream processing. Combines hands-on experience with firm grounding in tools and principles for building distributed and cloud applications.",
+              },
+            ],
+          },
+          {
+            title: "Term 2",
+            courses: [
+              {
+                code: "CS 550",
+                name: "Computer Organization & Programming",
+                credits: 3,
+                description:
+                  "This course will provide an intensive introduction to material on computer organization and assembly language programming. Topics include structure of stored program computers; linking and loading; assembly language programming; data representation and arithmetic algorithms; basics of logic design; processor design; data path; hardwired control and microprogrammed control.",
+              },
+              {
+                code: "CS 561",
+                name: "Database Management Systems I",
+                credits: 3,
+                description:
+                  "This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas, keys and foreign key references, relational algebra, SQL in depth, Entity-Relationship (ER) database design, functional dependencies and normalization.",
+              },
+            ],
+          },
+          {
+            title: "Term 3",
+            courses: [
+              {
+                code: "CS 520",
+                name: "Introduction to Operating Systems",
+                credits: 3,
+                description:
+                  "This course will focus on the use and internals of modern operating systems. Primary topics include the process concept; concurrency and how to program with threads; memory management techniques, including virtual memory and shared libraries; file system data structures and input/output (I/O).",
+              },
+              {
+                code: "CS 546",
+                name: "Web Programming",
+                credits: 3,
+                description:
+                  "Provides a first approach to internet programming, covering how the internet works, creating advanced websites using script languages after learning HTML basics. Students will learn to create complex global sites through individual working modules.",
+              },
+            ],
+          },
+          {
+            title: "Term 4",
+            courses: [
+              {
+                code: "CPE 595",
+                name: "Applied Machine Learning",
+                credits: 3,
+                description:
+                  "This is an introductory course for machine learning theory, algorithms and applications. Topics include decision tree learning, neural networks, Bayesian learning, reinforcement learning, ensembling multiple learning algorithms. Students will simulate algorithms and apply them to solve real-world problems.",
+              },
+              {
+                code: "CS 522",
+                name: "Mobile Systems and Applications",
+                credits: 3,
+                description:
+                  "This course reviews the fundamentals of mobile systems and applications, and how they relate to services in the cloud. Topics include wireless communication, distributed systems, and security and privacy. Students will program mobile apps using Android or iPhone.",
+              },
+            ],
+          },
+          {
+            title: "Term 5",
+            courses: [
+              {
+                code: "CS 555",
+                name: "Agile Methods for Software Development",
+                credits: 3,
+                description:
+                  "This course examines agile methods, including Extreme Programming (XP), Scrum, Lean, Crystal, Dynamic Systems Development Method and Feature-Driven Development. Students will learn agile development principles and techniques covering the entire software development process from conception through deployment.",
+              },
+              {
+                code: "CS 545",
+                name: "Human Computer Interaction",
+                credits: 3,
+                description:
+                  "This is an introduction to Human Computer Interaction (HCI). It covers basic concepts, principles, and frameworks in HCI; models of interaction; and design guidelines and methodologies. The course includes extensive readings and reports, as well as work on projects involving interface design and development.",
+              },
+            ],
+          },
+        ],
       },
-      focusAreas: {
-        title: "Areas of Focus",
-        content: `
-          <p class="course-intro">Depending on your background and your postgraduate aspirations, you may have the option to choose additional courses from three in-demand areas of focus to develop additional professional expertise: AI and machine learning, business intelligence and analytics, and software development. A sample of available courses is below.</p>
-          
-          <div class="space-y-stevens-xl">
-            <div>
-              <h4 class="font-stevens-bold text-stevens-xl text-stevens-red mb-stevens-lg">AI & Machine Learning</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs556">CS 556 Mathematical Foundations of Machine Learning (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs556">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will give students a rigorous introduction to the foundations of machine learning, including but not limited to frequently used tools in linear algebra, calculus, probability and widely applied methods such as linear regression and support vector machines. In addition, this course provides hands-on training on implementing these algorithms via Python from scratch. Students will be trained to use popular Python libraries such as Numpy, Scipy and Matplotlib.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs559">CS 559 Machine Learning: Fundamentals and Applications (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs559">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">In this course, we will talk about the foundational principles that drive machine learning applications and practice implementing machine learning algorithms. Specific topics include supervised learning, unsupervised learning, neural networks and graphical models. The main goal of the course is to equip you with the tools to tackle new ML problems you might encounter in life.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs583">CS 583 Deep Learning (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs583">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Deep learning (DL) is a family of the most powerful and popular machine learning (ML) methods and has wide real-world applications such as face recognition, machine translation, self-driving cars, recommender systems, and playing the Go game, etc. This course is designed for students either with or without an ML background. The course will cover fundamental ML, computer vision, and natural language problems and DL tools for solving the problems. The students will be able to use DL methods for solving real-world ML problems. The homework is mostly implementation and programming using the Python language and popular DL frameworks such as TensorFlow and Keras. Knowledge and skills in Python programming and linear algebra are strictly required. Probability theory, statistics, and numerical analysis are recommended but not required. Knowledge in machine learning and artificial intelligence is helpful but unnecessary.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs584">CS 584 Natural Language Processing (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs584">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Natural language processing (NLP) is one of the most important technologies in the era of information. Comprehending human language is also a crucial and challenging part of artificial intelligence. People communicate almost everything in language: conferences, emails, customer service, language translation, web searches, reports and so on. There is a large variety of underlying tasks and machine learning models behind NLP applications. Recently, deep learning approaches have achieved high performance in many different NLP tasks. Instead of traditional and task-specific feature engineering, deep learning can solve tasks with single end-to-end models. The course provides an introduction to machine learning research applied to NLP. We will cover topics including word vector representations, neural networks, recurrent neural networks, convolutional neural networks, semi-supervised models and reinforcement learning for NLP, as well as some attention-based models.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="font-stevens-bold text-stevens-xl text-stevens-red mb-stevens-lg">Business Intelligence & Analytics</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="bia500">BIA 500 Business Analytics: Data, Models & Decisions (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="bia500">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Many managerial decisions - regardless of their functional orientation - are increasingly based on analysis using quantitative models from the discipline of management science. Management science tools, techniques and concepts (e.g., data, models and software programs) have dramatically changed the way businesses operate in manufacturing, service operations, marketing, transportation and finance. Business Analytics explores data-driven methods that are used to analyze and solve complex business problems. Students will acquire analytical skills in building, applying and evaluating various models with hands-on computer applications. Topics include descriptive statistics, time-series analysis, regression models, decision analysis, Monte Carlo simulation, and optimization models.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="bia610">BIA 610 Applied Analytics (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="bia610">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Applied Analytics is a capstone course for the analytic-focused MBA program. It is intended to integrate all previously taken courses in the program by presenting a set of increasingly complex business problems. These problems can be solved through analytic skills taught in this and previous courses. In particular, the course is intended to reinforce the understanding of analysis as a way to build models that can focus attention on parts of the system that can be improved through intervention. The early part of the course uses synthetic data and empirical data readily available for analysis. The second part of the course encourages students to state and solve their own problem, gathering their own data as a part of the analytic process.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="bia662">BIA 662 Augmented Intelligence and Generative AI (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="bia662">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course explores the area of cognitive computing and its implications for today’s world of big data analytics and evidence-based decision-making. Topics covered as part of this seminar include cognitive computing design principles, natural language processing, knowledge representation, advanced analytics, as well as IBM’s Watson DeepQA and Google’s TensorFlow deep learning architectures. Students will have an opportunity to build cognitive applications as well as explore how knowledge-based artificial intelligence and deep learning are impacting the field of data science.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="bia678">BIA 678 Big Data Technologies (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="bia678">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">The field of Big Data is emerging as one of the transformative business processes of recent times. It utilizes classic techniques from business intelligence and analysis (BI&A) along with new tools and processes to deal with the volume, velocity, and variety associated with big data. As they enter the workforce, a significant percentage of BIA students will be directly involved with big data as technologists, managers, or users. This course will build on their understanding of the basic concepts of BI&A to provide them with the background to succeed in the evolving data-centric world, not only from the point of view of the technologies required but also in terms of management, governance, and organization. Students taking the course will be expected to have some background in areas such as multivariate statistics, data mining, data management, and programming.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="bia660">BIA 660 Web Mining (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="bia660">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">In this course, students will learn through hands-on experience how to extract data from the web and analyze web-scale data using distributed computing. Students will learn different analysis methods that are widely used across the range of internet companies, from start-ups to online giants like Amazon or Google. At the end of the course, students will apply these methods to answer a real scientific question or to create a useful web application.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 class="font-stevens-bold text-stevens-xl text-stevens-red mb-stevens-lg">Software Development</h4>
-              <div class="space-y-stevens-md">
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs522-focus">CS 522 Mobile Systems and Applications (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs522-focus">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today’s distributed systems. Cloud computing provides a powerful background computing facility for mobile devices but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile and, increasingly, location-aware gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class. Programming experience with Java or C# is required.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs546-focus">CS 546 Web Programming (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs546-focus">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course will provide students with an introduction to internet programming. It will cover the basic knowledge of how the internet works and how to create advanced websites using script languages after learning the basics of HTML. The course will teach students how to build a complex global site through the creation of individual working modules, helping them develop the skills required in any business, such as proper teamwork and coordination between groups.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs554">CS 554 Web Programming II (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs554">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course focuses on teaching students the newest technologies available in web programming. Topics include advanced client-side programming, responsive design, NoSQL databases, JQuery, AJAX, website security, and the latest frameworks. Students will be given the opportunity to suggest topics they would like to explore at the end of the semester. The course is very hands-on, where everything taught will be practiced through in-class exercises.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs574">CS 574 Object-Oriented Analysis and Design (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs574">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">Theory of object-oriented design, classes, interfaces, inheritance hierarchy, and correctness; abstract data types, encapsulation, formal specification with preconditions, postconditions and invariants, and proofs of correctness; object-oriented software, objects and classes, genericity, inheritance, polymorphism, and overloading; single and multiple inheritance, programming by contract, subclassing as subcontract, specification, and verification; programming language examples include C+ +, Java, Smalltalk, and Eiffel.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs526">CS 526 Enterprise & Cloud Computing (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs526">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers the computing background for large-scale enterprise computing, including the outsourcing of computing to the cloud. The course includes developing and deploying web and microservice applications in the cloud for both client-facing and B2B applications. The course also considers cloud support for enterprise integration and Internet of Things, and NoSQL data stores such as CosmosDB. Finally, the course considers virtualization and its role in the cloud, including security in virtualization. Cloud computing: SaaS and PaaS (e.g., Azure App Service). Web applications in the cloud: ASP.NET MVC. Enterprise Web services: gRPC and Web API. Serverless applications and microservices. Gathering and processing data using NoSQL data stores, e.g., CosmosDB. Enterprise blockchain: Azure Confidential Ledger and Quorum Blockchain Service. Virtualization as the basis for scalable enterprise and cloud computing: Xen, KVM, z/VM. Secure virtualization, e.g., Security Enhanced Linux (SELinux). Programming experience with Java or C# is required.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs548">CS 548 Enterprise Software Architecture and Design (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs548">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course covers the issues in designing and engineering large enterprise and cloud-based software systems. Such systems are distributed and require increasingly complex inter-enterprise as well as intra-enterprise coordination. Technologies such as Web Services and cloud computing provide platforms for building such systems, and architectures such as microservices and cloud-native applications, event-driven architecture (EDA), domain-driven design (DDD), representational state transfer (REST), command query responsibility segregation (CQRS), serverless and blockchain are idioms for structuring such systems. Data modeling includes E-R designs, XML and JSON Schemas, NoSQL data models, semantic data modeling (OWL), and object-relational mapping (ORM). Process modeling includes BPMN, Workflow and Petri nets. The course includes hands-on application of the concepts with tools such as Jakarta EE and Eclipse MicroProfile, Docker, Kubernetes and Kafka, and Hyperledger Fabric. Knowledge of Java or C# is required.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs555-focus">CS 555 Agile Methods for Software Development (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs555-focus">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">In software problem areas that require exploratory development efforts, those with complex requirements and high levels of change, agile software development practices are highly effective when deployed in a collaborative, people-centered organizational culture. This course examines agile methods, including Extreme Programming (XP), Scrum, Lean, Crystal, Dynamic Systems Development Method and Feature-Driven Development to understand how rapid realization of software occurs most effectively. The ability of agile development teams to rapidly develop high quality, customer-valued software is examined and contrasted with teams following more traditional methodologies that emphasize planning and documentation. Students will learn agile development principles and techniques covering the entire software development process from problem conception through development, testing and deployment, and will be able to effectively participate in and manage agile software developments as a result of their successfully completing this course. Case studies and software development projects are used throughout.</p>
-                  </div>
-                </div>
-                
-                <div class="course-item">
-                  <button class="course-toggle" data-target="cs561-focus">CS 561 Database Management Systems I (3)<span class="course-arrow">▼</span></button>
-                  <div class="course-content hidden" id="cs561-focus">
-                    <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">This course introduces the design and querying of relational databases. Topics include relational schemas, keys and foreign key references, relational algebra, SQL in depth, Entity-Relationship (ER) database design, translating from ER models to relational schemas, functional dependencies and normalization.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `,
+      {
+        id: "focusAreas",
+        title: "Areas of Focus", 
+        sections: [
+          {
+            title: "AI & Machine Learning",
+            intro:
+              "Depending on your background and your postgraduate aspirations, you may have the option to choose additional courses from in-demand areas of focus.",
+            courses: [
+              {
+                code: "CS 556",
+                name: "Mathematical Foundations of Machine Learning",
+                credits: 3,
+                description:
+                  "This course provides a rigorous introduction to the foundations of machine learning, including frequently used tools in linear algebra, calculus, probability and widely applied methods such as linear regression and support vector machines. Includes hands-on training implementing these algorithms via Python.",
+              },
+              {
+                code: "CS 559",
+                name: "Machine Learning: Fundamentals and Applications",
+                credits: 3,
+                description:
+                  "This course covers foundational principles that drive machine learning applications and practice implementing ML algorithms. Specific topics include supervised learning, unsupervised learning, neural networks and graphical models.",
+              },
+              {
+                code: "CS 583",
+                name: "Deep Learning",
+                credits: 3,
+                description:
+                  "Deep learning (DL) is a family of the most powerful and popular machine learning methods with wide real-world applications such as face recognition, machine translation, self-driving cars, and recommender systems. Covers fundamental ML, computer vision, and natural language problems and DL tools.",
+              },
+              {
+                code: "CS 584",
+                name: "Natural Language Processing",
+                credits: 3,
+                description:
+                  "NLP is one of the most important technologies in the era of information. This course provides an introduction to machine learning research applied to NLP, covering word vector representations, neural networks, RNNs, CNNs, semi-supervised models and reinforcement learning for NLP.",
+              },
+            ],
+          },
+          {
+            title: "Business Intelligence & Analytics",
+            courses: [
+              {
+                code: "BIA 500",
+                name: "Business Analytics: Data, Models & Decisions",
+                credits: 3,
+                description:
+                  "Business Analytics explores data-driven methods used to analyze and solve complex business problems. Topics include descriptive statistics, time-series analysis, regression models, decision analysis, Monte Carlo simulation, and optimization models.",
+              },
+              {
+                code: "BIA 610",
+                name: "Applied Analytics",
+                credits: 3,
+                description:
+                  "Applied Analytics is a capstone course for the analytic-focused MBA program. It integrates previously taken courses by presenting a set of increasingly complex business problems that can be solved through analytic skills.",
+              },
+              {
+                code: "BIA 662",
+                name: "Augmented Intelligence and Generative AI",
+                credits: 3,
+                description:
+                  "This course explores cognitive computing and its implications for big data analytics and evidence-based decision-making. Topics include cognitive computing design principles, natural language processing, knowledge representation, and advanced analytics.",
+              },
+              {
+                code: "BIA 678",
+                name: "Big Data Technologies",
+                credits: 3,
+                description:
+                  "The field of Big Data utilizes classic techniques from business intelligence and analysis (BI&A) along with new tools and processes to deal with the volume, velocity, and variety associated with big data.",
+              },
+              {
+                code: "BIA 660",
+                name: "Web Mining",
+                credits: 3,
+                description:
+                  "Students will learn through hands-on experience how to extract data from the web and analyze web-scale data using distributed computing. Learn different analysis methods widely used across internet companies.",
+              },
+            ],
+          },
+          {
+            title: "Software Development",
+            courses: [
+              {
+                code: "CS 522",
+                name: "Mobile Systems and Applications",
+                credits: 3,
+                description:
+                  "This course reviews the fundamentals of mobile systems and applications, and how they relate to services in the cloud. Students will program mobile apps using Android or iPhone.",
+              },
+              {
+                code: "CS 546",
+                name: "Web Programming",
+                credits: 3,
+                description:
+                  "An introduction to internet programming. Covers how the internet works and how to create advanced websites using script languages after learning the basics of HTML.",
+              },
+              {
+                code: "CS 554",
+                name: "Web Programming II",
+                credits: 3,
+                description:
+                  "Focuses on teaching students the newest technologies available in web programming. Topics include advanced client-side programming, responsive design, NoSQL databases, JQuery, AJAX, website security, and the latest frameworks.",
+              },
+              {
+                code: "CS 574",
+                name: "Object-Oriented Analysis and Design",
+                credits: 3,
+                description:
+                  "Theory of object-oriented design, classes, interfaces, inheritance hierarchy, and correctness; abstract data types, encapsulation, formal specification with preconditions, postconditions and invariants.",
+              },
+              {
+                code: "CS 526",
+                name: "Enterprise & Cloud Computing",
+                credits: 3,
+                description:
+                  "Covers the computing background for large-scale enterprise computing, including developing and deploying web and microservice applications in the cloud for both client-facing and B2B applications.",
+              },
+              {
+                code: "CS 548",
+                name: "Enterprise Software Architecture and Design",
+                credits: 3,
+                description:
+                  "Covers issues in designing and engineering large enterprise and cloud-based software systems. Technologies such as Web Services and cloud computing provide platforms for building such systems.",
+              },
+              {
+                code: "CS 555",
+                name: "Agile Methods for Software Development",
+                credits: 3,
+                description:
+                  "Examines agile methods, including Extreme Programming (XP), Scrum, Lean, Crystal, Dynamic Systems Development Method and Feature-Driven Development.",
+              },
+              {
+                code: "CS 561",
+                name: "Database Management Systems I",
+                credits: 3,
+                description:
+                  "Introduces the design and querying of relational databases. Topics include relational schemas, keys and foreign key references, relational algebra, SQL in depth, Entity-Relationship (ER) database design.",
+              },
+            ],
+          },
+        ],
       },
-    },
+    ],
   },
   studentSpotlight: {
     name: "Jaeson Valles ’22",
@@ -726,9 +726,9 @@ The objective of this course is to give students a basic grounding in designing 
       "Start of Classes",
     ],
     rows: [
-      {
-        event: KEY_DATES.TERM.name,
-        date: KEY_DATES.EARLY_SUBMIT.date,
+      { 
+        event: KEY_DATES.TERM.name, 
+        date: KEY_DATES.EARLY_SUBMIT.date, 
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
@@ -848,7 +848,7 @@ export default function MSCSPage() {
 
   return (
     <PageContextProvider pageType="program" pageName="MSCS">
-      <ProgramContextProvider
+      <ProgramContextProvider 
         programCode="mscs"
         programName="Master of Science in Computer Science"
         programType="degree"

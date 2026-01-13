@@ -104,27 +104,6 @@ const programData = {
     concentrations: [],
   },
 
-  rankings: [
-    {
-      ranking: "28%",
-      description: "HIGHER PAY WITH AI SKILLS",
-      source:
-        "Professionals with AI skills earn approximately 28% more than those without, according to LinkedIn's Economic Graph data.",
-    },
-    {
-      ranking: "Top",
-      description: "JOBS ON THE RISE 2025",
-      source:
-        "AI-related roles dominate LinkedIn's Jobs on the Rise list, with demand spanning beyond IT into business operations, marketing, and management.",
-    },
-    {
-      ranking: "$5,250",
-      description: "ALIGNS WITH TUITION BENEFITS",
-      source:
-        "The 9-credit certificate cost aligns perfectly with the IRS $5,250 tax-free employer tuition reimbursement limit, making it accessible for corporate-sponsored learners.",
-    },
-  ],
-
   career: {
     description: `<p class="mb-4">The demand for AI skills has exploded across industries. What was once confined to data science and engineering teams is now a critical capability for business professionals in every function-from marketing and operations to finance and HR.</p><p class="mb-4">Organizations are seeking professionals who can bridge the gap between AI potential and practical implementation. The Enterprise AI Certificate prepares you to be that bridge: someone who understands AI capabilities, can design proof-of-concept solutions, and knows how to operationalize AI workflows within existing business processes.</p><p>Whether you're looking to advance in your current role, pivot into an AI-adjacent position, or simply future-proof your career, this certificate provides the practical skills and graduate-level credential employers value.</p>`,
     jobTitles: [
@@ -247,58 +226,86 @@ const programData = {
   curriculum: {
     description:
       "The Enterprise AI Certificate consists of three carefully sequenced courses (9 graduate credits total). You'll progress from understanding AI strategy and governance, to designing GenAI proof-of-concepts, to building operational AI workflows. The curriculum emphasizes practical application-every course includes hands-on projects that simulate real business challenges.",
-    courseTabs: {
-      foundations: {
+    variant: "certificate",
+    tabs: [
+      {
+        id: "sequence",
         title: "Course Sequence",
-        content: `
-            <h4 class="course-section-header">Certificate Courses (9 Credits)</h4>
-            <p class="course-intro">Complete all three courses in sequence. Each course builds on the previous, creating a comprehensive understanding of enterprise AI implementation.</p>
-            
-            <div class="space-y-stevens-md">
-              <div class="course-item">
-                <button class="course-toggle" data-target="bia568">BIA 568 – Management of AI Technologies (3 credits)<span class="course-arrow">▼</span></button>
-                <div class="course-content hidden" id="bia568">
-                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Michael zur Muehlen</p>
-                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> Strategy, platforms, FATE (Fairness, Accountability, Transparency, Ethics), deployment patterns (in-the-loop/on-the-loop), project evaluation</p>
-                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Map workflows to AI opportunities; compare in-the-loop vs. on-the-loop patterns; evaluate ROI and data readiness; select vendors and platforms.</p>
-                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> AI Factory, FATE principles, deployment architectures, governance frameworks, agent/copilot patterns, vendor evaluation</p>
-                  <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Implementation playbook and architecture analysis report</p>
-                </div>
-              </div>
-            
-            <div class="course-item">
-              <button class="course-toggle" data-target="bia662">BIA 662 – Augmented Intelligence & Generative AI (3 credits)<span class="course-arrow">▼</span></button>
-              <div class="course-content hidden" id="bia662">
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Alkiviadis Vazacopoulos</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> GenAI foundations, prompt engineering, proof-of-concept design with ethics considerations</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Learn GenAI basics and prompt engineering techniques; build a team PoC with a management-style plan and demonstration.</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> LLM fundamentals, prompt engineering, ethics and bias mitigation, prototyping patterns, PoC scoping and value articulation</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Team proof-of-concept with implementation plan, demo, and business case</p>
-              </div>
-            </div>
-            
-            <div class="course-item">
-              <button class="course-toggle" data-target="pe810">PE 810 – Applied AI for Business (3 credits)<span class="course-arrow">▼</span></button>
-              <div class="course-content hidden" id="pe810">
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Faculty:</strong> Dr. Carlo Lipizzi</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Focus:</strong> Operational workflow development with LLMs as coding co-pilots; dashboards and NLP agents</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>What You'll Do:</strong> Use LLMs to co-write and harden Python utilities; design modular workflows; add guardrails; produce dashboards; ship a working NLP agent or reporting pipeline.</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-3"><strong>Topics:</strong> AI-assisted coding, workflow design, data validation, guardrails and evaluation, dashboard creation, NLP agent deployment</p>
-                <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed"><strong>Deliverable:</strong> Running script/app with configuration, tests, logs, and operational demonstration</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-stevens-light-gray border-l-4 border-stevens-black p-stevens-lg rounded-stevens-sm mt-stevens-xl">
-            <h5 class="font-stevens-bold text-stevens-base mb-stevens-sm">Recommended Sequence</h5>
-            <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong>BIA 568 → BIA 662 → PE 810</strong><br/>
-              This sequence mirrors the AI implementation journey: strategy → proof-of-concept → operationalization. Each course builds essential skills for the next phase.
-            </p>
-          </div>
-        `,
+        sections: [
+          {
+            title: "Certificate Courses (9 Credits)",
+            intro:
+              "Complete all three courses in sequence. Each course builds on the previous, creating a comprehensive understanding of enterprise AI implementation.",
+            courses: [
+              {
+                code: "BIA 568",
+                name: "Management of AI Technologies",
+                credits: 3,
+                faculty: "Dr. Michael zur Muehlen",
+                focus:
+                  "Strategy, platforms, FATE (Fairness, Accountability, Transparency, Ethics), deployment patterns (in-the-loop/on-the-loop), project evaluation",
+                whatYouDo:
+                  "Map workflows to AI opportunities; compare in-the-loop vs. on-the-loop patterns; evaluate ROI and data readiness; select vendors and platforms.",
+                topics: [
+                  "AI Factory",
+                  "FATE principles",
+                  "deployment architectures",
+                  "governance frameworks",
+                  "agent/copilot patterns",
+                  "vendor evaluation",
+                ],
+                deliverable:
+                  "Implementation playbook and architecture analysis report",
+              },
+              {
+                code: "BIA 662",
+                name: "Augmented Intelligence & Generative AI",
+                credits: 3,
+                faculty: "Dr. Alkiviadis Vazacopoulos",
+                focus:
+                  "GenAI foundations, prompt engineering, proof-of-concept design with ethics considerations",
+                whatYouDo:
+                  "Learn GenAI basics and prompt engineering techniques; build a team PoC with a management-style plan and demonstration.",
+                topics: [
+                  "LLM fundamentals",
+                  "prompt engineering",
+                  "ethics and bias mitigation",
+                  "prototyping patterns",
+                  "PoC scoping and value articulation",
+                ],
+                deliverable:
+                  "Team proof-of-concept with implementation plan, demo, and business case",
+              },
+              {
+                code: "PE 810",
+                name: "Applied AI for Business",
+                credits: 3,
+                faculty: "Dr. Carlo Lipizzi",
+                focus:
+                  "Operational workflow development with LLMs as coding co-pilots; dashboards and NLP agents",
+                whatYouDo:
+                  "Use LLMs to co-write and harden Python utilities; design modular workflows; add guardrails; produce dashboards; ship a working NLP agent or reporting pipeline.",
+                topics: [
+                  "AI-assisted coding",
+                  "workflow design",
+                  "data validation",
+                  "guardrails and evaluation",
+                  "dashboard creation",
+                  "NLP agent deployment",
+                ],
+                deliverable:
+                  "Running script/app with configuration, tests, logs, and operational demonstration",
+              },
+            ],
+          },
+        ],
+        footer: {
+          title: "Recommended Sequence",
+          content:
+            "BIA 568 → BIA 662 → PE 810 — This sequence mirrors the AI implementation journey: strategy → proof-of-concept → operationalization. Each course builds essential skills for the next phase.",
+        },
       },
-    },
+    ],
   },
 
   commonJobTitles: {
