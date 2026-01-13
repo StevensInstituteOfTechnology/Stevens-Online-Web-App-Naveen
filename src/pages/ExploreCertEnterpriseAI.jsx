@@ -81,7 +81,7 @@ const ExploreCertEnterpriseAI = () => {
     programBenefitsHighlights: [
       {
         title: "Strategy to Deployment",
-        description: "Learn the complete AI implementation arc: understand capabilities and governance (BIA 568), design GenAI proof-of-concepts (BIA 662), then build operational workflows (PE 810)."
+        description: "Learn the complete AI implementation arc: design GenAI proof-of-concepts (BIA 662), understand capabilities and governance (BIA 568), then build operational workflows (PE 810)."
       },
       {
         title: "Practical, Not Theoretical",
