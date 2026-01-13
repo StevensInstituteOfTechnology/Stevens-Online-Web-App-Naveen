@@ -29,7 +29,7 @@ const programData = {
       label: "Apply In Minutes",
       href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
     },
-    
+
     badges: [
       { text: "100% Online", icon: Globe },
       { text: "ASAP Application Available", icon: Check },
@@ -296,12 +296,12 @@ const programData = {
   },
   curriculum: {
     description:
-      "The Online MEM program consists of 30 credit hours across 10 courses, all delivered 100% online, with the first two courses delivered asynchronously. Coursework is built on three pillars: management for engineers, data science and management, and engineering modeling and risk analysis.",
+      "The Online MEM program consists of 30 credit hours across 10 courses, all delivered 100% online, with the first two courses delivered asynchronously. Coursework is built on three pillars: management for engineers, data science and management, and engineering modeling and risk analysis. You'll develop critical leadership competencies through courses in project management, operations research, and decision analysis while gaining hands-on experience with data visualization and analytics tools. The program offers flexibility through elective concentrations in Managerial Analytics or Supply Chain and Logistics Management, allowing you to tailor your degree to your career goals and industry interests.",
     variant: "degree",
     tabs: [
       {
         id: "programCoursework",
-        title: "Program Coursework", 
+        title: "Program Coursework",
         sections: [
           {
             title: "TERM 1",
@@ -514,9 +514,9 @@ const programData = {
       "Start of Classes",
     ],
     rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
@@ -624,7 +624,7 @@ export default function MEMPage() {
 
   return (
     <PageContextProvider pageType="program" pageName="MEM">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="mem"
         programName="Master of Engineering in Engineering Management"
         programType="degree"

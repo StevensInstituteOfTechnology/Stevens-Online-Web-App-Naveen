@@ -144,6 +144,7 @@ export function useSectionNavigation({
             curriculum &&
             (curriculum.description ||
               curriculum.courseTabs ||
+              curriculum.tabs ||
               curriculum.completeCourseCatalog)
           );
         case "student-spotlight":

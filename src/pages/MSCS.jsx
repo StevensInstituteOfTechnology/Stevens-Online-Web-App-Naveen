@@ -311,7 +311,7 @@ const programData = {
     tabs: [
       {
         id: "traditional",
-        title: "Traditional Coursework", 
+        title: "Traditional Coursework",
         sections: [
           {
             title: "Term 1",
@@ -414,7 +414,7 @@ const programData = {
       },
       {
         id: "advanced",
-        title: "Advanced Coursework", 
+        title: "Advanced Coursework",
         sections: [
           {
             title: "Term 1",
@@ -515,7 +515,7 @@ const programData = {
       },
       {
         id: "focusAreas",
-        title: "Areas of Focus", 
+        title: "Areas of Focus",
         sections: [
           {
             title: "AI & Machine Learning",
@@ -726,9 +726,9 @@ const programData = {
       "Start of Classes",
     ],
     rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
@@ -848,7 +848,7 @@ export default function MSCSPage() {
 
   return (
     <PageContextProvider pageType="program" pageName="MSCS">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="mscs"
         programName="Master of Science in Computer Science"
         programType="degree"

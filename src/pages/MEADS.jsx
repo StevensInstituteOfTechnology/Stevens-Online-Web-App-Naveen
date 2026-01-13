@@ -308,6 +308,8 @@ const programData = {
   // ==================================================================
   curriculum: {
     title: "Program Curriculum",
+    description:
+      "The M.Eng. in Applied Data Science requires 30 credits across 10 courses, blending foundational theory with hands-on AI and machine learning applications. Progress through a structured curriculum—from mathematical foundations and Python programming to advanced deep learning and a capstone project—building production-ready skills at every stage. You'll master essential tools including PyTorch, TensorFlow, and cloud AI platforms while learning to design, train, and deploy machine learning models in real-world environments. The program emphasizes practical application through project-based coursework, preparing you to tackle complex data challenges across industries from healthcare and finance to technology and beyond.",
     variant: "degree",
     tabs: [
       {

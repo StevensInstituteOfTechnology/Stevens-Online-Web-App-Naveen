@@ -1,14 +1,16 @@
-import React, { forwardRef, useEffect } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import { Card, CardContent } from "../../ui/card";
 import { Section } from "../primitives";
 import { CourseSection } from "./curriculum";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 /**
  * CurriculumSection - Program Course Structure with tabbed content
  *
  * Design: CPE Brand Guidelines - Tabbed curriculum display
  * Features:
+ * - Collapsible section with expand/collapse button
  * - Dynamic title with program code fallback
  * - Description paragraphs (newline separated)
  * - Horizontal scrollable tabs for course categories
@@ -47,6 +49,8 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
   { curriculum, programCode },
   ref
 ) {
+  // State for collapsible course list
+  const [isExpanded, setIsExpanded] = useState(false);
   // Handle collapsible course toggles for LEGACY HTML injection
   // Using document-level event delegation for reliable click handling
   useEffect(() => {
@@ -110,15 +114,36 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
         </h2>
 
         {curriculum.description && (
-          <div className="mb-stevens-xl space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
+          <div className="mb-stevens-lg space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
             {curriculum.description.split("\n").map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
         )}
 
+        {/* Expand/Collapse Button */}
         {tabsData.length > 0 && (
-          <Tabs defaultValue={tabsData[0].id} className="w-full">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full flex items-center justify-center gap-2 py-4 px-6 mb-stevens-lg border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
+          >
+            {isExpanded ? (
+              <>
+                Hide Course List
+                <ChevronUp className="w-5 h-5" />
+              </>
+            ) : (
+              <>
+                View Course List
+                <ChevronDown className="w-5 h-5" />
+              </>
+            )}
+          </button>
+        )}
+
+        {/* Collapsible Course Content */}
+        {tabsData.length > 0 && isExpanded && (
+          <Tabs defaultValue={tabsData[0].id} className="w-full animate-in fade-in slide-in-from-top-4 duration-300">
             <div className="relative overflow-x-auto scrollbar-hide group">
               <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
               <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
@@ -187,8 +212,8 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
         )}
       </div>
 
-      {curriculum.completeCourseCatalog && (
-        <div className="mt-12">
+      {curriculum.completeCourseCatalog && isExpanded && (
+        <div className="mt-12 max-w-stevens-content-max mx-auto animate-in fade-in slide-in-from-top-4 duration-300">
           <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
             Complete Course Catalog
           </h3>
