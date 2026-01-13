@@ -31,24 +31,58 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
   return (
     <Section id="overview" bgClassName="bg-stevens-white" ref={ref}>
-      <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-5 gap-stevens-gap-lg">
+      <div className="max-w-stevens-content-max mx-auto grid lg:grid-cols-6 gap-stevens-gap-lg">
         {/* Left Column - Overview Content */}
-        <div className="lg:col-span-3">
-          {overview.title && (
-            <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md text-stevens-dark-gray uppercase tracking-wide">
-              {overview.title}
+        <div className="lg:col-span-4">
+          {/* Program Type Label */}
+          {overview.programType && (
+            <div className="flex items-center gap-2 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4 text-stevens-gray"
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span className="text-xs uppercase tracking-[0.2em] text-stevens-gray font-medium">
+                {overview.programType}
+              </span>
+            </div>
+          )}
+
+          {/* Headline */}
+          {(overview.headline || overview.title) && (
+            <h2 className="font-stevens-display font-bold text-4xl md:text-5xl lg:text-6xl text-stevens-black leading-[1.1] mb-6">
+              {overview.headline || overview.title}
             </h2>
           )}
+
+          {/* Tagline */}
+          {overview.tagline && (
+            <p className="font-stevens-body text-xl md:text-2xl text-stevens-dark-gray/80 font-light mb-8">
+              {overview.tagline}
+            </p>
+          )}
+
+          {/* Divider */}
+          <div className="w-20 h-0.5 bg-stevens-gray/30 mb-8" />
+
+          {/* Description */}
           {overview.description && (
             <div
-              className="prose max-w-none text-stevens-dark-gray leading-relaxed"
+              className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed mb-10"
               dangerouslySetInnerHTML={{ __html: overview.description }}
             />
           )}
           {/* Key Skills Developed */}
           {overview.keySkills && overview.keySkills.length > 0 && (
             <div className="mt-10">
-              <h3 className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-black mb-4">
+              <h3 className="font-stevens-headers font-bold text-stevens-xl uppercase tracking-wider text-stevens-black mb-4">
                 Key Skills Developed
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -56,7 +90,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
                   <Badge
                     key={skill}
                     variant="outline-dark"
-                    className="text-sm font-medium py-3 px-6 border-2 border-stevens-black bg-white text-stevens-black rounded-full"
+                    className="text-xs font-medium py-2 px-4 border border-stevens-black bg-white text-stevens-black rounded-full"
                   >
                     {skill}
                   </Badge>
@@ -68,7 +102,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
           {/* Concentration Options - Two Column Grid */}
           {overview.concentrations && overview.concentrations.length > 0 && (
             <div className="mt-10">
-              <h3 className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-black mb-4">
+              <h3 className="font-stevens-headers font-bold text-stevens-xl uppercase tracking-wider text-stevens-black mb-4">
                 Concentration Options
               </h3>
               <div className="grid grid-cols-2 gap-x-8 gap-y-3">
@@ -85,53 +119,56 @@ export const OverviewSection = forwardRef(function OverviewSection(
           )}
         </div>
 
-        {/* Right Column - Simplified Quick Facts Card */}
+        {/* Right Column - Enhanced Quick Facts Card */}
         <div className="lg:col-span-2">
-          <div className="bg-stevens-light-gray p-6 lg:p-8 sticky top-56">
-            {/* Card Title */}
-            <h3 className="font-stevens-display text-sm font-medium text-stevens-dark-gray uppercase tracking-[0.2em] mb-6">
-              Quick Facts
-            </h3>
+          <div className="bg-stevens-light-gray sticky  top-56 border border-stevens-gray/20 shadow-lg rounded-sm overflow-hidden">
+            {/* Card Content */}
+            <div className="p-6 lg:p-8">
+              {/* Card Title */}
+              <h3 className="font-stevens-headers font-bold text-stevens-xl text-stevens-black uppercase tracking-[0.15em] mb-6 mt-2">
+                Quick Facts
+              </h3>
 
-            {/* Divider */}
-            <div className="w-full h-px bg-stevens-gray/30 mb-6" />
+              {/* Divider */}
+              <div className="w-full h-px bg-stevens-gray/40 mb-6" />
 
-            {/* Term Start */}
-            {quickFacts?.termStart && (
-              <div className="mb-4">
-                <p className="text-xs uppercase tracking-wider text-stevens-gray mb-1">
-                  Upcoming Start
-                </p>
-                <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-black italic">
-                  {quickFacts.termStart}
-                </p>
-              </div>
-            )}
+              {/* Term Start */}
+              {quickFacts?.termStart && (
+                <div className="mb-5">
+                  <p className="text-base uppercase tracking-wider text-stevens-gray font-medium mb-2">
+                    Upcoming Start
+                  </p>
+                  <p className="font-stevens-display text-3xl lg:text-4xl font-light text-stevens-black">
+                    {quickFacts.termStart}
+                  </p>
+                </div>
+              )}
 
-            {/* Tuition */}
-            {quickFacts?.tuition && (
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-wider text-stevens-gray mb-1">
-                  Program Tuition
-                </p>
-                <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-red italic">
-                  {quickFacts.tuition}
-                </p>
-              </div>
-            )}
+              {/* Tuition */}
+              {quickFacts?.tuition && (
+                <div className="mb-8">
+                  <p className="text-base uppercase tracking-wider text-stevens-gray font-medium mb-2">
+                    Program Tuition
+                  </p>
+                  <p className="font-stevens-display text-3xl lg:text-4xl font-bold text-stevens-red">
+                    {quickFacts.tuition}
+                  </p>
+                </div>
+              )}
 
-            {/* Apply Now Button */}
-            <Button
-              variant="dark"
-              className="w-full py-3 text-sm uppercase tracking-wider"
-              onClick={() => {
-                if (quickFacts?.applyUrl) {
-                  window.open(quickFacts.applyUrl, "_blank");
-                }
-              }}
-            >
-              Apply Now
-            </Button>
+              {/* Apply Now Button */}
+              <Button
+                variant="default"
+                className="w-full py-4 text-base uppercase tracking-wider font-semibold shadow-md hover:shadow-lg transition-shadow"
+                onClick={() => {
+                  if (quickFacts?.applyUrl) {
+                    window.open(quickFacts.applyUrl, "_blank");
+                  }
+                }}
+              >
+                Apply Now
+              </Button>
+            </div>
           </div>
         </div>
       </div>

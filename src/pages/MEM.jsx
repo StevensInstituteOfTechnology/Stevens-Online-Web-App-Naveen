@@ -37,7 +37,32 @@ const programData = {
     ],
   },
   quickFacts: {
-    // Quick Stats Bar
+    // Enhanced Stats Bar (Penn State style)
+    enhancedStats: [
+      {
+        title: "100% Online",
+        description:
+          "Complete your Stevens coursework at your own pace, 100% online.",
+      },
+      {
+        supertext: "Apply by",
+        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
+        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+      },
+      {
+        value: "30",
+        label: "Credits",
+        subtext: "$875 per credit*",
+      },
+      {
+        title: "MSCHE Accredited",
+        description:
+          "Accredited by the Middle States Commission on Higher Education since 1927.",
+      },
+    ],
+
+    // Legacy Quick Stats (fallback)
     quickStats: [
       { value: "30", label: "Credits" },
       { value: "10", label: "Courses" },
@@ -54,9 +79,12 @@ const programData = {
     termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
   },
   overview: {
-    title: "Program Overview",
+    programType: "Master of Engineering",
+    headline: "Lead engineering teams with business acumen",
+    tagline: "Bridge technical expertise with strategic management skills.",
     description: `
-      <p>The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for leadership roles by combining technical expertise with business management principles. Through an innovative curriculum that bridges engineering and business, you’ll develop analytical and social intelligence to manage projects effectively. Customize your learning with core coursework in management, data science and engineering analysis, and tailor electives to your interests. With our new ASAP application, you can bypass the traditional application process and secure your spot in the program by successfully completing two trial courses.</p>
+      <p class="font-medium text-lg">The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for <strong>leadership roles</strong> by combining <strong>technical expertise</strong> with <strong>business management principles</strong>. Through an innovative curriculum that bridges engineering and business, you'll develop <strong>analytical and social intelligence</strong> to manage projects effectively.</p>
+      <p class="font-medium text-lg mt-6">Customize your learning with core coursework in management, data science and engineering analysis, and tailor electives to your interests. With our new <strong>ASAP application</strong>, you can bypass the traditional application process and secure your spot in the program by successfully completing two trial courses.</p>
     `,
     keySkills: [
       "Engineering Management",

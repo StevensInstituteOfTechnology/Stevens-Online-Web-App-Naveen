@@ -46,10 +46,34 @@ const programData = {
       { text: "Graduate Credit", icon: Award },
       { text: "Stackable to Masters", icon: GraduationCap },
     ],
-    
   },
   quickFacts: {
-    // Quick Stats Bar
+    // Enhanced Stats Bar (Penn State style)
+    enhancedStats: [
+      {
+        title: "100% Online",
+        description:
+          "Complete your certificate coursework at your own pace, 100% online.",
+      },
+      {
+        supertext: "Apply by",
+        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
+        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+      },
+      {
+        value: "9",
+        label: "Credits",
+        subtext: "$5,250 total",
+      },
+      {
+        title: "Stackable Credits",
+        description:
+          "All 9 credits apply toward Stevens MBA or M.Eng. degrees.",
+      },
+    ],
+
+    // Legacy Quick Stats (fallback)
     quickStats: [
       { value: "9", label: "Credits" },
       { value: "3", label: "Courses" },
@@ -66,7 +90,9 @@ const programData = {
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
   },
   overview: {
-    title: "Certificate Overview",
+    programType: "Graduate Certificate",
+    headline: "Build AI that works at work",
+    tagline: "From idea to deployed AI workflow in 9 graduate credits.",
     description: `<p class="mb-4">Employers are hiring for "AI-fluent" business talent. AI roles top "Jobs on the Rise 2025," and AI skills carry a salary premium with ~28% higher pay. Over half of postings with AI skills are outside IT, demonstrating the broad demand for practical AI expertise across all business functions.</p><p class="mb-4">Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain critical challenges. This certificate's arc-<strong>strategy → POC → operational workflow</strong>-mirrors what adoption leaders say is required to capture value.</p><p>This short, stackable graduate credential turns managers, analysts, and product/ops professionals into responsible AI doers who can frame, prototype, and run small AI workflows safely, without needing a CS background. Upon completion, you'll earn 9 graduate credits that apply toward existing Stevens degrees including the MBA and M.Eng. in Applied Data Science.</p>`,
     keySkills: [
       "AI Strategy & Governance",

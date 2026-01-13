@@ -164,8 +164,8 @@ export function DegreeTemplate({
       />
 
       <main>
-         {/* Quick Stats Bar - Full width stats display */}
-         <QuickStatsBar stats={quickFacts?.quickStats} />
+        {/* Quick Stats Bar */}
+        <QuickStatsBar stats={quickFacts?.enhancedStats} variant="dark" />
 
         {/* 1. Overview Section */}
         <OverviewSection
@@ -173,7 +173,6 @@ export function DegreeTemplate({
           quickFacts={quickFacts}
           ref={registerSectionRef("overview")}
         />
-       
 
         {/* 2. Rankings Section (By the Numbers) */}
         <RankingsSection

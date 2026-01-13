@@ -43,7 +43,32 @@ const programData = {
     ],
   },
   quickFacts: {
-    // Quick Stats Bar
+    // Enhanced Stats Bar (Penn State style)
+    enhancedStats: [
+      {
+        title: "100% Online",
+        description:
+          "Complete your Stevens MBA coursework at your own pace, 100% online.",
+      },
+      {
+        supertext: "Apply by",
+        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
+        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+      },
+      {
+        value: "36-45",
+        label: "Credits",
+        subtext: "$1,395 per credit",
+      },
+      {
+        title: "AACSB Accredited",
+        description:
+          "One of only 6% of business schools worldwide to earn AACSB accreditation.",
+      },
+    ],
+
+    // Legacy Quick Stats (fallback)
     quickStats: [
       { value: "36-45", label: "Credits" },
       { value: "12-15", label: "Courses" },
@@ -60,7 +85,9 @@ const programData = {
     termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
   },
   overview: {
-    title: "MBA Program Overview",
+    programType: "Master of Business Administration",
+    headline: "Lead with data, strategy, and innovation",
+    tagline: "The best MBA for technology in the NYC region.",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
     keySkills: [
       "Marketing",

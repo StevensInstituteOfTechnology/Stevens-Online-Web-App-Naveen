@@ -153,8 +153,8 @@ export function CertificateTemplate({
       />
 
       <main>
-        {/* Quick Stats Bar - Full width stats display */}
-        <QuickStatsBar stats={quickFacts?.quickStats} />
+        {/* Quick Stats Bar */}
+        <QuickStatsBar stats={quickFacts?.enhancedStats} variant="dark" />
 
         {/* 1. Overview Section (with Quick Facts) */}
         <OverviewSection

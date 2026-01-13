@@ -1,31 +1,37 @@
-import React from 'react';
-import { DegreeTemplate } from '../components/program-pages/templates';
-import { TuitionCardsHero } from '../components/program-pages/primitives';
-import { Award, Check, Star } from 'lucide-react';
-import { createPageUrl } from '@/utils';
-import { KEY_DATES, BOOKING_URLS } from '@/config/constants';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { ProgramContextProvider } from '@/contexts/analytics/ProgramContext';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
+import React from "react";
+import { DegreeTemplate } from "../components/program-pages/templates";
+import { TuitionCardsHero } from "../components/program-pages/primitives";
+import { Award, Check, Star } from "lucide-react";
+import { createPageUrl } from "@/utils";
+import { KEY_DATES, BOOKING_URLS } from "@/config/constants";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
 const programData = {
-  code: 'meads',
+  code: "meads",
   seo: {
-    title: 'Online Master’s in Engineering: Applied Data Science | Stevens Online',
-    description: 'Earn your online MS in Engineering – Applied Data Science from Stevens. Build expertise in data visualization, predictive analytics, and machine learning techniques used to solve complex engineering and business challenges.',
-    ogImage: '/assets/images/meads/stevens-manhattan-skyline-ds.webp',
-    url: '/online-masters-engineering-applied-data-science/'
+    title:
+      "Online Master’s in Engineering: Applied Data Science | Stevens Online",
+    description:
+      "Earn your online MS in Engineering – Applied Data Science from Stevens. Build expertise in data visualization, predictive analytics, and machine learning techniques used to solve complex engineering and business challenges.",
+    ogImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
+    url: "/online-masters-engineering-applied-data-science/",
   },
   // ==================================================================
   hero: {
-    titleLines: ['Earn Your M.Eng. in Applied Data Science Online.',"Build AI-Powered Systems."],
-    subtitle: "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
+    titleLines: [
+      "Earn Your M.Eng. in Applied Data Science Online.",
+      "Build AI-Powered Systems.",
+    ],
+    subtitle:
+      "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
     bgImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
-    primaryCta: { label: 'Request Information', to: 'RequestInfo' },
-    secondaryCta: { label: 'Apply In Minutes', to: 'accelerated-application' },
+    primaryCta: { label: "Request Information", to: "RequestInfo" },
+    secondaryCta: { label: "Apply In Minutes", to: "accelerated-application" },
     tuitionCards: [
       { value: "$800", label: "Per Credit" },
-      { value: "$24,000", label: "Total Program Cost" }
+      { value: "$24,000", label: "Total Program Cost" },
     ],
     // badges: [
     //   { text: "Industry-Ready Skills", icon: Award },
@@ -35,22 +41,16 @@ const programData = {
   },
   // ==================================================================
   overview: {
-    title: "Program Overview",
+    programType: "Master of Engineering",
+    headline: "Build AI-Powered Systems",
+    tagline:
+      "A career-aligned curriculum designed for real-world impact in the AI age.",
     description: `
       <p class="font-stevens-body">The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
       
       <p class='font-stevens-body my-5'>Through a curriculum grounded in engineering rigor and real-world application, you'll master <strong>AI model design, LLM fine-tuning, MLOps, and scalable data architectures</strong>. Learn to build end-to-end AI solutions: from data pipelines and feature engineering to model deployment and monitoring in production environments.</p>
       
       <p class='font-stevens-body my-5'>This program bridges engineering precision with AI-driven innovation. You'll work with cutting-edge tools—PyTorch, TensorFlow, Hugging Face, cloud AI platforms—and learn to operationalize AI responsibly with ethics, explainability, and governance built in.</p>
-      
-      <h3 class='font-stevens-headers text-stevens-lg'><strong>Program at a Glance:</strong></h3>
-
-      <ul class='my-5'>
-        <li><strong>Format: 100% Online</strong></li>
-        <li><strong>Duration: 1 to 2 years (30 credits)</strong></li>
-        <li><strong>Focus: Applied AI, Machine Learning, LLMs & MLOps</strong></li>
-        <li><strong>Accreditation: Middle States Commission on Higher Education</strong></li>
-      </ul>
       
     `,
     keySkills: [
@@ -62,16 +62,41 @@ const programData = {
       "Python",
       "PyTorch/TensorFlow",
       "AI Ethics",
-    ]
+    ],
   },
   // ==================================================================
   quickFacts: {
-    // Quick Stats Bar
+    // Enhanced Stats Bar (Penn State style)
+    enhancedStats: [
+      {
+        title: "100% Online",
+        description:
+          "Complete your Stevens coursework at your own pace, 100% online.",
+      },
+      {
+        supertext: "Apply by",
+        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0], // Month (e.g., "December")
+        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""), // Day number
+        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+      },
+      {
+        value: "30",
+        label: "Credits",
+        subtext: "$800 per credit",
+      },
+      {
+        title: "MSCHE Accredited",
+        description:
+          "Accredited by the Middle States Commission on Higher Education since 1927.",
+      },
+    ],
+
+    // Legacy Quick Stats (fallback)
     quickStats: [
       { value: "30", label: "Credits" },
       { value: "10", label: "Courses" },
       { value: "100%", label: "Online" },
-      { value: "1-2", label: "Years" },
+      { value: "MSCHE", label: "Accredited", icon: Award },
     ],
 
     // Simplified Card
@@ -80,35 +105,39 @@ const programData = {
     applyUrl: "#",
 
     // Legacy
-    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`
+    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
   },
   // ==================================================================
   rankings: [
     {
       ranking: "#12",
       description: "For Best Career Placement",
-      source: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)."
+      source:
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
     },
     {
       ranking: "Top 15",
       description: "For ROI",
-      source: "Stevens ranks among the top 15 in the nation for ROI, according to U.S. News & World Report (2025)."
+      source:
+        "Stevens ranks among the top 15 in the nation for ROI, according to U.S. News & World Report (2025).",
     },
     {
       ranking: "99%",
       description: "Employment",
-      source: "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating."
+      source:
+        "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.",
     },
     {
       ranking: "#15",
       description: "For Best Value",
-      source: "Payscale (2024)."
+      source: "Payscale (2024).",
     },
     {
       ranking: "7x",
       description: "Winner",
-      source: "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning."
-    }
+      source:
+        "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning.",
+    },
   ],
   // ==================================================================
   career: {
@@ -144,7 +173,7 @@ const programData = {
       "Amazon",
       "Deloitte",
       "Accenture",
-      "IBM"
+      "IBM",
     ],
     // source: "Glassdoor and LinkedIn, 2024"
   },
@@ -167,95 +196,101 @@ const programData = {
   // ==================================================================
   topCompanies: {
     title: "Where Stevens Alumni Work",
-    description: "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
+    description:
+      "Our graduates join leading organizations across technology, finance, healthcare, and consulting",
     companies: [
       {
         name: "Microsoft",
         logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Google",
         logo: "/assets/company_logo/Google_2015_logo.svg.png",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Amazon",
         logo: "/assets/company_logo/Amazon_logo.svg.webp",
-        industry: "Technology"
+        industry: "Technology",
       },
       {
         name: "Deloitte",
         logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
-        industry: "Consulting"
+        industry: "Consulting",
       },
       {
         name: "Accenture",
         logo: "/assets/company_logo/Accenture_logo.svg.png",
-        industry: "Consulting"
+        industry: "Consulting",
       },
       {
         name: "IBM",
         logo: "/assets/company_logo/IBM_logo.svg.png",
-        industry: "Technology"
-      }
-    ]
+        industry: "Technology",
+      },
+    ],
   },
-// ==================================================================
+  // ==================================================================
   whatYoullLearn: {
     title: "What You Will Learn",
     description: `You'll gain the practical experience and technical foundation needed to apply data science across real-world challenges:`,
     modules: [
       {
         title: "Mathematics & Foundations",
-        description: "<p class=\"font-stevens-body\">Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>",
+        description:
+          '<p class="font-stevens-body">Students develop the core mathematical and statistical tools that underpin modern data science. The focus is on linear algebra, calculus, and optimization for modeling complex systems, as well as forecasting methods for time-dependent data.</p>',
         skills: [
           "Apply concepts from multivariable calculus and linear algebra-such as vector spaces, eigenvalues, and matrix decompositions-to model and analyze data",
           "Use optimization and numerical methods to solve applied data science problems",
-          "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data"
-        ]
+          "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data",
+        ],
       },
       {
         title: "Programming & Systems",
-        description: "Students gain practical experience with programming languages, data integration tools, and scalable computing systems that support enterprise analytics and business intelligence. The coursework combines data architecture, warehousing, and big data frameworks.",
+        description:
+          "Students gain practical experience with programming languages, data integration tools, and scalable computing systems that support enterprise analytics and business intelligence. The coursework combines data architecture, warehousing, and big data frameworks.",
         skills: [
           "Program in Python, R, and SQL while leveraging technologies such as TensorFlow, Spark, and Tableau for analytics and visualization",
           "Design and manage data warehouses, architecture models, and ETL pipelines for business intelligence systems",
-          "Implement scalable big data solutions using distributed computing and cloud-based platforms like Dataiku and Spark"
-        ]
+          "Implement scalable big data solutions using distributed computing and cloud-based platforms like Dataiku and Spark",
+        ],
       },
       {
         title: "Machine Learning & AI",
-        description:"Students explore the principles and applications of machine learning and artificial intelligence-from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
+        description:
+          "Students explore the principles and applications of machine learning and artificial intelligence-from foundational algorithms to deep learning and generative AI. Emphasis is placed on both technical implementation and responsible management of AI technologies.",
         skills: [
           "Apply core machine learning methods such as regression, classification, clustering, and dimensionality reduction using Python libraries",
           "Design and train neural networks and deep learning architectures including CNNs, RNNs, and attention-based models",
           "Experiment with generative AI and augmented intelligence through prompt engineering and large language models",
           "Evaluate and manage AI systems ethically, addressing issues of fairness, transparency, and compliance in enterprise contexts",
-        ]
+        ],
       },
       {
         title: "Data Visualization & Communication",
-        description:"Students learn to translate analytical results into clear, compelling visual narratives that inform decision-making. The curriculum emphasizes design thinking, ethical visualization, and storytelling through data.",
+        description:
+          "Students learn to translate analytical results into clear, compelling visual narratives that inform decision-making. The curriculum emphasizes design thinking, ethical visualization, and storytelling through data.",
         skills: [
           "Build visualizations and dashboards using Tableau, Power BI, Julius.ai, Python, and R",
           "Apply principles of perceptual design and ethical visualization to ensure clarity and integrity in data storytelling",
-          "Communicate analytical findings effectively for both technical and business audiences"
-        ] 
+          "Communicate analytical findings effectively for both technical and business audiences",
+        ],
       },
       {
         title: "Applied Analytics & Business Intelligence",
-        description: "Students apply analytical techniques to real-world business challenges in marketing, operations, and digital contexts. The coursework emphasizes data-driven strategy, governance, and decision-making.",
+        description:
+          "Students apply analytical techniques to real-world business challenges in marketing, operations, and digital contexts. The coursework emphasizes data-driven strategy, governance, and decision-making.",
         skills: [
           "Conduct marketing and operational analytics to model customer behavior, optimize campaigns, and measure business performance",
           "Apply web and text mining techniques-including scraping, clustering, and recommender systems-to extract insights from large-scale data sources",
           "Implement data governance, security, and risk management practices to ensure trustworthy analytics across enterprise environments",
-        ]
-      }
+        ],
+      },
     ],
   },
-// ==================================================================
-  whyStevens:{
+  // ==================================================================
+  whyStevens: {
     title: "Why Choose Stevens?",
     description: `
     <div class='text-left max-w-[50rem] mx-auto'>
@@ -269,7 +304,6 @@ const programData = {
       </ul>
       </div>
     `,
-
   },
   // ==================================================================
   curriculum: {
@@ -438,28 +472,50 @@ const programData = {
             </div>
             
           </div>
-        `
-      }
-    }
+        `,
+      },
+    },
   },
   // ==================================================================
   faculty: {
-    description: "Our faculty are experienced educators and active researchers who offer industry insights.",
+    description:
+      "Our faculty are experienced educators and active researchers who offer industry insights.",
     members: [
-      { name: "Dr. Alkis Vazacopoulos", title: "", image: "/assets/avatars/msdsen-avatar/Vazacopoulos.webp" },
-      { name: "Dr. Khasha Dehnad", title: "", image: "/assets/avatars/msdsen-avatar/Dehnad.webp" },
-      { name: "Dr. Samuel Kim", title: "", image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp" },
-      { name: "Dr. David Landaeta", title: "", image: "/assets/logos/Stevens-logo-small-scale.webp" },
-      { name: "Dr. Upendra Prasad", title: "", image: "/assets/avatars/msds-avatar/upendra-prasad-stevens-faculty.webp" }
-    ]
+      {
+        name: "Dr. Alkis Vazacopoulos",
+        title: "",
+        image: "/assets/avatars/msdsen-avatar/Vazacopoulos.webp",
+      },
+      {
+        name: "Dr. Khasha Dehnad",
+        title: "",
+        image: "/assets/avatars/msdsen-avatar/Dehnad.webp",
+      },
+      {
+        name: "Dr. Samuel Kim",
+        title: "",
+        image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
+      },
+      {
+        name: "Dr. David Landaeta",
+        title: "",
+        image: "/assets/logos/Stevens-logo-small-scale.webp",
+      },
+      {
+        name: "Dr. Upendra Prasad",
+        title: "",
+        image:
+          "/assets/avatars/msds-avatar/upendra-prasad-stevens-faculty.webp",
+      },
+    ],
   },
-// ==================================================================
+  // ==================================================================
   admissions: {
-      options: [
-        {
-          title: "Accelerated App",
-          featured: false,
-          description: `<p>
+    options: [
+      {
+        title: "Accelerated App",
+        featured: false,
+        description: `<p>
             Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
           </p>
           <ul class="list-disc pl-5 mt-2 space-y-1">
@@ -468,35 +524,42 @@ const programData = {
             <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
           </ul>
           <p class="text-sm text-stevens-dark-gray mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
-          buttonText: "Apply Now",
-          url: "/accelerated-application",
-          buttonGrayOut: false
-        }
-      ]
-    },
-    // ==================================================================
-    keyDates: {
-      headers: ["Term", "Early Submit", "Priority Submit", "Final Submit", "Start of Classes"],
-      rows: [
-        { 
-          event: KEY_DATES.TERM.name, 
-          date: KEY_DATES.EARLY_SUBMIT.date, 
-          details: KEY_DATES.EARLY_SUBMIT.details,
-          priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-          priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-          finalDate: KEY_DATES.FINAL_SUBMIT.date,
-          startDate: KEY_DATES.START_OF_CLASSES.date
-        }
-      ],
-      footnote: "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply."
-    },
-    // ==================================================================
-    tuition: {
-      cards: [
-        { value: "$800", label: "Per Credit" },
-        { value: "$24,000", label: "Total Program Cost" }
-      ],
-      description: `
+        buttonText: "Apply Now",
+        url: "/accelerated-application",
+        buttonGrayOut: false,
+      },
+    ],
+  },
+  // ==================================================================
+  keyDates: {
+    headers: [
+      "Term",
+      "Early Submit",
+      "Priority Submit",
+      "Final Submit",
+      "Start of Classes",
+    ],
+    rows: [
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        details: KEY_DATES.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
+        startDate: KEY_DATES.START_OF_CLASSES.date,
+      },
+    ],
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
+  },
+  // ==================================================================
+  tuition: {
+    cards: [
+      { value: "$800", label: "Per Credit" },
+      { value: "$24,000", label: "Total Program Cost" },
+    ],
+    description: `
         <h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
         <p class="font-stevens-body mb-stevens-md">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
         
@@ -521,53 +584,76 @@ const programData = {
         </div>
         
         <p class="text-xs text-stevens-dark-gray mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
-      `
-    },
-    // ==================================================================
-    events: {
+      `,
+  },
+  // ==================================================================
+  events: {
     title: "On-Demand Content",
-    description: "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
+    description:
+      "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
     fallbackText: "Check back soon for more upcoming events.",
     items: [
       // { title: "Exploring the Online M.S. in Computer Science at Stevens Institute of Technology", status: "Ongoing", length: "11 minutes", url: "https://event.on24.com/wcc/r/4455089/34FF45D9104354C225403F6B63A29F26" },
-      { title: "Student Voices: Real Stories From Stevens Graduate Programs", status: "Ongoing", length: "45 minutes", url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE" },
+      {
+        title: "Student Voices: Real Stories From Stevens Graduate Programs",
+        status: "Ongoing",
+        length: "45 minutes",
+        url: "https://event.on24.com/wcc/r/4970051/3D4408B63146F35B069766B71328D7CE",
+      },
 
       // { title: "Online M.S. in Computer Science: Areas of Focus", status: "Ongoing", length: "12 minutes", url: "https://event.on24.com/wcc/r/4894227/042446D9C5E18BF3F4D7CD9A7604B1EA" },
-      { title: "Financial Aid Overview: Stevens Institute of Technology", status: "Ongoing", length: "10 minutes", url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2" },
-      { title: "Application Walkthrough: Data Science and Computer Science", status: "Ongoing", length: "24 minutes", url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29" },
-       { title: "Application Overview: Online Master's in Engineering Management", status: "Ongoing", length: "24 minutes", url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810" }
-    ]
+      {
+        title: "Financial Aid Overview: Stevens Institute of Technology",
+        status: "Ongoing",
+        length: "10 minutes",
+        url: "https://event.on24.com/wcc/r/5007787/EC42C1EA980050EB628E9A3DAD9BA2BB?pg=2",
+      },
+      {
+        title: "Application Walkthrough: Data Science and Computer Science",
+        status: "Ongoing",
+        length: "24 minutes",
+        url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29",
+      },
+      {
+        title:
+          "Application Overview: Online Master's in Engineering Management",
+        status: "Ongoing",
+        length: "24 minutes",
+        url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810",
+      },
+    ],
   },
-  // ==================================================================
-  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`
 };
 
 export default function MEADS() {
   usePageTracking({
-    pageType: 'program',
-    programCode: 'meads',
+    pageType: "program",
+    programCode: "meads",
     additionalData: {
-      program_name: 'Master of Engineering in Applied Data Science',
+      program_name: "Master of Engineering in Applied Data Science",
       has_video: true,
       has_rfi_modal: true,
-      has_pricing_cards: true
-    }
+      has_pricing_cards: true,
+    },
   });
 
   // Add pricing cards to hero section
   const heroWithPricing = {
     ...programData.hero,
-    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />
+    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
-  
+
   return (
     <PageContextProvider pageType="program" pageName="MEADS">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="meads"
         programName="Master of Engineering in Applied Data Science"
         programType="degree"
       >
-        <DegreeTemplate programData={{ ...programData, hero: heroWithPricing }} useApplicationModal={true} />
+        <DegreeTemplate
+          programData={{ ...programData, hero: heroWithPricing }}
+          useApplicationModal={true}
+        />
       </ProgramContextProvider>
     </PageContextProvider>
   );
