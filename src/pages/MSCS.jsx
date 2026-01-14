@@ -134,14 +134,9 @@ const programData = {
   ],
   career: {
     description: `
-      <p class="mb-4">An MSCS qualifies students for advanced, well-compensated positions as computer science managers and individual contributors specializing in areas like software engineering, machine learning and database management. The U.S. Bureau of Labor Statistics (BLS) forecasts much faster than average growth for such computer science roles as:</p>
-      <ul class="mb-4 list-disc list-inside">
-        <li>Software developers (17% growth in employment by 2033)</li>
-        <li>Computer research scientists (26% growth in employment by 2033)¹</li>
-      </ul>
-      <p class="mb-4">The exceptional skill set MSCS graduates possess helps them secure premier tech jobs as computer scientists at companies such as Google and Meta, which can pay around $300,000.²</p>
-      <p class="mb-4">Many remote work opportunities are available in computer science, but emerging tech hubs and traditional business hubs are also significant employers in the field. For instance, more than 119,000 software developers are employed in the New York City metropolitan area, where Stevens is located. Top tech hubs like San Francisco, San Jose and Seattle are home to leading employers - and offer average developer salaries as high as $211,450.³</p>
-      <p>Our diverse curriculum and specialized offerings equip students with the sought-after skills needed to thrive in their chosen fields. This degree prepares graduates with skills in computer science, Python, Amazon Web Services, automation and software engineering and opens doors to other organizations outside of tech, such as Bank of America and JPMorgan Chase, both of which have employed Stevens MSCS alumni.</p>
+      <p class="mb-4">Computer science roles continue to grow rapidly, with strong demand for software development, data systems, and security talent. Stevens’ online MSCS prepares you for advanced technical and leadership positions across modern computing disciplines.</p>
+      <p class="mb-4">You’ll build in-demand skills in Python, cloud computing, automation, secure software design, and scalable systems—so you can contribute on complex, production-grade projects from day one.</p>
+      <p>Graduates pursue roles from Software Developer and Database Architect to Information Security Analyst and Computer & Information Systems Manager at leading employers across tech and beyond.</p>
     `,
     jobTitles: [
       { title: "Computer and Information Systems Manager", salary: "$171,200" },

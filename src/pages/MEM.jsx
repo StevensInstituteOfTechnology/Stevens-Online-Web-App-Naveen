@@ -128,8 +128,9 @@ const programData = {
   ],
   career: {
     description: `
-      <p class="mb-4">According to 2025 data from the U.S. Bureau of Labor Statistics (BLS), there are 210,200 architectural and engineering managers and 230,100 industrial production managers employed across the U.S. The BLS projects about 15,000 and 17,100 annual job openings in these fields, respectively, over the next decade.</p>
-      <p>The states with the highest employment rates for engineering managers include California, Texas, Michigan, Pennsylvania and Illinois. Engineering manager salaries vary according to location, but many upper-level roles are well into the six figures. The BLS lists the median annual wage for architectural and engineering managers at $167,740.</p>
+      <p class="mb-4">Engineering leadership roles remain in strong demand across industries, from manufacturing and energy to technology and logistics. The Stevens Online MEM prepares you to step into management pathways where technical fluency and business decision-making intersect.</p>
+      <p class="mb-4">According to 2025 U.S. Bureau of Labor Statistics data, architectural and engineering managers earn a median annual wage of $167,740, with steady openings projected year over year across major regions.</p>
+      <p>Through coursework in project leadership, operations research, analytics, and risk analysis, you’ll develop the skills to lead cross-functional teams and deliver complex initiatives.</p>
     `,
     jobTitles: [
       { title: "Architectural and Engineering Manager", salary: "$167,740" },

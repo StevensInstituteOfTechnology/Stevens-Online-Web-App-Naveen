@@ -14,7 +14,6 @@ import {
   AccreditationSection,
   RankingsSection,
   VideoSection,
-  CareerSection,
   StudentSpotlightSection,
   EventsSection,
   TopCompaniesSection,
@@ -194,24 +193,22 @@ export function DegreeTemplate({
           ref={registerSectionRef("curriculum")}
         />
 
-        {/* 5. Career Outlook Section */}
-        <CareerSection career={career} ref={registerSectionRef("career")} />
-
-        {/* 6. What You'll Learn (Skills) Section */}
+        {/* 5. What You'll Learn (Skills) Section */}
         <SkillsSection
           whatYoullLearn={whatYoullLearn}
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 7. Common Job Titles Section */}
+        {/* 6. Career Outcomes (intro + job titles) */}
         <JobTitlesSection
           commonJobTitles={commonJobTitles}
           career={career}
           programCode={code}
+          isCertificate={false}
           ref={registerSectionRef("common-job-titles")}
         />
 
-        {/* 8. Top Companies Section */}
+        {/* 7. Top Companies Section */}
         <TopCompaniesSection
           topCompanies={topCompanies}
           career={career}

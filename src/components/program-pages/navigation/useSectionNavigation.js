@@ -70,9 +70,8 @@ export function useSectionNavigation({
       { id: "rankings", label: "Rankings" },
       { id: "video", label: "Video" },
       { id: "curriculum", label: "Curriculum" },
-      { id: "career", label: "Career Outlook" },
       { id: "what-youll-learn", label: "What You'll Learn" },
-      { id: "common-job-titles", label: "Common Job Titles" },
+      { id: "common-job-titles", label: "Career Outcomes" },
       { id: "top-companies", label: "Top Companies" },
       { id: "why-stevens", label: "Why Stevens" },
       { id: "student-spotlight", label: "Student Spotlight" },
@@ -89,8 +88,7 @@ export function useSectionNavigation({
       { id: "overview", label: "Overview" },
       { id: "rankings", label: "Rankings" },
       { id: "what-youll-learn", label: "What You'll Learn" },
-      { id: "career", label: "Career Outlook" },
-      { id: "common-job-titles", label: "Common Job Titles" },
+      { id: "common-job-titles", label: "Career Outcomes" },
       { id: "top-companies", label: "Top Companies" },
       { id: "curriculum", label: "Curriculum" },
       { id: "why-stevens", label: "Why Stevens" },
@@ -116,11 +114,6 @@ export function useSectionNavigation({
           return videoSection && videoSection.videoSrc;
         case "rankings":
           return rankings && rankings.length > 0;
-        case "career":
-          return (
-            career &&
-            (career.description || career.jobTitlesTable || career.topCompanies)
-          );
         case "what-youll-learn":
           return (
             whatYoullLearn &&
@@ -130,8 +123,8 @@ export function useSectionNavigation({
         case "common-job-titles":
           return (
             commonJobTitles &&
-            commonJobTitles.jobs &&
-            commonJobTitles.jobs.length > 0
+            ((career && career.description) ||
+              (career && career.jobTitles && career.jobTitles.length > 0))
           );
         case "top-companies":
           return (

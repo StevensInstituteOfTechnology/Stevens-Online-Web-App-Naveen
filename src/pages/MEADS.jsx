@@ -143,17 +143,9 @@ const programData = {
   career: {
     title: "Data Science and Engineering Career Outlook",
     description: `
-      <p>Turn complex data into competitive advantage. Data scientists and AI engineers remain among the fastest-growing and highest-paid roles globally. With expertise in machine learning, big data, and visualization, Stevens graduates are prepared to lead analytics initiatives, guide strategy, and drive measurable impact.</p>
-      
-      <h3 class='mt-4'><strong>Potential Roles:</strong></h3>
-      <ul class='list-disc pl-6'>
-        <li>Data Scientist</li>
-        <li>Machine Learning Engineer</li>
-        <li>AI Systems Architect</li>
-        <li>Data Visualization Specialist</li>
-        <li>Quantitative Analyst</li>
-        <li>Business Intelligence Engineer</li>
-      </ul>
+      <p class="mb-4">Data science and AI roles continue to be among the fastest-growing and highest-paid positions. This program prepares you to translate complex data into business and engineering impact across industries.</p>
+      <p class="mb-4">You’ll build production-ready skills in machine learning, deep learning, data pipelines, and visualization—learning how to design, train, and deploy models that perform in real-world environments.</p>
+      <p>Graduates pursue roles such as Data Scientist, Machine Learning Engineer, AI Systems Architect, and Business Intelligence Engineer, with a strong foundation for advanced leadership paths.</p>
     `,
     // jobTitles: [
     //   { title: "Data Engineer", salary: "$125,000" },

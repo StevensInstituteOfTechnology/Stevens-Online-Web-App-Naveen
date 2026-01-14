@@ -13,7 +13,6 @@ import {
   FAQSection,
   AccreditationSection,
   RankingsSection,
-  CareerSection,
   TopCompaniesSection,
   FacultySection,
   SkillsSection,
@@ -176,25 +175,23 @@ export function CertificateTemplate({
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 4. Career & Skill Outcomes */}
-        <CareerSection career={career} ref={registerSectionRef("career")} />
-
-        {/* 5. Common Job Titles */}
+        {/* 4. Career Outcomes (intro + job titles) */}
         <JobTitlesSection
           commonJobTitles={commonJobTitles}
           career={career}
           programCode={code}
+          isCertificate={true}
           ref={registerSectionRef("common-job-titles")}
         />
 
-        {/* 6. Top Companies */}
+        {/* 5. Top Companies */}
         <TopCompaniesSection
           topCompanies={topCompanies}
           career={career}
           ref={registerSectionRef("top-companies")}
         />
 
-        {/* 7. Curriculum / Course Sequence - AFTER Career for certificates */}
+        {/* 6. Curriculum / Course Sequence - AFTER Career Outcomes for certificates */}
         <CurriculumSection
           curriculum={curriculum}
           programCode={code}
