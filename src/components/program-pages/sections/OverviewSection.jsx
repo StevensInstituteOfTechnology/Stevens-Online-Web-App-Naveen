@@ -57,7 +57,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
           {/* Headline */}
           {(overview.headline || overview.title) && (
-            <h2 className="font-stevens-display font-bold text-4xl md:text-5xl lg:text-6xl text-stevens-black leading-[1.1] mb-6">
+            <h2 className="font-stevens-display font-light text-4xl md:text-5xl lg:text-6xl text-stevens-black leading-[1.1] mb-6">
               {overview.headline || overview.title}
             </h2>
           )}

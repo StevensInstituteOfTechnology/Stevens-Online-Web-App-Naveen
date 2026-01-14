@@ -39,7 +39,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
     >
       <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl py-stevens-section lg:py-stevens-gap-8xl">
         {/* Section Title */}
-        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-bold text-stevens-black tracking-tight text-center mb-stevens-3xl lg:mb-stevens-gap-5xl">
+        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black tracking-tight text-center mb-stevens-3xl lg:mb-stevens-gap-5xl">
           BY THE NUMBERS
         </h2>
 

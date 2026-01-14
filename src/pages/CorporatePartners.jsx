@@ -747,7 +747,7 @@ const CorporatePartners = () => {
           </div>
         </section>
         {/* Trust Signals - Company Logos */}
-        <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
+        {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -762,7 +762,7 @@ const CorporatePartners = () => {
               companies={partnerCompanies}
             />
           </div>
-        </section>
+        </section> */}
         {/* What We Offer */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">

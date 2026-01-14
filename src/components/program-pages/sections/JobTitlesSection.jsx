@@ -150,11 +150,11 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
       {/* Header (match screenshot style: two-line title + divider) */}
       <div className="mb-stevens-2xl">
         <h2 className="font-stevens-headers uppercase tracking-tight leading-none">
-          <span className="block text-stevens-black font-black text-4xl md:text-5xl">
+          <span className="block text-stevens-black font-light text-4xl md:text-5xl">
             {(titleTop || commonJobTitles.title || "").toUpperCase()}
           </span>
           {titleBottom && (
-            <span className="block text-stevens-gray font-black text-4xl md:text-5xl mt-2">
+            <span className="block text-stevens-gray font-light text-4xl md:text-5xl mt-2">
               {titleBottom.toUpperCase()}
             </span>
           )}

@@ -611,7 +611,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             {/* Section Header - Full Width */}
             <AnimatedSection className="mb-8 lg:mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-white tracking-tight leading-tight">
                 THE STEVENS ONLINE ADVANTAGE
               </h2>
             </AnimatedSection>
@@ -674,7 +674,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center pb-8 lg:pb-12"
             >
-              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold italic text-stevens-red leading-tight tracking-tight mb-4">
+              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light italic text-stevens-red leading-tight tracking-tight mb-4">
                 #1 In NJ for
                 <br />
                 Graduate Earnings
@@ -786,7 +786,7 @@ export default function Home() {
             {/* Left Content Panel */}
             <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
               <AnimatedSection>
-                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-white mb-6 leading-tight">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-6 leading-tight">
                   Our Programs
                 </h2>
                 <p className="text-stevens-white text-lg mb-8 leading-relaxed">
@@ -1103,7 +1103,7 @@ export default function Home() {
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center mb-stevens-xl">
               <div>
-                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-black mb-4">
                   A Legacy of Innovation Meets Online Flexibility
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -1132,7 +1132,7 @@ export default function Home() {
                 loading="lazy"
               />
               <div className="lg:order-2">
-                <h2 className="font-stevens-headers text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
+                <h2 className="font-stevens-headers text-4xl lg:text-5xl font-light text-stevens-black mb-4">
                   A Community That Supports Your Success
                 </h2>
                 <p className="text-stevens-xl text-stevens-dark-gray mb-6">
@@ -1233,7 +1233,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
               <div>
-                <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-white mb-2">
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-2">
                   Latest from Our Blog
                 </h2>
                 <p className="text-stevens-lg text-stevens-white max-w-2xl">
@@ -1261,7 +1261,7 @@ export default function Home() {
         <section className="bg-stevens-black py-stevens-section">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
             <AnimatedSection className="mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-white mb-4">
                 Application Support Events
               </h2>
               <p className="text-stevens-lg text-white/70 mb-6">
