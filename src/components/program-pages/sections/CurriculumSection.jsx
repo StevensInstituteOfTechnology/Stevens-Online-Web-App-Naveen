@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import { Card, CardContent } from "../../ui/card";
+import { Button } from "../../ui/button";
 import { Section } from "../primitives";
 import { CourseSection } from "./curriculum";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -123,13 +124,16 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
 
         {/* View Course List Button (shown when collapsed) */}
         {tabsData.length > 0 && !isExpanded && (
-          <button
-            onClick={() => setIsExpanded(true)}
-            className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
-          >
-            View Course List
-            <ChevronDown className="w-5 h-5" />
-          </button>
+          <div className="flex justify-center">
+            <Button
+              variant="link"
+              onClick={() => setIsExpanded(true)}
+              className="text-stevens-red hover:text-stevens-dark-gray text-lg font-medium p-0 h-auto"
+            >
+              View Course List
+              <ChevronDown className="w-5 h-5" />
+            </Button>
+          </div>
         )}
 
         {/* Collapsible Course Content */}
@@ -226,14 +230,15 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
 
       {/* Hide Course List Button (shown at bottom when expanded) */}
       {tabsData.length > 0 && isExpanded && (
-        <div className="max-w-stevens-content-max mx-auto mt-stevens-xl">
-          <button
+        <div className="max-w-stevens-content-max mx-auto mt-stevens-xl flex justify-center">
+          <Button
+            variant="link"
             onClick={() => setIsExpanded(false)}
-            className="w-full flex items-center justify-center gap-2 py-4 px-6 border-2 border-stevens-gray/30 bg-stevens-light-gray hover:bg-stevens-gray/20 text-stevens-dark-gray font-stevens-bold text-stevens-base transition-all duration-stevens-normal rounded-sm"
+            className="text-stevens-red hover:text-stevens-dark-gray text-lg font-medium p-0 h-auto"
           >
             Close Course List
             <ChevronUp className="w-5 h-5" />
-          </button>
+          </Button>
         </div>
       )}
     </Section>
