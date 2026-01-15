@@ -47,9 +47,9 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
   return (
     <div
       ref={ref}
-      className={`w-full ${styles.container} py-8 lg:py-12 border-y ${styles.divider} shadow-inner`}
+      className={`w-full ${styles.container} border-y ${styles.divider} shadow-inner overflow-hidden`}
     >
-      <div className="max-w-stevens-content-max mx-auto px-stevens-md">
+      <div className="max-w-stevens-content-max mx-auto px-stevens-md py-8 lg:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
           {stats.map((stat, index) => {
             const isLast = index === stats.length - 1;
@@ -58,7 +58,7 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
               <div
                 key={index}
                 className={`
-                  flex flex-col items-center text-center px-4 lg:px-8
+                  flex flex-col items-center text-center justify-center px-4 lg:px-8
                   ${!isLast ? `lg:border-r ${styles.divider}` : ""}
                 `}
               >
@@ -94,7 +94,7 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
 
                     {/* Large Value */}
                     <p
-                      className={`font-stevens-display text-5xl lg:text-7xl font-light ${styles.value} leading-none`}
+                      className={`font-stevens-display text-6xl lg:text-8xl font-medium ${styles.value} leading-none`}
                     >
                       {stat.value}
                     </p>
@@ -130,6 +130,8 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
           })}
         </div>
       </div>
+      {/* Red Accent Stripe */}
+      <div className="w-full h-1 bg-stevens-red" />
     </div>
   );
 });

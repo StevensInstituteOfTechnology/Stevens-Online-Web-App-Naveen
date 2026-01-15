@@ -16,10 +16,9 @@ import {
   VideoSection,
   StudentSpotlightSection,
   EventsSection,
-  TopCompaniesSection,
   FacultySection,
   SkillsSection,
-  JobTitlesSection,
+  CareerOutcomesSection,
   OverviewSection,
   CurriculumSection,
   WhyStevensSection,
@@ -82,7 +81,7 @@ export function DegreeTemplate({
     faqs,
     accreditation,
     whatYoullLearn,
-    commonJobTitles,
+    careerOutcomes,
     topCompanies,
   } = programData;
 
@@ -199,20 +198,15 @@ export function DegreeTemplate({
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 6. Career Outcomes (intro + job titles) */}
-        <JobTitlesSection
-          commonJobTitles={commonJobTitles}
+        {/* 6. Career Outcomes (intro + job titles OR logos) */}
+        <CareerOutcomesSection
+          careerOutcomes={careerOutcomes}
           career={career}
           programCode={code}
           isCertificate={false}
-          ref={registerSectionRef("common-job-titles")}
-        />
-
-        {/* 7. Top Companies Section */}
-        <TopCompaniesSection
+          variant={careerOutcomes?.variant || "table"}
           topCompanies={topCompanies}
-          career={career}
-          ref={registerSectionRef("top-companies")}
+          ref={registerSectionRef("career-outcomes")}
         />
 
         {/* 9. Why Stevens Section */}

@@ -47,8 +47,8 @@ const programData = {
       href: "/accelerated-application/",
     },
     badges: [
-      { text: "100% Online", icon: Globe },
-      { text: "Graduate Credit", icon: Award },
+    { text: "100% Online", icon: Globe },
+    { text: "Graduate Credit", icon: Award },
       { text: "AI-First Curriculum", icon: TrendingUp },
     ],
   },
@@ -113,7 +113,7 @@ const programData = {
   career: {
     description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek-Python, SQL, ML frameworks-while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [
-      { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
+    { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
       {
         title: "ML Engineer Associate",
         employed: "Growing",
@@ -146,11 +146,11 @@ const programData = {
     description:
       "The certificate follows a strategic progression: master the mathematical foundations for ML, build data pipelines with Python and SQL, then apply machine learning to real-world problems. Each course includes hands-on labs and a portfolio project.",
     modules: [
-      {
-        title: "Applied Math for AI",
-        growth: "MA 574 – Applied Math for Data Science",
-        icon: LineChart,
-        courses: [
+    {
+      title: "Applied Math for AI",
+      growth: "MA 574 – Applied Math for Data Science",
+      icon: LineChart,
+      courses: [
           {
             code: "Core Topics",
             title: "Linear algebra, calculus, optimization for ML/AI",
@@ -164,12 +164,12 @@ const programData = {
             title: "Train and interpret an ML model with AI insight report",
           },
         ],
-      },
-      {
-        title: "Python & Data Pipelines",
-        growth: "CS 563 – Python and Databases",
-        icon: Database,
-        courses: [
+    },
+    {
+      title: "Python & Data Pipelines",
+      growth: "CS 563 – Python and Databases",
+      icon: Database,
+      courses: [
           {
             code: "Core Topics",
             title: "Python for data science, SQL, ETL/ELT, APIs",
@@ -184,12 +184,12 @@ const programData = {
             title: "End-to-end pipeline published to Streamlit app",
           },
         ],
-      },
-      {
-        title: "Machine Learning & AI",
-        growth: "CS 559 – Machine Learning: Fundamentals & Applications",
-        icon: Code,
-        courses: [
+    },
+    {
+      title: "Machine Learning & AI",
+      growth: "CS 559 – Machine Learning: Fundamentals & Applications",
+      icon: Code,
+      courses: [
           {
             code: "Core Topics",
             title:
@@ -220,7 +220,7 @@ const programData = {
     tabs: [
       {
         id: "sequence",
-        title: "Course Sequence",
+          title: "Course Sequence",
         sections: [
           {
             title: "Certificate Courses (9 Credits)",
@@ -295,7 +295,7 @@ const programData = {
     ],
   },
 
-  commonJobTitles: {
+  careerOutcomes: {
     title: "Career Paths in Data Science & AI",
   },
   topCompanies: {
@@ -367,9 +367,9 @@ const programData = {
       "Start of Classes",
     ],
     rows: [
-      {
-        event: KEY_DATES.TERM.name,
-        date: KEY_DATES.EARLY_SUBMIT.date,
+      { 
+        event: KEY_DATES.TERM.name, 
+        date: KEY_DATES.EARLY_SUBMIT.date, 
         details: KEY_DATES.EARLY_SUBMIT.details,
         priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
@@ -382,7 +382,7 @@ const programData = {
   },
   tuition: {
     cards: [
-      { value: "$5,250", label: "Total Certificate Cost" },
+      { value: "$5,250", label: "Total Certificate Cost" }, 
       { value: "$583", label: "Per Credit" },
     ],
     description: `
@@ -485,13 +485,13 @@ export default function CertificateAppliedDataSciencePage() {
     ...programData.hero,
     bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
-
+  
   return (
     <PageContextProvider
       pageType="program"
       pageName="CertificateAppliedDataScience"
     >
-      <ProgramContextProvider
+      <ProgramContextProvider 
         programCode="cert-ads"
         programName="Professional Graduate Certificate in Applied Data Science Foundations"
         programType="certificate"

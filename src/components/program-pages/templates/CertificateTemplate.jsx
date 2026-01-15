@@ -13,10 +13,9 @@ import {
   FAQSection,
   AccreditationSection,
   RankingsSection,
-  TopCompaniesSection,
   FacultySection,
   SkillsSection,
-  JobTitlesSection,
+  CareerOutcomesSection,
   OverviewSection,
   CurriculumSection,
   WhyStevensSection,
@@ -77,7 +76,7 @@ export function CertificateTemplate({
     faqs,
     accreditation,
     whatYoullLearn,
-    commonJobTitles,
+    careerOutcomes,
     topCompanies,
   } = programData;
 
@@ -175,20 +174,15 @@ export function CertificateTemplate({
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 4. Career Outcomes (intro + job titles) */}
-        <JobTitlesSection
-          commonJobTitles={commonJobTitles}
+        {/* 4. Career Outcomes (intro + job titles OR logos) */}
+        <CareerOutcomesSection
+          careerOutcomes={careerOutcomes}
           career={career}
           programCode={code}
           isCertificate={true}
-          ref={registerSectionRef("common-job-titles")}
-        />
-
-        {/* 5. Top Companies */}
-        <TopCompaniesSection
+          variant={careerOutcomes?.variant || "table"}
           topCompanies={topCompanies}
-          career={career}
-          ref={registerSectionRef("top-companies")}
+          ref={registerSectionRef("career-outcomes")}
         />
 
         {/* 6. Curriculum / Course Sequence - AFTER Career Outcomes for certificates */}

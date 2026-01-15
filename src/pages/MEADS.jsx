@@ -169,23 +169,29 @@ const programData = {
     ],
     // source: "Glassdoor and LinkedIn, 2024"
   },
-  // ==================================================================
-  // commonJobTitles: {
-  //   title: "Related Career Fields",
-  //   jobs: [
-  //     { title: "Data Engineer", salary: "$125,000" },
-  //     { title: "Machine Learning Engineer", salary: "$165,000" },
-  //     { title: "Data Architect", salary: "$182,000" },
-  //     { title: "MLOps Engineer", salary: "$145,000" },
-  //     { title: "Big Data Engineer", salary: "$129,000" },
-  //     { title: "AI Engineer", salary: "$155,000" },
-  //     { title: "Cloud Data Engineer", salary: "$140,000" },
-  //     { title: "Data Platform Engineer", salary: "$150,000" },
-  //     { title: "Senior Data Scientist", salary: "$135,000" },
-  //     { title: "Principal Engineer - Data", salary: "$195,000" }
-  //   ]
-  // },
-  // ==================================================================
+  careerOutcomes: {
+    title: "Career Outcomes",
+    variant: "logos",
+    leadText: "Build and deploy AI-powered systems that transform industries and drive innovation.",
+    bullets: [
+      {
+        icon: "check",
+        text: "Qualify for high-demand roles like <strong>Machine Learning Engineer</strong>, <strong>Data Architect</strong>, and <strong>AI Engineer</strong>.",
+      },
+      {
+        icon: "check",
+        text: "Master end-to-end AI development from <strong>LLM fine-tuning</strong> to <strong>production deployment</strong>.",
+      },
+      {
+        icon: "check",
+        text: "Command premium salaries with ML engineers earning median pay around <strong>$165,000</strong>.",
+      },
+      {
+        icon: "trend",
+        text: "Enter a field with explosive growth as AI adoption accelerates <strong>across all industries</strong>.",
+      },
+    ],
+  },
   topCompanies: {
     title: "Where Stevens Alumni Work",
     description:

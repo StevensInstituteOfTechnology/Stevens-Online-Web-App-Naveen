@@ -19,7 +19,7 @@ export { EventsSection } from "./EventsSection";
 export { TopCompaniesSection } from "./TopCompaniesSection";
 export { FacultySection } from "./FacultySection";
 export { SkillsSection } from "./SkillsSection";
-export { JobTitlesSection } from "./JobTitlesSection";
+export { CareerOutcomesSection } from "./CareerOutcomesSection";
 export { OverviewSection } from "./OverviewSection";
 export { QuickStatsBar } from "./QuickStatsBar";
 export { CurriculumSection } from "./CurriculumSection";

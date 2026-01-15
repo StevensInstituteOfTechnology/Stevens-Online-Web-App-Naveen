@@ -10,7 +10,7 @@ import { Section } from '../primitives';
  * - Prose styling for rich text formatting
  * 
  * Used in: Both Degree and Certificate pages
- * Note: Job titles table and salary data are in separate JobTitlesSection
+ * Note: Job titles table and salary data are in separate CareerOutcomesSection
  * 
  * @param {Object} career - Career data object
  * @param {string} career.description - HTML description content

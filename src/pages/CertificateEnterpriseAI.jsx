@@ -308,7 +308,7 @@ const programData = {
     ],
   },
 
-  commonJobTitles: {
+  careerOutcomes: {
     title: "Career Opportunities with AI Skills",
   },
   topCompanies: {

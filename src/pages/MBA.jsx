@@ -729,8 +729,28 @@ const programData = {
     quote:
       "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network.",
   },
-  commonJobTitles: {
-    title: "Common Job Titles for MBA Graduates",
+  careerOutcomes: {
+    title: "Career Outcomes",
+    variant: "logos",
+    leadText: "Lead with data, strategy, and innovation in technology-driven industries.",
+    bullets: [
+      {
+        icon: "check",
+        text: "Advance to executive roles like <strong>Senior Product Manager</strong>, <strong>Finance Director</strong>, and <strong>VP of Operations</strong>.",
+      },
+      {
+        icon: "check",
+        text: "Master <strong>analytics, strategy, and leadership</strong> skills valued across tech, finance, and consulting.",
+      },
+      {
+        icon: "check",
+        text: "Access the NYC metro's robust job market with strong alumni connections at <strong>top-tier companies</strong>.",
+      },
+      {
+        icon: "trend",
+        text: "Leverage the <strong>best MBA for technology</strong> in the region to stand out in a competitive market.",
+      },
+    ],
   },
   topCompanies: {
     title: "Top Companies Hiring Stevens Alumni",

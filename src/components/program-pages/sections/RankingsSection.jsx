@@ -35,7 +35,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
     <section id="rankings" ref={ref} className="bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl py-stevens-section lg:py-stevens-gap-8xl">
         {/* Section Title */}
-        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black tracking-tight text-center mb-stevens-3xl lg:mb-stevens-gap-5xl">
+        <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black tracking-tight text-left mb-stevens-3xl lg:mb-stevens-gap-5xl">
           BY THE NUMBERS
         </h2>
 
@@ -44,7 +44,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
           {/* Hero Stat - Top on mobile/tablet, Left Side (40%) on desktop */}
           <div className="pb-stevens-xl px-stevens-lg lg:px-0 lg:pb-0 lg:w-[40%] lg:pr-stevens-lg lg:border-r lg:border-b-0 border-b border-stevens-gray/30 flex flex-col h-full min-h-[280px] lg:min-h-[320px]">
             {/* Top accent bar */}
-            <div className="w-full h-1 bg-stevens-gray/30 mb-stevens-lg" />
+            <div className="w-full h-1 bg-stevens-red mb-stevens-lg" />
 
             {/* Main Content Container */}
             <div className="flex-grow">

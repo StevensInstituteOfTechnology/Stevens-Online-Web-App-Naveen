@@ -27,8 +27,7 @@ export function useSectionNavigation({
     rankings,
     career,
     whatYoullLearn,
-    commonJobTitles,
-    topCompanies,
+    careerOutcomes,
     whyStevens,
     curriculum,
     studentSpotlight,
@@ -71,8 +70,7 @@ export function useSectionNavigation({
       { id: "video", label: "Video" },
       { id: "curriculum", label: "Curriculum" },
       { id: "what-youll-learn", label: "What You'll Learn" },
-      { id: "common-job-titles", label: "Career Outcomes" },
-      { id: "top-companies", label: "Top Companies" },
+      { id: "career-outcomes", label: "Career Outcomes" },
       { id: "why-stevens", label: "Why Stevens" },
       { id: "student-spotlight", label: "Student Spotlight" },
       { id: "faculty", label: "Faculty" },
@@ -88,8 +86,7 @@ export function useSectionNavigation({
       { id: "overview", label: "Overview" },
       { id: "rankings", label: "Rankings" },
       { id: "what-youll-learn", label: "What You'll Learn" },
-      { id: "common-job-titles", label: "Career Outcomes" },
-      { id: "top-companies", label: "Top Companies" },
+      { id: "career-outcomes", label: "Career Outcomes" },
       { id: "curriculum", label: "Curriculum" },
       { id: "why-stevens", label: "Why Stevens" },
       { id: "faculty", label: "Faculty" },
@@ -120,17 +117,11 @@ export function useSectionNavigation({
             (whatYoullLearn.description ||
               (whatYoullLearn.modules && whatYoullLearn.modules.length > 0))
           );
-        case "common-job-titles":
+        case "career-outcomes":
           return (
-            commonJobTitles &&
+            careerOutcomes &&
             ((career && career.description) ||
               (career && career.jobTitles && career.jobTitles.length > 0))
-          );
-        case "top-companies":
-          return (
-            topCompanies &&
-            topCompanies.companies &&
-            topCompanies.companies.length > 0
           );
         case "curriculum":
           return (
@@ -218,8 +209,7 @@ export function useSectionNavigation({
     videoSection,
     career,
     whatYoullLearn,
-    commonJobTitles,
-    topCompanies,
+    careerOutcomes,
     whyStevens,
     curriculum,
     studentSpotlight,

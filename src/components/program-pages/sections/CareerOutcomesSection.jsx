@@ -1,4 +1,5 @@
 import React, { forwardRef, useMemo } from "react";
+import { Check, TrendingUp } from "lucide-react";
 import { Section } from "../primitives";
 
 function extractParagraphsFromHtml(html = "", maxParagraphs = 1) {
@@ -44,39 +45,56 @@ function formatSalaryDisplay(value) {
 }
 
 /**
- * JobTitlesSection - Common Job Titles table with salary data
+ * CareerOutcomesSection - Career outcomes with job titles/salary OR company logos
  *
- * Design: CPE Brand Guidelines - Table with salary bars
+ * Design: CPE Brand Guidelines
+ *
+ * Variants:
+ * - "table" (default): Table with salary bars
+ * - "logos": 2x3 grid of company logos
+ *
  * Features:
  * - Intro text with program code
- * - Table showing job titles, employment numbers (optional), and salary
- * - Visual salary comparison bars (relative to max salary)
+ * - Table showing job titles and salary (variant="table")
+ * - Company logo grid (variant="logos")
  * - Source citation
  *
  * Used in: Both Degree and Certificate pages
  *
- * @param {Object} commonJobTitles - Section configuration
- * @param {string} commonJobTitles.title - Section title
+ * @param {Object} careerOutcomes - Section configuration
+ * @param {string} careerOutcomes.title - Section title
  * @param {Object} career - Career data containing job titles
  * @param {Array} career.jobTitles - Array of job objects
- * @param {string} career.jobTitles[].title - Job title
- * @param {string} career.jobTitles[].salary - Salary string (e.g., "$120,000")
- * @param {string} career.jobTitles[].employed - Employment count (optional)
  * @param {string} career.source - Data source citation
  * @param {string} programCode - Program code for display (e.g., "MBA")
+ * @param {string} variant - "table" (default) or "logos"
+ * @param {Object} topCompanies - Company data for logos variant
  */
-export const JobTitlesSection = forwardRef(function JobTitlesSection(
-  { commonJobTitles, career, programCode, isCertificate = false },
+export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
+  {
+    careerOutcomes,
+    career,
+    programCode,
+    isCertificate = false,
+    variant = "table",
+    topCompanies,
+  },
   ref
 ) {
-  if (!commonJobTitles || !career) return null;
+  if (!careerOutcomes || !career) return null;
 
   const hasJobTitles =
     Array.isArray(career.jobTitles) && career.jobTitles.length > 0;
   const hasIntroHtml =
     typeof career.description === "string" &&
     career.description.trim().length > 0;
-  if (!hasJobTitles && !hasIntroHtml) return null;
+  const hasLogos =
+    variant === "logos" &&
+    topCompanies?.companies &&
+    Array.isArray(topCompanies.companies) &&
+    topCompanies.companies.length > 0;
+
+  if (!hasJobTitles && !hasIntroHtml && !hasLogos) return null;
 
   const maxIntroParagraphs = useMemo(() => {
     if (isCertificate) return 2;
@@ -90,8 +108,8 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
   }, [career.description, hasIntroHtml, maxIntroParagraphs]);
 
   const { top: titleTop, bottom: titleBottom } = useMemo(
-    () => splitTitleForTwoLineDisplay(commonJobTitles.title),
-    [commonJobTitles.title]
+    () => splitTitleForTwoLineDisplay(careerOutcomes.title),
+    [careerOutcomes.title]
   );
 
   const kicker = useMemo(() => {
@@ -142,50 +160,136 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
 
   return (
     <Section
-      id="common-job-titles"
+      id="career-outcomes"
       title={null}
-      bgClassName="bg-stevens-white"
+      bgClassName="bg-stevens-light-gray"
       ref={ref}
     >
-      {/* Header (match screenshot style: two-line title + divider) */}
-      <div className="mb-stevens-2xl">
-        <h2 className="font-stevens-headers uppercase tracking-tight leading-none">
-          <span className="block text-stevens-black font-light text-4xl md:text-5xl">
-            {(titleTop || commonJobTitles.title || "").toUpperCase()}
-          </span>
-          {titleBottom && (
-            <span className="block text-stevens-gray font-light text-4xl md:text-5xl mt-2">
-              {titleBottom.toUpperCase()}
+      {/* Header - only show for non-logos variant */}
+      {variant !== "logos" && (
+        <div className="mb-stevens-2xl">
+          <h2 className="font-stevens-headers uppercase tracking-tight leading-none">
+            <span className="block text-stevens-black font-light text-4xl md:text-5xl">
+              {(titleTop || careerOutcomes.title || "").toUpperCase()}
             </span>
-          )}
-        </h2>
-        <div className="mt-stevens-xl h-px w-full bg-stevens-light-gray" />
-      </div>
+            {titleBottom && (
+              <span className="block text-stevens-gray font-light text-4xl md:text-5xl mt-2">
+                {titleBottom.toUpperCase()}
+              </span>
+            )}
+          </h2>
+          <div className="mt-stevens-xl h-px w-full bg-stevens-gray/30" />
+        </div>
+      )}
 
-      <div className="flex flex-col lg:flex-row gap-stevens-gap-lg items-start">
-        {/* Left: Kicker + Narrative */}
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+        {/* Left: Title + LeadText + Bullets OR Legacy Narrative */}
         <div className="w-full lg:w-5/12">
-          <p className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-red mb-5">
-            Career Outcomes
-          </p>
+          {/* New Bullet Layout (when careerOutcomes.bullets exists) */}
+          {careerOutcomes.bullets && careerOutcomes.bullets.length > 0 ? (
+            <>
+              {/* Section Title - for logos variant */}
+              {variant === "logos" && (
+                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-black uppercase tracking-tight mb-6">
+                  Career Outcomes
+                </h2>
+              )}
 
-          {introHtml ? (
-            <div
-              className="prose max-w-none text-stevens-dark-gray leading-relaxed [&_p]:mb-6 last:[&_p]:mb-0"
-              dangerouslySetInnerHTML={{ __html: introHtml }}
-            />
+              {/* Lead Text */}
+              {careerOutcomes.leadText && (
+                <p className="text-lg text-stevens-dark-gray leading-relaxed mb-8">
+                  {careerOutcomes.leadText}
+                </p>
+              )}
+
+              {/* Icon Bullets */}
+              <div className="space-y-5">
+                {careerOutcomes.bullets.map((bullet, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-stevens-red flex items-center justify-center mt-0.5">
+                      {bullet.icon === "trend" ? (
+                        <TrendingUp
+                          className="w-3.5 h-3.5 text-white"
+                          strokeWidth={2.5}
+                        />
+                      ) : (
+                        <Check
+                          className="w-3.5 h-3.5 text-white"
+                          strokeWidth={3}
+                        />
+                      )}
+                    </div>
+                    {/* Text */}
+                    <p
+                      className="text-stevens-dark-gray leading-relaxed [&_strong]:font-bold [&_strong]:text-stevens-black"
+                      dangerouslySetInnerHTML={{ __html: bullet.text }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
           ) : (
-            <div className="space-y-6 text-stevens-dark-gray leading-relaxed">
-              <p className="text-stevens-base">
-                Earning an online {programCode.toUpperCase()} prepares you for
-                career paths across industries.
+            /* Legacy Layout (fallback) */
+            <>
+              <p className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-red mb-5">
+                Career Outcomes
               </p>
-            </div>
+
+              {introHtml ? (
+                <div
+                  className="prose max-w-none text-stevens-dark-gray leading-relaxed [&_p]:mb-6 last:[&_p]:mb-0"
+                  dangerouslySetInnerHTML={{ __html: introHtml }}
+                />
+              ) : (
+                <div className="space-y-6 text-stevens-dark-gray leading-relaxed">
+                  <p className="text-stevens-base">
+                    Earning an online {programCode.toUpperCase()} prepares you
+                    for career paths across industries.
+                  </p>
+                </div>
+              )}
+            </>
           )}
         </div>
 
-        {/* Right: Keep the existing table presentation */}
-        {hasJobTitles && (
+        {/* Right: Table OR Logo Grid based on variant */}
+        {variant === "logos" && hasLogos ? (
+          /* Logo Grid Variant - 2 columns x 3 rows */
+          <div className="w-full lg:w-7/12">
+            {/* Logo Grid Title */}
+            <h3 className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-black mb-6 text-center">
+              Where our graduates work
+            </h3>
+            <div className="grid grid-cols-2 gap-4 lg:gap-6">
+              {topCompanies.companies.slice(0, 6).map((company, index) => (
+                <div
+                  key={company.name || index}
+                  className="bg-white p-6 lg:p-8 flex items-center justify-center min-h-[120px] lg:min-h-[160px] border border-stevens-gray/20 hover:border-stevens-red/20 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                >
+                  {company.logo ? (
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="max-h-12 lg:max-h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling &&
+                          (e.target.nextSibling.style.display = "block");
+                      }}
+                    />
+                  ) : (
+                    <span className="text-sm font-medium text-stevens-gray">
+                      {company.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : hasJobTitles ? (
+          /* Table Variant - Salary bars */
           <div className="w-full lg:w-7/12">
             {/* Card list table (match screenshot) */}
             <div className="w-full">
@@ -218,7 +322,7 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
                     <div
                       key={job.title || index}
                       className={[
-                        "bg-stevens-white border border-stevens-light-gray rounded-stevens-md px-6 shadow-sm",
+                        "bg-white border border-stevens-gray/20 rounded-stevens-md px-6 shadow-sm",
                         tier === "primary"
                           ? "py-6"
                           : tier === "secondary"
@@ -266,7 +370,7 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
                         >
                           <div
                             className={[
-                              "w-full rounded-full bg-stevens-light-gray",
+                              "w-full rounded-full bg-stevens-gray/20",
                               tier === "primary"
                                 ? "h-2.5"
                                 : tier === "secondary"
@@ -278,9 +382,9 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
                               className={[
                                 "rounded-full",
                                 tier === "primary"
-                                  ? "bg-stevens-black"
+                                  ? "bg-stevens-red"
                                   : tier === "secondary"
-                                  ? "bg-stevens-dark-gray"
+                                  ? "bg-stevens-red"
                                   : "bg-stevens-gray",
                                 tier === "primary"
                                   ? "h-2.5"
@@ -299,11 +403,11 @@ export const JobTitlesSection = forwardRef(function JobTitlesSection(
               </div>
             </div>
           </div>
-        )}
+        ) : null}
       </div>
 
-      {/* Source: match screenshot (bottom, subtle) */}
-      {career.source && (
+      {/* Source: match screenshot (bottom, subtle) - hidden for logos variant */}
+      {career.source && variant !== "logos" && (
         <div className="mt-stevens-3xl">
           <p className="text-stevens-sm text-stevens-gray/80">
             Source: {career.source}

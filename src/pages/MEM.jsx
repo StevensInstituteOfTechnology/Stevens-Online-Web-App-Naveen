@@ -207,8 +207,29 @@ const programData = {
       },
     ],
   },
-  commonJobTitles: {
-    title: "Prospective Occupations for Online MEM Graduates",
+  careerOutcomes: {
+    title: "Career Outcomes",
+    variant: "logos",
+    leadText:
+      "Transition from technical expert to engineering leader with skills that drive organizational success.",
+    bullets: [
+      {
+        icon: "check",
+        text: "Qualify for leadership roles such as <strong>Engineering Manager</strong>, <strong>Project Manager</strong>, and <strong>Operations Director</strong>.",
+      },
+      {
+        icon: "check",
+        text: "Bridge the gap between <strong>technical teams and business strategy</strong> with cross-functional management skills.",
+      },
+      {
+        icon: "check",
+        text: "Command competitive salaries with median earnings around <strong>$160,000</strong> for engineering managers.",
+      },
+      {
+        icon: "trend",
+        text: "Capitalize on demand for leaders who combine <strong>engineering expertise with business acumen</strong>.",
+      },
+    ],
     description:
       "Explore the diverse career opportunities available to graduates of our Online Master of Engineering in Engineering Management program.",
     jobs: [

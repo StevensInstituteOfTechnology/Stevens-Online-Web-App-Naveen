@@ -211,8 +211,29 @@ const programData = {
       },
     ],
   },
-  commonJobTitles: {
-    title: "Prospective Occupations for Online MSCS Graduates",
+  careerOutcomes: {
+    title: "Career Outcomes",
+    variant: "logos",
+    leadText:
+      "Prepare for high-growth leadership and specialized roles in top-tier tech.",
+    bullets: [
+      {
+        icon: "check",
+        text: "Qualify for advanced, well-compensated positions such as <strong>Computer Science Managers</strong> and specialized individual contributors.",
+      },
+      {
+        icon: "check",
+        text: "Gain expertise in high-demand areas like <strong>software engineering, machine learning</strong>, and database management.",
+      },
+      {
+        icon: "check",
+        text: "Leverage a skill set that helps secure roles at premier companies like Google and Meta, with potential earnings around <strong>$300,000</strong>.",
+      },
+      {
+        icon: "trend",
+        text: "Benefit from industry growth forecasted by the BLS to be <strong>much faster than average</strong>.",
+      },
+    ],
     description:
       "Explore the diverse career opportunities available to graduates of our Online Master of Science in Computer Science program.",
     jobs: [
