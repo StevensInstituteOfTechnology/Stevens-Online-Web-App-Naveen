@@ -36,7 +36,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
         <div className="lg:col-span-4">
           {/* Program Type Label */}
           {overview.programType && (
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-3 mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -45,11 +45,11 @@ export const OverviewSection = forwardRef(function OverviewSection(
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-4 h-4 text-stevens-gray"
+                className="w-5 h-5 text-stevens-red"
               >
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
-              <span className="text-xs uppercase tracking-[0.2em] text-stevens-gray font-medium">
+              <span className="text-sm uppercase tracking-[0.2em] text-stevens-red font-medium">
                 {overview.programType}
               </span>
             </div>

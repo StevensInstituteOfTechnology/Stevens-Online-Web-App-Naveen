@@ -32,11 +32,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
   const [heroStat, ...secondaryStats] = rankings;
 
   return (
-    <section
-      id="rankings"
-      ref={ref}
-      className="bg-stevens-light-gray scroll-mt-20"
-    >
+    <section id="rankings" ref={ref} className="bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl py-stevens-section lg:py-stevens-gap-8xl">
         {/* Section Title */}
         <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black tracking-tight text-center mb-stevens-3xl lg:mb-stevens-gap-5xl">
@@ -54,7 +50,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
             <div className="flex-grow">
               {/* Hero Number - Dynamic font size based on container width */}
               <p
-                className="font-stevens-display font-bold text-stevens-black leading-[0.85] tracking-tighter"
+                className="font-stevens-display font-bold text-stevens-red leading-[0.85] tracking-tighter"
                 style={{ fontSize: "clamp(2.5rem, 10vw, 8rem)" }}
               >
                 {heroStat.ranking}
