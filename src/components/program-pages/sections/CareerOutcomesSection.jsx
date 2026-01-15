@@ -182,9 +182,15 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
         </div>
       )}
 
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
         {/* Left: Title + LeadText + Bullets OR Legacy Narrative */}
-        <div className="w-full lg:w-5/12">
+        <div
+          className={`w-full lg:w-5/12 ${
+            careerOutcomes.bullets && careerOutcomes.bullets.length > 0
+              ? "lg:self-center"
+              : ""
+          }`}
+        >
           {/* New Bullet Layout (when careerOutcomes.bullets exists) */}
           {careerOutcomes.bullets && careerOutcomes.bullets.length > 0 ? (
             <>
@@ -232,7 +238,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
           ) : (
             /* Legacy Layout (fallback) */
             <>
-              <p className="font-stevens-headers font-bold text-sm uppercase tracking-wider text-stevens-red mb-5">
+              <p className="font-stevens-headers font-bold text-2xl uppercase tracking-wider text-stevens-red mb-5">
                 Career Outcomes
               </p>
 
@@ -295,10 +301,10 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
             <div className="w-full">
               {/* Header row */}
               <div className="flex items-center justify-between px-2 mb-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-stevens-gray">
+                <p className="text-xs font-semibold uppercase tracking-wider text-stevens-red">
                   Role Title
                 </p>
-                <p className="text-xs font-semibold uppercase tracking-wider text-stevens-gray">
+                <p className="text-xs font-semibold uppercase tracking-wider text-stevens-red">
                   Median Annual Earnings
                 </p>
               </div>

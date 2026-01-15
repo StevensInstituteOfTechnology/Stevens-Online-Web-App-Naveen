@@ -57,9 +57,9 @@ const programData = {
         subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
       },
       {
-        value: "36-45",
-        label: "Credits",
-        subtext: "$1,395 per credit",
+        value: "#1",
+        label: "MBA in NJ",
+        subtext: "U.S. News & World Report",
       },
       {
         title: "AACSB Accredited",
@@ -136,13 +136,7 @@ const programData = {
       source:
         "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
     },
-    {
-      ranking: "#14",
-      description: "FOR ECONOMIC RETURN",
-      source:
-        "Stevens ranked #14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).",
-      note: "2",
-    },
+
     {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
@@ -732,7 +726,8 @@ const programData = {
   careerOutcomes: {
     title: "Career Outcomes",
     variant: "logos",
-    leadText: "Lead with data, strategy, and innovation in technology-driven industries.",
+    leadText:
+      "Lead with data, strategy, and innovation in technology-driven industries.",
     bullets: [
       {
         icon: "check",

@@ -257,13 +257,13 @@ function FacultyCard({ member }) {
       className="bg-stevens-light-gray overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
       style={{ clipPath }}
     >
-      {/* Photo */}
-      <div className="relative aspect-square overflow-hidden">
+      {/* Photo - fixed height for consistent card sizing */}
+      <div className="relative overflow-hidden h-[280px]">
         {member.image ? (
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-center"
             loading="lazy"
           />
         ) : (

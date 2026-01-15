@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react";
-import { Badge } from "../../ui/badge";
 import { Button } from "../../ui/button";
 import { Section } from "../primitives";
 
@@ -62,43 +61,18 @@ export const OverviewSection = forwardRef(function OverviewSection(
             </h2>
           )}
 
-          {/* Tagline */}
-          {overview.tagline && (
-            <p className="font-stevens-body text-xl md:text-2xl text-stevens-dark-gray/80 font-light mb-8">
-              {overview.tagline}
-            </p>
-          )}
+         
 
           {/* Divider */}
-          <div className="w-20 h-0.5 bg-stevens-gray/30 mb-8" />
+          <div className="w-20 h-0.5 bg-stevens-red mb-8" />
 
           {/* Description */}
           {overview.description && (
             <div
-              className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed mb-10"
+              className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed mb-10 [&_strong]:text-stevens-black [&_b]:text-stevens-black"
               dangerouslySetInnerHTML={{ __html: overview.description }}
             />
           )}
-          {/* Key Skills Developed */}
-          {overview.keySkills && overview.keySkills.length > 0 && (
-            <div className="mt-10">
-              <h3 className="font-stevens-headers font-bold text-stevens-xl uppercase tracking-wider text-stevens-black mb-4">
-                Key Skills Developed
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {overview.keySkills.map((skill) => (
-                  <Badge
-                    key={skill}
-                    variant="outline-dark"
-                    className="text-xs font-medium py-2 px-4 border border-stevens-black bg-white text-stevens-black rounded-full"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Concentration Options - Two Column Grid */}
           {overview.concentrations && overview.concentrations.length > 0 && (
             <div className="mt-10">
@@ -117,6 +91,16 @@ export const OverviewSection = forwardRef(function OverviewSection(
               </div>
             </div>
           )}
+
+          {/* Overview Image */}
+          <div className="mt-10">
+            <img
+              src={overview.image || "/assets/images/home/home-1.webp"}
+              alt={overview.imageAlt || "Student learning online"}
+              className="w-full h-auto rounded-sm shadow-md"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* Right Column - Enhanced Quick Facts Card */}

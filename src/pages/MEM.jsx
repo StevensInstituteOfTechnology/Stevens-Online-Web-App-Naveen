@@ -83,7 +83,7 @@ const programData = {
     headline: "Lead engineering teams with business acumen",
     tagline: "Bridge technical expertise with strategic management skills.",
     description: `
-      <p class="font-medium text-lg">The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for <strong>leadership roles</strong> by combining <strong>technical expertise</strong> with <strong>business management principles</strong>. Through an innovative curriculum that bridges engineering and business, you'll develop <strong>analytical and social intelligence</strong> to manage projects effectively.</p>
+      <p class="font-medium text-lg">The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for <strong>leadership roles</strong> by combining technical expertise with <strong>business management principles</strong>. Through an innovative curriculum that bridges engineering and business, you'll develop analytical and social intelligence to manage projects effectively.</p>
       <p class="font-medium text-lg mt-6">Customize your learning with core coursework in management, data science and engineering analysis, and tailor electives to your interests. With our new <strong>ASAP application</strong>, you can bypass the traditional application process and secure your spot in the program by successfully completing two trial courses.</p>
     `,
     keySkills: [
@@ -113,12 +113,7 @@ const programData = {
       source:
         "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
     },
-    {
-      ranking: "100%",
-      description: "Employment",
-      source:
-        "Three months after graduation, 100% of MEM graduates in the Class of 2023 accepted job offers.¹",
-    },
+    
     {
       ranking: "No. 1",
       description: "In N.J.",

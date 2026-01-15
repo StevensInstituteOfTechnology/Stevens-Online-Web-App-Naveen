@@ -114,12 +114,7 @@ const programData = {
       source:
         "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024).",
     },
-    {
-      ranking: "7x",
-      description: "Winner",
-      source:
-        "U.S. Distance Learning Association’s 21st Century Award for Best Practices in Distance Learning.",
-    },
+ 
     {
       ranking: "#12",
       description: "For Best Career Placement",
