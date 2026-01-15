@@ -678,40 +678,40 @@ export default function Home() {
                 #1 In NJ for
                 <br />
                 Graduate Earnings
-              </h2>
+            </h2>
               <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mb-4">
                 U.S. Dept. of Education 2025
-              </p>
+            </p>
               <a
                 href="https://www.stevens.edu/news/stevens-ranks-no-1-in-new-jersey-for-graduate-earnings-in-new-federal-salary"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-stevens-red transition-colors font-medium group"
-              >
-                Read the full report
+                  >
+                    Read the full report
                 <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </motion.div>
 
             {/* Horizontal Divider */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-              viewport={{ once: true }}
+                viewport={{ once: true }}
               className="w-full h-px bg-[#333333] origin-center"
             />
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3">
               {/* Stat 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
-              >
+                >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight ">
                     #1
@@ -725,18 +725,18 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  U.S. News & World Report 2025
-                </p>
-              </motion.div>
+                    U.S. News & World Report 2025
+                  </p>
+                </motion.div>
 
               {/* Stat 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
-              >
+                >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     7x
@@ -750,18 +750,18 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  USDLA Distance Learning
-                </p>
-              </motion.div>
+                    USDLA Distance Learning
+                  </p>
+                </motion.div>
 
               {/* Stat 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px]"
-              >
+                >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     #9
@@ -773,9 +773,9 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  Based on 4-year degree cost
-                </p>
-              </motion.div>
+                    Based on 4-year degree cost
+                  </p>
+                </motion.div>
             </div>
           </div>
         </section>

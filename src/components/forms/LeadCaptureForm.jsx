@@ -133,12 +133,12 @@ export default function LeadCaptureForm({
           forms.forEach((form) => {
             // Add data attribute to mark this as RFI form
             form.setAttribute("data-form-type", "rfi");
-
+            
             // Stop propagation to prevent interference with other forms
             const submitHandler = (e) => {
               e.stopPropagation();
               e.stopImmediatePropagation();
-
+              
               // Track after a short delay to ensure submission went through
               setTimeout(() => {
                 // GTM tracking
@@ -154,7 +154,7 @@ export default function LeadCaptureForm({
                 });
               }, 500);
             };
-
+            
             form.addEventListener("submit", submitHandler, true); // Use capture phase
           });
 

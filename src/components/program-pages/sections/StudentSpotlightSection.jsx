@@ -1,46 +1,162 @@
-import React, { forwardRef } from 'react';
-import { User } from 'lucide-react';
-import { Section } from '../primitives';
+import React, { forwardRef } from "react";
 
 /**
- * StudentSpotlightSection - Student testimonial quote
- * 
- * Design: CPE Brand Guidelines - Centered quote with attribution
+ * StudentSpotlightSection - Student testimonial with background image
+ *
+ * Design: Card overlay on full-width background image (Penn State style)
  * Features:
- * - User icon header
- * - Blockquote with italic styling
- * - Student name citation
- * 
+ * - Desktop (>=768px): Background image with card overlay, aspect-ratio based
+ * - Mobile (<768px): Stacked layout - image on top, dark content below
+ * - Quote marks with attribution
+ *
  * Used in: Degree pages only (not typically shown on certificate pages)
- * 
+ *
  * @param {Object} studentSpotlight - Student spotlight data
  * @param {string} studentSpotlight.quote - Testimonial quote text
  * @param {string} studentSpotlight.name - Student name for attribution
+ * @param {string} studentSpotlight.title - Optional title/program info
+ * @param {string} studentSpotlight.backgroundImage - Background image URL
+ * @param {string} studentSpotlight.bgPosition - CSS background-position (default: "center 40%")
+ * @param {string} studentSpotlight.cardPosition - "left" or "right" (default: "right")
  */
-export const StudentSpotlightSection = forwardRef(function StudentSpotlightSection(
-  { studentSpotlight },
-  ref
-) {
-  if (!studentSpotlight) return null;
+// Default background image for testimonial section
+const DEFAULT_BACKGROUND = "/assets/images/shared/stevens-campus.webp";
 
-  return (
-    <Section
-      id="student-spotlight"
-      bgClassName="bg-stevens-light-gray"
-      ref={ref}
-    >
-      <div className="mx-auto text-center">
-        <User className="w-16 h-16 mx-auto mb-stevens-md text-stevens-red" />
-        <h2 className="font-stevens-display text-stevens-3xl font-light mb-stevens-md uppercase tracking-wide">
-          Student Testimonial Spotlight
-        </h2>
-        <blockquote className="text-stevens-2xl leading-snug italic text-stevens-dark-gray mb-stevens-md">
-          "{studentSpotlight.quote}"
-        </blockquote>
-        <cite className="not-italic font-stevens-semibold text-stevens-dark-gray">
-          - {studentSpotlight.name}
-        </cite>
-      </div>
-    </Section>
-  );
-});
+export const StudentSpotlightSection = forwardRef(
+  function StudentSpotlightSection({ studentSpotlight }, ref) {
+    if (!studentSpotlight) return null;
+
+    const cardPosition = studentSpotlight.cardPosition || "right";
+    const isRight = cardPosition === "right";
+    const backgroundImage =
+      studentSpotlight.backgroundImage || DEFAULT_BACKGROUND;
+
+    return (
+      <section
+        id="student-spotlight"
+        ref={ref}
+        className="scroll-mt-20 overflow-hidden"
+      >
+        {/* Mobile Layout (<768px): Stacked - Image on top, content below */}
+        <div className="md:hidden">
+          {/* Background Image - Fixed height on mobile */}
+          <div
+            className="h-[300px] sm:h-[400px] bg-cover"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundPosition: studentSpotlight.bgPosition || "center 40%",
+            }}
+          />
+
+          {/* Content - Dark background */}
+          <div className="bg-stevens-dark-gray px-6 py-10 sm:px-8 sm:py-12">
+            {/* Opening Quote Mark */}
+            <svg
+              className="w-8 h-8 sm:w-10 sm:h-10 text-stevens-light-gray/60 mb-4"
+              viewBox="0 0 19 20"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+              />
+            </svg>
+
+            {/* Quote Text */}
+            <blockquote className="font-stevens-display text-xl sm:text-2xl leading-relaxed font-light text-white mb-6">
+              {studentSpotlight.quote}
+              {/* Closing Quote Mark */}
+              <svg
+                className="inline-block w-6 h-6 sm:w-8 sm:h-8 text-stevens-light-gray/60 ml-2 align-text-bottom"
+                viewBox="0 0 19 20"
+                aria-hidden="true"
+                style={{ transform: "rotate(180deg)" }}
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+                />
+              </svg>
+            </blockquote>
+
+            {/* Attribution */}
+            <p className="text-white">
+              <span className="font-bold">&mdash; {studentSpotlight.name}</span>
+              {studentSpotlight.title && (
+                <span className="text-stevens-light-gray">
+                  , {studentSpotlight.title}
+                </span>
+              )}
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop Layout (>=768px): Background image with card overlay */}
+        {/* Using aspect-ratio + responsive bg-position to show more of the image */}
+        <div className="hidden md:block relative aspect-[16/9] lg:aspect-[21/9] xl:aspect-[2.5/1]">
+          {/* Background Image with responsive position */}
+          <div
+            className="absolute inset-0 bg-cover"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundPosition: studentSpotlight.bgPosition || "center 40%",
+            }}
+          >
+            {/* Subtle overlay for better card contrast */}
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+
+          {/* Content Container */}
+          <div className="relative z-10 max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl h-full flex items-center">
+            {/* Testimonial Card */}
+            <div
+              className={`
+                w-2/3 lg:w-1/2 xl:w-5/12
+                ${isRight ? "ml-auto" : "mr-auto"}
+              `}
+            >
+              <div className="bg-white/95 backdrop-blur-sm p-8 lg:p-10 shadow-2xl">
+                {/* Opening Quote Mark */}
+                <svg
+                  className="w-10 h-10 lg:w-12 lg:h-12 text-stevens-red mb-4"
+                  viewBox="0 0 19 20"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M11.4,10.3L15.3,0h3.3l-2.5,9.5H19V20h-7.6V10.3z M0,10.3L3.9,0h3.3L4.7,9.5h2.9V20H0V10.3z"
+                  />
+                </svg>
+
+                {/* Quote Text */}
+                <blockquote className="font-stevens-display text-xl lg:text-2xl xl:text-[1.65rem] leading-relaxed font-light text-stevens-dark-gray mb-6">
+                  {studentSpotlight.quote}
+                </blockquote>
+
+                {/* Attribution */}
+                <div className="border-t border-stevens-gray/20 pt-4">
+                  <p className="text-stevens-dark-gray">
+                    <span className="font-bold">
+                      &mdash; {studentSpotlight.name}
+                    </span>
+                    {studentSpotlight.title && (
+                      <span className="text-stevens-gray">
+                        , {studentSpotlight.title}
+                      </span>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+);
