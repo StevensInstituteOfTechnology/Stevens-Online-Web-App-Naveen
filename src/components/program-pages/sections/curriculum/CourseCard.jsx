@@ -122,9 +122,11 @@ export const CourseCard = ({
             // Degree simple format
             <div className="space-y-2">
               {course.description && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  {course.description}
-                </p>
+                <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed space-y-2">
+                  {course.description.split("\n\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
               )}
               {course.note && (
                 <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed italic mt-2">

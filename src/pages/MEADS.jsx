@@ -172,7 +172,8 @@ const programData = {
   careerOutcomes: {
     title: "Career Outcomes",
     variant: "logos",
-    leadText: "Build and deploy AI-powered systems that transform industries and drive innovation.",
+    leadText:
+      "Build and deploy AI-powered systems that transform industries and drive innovation.",
     bullets: [
       {
         icon: "check",
@@ -229,7 +230,7 @@ const programData = {
       },
     ],
   },
-// ==================================================================
+  // ==================================================================
   whatYoullLearn: {
     title: "What You Will Learn",
     description: `You'll gain the practical experience and technical foundation needed to apply data science across real-world challenges:`,
@@ -287,7 +288,7 @@ const programData = {
       },
     ],
   },
-// ==================================================================
+  // ==================================================================
   whyStevens: {
     title: "Why Choose Stevens?",
     description: `
@@ -344,7 +345,7 @@ const programData = {
                 code: "MA 521 / FA 590",
                 name: "Statistical Foundations of Data Science OR Statistical Learning",
                 description:
-                  "MA 521: This course provides a comprehensive foundation in statistical methods for data science. Topics include probability theory, statistical inference, hypothesis testing, and regression analysis. FA 590: An advanced course focusing on statistical learning methods and their applications. Students explore modern statistical techniques for prediction and classification.",
+                  "MA 521: This course provides a comprehensive foundation in statistical methods for data science. Topics include probability theory, statistical inference, hypothesis testing, and regression analysis.\n\nFA 590: An advanced course focusing on statistical learning methods and their applications. Students explore modern statistical techniques for prediction and classification.",
               },
               {
                 code: "CS 583",
@@ -491,13 +492,13 @@ const programData = {
       },
     ],
   },
-// ==================================================================
+  // ==================================================================
   admissions: {
-      options: [
-        {
-          title: "Accelerated App",
-          featured: false,
-          description: `<p>
+    options: [
+      {
+        title: "Accelerated App",
+        featured: false,
+        description: `<p>
             Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
           </p>
           <ul class="list-disc pl-5 mt-2 space-y-1">
@@ -506,14 +507,14 @@ const programData = {
             <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
           </ul>
           <p class="text-sm text-stevens-dark-gray mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
-          buttonText: "Apply Now",
-          url: "/accelerated-application",
+        buttonText: "Apply Now",
+        url: "/accelerated-application",
         buttonGrayOut: false,
       },
     ],
-    },
-    // ==================================================================
-    keyDates: {
+  },
+  // ==================================================================
+  keyDates: {
     headers: [
       "Term",
       "Early Submit",
@@ -521,27 +522,27 @@ const programData = {
       "Final Submit",
       "Start of Classes",
     ],
-      rows: [
-        { 
-          event: KEY_DATES.TERM.name, 
-          date: KEY_DATES.EARLY_SUBMIT.date, 
-          details: KEY_DATES.EARLY_SUBMIT.details,
-          priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-          priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-          finalDate: KEY_DATES.FINAL_SUBMIT.date,
+    rows: [
+      {
+        event: KEY_DATES.TERM.name,
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        details: KEY_DATES.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: KEY_DATES.START_OF_CLASSES.date,
       },
-      ],
+    ],
     footnote:
       "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
-    },
-    // ==================================================================
-    tuition: {
-      cards: [
-        { value: "$800", label: "Per Credit" },
+  },
+  // ==================================================================
+  tuition: {
+    cards: [
+      { value: "$800", label: "Per Credit" },
       { value: "$24,000", label: "Total Program Cost" },
-      ],
-      description: `
+    ],
+    description: `
         <h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
         <p class="font-stevens-body mb-stevens-md">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
         
@@ -567,9 +568,9 @@ const programData = {
         
         <p class="text-xs text-stevens-dark-gray mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
       `,
-    },
-    // ==================================================================
-    events: {
+  },
+  // ==================================================================
+  events: {
     title: "On-Demand Content",
     description:
       "At Stevens, we host a variety of events for prospective and current students covering topics such as application strategy, program information, the student experience and our online platform. Our on-demand content is instantly available, so you can watch at your convenience.",
@@ -605,6 +606,8 @@ const programData = {
       },
     ],
   },
+  // ==================================================================
+  accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
 };
 
 export default function MEADS() {
@@ -624,10 +627,10 @@ export default function MEADS() {
     ...programData.hero,
     bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
-  
+
   return (
     <PageContextProvider pageType="program" pageName="MEADS">
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="meads"
         programName="Master of Engineering in Applied Data Science"
         programType="degree"
