@@ -162,7 +162,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
     <Section
       id="career-outcomes"
       title={null}
-      bgClassName="bg-stevens-light-gray"
+      bgClassName={variant === "logos" ? "bg-stevens-light-gray" : "bg-white"}
       ref={ref}
     >
       {/* Header - only show for non-logos variant */}
@@ -178,7 +178,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
               </span>
             )}
           </h2>
-          <div className="mt-stevens-xl h-px w-full bg-stevens-gray/30" />
+          <div className="mt-stevens-xl h-px w-full bg-stevens-gray/20" />
         </div>
       )}
 
@@ -328,12 +328,12 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
                     <div
                       key={job.title || index}
                       className={[
-                        "bg-white border border-stevens-gray/20 rounded-stevens-md px-6 shadow-sm",
+                        "bg-stevens-light-gray border border-stevens-gray/10 rounded-stevens-md",
                         tier === "primary"
-                          ? "py-6"
+                          ? "py-6 px-6"
                           : tier === "secondary"
-                          ? "py-5"
-                          : "py-4",
+                          ? "py-5 px-6"
+                          : "py-3 px-5",
                       ].join(" ")}
                     >
                       <div className="flex items-start justify-between gap-6">
@@ -366,7 +366,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
                       </div>
 
                       {/* Bar */}
-                      <div className="mt-4">
+                      <div className={tier === "standard" ? "mt-2" : "mt-4"}>
                         <div
                           className={[
                             // Track width hierarchy (starting from item #3)
@@ -376,7 +376,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
                         >
                           <div
                             className={[
-                              "w-full rounded-full bg-stevens-gray/20",
+                              "w-full rounded-full bg-stevens-gray/30",
                               tier === "primary"
                                 ? "h-2.5"
                                 : tier === "secondary"

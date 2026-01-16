@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
+import Asterism from "@/components/shared/brand/Asterism";
 
 /**
  * HeroSection - Split-layout hero for Program and Certificate pages
@@ -235,7 +236,9 @@ export function HeroSection({
         <div
           className={`order-3 lg:order-2 lg:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md lg:px-stevens-xl py-stevens-lg lg:py-stevens-2xl`}
         >
+          
           <div className="w-full max-w-md mx-auto lg:mx-0 animate-in slide-in-from-bottom lg:slide-in-from-right duration-700">
+          
             {/* Form Header */}
             <div className="text-center mb-stevens-md lg:mb-stevens-lg">
               <h2
@@ -256,14 +259,20 @@ export function HeroSection({
             />
 
             {/* SINGLE Lead Capture Form Instance */}
-            <LeadCaptureForm
-              sourcePage={effectiveSourcePage}
-              programOfInterest={programCode}
-              hideHeader={true}
-              theme={theme}
-            />
+           
+              <LeadCaptureForm
+                sourcePage={effectiveSourcePage}
+                programOfInterest={programCode}
+                hideHeader={true}
+                theme={theme}
+              />
+            
+            
           </div>
+          
+          
         </div>
+        
       </div>
     </section>
   );

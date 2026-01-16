@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { Button } from "../../ui/button";
 import { Section } from "../primitives";
+import { PromotionalCard } from "../../shared/PromotionalCard";
 
 /**
  * OverviewSection - Program overview with simplified Quick Facts card
@@ -61,8 +62,6 @@ export const OverviewSection = forwardRef(function OverviewSection(
             </h2>
           )}
 
-         
-
           {/* Divider */}
           <div className="w-20 h-0.5 bg-stevens-red mb-8" />
 
@@ -76,7 +75,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
           {/* Concentration Options - Two Column Grid */}
           {overview.concentrations && overview.concentrations.length > 0 && (
             <div className="mt-10">
-              <h3 className="font-stevens-headers font-bold text-stevens-xl uppercase tracking-wider text-stevens-black mb-4">
+              <h3 className="font-stevens-headers font-bold text-stevens-xl uppercase tracking-wider text-stevens-red mb-4">
                 Concentration Options
               </h3>
               <div className="grid grid-cols-2 gap-x-8 gap-y-3">
@@ -105,54 +104,14 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
         {/* Right Column - Enhanced Quick Facts Card */}
         <div className="lg:col-span-2">
-          <div className="bg-stevens-light-gray sticky  top-56 border border-stevens-gray/20 shadow-lg rounded-sm overflow-hidden">
-            {/* Card Content */}
-            <div className="p-6 lg:p-8">
-              {/* Card Title */}
-              <h3 className="font-stevens-headers font-bold text-stevens-xl text-stevens-black uppercase tracking-[0.15em] mb-6 mt-2">
-                Quick Facts
-              </h3>
-
-              {/* Divider */}
-              <div className="w-full h-px bg-stevens-gray/40 mb-6" />
-
-              {/* Term Start */}
-              {quickFacts?.termStart && (
-                <div className="mb-5">
-                  <p className="text-base uppercase tracking-wider text-stevens-gray font-medium mb-2">
-                    Upcoming Start
-                  </p>
-                  <p className="font-stevens-display text-3xl lg:text-4xl font-light text-stevens-black">
-                    {quickFacts.termStart}
-                  </p>
-                </div>
-              )}
-
-              {/* Tuition */}
-              {quickFacts?.tuition && (
-                <div className="mb-8">
-                  <p className="text-base uppercase tracking-wider text-stevens-gray font-medium mb-2">
-                    Program Tuition
-                  </p>
-                  <p className="font-stevens-display text-3xl lg:text-4xl font-bold text-stevens-red">
-                    {quickFacts.tuition}
-                  </p>
-                </div>
-              )}
-
-              {/* Apply Now Button */}
-              <Button
-                variant="default"
-                className="w-full py-4 text-base uppercase tracking-wider font-semibold shadow-md hover:shadow-lg transition-shadow"
-                onClick={() => {
-                  if (quickFacts?.applyUrl) {
-                    window.open(quickFacts.applyUrl, "_blank");
-                  }
-                }}
-              >
-                Apply Now
-              </Button>
-            </div>
+          {/* Promotional Card - Quick Facts with Image */}
+          <div className="mt-8 sticky top-56">
+            <PromotionalCard
+              quickFacts={quickFacts}
+              ctaText="APPLY NOW"
+              image="/assets/images/shared/lab.png"
+              imageAlt="Student in lab"
+            />
           </div>
         </div>
       </div>
