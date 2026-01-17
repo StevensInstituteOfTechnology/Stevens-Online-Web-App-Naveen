@@ -114,7 +114,7 @@ const programData = {
       source:
         "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024).",
     },
- 
+
     {
       ranking: "#12",
       description: "For Best Career Placement",
@@ -410,7 +410,7 @@ const programData = {
                 name: "Mobile Systems and Applications",
                 credits: 3,
                 description:
-                  "Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today's distributed systems. \"Cloud computing\" provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.",
+                  'Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today\'s distributed systems. "Cloud computing" provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.',
               },
               {
                 code: "CPE 595",
@@ -435,14 +435,14 @@ const programData = {
                 name: "Algorithms",
                 credits: 3,
                 description:
-                  'This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other “classic” algorithms that serve as examples of design techniques.',
+                  "This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other “classic” algorithms that serve as examples of design techniques.",
               },
               {
                 code: "CS 525",
                 name: "Systems Programming",
                 credits: 3,
                 description:
-                  "The objective of this course is to give students a basic grounding in designing and implementing distributed and cloud systems, including issues in the implementation of backend services in the cloud itself. What are global consensus and Paxos, and what is their application in building cloud systems? What are the advantages and disadvantages of using distributed NoSQL stores such as Cassandra instead of relational stores such as MySQL? What are strong and weak consistency, what are the \"CAP Theorem\" and the \"CALM Theorem\" and what are their implications for building highly available services? What is a blockchain, such as the Bitcoin blockchain, and how does it relate to issues in coordinating distributed systems? What are the roles of REST, Websockets and stream processing in cloud applications? This course will combine hands-on experience in developing cloud services, with a firm grounding in the tools and principles for building distributed and cloud applications, including advanced architectures such as peer-to-peer and publish-subscribe. Besides cloud services, we will also be looking at cloud support for batch processing, such as the Hadoop framework, and its use with NoSQL data stores, such as Cassandra.",
+                  'The objective of this course is to give students a basic grounding in designing and implementing distributed and cloud systems, including issues in the implementation of backend services in the cloud itself. What are global consensus and Paxos, and what is their application in building cloud systems? What are the advantages and disadvantages of using distributed NoSQL stores such as Cassandra instead of relational stores such as MySQL? What are strong and weak consistency, what are the "CAP Theorem" and the "CALM Theorem" and what are their implications for building highly available services? What is a blockchain, such as the Bitcoin blockchain, and how does it relate to issues in coordinating distributed systems? What are the roles of REST, Websockets and stream processing in cloud applications? This course will combine hands-on experience in developing cloud services, with a firm grounding in the tools and principles for building distributed and cloud applications, including advanced architectures such as peer-to-peer and publish-subscribe. Besides cloud services, we will also be looking at cloud support for batch processing, such as the Hadoop framework, and its use with NoSQL data stores, such as Cassandra.',
               },
             ],
           },
@@ -499,7 +499,7 @@ const programData = {
                 name: "Mobile Systems and Applications",
                 credits: 3,
                 description:
-                  "Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today's distributed systems. \"Cloud computing\" provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.",
+                  'Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today\'s distributed systems. "Cloud computing" provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.',
               },
             ],
           },
@@ -745,6 +745,35 @@ const programData = {
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: KEY_DATES.START_OF_CLASSES.date,
+      },
+    ],
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
+  },
+  // Deadlines section data (for timeline display)
+  deadlines: {
+    term: KEY_DATES.TERM.nameUppercase,
+    subtitle: "Plan your application for the upcoming term.",
+    dates: [
+      {
+        label: "Early Submit",
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        description: "Eligible for $250 deposit waiver upon admission.",
+      },
+      {
+        label: "Priority Submit",
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: "Recommended deadline for best course selection.",
+      },
+      {
+        label: "Final Submit",
+        date: KEY_DATES.FINAL_SUBMIT.date,
+        description: "Last day to submit your application.",
+      },
+      {
+        label: "Start of Classes",
+        date: KEY_DATES.START_OF_CLASSES.date,
+        description: "Begin your Stevens MSCS journey.",
       },
     ],
     footnote:

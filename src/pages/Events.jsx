@@ -438,8 +438,6 @@ export default function Events() {
           </div>
         </div>
 
-        
-
         {/* Upcoming Virtual Events */}
         {/* <div className="py-stevens-section bg-stevens-white border-t border-b border-stevens-light-gray">
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">

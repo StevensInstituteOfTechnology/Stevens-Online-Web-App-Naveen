@@ -23,10 +23,10 @@ import {
   CurriculumSection,
   WhyStevensSection,
   TuitionSection,
-  KeyDatesSection,
   AdmissionsSection,
   QuickStatsBar,
 } from "../sections";
+import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -83,6 +83,7 @@ export function DegreeTemplate({
     whatYoullLearn,
     careerOutcomes,
     topCompanies,
+    deadlines,
   } = programData;
 
   const location = useLocation();
@@ -233,10 +234,10 @@ export function DegreeTemplate({
           ref={registerSectionRef("admissions")}
         />
 
-        {/* 13. Key Dates Section (standalone if not combined) */}
-        {!isCombinedAdmissions && keyDates && (
-          <KeyDatesSection
-            keyDates={keyDates}
+        {/* 13. Deadlines Timeline Section */}
+        {deadlines && (
+          <DeadlinesSection
+            keyDates={deadlines}
             ref={registerSectionRef("deadlines")}
           />
         )}

@@ -33,6 +33,7 @@ export function useSectionNavigation({
     studentSpotlight,
     faculty,
     keyDates,
+    deadlines,
     admissions,
     tuition,
     events,
@@ -143,12 +144,7 @@ export function useSectionNavigation({
               (faculty.members && faculty.members.length > 0))
           );
         case "deadlines":
-          return (
-            keyDates &&
-            keyDates.headers &&
-            keyDates.rows &&
-            keyDates.rows.length > 0
-          );
+          return deadlines && deadlines.dates && deadlines.dates.length > 0;
         case "admissions":
           return (
             admissions &&
@@ -214,7 +210,7 @@ export function useSectionNavigation({
     curriculum,
     studentSpotlight,
     faculty,
-    keyDates,
+    deadlines,
     admissions,
     tuition,
     events,

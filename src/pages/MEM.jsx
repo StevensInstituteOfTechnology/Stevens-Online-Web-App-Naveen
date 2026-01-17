@@ -113,7 +113,7 @@ const programData = {
       source:
         "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
     },
-    
+
     {
       ranking: "No. 1",
       description: "In N.J.",
@@ -377,7 +377,7 @@ const programData = {
               },
             ],
           },
-          
+
           {
             title: "Electives Information",
             intro:
@@ -540,6 +540,34 @@ const programData = {
         priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
         finalDate: KEY_DATES.FINAL_SUBMIT.date,
         startDate: KEY_DATES.START_OF_CLASSES.date,
+      },
+    ],
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
+  },
+  // Deadlines section data (for timeline display)
+  deadlines: {
+    term: KEY_DATES.TERM.nameUppercase,
+    dates: [
+      {
+        label: "Early Submit",
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        description: "Eligible for $250 deposit waiver upon admission.",
+      },
+      {
+        label: "Priority Submit",
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: "Recommended deadline for best course selection.",
+      },
+      {
+        label: "Final Submit",
+        date: KEY_DATES.FINAL_SUBMIT.date,
+        description: "Last day to submit your application.",
+      },
+      {
+        label: "Start of Classes",
+        date: KEY_DATES.START_OF_CLASSES.date,
+        description: "Begin your Engineering Management journey at Stevens.",
       },
     ],
     footnote:

@@ -817,6 +817,36 @@ const programData = {
       { event: "Start of Classes", date: KEY_DATES.START_OF_CLASSES.date },
     ],
   },
+  // Deadlines section data (for timeline display)
+  deadlines: {
+    term: KEY_DATES.TERM.nameUppercase,
+    subtitle: "Plan your application for the upcoming term.",
+    dates: [
+      {
+        label: "Early Submit",
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        description:
+          "Apply early for priority consideration and potential deposit waiver.",
+      },
+      {
+        label: "Priority Submit",
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: "Recommended deadline for best course selection.",
+      },
+      {
+        label: "Final Submit",
+        date: KEY_DATES.FINAL_SUBMIT.date,
+        description: "Last day to submit your application.",
+      },
+      {
+        label: "Start of Classes",
+        date: KEY_DATES.START_OF_CLASSES.date,
+        description: "Begin your Stevens Online MBA journey.",
+      },
+    ],
+    footnote:
+      "Students are encouraged to apply early for priority consideration. Rolling admissions may be available after the final deadline.",
+  },
   tuition: {
     cards: [
       { value: "$1,395", label: "Per Credit" },

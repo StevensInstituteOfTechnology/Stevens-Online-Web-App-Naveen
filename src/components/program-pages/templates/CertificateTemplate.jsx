@@ -22,6 +22,7 @@ import {
   AdmissionsSection,
   QuickStatsBar,
 } from "../sections";
+import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -78,6 +79,7 @@ export function CertificateTemplate({
     whatYoullLearn,
     careerOutcomes,
     topCompanies,
+    deadlines,
   } = programData;
 
   const location = useLocation();
@@ -209,6 +211,14 @@ export function CertificateTemplate({
           programCode={code}
           ref={registerSectionRef("admissions")}
         />
+
+        {/* 10b. Deadlines Timeline Section (optional) */}
+        {deadlines && (
+          <DeadlinesSection
+            keyDates={deadlines}
+            ref={registerSectionRef("deadlines")}
+          />
+        )}
 
         {/* 11. FAQ Section */}
         <FAQSection faqs={faqs} ref={registerSectionRef("faqs")} />

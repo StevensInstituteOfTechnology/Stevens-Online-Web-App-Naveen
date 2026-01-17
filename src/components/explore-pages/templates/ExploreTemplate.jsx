@@ -10,6 +10,7 @@ import { ChevronDown, Check, Award, Globe, Star, Target, Clock, Network, ThumbsU
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ApplicationModal, VideoPlayer } from '@/components/shared';
 import { HeroSection } from '../sections';
+import { DeadlinesSection } from '@/components/shared/sections/DeadlinesSection';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { BOOKING_URLS } from '@/config/constants';
@@ -521,79 +522,16 @@ export function ExploreTemplate({
         </section>
       )}
       
-      {/* Key Dates Section */}
-      <section className="py-stevens-3xl bg-stevens-light-gray">
-        <div className="max-w-6xl mx-auto px-stevens-md">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Header Section with more spacing */}
-            <div className="mb-stevens-3xl">
-              <h2 className="font-stevens-headers text-stevens-3xl stevens-md:text-stevens-4xl text-stevens-dark-gray font-light uppercase tracking-wide mb-stevens-md text-left">
-                Key Dates & Deadlines
-              </h2>
-              
-              <h3 className="font-stevens-headers text-stevens-2xl stevens-md:text-stevens-3xl text-stevens-dark-gray font-light uppercase tracking-wide text-left">
-                {keyDatesTerm}
-              </h3>
-            </div>
-            
-            {/* Timeline Container */}
-            <div className="relative mb-stevens-3xl">
-              {/* Horizontal Timeline Line - Desktop Only */}
-              <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-stevens-dark-gray"></div>
-              
-              {/* Vertical Timeline Line - Mobile/Tablet */}
-              <div className="lg:hidden absolute top-8 left-6 w-0.5 bg-stevens-dark-gray h-full"></div>
-              
-              {/* Timeline Items */}
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-stevens-xl">
-                {keyDates.map((date, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="relative"
-                  >
-                    {/* Desktop Timeline Marker */}
-                    <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-stevens-dark-gray rounded-none"></div>
-                    
-                    {/* Mobile/Tablet Timeline Marker */}
-                    <div className="lg:hidden absolute top-8 left-4 transform -translate-x-1/2 w-4 h-4 bg-stevens-dark-gray rounded-none"></div>
-                    
-                    {/* Content with responsive spacing */}
-                    <div className="text-left lg:pt-stevens-2xl pl-stevens-3xl lg:pl-0">
-                      <h4 className="font-stevens-headers text-stevens-lg text-stevens-dark-gray font-light uppercase tracking-wide mb-stevens-md">
-                        {date.label}
-                      </h4>
-                      <p className="font-stevens-body text-stevens-base text-stevens-dark-gray font-stevens-medium mb-stevens-md">
-                        {date.date}
-                      </p>
-                      {date.description && (
-                        <p className="font-stevens-body text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                          {date.description}
-                        </p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Footnote with more spacing */}
-            {keyDatesNote && (
-              <div className="mt-stevens-3xl">
-                <p className="font-stevens-body text-stevens-sm text-stevens-dark-gray leading-relaxed text-left max-w-4xl">
-                  {keyDatesNote}
-                </p>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      </section>
+      {/* Key Dates Section - Using shared DeadlinesSection component */}
+      {keyDates && keyDates.length > 0 && (
+        <DeadlinesSection
+          keyDates={{
+            term: keyDatesTerm,
+            dates: keyDates,
+            footnote: keyDatesNote
+          }}
+        />
+      )}
 
       {/* Additional Why Choose Stevens Section */}
       {additionalWhyChooseStevensTitle && (

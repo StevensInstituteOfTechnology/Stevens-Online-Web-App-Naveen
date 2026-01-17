@@ -393,6 +393,34 @@ const programData = {
     footnote:
       "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
   },
+  // Deadlines section data (for timeline display)
+  deadlines: {
+    term: KEY_DATES.TERM.nameUppercase,
+    dates: [
+      {
+        label: "Early Submit",
+        date: KEY_DATES.EARLY_SUBMIT.date,
+        description: "Eligible for $250 deposit waiver upon admission.",
+      },
+      {
+        label: "Priority Submit",
+        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        description: "Recommended deadline for best course selection.",
+      },
+      {
+        label: "Final Submit",
+        date: KEY_DATES.FINAL_SUBMIT.date,
+        description: "Last day to submit your application.",
+      },
+      {
+        label: "Start of Classes",
+        date: KEY_DATES.START_OF_CLASSES.date,
+        description: "Begin your Enterprise AI journey at Stevens.",
+      },
+    ],
+    footnote:
+      "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Other conditions may apply.",
+  },
   tuition: {
     cards: [
       { value: "$5,250", label: "Total Certificate Cost" },

@@ -1,12 +1,12 @@
-import React, { forwardRef, useState } from 'react';
-import { Clock, ChevronDown, ChevronUp } from 'lucide-react';
-import { Card, CardContent } from '../../ui/card';
-import { Button } from '../../ui/button';
-import { Section } from '../primitives';
+import React, { forwardRef, useState } from "react";
+import { Clock, ChevronDown, ChevronUp } from "lucide-react";
+import { Card, CardContent } from "../../ui/card";
+import { Button } from "../../ui/button";
+import { Section } from "../primitives";
 
 /**
  * EventsSection - On-Demand Events grid with collapsible content
- * 
+ *
  * Design: CPE Brand Guidelines - Card grid for event listings
  * Features:
  * - Optional description text
@@ -14,9 +14,9 @@ import { Section } from '../primitives';
  * - Each card shows title, status/date, duration, and watch link
  * - Collapsible when more than 3 events (shows first 3 initially)
  * - Fallback message when no events
- * 
+ *
  * Used in: Degree pages (typically not shown on certificate pages)
- * 
+ *
  * @param {Object} events - Events configuration
  * @param {string} events.title - Section title (default: "On-Demand Events")
  * @param {string} events.description - Optional description text
@@ -39,16 +39,15 @@ export const EventsSection = forwardRef(function EventsSection(
 
   const hasItems = events.items && events.items.length > 0;
   const hasMoreThanThree = hasItems && events.items.length > 3;
-  
+
   // Show first 3 items when collapsed, all items when expanded
-  const visibleItems = hasMoreThanThree && !isExpanded 
-    ? events.items.slice(0, 3) 
-    : events.items;
+  const visibleItems =
+    hasMoreThanThree && !isExpanded ? events.items.slice(0, 3) : events.items;
 
   return (
     <Section
       id="events"
-      title={events.title || 'On-Demand Events'}
+      title={events.title || "On-Demand Events"}
       bgClassName="bg-stevens-light-gray"
       ref={ref}
     >
@@ -57,10 +56,16 @@ export const EventsSection = forwardRef(function EventsSection(
           {events.description}
         </p>
       )}
-      
+
       {hasItems ? (
         <>
-          <div className={`grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg ${isExpanded ? 'animate-in fade-in slide-in-from-top-4 duration-300' : ''}`}>
+          <div
+            className={`grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg ${
+              isExpanded
+                ? "animate-in fade-in slide-in-from-top-4 duration-300"
+                : ""
+            }`}
+          >
             {visibleItems.map((item, i) => (
               <Card key={i} className="h-full border-stevens-light-gray">
                 <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
@@ -112,7 +117,7 @@ export const EventsSection = forwardRef(function EventsSection(
         </>
       ) : (
         <p className="text-center text-stevens-dark-gray">
-          {events.fallbackText || 'No upcoming events at this time.'}
+          {events.fallbackText || "No upcoming events at this time."}
         </p>
       )}
     </Section>

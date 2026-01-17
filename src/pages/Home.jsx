@@ -674,7 +674,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center pb-8 lg:pb-12"
             >
-              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light italic text-stevens-red leading-tight tracking-tight mb-4">
+              <h2 className="font-stevens-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold italic text-stevens-red leading-tight tracking-tight mb-4">
                 #1 In NJ for
                 <br />
                 Graduate Earnings

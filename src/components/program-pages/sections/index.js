@@ -25,5 +25,4 @@ export { QuickStatsBar } from "./QuickStatsBar";
 export { CurriculumSection } from "./CurriculumSection";
 export { WhyStevensSection } from "./WhyStevensSection";
 export { TuitionSection } from "./TuitionSection";
-export { KeyDatesSection } from "./KeyDatesSection";
 export { AdmissionsSection } from "./AdmissionsSection";
