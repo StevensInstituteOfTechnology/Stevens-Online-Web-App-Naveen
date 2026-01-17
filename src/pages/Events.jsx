@@ -16,7 +16,6 @@ import {
   FileText,
   ChevronDown,
   ChevronUp,
-  ArrowRight,
 } from "lucide-react";
 import { BOOKING_URLS } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
@@ -26,6 +25,7 @@ import {
   getContentImageProps,
   getCardImageProps,
 } from "@/utils/responsiveImage";
+import { SupportEventsSection } from "@/components/shared/sections/SupportEventsSection";
 
 /**
  * EventGroup - Collapsible group of event cards
@@ -360,61 +360,11 @@ export default function Events() {
             </Card>
           </div>
         </div>
-        {/* Application Support Events - Home page style with dark background */}
-        <section className="bg-stevens-black py-stevens-section">
-          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-white mb-4">
-                Application Support Events
-              </h2>
-              <p className="text-stevens-lg text-white/70 mb-6">
-                Join us for a live webinar to learn more.
-              </p>
-              <div className="w-16 h-1 bg-stevens-red"></div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {supportEvents.map((event) => (
-                <div key={event.title} className="group cursor-pointer">
-                  <a
-                    href={event.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-full flex flex-col bg-white/[0.08] backdrop-blur-md border border-white/10 overflow-hidden hover:bg-white/[0.12] hover:border-white/20 transition-all duration-300"
-                  >
-                    <div className="aspect-video w-full overflow-hidden">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover transform group-hover:scale-[1.08] transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <div className="flex-grow">
-                        <p className="text-sm text-stevens-red font-bold uppercase tracking-wider mb-3">
-                          On-Demand Event
-                        </p>
-                        <h3 className="font-stevens-display text-lg lg:text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors leading-tight">
-                          {event.title}
-                        </h3>
-                        <div className="flex items-center text-xs text-white/50 uppercase tracking-wider font-medium">
-                          <span>{event.length}</span>
-                        </div>
-                      </div>
-                      <div className="mt-6 pt-4 border-t border-white/10">
-                        <span className="inline-flex items-center text-sm text-white/70 group-hover:text-stevens-red transition-colors font-medium">
-                          Watch now
-                          <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Application Support Events - Using shared SupportEventsSection component */}
+        <SupportEventsSection
+          events={supportEvents}
+          showViewAllButton={false}
+        />
 
         {/* On-Demand Content */}
         <div className="py-stevens-section bg-stevens-light-gray">

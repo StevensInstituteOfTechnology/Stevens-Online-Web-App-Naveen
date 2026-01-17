@@ -2,14 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Program } from "@/api/entities";
 import { Event } from "@/api/entities";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
@@ -20,11 +13,7 @@ import {
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
-import {
-  getHeroImageProps,
-  getContentImageProps,
-  getCardImageProps,
-} from "@/utils/responsiveImage";
+import { getHeroImageProps } from "@/utils/responsiveImage";
 import {
   Asterism,
   AnimatedSection,
@@ -33,45 +22,20 @@ import {
   AngledContainer,
   CarouselNavButton,
 } from "@/components/shared";
+import { SupportEventsSection } from "@/components/shared/sections/SupportEventsSection";
+import { ProgramShowcaseCard } from "@/components/shared/cards/ProgramShowcaseCard";
 import { BlogCarousel } from "@/components/blog";
-import {
-  GraduationCap,
-  Users,
-  Globe,
-  Award,
-  ArrowRight,
-  Star,
-  TrendingUp,
-  PlayCircle,
-  Library,
-  BookOpen,
-  X,
-  Pause,
-  Volume2,
-  VolumeX,
-  Maximize,
-  SkipBack,
-  SkipForward,
-  User,
-  Clock,
-  Calendar,
-  DollarSign,
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, X, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
-import LeadCaptureForm from "../components/forms/LeadCaptureForm";
 import {
-  ProgramCard,
   VideoPlayer,
   ParallaxImage,
   RequestInfoModal,
 } from "@/components/shared";
-import ProgramReadinessAssessment from "../components/assessment/ProgramReadinessAssessment";
+
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
-import { KEY_DATES } from "@/config/constants";
+
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
@@ -546,64 +510,6 @@ export default function Home() {
           />
         </section>
 
-        {/* Stats Bar */}
-        {/* <AnimatedSection className="section-dark py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatItem
-              value="#9"
-              label="Best ROI Colleges"
-              icon={Award}
-            />
-            <StatItem value="#1" label="Graduate Earnings (NJ)" icon={DollarSign} />
-            <StatItem
-              value="Top 10%"
-              label="Return on Investment"
-              icon={TrendingUp}
-            />
-            <StatItem value="150+" label="Years of Innovation" icon={Library} />
-          </div>
-        </div>
-      </AnimatedSection> */}
-
-        {/* Old Redesigned Rankings & Proof Points Section - TODO: Remove after testing */}
-        {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
-        <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-          <AnimatedSection className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-4xl lg:text-5xl font-bold text-stevens-dark-gray mb-stevens-lg tracking-tight leading-tight">
-              A Degree That <span className="text-stevens-red">Pays Dividends</span>
-            </h2>
-            <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
-              Stevens is consistently recognized for academic excellence and
-              delivering an outstanding return on investment.
-            </p>
-          </AnimatedSection>
-          
-          <div className="grid lg:grid-cols-2 gap-x-stevens-gap-lg gap-y-stevens-xl items-center">
-            <AnimatedSection>
-              <div className="flex flex-col gap-stevens-xs">
-                {textRankings.map((point, index) => (
-                <TextRankingItem key={index} {...point} />
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="flex flex-col gap-stevens-md">
-                {badgeRankings.map((ranking, index) => (
-                <BadgeRankingItem key={index} {...ranking} />
-                ))}
-                <p className="text-center font-stevens-semibold text-stevens-dark-gray mt-stevens-sm italic">
-                  Source: U.S. News & World Report 2025
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          
-        </div>
-      </section> */}
-
         {/* THE STEVENS ONLINE ADVANTAGE */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-black relative overflow-hidden">
           {/* Subtle background decoration */}
@@ -661,7 +567,7 @@ export default function Home() {
           className="h-[256px] lg:h-[350px]"
         />
 
-        {/* Background section that continues below parallax */}
+        {/* Stats section that continues below parallax */}
         <section className="relative bg-stevens-black pt-1 ">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
           {/* By the Numbers - Dark Mode Premium Design */}
@@ -678,40 +584,40 @@ export default function Home() {
                 #1 In NJ for
                 <br />
                 Graduate Earnings
-            </h2>
+              </h2>
               <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mb-4">
                 U.S. Dept. of Education 2025
-            </p>
+              </p>
               <a
                 href="https://www.stevens.edu/news/stevens-ranks-no-1-in-new-jersey-for-graduate-earnings-in-new-federal-salary"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-stevens-red transition-colors font-medium group"
-                  >
-                    Read the full report
+              >
+                Read the full report
                 <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </motion.div>
 
             {/* Horizontal Divider */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-                viewport={{ once: true }}
+              viewport={{ once: true }}
               className="w-full h-px bg-[#333333] origin-center"
             />
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3">
               {/* Stat 1 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                  viewport={{ once: true }}
+                viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
-                >
+              >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight ">
                     #1
@@ -725,18 +631,18 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                    U.S. News & World Report 2025
-                  </p>
-                </motion.div>
+                  U.S. News & World Report 2025
+                </p>
+              </motion.div>
 
               {/* Stat 2 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                  viewport={{ once: true }}
+                viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
-                >
+              >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     7x
@@ -750,18 +656,18 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                    USDLA Distance Learning
-                  </p>
-                </motion.div>
+                  USDLA Distance Learning
+                </p>
+              </motion.div>
 
               {/* Stat 3 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                  viewport={{ once: true }}
+                viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px]"
-                >
+              >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
                     #9
@@ -773,9 +679,9 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                    Based on 4-year degree cost
-                  </p>
-                </motion.div>
+                  Based on 4-year degree cost
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -817,89 +723,11 @@ export default function Home() {
                   style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
                   {filteredProgramShowcaseData.map((program, index) => (
-                    <Link
+                    <ProgramShowcaseCard
                       key={program.id}
-                      to={createPageUrl(program.url)}
-                      className="flex-shrink-0 w-[345px] sm:w-[400px] lg:w-[460px] snap-start group"
-                    >
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="relative h-[450px] lg:h-[500px] overflow-hidden"
-                      >
-                        {/* Card Image */}
-                        <img
-                          src={program.image}
-                          alt={program.title}
-                          className="w-full h-full object-cover  transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        {/* Gradient Overlay */}
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" /> */}
-
-                        {/* Label Box - Expandable on hover */}
-                        <div className="absolute bottom-0 left-8 right-8 bg-white p-6 transform translate-y-2 group-hover:translate-y-[-10px] transition-all duration-300 ease-out shadow-xl">
-                          <p className="text-stevens-gray text-xs font-bold uppercase tracking-wider mb-1">
-                            {program.subtitle}
-                          </p>
-                          <h3 className="font-stevens-display text-xl font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors mb-0 group-hover:mb-4">
-                            {program.title}
-                          </h3>
-
-                          {/* Expanded content - hidden by default, shown on hover */}
-                          <div className="max-h-0 overflow-hidden group-hover:max-h-[200px] transition-all duration-300 ease-out">
-                            <div className="pt-4 border-t border-gray-200">
-                              {/* Program stats - dynamic from program data */}
-                              <div className="flex gap-4 mb-3 text-sm">
-                                <div>
-                                  <span className="text-stevens-gray">
-                                    Credits:
-                                  </span>
-                                  <span className="font-semibold text-stevens-dark-gray ml-1">
-                                    {program.stats?.credits || "30"}
-                                  </span>
-                                </div>
-                                <div>
-                                  <span className="text-stevens-gray">
-                                    Duration:
-                                  </span>
-                                  <span className="font-semibold text-stevens-dark-gray ml-1">
-                                    {program.stats?.duration || "18-24 mo"}
-                                  </span>
-                                </div>
-                              </div>
-
-                              {/* Key highlights - dynamic from program data */}
-                              <ul className="text-sm text-stevens-gray space-y-1 mb-4">
-                                {program.highlights
-                                  ?.slice(0, 3)
-                                  .map((highlight, i) => (
-                                    <li
-                                      key={i}
-                                      className="flex items-center gap-2"
-                                    >
-                                      <span className="w-1.5 h-1.5 bg-stevens-red rounded-full flex-shrink-0"></span>
-                                      {highlight}
-                                    </li>
-                                  ))}
-                              </ul>
-
-                              {/* CTA hint */}
-                              <Button
-                                variant="link"
-                                size="sm"
-                                className="p-0 h-auto"
-                              >
-                                Learn more
-                                <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </Link>
+                      program={program}
+                      index={index}
+                    />
                   ))}
 
                   {/* Compare Programs - Slim Vertical Link */}
@@ -1098,136 +926,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Stevens Section */}
-        {/* <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <AnimatedSection className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center mb-stevens-xl">
-              <div>
-                <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-black mb-4">
-                  A Legacy of Innovation Meets Online Flexibility
-                </h2>
-                <p className="text-stevens-xl text-stevens-dark-gray mb-6">
-                  At Stevens, you don't have to choose between a prestigious
-                  degree and a flexible online format. Our programs are designed
-                  for working professionals, offering the same rigorous
-                  curriculum and world-class faculty as our on-campus degrees.
-                  You'll gain career-ready skills and join a powerful alumni
-                  network, all on your schedule.
-                </p>
-              </div>
-              <img
-                {...getContentImageProps(
-                  "/assets/images/home/stevens-campus.webp"
-                )}
-                alt="Stevens campus with NYC skyline"
-                className="w-full h-auto rounded-stevens-md shadow-xl"
-                loading="lazy"
-              />
-            </AnimatedSection>
-            <AnimatedSection className="grid lg:grid-cols-2 gap-12 items-center">
-              <img
-                src="/assets/images/home/home-1.png"
-                alt="Students collaborating online"
-                className="rounded-stevens-md shadow-xl lg:order-1"
-                loading="lazy"
-              />
-              <div className="lg:order-2">
-                <h2 className="font-stevens-headers text-4xl lg:text-5xl font-light text-stevens-black mb-4">
-                  A Community That Supports Your Success
-                </h2>
-                <p className="text-stevens-xl text-stevens-dark-gray mb-6">
-                  From your first inquiry to graduation and beyond, you are a
-                  valued member of the Stevens community. Our dedicated
-                  enrollment advisors, student support services, and active
-                  alumni network are here to help you achieve your goals. Engage
-                  with faculty and peers in a collaborative online environment
-                  built for connection.
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section> */}
-
-        {/* Key Dates & Deadlines Section */}
-        {/* <section className="bg-stevens-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimatedSection className="text-center mb-16">
-              <h2 className="font-stevens-headers text-4xl lg:text-5xl font-bold text-stevens-black mb-4">
-                Key Dates & Deadlines
-              </h2>
-              <p className="text-stevens-xl text-stevens-dark-gray max-w-3xl mx-auto">
-                Plan your application for the upcoming {KEY_DATES.TERM.name}{" "}
-                term.
-              </p>
-            </AnimatedSection>
-
-            <AnimatedSection>
-              <Card className="shadow-xl border-0 overflow-hidden ">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left border-collapse border border-stevens-light-gray">
-                    <thead className="bg-stevens-light-gray">
-                      <tr>
-                        <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
-                          Term
-                        </th>
-                        <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black border border-stevens-light-gray">
-                          Early Submit
-                        </th>
-                        <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
-                          Priority Submit
-                        </th>
-                        <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
-                          Final Submit
-                        </th>
-                        <th className="p-4 font-semibold uppercase text-stevens-white tracking-wider bg-stevens-black text-stevens-white border border-stevens-light-gray">
-                          Start of Classes
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="bg-white">
-                        <td className="p-4 font-bold text-base whitespace-nowrap align-top border border-stevens-light-gray">
-                          {KEY_DATES.TERM.name}
-                        </td>
-                        <td className="p-4 align-top border border-stevens-light-gray">
-                          <div className="font-bold text-stevens-black">
-                            {KEY_DATES.EARLY_SUBMIT.date}
-                          </div>
-                          <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
-                            {KEY_DATES.EARLY_SUBMIT.details}
-                          </div>
-                        </td>
-                        <td className="p-4 align-top border border-stevens-light-gray">
-                          <div className="font-bold text-stevens-black">
-                            {KEY_DATES.PRIORITY_SUBMIT.date}
-                          </div>
-                          <div className="text-stevens-dark-gray mt-1 text-stevens-sm">
-                            {KEY_DATES.PRIORITY_SUBMIT.details}
-                          </div>
-                        </td>
-                        <td className="p-4 font-bold text-stevens-black whitespace-nowrap align-top border border-stevens-light-gray">
-                          {KEY_DATES.FINAL_SUBMIT.date}
-                        </td>
-                        <td className="p-4 font-bold text-stevens-black whitespace-nowrap align-top border border-stevens-light-gray">
-                          {KEY_DATES.START_OF_CLASSES.date}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </Card>
-            </AnimatedSection>
-
-            <AnimatedSection className="text-center mt-6 text-stevens-sm text-stevens-dark-gray max-w-4xl mx-auto">
-              *Applicants who apply by the early submit deadline and are
-              admitted may be eligible for a $250 deposit waiver. Applicants who
-              receive education assistance from employers or other tuition
-              discounts are not eligible. Other eligibility conditions may
-              apply.
-            </AnimatedSection>
-          </div>
-        </section> */}
-
         {/* Blog Carousel  */}
         <section className="bg-stevens-black py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
@@ -1257,76 +955,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Upcoming Events */}
-        <section className="bg-stevens-black py-stevens-section">
-          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
-            <AnimatedSection className="mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-white mb-4">
-                Application Support Events
-              </h2>
-              <p className="text-stevens-lg text-white/70 mb-6">
-                Join us for a live webinar to learn more.
-              </p>
-              <div className="w-16 h-1 bg-stevens-red"></div>
-            </AnimatedSection>
-
-            <AnimatedSection>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {supportEvents.map((event, index) => (
-                  <AnimatedSection
-                    key={event.title}
-                    delay={0.1 * (index + 1)}
-                    className="group cursor-pointer"
-                  >
-                    <a
-                      href={event.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="h-full flex flex-col bg-white/[0.08] backdrop-blur-md border border-white/10 overflow-hidden hover:bg-white/[0.12] hover:border-white/20 transition-all duration-300"
-                    >
-                      <div className="aspect-video w-full overflow-hidden">
-                        <img
-                          src={event.image}
-                          alt={event.title}
-                          className="w-full h-full object-cover transform group-hover:scale-[1.08] transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-6 flex flex-col flex-grow">
-                        <div className="flex-grow">
-                          <p className="text-sm text-stevens-red font-bold uppercase tracking-wider mb-3">
-                            On-Demand Event
-                          </p>
-                          <h3 className="font-stevens-display text-lg lg:text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors leading-tight">
-                            {event.title}
-                          </h3>
-                          <div className="flex items-center text-xs text-white/50 uppercase tracking-wider font-medium">
-                            <span>{event.length}</span>
-                          </div>
-                        </div>
-                        <div className="mt-6 pt-4 border-t border-white/10">
-                          <span className="inline-flex items-center text-sm text-white/70 group-hover:text-stevens-red transition-colors font-medium">
-                            Watch now
-                            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                          </span>
-                        </div>
-                      </div>
-                    </a>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </AnimatedSection>
-            <AnimatedSection className="text-center mt-stevens-xl">
-              <Link to="/events/">
-                <Button
-                  variant="outline-white"
-                  className="border-white text-white hover:bg-white hover:text-stevens-black"
-                >
-                  View All Events
-                </Button>
-              </Link>
-            </AnimatedSection>
-          </div>
-        </section>
+        {/* Upcoming Events - Using shared SupportEventsSection component */}
+        <SupportEventsSection events={supportEvents} />
 
         {/* SARA Accreditation Logo Section */}
         <section className="pb-20 bg-stevens-black">

@@ -132,7 +132,6 @@ const programData = {
       description: "For Best Value",
       source: "Payscale (2024).",
     },
-    
   ],
   // ==================================================================
   career: {

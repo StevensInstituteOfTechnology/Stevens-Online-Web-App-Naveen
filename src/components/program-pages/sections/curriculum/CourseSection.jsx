@@ -35,9 +35,9 @@ export const CourseSection = ({ section, variant = "degree" }) => {
         </p>
       )}
 
-      {/* Render courses as expandable cards */}
+      {/* Render courses as card grid */}
       {hasCourses && (
-        <div className="bg-white border border-stevens-light-gray rounded-sm overflow-hidden">
+        <div className="space-y-4">
           {section.courses.map((course, index) => (
             <CourseCard
               key={course.code || index}

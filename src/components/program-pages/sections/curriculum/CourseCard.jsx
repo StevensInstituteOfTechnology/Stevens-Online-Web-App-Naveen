@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 /**
- * CourseCard - Expandable course card component
+ * CourseCard - Card-based course component with expandable description
+ *
+ * Design: Modern card layout with:
+ * - Course code as red pill badge
+ * - Course name as bold title
+ * - Credits badge on the right
+ * - 2-line description preview with "Read More" toggle
+ * - Smooth expand/collapse animation
  *
  * Supports two variants:
  * - "degree": Simple format with description and optional note
@@ -29,113 +37,169 @@ export const CourseCard = ({
   variant = "degree",
   defaultOpen = false,
 }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isExpanded, setIsExpanded] = useState(defaultOpen);
 
-  // Build display title
-  const displayTitle = course.code
-    ? `${course.code} – ${course.name}${course.credits ? ` (${course.credits} credits)` : ""}`
-    : `${course.name}${course.credits ? ` (${course.credits} credits)` : ""}`;
+  // Check if there's content to expand
+  const hasExpandableContent =
+    variant === "certificate"
+      ? course.faculty ||
+        course.focus ||
+        course.whatYouDo ||
+        course.topics?.length ||
+        course.modules ||
+        course.labs ||
+        course.practice ||
+        course.project ||
+        course.deliverable
+      : course.description && course.description.length > 150;
 
   return (
-    <div className="course-item border-b border-stevens-light-gray last:border-b-0">
-      <button
-        className="w-full flex items-center justify-between py-4 px-2 text-left hover:bg-stevens-light-gray/30 transition-colors duration-200"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        <span className="font-stevens-body font-medium text-stevens-dark-gray text-stevens-base md:text-stevens-lg pr-4">
-          {displayTitle}
-        </span>
-        <span className="course-arrow text-stevens-gray flex-shrink-0 text-lg">
-          {isOpen ? "▲" : "▼"}
-        </span>
-      </button>
+    <div className="course-card bg-stevens-light-gray/50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6">
+      {/* Card Header */}
+      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+        {/* Left: Course Code Badge + Title */}
+        <div className="flex flex-wrap items-center gap-3 flex-1">
+          {/* Course Code Badge */}
+          {course.code && (
+            <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-stevens-red text-stevens-white rounded-full whitespace-nowrap">
+              {course.code}
+            </span>
+          )}
+          {/* Course Name */}
+          <h4 className="font-stevens-display text-lg md:text-xl font-bold text-stevens-dark-gray">
+            {course.name}
+          </h4>
+        </div>
 
-      {isOpen && (
-        <div className="course-content px-2 pb-4 pt-2 bg-stevens-light-gray/20 rounded-b-sm">
-          {variant === "certificate" ? (
-            // Certificate detailed format
-            <div className="space-y-3">
-              {course.faculty && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Faculty:</strong>{" "}
-                  {course.faculty}
-                </p>
-              )}
-              {course.focus && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Focus:</strong>{" "}
-                  {course.focus}
-                </p>
-              )}
-              {course.whatYouDo && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">What You'll Do:</strong>{" "}
-                  {course.whatYouDo}
-                </p>
-              )}
-              {course.topics && course.topics.length > 0 && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Topics:</strong>{" "}
-                  {course.topics.join(", ")}
-                </p>
-              )}
-              {course.modules && (
-                <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Modules:</strong>
-                  {Array.isArray(course.modules) ? (
-                    <ol className="list-decimal ml-5 mt-2 space-y-1">
-                      {course.modules.map((mod, i) => (
-                        <li key={i}>{mod}</li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <span> {course.modules}</span>
-                  )}
-                </div>
-              )}
-              {course.labs && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Labs:</strong> {course.labs}
-                </p>
-              )}
-              {course.practice && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Practice:</strong>{" "}
-                  {course.practice}
-                </p>
-              )}
-              {course.project && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Project:</strong>{" "}
-                  {course.project}
-                </p>
-              )}
-              {course.deliverable && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                  <strong className="font-semibold">Deliverable:</strong>{" "}
-                  {course.deliverable}
-                </p>
-              )}
-            </div>
-          ) : (
-            // Degree simple format
-            <div className="space-y-2">
-              {course.description && (
-                <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed space-y-2">
-                  {course.description.split("\n\n").map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
+        {/* Right: Credits Badge */}
+        {course.credits && (
+          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-stevens-light-gray text-stevens-dark-gray rounded-full whitespace-nowrap">
+            {course.credits} {course.credits === 1 ? "Credit" : "Credits"}
+          </span>
+        )}
+      </div>
+
+      {/* Description Preview (always visible) - 2 lines when collapsed */}
+      {variant === "degree" && course.description && (
+        <p
+          className={`text-stevens-dark-gray leading-relaxed mb-3 ${
+            !isExpanded ? "line-clamp-2" : ""
+          }`}
+        >
+          {course.description}
+        </p>
+      )}
+
+      {/* Certificate Preview (always visible) - 2 lines when collapsed */}
+      {variant === "certificate" && course.focus && (
+        <p
+          className={`text-stevens-dark-gray leading-relaxed mb-3 ${
+            !isExpanded ? "line-clamp-2" : ""
+          }`}
+        >
+          {course.focus}
+        </p>
+      )}
+
+      {/* Expanded Content for Certificate Variant */}
+      {variant === "certificate" && isExpanded && (
+        <div className="space-y-3 mt-4 pt-4 border-t border-stevens-light-gray animate-in fade-in slide-in-from-top-2 duration-300">
+          {course.faculty && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Faculty:
+              </strong>{" "}
+              {course.faculty}
+            </p>
+          )}
+          {course.whatYouDo && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                What You'll Do:
+              </strong>{" "}
+              {course.whatYouDo}
+            </p>
+          )}
+          {course.topics && course.topics.length > 0 && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Topics:
+              </strong>{" "}
+              {course.topics.join(", ")}
+            </p>
+          )}
+          {course.modules && (
+            <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Modules:
+              </strong>
+              {Array.isArray(course.modules) ? (
+                <ol className="list-decimal ml-5 mt-2 space-y-1">
+                  {course.modules.map((mod, i) => (
+                    <li key={i}>{mod}</li>
                   ))}
-                </div>
-              )}
-              {course.note && (
-                <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed italic mt-2">
-                  Note: {course.note}
-                </p>
+                </ol>
+              ) : (
+                <span> {course.modules}</span>
               )}
             </div>
           )}
+          {course.labs && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Labs:
+              </strong>{" "}
+              {course.labs}
+            </p>
+          )}
+          {course.practice && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Practice:
+              </strong>{" "}
+              {course.practice}
+            </p>
+          )}
+          {course.project && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Project:
+              </strong>{" "}
+              {course.project}
+            </p>
+          )}
+          {course.deliverable && (
+            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+              <strong className="font-semibold text-stevens-dark-gray">
+                Deliverable:
+              </strong>{" "}
+              {course.deliverable}
+            </p>
+          )}
         </div>
+      )}
+
+      {/* Note (for degree variant, shown when expanded) */}
+      {variant === "degree" && course.note && isExpanded && (
+        <p className="text-stevens-sm text-stevens-gray leading-relaxed italic mt-3 border-l-2 border-stevens-red pl-3 animate-in fade-in duration-300">
+          Note: {course.note}
+        </p>
+      )}
+
+      {/* Read More / Read Less Toggle */}
+      {hasExpandableContent && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="flex items-center gap-1 text-stevens-red hover:text-stevens-dark-gray font-medium text-sm mt-3 transition-colors duration-200 group"
+          aria-expanded={isExpanded}
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+          <ChevronDown
+            className={`w-4 h-4 transition-transform duration-300 ${
+              isExpanded ? "rotate-180" : ""
+            }`}
+          />
+        </button>
       )}
     </div>
   );
