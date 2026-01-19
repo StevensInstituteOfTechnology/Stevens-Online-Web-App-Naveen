@@ -133,6 +133,17 @@ const programData = {
       source: "Payscale (2024).",
     },
   ],
+  videoSection: {
+    title: "Discover Your Future at Stevens",
+    heading: "Master data science and AI skills without putting your career on hold",
+    description:
+      "Our 100% online, part-time format empowers professionals to build expertise in applied data science and artificial intelligence while maintaining their current role. Learn from expert faculty who bridge cutting-edge research with real-world applications, and connect with a network of accomplished peers and alumni driving innovation across industries.",
+    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.webp",
+    showControls: true,
+    muted: true,
+    showCTA: false,
+  },
   // ==================================================================
   career: {
     title: "Data Science and Engineering Career Outlook",

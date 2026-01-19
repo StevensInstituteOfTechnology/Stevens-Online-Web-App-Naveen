@@ -109,14 +109,22 @@ const programData = {
   },
   videoSection: {
     title: "Discover Your Future at Stevens",
+    heading: "Earn your MBA without putting your career on hold",
     description:
-      "Watch how Stevens Online transforms careers through innovative education, expert faculty, and flexible learning designed for working professionals.",
+      "Our 100% online, part-time format empowers ambitious professionals to lead in data-driven industries while maintaining their current role. Learn from expert faculty who bridge cutting-edge research with real-world business applications, and connect with a network of accomplished peers and alumni across tech, finance, and healthcare.",
     videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
-    posterSrc: "/assets/videos/video-cover-1.avif",
+    posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
+    showCTA: false,
   },
   rankings: [
+    {
+      ranking: "#1",
+      description: "ONLINE MBA IN N.J.",
+      source:
+        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
+    },
     {
       ranking: "100%",
       description: "EMPLOYMENT",
@@ -124,24 +132,20 @@ const programData = {
         "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.",
       note: "1",
     },
-    {
-      ranking: "#15",
-      description: "FOR BEST VALUE",
-      source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
-      note: "2",
-    },
-    {
-      ranking: "#1",
-      description: "ONLINE MBA IN N.J.",
-      source:
-        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
-    },
+    
+   
 
     {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
       source:
         "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+    },
+    {
+      ranking: "#15",
+      description: "FOR BEST VALUE",
+      source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
+      note: "2",
     },
   ],
 
@@ -228,18 +232,7 @@ const programData = {
       },
     ],
   },
-  whyStevens: {
-    variant: "splitWithVideo",
-    title: "Why Choose an Online MBA from Stevens?",
-    description: `<p>The Stevens Online MBA delivers high-impact skills that employers seek across industries, especially in tech-forward roles. Our program combines rigorous academic coursework with real-world applications.</p><p>Develop leadership capabilities, analytical thinking, and collaborative skills that drive innovation. Choose from multiple concentrations and participate in on-campus immersions to enhance your learning experience.</p><p>Join a community of ambitious professionals who are transforming their careers with technology-focused business education.</p>`,
-    video: {
-      src: "/assets/videos/Stevens Online MBA - 2.mp4",
-      poster: "/assets/videos/video-cover-2.avif",
-      title: "",
-      caption:
-        "Hear from our students about their transformative Stevens Online MBA experience",
-    },
-  },
+  
   curriculum: {
     description:
       "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",

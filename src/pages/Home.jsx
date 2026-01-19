@@ -23,13 +23,13 @@ import {
   CarouselNavButton,
 } from "@/components/shared";
 import { SupportEventsSection } from "@/components/shared/sections/SupportEventsSection";
+import { VideoSection } from "@/components/shared/sections/VideoSection";
 import { ProgramShowcaseCard } from "@/components/shared/cards/ProgramShowcaseCard";
 import { BlogCarousel } from "@/components/blog";
 import { ArrowRight, X, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 import {
-  VideoPlayer,
   ParallaxImage,
   RequestInfoModal,
 } from "@/components/shared";
@@ -437,11 +437,11 @@ export default function Home() {
         {/* Dimensional Imagery Section - CPE Brand Guidelines */}
         <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden">
           {/* Content container - z-10 to stay below asterism */}
-          <div className="mx-auto px-stevens-md lg:px-stevens-lg relative z-40">
+          <div className="mx-auto px-stevens-md lg:px-stevens-3xl relative z-40">
             <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
               {/* Left: Layered Images */}
               <AnimatedSection>
-                <AngledImageStack className="h-[600px] lg:h-[800px] relative">
+                <AngledImageStack className="h-[600px] lg:h-[800px] relative ">
                   {/* Background layer - larger */}
                   <AngledImage
                     src="/assets/images/shared/3-explore-msds.webp"
@@ -511,56 +511,7 @@ export default function Home() {
         </section>
 
         {/* THE STEVENS ONLINE ADVANTAGE */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-black relative overflow-hidden">
-          {/* Subtle background decoration */}
-
-          <div className="max-w-7xl mx-auto px-stevens-md lg:px-stevens-lg">
-            {/* Section Header - Full Width */}
-            <AnimatedSection className="mb-8 lg:mb-12">
-              <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-white tracking-tight leading-tight">
-                THE STEVENS ONLINE ADVANTAGE
-              </h2>
-            </AnimatedSection>
-
-            <div className="grid lg:grid-cols-3 gap-stevens-gap-lg items-center">
-              <AnimatedSection className="relative lg:col-span-2">
-                <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-white/20">
-                  {/* Video Player Component */}
-                  <VideoPlayer
-                    src="/assets/videos/Stevens Online Home - 1.mp4"
-                    poster="/assets/videos/video-cover-3.avif"
-                    title=""
-                    showControls={true}
-                    muted={true}
-                  />
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection>
-                <h3 className="font-stevens-display text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight">
-                  Delivering the outcomes that drive career success
-                </h3>
-
-                <p className="text-stevens-lg text-white/80 mb-8 leading-relaxed">
-                  The College of Professional Education is much more than
-                  courses and credentials - it's a powerful new model centered
-                  on giving working professionals at every stage of their
-                  careers the unique mix of skills and qualifications they need
-                  to excel in today's complex global economy.
-                </p>
-
-                {/* CTA Link */}
-                <Link
-                  to="/online-learning-experience/"
-                  className="inline-flex items-center text-stevens-red font-bold hover:underline underline-offset-4 group"
-                >
-                  Discover the online experience
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
+        <VideoSection />
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"

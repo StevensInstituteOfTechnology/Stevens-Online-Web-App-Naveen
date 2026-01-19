@@ -13,7 +13,6 @@ import {
   FAQSection,
   AccreditationSection,
   RankingsSection,
-  VideoSection,
   StudentSpotlightSection,
   EventsSection,
   FacultySection,
@@ -27,6 +26,7 @@ import {
   QuickStatsBar,
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
+import { VideoSection } from "../../shared/sections/VideoSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -181,10 +181,20 @@ export function DegreeTemplate({
         />
 
         {/* 3. Video Section */}
-        <VideoSection
-          videoSection={videoSection}
-          ref={registerSectionRef("video")}
-        />
+        {videoSection && (
+          <VideoSection
+            title={videoSection.title}
+            heading={videoSection.heading || videoSection.description || videoSection.title}
+            description={videoSection.description || ""}
+            videoSrc={videoSection.videoSrc}
+            videoPoster={videoSection.posterSrc}
+            videoTitle={videoSection.title}
+            showControls={videoSection.showControls}
+            muted={videoSection.muted}
+            showCTA={videoSection.showCTA !== false}
+            ref={registerSectionRef("video")}
+          />
+        )}
 
         {/* 4. Curriculum Section */}
         <CurriculumSection

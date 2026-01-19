@@ -47,6 +47,8 @@ export { default as Asterism, AsterismPresets } from "./brand/Asterism";
 
 // Section components
 export { default as TopCompaniesSection } from "./sections/TopCompaniesSection";
+export { default as SupportEventsSection } from "./sections/SupportEventsSection";
+export { default as VideoSection } from "./sections/VideoSection";
 
 // Navigation components
 export { CarouselNavButton } from "./navigation";

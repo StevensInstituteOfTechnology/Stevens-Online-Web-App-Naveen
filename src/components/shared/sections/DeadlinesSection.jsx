@@ -56,6 +56,18 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
           {/* Horizontal Timeline Line - Desktop/Tablet */}
           <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-stevens-dark-gray"></div>
 
+          {/* Arrow at the end of timeline - Desktop/Tablet */}
+          <div 
+            className="hidden md:block absolute top-[81px] right-0 transform translate-x-1/2 -translate-y-1/2"
+            style={{
+              width: 0,
+              height: 0,
+              borderLeft: '16px solid #363D45', // stevens-dark-gray
+              borderTop: '8px solid transparent',
+              borderBottom: '8px solid transparent',
+            }}
+          ></div>
+
           {/* Vertical Timeline Line - Mobile Only */}
           <div className="md:hidden absolute top-8 left-6 w-0.5 bg-stevens-dark-gray h-[calc(100%-2rem)]"></div>
 

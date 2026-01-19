@@ -12,8 +12,6 @@ export { HeroSection } from "./HeroSection";
 export { FAQSection } from "./FAQSection";
 export { AccreditationSection } from "./AccreditationSection";
 export { RankingsSection } from "./RankingsSection";
-export { VideoSection } from "./VideoSection";
-export { CareerSection } from "./CareerSection";
 export { StudentSpotlightSection } from "./StudentSpotlightSection";
 export { EventsSection } from "./EventsSection";
 export { TopCompaniesSection } from "./TopCompaniesSection";

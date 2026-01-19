@@ -121,6 +121,17 @@ const programData = {
         "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022).",
     },
   ],
+  videoSection: {
+    title: "Discover Your Future at Stevens",
+    heading: "Advance your engineering career without interrupting your work",
+    description:
+      "Our 100% online, part-time format empowers engineering professionals to develop leadership and management expertise while maintaining their current role. Learn from expert faculty who combine technical depth with business acumen, and connect with a network of accomplished peers and alumni leading engineering teams across diverse industries.",
+    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.webp",
+    showControls: true,
+    muted: true,
+    showCTA: false,
+  },
   career: {
     description: `
       <p class="mb-4">Engineering leadership roles remain in strong demand across industries, from manufacturing and energy to technology and logistics. The Stevens Online MEM prepares you to step into management pathways where technical fluency and business decision-making intersect.</p>

@@ -103,7 +103,17 @@ const programData = {
     ],
     concentrations: [],
   },
-
+  videoSection: {
+    title: "Discover Your Future at Stevens",
+    heading: "Build AI skills without putting your career on hold",
+    description:
+      "Our 100% online, flexible format empowers professionals to master enterprise AI capabilities while maintaining their current role. Learn from expert faculty who bridge cutting-edge AI research with real-world business applications, and connect with a network of accomplished peers implementing AI solutions across industries.",
+    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.webp",
+    showControls: true,
+    muted: true,
+    showCTA: false,
+  },
   career: {
     description: `<p class="mb-4">The demand for AI skills has exploded across industries. What was once confined to data science and engineering teams is now a critical capability for business professionals in every function-from marketing and operations to finance and HR.</p><p class="mb-4">Organizations are seeking professionals who can bridge the gap between AI potential and practical implementation. The Enterprise AI Certificate prepares you to be that bridge: someone who understands AI capabilities, can design proof-of-concept solutions, and knows how to operationalize AI workflows within existing business processes.</p><p>Whether you're looking to advance in your current role, pivot into an AI-adjacent position, or simply future-proof your career, this certificate provides the practical skills and graduate-level credential employers value.</p>`,
     jobTitles: [

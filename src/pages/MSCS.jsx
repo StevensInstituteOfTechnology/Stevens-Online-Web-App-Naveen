@@ -112,7 +112,7 @@ const programData = {
       ranking: "#1",
       description: "In N.J.",
       source:
-        "U.S. News & World Report, Best Online Master’s in Computer Information Technology Programs (2024).",
+        "U.S. News & World Report, Best Online Master's in Computer Information Technology Programs (2024).",
     },
 
     {
@@ -127,6 +127,17 @@ const programData = {
       source: "Payscale (2024)",
     },
   ],
+  videoSection: {
+    title: "Discover Your Future at Stevens",
+    heading: "Build advanced technical skills without putting your career on hold",
+    description:
+      "Our 100% online, part-time format empowers working professionals to master cutting-edge computer science concepts while maintaining their current role. Learn from expert faculty who bridge academic research with industry applications, and connect with a network of accomplished peers and alumni across leading tech companies.",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.webp",
+    showControls: true,
+    muted: true,
+    showCTA: false,
+  },
   career: {
     description: `
       <p class="mb-4">Computer science roles continue to grow rapidly, with strong demand for software development, data systems, and security talent. Stevens’ online MSCS prepares you for advanced technical and leadership positions across modern computing disciplines.</p>

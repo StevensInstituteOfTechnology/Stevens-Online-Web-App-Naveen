@@ -23,6 +23,7 @@ import {
   QuickStatsBar,
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
+import { VideoSection } from "../../shared/sections/VideoSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -66,6 +67,7 @@ export function CertificateTemplate({
     hero,
     quickFacts,
     overview,
+    videoSection,
     rankings,
     career,
     curriculum,
@@ -163,20 +165,36 @@ export function CertificateTemplate({
           ref={registerSectionRef("overview")}
         />
 
-        {/* 2. Rankings Section (By the Numbers) */}
+        {/* 2. Video Section */}
+        {videoSection && (
+          <VideoSection
+            title={videoSection.title}
+            heading={videoSection.heading || videoSection.description || videoSection.title}
+            description={videoSection.description || ""}
+            videoSrc={videoSection.videoSrc}
+            videoPoster={videoSection.posterSrc}
+            videoTitle={videoSection.title}
+            showControls={videoSection.showControls}
+            muted={videoSection.muted}
+            showCTA={videoSection.showCTA !== false}
+            ref={registerSectionRef("video")}
+          />
+        )}
+
+        {/* 3. Rankings Section (By the Numbers) */}
         <RankingsSection
           rankings={rankings}
           footnotes={programData.rankings_footnotes}
           ref={registerSectionRef("rankings")}
         />
 
-        {/* 3. What You'll Learn (Skills-First) - BEFORE Career for certificates */}
+        {/* 4. What You'll Learn (Skills-First) - BEFORE Career for certificates */}
         <SkillsSection
           whatYoullLearn={whatYoullLearn}
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 4. Career Outcomes (intro + job titles OR logos) */}
+        {/* 5. Career Outcomes (intro + job titles OR logos) */}
         <CareerOutcomesSection
           careerOutcomes={careerOutcomes}
           career={career}

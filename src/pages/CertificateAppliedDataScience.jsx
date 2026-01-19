@@ -109,7 +109,17 @@ const programData = {
     ],
     concentrations: [],
   },
-
+  videoSection: {
+    title: "Discover Your Future at Stevens",
+    heading: "Launch your data science career without interrupting your work",
+    description:
+      "Our 100% online, flexible format empowers professionals to build AI and data science expertise while maintaining their current role. Learn from expert faculty who combine technical depth with practical applications, and connect with a network of accomplished peers and alumni driving innovation in data science and AI.",
+    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    posterSrc: "/assets/videos/video-cover-1.webp",
+    showControls: true,
+    muted: true,
+    showCTA: false,
+  },
   career: {
     description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek-Python, SQL, ML frameworks-while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [

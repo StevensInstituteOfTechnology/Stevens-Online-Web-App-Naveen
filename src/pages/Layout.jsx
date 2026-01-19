@@ -208,13 +208,13 @@ export default function Layout({ children, currentPageName }) {
 
     const handleScrollNow = () => {
       const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 100);
+      setIsScrolled(scrollY > 200);
       setShowBackToTop(scrollY > 300);
     };
 
     const handleScroll = () => {
       if (scrollTimer) clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(handleScrollNow, 120);
+      scrollTimer = setTimeout(handleScrollNow, 50);
     };
 
     // Add global protection against external script interference
