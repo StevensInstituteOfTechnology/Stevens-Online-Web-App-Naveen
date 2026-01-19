@@ -73,7 +73,7 @@ export function useSectionNavigation({
       { id: "what-youll-learn", label: "What You'll Learn" },
       { id: "career-outcomes", label: "Career Outcomes" },
       { id: "why-stevens", label: "Why Stevens" },
-      { id: "student-spotlight", label: "Student Spotlight" },
+      { id: "student-spotlight", label: "Student Testimonial" },
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
       { id: "deadlines", label: "Deadlines" },
@@ -85,11 +85,12 @@ export function useSectionNavigation({
 
     const certificateItems = [
       { id: "overview", label: "Overview" },
+      { id: "career-outcomes", label: "Career Outcomes" },
+      { id: "video", label: "Video" },
+      { id: "why-stevens", label: "Why Stevens" },
       { id: "rankings", label: "Rankings" },
       { id: "what-youll-learn", label: "What You'll Learn" },
-      { id: "career-outcomes", label: "Career Outcomes" },
       { id: "curriculum", label: "Curriculum" },
-      { id: "why-stevens", label: "Why Stevens" },
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
       { id: "tuition", label: "Tuition" },

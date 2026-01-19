@@ -33,11 +33,6 @@ const ExploreCertEnterpriseAI = () => {
       ogImage: '/assets/images/explore-cert-enterprise-ai/explore-cert-EAI-1.webp',
       url: '/explore/certificates/enterprise-ai/'
     },
-    badges: [
-      { text: "Graduate Credit", icon: Award },
-      { text: "100% Online", icon: Globe },
-      { text: "Stackable to Masters", icon: GraduationCap }
-    ],
     
     // Statistics
     statistics: [

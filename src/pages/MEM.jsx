@@ -29,12 +29,6 @@ const programData = {
       label: "Apply In Minutes",
       href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
     },
-
-    badges: [
-      { text: "100% Online", icon: Globe },
-      { text: "ASAP Application Available", icon: Check },
-      { text: "#6 in the Nation", icon: Award },
-    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)

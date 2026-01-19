@@ -3,14 +3,11 @@ import {
   Globe,
   Award,
   Check,
-  Briefcase,
   DollarSign,
   GraduationCap,
   TrendingUp,
-  Target,
   BookOpen,
   Users,
-  BrainCircuit,
 } from "lucide-react";
 import { CertificateTemplate } from "../components/program-pages/templates";
 import { TuitionCardsHero } from "../components/program-pages/primitives";
@@ -41,11 +38,6 @@ const programData = {
       label: "Apply In Minutes",
       href: "/accelerated-application/",
     },
-    badges: [
-      { text: "100% Online", icon: Globe },
-      { text: "Graduate Credit", icon: Award },
-      { text: "Stackable to Masters", icon: GraduationCap },
-    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)
@@ -152,71 +144,41 @@ const programData = {
     ],
   },
   whatYoullLearn: {
-    variant: "skillCards",
     title: "What You'll Learn",
     description:
       "The Enterprise AI Certificate follows a strategic progression: understand AI capabilities and governance, design and prototype GenAI solutions, then build and deploy operational workflows. Each course builds on the previous, creating a complete skillset for AI implementation.",
     modules: [
       {
         title: "AI Strategy & Management",
-        growth: "BIA 568 – Management of AI Technologies",
-        icon: Target,
-        courses: [
-          {
-            code: "Week 1-4",
-            title:
-              "AI Factory concepts, deployment patterns, and platform evaluation",
-          },
-          {
-            code: "Week 5-8",
-            title:
-              "FATE principles, governance frameworks, and vendor selection",
-          },
-          {
-            code: "Project",
-            title: "Implementation playbook and architecture analysis",
-          },
+        description:
+          "BIA 568 – Management of AI Technologies: Learn to evaluate, govern, and implement AI at the enterprise level.",
+        skillsLabel: "Course Highlights",
+        skills: [
+          "AI Factory concepts, deployment patterns, and platform evaluation",
+          "FATE principles, governance frameworks, and vendor selection",
+          "Implementation playbook and architecture analysis",
         ],
       },
       {
         title: "Generative AI & Prototyping",
-        growth: "BIA 662 – Augmented Intelligence & GenAI",
-        icon: BrainCircuit,
-        courses: [
-          {
-            code: "Week 1-4",
-            title: "GenAI foundations, prompt engineering, and ethics",
-          },
-          {
-            code: "Week 5-8",
-            title: "Design and scope a proof-of-concept with business value",
-          },
-          {
-            code: "Project",
-            title:
-              "Team PoC with management plan, demo, and implementation roadmap",
-          },
+        description:
+          "BIA 662 – Augmented Intelligence & GenAI: Design and prototype GenAI solutions with real business value.",
+        skillsLabel: "Course Highlights",
+        skills: [
+          "GenAI foundations, prompt engineering, and ethics",
+          "Design and scope a proof-of-concept with business value",
+          "Team PoC with management plan, demo, and implementation roadmap",
         ],
       },
       {
         title: "Operational AI Workflows",
-        growth: "PE 810 – Applied AI for Business",
-        icon: Briefcase,
-        courses: [
-          {
-            code: "Week 1-4",
-            title:
-              "AI co-coding basics, workflow design, and modular development",
-          },
-          {
-            code: "Week 5-8",
-            title: "Guardrails, validation, dashboards, and NLP agents",
-          },
-          {
-            code: "Project",
-            title:
-              "Running script/app with config, tests, logs, and operational demo",
-          },
+        description:
+          "PE 810 – Applied AI for Business: Build and deploy production-ready AI workflows and applications.",
+        skillsLabel: "Course Highlights",
+        skills: [
+          "AI co-coding basics, workflow design, and modular development",
+          "Guardrails, validation, dashboards, and NLP agents",
+          "Running script/app with config, tests, logs, and operational demo",
         ],
       },
     ],

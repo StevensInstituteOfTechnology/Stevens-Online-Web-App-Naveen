@@ -3,10 +3,7 @@ import {
   Globe,
   Award,
   Check,
-  Briefcase,
-  DollarSign,
   BrainCircuit,
-  LineChart,
   Target,
   TrendingUp,
   Users,
@@ -36,11 +33,6 @@ const programData = {
       label: "Apply In Minutes",
       href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
     },
-    badges: [
-      { text: "100% Online", icon: Globe },
-      { text: "AACSB Accredited", icon: Award },
-      { text: "No GMAT/GRE Required", icon: Check },
-    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)
@@ -185,49 +177,44 @@ const programData = {
     ],
   },
   whatYoullLearn: {
-    variant: "skillCards",
     title: "A Skill Set Designed for Impact",
     description:
       "Through a mix of foundational, concentration and elective courses, the Stevens Online MBA equips students with T-shaped skills - broad cross-functional business knowledge combined with deep expertise in areas like analytics, innovation and digital strategy. This unique approach ensures that graduates are not only strategic thinkers and effective leaders but also specialists capable of driving impact in their chosen industries.",
     modules: [
       {
         title: "Financial Management",
-        growth: "+14.8% Projected Growth Until 2035",
-        icon: DollarSign,
-        courses: [
-          { code: "FIN 500", title: "Financial and Managerial Accounting" },
-          { code: "FIN 523", title: "Financial Management" },
-          { code: "FIN 638", title: "Corporate Finance" },
-          { code: "MGT 506", title: "Economics for Managers" },
+        description:
+          "Master the language of business and develop expertise in financial decision-making. Learn to analyze financial statements, evaluate investments, and drive strategic financial planning.",
+        skillsLabel: "Example Courses",
+        skills: [
+          "FIN 500 - Financial and Managerial Accounting",
+          "FIN 523 - Financial Management",
+          "FIN 638 - Corporate Finance",
+          "MGT 506 - Economics for Managers",
         ],
       },
       {
         title: "Project Management",
-        growth: "+19.8% Projected Growth Until 2035",
-        icon: Briefcase,
-        courses: [
-          { code: "MGT 609", title: "Project Management Fundamentals" },
-          {
-            code: "MGT 610",
-            title: "Strategic Perspectives on Project Management",
-          },
-          { code: "MGT 611", title: "Project Analytics" },
-          { code: "MGT 619", title: "Leading Across Projects" },
+        description:
+          "Develop the skills to lead complex projects from inception to completion. Learn strategic project planning, analytics-driven decision making, and cross-functional team leadership.",
+        skillsLabel: "Example Courses",
+        skills: [
+          "MGT 609 - Project Management Fundamentals",
+          "MGT 610 - Strategic Perspectives on Project Management",
+          "MGT 611 - Project Analytics",
+          "MGT 619 - Leading Across Projects",
         ],
       },
       {
-        title: "Data Analysis",
-        growth: "+25.8% Projected Growth Until 2035",
-        icon: LineChart,
-        courses: [
-          {
-            code: "BIA 500",
-            title: "Business Analytics: Data, Models and Decisions",
-          },
-          { code: "BIA 568", title: "Management of AI Technologies" },
-          { code: "BIA 672", title: "Marketing Analytics" },
-          { code: "BIA 674", title: "Supply Chain Analytics" },
-          { code: "BIA 658", title: "Social Network Analytics" },
+        title: "Data Analytics & AI",
+        description:
+          "Build expertise in leveraging data and artificial intelligence for business advantage. Learn to extract insights from complex datasets and apply AI technologies strategically.",
+        skillsLabel: "Example Courses",
+        skills: [
+          "BIA 500 - Business Analytics: Data, Models and Decisions",
+          "BIA 568 - Management of AI Technologies",
+          "BIA 672 - Marketing Analytics",
+          "BIA 674 - Supply Chain Analytics",
         ],
       },
     ],

@@ -23,11 +23,6 @@ const ExploreMSAI = () => {
     heroSubtitle: "Specialize in Artificial Intelligence and Machine Learning. 100% online program designed for aspiring AI professionals.",
     bgImage: "/assets/images/explore-msai/3-explore-msai.webp", // Placeholder
     programCode: "msai",
-    badges: [
-      { text: "No. 1 in New Jersey", icon: Award },
-      { text: "100% Online", icon: Globe },
-      { text: "Up to $16K Off Tuition", icon: Star }
-    ],
     
     // Statistics
     statistics: [

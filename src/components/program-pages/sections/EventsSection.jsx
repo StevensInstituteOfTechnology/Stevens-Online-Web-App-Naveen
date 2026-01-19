@@ -48,11 +48,12 @@ export const EventsSection = forwardRef(function EventsSection(
     <Section
       id="events"
       title={events.title || "On-Demand Events"}
-      bgClassName="bg-stevens-light-gray"
+      bgClassName="bg-stevens-dark-gray"
+      titleClassName="text-stevens-white"
       ref={ref}
     >
       {events.description && (
-        <p className="text-center text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">
+        <p className="text-center text-stevens-lg text-white/80 max-w-3xl mx-auto mb-stevens-2xl leading-relaxed">
           {events.description}
         </p>
       )}
@@ -67,7 +68,7 @@ export const EventsSection = forwardRef(function EventsSection(
             }`}
           >
             {visibleItems.map((item, i) => (
-              <Card key={i} className="h-full border-stevens-light-gray">
+              <Card key={i} className="h-full bg-white border-none">
                 <CardContent className="p-stevens-lg flex flex-col h-full pt-stevens-lg">
                   <h5 className="font-stevens-semibold text-stevens-dark-gray uppercase font-bold mb-stevens-xs hover:text-stevens-red transition-colors duration-stevens-normal">
                     {item.title}
@@ -98,7 +99,7 @@ export const EventsSection = forwardRef(function EventsSection(
               <Button
                 variant="link"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="text-stevens-red hover:text-stevens-dark-gray text-lg font-medium p-0 h-auto"
+                className="text-white hover:text-stevens-red text-lg font-medium p-0 h-auto"
               >
                 {isExpanded ? (
                   <>
@@ -116,7 +117,7 @@ export const EventsSection = forwardRef(function EventsSection(
           )}
         </>
       ) : (
-        <p className="text-center text-stevens-dark-gray">
+        <p className="text-center text-white/80">
           {events.fallbackText || "No upcoming events at this time."}
         </p>
       )}

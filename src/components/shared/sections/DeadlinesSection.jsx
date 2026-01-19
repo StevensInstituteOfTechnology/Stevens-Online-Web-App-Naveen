@@ -34,18 +34,18 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
     <Section
       id="deadlines"
       title={null}
-      bgClassName="bg-stevens-light-gray"
+      bgClassName="bg-stevens-dark-gray"
       ref={ref}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="">
-          <h2 className="font-stevens-display text-3xl md:text-4xl lg:text-5xl text-stevens-dark-gray font-light uppercase tracking-wide mb-4 text-left">
+          <h2 className="font-stevens-display text-3xl md:text-4xl lg:text-5xl text-white font-light uppercase tracking-wide mb-4 text-left">
             Key Dates & Deadlines
           </h2>
 
           {term && (
-            <h3 className="font-stevens-display text-2xl md:text-3xl text-stevens-dark-gray font-light uppercase tracking-wide text-left ">
+            <h3 className="font-stevens-display text-2xl md:text-3xl text-stevens-red font-light uppercase tracking-wide text-left ">
               {term}
             </h3>
           )}
@@ -54,7 +54,7 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
         {/* Timeline Container */}
         <div className="relative ">
           {/* Horizontal Timeline Line - Desktop/Tablet */}
-          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-stevens-dark-gray"></div>
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-white/40"></div>
 
           {/* Arrow at the end of timeline - Desktop/Tablet */}
           <div 
@@ -62,35 +62,35 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
             style={{
               width: 0,
               height: 0,
-              borderLeft: '16px solid #363D45', // stevens-dark-gray
+              borderLeft: '16px solid rgba(255, 255, 255, 255)',
               borderTop: '8px solid transparent',
               borderBottom: '8px solid transparent',
             }}
           ></div>
 
           {/* Vertical Timeline Line - Mobile Only */}
-          <div className="md:hidden absolute top-8 left-6 w-0.5 bg-stevens-dark-gray h-[calc(100%-2rem)]"></div>
+          <div className="md:hidden absolute top-8 left-6 w-0.5 bg-white/40 h-[calc(100%-2rem)]"></div>
 
           {/* Timeline Items */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
             {dates.map((item, index) => (
               <div key={index} className="relative">
                 {/* Desktop/Tablet Timeline Marker */}
-                <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-stevens-dark-gray"></div>
+                <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white"></div>
 
                 {/* Mobile Timeline Marker */}
-                <div className="md:hidden absolute top-8 left-4 transform -translate-x-1/2 w-4 h-4 bg-stevens-dark-gray"></div>
+                <div className="md:hidden absolute top-8 left-4 transform -translate-x-1/2 w-4 h-4 bg-white"></div>
 
                 {/* Content with responsive spacing */}
                 <div className="text-left md:text-center md:pt-24 pl-12 md:pl-0">
-                  <h4 className="font-stevens-display text-lg text-stevens-dark-gray font-light uppercase tracking-wide mb-3">
+                  <h4 className="font-stevens-display text-lg text-white font-light uppercase tracking-wide mb-3">
                     {item.label}
                   </h4>
-                  <p className="font-stevens-body text-base text-stevens-dark-gray font-medium mb-3">
+                  <p className="font-stevens-body text-base text-white font-medium mb-3">
                     {item.date}
                   </p>
                   {item.description && (
-                    <p className="font-stevens-body text-sm text-stevens-gray leading-relaxed">
+                    <p className="font-stevens-body text-sm text-white/70 leading-relaxed">
                       {item.description}
                     </p>
                   )}
@@ -103,7 +103,7 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
         {/* Footnote */}
         {footnote && (
           <div className="mt-12">
-            <p className="font-stevens-body text-sm text-stevens-gray leading-relaxed text-left max-w-4xl">
+            <p className="font-stevens-body text-sm text-white/70 leading-relaxed text-left max-w-4xl">
               {footnote}
             </p>
           </div>

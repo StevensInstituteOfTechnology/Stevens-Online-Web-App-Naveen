@@ -44,11 +44,11 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  * 2. Sticky Navigation
  * 3. Overview (with Quick Facts)
  * 4. Rankings (By the Numbers)
- * 5. What You'll Learn (Skills-First) - BEFORE Career
- * 6. Career & Skill Outcomes
- * 7. Common Job Titles
- * 8. Top Companies
- * 9. Curriculum / Course Sequence - AFTER Career
+ * 5. Career & Skill Outcomes
+ * 6. What You'll Learn (Skills) - BEFORE Curriculum
+ * 7. Curriculum / Course Sequence
+ * 8. Common Job Titles
+ * 9. Top Companies
  * 10. Why Stevens (includes Stackability/Pathways)
  * 11. Faculty (Minimal)
  * 12. Admissions (combined with Tuition & Key Dates)
@@ -133,7 +133,6 @@ export function CertificateTemplate({
         programCode={code}
         title={hero?.titleLines || hero?.title}
         subtitle={hero?.subtitle}
-        badges={hero?.badges}
         tuitionCards={hero?.tuitionCards}
         bgImage={hero?.bgImage}
         bgImagePosition={hero?.bgImagePosition}
@@ -165,7 +164,18 @@ export function CertificateTemplate({
           ref={registerSectionRef("overview")}
         />
 
-        {/* 2. Video Section */}
+        {/* 2. Career Outcomes (intro + job titles OR logos) */}
+        <CareerOutcomesSection
+          careerOutcomes={careerOutcomes}
+          career={career}
+          programCode={code}
+          isCertificate={true}
+          variant={careerOutcomes?.variant || "table"}
+          topCompanies={topCompanies}
+          ref={registerSectionRef("career-outcomes")}
+        />
+
+        {/* 3. Video Section */}
         {videoSection && (
           <VideoSection
             title={videoSection.title}
@@ -181,41 +191,30 @@ export function CertificateTemplate({
           />
         )}
 
-        {/* 3. Rankings Section (By the Numbers) */}
+        {/* 4. Why Stevens (includes Stackability/Pathways) */}
+        <WhyStevensSection
+          whyStevens={whyStevens}
+          ref={registerSectionRef("why-stevens")}
+        />
+
+        {/* 5. Rankings Section (By the Numbers) */}
         <RankingsSection
           rankings={rankings}
           footnotes={programData.rankings_footnotes}
           ref={registerSectionRef("rankings")}
         />
 
-        {/* 4. What You'll Learn (Skills-First) - BEFORE Career for certificates */}
+        {/* 6. What You'll Learn (Skills) Section - BEFORE Curriculum */}
         <SkillsSection
           whatYoullLearn={whatYoullLearn}
           ref={registerSectionRef("what-youll-learn")}
         />
 
-        {/* 5. Career Outcomes (intro + job titles OR logos) */}
-        <CareerOutcomesSection
-          careerOutcomes={careerOutcomes}
-          career={career}
-          programCode={code}
-          isCertificate={true}
-          variant={careerOutcomes?.variant || "table"}
-          topCompanies={topCompanies}
-          ref={registerSectionRef("career-outcomes")}
-        />
-
-        {/* 6. Curriculum / Course Sequence - AFTER Career Outcomes for certificates */}
+        {/* 7. Curriculum / Course Sequence */}
         <CurriculumSection
           curriculum={curriculum}
           programCode={code}
           ref={registerSectionRef("curriculum")}
-        />
-
-        {/* 8. Why Stevens (includes Stackability/Pathways) */}
-        <WhyStevensSection
-          whyStevens={whyStevens}
-          ref={registerSectionRef("why-stevens")}
         />
 
         {/* 9. Faculty (Minimal) */}

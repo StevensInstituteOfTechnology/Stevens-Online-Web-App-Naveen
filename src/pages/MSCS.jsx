@@ -31,11 +31,6 @@ const programData = {
       label: "Apply In Minutes",
       href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
     },
-    badges: [
-      { text: "99% Employment Rate", icon: Award },
-      { text: "ASAP Application Available", icon: Check },
-      // { text: "#1 in New Jersey", icon: Star }
-    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)

@@ -33,11 +33,6 @@ const ExploreMSCS = () => {
     },
     useApplicationModal: true,
     secondaryCta: { label: 'Apply In Minutes', href: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP' },
-    badges: [
-      { text: "No. 1 in New Jersey", icon: Award },
-      { text: "100% Online", icon: Globe },
-      { text: "Up to $13K Off Tuition", icon: Star }
-    ],
     
     // Statistics
     statistics: [

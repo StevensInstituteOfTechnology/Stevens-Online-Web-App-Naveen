@@ -40,9 +40,9 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  * 3. Overview
  * 4. Rankings (By the Numbers)
  * 5. Video
- * 6. Curriculum
- * 7. Career Outlook
- * 8. What You'll Learn (Skills)
+ * 6. What You'll Learn (Skills)
+ * 7. Curriculum
+ * 8. Career Outlook
  * 9. Common Job Titles
  * 10. Top Companies
  * 11. Why Stevens
@@ -141,7 +141,6 @@ export function DegreeTemplate({
         sourcePage={`${code}_program_page`}
         title={hero?.titleLines}
         subtitle={hero?.subtitle}
-        badges={hero?.badges}
         tuitionCards={hero?.tuitionCards}
         bgImage={hero?.bgImage}
         bgImagePosition={hero?.bgImagePosition}
@@ -196,17 +195,17 @@ export function DegreeTemplate({
           />
         )}
 
-        {/* 4. Curriculum Section */}
+        {/* 4. What You'll Learn (Skills) Section */}
+        <SkillsSection
+          whatYoullLearn={whatYoullLearn}
+          ref={registerSectionRef("what-youll-learn")}
+        />
+
+        {/* 5. Curriculum Section */}
         <CurriculumSection
           curriculum={curriculum}
           programCode={code}
           ref={registerSectionRef("curriculum")}
-        />
-
-        {/* 5. What You'll Learn (Skills) Section */}
-        <SkillsSection
-          whatYoullLearn={whatYoullLearn}
-          ref={registerSectionRef("what-youll-learn")}
         />
 
         {/* 6. Career Outcomes (intro + job titles OR logos) */}

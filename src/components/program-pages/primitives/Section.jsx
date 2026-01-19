@@ -13,6 +13,7 @@ import React, { forwardRef } from 'react';
  * @param {string} el - HTML element to render (default: "section")
  * @param {string} bgClassName - Background color class (default: "bg-stevens-white")
  * @param {string} paddingClassName - Padding classes (default: section padding)
+ * @param {string} titleClassName - Additional title classes (for color override)
  */
 export const Section = forwardRef(function Section(
   {
@@ -23,6 +24,7 @@ export const Section = forwardRef(function Section(
     el = 'section',
     bgClassName = 'bg-stevens-white',
     paddingClassName = 'py-stevens-section-sm lg:py-stevens-section',
+    titleClassName = 'text-stevens-dark-gray',
   },
   ref
 ) {
@@ -42,7 +44,7 @@ export const Section = forwardRef(function Section(
         }
       >
         {title && (
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-center uppercase tracking-wide">
+          <h2 className={`font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light mb-stevens-lg text-center uppercase tracking-wide ${titleClassName}`}>
             {title}
           </h2>
         )}

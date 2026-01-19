@@ -24,13 +24,13 @@ export const CourseSection = ({ section, variant = "degree" }) => {
   return (
     <div className="course-section mb-8">
       {section.title && (
-        <h4 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light text-stevens-dark-gray mb-4 uppercase tracking-wide">
+        <h4 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light text-white mb-4 uppercase tracking-wide">
           {section.title}
         </h4>
       )}
 
       {section.intro && (
-        <p className="text-stevens-base text-stevens-dark-gray leading-relaxed mb-4">
+        <p className="text-stevens-base text-white/80 leading-relaxed mb-4">
           {section.intro}
         </p>
       )}
@@ -52,15 +52,15 @@ export const CourseSection = ({ section, variant = "degree" }) => {
       {hasBulletItems && (
         <div className="mt-4">
           {section.bulletTitle && (
-            <h5 className="font-semibold text-stevens-dark-gray mb-3">
+            <h5 className="font-semibold text-white mb-3">
               {section.bulletTitle}
             </h5>
           )}
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc pl-5 space-y-2 marker:text-white/60">
             {section.bulletItems.map((item, index) => (
               <li
                 key={index}
-                className="text-stevens-base text-stevens-dark-gray leading-relaxed"
+                className="text-stevens-base text-white/80 leading-relaxed"
               >
                 {item}
               </li>

@@ -10,9 +10,6 @@ import {
   Target,
   BookOpen,
   Users,
-  Code,
-  Database,
-  LineChart,
 } from "lucide-react";
 import { CertificateTemplate } from "../components/program-pages/templates";
 import { TuitionCardsHero } from "../components/program-pages/primitives";
@@ -46,11 +43,6 @@ const programData = {
       label: "Apply In Minutes",
       href: "/accelerated-application/",
     },
-    badges: [
-    { text: "100% Online", icon: Globe },
-    { text: "Graduate Credit", icon: Award },
-      { text: "AI-First Curriculum", icon: TrendingUp },
-    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)
@@ -151,70 +143,41 @@ const programData = {
     topCompanies: ["Google", "Amazon", "Microsoft", "IBM", "Meta", "Apple"],
   },
   whatYoullLearn: {
-    variant: "skillCards",
-    title: "Curriculum: From Math to ML",
+    title: "What you'll learn",
     description:
       "The certificate follows a strategic progression: master the mathematical foundations for ML, build data pipelines with Python and SQL, then apply machine learning to real-world problems. Each course includes hands-on labs and a portfolio project.",
     modules: [
-    {
-      title: "Applied Math for AI",
-      growth: "MA 574 – Applied Math for Data Science",
-      icon: LineChart,
-      courses: [
-          {
-            code: "Core Topics",
-            title: "Linear algebra, calculus, optimization for ML/AI",
-          },
-          {
-            code: "Hands-On",
-            title: "Code-driven labs: PCA, regression, gradient descent",
-          },
-          {
-            code: "Project",
-            title: "Train and interpret an ML model with AI insight report",
-          },
+      {
+        title: "Applied Math for AI",
+        description:
+          "MA 574 – Applied Math for Data Science: AI-aligned mathematical foundations for machine learning and AI optimization.",
+        skillsLabel: "What You'll Learn",
+        skills: [
+          "Linear algebra, calculus, and optimization for ML/AI",
+          "Code-driven labs: PCA, regression, gradient descent",
+          "Train and interpret an ML model with AI insight report",
         ],
-    },
-    {
-      title: "Python & Data Pipelines",
-      growth: "CS 563 – Python and Databases",
-      icon: Database,
-      courses: [
-          {
-            code: "Core Topics",
-            title: "Python for data science, SQL, ETL/ELT, APIs",
-          },
-          {
-            code: "Hands-On",
-            title:
-              "Build AI-ready pipelines from raw data to training datasets",
-          },
-          {
-            code: "Project",
-            title: "End-to-end pipeline published to Streamlit app",
-          },
+      },
+      {
+        title: "Python & Data Pipelines",
+        description:
+          "CS 563 – Python and Databases: Building the data backbone for AI through Python and SQL.",
+        skillsLabel: "What You'll Learn",
+        skills: [
+          "Python for data science, SQL, ETL/ELT, APIs",
+          "Build AI-ready pipelines from raw data to training datasets",
+          "End-to-end pipeline published to Streamlit app",
         ],
-    },
-    {
-      title: "Machine Learning & AI",
-      growth: "CS 559 – Machine Learning: Fundamentals & Applications",
-      icon: Code,
-      courses: [
-          {
-            code: "Core Topics",
-            title:
-              "Regression, classification, ensembles, neural networks, explainability",
-          },
-          {
-            code: "Hands-On",
-            title:
-              "Build and evaluate AI solutions with SHAP/LIME for transparency",
-          },
-          {
-            code: "Project",
-            title:
-              "Deploy an ML model with reproducible code and stakeholder narrative",
-          },
+      },
+      {
+        title: "Machine Learning & AI",
+        description:
+          "CS 559 – Machine Learning: Fundamentals & Applications: From regression to neural networks with explainability.",
+        skillsLabel: "What You'll Learn",
+        skills: [
+          "Regression, classification, ensembles, neural networks, explainability",
+          "Build and evaluate AI solutions with SHAP/LIME for transparency",
+          "Deploy an ML model with reproducible code and stakeholder narrative",
         ],
       },
     ],

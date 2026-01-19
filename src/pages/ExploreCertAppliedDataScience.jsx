@@ -33,11 +33,6 @@ const ExploreCertAppliedDataScience = () => {
       ogImage: '/assets/images/explore-cert-applied-data-science/explore-cert-ADS-1.webp',
       url: '/explore/certificates/applied-data-science-foundations/'
     },
-    badges: [
-      { text: "AI-First Curriculum", icon: TrendingUp },
-      { text: "100% Online", icon: Globe },
-      { text: "Graduate Credit", icon: Award }
-    ],
     
     // Statistics
     statistics: [

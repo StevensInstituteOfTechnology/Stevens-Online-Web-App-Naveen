@@ -36,7 +36,7 @@ export const WhyStevensSection = forwardRef(function WhyStevensSection(
   return (
     <Section
       id="why-stevens"
-      bgClassName="bg-stevens-white"
+      bgClassName="bg-stevens-light-gray"
       paddingClassName="py-stevens-section-sm lg:py-stevens-section"
       ref={ref}
     >

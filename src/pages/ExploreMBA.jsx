@@ -29,11 +29,6 @@ const ExploreMBA = () => {
       ogImage: '/assets/images/explore-mba/1-omba-hero-scaled.webp',
       url: '/explore/online-mba/'
     },
-    badges: [
-      { text: "AACSB Accredited", icon: Award },
-      { text: "100% Online", icon: Globe },
-      { text: "No GMAT Required", icon: Star }
-    ],
     
     // Statistics
     statistics: [

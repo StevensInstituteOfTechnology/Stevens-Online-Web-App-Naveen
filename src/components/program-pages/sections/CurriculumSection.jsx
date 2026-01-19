@@ -104,9 +104,9 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
     : [];
 
   return (
-    <Section id="curriculum" bgClassName="bg-stevens-white" ref={ref}>
+    <Section id="curriculum" bgClassName="bg-stevens-dark-gray" ref={ref}>
       <div className="max-w-stevens-content-max mx-auto">
-        <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-lg text-left uppercase tracking-wide">
+        <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light text-white mb-stevens-lg text-left uppercase tracking-wide">
           {curriculum.title
             ? curriculum.title
             : `Online ${
@@ -115,7 +115,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
         </h2>
 
         {curriculum.description && (
-          <div className="mb-stevens-lg space-y-stevens-md text-stevens-dark-gray leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
+          <div className="mb-stevens-lg space-y-stevens-md text-white/80 leading-relaxed text-stevens-base stevens-md:text-stevens-lg">
             {curriculum.description.split("\n").map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -128,7 +128,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
             <Button
               variant="link"
               onClick={() => setIsExpanded(true)}
-              className="text-stevens-red hover:text-stevens-dark-gray text-lg font-medium p-0 h-auto"
+              className="text-white hover:text-stevens-red text-lg font-medium p-0 h-auto"
             >
               View Course List
               <ChevronDown className="w-5 h-5" />
@@ -143,14 +143,14 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
             className="w-full animate-in fade-in slide-in-from-top-4 duration-300"
           >
             <div className="relative overflow-x-auto scrollbar-hide group">
-              <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-              <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-white to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
-              <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-stevens-light-gray rounded-none h-auto p-0 gap-0">
+              <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-stevens-dark-gray to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+              <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-stevens-dark-gray to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-stevens-normal z-10"></div>
+              <TabsList className="inline-flex md:w-full justify-start bg-transparent border-b-2 border-white/20 rounded-none h-auto p-0 gap-0">
                 {tabsData.map((tab) => (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-stevens-dark-gray data-[state=active]:text-stevens-dark-gray hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
+                    className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-4 data-[state=active]:border-stevens-red rounded-none px-stevens-lg py-stevens-md font-stevens-bold text-stevens-base stevens-md:text-stevens-lg text-white/70 data-[state=active]:text-white hover:text-stevens-red transition-colors duration-stevens-normal border-b-4 border-transparent whitespace-nowrap flex-shrink-0"
                   >
                     {tab.title}
                   </TabsTrigger>
@@ -177,14 +177,14 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
 
                     {/* Optional footer (e.g., "Recommended Sequence" box or footnotes) */}
                     {tab.footer && (
-                      <div className="bg-stevens-light-gray border-l-4 border-stevens-black p-stevens-lg rounded-stevens-sm">
+                      <div className="bg-white/10 border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm">
                         {tab.footer.title && (
-                          <h5 className="font-stevens-bold text-stevens-base mb-stevens-sm">
+                          <h5 className="font-stevens-bold text-stevens-base mb-stevens-sm text-white">
                             {tab.footer.title}
                           </h5>
                         )}
                         {tab.footer.content && (
-                          <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed space-y-2">
+                          <div className="text-stevens-sm text-white/70 leading-relaxed space-y-2">
                             {tab.footer.content
                               .split("\n\n")
                               .map((paragraph, i) => (
@@ -198,7 +198,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
                 ) : tab.htmlContent ? (
                   /* LEGACY: HTML injection rendering */
                   <div
-                    className="prose prose-stevens max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-stevens-dark-gray [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-stevens-dark-gray [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-stevens-dark-gray [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
+                    className="prose prose-invert max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-white [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-white [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
                     dangerouslySetInnerHTML={{
                       __html: tab.htmlContent,
                     }}
@@ -212,13 +212,13 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
 
       {curriculum.completeCourseCatalog && isExpanded && (
         <div className="mt-12 max-w-stevens-content-max mx-auto animate-in fade-in slide-in-from-top-4 duration-300">
-          <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide">
+          <h3 className="font-stevens-display text-2xl font-light text-center mb-6 uppercase tracking-wide text-white">
             Complete Course Catalog
           </h3>
-          <Card>
+          <Card className="bg-white/10 border-white/20">
             <CardContent className="p-6 overflow-x-auto">
               <div
-                className="prose max-w-none"
+                className="prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: curriculum.completeCourseCatalog,
                 }}
@@ -234,7 +234,7 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
           <Button
             variant="link"
             onClick={() => setIsExpanded(false)}
-            className="text-stevens-red hover:text-stevens-dark-gray text-lg font-medium p-0 h-auto"
+            className="text-white hover:text-stevens-red text-lg font-medium p-0 h-auto"
           >
             Close Course List
             <ChevronUp className="w-5 h-5" />

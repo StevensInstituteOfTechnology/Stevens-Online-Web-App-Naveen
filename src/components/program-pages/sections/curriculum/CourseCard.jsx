@@ -54,14 +54,14 @@ export const CourseCard = ({
       : course.description && course.description.length > 150;
 
   return (
-    <div className="course-card bg-stevens-light-gray/50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6">
+    <div className="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6">
       {/* Card Header */}
       <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
         {/* Left: Course Code Badge + Title */}
         <div className="flex flex-wrap items-center gap-3 flex-1">
           {/* Course Code Badge */}
           {course.code && (
-            <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-stevens-red text-stevens-white rounded-full whitespace-nowrap">
+            <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-stevens-red text-white rounded-full whitespace-nowrap">
               {course.code}
             </span>
           )}
@@ -73,7 +73,7 @@ export const CourseCard = ({
 
         {/* Right: Credits Badge */}
         {course.credits && (
-          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-stevens-light-gray text-stevens-dark-gray rounded-full whitespace-nowrap">
+          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-gray-100 text-stevens-dark-gray rounded-full whitespace-nowrap border border-gray-200">
             {course.credits} {course.credits === 1 ? "Credit" : "Credits"}
           </span>
         )}
@@ -103,7 +103,7 @@ export const CourseCard = ({
 
       {/* Expanded Content for Certificate Variant */}
       {variant === "certificate" && isExpanded && (
-        <div className="space-y-3 mt-4 pt-4 border-t border-stevens-light-gray animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="space-y-3 mt-4 pt-4 border-t border-gray-200 animate-in fade-in slide-in-from-top-2 duration-300">
           {course.faculty && (
             <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
               <strong className="font-semibold text-stevens-dark-gray">
@@ -181,7 +181,7 @@ export const CourseCard = ({
 
       {/* Note (for degree variant, shown when expanded) */}
       {variant === "degree" && course.note && isExpanded && (
-        <p className="text-stevens-sm text-stevens-gray leading-relaxed italic mt-3 border-l-2 border-stevens-red pl-3 animate-in fade-in duration-300">
+        <p className="text-stevens-sm text-gray-500 leading-relaxed italic mt-3 border-l-2 border-stevens-red pl-3 animate-in fade-in duration-300">
           Note: {course.note}
         </p>
       )}
