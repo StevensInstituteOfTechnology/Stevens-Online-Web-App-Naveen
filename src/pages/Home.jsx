@@ -374,7 +374,7 @@ export default function Home() {
           {/* CPE Logo Area - Left side with backdrop blur (per Brand Guidelines) */}
           {/* Using mask-image gradient to fade the blur edges for a softer transition */}
           <div
-            className="absolute left-0 top-0 h-full w-[380px] lg:w-[380px] z-20 hidden md:flex flex-col items-center justify-center backdrop-blur-md"
+            className="absolute left-0 top-0 h-full w-[380px] lg:w-[380px] z-20 hidden lg:flex flex-col items-center justify-center backdrop-blur-md"
             style={{
               maskImage:
                 "linear-gradient(to right, black 0%, black 60%, transparent 100%)",
@@ -414,7 +414,7 @@ export default function Home() {
 
           <div className="relative min-h-[85vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
-            <div className="max-w-2xl text-right pr-4 lg:pr-16">
+            <div className="max-w-2xl text-right md:pb-64 lg:pb-16 pr-4 lg:pr-16">
               <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
                 Move your
                 <br />
