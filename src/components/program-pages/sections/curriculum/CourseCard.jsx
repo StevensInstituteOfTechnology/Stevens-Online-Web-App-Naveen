@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
 /**
@@ -38,11 +38,32 @@ export const CourseCard = ({
   defaultOpen = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultOpen);
+  const [hasExpandableContent, setHasExpandableContent] = useState(false);
+  const descriptionRef = useRef(null);
 
-  // Check if there's content to expand
-  const hasExpandableContent =
-    variant === "certificate"
-      ? course.faculty ||
+  // Measure if description exceeds 2 lines
+  useEffect(() => {
+    if (variant === "degree" && course.description && descriptionRef.current) {
+      const element = descriptionRef.current;
+      // Temporarily remove line-clamp to measure full height
+      const wasClamped = element.classList.contains('line-clamp-2');
+      if (wasClamped) {
+        element.classList.remove('line-clamp-2');
+      }
+      
+      const fullHeight = element.scrollHeight;
+      const lineHeight = parseFloat(getComputedStyle(element).lineHeight) || 24;
+      const twoLineHeight = lineHeight * 2;
+      
+      if (wasClamped) {
+        element.classList.add('line-clamp-2');
+      }
+      
+      // Show toggle if content exceeds 2 lines or has a note
+      setHasExpandableContent(fullHeight > twoLineHeight || course.note);
+    } else if (variant === "certificate") {
+      setHasExpandableContent(
+        course.faculty ||
         course.focus ||
         course.whatYouDo ||
         course.topics?.length ||
@@ -51,7 +72,9 @@ export const CourseCard = ({
         course.practice ||
         course.project ||
         course.deliverable
-      : course.description && course.description.length > 150;
+      );
+    }
+  }, [course, variant]);
 
   return (
     <div className="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6">
@@ -82,6 +105,7 @@ export const CourseCard = ({
       {/* Description Preview (always visible) - 2 lines when collapsed */}
       {variant === "degree" && course.description && (
         <p
+          ref={descriptionRef}
           className={`text-stevens-dark-gray leading-relaxed mb-3 ${
             !isExpanded ? "line-clamp-2" : ""
           }`}

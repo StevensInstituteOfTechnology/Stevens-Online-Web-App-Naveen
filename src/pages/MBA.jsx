@@ -255,11 +255,6 @@ const programData = {
                 description:
                   "This course introduces managers to the essence of business economics - the theories, concepts and ideas that form the economist's tool kit encompassing both the microeconomic and macroeconomic environments. Microeconomic topics include demand and supply, elasticity, consumer choice, production, cost, profit maximization, market structure, and game theory while the macroeconomic topics will be GDP, inflation, unemployment, aggregate demand, aggregate supply, fiscal and monetary policies. In addition, the basic concepts in international trade and finance will be discussed.",
               },
-            ],
-          },
-          {
-            title: "Term 1",
-            courses: [
               {
                 code: "MGT 612",
                 name: "Leader Development",
@@ -274,11 +269,6 @@ const programData = {
                 description:
                   "This course explores data-driven methods that are used to analyze and solve complex business problems. Students will acquire analytical skills in building, applying and evaluating various models with hands-on computer applications. Topics include descriptive statistics, time-series analysis, regression models, decision analysis, Monte Carlo simulation, and optimization models.",
               },
-            ],
-          },
-          {
-            title: "Term 2",
-            courses: [
               {
                 code: "MGT 641",
                 name: "Marketing Management",
@@ -293,11 +283,6 @@ const programData = {
                 description:
                   "Artificial Intelligence (AI) is an interdisciplinary field that draws on insights from computer science, engineering, mathematics, statistics, linguistics, psychology, and neuroscience to design agents that can perceive the environment and act upon it. This course surveys applications of artificial intelligence to business and technology in the digital era, including autonomous transportation, fraud detection, machine translation, meeting scheduling, and face recognition. In each application area, the course focuses on issues related to management of AI projects, including fairness, accountability, transparency, ethics, and the law.",
               },
-            ],
-          },
-          {
-            title: "Term 3",
-            courses: [
               {
                 code: "MGT 657",
                 name: "Operations Management",
@@ -312,11 +297,6 @@ const programData = {
                 description:
                   'Executives make decisions every day in the face of uncertainty. The objective of this course is to help students understand how decisions are made, why they are often less than optimal, and how decision-making can be improved. This course will contrast how managers do make decisions with how they should make decisions, by thinking about how "rational" decision makers should act, by conducting in-class exercises and examining empirical evidence of how individuals do act (often erroneously) in managerial situations. The course will include statistical tools for decision-making, as well as treatment of the psychological factors involved in making decisions.',
               },
-            ],
-          },
-          {
-            title: "Term 4",
-            courses: [
               {
                 code: "MGT 663",
                 name: "Discovering and Exploiting Entrepreneurial Opportunities",

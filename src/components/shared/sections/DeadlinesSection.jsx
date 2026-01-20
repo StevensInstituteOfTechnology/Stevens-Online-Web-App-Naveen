@@ -45,7 +45,7 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
           </h2>
 
           {term && (
-            <h3 className="font-stevens-display text-2xl md:text-3xl text-stevens-red font-light uppercase tracking-wide text-left ">
+            <h3 className="font-stevens-display text-2xl md:text-3xl text-stevens-white font-bold uppercase tracking-wide text-left ">
               {term}
             </h3>
           )}

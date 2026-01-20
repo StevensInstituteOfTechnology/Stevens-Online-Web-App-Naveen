@@ -331,7 +331,7 @@ const programData = {
         title: "Traditional Coursework",
         sections: [
           {
-            title: "Term 1",
+            title: "Traditional Coursework",
             courses: [
               {
                 code: "CS 501",
@@ -349,11 +349,6 @@ const programData = {
                   "Introduces common data structures and sorting algorithms using Java. Covers arrays, lists, stacks, queues, trees, priority queues, maps (e.g., hash tables). Principles include encapsulation, interfaces, testing, and asymptotic complexity analysis. Students implement and test programs using data structures with algorithms like insertion, selection, merge, and quick sort.",
                 note: "This is a foundational course to be taken by students who did not have the relevant background.",
               },
-            ],
-          },
-          {
-            title: "Term 2",
-            courses: [
               {
                 code: "CS 590",
                 name: "Algorithms",
@@ -368,11 +363,6 @@ const programData = {
                 description:
                   "In this course, students will learn to develop complex system-level software in the C programming language while gaining an intimate understanding of the UNIX family of operating systems and their programming environment. Topics include the user/kernel interface, fundamental concepts of UNIX, user authentication, basic and advanced input/output (I/O), file systems, signals, process relationships and interprocess communication. Fundamental concepts of software development and maintenance on UNIX systems will also be covered.",
               },
-            ],
-          },
-          {
-            title: "Term 3",
-            courses: [
               {
                 code: "CS 550",
                 name: "Computer Organization & Programming",
@@ -387,11 +377,6 @@ const programData = {
                 description:
                   "This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas; keys and foreign key references; relational algebra (as an introduction to SQL); SQL in depth; Entity-Relationship (ER) database design; translating from ER models to relational schemas and from relational schemas to ER models; functional dependencies; and normalization.",
               },
-            ],
-          },
-          {
-            title: "Term 4",
-            courses: [
               {
                 code: "CS 520",
                 name: "Introduction to Operating Systems",
@@ -406,11 +391,6 @@ const programData = {
                 description:
                   "This course will provide students with a first approach to internet programming. It will give the basic knowledge on how the internet works and how to create advanced web sites by the use of script languages, after learning the basics of HTML. In this course, the student will learn how to create a complex global site through the creation of individual working modules, providing them the interpersonal skills required in business settings such as team building and cooperation.",
               },
-            ],
-          },
-          {
-            title: "Term 5",
-            courses: [
               {
                 code: "CS 522",
                 name: "Mobile Systems and Applications",
@@ -434,14 +414,14 @@ const programData = {
         title: "Advanced Coursework",
         sections: [
           {
-            title: "Term 1",
+            title: "Advanced Coursework",
             courses: [
               {
                 code: "CS 590",
                 name: "Algorithms",
                 credits: 3,
                 description:
-                  "This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other “classic” algorithms that serve as examples of design techniques.",
+                  'This course will provide focus on more complex data structures, and algorithm design and analysis, using one or more modern imperative language(s). Topics include advanced and/or balanced search trees, hashing, further asymptotic complexity analysis, standard algorithm design techniques, graph algorithms, complex sort algorithms and other "classic" algorithms that serve as examples of design techniques.',
               },
               {
                 code: "CS 525",
@@ -450,11 +430,6 @@ const programData = {
                 description:
                   'The objective of this course is to give students a basic grounding in designing and implementing distributed and cloud systems, including issues in the implementation of backend services in the cloud itself. What are global consensus and Paxos, and what is their application in building cloud systems? What are the advantages and disadvantages of using distributed NoSQL stores such as Cassandra instead of relational stores such as MySQL? What are strong and weak consistency, what are the "CAP Theorem" and the "CALM Theorem" and what are their implications for building highly available services? What is a blockchain, such as the Bitcoin blockchain, and how does it relate to issues in coordinating distributed systems? What are the roles of REST, Websockets and stream processing in cloud applications? This course will combine hands-on experience in developing cloud services, with a firm grounding in the tools and principles for building distributed and cloud applications, including advanced architectures such as peer-to-peer and publish-subscribe. Besides cloud services, we will also be looking at cloud support for batch processing, such as the Hadoop framework, and its use with NoSQL data stores, such as Cassandra.',
               },
-            ],
-          },
-          {
-            title: "Term 2",
-            courses: [
               {
                 code: "CS 550",
                 name: "Computer Organization & Programming",
@@ -469,11 +444,6 @@ const programData = {
                 description:
                   "This course will provide an introduction to the design and querying of relational databases. Topics include relational schemas, keys and foreign key references, relational algebra (as an introduction to SQL), SQL in depth, Entity-Relationship (ER) database design, translating from ER models to relational schemas and from relational schemas to ER models, functional dependencies and normalization.",
               },
-            ],
-          },
-          {
-            title: "Term 3",
-            courses: [
               {
                 code: "CS 520",
                 name: "Introduction to Operating Systems",
@@ -488,11 +458,6 @@ const programData = {
                 description:
                   "Provides a first approach to internet programming, covering how the internet works, creating advanced websites using script languages after learning HTML basics. Students will learn to create complex global sites through individual working modules, fostering interpersonal skills for business settings like team building and cooperation.",
               },
-            ],
-          },
-          {
-            title: "Term 4",
-            courses: [
               {
                 code: "CPE 595",
                 name: "Applied Machine Learning",
@@ -507,11 +472,6 @@ const programData = {
                 description:
                   'Personal computing is now mobile and cloud-based. Disconnected mobile computing challenges many of the assumptions underlying much of today\'s distributed systems. "Cloud computing" provides a powerful background computing facility for mobile devices, but also raises important issues of trust and privacy. Many of these issues arise in critical yet sensitive domains such as electronic healthcare delivery. Mobile computing applications are location-aware or context-aware; the privacy implications of these applications are profound. Mobile, and increasingly location aware, gaming systems are now one of the largest sectors of the world entertainment industry. The purpose of this course is to review the fundamentals of mobile systems and applications, and how they relate to services in the cloud. The course will review material from wireless communication, distributed systems, and security and privacy, as they pertain to the systems being studied. The course will involve programming mobile apps using a popular mobile computing platform, such as Android or iPhone, to get hands-on experience with the concepts being discussed in the class.',
               },
-            ],
-          },
-          {
-            title: "Term 5",
-            courses: [
               {
                 code: "CS 555",
                 name: "Agile Methods for Software Development",

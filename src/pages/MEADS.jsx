@@ -321,7 +321,7 @@ const programData = {
         title: "Coursework",
         sections: [
           {
-            title: "TERM 1 - Foundations",
+            title: "Coursework",
             courses: [
               {
                 code: "MA 574",
@@ -341,11 +341,6 @@ const programData = {
                 description:
                   "This course covers foundational principles that drive machine learning applications and provides practice implementing algorithms. Topics include maximum likelihood estimation, dimension reduction, supervised and unsupervised learning, neural networks, and non-parametric methods. Students gain tools to address new ML problems, applying techniques such as regression, SVMs, decision trees, clustering, and backpropagation, with an emphasis on practical problem-solving using software libraries and real data.",
               },
-            ],
-          },
-          {
-            title: "Term 2 - Advanced Techniques",
-            courses: [
               {
                 code: "MA 521 / FA 590",
                 name: "Statistical Foundations of Data Science OR Statistical Learning",
@@ -364,11 +359,6 @@ const programData = {
                 description:
                   "This course explores the management, governance, and strategic deployment of Artificial Intelligence (AI) systems within modern organizations. Students examine applications of AI across industries-such as autonomous transportation, fraud detection, and machine translation-while addressing managerial considerations like fairness, accountability, transparency, ethics, and legal compliance. The course emphasizes assessing and managing AI/ML systems, monitoring performance, and developing enterprise-level AI strategies.",
               },
-            ],
-          },
-          {
-            title: "Term 3 - Capstone & Specialization",
-            courses: [
               {
                 code: "BIA 662",
                 name: "Augmented Intelligence and Generative AI",
@@ -439,10 +429,7 @@ const programData = {
             ],
           },
         ],
-        footer: {
-          content:
-            "Note: Actual course order may vary based on term availability.",
-        },
+        
       },
       {
         id: "capstone",

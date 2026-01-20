@@ -322,11 +322,11 @@ const programData = {
     variant: "degree",
     tabs: [
       {
-        id: "programCoursework",
-        title: "Program Coursework",
+        id: "Coursework",
+        title: "Coursework",
         sections: [
           {
-            title: "TERM 1",
+            title: "Coursework",
             courses: [
               {
                 code: "EM 600",
@@ -342,11 +342,6 @@ const programData = {
                 description:
                   "This project-based course exposes students to tools and methodologies useful for forming and managing an effective engineering design team in a business environment. Topics covered will include personality profiles for creating teams with balanced diversity; computational tools for project coordination and management; real-time electronic documentation as a critical design process variable; and methods for refining project requirements to ensure that the team addresses the right problem with the right solution.",
               },
-            ],
-          },
-          {
-            title: "TERM 2",
-            courses: [
               {
                 code: "EM 605",
                 name: "Elements of Operations Research",
@@ -361,11 +356,6 @@ const programData = {
                 description:
                   "This course enables the engineering management student to acquire the knowledge and skills they will need to handle the variety and volume of information encountered in today's workplace. The course uses Python, which is rapidly becoming the language of choice for information handling and data analysis. Students will work with both structured and semi-structured data.",
               },
-            ],
-          },
-          {
-            title: "TERM 3",
-            courses: [
               {
                 code: "SYS 611",
                 name: "Systems Modeling and Simulation",
@@ -380,18 +370,6 @@ const programData = {
                 description:
                   "This course is a study of analytic techniques for rational decision-making that addresses uncertainty, conflicting objectives, and risk attitudes. This course covers modeling uncertainty; rational decision-making principles; representing decision problems with value trees, decision trees, and influence diagrams; solving value hierarchies; defining and calculating the value of information; incorporating risk attitudes into the analysis; and conducting sensitivity analyses.",
               },
-            ],
-          },
-
-          {
-            title: "Electives Information",
-            intro:
-              "To meet the interests and career goals of students, the following courses are available as recommended electives during Terms 4 and 5. Alternately, students may take up to four courses that focus on a particular area of their choice including Construction Management, Mechanical Engineering, Electrical Engineering, and Systems & Software Engineering upon reviewing the specific courses with the faculty advisor or Program Director.*",
-            courses: [],
-          },
-          {
-            title: "TERM 4**",
-            courses: [
               {
                 code: "MGT 612",
                 name: "Leader Development",
@@ -399,10 +377,23 @@ const programData = {
                 description:
                   'Project success depends, largely, on the human side. Success in motivating project workers, organizing and leading project teams, communication and sharing information, and conflict resolution, are just a few areas that are critical for project success. However, being primarily technical people, many project managers tend to neglect these "soft" issues, assuming they are less important or that they should be addressed by direct functional managers. The purpose of this course is to increase awareness of project managers to the critical issues of managing people and to present some of the theories and practices of leading project workers and teams.',
               },
+              {
+                code: "EM 800",
+                name: "Capstone",
+                credits: 3,
+                description:
+                  "The Capstone is a customized and personalized experience that allows students the opportunity to build innovative solutions for real-world engineering problems. Students will collaborate with a faculty member and tailor their projects to their areas of interest or use real-life issues at their current organizations.",
+              },
             ],
           },
           {
-            title: "Managerial Analytics Elective (Term 4)",
+            title: "Electives Information",
+            intro:
+              "To meet the interests and career goals of students, the following courses are available as recommended electives. Alternately, students may take up to four courses that focus on a particular area of their choice including Construction Management, Mechanical Engineering, Electrical Engineering, and Systems & Software Engineering upon reviewing the specific courses with the faculty advisor or Program Director.*",
+            courses: [],
+          },
+          {
+            title: "Managerial Analytics Elective",
             courses: [
               {
                 code: "EM 622",
@@ -414,7 +405,7 @@ const programData = {
             ],
           },
           {
-            title: "Supply Chain and Logistics Management Elective (Term 4)",
+            title: "Supply Chain and Logistics Management Elective",
             courses: [
               {
                 code: "SYS 640",
@@ -426,19 +417,7 @@ const programData = {
             ],
           },
           {
-            title: "TERM 5**",
-            courses: [
-              {
-                code: "EM 800",
-                name: "Capstone",
-                credits: 3,
-                description:
-                  "The Capstone is a customized and personalized experience that allows students the opportunity to build innovative solutions for real-world engineering problems. Students will collaborate with a faculty member and tailor their projects to their areas of interest or use real-life issues at their current organizations.",
-              },
-            ],
-          },
-          {
-            title: "Managerial Analytics Elective (Term 5)",
+            title: "Managerial Analytics Elective",
             courses: [
               {
                 code: "EM 623",
@@ -450,7 +429,7 @@ const programData = {
             ],
           },
           {
-            title: "Supply Chain and Logistics Management Elective (Term 5)",
+            title: "Supply Chain and Logistics Management Elective",
             courses: [
               {
                 code: "SYS 670",
@@ -464,7 +443,7 @@ const programData = {
         ],
         footer: {
           content:
-            "*Applicants are not required to select a program concentration during the application process.\n\n**Students lacking sufficient statistics coursework in their academic background will be required to take Probability and Statistics for Systems Engineering in lieu of an elective course in term 4 or term 5. Once enrolled, students will work with a student support coach to determine which courses to take.",
+            "*Applicants are not required to select a program concentration during the application process.",
         },
       },
     ],
