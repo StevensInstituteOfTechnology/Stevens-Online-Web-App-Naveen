@@ -506,18 +506,25 @@ const programData = {
     ],
   },
   admissions: {
+    variant: "imageCards",
     options: [
       {
         title: "Standard Application",
+        subtitle: "Prestige and rigor. A comprehensive review for the dedicated scholar.",
+        theme: "dark",
+        image: "/assets/images/shared/stevens-campus.webp",
         featured: false,
-        description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
+        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
         buttonText: "Apply Now",
         url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
       },
       {
         title: "ASAP Application",
+        subtitle: "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+        theme: "light",
+        image: "/assets/images/shared/asap-hero.webp",
         featured: true,
-        description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`,
+        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>No letters of recommendation required</li></ul>`,
         buttonText: "Apply Now",
         url: createPageUrl("ASAP"),
       },

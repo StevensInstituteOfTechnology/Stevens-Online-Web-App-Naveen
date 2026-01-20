@@ -184,16 +184,10 @@ const programData = {
     ],
   },
   whyStevens: {
-    variant: "splitWithVideo",
+    
     title: "Why Choose Stevens for Enterprise AI?",
     description: `<p>Stevens Institute of Technology brings 150+ years of engineering excellence and innovation to AI education. Located just minutes from Manhattan, Stevens combines rigorous academic foundations with practical, industry-driven curriculum.</p><p>This certificate is designed for working professionals who need to apply AI immediately. You'll learn from faculty who are active researchers and practitioners, ensuring you gain cutting-edge knowledge that translates directly to workplace challenges.</p><p>Plus, with full stackability toward our MBA and M.Eng. in Applied Data Science programs, your certificate investment continues to pay dividends as you advance your education.</p>`,
-    video: {
-      src: "/assets/videos/Stevens Online MBA - 2.mp4",
-      poster: "/assets/videos/video-cover-2.avif",
-      title: "",
-      caption:
-        "Hear from Stevens students and faculty about transformative AI education",
-    },
+    
   },
   curriculum: {
     description:
@@ -415,10 +409,10 @@ const programData = {
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="/request-information/" class="inline-block bg-stevens-black hover:bg-stevens-dark-gray text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="/request-information/" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-stevens-body font-semibold tracking-wider transition-all duration-stevens-normal bg-stevens-black text-white hover:bg-stevens-dark-gray px-stevens-lg py-stevens-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-light-gray">
             Request Information
           </a>
-          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-dark-gray hover:bg-stevens-dark-gray text-white font-stevens-body font-semibold px-stevens-lg py-stevens-sm rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-stevens-body font-semibold tracking-wider transition-all duration-stevens-normal border border-stevens-dark-gray bg-transparent text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white px-stevens-lg py-stevens-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stevens-light-gray">
             Schedule a Call for Funding Details
           </a>
         </div>

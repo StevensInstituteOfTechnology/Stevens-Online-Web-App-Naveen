@@ -13,7 +13,7 @@ import {
   FAQSection,
   AccreditationSection,
   RankingsSection,
-  StudentSpotlightSection,
+  StudentTestimonialSection,
   EventsSection,
   FacultySection,
   SkillsSection,
@@ -49,8 +49,8 @@ import { StickyNav, useSectionNavigation } from "../navigation";
  * 12. Student Spotlight
  * 13. Faculty
  * 14. Admissions
- * 15. Key Dates & Deadlines
- * 16. Tuition & Financial Aid
+ * 15. Tuition & Financial Aid
+ * 16. Key Dates & Deadlines
  * 17. Events
  * 18. FAQs
  * 19. Accreditation
@@ -225,10 +225,10 @@ export function DegreeTemplate({
           ref={registerSectionRef("why-stevens")}
         />
 
-        {/* 10. Student Spotlight Section */}
-        <StudentSpotlightSection
-          studentSpotlight={studentSpotlight}
-          ref={registerSectionRef("student-spotlight")}
+        {/* 10. Student Testimonial Section */}
+        <StudentTestimonialSection
+          studentTestimonial={studentSpotlight}
+          ref={registerSectionRef("student-testimonial")}
         />
 
         {/* 11. Faculty Section */}
@@ -243,19 +243,19 @@ export function DegreeTemplate({
           ref={registerSectionRef("admissions")}
         />
 
-        {/* 13. Deadlines Timeline Section */}
-        {deadlines && (
-          <DeadlinesSection
-            keyDates={deadlines}
-            ref={registerSectionRef("deadlines")}
-          />
-        )}
-
-        {/* 14. Tuition Section (standalone if not combined) */}
+        {/* 13. Tuition Section (standalone if not combined) */}
         {!isCombinedAdmissions && tuition && (
           <TuitionSection
             tuition={tuition}
             ref={registerSectionRef("tuition")}
+          />
+        )}
+
+        {/* 14. Deadlines Timeline Section */}
+        {deadlines && (
+          <DeadlinesSection
+            keyDates={deadlines}
+            ref={registerSectionRef("deadlines")}
           />
         )}
 

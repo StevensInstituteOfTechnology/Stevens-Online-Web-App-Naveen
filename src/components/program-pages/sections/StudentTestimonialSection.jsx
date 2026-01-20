@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
 /**
- * StudentSpotlightSection - Student testimonial with background image
+ * StudentTestimonialSection - Student testimonial with background image
  *
  * Design: Card overlay on full-width background image (Penn State style)
  * Features:
@@ -11,29 +11,29 @@ import React, { forwardRef } from "react";
  *
  * Used in: Degree pages only (not typically shown on certificate pages)
  *
- * @param {Object} studentSpotlight - Student spotlight data
- * @param {string} studentSpotlight.quote - Testimonial quote text
- * @param {string} studentSpotlight.name - Student name for attribution
- * @param {string} studentSpotlight.title - Optional title/program info
- * @param {string} studentSpotlight.backgroundImage - Background image URL
- * @param {string} studentSpotlight.bgPosition - CSS background-position (default: "center 40%")
- * @param {string} studentSpotlight.cardPosition - "left" or "right" (default: "right")
+ * @param {Object} studentTestimonial - Student testimonial data
+ * @param {string} studentTestimonial.quote - Testimonial quote text
+ * @param {string} studentTestimonial.name - Student name for attribution
+ * @param {string} studentTestimonial.title - Optional title/program info
+ * @param {string} studentTestimonial.backgroundImage - Background image URL
+ * @param {string} studentTestimonial.bgPosition - CSS background-position (default: "center 40%")
+ * @param {string} studentTestimonial.cardPosition - "left" or "right" (default: "right")
  */
 // Default background image for testimonial section
 const DEFAULT_BACKGROUND = "/assets/images/shared/stevens-campus.webp";
 
-export const StudentSpotlightSection = forwardRef(
-  function StudentSpotlightSection({ studentSpotlight }, ref) {
-    if (!studentSpotlight) return null;
+export const StudentTestimonialSection = forwardRef(
+  function StudentTestimonialSection({ studentTestimonial }, ref) {
+    if (!studentTestimonial) return null;
 
-    const cardPosition = studentSpotlight.cardPosition || "right";
+    const cardPosition = studentTestimonial.cardPosition || "right";
     const isRight = cardPosition === "right";
     const backgroundImage =
-      studentSpotlight.backgroundImage || DEFAULT_BACKGROUND;
+      studentTestimonial.backgroundImage || DEFAULT_BACKGROUND;
 
     return (
       <section
-        id="student-spotlight"
+        id="student-testimonial"
         ref={ref}
         className="scroll-mt-20 overflow-hidden"
       >
@@ -44,7 +44,7 @@ export const StudentSpotlightSection = forwardRef(
             className="h-[300px] sm:h-[400px] bg-cover"
             style={{
               backgroundImage: `url(${backgroundImage})`,
-              backgroundPosition: studentSpotlight.bgPosition || "center 40%",
+              backgroundPosition: studentTestimonial.bgPosition || "center 40%",
             }}
           />
 
@@ -66,7 +66,7 @@ export const StudentSpotlightSection = forwardRef(
 
             {/* Quote Text */}
             <blockquote className="font-stevens-display text-xl sm:text-2xl leading-relaxed font-light text-white mb-6">
-              {studentSpotlight.quote}
+              {studentTestimonial.quote}
               {/* Closing Quote Mark */}
               <svg
                 className="inline-block w-6 h-6 sm:w-8 sm:h-8 text-stevens-light-gray/60 ml-2 align-text-bottom"
@@ -85,10 +85,10 @@ export const StudentSpotlightSection = forwardRef(
 
             {/* Attribution */}
             <p className="text-white">
-              <span className="font-bold">&mdash; {studentSpotlight.name}</span>
-              {studentSpotlight.title && (
+              <span className="font-bold">&mdash; {studentTestimonial.name}</span>
+              {studentTestimonial.title && (
                 <span className="text-stevens-light-gray">
-                  , {studentSpotlight.title}
+                  , {studentTestimonial.title}
                 </span>
               )}
             </p>
@@ -96,14 +96,14 @@ export const StudentSpotlightSection = forwardRef(
         </div>
 
         {/* Desktop Layout (>=768px): Background image with card overlay */}
-        {/* Using aspect-ratio + responsive bg-position to show more of the image */}
-        <div className="hidden md:block relative aspect-[16/9] lg:aspect-[21/9] xl:aspect-[2.5/1]">
+        {/* Using flatter aspect ratios for shorter section height */}
+        <div className="hidden md:block relative aspect-[21/9] lg:aspect-[3/1] xl:aspect-[3.5/1]">
           {/* Background Image with responsive position */}
           <div
             className="absolute inset-0 bg-cover"
             style={{
               backgroundImage: `url(${backgroundImage})`,
-              backgroundPosition: studentSpotlight.bgPosition || "center 40%",
+              backgroundPosition: studentTestimonial.bgPosition || "center 40%",
             }}
           >
             {/* Subtle overlay for better card contrast */}
@@ -136,18 +136,18 @@ export const StudentSpotlightSection = forwardRef(
 
                 {/* Quote Text */}
                 <blockquote className="font-stevens-display text-xl lg:text-2xl xl:text-[1.65rem] leading-relaxed font-light text-stevens-dark-gray mb-6">
-                  {studentSpotlight.quote}
+                  {studentTestimonial.quote}
                 </blockquote>
 
                 {/* Attribution */}
                 <div className="border-t border-stevens-gray/20 pt-4">
                   <p className="text-stevens-dark-gray">
                     <span className="font-bold">
-                      &mdash; {studentSpotlight.name}
+                      &mdash; {studentTestimonial.name}
                     </span>
-                    {studentSpotlight.title && (
+                    {studentTestimonial.title && (
                       <span className="text-stevens-gray">
-                        , {studentSpotlight.title}
+                        , {studentTestimonial.title}
                       </span>
                     )}
                   </p>

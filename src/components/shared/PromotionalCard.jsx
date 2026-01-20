@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Asterism from "./brand/Asterism";
+import ContactOptionsModal from "./modals/ContactOptionsModal";
 
 /**
  * Calculate clip-path for diagonal cut with fixed angle
@@ -39,6 +40,7 @@ const calculateDiagonalClipPath = (aspectRatio, angle = 25) => {
  * @param {string} image - Background image URL
  * @param {string} imageAlt - Alt text for image
  * @param {number} angle - Diagonal cut angle in degrees (default: 25)
+ * @param {string} sourcePage - Source page identifier for tracking (default: 'promotional_card')
  */
 export function PromotionalCard({
   quickFacts,
@@ -49,12 +51,14 @@ export function PromotionalCard({
   image = "/assets/images/shared/lab.png",
   imageAlt = "Student",
   angle = 25,
+  sourcePage = "promotional_card",
 }) {
   // Ref on OUTER container for more stable aspect ratio calculation
   const containerRef = useRef(null);
   const [clipPath, setClipPath] = useState(
     "polygon(0 0, 100% 0, 100% 65%, 0 100%)"
   );
+  const [showContactModal, setShowContactModal] = useState(false);
 
   // ResizeObserver to detect actual aspect ratio and calculate clip-path
   // Using outer container ensures width AND height change proportionally
@@ -130,17 +134,15 @@ export function PromotionalCard({
                 )}
 
                 {/* CTA Button */}
-                <a
-                  href={quickFacts.applyUrl || ctaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-white text-sm font-bold uppercase tracking-wider hover:text-stevens-red transition-colors group/btn"
+                <button
+                  onClick={() => setShowContactModal(true)}
+                  className="inline-flex items-center gap-3 text-white text-md font-bold uppercase tracking-wider hover:text-stevens-red transition-colors group/btn"
                 >
-                  {ctaText}
+                  Schedule a Call
                   <span className="text-xl group-hover/btn:translate-x-1 transition-transform">
                     ▶
                   </span>
-                </a>
+                </button>
               </>
             ) : (
               /* Default Title/Description Layout */
@@ -199,6 +201,13 @@ export function PromotionalCard({
       {/* 3. Spacer for Image Visibility */}
       {/* This ensures the card has enough height to show the image below the diagonal cut */}
       <div className="relative z-0 h-[150px] lg:h-28 pointer-events-none" />
+
+      {/* Contact Options Modal */}
+      <ContactOptionsModal
+        open={showContactModal}
+        onOpenChange={setShowContactModal}
+        sourcePage={sourcePage}
+      />
     </div>
   );
 }

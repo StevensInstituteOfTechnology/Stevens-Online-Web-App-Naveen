@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import { FileText, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
-import { Table, TableBody, TableCell, TableRow } from '../../ui/table';
 import { Button } from '../../ui/button';
 import { Section } from '../primitives';
 
@@ -12,10 +11,14 @@ import { Section } from '../primitives';
  * 
  * Variants:
  * 1. "combinedWithTuition" / "certificateWithDeadlines":
- *    - Two-column layout: Admissions (left) + Key Dates & Tuition (right)
- *    - certificateWithDeadlines hides the key dates table
+ *    - Two-column layout: Admissions (left) + Tuition (right)
  * 
- * 2. Default (options layout):
+ * 2. "imageCards":
+ *    - Full-bleed two-column layout with background images
+ *    - Dark card (left) + Light card (right) with overlays
+ *    - Used for MSCS, MEM, MEADS degree pages
+ * 
+ * 3. Default (options layout):
  *    - Application options as cards (1-3 columns)
  *    - Optional alert message box
  *    - Optional consultation CTA
@@ -26,6 +29,9 @@ import { Section } from '../primitives';
  * @param {string} admissions.variant - Layout variant
  * @param {string} admissions.requirements - HTML requirements content
  * @param {Array} admissions.options - Array of application option objects
+ * @param {Object} admissions.options[].subtitle - Tagline for imageCards variant
+ * @param {string} admissions.options[].theme - "dark" or "light" for imageCards variant
+ * @param {string} admissions.options[].image - Background image URL for imageCards variant
  * @param {Object} admissions.alertMessage - Optional alert message
  * @param {Object} admissions.consultation - Optional consultation CTA
  * @param {Object} keyDates - Key dates for combined layout
@@ -72,40 +78,8 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
             )}
           </div>
 
-          {/* Right Column - Key Dates & Tuition */}
+          {/* Right Column - Tuition */}
           <div className="lg:col-span-2">
-            {keyDates &&
-              admissions.variant !== 'certificateWithDeadlines' && (
-                <>
-                  <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">
-                    Key Dates & Deadlines
-                  </h2>
-                  <Card className="rounded-stevens-md mb-stevens-xl">
-                    <CardHeader>
-                      <CardTitle className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray">
-                        {keyDates.term || 'Spring 2026'}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <Table>
-                        <TableBody>
-                          {keyDates.rows.map((row) => (
-                            <TableRow key={row.event}>
-                              <TableCell className="font-stevens-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal">
-                                {row.event}
-                              </TableCell>
-                              <TableCell className="text-stevens-dark-gray">
-                                {row.date}
-                              </TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </CardContent>
-                  </Card>
-                </>
-              )}
-
             {tuition && (
               <>
                 <h2 className="font-stevens-display text-stevens-4xl font-light text-center mb-stevens-lg uppercase tracking-wide">
@@ -147,6 +121,132 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
           </div>
         </div>
       </Section>
+    );
+  }
+
+  // Image Cards layout for MSCS, MEM, MEADS
+  if (admissions.variant === 'imageCards' && admissions.options) {
+    return (
+      <section
+        id="admissions"
+        ref={ref}
+        className="scroll-mt-20 relative bg-white" // Full-width white background
+      >
+        {/* Section Title */}
+        <div className="bg-white py-12">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h2 className="font-stevens-display text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black uppercase tracking-wide">
+              {admissions.title || "Choose Your Application Option"}
+            </h2>
+            {admissions.subtitle && (
+              <p className="mt-4 text-lg text-stevens-dark-gray max-w-2xl mx-auto">
+                {admissions.subtitle}
+              </p>
+            )}
+          </div>
+        </div>
+        
+        {/* Two-column image cards */}
+        <div className="grid lg:grid-cols-2 max-w-7xl mx-auto">
+          {admissions.options.map((option, i) => {
+            const isDark = option.theme === 'dark';
+            return (
+              <div
+                key={i}
+                className="relative flex items-center justify-center py-16 lg:pt-20 lg:pb-48 px-6 min-h-[500px] lg:min-h-[700px]"
+              >
+                {/* Background Image - Absolute & Full Height */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={option.image || '/assets/images/shared/stevens-campus.webp'}
+                    alt=""
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  
+                </div>
+                
+                {/* Floating Glass Card */}
+                <div className={`relative z-10 w-full max-w-[440px] overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-1 backdrop-blur-md ${
+                  isDark 
+                    ? 'bg-black/50 border border-white/10' 
+                    : 'bg-white/60 border border-white/30'
+                } ${
+                  option.featured ? 'ring-1 ring-stevens-red' : ''
+                }`}>
+                  <div className="p-8 md:p-10">
+                    {/* Title */}
+                    <h3 className={`font-stevens-display text-3xl md:text-4xl font-bold mb-4 leading-tight ${
+                      isDark ? 'text-white' : 'text-stevens-black'
+                    }`}>
+                      {option.title}
+                    </h3>
+                    
+                    {/* Subtitle */}
+                      {option.subtitle && (
+                        <p className={`text-base md:text-lg mb-8 leading-relaxed font-light ${
+                          isDark ? 'text-white' : 'text-stevens-dark-gray'
+                        }`}>
+                          {option.subtitle}
+                        </p>
+                      )}
+                      
+                      {/* Description/Bullets */}
+                      <div
+                        className={`prose prose-sm mb-8 max-w-none prose-li:my-1 [&_*]:no-underline ${
+                          isDark 
+                            ? 'prose-invert text-white [&_li]:text-white [&_p]:text-white [&_ul]:text-white [&_*]:text-white' 
+                            : '[&_li]:text-stevens-dark-gray [&_p]:text-stevens-dark-gray'
+                        }`}
+                        dangerouslySetInnerHTML={{ __html: option.description }}
+                      />
+                    
+                    {/* Button */}
+                    {option.buttonText && (
+                      <a
+                        href={option.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block mt-auto"
+                      >
+                        <Button 
+                          className="w-full h-12 text-lg font-bold tracking-wide  bg-black text-white hover:bg-stevens-dark-gray border border-transparent"
+                        >
+                          {option.buttonText}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Button>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Consultation CTA Bar - Static on mobile, floating on lg */}
+        {admissions.consultation && (
+          <div className="relative lg:absolute lg:bottom-12 lg:left-0 lg:right-0 z-20 px-4 py-8 lg:py-0 bg-white lg:bg-transparent">
+            <div className="max-w-[90%] lg:max-w-6xl mx-auto">
+              <div className="bg-gray-100/95 backdrop-blur-sm rounded-xl shadow-xl border border-gray-200 px-6 py-5 lg:px-10 lg:py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12">
+                <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
+                  {admissions.consultation.title}
+                </h3>
+                <a
+                  href={admissions.consultation.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline-dark" className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white">
+                    {admissions.consultation.buttonText}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
     );
   }
 

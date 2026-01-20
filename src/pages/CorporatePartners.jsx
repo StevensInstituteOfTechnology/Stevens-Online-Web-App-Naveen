@@ -18,12 +18,6 @@ import {
   Shield,
   DollarSign,
   X,
-  Phone,
-  Mail,
-  Calendar,
-  Copy,
-  Check,
-  ExternalLink
 } from 'lucide-react';
 import { PageHero, TopCompaniesSection, PullQuoteTestimonial } from '@/components/shared';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
@@ -34,15 +28,8 @@ import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
-import { BOOKING_URLS, CONTACT_INFO } from '@/config/constants';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import ContactOptionsModal from '@/components/shared/modals/ContactOptionsModal';
 
 
 // Employment Growth Bar Chart Component
@@ -275,7 +262,6 @@ const CorporatePartners = () => {
 
   const [showContactModal, setShowContactModal] = useState(false);
   const [showContactOptionsModal, setShowContactOptionsModal] = useState(false);
-  const [copiedItem, setCopiedItem] = useState(null); // For copy feedback
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -982,120 +968,12 @@ const CorporatePartners = () => {
           </div>
         )}
 
-        {/* Contact Options Modal - Enhanced */}
-        <Dialog open={showContactOptionsModal} onOpenChange={(open) => {
-          setShowContactOptionsModal(open);
-          if (!open) setCopiedItem(null); // Reset copy state when closing
-        }}>
-          <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
-            {/* Header with gradient background */}
-            <div className="bg-stevens-gray text-white px-6 py-5 rounded-t-lg">
-              <DialogHeader className="space-y-2">
-                <DialogTitle className="text-xl sm:text-2xl font-light uppercase tracking-wide text-center text-white">
-                  Get in Touch
-                </DialogTitle>
-              
-              </DialogHeader>
-            </div>
-            
-            <div className="p-6 space-y-4">
-              {/* Schedule a Call - Primary Action */}
-              <button
-                onClick={() => {
-                  trackEvent('contact_option_selected', {
-                    option: 'schedule_call',
-                    page: 'corporate_partners'
-                  });
-                  window.open(BOOKING_URLS.SCHEDULE_CALL, '_blank', 'noopener,noreferrer');
-                  setShowContactOptionsModal(false);
-                }}
-                className="w-full p-5 rounded-xl bg-stevens-black text-white hover:shadow-lg hover:bg-stevens-dark-gray transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
-              >
-                
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-                    <Calendar className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="font-light uppercase tracking-wide text-lg mb-1">
-                      Schedule a Call
-                    </h3>
-                    <p className="text-sm text-white/80">
-                      Book a convenient time for a personalized consultation
-                    </p>
-                  </div>
-                  <ExternalLink className="w-5 h-5 text-white/70 group-hover:text-white transition-colors flex-shrink-0" />
-                </div>
-              </button>
-
-              {/* Divider */}
-              <div className="relative py-2">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-stevens-light-gray"></div>
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-white px-4 text-sm text-stevens-light-gray0">or reach us directly</span>
-                </div>
-              </div>
-
-              {/* Contact Info Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Phone Card */}
-                <a
-                  href={CONTACT_INFO.PHONE_LINK}
-                  onClick={() => {
-                    trackEvent('contact_option_selected', {
-                      option: 'phone',
-                      page: 'corporate_partners'
-                    });
-                  }}
-                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-light-gray hover:border-stevens-red hover:bg-stevens-light-gray transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-green-100 group-hover:bg-green-200 flex items-center justify-center mb-3 transition-colors">
-                    <Phone className="w-6 h-6 text-green-600" />
-                  </div>
-                  <span className="text-xs text-stevens-light-gray0 mb-1">Call Us</span>
-                  <span className="font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors">
-                    {CONTACT_INFO.PHONE_DISPLAY}
-                  </span>
-                </a>
-
-                {/* Email Card */}
-                <button
-                  onClick={() => {
-                    trackEvent('contact_option_selected', {
-                      option: 'email',
-                      page: 'corporate_partners'
-                    });
-                    navigator.clipboard.writeText(CONTACT_INFO.EMAIL);
-                    setCopiedItem('email');
-                    setTimeout(() => setCopiedItem(null), 2000);
-                  }}
-                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-light-gray hover:border-stevens-red hover:bg-stevens-light-gray transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-blue-100 group-hover:bg-blue-200 flex items-center justify-center mb-3 transition-colors">
-                    {copiedItem === 'email' ? (
-                      <Check className="w-6 h-6 text-green-600" />
-                    ) : (
-                      <Mail className="w-6 h-6 text-blue-600" />
-                    )}
-                  </div>
-                  <span className="text-xs text-stevens-light-gray0 mb-1">
-                    {copiedItem === 'email' ? 'Copied!' : 'Email Us'}
-                  </span>
-                  <span className="font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors text-sm break-all">
-                  rtowner@stevens.edu
-                  </span>
-                  <span className="text-xs text-stevens-gray mt-1 flex items-center gap-1">
-                    <Copy className="w-3 h-3" /> Click to copy
-                  </span>
-                </button>
-              </div>
-
-              
-            </div>
-          </DialogContent>
-        </Dialog>
+        {/* Contact Options Modal */}
+        <ContactOptionsModal
+          open={showContactOptionsModal}
+          onOpenChange={setShowContactOptionsModal}
+          sourcePage="corporate_partners"
+        />
       </div>
     </PageContextProvider>
   );

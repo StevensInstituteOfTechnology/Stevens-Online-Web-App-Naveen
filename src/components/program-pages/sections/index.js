@@ -12,7 +12,7 @@ export { HeroSection } from "./HeroSection";
 export { FAQSection } from "./FAQSection";
 export { AccreditationSection } from "./AccreditationSection";
 export { RankingsSection } from "./RankingsSection";
-export { StudentSpotlightSection } from "./StudentSpotlightSection";
+export { StudentTestimonialSection } from "./StudentTestimonialSection";
 export { EventsSection } from "./EventsSection";
 export { TopCompaniesSection } from "./TopCompaniesSection";
 export { FacultySection } from "./FacultySection";

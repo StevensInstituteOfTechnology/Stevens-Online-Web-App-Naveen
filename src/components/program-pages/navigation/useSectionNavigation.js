@@ -63,21 +63,21 @@ export function useSectionNavigation({
   // Build filtered navigation items based on page type and available data
   const navItems = useMemo(() => {
     // Section order differs between degree and certificate pages per design spec
-    // DEGREE: overview → rankings → video → curriculum → career outcomes → faculty → admissions → tuition → events → faqs
-    // CERTIFICATE: overview → skills → career outcomes → curriculum → faculty → admissions → tuition → dates → faqs
+    // DEGREE: overview → rankings → video → what-youll-learn → curriculum → career outcomes → why-stevens → student-testimonial → faculty → admissions → tuition → deadlines → events → faqs → accreditation
+    // CERTIFICATE: overview → career-outcomes → video → why-stevens → rankings → what-youll-learn → curriculum → faculty → admissions → tuition → deadlines → faqs → accreditation
     const degreeItems = [
       { id: "overview", label: "Overview" },
       { id: "rankings", label: "Rankings" },
       { id: "video", label: "Video" },
-      { id: "curriculum", label: "Curriculum" },
       { id: "what-youll-learn", label: "What You'll Learn" },
+      { id: "curriculum", label: "Curriculum" },
       { id: "career-outcomes", label: "Career Outcomes" },
       { id: "why-stevens", label: "Why Stevens" },
-      { id: "student-spotlight", label: "Student Testimonial" },
+      { id: "student-testimonial", label: "Student Testimonial" },
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
-      { id: "deadlines", label: "Deadlines" },
       { id: "tuition", label: "Tuition" },
+      { id: "deadlines", label: "Deadlines" },
       { id: "events", label: "Events" },
       { id: "faqs", label: "FAQs" },
       { id: "accreditation", label: "Accreditation" },
@@ -133,7 +133,7 @@ export function useSectionNavigation({
               curriculum.tabs ||
               curriculum.completeCourseCatalog)
           );
-        case "student-spotlight":
+        case "student-testimonial":
           return (
             studentSpotlight &&
             (studentSpotlight.quote || studentSpotlight.author)
