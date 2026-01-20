@@ -95,8 +95,8 @@ const AlumniPGC = () => {
       <div className="min-h-screen bg-stevens-gray-50">
         {/* Hero Section */}
         <PageHero
-          title="Professional Graduate Certificates for Stevens Alumni"
-          subtitle="Build in-demand skills in AI and data science through flexible, career-focused certificates designed for working professionals and stackable into a Stevens master's degree."
+          title="Build In-Demand Skills Now. Stack Toward a Stevens Master’s"
+          subtitle="Whether you are looking to upskill or work toward a master’s degree, Stevens alumni can take advantage of Professional Graduate Certificates designed for flexibility and career growth. Build in-demand skills in AI and data science while earning credentials that deliver immediate value and stack seamlessly into a Stevens master’s degree when you are ready to take the next step."
           bgImage="/assets/images/alumni-pgc/martin-mom_20web.webp"
           primaryCta={{
             label: "Apply in Minutes!",
@@ -110,14 +110,12 @@ const AlumniPGC = () => {
               <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-primary">
                 <p className="text-xs sm:text-sm font-semibold text-stevens-primary uppercase tracking-wide">Tuition-Reimbursement Friendly</p>
                 <p className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
-                  Alumni rate: <span className="text-stevens-primary">$4,462.50</span>*
+                  Alumni discount: <span className="text-stevens-primary">15%</span>*
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600 mt-1">
                   Aligning with many employer tuition reimbursement programs
                 </p>
-                <p className="text-xs text-gray-500 mt-1 italic">
-                  *Final cost reflects the 15% Stevens alumni discount
-                </p>
+                
               </div>
             </div>
           }
