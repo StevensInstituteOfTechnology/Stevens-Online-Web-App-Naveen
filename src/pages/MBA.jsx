@@ -627,70 +627,70 @@ const programData = {
         htmlContent: `
           <h4 class="course-section-header">IMMERSION</h4>
           
-          <p class="text-stevens-base text-stevens-dark-gray leading-relaxed mb-stevens-lg">
+          <p class="text-stevens-base text-white leading-relaxed mb-stevens-lg">
             One of the most invaluable components of the Online MBA program at Stevens is that it provides the opportunity to participate in two in-person industry immersions. These immersive learning experiences take place over two long weekends and occur on the Stevens Institute of Technology campus, just across the Hudson River from New York City.
           </p>
           
-          <p class="text-stevens-base text-stevens-dark-gray leading-relaxed mb-stevens-lg">
+          <p class="text-stevens-base text-white leading-relaxed mb-stevens-lg">
             The Online MBA immersions complement online learning by furthering students' connections and knowledge in real-world settings.
           </p>
           
-          <h5 class="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-md mt-stevens-xl">Benefits:</h5>
+          <h5 class="font-stevens-bold text-stevens-lg text-white mb-stevens-md mt-stevens-xl">Benefits:</h5>
           
           <ul class="space-y-stevens-sm mb-stevens-xl">
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Meet your online MBA peers, as well as students from across other Stevens business programs.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Meet your online MBA peers, as well as students from across other Stevens business programs.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Gain insights from industry leaders and business executives.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Gain insights from industry leaders and business executives.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Engage face-to-face with School of Business faculty members and school administrators.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Engage face-to-face with School of Business faculty members and school administrators.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Leverage Stevens' location by participating in social and cultural experiences across New York City with fellow students.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Leverage Stevens' location by participating in social and cultural experiences across New York City with fellow students.</span>
             </li>
           </ul>
           
-          <h5 class="font-stevens-bold text-stevens-lg text-stevens-dark-gray mb-stevens-md mt-stevens-xl">Learning objectives:</h5>
+          <h5 class="font-stevens-bold text-stevens-lg text-white mb-stevens-md mt-stevens-xl">Learning objectives:</h5>
           
           <ul class="space-y-stevens-sm mb-stevens-xl">
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Gain a common understanding of the disruptive technologies at play in the "fourth industrial revolution" (4IR), such as artificial intelligence, quantum computing and internet of things.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Gain a common understanding of the disruptive technologies at play in the "fourth industrial revolution" (4IR), such as artificial intelligence, quantum computing and internet of things.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Review illustrative ways in which these emerging technologies are impacting various sectors of the economy, from retail to healthcare.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Review illustrative ways in which these emerging technologies are impacting various sectors of the economy, from retail to healthcare.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Examine similarities and differences between the 4IR and prior periods of transformative change (e.g., earlier industrial revolutions).</span>
+              <span class="text-stevens-base text-white leading-relaxed">Examine similarities and differences between the 4IR and prior periods of transformative change (e.g., earlier industrial revolutions).</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Examine different philosophical orientations toward what these technologies mean for the future of work (e.g., job elimination vs. role augmentation).</span>
+              <span class="text-stevens-base text-white leading-relaxed">Examine different philosophical orientations toward what these technologies mean for the future of work (e.g., job elimination vs. role augmentation).</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Review the way in which these broader trends have impacted professional practice: key challenges being faced, anticipated challenges over next decade.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Review the way in which these broader trends have impacted professional practice: key challenges being faced, anticipated challenges over next decade.</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Explore the role that leaders can play in stewarding effective workforce transitions within their organizations (e.g., upskilling, reskilling and augmenting).</span>
+              <span class="text-stevens-base text-white leading-relaxed">Explore the role that leaders can play in stewarding effective workforce transitions within their organizations (e.g., upskilling, reskilling and augmenting).</span>
             </li>
             <li class="flex items-start gap-stevens-sm">
               <div class="flex-shrink-0 w-2 h-2 bg-stevens-red rounded-full mt-2"></div>
-              <span class="text-stevens-base text-stevens-dark-gray leading-relaxed">Review the ethical implications and challenges due to the rise of cognitive technologies, their implications on work, and the workplace and workforce.</span>
+              <span class="text-stevens-base text-white leading-relaxed">Review the ethical implications and challenges due to the rise of cognitive technologies, their implications on work, and the workplace and workforce.</span>
             </li>
           </ul>
           
-          <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm mt-stevens-xl">
-            <p class="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+          <div class="bg-white/10 border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm mt-stevens-xl">
+            <p class="text-stevens-sm text-white leading-relaxed">
               Each immersion experience carries 1.5 credit hours and the related tuition. A total of 3 credit hours will count toward your degree upon completion of both immersions. Students are responsible for travel to the Hoboken area. Accommodations are included in the tuition cost.
             </p>
           </div>
