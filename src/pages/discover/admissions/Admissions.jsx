@@ -131,7 +131,7 @@ export default function Admissions() {
         />
 
         {/* Admissions Overview */}
-        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="max-w-7xl mx-auto">
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
@@ -160,14 +160,14 @@ export default function Admissions() {
         {/* Explore Our Programs - NEW DYNAMIC SECTION */}
         <div
           id="explore-programs"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl text-left stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
                 Explore Our Graduate Programs
               </h2>
-              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-4xl mx-auto">
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-7xl mx-auto text-left">
                 Choose a program to explore or apply directly. Each program page
                 provides detailed information about curriculum, career outcomes,
                 and admission requirements.
@@ -180,7 +180,7 @@ export default function Admissions() {
             <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
               <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
                 <div>
-                  <h3 className="font-stevens-display text-stevens-2xl font-light text-stevens-dark-gray">
+                  <h3 className="font-stevens-display text-stevens-2xl  font-light text-stevens-dark-gray">
                     Wondering Which Application Is Right for You?
                   </h3>
                   <p className="text-stevens-lg text-stevens-dark-gray mt-stevens-xs">

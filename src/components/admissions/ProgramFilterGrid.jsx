@@ -304,9 +304,9 @@ export default function ProgramFilterGrid() {
 
       {/* Program Grid */}
       {filteredPrograms.length > 0 && (
-        <div className="grid stevens-md:grid-cols-2 stevens-lg:grid-cols-3 gap-stevens-lg">
-          {filteredPrograms.map((program) => (
-            <ProgramCard key={program.id} program={program} />
+        <div className="grid grid-cols-1 stevens-md:grid-cols-2 gap-6 lg:gap-8">
+          {filteredPrograms.map((program, index) => (
+            <ProgramCard key={program.id} program={program} index={index} />
           ))}
         </div>
       )}
