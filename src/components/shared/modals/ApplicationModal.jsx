@@ -86,135 +86,157 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
 
   return (
     <div 
-      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
+      className="fixed inset-0 z-[99999] overflow-y-auto p-3 sm:p-4 md:p-6 bg-black/60 animate-in fade-in duration-300"
       onClick={onClose}
     >
-      <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
+      <div className="min-h-full flex items-center justify-center py-4 sm:py-6 md:py-8">
         <div 
-          className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
+          className="relative w-full max-w-5xl bg-white rounded-lg shadow-2xl animate-in zoom-in-95 duration-300 mx-auto"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
-            <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-light uppercase tracking-wide text-center leading-tight">
+          <div className="bg-stevens-dark-gray text-white px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-t-lg relative">
+            <h2 className="font-stevens-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-light uppercase tracking-wide text-center leading-tight pr-8 sm:pr-10">
               Select the application option that works best for you
             </h2>
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-5 md:right-6 p-2 text-white hover:text-gray-300 transition-colors duration-200"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
           </div>
 
           {/* Content */}
-          <div className="p-stevens-sm sm:p-stevens-md">
-            <div className="grid stevens-md:grid-cols-2 gap-stevens-sm sm:gap-stevens-md">
+          <div className="p-4 sm:p-6 md:p-8 lg:p-10">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-8">
 
-          {/* ASAP Application - Featured */}
-          <div className="bg-stevens-light-gray border-2 border-stevens-black rounded-stevens-md p-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal relative overflow-hidden">
-            {/* Recommended Badge */}
-            <div className="absolute top-0 right-0 bg-stevens-black text-stevens-white px-stevens-sm py-stevens-xs text-[10px] font-light uppercase tracking-wide">
-              Recommended
-            </div>
+              {/* ASAP Application - Featured */}
+              <div className="bg-white border-2 border-stevens-red rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 hover:shadow-lg transition-shadow duration-200 relative">
+                {/* Recommended Badge */}
+                <div className="absolute -top-2.5 sm:-top-3 right-3 sm:right-4 bg-stevens-red text-white px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide">
+                  Recommended
+                </div>
 
-            <div className="flex items-start gap-stevens-sm mb-stevens-sm mt-stevens-sm">
-              <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md">
-                <Zap className="w-5 h-5 text-stevens-black" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
-                  ASAP Application
-                </h3>
-                <p className="text-stevens-xs text-stevens-black font-semibold">
-                  Fast-track your admission
+                {/* Icon and Title */}
+                <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="bg-stevens-light-gray p-2.5 sm:p-3 rounded-lg flex-shrink-0">
+                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-stevens-dark-gray" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-stevens-display text-lg sm:text-xl md:text-xl lg:text-2xl font-bold uppercase tracking-wide text-stevens-dark-gray mb-1">
+                      ASAP Application
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stevens-dark-gray font-medium">
+                      Fast-track your admission
+                    </p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base text-stevens-dark-gray mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+                  Begin your graduate studies immediately by enrolling in two foundational courses. Earn a B or better and get full admission with credit in hand.
                 </p>
+
+                {/* Benefits List */}
+                <div className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-5 md:mb-6">
+                  <h4 className="font-bold text-xs sm:text-sm uppercase tracking-wider text-stevens-dark-gray mb-2 sm:mb-3">
+                    Why Choose ASAP?
+                  </h4>
+                  <ul className="space-y-2 sm:space-y-2.5">
+                    {asapBenefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm">
+                        <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stevens-red mt-0.5 flex-shrink-0" />
+                        <span className="text-stevens-dark-gray leading-relaxed">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA Button */}
+                <Link 
+                  to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
+                  className="block w-full bg-stevens-red text-white text-center font-semibold py-3 sm:py-3.5 px-4 sm:px-6 rounded-md hover:bg-red-700 transition-colors duration-200 text-sm sm:text-base"
+                  onClick={() => {
+                    sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
+                    sessionStorage.setItem('asap_application_source', 'modal');
+                    
+                    trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                    trackEvent('application_option_selected', {
+                      option: 'asap',
+                      program_code: programContext?.programCode || 'unknown',
+                      from_modal: 'application_options',
+                      is_conversion: true
+                    });
+                  }}
+                >
+                  Start ASAP Application
+                </Link>
               </div>
-            </div>
 
-            <p className="text-stevens-sm text-stevens-dark-gray mb-stevens-sm leading-relaxed">
-              Begin your graduate studies immediately by enrolling in two foundational courses. Earn a B or better and get full admission with credit in hand.
-            </p>
+              {/* Standard Application */}
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 hover:border-gray-300 hover:shadow-lg transition-all duration-200">
+                {/* Icon and Title */}
+                <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="bg-gray-100 p-2.5 sm:p-3 rounded-lg flex-shrink-0">
+                    <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-stevens-dark-gray" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-stevens-display text-lg sm:text-xl md:text-xl lg:text-2xl font-bold uppercase tracking-wide text-stevens-dark-gray mb-1">
+                      Standard Application
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stevens-dark-gray font-medium">
+                      Standard graduate application process
+                    </p>
+                  </div>
+                </div>
 
-            <div className="bg-stevens-white rounded-stevens-md p-stevens-sm mb-stevens-md">
-              <h4 className="font-stevens-bold text-stevens-xs uppercase tracking-wider text-stevens-dark-gray mb-stevens-xs">
-                Why Choose ASAP?
-              </h4>
-              <ul className="space-y-stevens-xs">
-                {asapBenefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-stevens-xs text-stevens-xs">
-                    <Check className="w-3 h-3 text-stevens-black mt-0.5 flex-shrink-0" />
-                    <span className="text-stevens-dark-gray">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Description */}
+                <p className="text-sm sm:text-base text-stevens-dark-gray mb-4 sm:mb-5 md:mb-6 leading-relaxed">
+                  Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
+                </p>
 
-            <Link 
-              to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
-              className="btn-stevens-red w-full text-center inline-block"
-              onClick={() => {
-                // Store program in sessionStorage for persistence
-                sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
-                sessionStorage.setItem('asap_application_source', 'modal');
-                
-                trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                trackEvent('application_option_selected', {
-                  option: 'asap',
-                  program_code: programContext?.programCode || 'unknown',
-                  from_modal: 'application_options',
-                  is_conversion: true
-                });
-              }}
-            >
-              Start ASAP Application
-            </Link>
-          </div>
-          {/* Standard Application */}
-          <div className="bg-stevens-white border-2 border-stevens-light-gray rounded-stevens-md p-stevens-md hover:border-stevens-red hover:shadow-stevens-lg transition-all duration-stevens-normal group">
-            <div className="flex items-start gap-stevens-sm mb-stevens-sm">
-              <div className="bg-stevens-light-gray p-stevens-sm rounded-stevens-md group-hover:bg-stevens-light-gray transition-colors duration-stevens-normal">
-                <ExternalLink className="w-5 h-5 text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-stevens-normal" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
+                {/* CTA Button */}
+                <a 
+                  href={traditionalLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block w-full bg-white border-2 border-gray-300 text-stevens-dark-gray text-center font-semibold py-3 sm:py-3.5 px-4 sm:px-6 rounded-md hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 text-sm sm:text-base"
+                  onClick={() => {
+                    trackEvent('application_option_selected', {
+                      option: 'standard',
+                      program_code: programContext?.programCode || 'unknown',
+                      from_modal: 'application_options',
+                      destination_url: traditionalLink,
+                      is_conversion: true
+                    });
+                  }}
+                >
                   Standard Application
-                </h3>
-                <p className="text-stevens-xs text-stevens-dark-gray">
-                  Standard graduate application process
-                </p>
+                </a>
               </div>
+
             </div>
-
-            <p className="text-stevens-sm text-stevens-dark-gray mb-stevens-md leading-relaxed">
-              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
-            </p>
-
-            <a 
-              href={traditionalLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-stevens-outline w-full text-center inline-block group-hover:bg-stevens-red group-hover:text-stevens-white group-hover:border-stevens-red transition-all duration-stevens-normal"
-              onClick={() => {
-                trackEvent('application_option_selected', {
-                  option: 'standard',
-                  program_code: programContext?.programCode || 'unknown',
-                  from_modal: 'application_options',
-                  destination_url: traditionalLink,
-                  is_conversion: true
-                });
-              }}
-            >
-              Standard Application
-            </a>
-          </div>
-
-          
-          </div>
           </div>
 
           {/* Footer */}
-          <div className="bg-stevens-light-gray px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-light-gray rounded-b-stevens-lg">
-            <p className="text-[10px] sm:text-stevens-xs text-stevens-dark-gray text-center mb-2 sm:mb-stevens-sm leading-tight">
-              Have questions? <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline font-stevens-semibold">Contact our admissions team</a>
+          <div className="bg-gray-50 px-4 sm:px-6 md:px-8 py-4 sm:py-5 border-t border-gray-200 rounded-b-lg">
+            <p className="text-xs sm:text-sm text-stevens-dark-gray text-center mb-3 sm:mb-4 leading-relaxed">
+              Have questions?{' '}
+              <a 
+                href={BOOKING_URLS.SCHEDULE_CALL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-stevens-red hover:underline font-semibold"
+              >
+                Contact our admissions team
+              </a>
             </p>
             <button
               onClick={onClose}
-              className="w-full px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm text-xs sm:text-stevens-sm rounded-stevens-md border-2 border-stevens-light-gray bg-stevens-white text-stevens-dark-gray font-stevens-semibold hover:bg-stevens-light-gray transition-colors duration-stevens-normal"
+              className="w-full px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm rounded-md border-2 border-gray-300 bg-white text-stevens-dark-gray font-semibold hover:bg-gray-50 transition-colors duration-200"
             >
               Close
             </button>
