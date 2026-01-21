@@ -113,112 +113,112 @@ export default function ApplicationModal({ isOpen, onClose, traditionalLink }) {
           <div className="p-4 sm:p-6 md:p-8 lg:p-10">
             <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-6 lg:gap-8">
 
-              {/* ASAP Application - Featured */}
+          {/* ASAP Application - Featured */}
               <div className="bg-white border-2 border-stevens-red rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 hover:shadow-lg transition-shadow duration-200 relative">
-                {/* Recommended Badge */}
+            {/* Recommended Badge */}
                 <div className="absolute -top-2.5 sm:-top-3 right-3 sm:right-4 bg-stevens-red text-white px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide">
-                  Recommended
-                </div>
+              Recommended
+            </div>
 
                 {/* Icon and Title */}
                 <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div className="bg-stevens-light-gray p-2.5 sm:p-3 rounded-lg flex-shrink-0">
                     <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-stevens-dark-gray" />
-                  </div>
-                  <div className="flex-1">
+              </div>
+              <div className="flex-1">
                     <h3 className="font-stevens-display text-lg sm:text-xl md:text-xl lg:text-2xl font-bold uppercase tracking-wide text-stevens-dark-gray mb-1">
-                      ASAP Application
-                    </h3>
+                  ASAP Application
+                </h3>
                     <p className="text-xs sm:text-sm text-stevens-dark-gray font-medium">
-                      Fast-track your admission
-                    </p>
-                  </div>
-                </div>
+                  Fast-track your admission
+                </p>
+              </div>
+            </div>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base text-stevens-dark-gray mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                  Begin your graduate studies immediately by enrolling in two foundational courses. Earn a B or better and get full admission with credit in hand.
-                </p>
+              Begin your graduate studies immediately by enrolling in two foundational courses. Earn a B or better and get full admission with credit in hand.
+            </p>
 
                 {/* Benefits List */}
                 <div className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-5 md:mb-6">
                   <h4 className="font-bold text-xs sm:text-sm uppercase tracking-wider text-stevens-dark-gray mb-2 sm:mb-3">
-                    Why Choose ASAP?
-                  </h4>
+                Why Choose ASAP?
+              </h4>
                   <ul className="space-y-2 sm:space-y-2.5">
-                    {asapBenefits.map((benefit, index) => (
+                {asapBenefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm">
                         <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stevens-red mt-0.5 flex-shrink-0" />
                         <span className="text-stevens-dark-gray leading-relaxed">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
                 {/* CTA Button */}
-                <Link 
-                  to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
+            <Link 
+              to={createPageUrl('ASAP') + `?program=${programContext?.programCode || 'unknown'}`}
                   className="block w-full bg-stevens-red text-white text-center font-semibold py-3 sm:py-3.5 px-4 sm:px-6 rounded-md hover:bg-red-700 transition-colors duration-200 text-sm sm:text-base"
-                  onClick={() => {
-                    sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
-                    sessionStorage.setItem('asap_application_source', 'modal');
-                    
-                    trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                    trackEvent('application_option_selected', {
-                      option: 'asap',
-                      program_code: programContext?.programCode || 'unknown',
-                      from_modal: 'application_options',
-                      is_conversion: true
-                    });
-                  }}
-                >
-                  Start ASAP Application
-                </Link>
-              </div>
+              onClick={() => {
+                sessionStorage.setItem('asap_application_program', programContext?.programCode || 'unknown');
+                sessionStorage.setItem('asap_application_source', 'modal');
+                
+                trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                trackEvent('application_option_selected', {
+                  option: 'asap',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  is_conversion: true
+                });
+              }}
+            >
+              Start ASAP Application
+            </Link>
+          </div>
 
-              {/* Standard Application */}
+          {/* Standard Application */}
               <div className="bg-white border-2 border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 lg:p-8 hover:border-gray-300 hover:shadow-lg transition-all duration-200">
                 {/* Icon and Title */}
                 <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div className="bg-gray-100 p-2.5 sm:p-3 rounded-lg flex-shrink-0">
                     <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-stevens-dark-gray" />
-                  </div>
-                  <div className="flex-1">
+              </div>
+              <div className="flex-1">
                     <h3 className="font-stevens-display text-lg sm:text-xl md:text-xl lg:text-2xl font-bold uppercase tracking-wide text-stevens-dark-gray mb-1">
-                      Standard Application
-                    </h3>
+                  Standard Application
+                </h3>
                     <p className="text-xs sm:text-sm text-stevens-dark-gray font-medium">
-                      Standard graduate application process
-                    </p>
-                  </div>
-                </div>
+                  Standard graduate application process
+                </p>
+              </div>
+            </div>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base text-stevens-dark-gray mb-4 sm:mb-5 md:mb-6 leading-relaxed">
-                  Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
-                </p>
+              Complete the full graduate application with all Standard requirements including transcripts, recommendations, and personal statements.
+            </p>
 
                 {/* CTA Button */}
-                <a 
-                  href={traditionalLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            <a 
+              href={traditionalLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
                   className="block w-full bg-white border-2 border-gray-300 text-stevens-dark-gray text-center font-semibold py-3 sm:py-3.5 px-4 sm:px-6 rounded-md hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 text-sm sm:text-base"
-                  onClick={() => {
-                    trackEvent('application_option_selected', {
-                      option: 'standard',
-                      program_code: programContext?.programCode || 'unknown',
-                      from_modal: 'application_options',
-                      destination_url: traditionalLink,
-                      is_conversion: true
-                    });
-                  }}
-                >
-                  Standard Application
-                </a>
-              </div>
-
-            </div>
+              onClick={() => {
+                trackEvent('application_option_selected', {
+                  option: 'standard',
+                  program_code: programContext?.programCode || 'unknown',
+                  from_modal: 'application_options',
+                  destination_url: traditionalLink,
+                  is_conversion: true
+                });
+              }}
+            >
+              Standard Application
+            </a>
+          </div>
+          
+          </div>
           </div>
 
           {/* Footer */}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
-import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import {
   ArrowRight,
   CheckCircle,
@@ -22,18 +21,15 @@ import {
   Building,
   Calculator,
   X,
-  Phone,
-  Mail,
-  Calendar,
-  Copy,
-  Check,
-  ExternalLink,
   ChevronLeft,
   Wrench,
   BarChart3,
   Send,
+  Mail,
+  Phone,
+  Calendar,
 } from "lucide-react";
-import { PageHero, TestimonialCarousel } from "@/components/shared";
+import { PageHero, TestimonialCarousel, RequestInfoModal } from "@/components/shared";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,12 +37,6 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import {
@@ -67,12 +57,12 @@ import {
 } from "@/utils/discountCalculator";
 import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
+import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
   const [showContactModal, setShowContactModal] = useState(false);
   const [showContactOptionsModal, setShowContactOptionsModal] = useState(false);
-  const [copiedItem, setCopiedItem] = useState(null);
   const [companyName, setCompanyName] = useState(null);
   const [corporateCode, setCorporateCode] = useState(null);
 
@@ -449,7 +439,7 @@ const CorporateStudents = () => {
 
   // Workforce Development Commitment Section (Stevens Brand)
   const WorkforceCommitmentSection = () => (
-    <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-dark-gray text-white overflow-hidden relative">
+    <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-black text-white overflow-hidden relative">
       <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
@@ -462,10 +452,10 @@ const CorporateStudents = () => {
             <p className="text-stevens-red font-semibold text-sm uppercase tracking-wider mb-stevens-sm">
               Our Commitment to Workforce Development
             </p>
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-lg leading-tight">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-lg leading-tight text-white">
               Advancing America's Workforce, One Professional at a Time
             </h2>
-            <p className="text-lg text-white/80 mb-stevens-xl leading-relaxed">
+            <p className="text-lg text-white/90 mb-stevens-xl leading-relaxed">
               Stevens Institute of Technology partners with the nation's leading
               employers to close the skills gap and empower working
               professionals. Our workforce development programs deliver
@@ -476,30 +466,30 @@ const CorporateStudents = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mb-stevens-xl">
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
                   50+
                 </p>
-                <p className="text-sm text-white/70">Corporate Partners</p>
+                <p className="text-sm text-white/90">Corporate Partners</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
                   $5,250
                 </p>
-                <p className="text-sm text-white/70">
+                <p className="text-sm text-white/90">
                   Tuition Reimbursement Aligned
                 </p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
                   100%
                 </p>
-                <p className="text-sm text-white/70">Online & Flexible</p>
+                <p className="text-sm text-white/90">Online & Flexible</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-black mb-1">
+                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
                   Top 20
                 </p>
-                <p className="text-sm text-white/70">Nationally Ranked</p>
+                <p className="text-sm text-white/90">Nationally Ranked</p>
               </div>
             </div>
 
@@ -514,9 +504,9 @@ const CorporateStudents = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 text-white/90"
+                  className="flex items-center gap-3 text-white"
                 >
-                  <CheckCircle className="w-5 h-5 text-stevens-black flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-stevens-red flex-shrink-0" />
                   <span className="text-sm">{item.text}</span>
                 </div>
               ))}
@@ -537,12 +527,12 @@ const CorporateStudents = () => {
                 alt="Stevens Institute of Technology - Top-ranked university for working professionals"
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stevens-dark-gray/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stevens-black/90 via-transparent to-transparent" />
 
               {/* Deadline Card */}
               <div className="absolute bottom-6 left-6 right-6 bg-white text-stevens-dark-gray p-5 rounded-lg shadow-xl">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-stevens-black flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-stevens-red flex items-center justify-center flex-shrink-0">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -576,7 +566,7 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none">
+              <Badge className="mb-stevens-md bg-stevens-red text-white border-none">
                 Step 1 of 2
               </Badge>
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -597,8 +587,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
-                    <BarChart3 className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
+                    <BarChart3 className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -628,8 +618,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
-                    <Wrench className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
+                    <Wrench className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -671,7 +661,7 @@ const CorporateStudents = () => {
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 Back
               </button>
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none ml-4">
+              <Badge className="mb-stevens-md bg-stevens-red text-white border-none ml-4">
                 Step 2 of 2
               </Badge>
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -692,8 +682,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
-                    <GraduationCap className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
+                    <GraduationCap className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-stevens-display text-lg lg:text-xl font-bold text-stevens-dark-gray mb-2 group-hover:text-stevens-red transition-colors">
@@ -718,8 +708,8 @@ const CorporateStudents = () => {
                 className="group relative bg-stevens-white rounded-xl p-6 lg:p-8 border-2 border-stevens-light-gray hover:border-stevens-red hover:shadow-lg transition-all duration-200 text-left"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-stevens-light-gray rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
-                    <Award className="w-7 h-7 text-stevens-black group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-red transition-colors">
+                    <Award className="w-7 h-7 text-stevens-red group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -761,7 +751,7 @@ const CorporateStudents = () => {
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 Back
               </button>
-              <Badge className="mb-stevens-md bg-stevens-light-gray text-stevens-black border-none ml-4">
+              <Badge className="mb-stevens-md bg-stevens-red text-white border-none ml-4">
                 <CheckCircle className="w-3 h-3 mr-1" />
                 Personalized Recommendations
               </Badge>
@@ -815,7 +805,7 @@ const CorporateStudents = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
                     <div className="absolute top-stevens-md left-stevens-md">
-                      <div className="bg-stevens-dark-gray backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
+                      <div className="bg-stevens-red backdrop-blur-sm text-stevens-white px-stevens-md py-stevens-xs rounded-stevens-md font-stevens-semibold text-stevens-sm">
                         {program.degree}
                       </div>
                     </div>
@@ -901,6 +891,7 @@ const CorporateStudents = () => {
               setShowContactOptionsModal(true);
             },
           }}
+          secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
           badges={
             companyName
               ? [
@@ -937,7 +928,7 @@ const CorporateStudents = () => {
                     className="text-center p-stevens-md rounded-stevens-lg transition-all duration-300 hover:bg-stevens-white hover:shadow-stevens-md group border border-transparent hover:border-stevens-light-gray flex flex-col"
                   >
                     <div className="mb-stevens-md flex justify-center">
-                      <div className="w-16 h-16 bg-stevens-black rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-stevens-dark-gray group-hover:scale-105">
+                      <div className="w-16 h-16 bg-stevens-red rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-red-700 group-hover:scale-105">
                         <Icon className="w-8 h-8 text-stevens-white" />
                       </div>
                     </div>
@@ -960,7 +951,7 @@ const CorporateStudents = () => {
             >
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-stevens-black rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-stevens-red rounded-full flex items-center justify-center">
                     <Calculator className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-left">
@@ -974,7 +965,7 @@ const CorporateStudents = () => {
                 </div>
                 <Button
                   size="lg"
-                  className="text-white"
+                  className="bg-stevens-red text-white hover:bg-red-700"
                   onClick={() => scrollToSection("#programs-section")}
                 >
                   Find My Program
@@ -991,7 +982,7 @@ const CorporateStudents = () => {
         {/* Program Selection Questionnaire */}
         <section
           id="programs-section"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <motion.div
@@ -1009,7 +1000,7 @@ const CorporateStudents = () => {
         {/* Interactive Cost Calculator */}
         <section
           id="cost-calculator"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
@@ -1039,11 +1030,11 @@ const CorporateStudents = () => {
                         <label className="text-sm font-semibold text-stevens-dark-gray mb-2 block">
                           Selected Program
                         </label>
-                        <Card className="bg-stevens-light-gray border-stevens-light-gray">
+                        <Card className="bg-gray-50 border-gray-200">
                           <CardContent className="p-stevens-md">
                             <div className="flex items-start justify-between">
                               <div>
-                                <Badge className="mt-2 bg-stevens-black text-white">
+                                <Badge className="mt-2 bg-stevens-red text-white">
                                   {selectedProgram.degree}
                                 </Badge>
                                 <p className="font-semibold text-stevens-dark-gray">
@@ -1077,7 +1068,7 @@ const CorporateStudents = () => {
                       </div>
 
                       {/* Year-End Benefits Notice */}
-                      <Alert className="bg-stevens-light-gray border border-stevens-light-gray">
+                      <Alert className="bg-gray-50 border border-gray-200">
                         <Clock className="w-5 h-5 text-stevens-red" />
                         <AlertTitle className="text-stevens-dark-gray font-semibold">
                           2025 Tuition Benefits
@@ -1092,7 +1083,7 @@ const CorporateStudents = () => {
                       {/* Workforce Partner Discount - Only show for master's programs */}
                       {selectedProgram &&
                         !selectedProgram.code.startsWith("cert-") && (
-                          <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-stevens-light-gray rounded-lg border border-stevens-light-gray">
+                          <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
                             <Checkbox
                               id="workforce-partner"
                               checked={isWorkforcePartner}
@@ -1104,7 +1095,7 @@ const CorporateStudents = () => {
                                 htmlFor="workforce-partner"
                                 className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
                               >
-                                <Building className="w-4 h-4 mr-1.5 text-stevens-black" />
+                                <Building className="w-4 h-4 mr-1.5 text-stevens-red" />
                                 Is your employer a Stevens workforce development
                                 partner?
                               </label>
@@ -1117,7 +1108,7 @@ const CorporateStudents = () => {
                         )}
 
                       {/* Hoboken Resident Discount */}
-                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-stevens-light-gray rounded-lg">
+                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-gray-50 rounded-lg border border-gray-200">
                         <Checkbox
                           id="hoboken"
                           checked={isHobokenResident}
@@ -1129,7 +1120,7 @@ const CorporateStudents = () => {
                             htmlFor="hoboken"
                             className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
                           >
-                            <Home className="w-4 h-4 mr-1.5 text-stevens-dark-gray" />
+                            <Home className="w-4 h-4 mr-1.5 text-stevens-red" />
                             I am a Hoboken resident
                           </label>
                           <p className="text-xs text-stevens-dark-gray mt-1">
@@ -1140,7 +1131,7 @@ const CorporateStudents = () => {
                       </div>
 
                       {/* Stevens Alumni Discount */}
-                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-stevens-light-gray rounded-lg">
+                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-gray-50 rounded-lg border border-gray-200">
                         <Checkbox
                           id="alumni"
                           checked={isStevensAlumni}
@@ -1152,7 +1143,7 @@ const CorporateStudents = () => {
                             htmlFor="alumni"
                             className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
                           >
-                            <GraduationCap className="w-4 h-4 mr-1.5 text-stevens-dark-gray" />
+                            <GraduationCap className="w-4 h-4 mr-1.5 text-stevens-red" />
                             I am a Stevens Institute of Technology alumni
                           </label>
                           <p className="text-xs text-stevens-dark-gray mt-1">
@@ -1211,11 +1202,11 @@ const CorporateStudents = () => {
                       </div>
                     </CardContent>
 
-                    {/* Mobile Price Summary - Only visible on mobile */}
+                        {/* Mobile Price Summary - Only visible on mobile */}
                     {calculatedCost && (
-                      <div className="lg:hidden p-stevens-md pt-0 border-t border-stevens-light-gray">
+                      <div className="lg:hidden p-stevens-md pt-0 border-t border-gray-200">
                         {/* Final Price */}
-                        <div className="bg-stevens-gray text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
+                        <div className="bg-stevens-red text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
                           {calculatedCost.credits.type === "variable" ? (
                             <>
                               <div className="flex justify-between items-center mb-2">
@@ -1273,7 +1264,7 @@ const CorporateStudents = () => {
 
                     {/* Mobile CTA Buttons - Only visible on mobile */}
                     {calculatedCost && (
-                      <div className="lg:hidden p-stevens-md pt-0 space-y-stevens-md border-t border-stevens-light-gray">
+                      <div className="lg:hidden p-stevens-md pt-0 space-y-stevens-md border-t border-gray-200">
                         {/* Primary CTA - Apply */}
                         {(() => {
                           // Build the correct application URL based on program config
@@ -1386,7 +1377,7 @@ const CorporateStudents = () => {
                 <div className="hidden lg:block lg:col-span-3 order-first lg:order-last">
                   {calculatedCost ? (
                     <Card className="lg:sticky lg:top-4">
-                      <CardHeader className="bg-stevens-gray text-stevens-white rounded-t-stevens-md">
+                      <CardHeader className="bg-stevens-red text-stevens-white rounded-t-stevens-md">
                         <CardTitle className="text-stevens-xl md:text-stevens-2xl">
                           Your Investment Breakdown
                         </CardTitle>
@@ -1425,8 +1416,8 @@ const CorporateStudents = () => {
                         {/* Variable Credit Info */}
                         {calculatedCost.credits.type === "variable" && (
                           <div className="mb-stevens-lg">
-                            <Alert className="bg-stevens-light-gray border border-stevens-light-gray">
-                              <Info className="w-5 h-5 text-stevens-dark-gray" />
+                            <Alert className="bg-gray-50 border border-gray-200">
+                              <Info className="w-5 h-5 text-stevens-red" />
                               <AlertTitle className="text-stevens-dark-gray font-semibold mb-2">
                                 Variable Credit Program
                               </AlertTitle>
@@ -1446,7 +1437,7 @@ const CorporateStudents = () => {
                         {/* Certificate Program Benefits Message */}
                         {calculatedCost.programCode.startsWith("cert-") && (
                           <div className="mb-stevens-lg">
-                            <Alert className="bg-stevens-light-gray border border-stevens-light-gray">
+                            <Alert className="bg-gray-50 border border-gray-200">
                               <Sparkles className="w-5 h-5 text-stevens-red" />
                               <AlertTitle className="text-stevens-dark-gray font-semibold mb-2">
                                 Certificate Program Benefits
@@ -1488,7 +1479,7 @@ const CorporateStudents = () => {
 
                               return (
                                 <div key={index}>
-                                  <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-stevens-light-gray rounded-lg border border-stevens-light-gray">
+                                  <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
                                     <Icon className="w-5 h-5 text-stevens-red flex-shrink-0 mt-0.5" />
                                     <div className="flex-1 min-w-0">
                                       <div className="flex justify-between items-start mb-1">
@@ -1516,7 +1507,7 @@ const CorporateStudents = () => {
                         )}
 
                         {/* Final Price */}
-                        <div className="bg-stevens-gray text-stevens-white p-stevens-md lg:p-stevens-lg rounded-stevens-md">
+                        <div className="bg-stevens-red text-stevens-white p-stevens-md lg:p-stevens-lg rounded-stevens-md">
                           {calculatedCost.credits.type === "variable" ? (
                             <>
                               <div className="flex justify-between items-center mb-2">
@@ -1730,7 +1721,7 @@ const CorporateStudents = () => {
               </div>
             ) : (
               /* Default view - select a program message */
-              <Card className="max-w-2xl mx-auto">
+              <Card className="max-w-2xl mx-auto border-2 ">
                 <CardContent className="p-stevens-2xl pt-stevens-2xl text-center">
                   <Calculator className="w-16 h-16 mx-auto mb-stevens-xl text-stevens-gray" />
                   <h3 className="font-stevens-display text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
@@ -1742,7 +1733,7 @@ const CorporateStudents = () => {
                     employer benefits.
                   </p>
                   <Button
-                    className="text-stevens-white"
+                    className="text-stevens-white bg-stevens-red hover:bg-red-700"
                     size="lg"
                     onClick={() => {
                       document
@@ -1763,7 +1754,7 @@ const CorporateStudents = () => {
         </section>
 
         {/* Your Learning Journey */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -1780,7 +1771,7 @@ const CorporateStudents = () => {
               <div className="hidden lg:block overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-stevens-dark-gray text-stevens-white">
+                    <tr className="bg-stevens-red text-stevens-white">
                       <th className="px-stevens-lg py-stevens-md text-left font-stevens-bold text-stevens-base uppercase tracking-wide">
                         Action Needed
                       </th>
@@ -1793,10 +1784,10 @@ const CorporateStudents = () => {
                     {applicationSteps.map((step, index) => (
                       <tr
                         key={step.step}
-                        className={`border-b border-stevens-light-gray transition-all duration-300 cursor-default group ${
+                        className={`border-b border-gray-200 transition-all duration-300 cursor-default group ${
                           index % 2 === 0
-                            ? "bg-stevens-white hover:bg-stevens-light-gray"
-                            : "bg-stevens-light-gray hover:bg-stevens-white"
+                            ? "bg-white hover:bg-gray-50"
+                            : "bg-gray-50 hover:bg-white"
                         }`}
                       >
                         <td className="px-stevens-lg py-stevens-lg align-top w-2/5">
@@ -1843,11 +1834,11 @@ const CorporateStudents = () => {
               </div>
 
               {/* Mobile Card View */}
-              <div className="lg:hidden divide-y divide-stevens-light-gray">
+              <div className="lg:hidden divide-y divide-gray-200">
                 {applicationSteps.map((step) => (
                   <div
                     key={step.step}
-                    className="p-stevens-lg transition-all duration-300 hover:bg-stevens-light-gray group"
+                    className="p-stevens-lg transition-all duration-300 hover:bg-gray-50 group"
                   >
                     <div className="mb-stevens-md">
                       <p className="font-stevens-bold text-stevens-red text-stevens-sm uppercase mb-stevens-xs">
@@ -1898,7 +1889,7 @@ const CorporateStudents = () => {
         {/* Final CTA Section */}
         <section
           id="contact"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray text-stevens-white"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <motion.div
@@ -1908,10 +1899,13 @@ const CorporateStudents = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md">
+              {/* Divider */}
+              <div className="border-t border-gray-400 mb-[60px]"></div>
+              
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md text-stevens-black">
                 Ready to Take the Next Step?
               </h2>
-              <p className="text-stevens-lg mb-4 max-w-2xl mx-auto opacity-90">
+              <p className="text-stevens-lg mb-4 max-w-2xl mx-auto text-stevens-dark-gray">
                 Join thousands of professionals who advanced their careers
                 through Stevens workforce development programs. Your employer
                 benefits are ready to be used.
@@ -1925,7 +1919,7 @@ const CorporateStudents = () => {
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
                   size="lg"
-                  variant="outline-white"
+                  variant="outline-dark"
                   className="group w-full sm:w-auto min-w-[280px] py-4 text-base"
                   onClick={() => {
                     handleCTAClick("request_info_footer");
@@ -1938,7 +1932,7 @@ const CorporateStudents = () => {
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline-white"
+                  variant="outline-dark"
                   className="w-full sm:w-auto min-w-[280px] py-4"
                   onClick={() => {
                     handleCTAClick("schedule_consultation_footer");
@@ -1951,19 +1945,19 @@ const CorporateStudents = () => {
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-stevens-xl pt-stevens-lg border-t border-white/20">
-                <p className="text-sm text-white/70 mb-4">
+              <div className="mt-stevens-xl pt-stevens-lg border-t border-stevens-light-gray">
+                <p className="text-sm text-stevens-dark-gray/70 mb-4">
                   Trusted by employees at leading organizations
                 </p>
-                <div className="flex flex-wrap justify-center items-center gap-6 text-white/80">
+                <div className="flex flex-wrap justify-center items-center gap-6 text-stevens-dark-gray">
                   <span className="font-medium">Pfizer</span>
-                  <span className="text-white/30">•</span>
+                  <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">Johnson & Johnson</span>
-                  <span className="text-white/30">•</span>
+                  <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">JPMorgan Chase</span>
-                  <span className="text-white/30">•</span>
+                  <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">IBM</span>
-                  <span className="text-white/30">•</span>
+                  <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">EY</span>
                 </div>
               </div>
@@ -1971,196 +1965,41 @@ const CorporateStudents = () => {
           </div>
         </section>
 
-        {/* Contact Modal */}
-        {showContactModal && (
-          <div
-            className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
-            onClick={() => setShowContactModal(false)}
-          >
-            <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
-              <div
-                className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-4 sm:py-stevens-lg rounded-t-stevens-lg">
-                  <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-center pr-6 sm:pr-8 leading-tight">
-                    Request Information
-                  </h2>
-                  <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
-                    An enrollment advisor will reach out within 1 business day
-                  </p>
-                  <button
-                    onClick={() => setShowContactModal(false)}
-                    className="absolute top-2 right-2 z-50 text-stevens-gray hover:text-stevens-dark-gray transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
-                    aria-label="Close modal"
-                  >
-                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </button>
-                </div>
-
-                <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
-                  <LeadCaptureForm
-                    formType="rfi"
-                    source="corporate_students_page"
-                    programCode={
-                      selectedProgram || searchParams.get("program") || "CORP"
-                    }
-                    hideHeader={true}
-                    onSuccess={() => {
-                      trackConversion(CONVERSION_LABELS.GET_PROGRAM_DETAILS);
-                      setShowContactModal(false);
-                    }}
-                    additionalUrlParams={{
-                      // UTM tracking for attribution
-                      utm_source: "microsite",
-                      utm_medium: "corporate_landing",
-                      utm_campaign: "corporate_students_rfi",
-                      utm_content: selectedProgram || "general",
-                      // Corporate context
-                      company: companyName || "unknown",
-                      corporate_code: corporateCode || "",
-                      selected_program: selectedProgram || "",
-                      // Calculator context for lead scoring
-                      is_workforce_partner: isWorkforcePartner ? "yes" : "no",
-                      is_hoboken_resident: isHobokenResident ? "yes" : "no",
-                      is_alumni: isStevensAlumni ? "yes" : "no",
-                      has_reimbursement: annualReimbursement ? "yes" : "no",
-                    }}
-                  />
-                </div>
-
-                <div className="bg-stevens-light-gray px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-light-gray rounded-b-stevens-lg">
-                  <p className="text-stevens-xs sm:text-stevens-sm text-stevens-dark-gray text-center leading-tight">
-                    Have questions?{" "}
-                    <a
-                      href={BOOKING_URLS.SCHEDULE_CALL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-stevens-red hover:underline font-stevens-semibold"
-                    >
-                      Schedule a call
-                    </a>{" "}
-                    with an advisor.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Request Information Modal */}
+        <RequestInfoModal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
+          sourcePage="corporate_students_page"
+          programOfInterest={
+            selectedProgram?.code || searchParams.get("program") || "CORP"
+          }
+          additionalUrlParams={{
+            // UTM tracking for attribution
+            utm_source: "microsite",
+            utm_medium: "corporate_landing",
+            utm_campaign: "corporate_students_rfi",
+            utm_content: selectedProgram?.code || "general",
+            // Corporate context
+            company: companyName || "unknown",
+            corporate_code: corporateCode || "",
+            selected_program: selectedProgram?.code || "",
+            // Calculator context for lead scoring
+            is_workforce_partner: isWorkforcePartner ? "yes" : "no",
+            is_hoboken_resident: isHobokenResident ? "yes" : "no",
+            is_alumni: isStevensAlumni ? "yes" : "no",
+            has_reimbursement: annualReimbursement ? "yes" : "no",
+            // Form type
+            formType: "rfi",
+            source: "corporate_students_page",
+          }}
+        />
 
         {/* Contact Options Modal */}
-        <Dialog
+        <ContactOptionsModal
           open={showContactOptionsModal}
-          onOpenChange={(open) => {
-            setShowContactOptionsModal(open);
-            if (!open) setCopiedItem(null);
-          }}
-        >
-          <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0 gap-0 !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 mx-4">
-            <div className="bg-stevens-gray text-white px-6 py-5 rounded-t-lg">
-              <DialogHeader className="space-y-2">
-                <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-white">
-                  Get in Touch
-                </DialogTitle>
-              </DialogHeader>
-            </div>
-
-            <div className="p-6 space-y-4">
-              <button
-                onClick={() => {
-                  trackEvent("contact_option_selected", {
-                    option: "schedule_call",
-                    page: "corporate_students",
-                  });
-                  window.open(
-                    BOOKING_URLS.SCHEDULE_CALL,
-                    "_blank",
-                    "noopener,noreferrer"
-                  );
-                  setShowContactOptionsModal(false);
-                }}
-                className="w-full p-5 rounded-xl bg-stevens-black text-white hover:shadow-lg hover:bg-stevens-dark-gray transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-                    <Calendar className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="font-bold text-lg mb-1">Schedule a Call</h3>
-                    <p className="text-sm text-white/80">
-                      Book a convenient time for a personalized consultation
-                    </p>
-                  </div>
-                  <ExternalLink className="w-5 h-5 text-white/70 group-hover:text-white transition-colors flex-shrink-0" />
-                </div>
-              </button>
-
-              <div className="relative py-2">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-stevens-light-gray"></div>
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-white px-4 text-sm text-stevens-light-gray0">
-                    or reach us directly
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a
-                  href={CONTACT_INFO.PHONE_LINK}
-                  onClick={() => {
-                    trackEvent("contact_option_selected", {
-                      option: "phone",
-                      page: "corporate_students",
-                    });
-                  }}
-                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-light-gray hover:border-stevens-red hover:bg-stevens-light-gray transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-stevens-light-gray group-hover:bg-stevens-light-gray flex items-center justify-center mb-3 transition-colors">
-                    <Phone className="w-6 h-6 text-stevens-dark-gray group-hover:text-stevens-red" />
-                  </div>
-                  <span className="text-xs text-stevens-light-gray0 mb-1">
-                    Call Us
-                  </span>
-                  <span className="font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors">
-                    {CONTACT_INFO.PHONE_DISPLAY}
-                  </span>
-                </a>
-
-                <button
-                  onClick={() => {
-                    trackEvent("contact_option_selected", {
-                      option: "email",
-                      page: "corporate_students",
-                    });
-                    navigator.clipboard.writeText(CONTACT_INFO.EMAIL);
-                    setCopiedItem("email");
-                    setTimeout(() => setCopiedItem(null), 2000);
-                  }}
-                  className="flex flex-col items-center p-4 rounded-xl border-2 border-stevens-light-gray hover:border-stevens-red hover:bg-stevens-light-gray transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-stevens-light-gray group-hover:bg-stevens-light-gray flex items-center justify-center mb-3 transition-colors">
-                    {copiedItem === "email" ? (
-                      <Check className="w-6 h-6 text-stevens-red" />
-                    ) : (
-                      <Mail className="w-6 h-6 text-stevens-dark-gray group-hover:text-stevens-red" />
-                    )}
-                  </div>
-                  <span className="text-xs text-stevens-light-gray0 mb-1">
-                    {copiedItem === "email" ? "Copied!" : "Email Us"}
-                  </span>
-                  <span className="font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors text-sm break-all">
-                    {CONTACT_INFO.EMAIL}
-                  </span>
-                  <span className="text-xs text-stevens-gray mt-1 flex items-center gap-1">
-                    <Copy className="w-3 h-3" /> Click to copy
-                  </span>
-                </button>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
+          onOpenChange={setShowContactOptionsModal}
+          sourcePage="corporate_students"
+        />
       </div>
     </PageContextProvider>
   );

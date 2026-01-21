@@ -313,7 +313,7 @@ export default function Tuition() {
               <div className="p-5 bg-white border-l-4 border-stevens-red text-stevens-dark-gray rounded-r-lg mb-8 shadow-sm">
                 <p className="text-sm leading-relaxed">
                   <span className="font-semibold">Please note:</span> Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master's degree program, which occurs after successfully completing two courses with a grade of B or higher.
-                </p>
+              </p>
               </div>
               <h3 className="font-stevens-display text-xl md:text-2xl font-medium mt-10 mb-6 text-stevens-dark-gray">
                 Financial Assistance Options for Graduate Students
@@ -435,9 +435,9 @@ export default function Tuition() {
                   <div className="bg-stevens-light-gray rounded-lg p-4">
                     <p className="font-semibold text-sm mb-2">Hours:</p>
                     <ul className="text-sm space-y-1">
-                      <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>
-                      <li>Tuesday: 10 a.m.-5 p.m. ET</li>
-                    </ul>
+                    <li>Mon, Wed-Fri: 9 a.m.-5 p.m. ET</li>
+                    <li>Tuesday: 10 a.m.-5 p.m. ET</li>
+                  </ul>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
@@ -451,10 +451,10 @@ export default function Tuition() {
                   </div>
                   <div className="pt-2 border-t border-gray-200">
                     <p className="text-sm text-stevens-gray">
-                      Wesley J. Howe Center, First Floor<br />
-                      1 Castle Point Terrace<br />
-                      Hoboken, NJ 07030
-                    </p>
+                    Wesley J. Howe Center, First Floor<br />
+                    1 Castle Point Terrace<br />
+                    Hoboken, NJ 07030
+                  </p>
                   </div>
                 </CardContent>
               </Card>

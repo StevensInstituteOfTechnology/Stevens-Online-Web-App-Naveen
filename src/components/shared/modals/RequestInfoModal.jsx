@@ -10,8 +10,9 @@ import { trackEvent } from '@/utils/analytics/vercelTracking';
  * @param {string} sourcePage - Source page identifier for tracking
  * @param {string} programOfInterest - Program code for pre-filling form
  * @param {Object} additionalUrlParams - Additional URL parameters for the form
+ * @param {string} title - Optional custom title (default: "Request Information")
  */
-export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '', additionalUrlParams = {} }) {
+export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknown', programOfInterest = '', additionalUrlParams = {}, title = 'Request Information' }) {
   const [mountKey, setMountKey] = useState(0);
   const modalOpenTime = useRef(null);
   const hasTrackedOpen = useRef(false);
@@ -79,32 +80,31 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
 
   return (
     <div 
-      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
+      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in-0 duration-200"
       onClick={onClose}
     >
       <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
         <div 
-          className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
+          className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-200"
           onClick={(e) => e.stopPropagation()}
         >
           
 
           {/* Header */}
-          <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
-            <h2 className="font-stevens-display text-lg sm:text-stevens-xl md:text-stevens-2xl lg:text-stevens-3xl font-light uppercase tracking-wide text-center pr-6 sm:pr-8 leading-tight">
-              Request Information
-            </h2>
-            <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
-              Take the next step in your career journey
-            </p>
-            {/* Close Button - Fixed to modal */}
-          <button
-            onClick={onClose}
-            className="absolute top-2 right-2  z-50 text-stevens-gray hover:text-stevens-dark-gray transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+          <div className="bg-stevens-black text-white px-6 py-6 rounded-t-lg border-b border-stevens-black/20 relative">
+            <div className="space-y-1">
+              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-wide text-center text-white">
+                {title}
+              </h2>
+            </div>
+            {/* Custom Close Button - White X for dark header */}
+            <button
+              onClick={onClose}
+              className="absolute right-4 top-4 rounded-md opacity-80 hover:opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stevens-dark-gray"
+              aria-label="Close"
+            >
+              <X className="h-5 w-5 text-white" />
+            </button>
           </div>
 
           {/* Content */}

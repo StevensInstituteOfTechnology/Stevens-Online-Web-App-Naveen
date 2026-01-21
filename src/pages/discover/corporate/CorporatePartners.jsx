@@ -17,10 +17,8 @@ import {
   Lightbulb,
   Shield,
   DollarSign,
-  X,
 } from 'lucide-react';
-import { PageHero, TopCompaniesSection, PullQuoteTestimonial } from '@/components/shared';
-import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
+import { PageHero, TopCompaniesSection, PullQuoteTestimonial, RequestInfoModal } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
@@ -263,36 +261,6 @@ const CorporatePartners = () => {
   const [showContactModal, setShowContactModal] = useState(false);
   const [showContactOptionsModal, setShowContactOptionsModal] = useState(false);
 
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (showContactModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [showContactModal]);
-
-  // Handle ESC key to close modal
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === 'Escape' && showContactModal) {
-        setShowContactModal(false);
-      }
-    };
-    
-    if (showContactModal) {
-      window.addEventListener('keydown', handleEsc);
-    }
-    
-    return () => {
-      window.removeEventListener('keydown', handleEsc);
-    };
-  }, [showContactModal]);
-
   // Set SEO meta tags
   useEffect(() => {
     const canonical = buildCanonicalUrl('/corporate-partners/');
@@ -458,6 +426,7 @@ const CorporatePartners = () => {
               setShowContactOptionsModal(true);
             }
           }}
+          secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
         />
 
         
@@ -914,59 +883,18 @@ const CorporatePartners = () => {
           </div>
         </section>
 
-        {/* Contact Modal */}
-        {showContactModal && (
-          <div 
-            className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in duration-300"
-            onClick={() => setShowContactModal(false)}
-          >
-            <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
-            <div
-                className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-300"
-                onClick={(e) => e.stopPropagation()}
-            >
-                {/* Header */}
-                <div className="relative bg-stevens-dark-gray text-stevens-white px-3 sm:px-stevens-md py-3 sm:py-stevens-lg rounded-t-stevens-lg">
-                  <h2 className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl lg:text-stevens-2xl font-light uppercase tracking-wide text-center pr-6 sm:pr-8 leading-tight">
-                    Let's Discuss Your Workforce Development Needs
-                  </h2>
-                  <p className="text-center text-stevens-white/90 mt-1 sm:mt-stevens-xs text-xs sm:text-stevens-sm leading-tight">
-                    Partner with Stevens Online to transform your workforce
-                  </p>
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setShowContactModal(false)}
-                    className="absolute top-2 right-2 z-50 text-stevens-gray hover:text-stevens-dark-gray transition-colors duration-stevens-fast bg-white rounded-full p-1 sm:p-stevens-xs shadow-stevens-md hover:shadow-stevens-lg"
-                    aria-label="Close modal"
-                  >
-                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </button>
-                </div>
-                
-                {/* Content */}
-                <div className="p-stevens-sm sm:p-stevens-md md:p-stevens-lg bg-stevens-white">
-                <LeadCaptureForm
-                  formType="corporate_partnership"
-                  source="corporate_partners_page"
-                  programCode="CORP"
-                    hideHeader={true}
-                  onSuccess={() => {
-                    trackConversion(CONVERSION_LABELS.CORPORATE_INQUIRY);
-                    setShowContactModal(false);
-                  }}
-                />
-                </div>
-
-                {/* Footer */}
-                <div className="bg-stevens-light-gray px-stevens-sm sm:px-stevens-md py-2 sm:py-stevens-sm border-t border-stevens-light-gray rounded-b-stevens-lg">
-                  <p className="text-stevens-xs sm:text-stevens-sm text-stevens-dark-gray text-center leading-tight">
-                    Have questions? <a href="https://outlook.office.com/book/CPEAdmissionsStevensedu@stevens0.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="text-stevens-red hover:underline font-stevens-semibold">Schedule a call</a> with our corporate partnerships team.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Request Information Modal */}
+        <RequestInfoModal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
+          sourcePage="corporate_partners_page"
+          programOfInterest="CORP"
+          title="Let's Discuss Your Workforce Development Needs"
+          additionalUrlParams={{
+            formType: "corporate_partnership",
+            source: "corporate_partners_page",
+          }}
+        />
 
         {/* Contact Options Modal */}
         <ContactOptionsModal

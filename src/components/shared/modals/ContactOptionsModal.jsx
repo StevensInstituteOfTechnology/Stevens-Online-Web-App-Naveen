@@ -87,7 +87,7 @@ export default function ContactOptionsModal({
           {/* Schedule a Call - Primary Action */}
           <button
             onClick={handleScheduleCall}
-            className="w-full p-5 rounded-xl bg-gradient-to-r from-stevens-black to-stevens-dark-gray text-white hover:shadow-xl hover:from-stevens-dark-gray hover:to-stevens-black transform hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-2 border-stevens-black/10"
+            className="w-full p-5 rounded-xl bg-stevens-dark-gray text-white hover:shadow-xl hover:bg-stevens-dark-gray transform hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-2 border-stevens-black/10"
           >
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0 w-14 h-14 rounded-full bg-stevens-red group-hover:bg-stevens-red/30 flex items-center justify-center transition-colors">
