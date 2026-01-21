@@ -4,45 +4,13 @@ import "@/data/blogs.json";
 
 // Page imports
 import Home from "@/pages/Home";
-import ASAP from "@/pages/ASAP";
-import AcceleratedApplication from "@/pages/AcceleratedApplication";
-import Tuition from "@/pages/Tuition";
-import RequestInfo from "@/pages/RequestInfo";
-import MBA from "@/pages/MBA";
-import MSCS from "@/pages/MSCS";
-import MEM from "@/pages/MEM";
-import MEADS from "@/pages/MEADS";
-import ExploreMBA from "@/pages/ExploreMBA";
-import ExploreMEM from "@/pages/ExploreMEM";
-import ExploreMEADS from "@/pages/ExploreMEADS";
-import ExploreMSCS from "@/pages/ExploreMSCS";
-import ExploreMSAI from "@/pages/ExploreMSAI";
-import ComparePrograms from "@/pages/ComparePrograms";
-import Events from "@/pages/Events";
-import CertificateEnterpriseAI from "@/pages/CertificateEnterpriseAI";
-import CertificateAppliedDataScience from "@/pages/CertificateAppliedDataScience";
-import ExploreCertEnterpriseAI from "@/pages/ExploreCertEnterpriseAI";
-import ExploreCertAppliedDataScience from "@/pages/ExploreCertAppliedDataScience";
-import Blog from "@/pages/Blog";
-import EngineeringEssentials from "@/pages/EngineeringEssentials";
-import MasteringComputerScience from "@/pages/MasteringComputerScience";
-import OnlineMBASuccess from "@/pages/OnlineMBASuccess";
-import OtherPrograms from "@/pages/OtherPrograms";
+import { ASAP, AcceleratedApplication, Admissions, Tuition, TuitionOutcomes, RequestInfo, CorporatePartners, CorporateStudents, AlumniPGC, EmployerSponsorship, SiemensPage, PSEGPage, PSEGEnterpriseAIPage } from "@/pages/discover";
+import { MBA, MSCS, MEM, MEADS, ComparePrograms } from "@/pages/degrees";
+import { ExploreMBA, ExploreMEM, ExploreMEADS, ExploreMSCS, ExploreMSAI, ExploreCertEnterpriseAI, ExploreCertAppliedDataScience } from "@/pages/explore";
+import { CertificateEnterpriseAI, CertificateAppliedDataScience, Certificates } from "@/pages/certificates";
+import { Blog, EngineeringEssentials, MasteringComputerScience, OnlineMBASuccess, OtherPrograms } from "@/pages/blog";
+import { OnlineExperience, Events } from "@/pages/about";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
-import Certificates from "@/pages/Certificates";
-import OnlineExperience from "@/pages/OnlineExperience";
-import TuitionOutcomes from "@/pages/TuitionOutcomes";
-import Admissions from "@/pages/Admissions";
-import EmployerSponsorship from "@/pages/EmployerSponsorship";
-
-import SiemensPage from "@/pages/corporate/SiemensPage";
-import PSEGPage from "@/pages/corporate/PSEGPage";
-import PSEGEnterpriseAIPage from "@/pages/corporate/PSEGEnterpriseAIPage";
-import CorporatePartners from "@/pages/CorporatePartners";
-import CorporateStudents from "@/pages/CorporateStudents";
-// import CorporatePartners from "@/pages/CorporatePartners";
-// import CorporateStudents from "@/pages/CorporateStudents";
-import AlumniPGC from "@/pages/AlumniPGC";
 import NotFound from "@/pages/NotFound";
 
 // Redirect component for blog detail pages without trailing slash
