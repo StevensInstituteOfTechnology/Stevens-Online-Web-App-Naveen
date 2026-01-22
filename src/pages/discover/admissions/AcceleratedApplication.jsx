@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { PageHero } from '@/components/shared';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
+import { BOOKING_URLS } from '@/config/constants';
 
 export default function AcceleratedApplicationPage() {
   // Get program code from URL or sessionStorage
@@ -149,33 +150,41 @@ export default function AcceleratedApplicationPage() {
       />
 
       {/* Speed Emphasis Section */}
-      <div className="py-stevens-section-sm bg-stevens-dark-gray text-white">
+      <div className="py-stevens-section-sm bg-stevens-black text-white">
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg text-center">
-          <div className="flex items-center justify-center gap-stevens-sm mb-stevens-md">
-            <Zap className="w-8 h-8" />
+          <div className="flex items-center justify-center gap-stevens-md mb-stevens-lg">
+            <div className="w-14 h-14 bg-stevens-red rounded-full flex items-center justify-center">
+              <Zap className="w-7 h-7 text-white" />
+            </div>
             <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide">
               Complete in Minutes, Not Hours
             </h2>
           </div>
-          <p className="text-stevens-xl mb-stevens-xl max-w-3xl mx-auto leading-relaxed">
-            Our streamlined application takes just <strong>5-10 minutes</strong> to complete. No letters of recommendation. No lengthy essays. Just your basics and you're done.
+          <p className="text-stevens-xl mb-stevens-xl max-w-3xl mx-auto leading-relaxed text-white/90">
+            Our streamlined application takes just <span className="text-stevens-red font-bold">5-10 minutes</span> to complete. No letters of recommendation. No lengthy essays. Just your basics and you're done.
           </p>
           
           <div className="grid md:grid-cols-3 gap-stevens-lg max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
-              <Clock className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">5-10 Minutes</h3>
-              <p className="text-stevens-sm opacity-90">Quick application process</p>
+            <div className="group bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-stevens-xl border border-white hover:border-stevens-red/50 transition-all duration-300">
+              <div className="w-16 h-16 bg-stevens-red group-hover:bg-stevens-red rounded-full flex items-center justify-center mx-auto mb-stevens-md transition-all duration-300">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-bold text-stevens-xl mb-stevens-xs">5-10 Minutes</h3>
+              <p className="text-stevens-base text-white/70">Quick application process</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
-              <FileCheck className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">Unofficial Transcripts</h3>
-              <p className="text-stevens-sm opacity-90">Get started immediately</p>
+            <div className="group bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-stevens-xl border border-white hover:border-stevens-red/50 transition-all duration-300">
+              <div className="w-16 h-16 bg-stevens-red group-hover:bg-stevens-red rounded-full flex items-center justify-center mx-auto mb-stevens-md transition-all duration-300">
+                <FileCheck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-bold text-stevens-xl mb-stevens-xs">Unofficial Transcripts</h3>
+              <p className="text-stevens-base text-white/70">Get started immediately</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-stevens-lg p-stevens-lg">
-              <Zap className="w-10 h-10 mx-auto mb-stevens-sm" />
-              <h3 className="font-semibold text-stevens-lg mb-stevens-xs">Fast Review</h3>
-              <p className="text-stevens-sm opacity-90">Hear back quickly</p>
+            <div className="group bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-stevens-xl border border-white hover:border-stevens-red/50 transition-all duration-300">
+              <div className="w-16 h-16 bg-stevens-red group-hover:bg-stevens-red rounded-full flex items-center justify-center mx-auto mb-stevens-md transition-all duration-300">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-bold text-stevens-xl mb-stevens-xs">Fast Review</h3>
+              <p className="text-stevens-base text-white/70">Hear back quickly</p>
             </div>
           </div>
         </div>
@@ -185,88 +194,105 @@ export default function AcceleratedApplicationPage() {
       <div className="py-stevens-section bg-white">
         <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
               Eligible Programs
+              <span className="block w-16 h-1 bg-stevens-red mt-4 mx-auto"></span>
             </h2>
-            <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
+            <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto mt-6">
               The Accelerated Application is available for the following programs. Choose your program and get started today.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
+          <div className="grid md:grid-cols-3 gap-6 mb-stevens-xl">
             {eligiblePrograms.map((program) => (
               <Link 
                 key={program.id}
                 to={program.path}
-                className="group bg-stevens-light-gray border-2 border-stevens-light-gray rounded-stevens-lg p-stevens-lg hover:border-stevens-red hover:shadow-stevens-lg transition-all duration-200"
+                className="group relative bg-white border border-stevens-red/20 rounded-xl p-8 hover:border-stevens-red hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <program.icon className="w-12 h-12 text-stevens-black mb-stevens-md mx-auto" />
-                <h3 className="font-semibold text-stevens-lg text-stevens-dark-gray mb-stevens-xs text-center group-hover:text-stevens-red transition-colors">
+                {/* Red accent line - always visible */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-xl"></div>
+                
+                <div className="w-16 h-16 bg-stevens-red/10 group-hover:bg-stevens-red/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300">
+                  <program.icon className="w-8 h-8 text-stevens-red transition-colors duration-300" />
+                </div>
+                <h3 className="font-bold text-lg text-stevens-dark-gray mb-3 text-center group-hover:text-stevens-red transition-colors">
                   {program.shortName}
                 </h3>
-                <p className="text-stevens-sm text-stevens-dark-gray text-center">
+                <p className="text-sm text-stevens-gray text-center leading-relaxed">
                   {program.description}
                 </p>
               </Link>
             ))}
           </div>
 
-          <div className="bg-stevens-light-gray border-l-4 border-stevens-black p-stevens-lg rounded-stevens-sm">
-            <p className="text-stevens-base text-stevens-dark-gray">
-              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
+          <div className="bg-gray-50 border-l-4 border-stevens-red p-6 rounded-r-lg shadow-sm">
+            <p className="text-stevens-base text-stevens-dark-gray leading-relaxed">
+              <strong className="text-stevens-black">Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
             </p>
           </div>
         </div>
       </div>
-
-      <div className="py-stevens-section bg-stevens-light-gray">
+      {/* Application Form Section */}
+      <div className="py-stevens-section bg-gray-50">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <div className="grid lg:grid-cols-2 gap-stevens-2xl items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             
             {/* Left Column - Info */}
             <div>
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-6">
                 Your Path to Graduate Success
+                <span className="block w-16 h-1 bg-stevens-red mt-4"></span>
               </h2>
-              <p className="text-stevens-lg text-stevens-dark-gray mb-stevens-lg leading-relaxed">
-                Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App streamlines the admissions process so you can get started immediately on your graduate education journey.
+              <p className="text-lg text-stevens-dark-gray mb-8 leading-relaxed">
+                Fast-track your application with our new <span className="font-bold text-stevens-red">Accelerated App</span> designed for busy professionals. The Accelerated App streamlines the admissions process so you can get started immediately on your graduate education journey.
               </p>
               
-              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
-                <h3 className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray mb-stevens-sm">What Makes It Different?</h3>
-                <p className="text-stevens-base text-stevens-dark-gray mb-stevens-md">
+              {/* What Makes It Different Card */}
+              <div className="bg-white rounded-xl p-6 shadow-lg mb-6 border-t-4 border-stevens-red">
+                <h3 className="font-stevens-display text-xl font-bold text-stevens-black mb-4">What Makes It Different?</h3>
+                <p className="text-stevens-base text-stevens-dark-gray leading-relaxed">
                   We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated App removes traditional barriers while maintaining Stevens' academic standards.
                 </p>
               </div>
 
-              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-light-gray">
-                <h3 className="font-stevens-display text-stevens-xl font-light text-stevens-dark-gray mb-stevens-md">Why Choose the Accelerated App?</h3>
-                <ul className="space-y-stevens-md">
+              {/* Why Choose Card */}
+              <div className="bg-white rounded-xl p-6 shadow-lg mb-6 border-t-4 border-stevens-black">
+                <h3 className="font-stevens-display text-xl font-bold text-stevens-black mb-6">Why Choose the Accelerated App?</h3>
+                <ul className="space-y-4">
                   {benefits.map((benefit, index) =>
-                    <li key={index} className="flex items-start gap-stevens-md">
-                      <Check className="w-5 h-5 text-stevens-black mt-0.5 flex-shrink-0" />
-                      <span className="text-stevens-dark-gray">{benefit}</span>
+                    <li key={index} className="flex items-start gap-4">
+                      <div className="w-6 h-6 bg-stevens-red/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-4 h-4 text-stevens-red" />
+                      </div>
+                      <span className="text-stevens-dark-gray leading-relaxed">{benefit}</span>
                     </li>
                   )}
                 </ul>
               </div>
 
-              <div className="bg-stevens-light-gray rounded-stevens-md p-stevens-md border border-stevens-light-gray">
-                <p className="text-stevens-sm text-stevens-dark-gray">
-                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Stevens may request additional documentation if needed to confirm your academic or professional background.
+              {/* Note Callout */}
+              <div className="bg-stevens-black/5 rounded-lg p-5 border border-gray-200">
+                <p className="text-sm text-stevens-dark-gray leading-relaxed">
+                  <strong className="text-stevens-black">Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Stevens may request additional documentation if needed to confirm your academic or professional background.
                 </p>
               </div>
             </div>
 
             {/* Right Column - Form */}
             <div className="lg:sticky lg:top-8">
-              <Card className="shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden">
-                <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-stevens-dark-gray text-stevens-white rounded-t-stevens-md">
-                  <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-light leading-tight">Submit Your Application</CardTitle>
-                  <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below to get started</p>
-                </CardHeader>
+              <Card className="shadow-stevens-2xl bg-white rounded-lg overflow-hidden border border-gray-200">
+                {/* Header - Black with white text (matching AcceleratedFormEmbed style) */}
+                <div className="bg-stevens-black px-6 py-6 border-b border-stevens-black/20">
+                  <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-wide text-center text-white">
+                    Submit Your Application
+                  </h2>
+                  <p className="text-sm sm:text-base text-white/80 text-center mt-2">
+                    Complete the form below to get started
+                  </p>
+                </div>
                 <CardContent className="p-0">
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <style jsx>{`
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 {
                         max-width: 100% !important;
@@ -323,30 +349,30 @@ export default function AcceleratedApplicationPage() {
 
                       /* ===== BUTTON STYLING - START ===== */
                       
-                      /* Submit button styling */
+                      /* Submit button styling - Stevens Red */
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
                         background: #a32638 !important;
                         color: #ffffff !important;
                         border: none !important;
-                        padding: 0.75rem 1.5rem !important;
+                        padding: 0.875rem 1.5rem !important;
                         border-radius: 6px !important;
                         font-size: 14px !important;
-                        font-weight: 600 !important;
+                        font-weight: 700 !important;
                         cursor: pointer !important;
                         transition: all 0.2s ease-in-out !important;
                         text-transform: uppercase !important;
-                        letter-spacing: 0.025em !important;
+                        letter-spacing: 0.05em !important;
                         width: 100% !important;
-                        margin-top: 0.75rem !important;
+                        margin-top: 1rem !important;
                       }
                       
                       /* Submit button hover */
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:hover,
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:hover {
                         background: #8b1e2f !important;
-                        transform: translateY(-1px) !important;
-                        box-shadow: 0 4px 12px rgba(163, 38, 56, 0.3) !important;
+                        transform: translateY(-2px) !important;
+                        box-shadow: 0 6px 16px rgba(163, 38, 56, 0.35) !important;
                       }
                       
                       /* Submit button active */
@@ -356,24 +382,13 @@ export default function AcceleratedApplicationPage() {
                         box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
                       }
 
-                      /* Button container - ensures buttons have proper spacing */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .button-container,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-actions,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div[class*="button"],
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div:has(> button[type="submit"]) {
-                        display: flex !important;
-                        gap: 1rem !important;
-                        flex-wrap: wrap !important;
-                      }
-
-                      /* Back button styling to match submit button */
+                      /* Secondary button styling */
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button,
                       #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
-                        background: #6b7280 !important;
+                        background: #374151 !important;
                         color: #ffffff !important;
                         border: none !important;
-                        padding: 0.75rem 1.5rem !important;
+                        padding: 0.875rem 1.5rem !important;
                         border-radius: 6px !important;
                         font-size: 14px !important;
                         font-weight: 600 !important;
@@ -381,107 +396,173 @@ export default function AcceleratedApplicationPage() {
                         transition: all 0.2s ease-in-out !important;
                         text-transform: uppercase !important;
                         letter-spacing: 0.025em !important;
-                        margin-top: 0.75rem !important;
+                        margin-top: 1rem !important;
                         margin-right: 1rem !important;
                       }
 
-                      /* Back button hover */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button:hover {
-                        background: #4b5563 !important;
-                        transform: translateY(-1px) !important;
-                        box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3) !important;
-                      }
-
-                      /* Ensure buttons are inline but with spacing */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button {
-                        margin-left: 0 !important;
-                      }
-
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button + button {
-                        margin-left: 1rem !important;
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover {
+                        background: #1f2937 !important;
+                        transform: translateY(-2px) !important;
+                        box-shadow: 0 6px 16px rgba(55, 65, 81, 0.35) !important;
                       }
 
                       /* ===== BUTTON STYLING - END ===== */
                       
-                      /* ===== TEST STYLING FOR "Personal Information" LABEL ===== */
+                      /* ===== FORM FIELD STYLING - WHITE BACKGROUND ===== */
                       
-                      /* Target the "Personal Information" header label */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header .form_label,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
-                        color: #a32638 !important; /* Stevens red color */
-                        font-size: 1.25rem !important; /* Larger font size */
-                        font-weight: 700 !important; /* Bold */
-                        text-transform: uppercase !important; /* Uppercase */
-                        letter-spacing: 0.05em !important; /* Spacing between letters */
-                        
-                        text-align: center !important; /* Center the text */
-                        margin-bottom: 1.25rem !important; /* Space below */
-                        background: transparent !important; /* Remove gray background */
-                        background-color: transparent !important; /* Remove gray background color */
+                      /* Form field enhancements - White background for all states */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="text"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="email"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="tel"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="number"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="date"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="password"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
+                        background-color: #ffffff !important;
+                        border: 1px solid #d1d5db !important;
+                        border-radius: 6px !important;
+                        padding: 0.75rem 1rem !important;
+                        font-size: 14px !important;
+                        color: #1f2937 !important;
+                        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
                       }
-                      
-                      /* Remove gray background from parent container */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header {
-                        background: transparent !important;
-                        background-color: transparent !important;
-                      }
-                      
-                      /* Mobile responsive - Tablet */
-                      @media (max-width: 1024px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
-                          padding: 0.75rem 1.5rem !important;
-                          font-size: 14px !important;
-                        }
-                      }
-                      
-                      /* Mobile responsive - Mobile */
-                      @media (max-width: 768px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 {
-                          font-size: 13px !important;
-                        }
-                        
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
-                          width: 100% !important;
-                          max-width: 100% !important;
-                          font-size: 16px !important;
-                        }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
-                          padding: 0.75rem 1.25rem !important;
-                          font-size: 14px !important;
-                        }
+                      /* Ensure placeholder text is visible */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input::placeholder,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea::placeholder {
+                        color: #9ca3af !important;
                       }
-                      
-                      /* Mobile responsive - Small Mobile */
-                      @media (max-width: 480px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
-                          padding: 0.75rem 1rem !important;
-                          font-size: 13px !important;
-                        }
+
+                      /* Focus state - more specific selectors to override Slate styles */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="text"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="email"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="tel"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="number"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="date"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="password"]:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 select:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea:focus {
+                        outline: none !important;
+                        background: #ffffff !important;
+                        background-color: #ffffff !important;
+                        border-color: #a32638 !important;
+                        box-shadow: 0 0 0 3px rgba(163, 38, 56, 0.1) !important;
+                      }
+
+                      /* Focus-within for parent containers */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:focus-within,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 *:focus input {
+                        background: #ffffff !important;
+                        background-color: #ffffff !important;
+                      }
+
+                      /* Override any inline styles or class-based dark backgrounds - Nuclear option */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[class],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[style],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-control,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-input,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="input"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="field"] input {
+                        background: #ffffff !important;
+                        background-color: #ffffff !important;
+                      }
+
+                      /* Target active/focus states with high specificity */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:active,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input.active,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input.focused,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[aria-selected="true"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:not(:placeholder-shown) {
+                        background: #ffffff !important;
+                        background-color: #ffffff !important;
+                        color: #1f2937 !important;
+                      }
+
+                      /* Slate form specific overrides */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .slate-field input,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .slate-input,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 [data-slate] input,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 form input {
+                        background: #ffffff !important;
+                        background-color: #ffffff !important;
+                      }
+
+                      /* iframe inner content override attempt */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+                        background: #ffffff !important;
+                      }
+
+                      /* Autofill override - keep white background */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:hover,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:focus,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:active {
+                        -webkit-box-shadow: 0 0 0 30px white inset !important;
+                        -webkit-text-fill-color: #1f2937 !important;
+                        background-color: #ffffff !important;
+                      }
+
+                      /* Select dropdown styling */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 select {
+                        background-color: #ffffff !important;
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+                        background-position: right 0.5rem center !important;
+                        background-repeat: no-repeat !important;
+                        background-size: 1.5em 1.5em !important;
+                        padding-right: 2.5rem !important;
+                        -webkit-appearance: none !important;
+                        -moz-appearance: none !important;
+                        appearance: none !important;
+                      }
+
+                      /* Label styling */
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
+                        font-weight: 500 !important;
+                        color: #374151 !important;
+                        font-size: 14px !important;
+                        margin-bottom: 0.5rem !important;
                       }
                     `}</style>
-                    <div className="bg-stevens-light-gray text-stevens-dark-gray ">
+                    {/* Form Container */}
+                    <div className="p-4 sm:p-6">
                       <div
                         id="form_89080626-7bc4-4c48-9437-fd47479d7371"
-                        className="min-h-[600px] w-full">
-                        <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
-                          <div className="text-center">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-black mx-auto mb-stevens-md"></div>
-                            <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
-                            <p className="text-stevens-xs text-stevens-gray mt-stevens-sm">This may take a moment</p>
+                        className="min-h-[600px] w-full"
+                      >
+                        {/* Enhanced Loading State */}
+                        <div className="flex flex-col items-center justify-center h-96 bg-gray-50 rounded-lg border border-gray-200">
+                          <div className="relative">
+                            {/* Outer ring */}
+                            <div className="w-16 h-16 rounded-full border-4 border-gray-200"></div>
+                            {/* Spinning ring */}
+                            <div className="absolute inset-0 w-16 h-16 rounded-full border-4 border-transparent border-t-stevens-red animate-spin"></div>
                           </div>
+                          <p className="text-stevens-dark-gray font-semibold mt-6">Loading Application Form...</p>
+                          <p className="text-sm text-gray-500 mt-2">Please wait while we prepare your application</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
+
+                {/* Footer - Help link */}
+                <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+                  <p className="text-sm text-stevens-dark-gray text-center">
+                    Have questions?{' '}
+                    <a 
+                      href={BOOKING_URLS.SCHEDULE_CALL} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-stevens-red hover:underline font-semibold"
+                    >
+                      Schedule a call
+                    </a>
+                    {' '}with our admissions team.
+                  </p>
+                </div>
               </Card>
             </div>
             

@@ -37,7 +37,7 @@ export const SkillsSection = forwardRef(function SkillsSection(
         />
       )}
       {whatYoullLearn.modules && whatYoullLearn.modules.length > 0 && (
-        <SkillCarousel modules={whatYoullLearn.modules} />
+          <SkillCarousel modules={whatYoullLearn.modules} />
       )}
     </Section>
   );

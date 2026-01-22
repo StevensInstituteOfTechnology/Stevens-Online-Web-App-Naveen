@@ -174,7 +174,7 @@ const AlumniPGC = () => {
 
             {/* Combined Section: Why a Certificate & How to Get Started */}
             <div className="bg-white rounded-lg shadow-md border border-stevens-light-gray overflow-hidden">
-              <div className="bg-stevens-gray px-4 sm:px-8 py-4 sm:py-6">
+              <div className="bg-stevens-black px-4 sm:px-8 py-4 sm:py-6">
                 <h2 className="font-stevens-headers text-xl sm:text-2xl font-bold text-white">
                   Why a Professional Graduate Certificate and How to Get Started
                 </h2>
@@ -237,33 +237,34 @@ const AlumniPGC = () => {
             </div>
 
             {/* Secondary CTAs Section */}
-            <div className="bg-stevens-light-gray rounded-lg p-4 sm:p-8 border border-stevens-light-gray">
+            <div className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 shadow-sm">
               <div className="text-center mb-6">
-                <h3 className="font-stevens-headers text-lg sm:text-xl font-semibold text-stevens-black">
+                <h3 className="font-stevens-headers text-lg sm:text-xl font-bold text-stevens-black">
                   Need More Information?
                 </h3>
-                <p className="text-sm sm:text-base text-stevens-dark-gray mt-1">
+                <p className="text-sm sm:text-base text-stevens-dark-gray mt-2">
                   We're here to help you make the right decision for your career.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button
-                  variant="outline-dark"
+                  size="lg"
                   onClick={() => {
                     handleCTAClick('explore_certificate');
                     window.open('/certificates/enterprise-ai/', '_blank');
                   }}
-                  className="w-full sm:w-auto border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white font-semibold px-6 py-3 transition-colors"
+                  className="w-full sm:w-auto bg-stevens-red hover:bg-red-700 text-white font-bold uppercase tracking-wide px-8 py-3 transition-all duration-200"
                 >
                   Explore Certificates
                 </Button>
                 <Button
                   variant="outline-dark"
+                  size="lg"
                   onClick={() => {
                     handleCTAClick('request_info_secondary');
                     setIsRFIModalOpen(true);
                   }}
-                  className="w-full sm:w-auto border-stevens-light-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white hover:border-stevens-dark-gray font-semibold px-6 py-3 transition-colors"
+                  className="w-full sm:w-auto border-2 border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white font-bold uppercase tracking-wide px-8 py-3 transition-all duration-200"
                 >
                   Request Information
                 </Button>
