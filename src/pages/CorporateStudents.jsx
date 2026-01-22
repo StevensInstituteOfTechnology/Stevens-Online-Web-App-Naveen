@@ -174,7 +174,7 @@ const CorporateStudents = () => {
     },
     {
       icon: Users,
-      title: "Trusted Corporate Partnership",
+      title: "Dedicated Corporate Support Team",
       description: "From application to graduation, our Corporate Care Advisors are your single point of contact."
     },
     {
