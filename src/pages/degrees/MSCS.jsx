@@ -78,6 +78,9 @@ const programData = {
     programType: "Master of Science",
     headline: "Build software that shapes the future",
     tagline: "A career-aligned curriculum designed for real-world impact.",
+    image: "/assets/images/mscs/overview.webp", 
+    imageAlt: "", 
+    imagePosition: "50% 70%",
     description: `
       <p class="font-medium text-lg">The Stevens Institute of Technology Master of Science in Computer Science (MSCS) offers industry-relevant coursework and focus areas tailored to your goals. We help you build the skills needed to excel in today's tech workforce.</p>
       <p class="font-medium text-lg mt-6">With our new <strong>ASAP application</strong>, you can bypass the standard application process and secure your spot in the program by successfully completing two trial courses.</p>
@@ -638,6 +641,9 @@ const programData = {
     name: "Jaeson Valles ’22",
     quote:
       "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree.",
+    backgroundImage: "/assets/images/mscs/bg_testimonial.webp", 
+    bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
+    cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },
   faculty: {
     description:

@@ -91,6 +91,7 @@ const programData = {
     headline: "Launch your career in AI and data science",
     tagline:
       "Master Python, SQL, and machine learning through hands-on projects.",
+    
     description: `<p class="mb-4">This certificate is designed to launch your career in applied AI and data science. In today's data-driven economy, organizations need professionals who can build and deploy machine learning solutions-not just analyze data, but create AI-powered systems that solve real business problems.</p><p class="mb-4">The Applied Data Science Foundations certificate provides an <strong>AI-first, project-driven curriculum</strong> where you'll master Python, SQL, and machine learning through hands-on work with real datasets. Each course delivers a portfolio artifact tied to an AI/ML use case, ensuring you graduate with tangible evidence of your capabilities.</p><p>Whether you're pivoting into data science, upskilling for AI roles, or preparing for further graduate study, this certificate provides the technical foundation and graduate-level credential that employers value. All 9 credits stack toward Stevens' M.Eng. in Applied Data Science, giving you a clear pathway to continue your education.</p>`,
     keySkills: [
       "Python Programming",
@@ -100,6 +101,9 @@ const programData = {
       "AI Ethics & Explainability",
     ],
     concentrations: [],
+    image: "/assets/images/certificate-applied-data-science/Screenshot_2026-01-15_at_1.webp", 
+    imageAlt: "", 
+    imagePosition: "50% 70%",
   },
   videoSection: {
     title: "Discover Your Future at Stevens",

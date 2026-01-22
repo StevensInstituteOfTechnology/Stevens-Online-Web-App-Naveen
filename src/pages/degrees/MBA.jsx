@@ -81,6 +81,9 @@ const programData = {
     headline: "Lead with data, strategy, and innovation",
     tagline: "The best MBA for technology in the NYC region.",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
+    image: "/assets/images/mba/10.webp", 
+  imageAlt: "Students collaborating on MBA coursework", 
+  imagePosition: "10% 70%",
     keySkills: [
       "Marketing",
       "Financial Management",
@@ -186,6 +189,7 @@ const programData = {
         description:
           "Master the language of business and develop expertise in financial decision-making. Learn to analyze financial statements, evaluate investments, and drive strategic financial planning.",
         skillsLabel: "Example Courses",
+        image: "/assets/images/mba/3.webp",
         skills: [
           "FIN 500 - Financial and Managerial Accounting",
           "FIN 523 - Financial Management",
@@ -198,6 +202,7 @@ const programData = {
         description:
           "Develop the skills to lead complex projects from inception to completion. Learn strategic project planning, analytics-driven decision making, and cross-functional team leadership.",
         skillsLabel: "Example Courses",
+        image: "/assets/images/mba/4.webp",
         skills: [
           "MGT 609 - Project Management Fundamentals",
           "MGT 610 - Strategic Perspectives on Project Management",
@@ -210,6 +215,7 @@ const programData = {
         description:
           "Build expertise in leveraging data and artificial intelligence for business advantage. Learn to extract insights from complex datasets and apply AI technologies strategically.",
         skillsLabel: "Example Courses",
+        image: "/assets/images/mba/5.webp",
         skills: [
           "BIA 500 - Business Analytics: Data, Models and Decisions",
           "BIA 568 - Management of AI Technologies",
@@ -682,6 +688,9 @@ const programData = {
     name: "Olivia Fellbaum '25",
     quote:
       "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network.",
+    backgroundImage: "/assets/images/mba/6.webp",
+    bgPosition: "center 60%",
+    cardPosition: "right",
   },
   careerOutcomes: {
     title: "Career Outcomes",

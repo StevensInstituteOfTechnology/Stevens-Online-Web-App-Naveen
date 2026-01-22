@@ -94,6 +94,9 @@ const programData = {
       "AI Ethics & Risk Management",
     ],
     concentrations: [],
+    image: "/assets/images/certificate-enterprise-ai/shutterstock_1638173794-crop.webp", 
+    imageAlt: "", 
+    imagePosition: "50% 70%",
   },
   videoSection: {
     title: "Discover Your Future at Stevens",

@@ -18,6 +18,9 @@ import { PromotionalCard } from "../../shared/PromotionalCard";
  * @param {string} overview.description - HTML description
  * @param {Array} overview.keySkills - Array of skill strings for badges
  * @param {Array} overview.concentrations - Array of concentration options
+ * @param {string} overview.image - Image URL
+ * @param {string} overview.imageAlt - Image alt text
+ * @param {string} overview.imagePosition - CSS object-position value (e.g., "center", "top", "bottom", "left", "right", "center top", "20% 30%") - defaults to "center"
  * @param {Object} quickFacts - Quick facts data
  * @param {string} quickFacts.termStart - Term start info (e.g., "Spring 2026: Jan 20")
  * @param {string} quickFacts.tuition - Tuition info (e.g., "$5,250 Total")
@@ -93,12 +96,17 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
           {/* Overview Image */}
           <div className="mt-10">
-            <img
-              src={overview.image || "/assets/images/home/home-1.webp"}
-              alt={overview.imageAlt || "Student learning online"}
-              className="w-full h-auto rounded-sm shadow-md"
-              loading="lazy"
-            />
+            <div className="relative w-full aspect-video overflow-hidden rounded-sm shadow-md bg-gray-100">
+              <img
+                src={overview.image || "/assets/images/home/home-1.webp"}
+                alt={overview.imageAlt || "Student learning online"}
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: overview.imagePosition || "center",
+                }}
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
 

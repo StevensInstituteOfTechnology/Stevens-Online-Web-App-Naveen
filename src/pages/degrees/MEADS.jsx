@@ -45,6 +45,9 @@ const programData = {
     headline: "Build AI-Powered Systems",
     tagline:
       "A career-aligned curriculum designed for real-world impact in the AI age.",
+    image: "/assets/images/meads/2025_Stevens_New_Student_Move_In_Day_1_8-21-25_026.webp", 
+    imageAlt: "", 
+    imagePosition: "50% 80%",
     description: `
       <p class="font-stevens-body">The AI revolution demands professionals who can build and deploy intelligent systems. The M.Eng. in Applied Data Science from Stevens prepares you to lead in the AI age—from training large language models (LLMs) to deploying production-ready machine learning systems.</p>
       

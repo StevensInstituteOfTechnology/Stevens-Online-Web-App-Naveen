@@ -76,6 +76,9 @@ const programData = {
     programType: "Master of Engineering",
     headline: "Lead engineering teams with business acumen",
     tagline: "Bridge technical expertise with strategic management skills.",
+    image: "/assets/images/mem/sustainability_sseminars_windmills.webp", 
+    imageAlt: "", 
+    imagePosition: "50% 80%",
     description: `
       <p class="font-medium text-lg">The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for <strong>leadership roles</strong> by combining technical expertise with <strong>business management principles</strong>. Through an innovative curriculum that bridges engineering and business, you'll develop analytical and social intelligence to manage projects effectively.</p>
       <p class="font-medium text-lg mt-6">Customize your learning with core coursework in management, data science and engineering analysis, and tailor electives to your interests. With our new <strong>ASAP application</strong>, you can bypass the traditional application process and secure your spot in the program by successfully completing two trial courses.</p>
@@ -452,6 +455,9 @@ const programData = {
     name: "Sarah Chen '23",
     quote:
       "The MEM program gave me the perfect blend of technical skills and leadership capabilities. I was promoted to Engineering Manager within six months of graduation.",
+    backgroundImage: "/assets/images/mem/student-testimonial.webp", 
+    bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
+    cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },
   faculty: {
     description:
