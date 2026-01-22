@@ -102,7 +102,7 @@ export default function ChatbotButton() {
             className="absolute bottom-16 right-0 mb-4"
           >
             <iframe 
-              src="https://chat.learnwise.ai/?assistantId=Deq_k44qEFKo&isolatedIframe=true"
+              src="https://chat.learnwise.ai/?assistantId=Deq_k44qEFKo&isolatedIframe=true&region=us"
               className="w-96 h-[600px] border-none rounded-stevens-md shadow-2xl bg-white"
               title="LearnWise Chat"
             />
