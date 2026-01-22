@@ -26,10 +26,10 @@ export const CONTACT_INFO = {
 // Spring 2, 2026 - For MEADS and PGCs (Certificates)
 export const KEY_DATES_SPRING2 = {
   TERM: {
-    name: "Spring 2 2026",
-    nameUppercase: "SPRING 2 2026",
+    name: "Spring II 2026",
+    nameUppercase: "SPRING II 2026",
     year: "2026",
-    season: "Spring 2",
+    season: "Spring II",
   },
   EARLY_SUBMIT: {
     date: "January 31, 2026",
@@ -41,11 +41,11 @@ export const KEY_DATES_SPRING2 = {
   },
   FINAL_SUBMIT: {
     date: "March 7, 2026",
-    details: "Final application deadline for Spring 2 2026 term.",
+    details: "Final application deadline for Spring II 2026 term.",
   },
   START_OF_CLASSES: {
     date: "March 17, 2026",
-    details: "Start of classes for Spring 2 2026 term.",
+    details: "Start of classes for Spring II 2026 term.",
   },
 };
 
@@ -101,6 +101,6 @@ export const KEY_DATES_FALL = {
   },
 };
 
-// Default KEY_DATES points to the soonest upcoming term (Spring 2)
+// Default KEY_DATES points to the soonest upcoming term (Spring II)
 // Used by Home page, Admissions page, and as fallback
 export const KEY_DATES = KEY_DATES_SPRING2;
