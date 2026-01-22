@@ -74,11 +74,6 @@ const textRankings = [
     source: "U.S. News & World Report",
   },
   {
-    value: "#1",
-    description: "No. 1 in New Jersey for Graduate Earnings",
-    source: "U.S. Department of Education College Scorecard (2025)",
-  },
-  {
     value: "7x",
     description:
       "Winner of the 21st Century Award for Best Practices in Distance Learning",
