@@ -50,7 +50,7 @@ import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { PROGRAMS_DATA } from '@/data/programsData';
 import { calculateProgramCost, getDiscountConfig, getDiscountInfo, getProgramRecommendations } from '@/utils/discountCalculator';
-import { BOOKING_URLS, CONTACT_INFO } from '@/config/constants';
+import { BOOKING_URLS, CONTACT_INFO, KEY_DATES } from '@/config/constants';
 import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
 
 
@@ -100,7 +100,7 @@ const CorporateStudents = () => {
     setMetaDescription('Use your 2025 employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.');
     setOpenGraphTags({
       title: 'Corporate Tuition Benefits | Save Up to 50% on Your Masters Degree | Stevens Online',
-      description: 'Stevens workforce development programs help employees maximize tuition benefits. 20% partner discount + 15% stackable discounts. Spring 2026 enrollment open.',
+      description: 'Stevens workforce development programs help employees maximize tuition benefits. 20% partner discount + 15% stackable discounts. {KEY_DATES.TERM.name} enrollment open.',
       image: buildCanonicalUrl('/assets/images/corporate-students/corporate-students-1.webp'),
       url: canonical,
       type: 'website'
@@ -368,13 +368,13 @@ const CorporateStudents = () => {
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-stevens-yellow" />
             <span className="text-sm sm:text-base font-medium">
-              Use your <span className="font-bold text-stevens-yellow">2025 tuition benefits</span> before they expire
+              Use your <span className="font-bold text-stevens-yellow">{KEY_DATES.TERM.year} tuition benefits</span> before they expire
             </span>
           </div>
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline text-slate-500">|</span>
             <span className="text-sm font-semibold text-stevens-yellow">
-              Spring 2026 Enrollment Open
+              {KEY_DATES.TERM.name} Enrollment Now Open
             </span>
           </div>
           <Button 
@@ -465,23 +465,27 @@ const CorporateStudents = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/assets/images/shared/accreditation.webp" 
-                alt="Stevens Institute of Technology - Top-ranked university for working professionals"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stevens-gray-900/90 via-transparent to-transparent" />
+            <div className="flex flex-col rounded-xl overflow-hidden shadow-2xl bg-white">
+              {/* Image */}
+              <div className="relative">
+                <img 
+                  src="/assets/images/shared/accreditation.webp" 
+                  alt="Stevens Institute of Technology - Top-ranked university for working professionals"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
               
               {/* Deadline Card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white text-stevens-gray-900 p-5 rounded-lg shadow-xl">
+              <div className="bg-white text-stevens-gray-900 p-5 rounded-b-xl">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-stevens-primary flex items-center justify-center flex-shrink-0">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-stevens-primary">Spring 2026 Deadlines</p>
-                    <p className="text-sm text-stevens-gray-600">Priority: Dec 15 • Final: Jan 10</p>
+                    <p className="font-bold text-lg text-stevens-primary">{KEY_DATES.TERM.name} Deadlines</p>
+                    <p className="text-sm text-stevens-gray-600">
+                      Priority: {new Date(KEY_DATES.PRIORITY_SUBMIT.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} • Final: {new Date(KEY_DATES.FINAL_SUBMIT.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -781,7 +785,7 @@ const CorporateStudents = () => {
           subtitle={
             companyName 
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. Spring 2026 enrollment is now open.`
-              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. Spring 2026 enrollment is now open."
+              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Spring 2 2026 enrollment is now open."
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
           bgImagePosition="center 30%"
@@ -802,7 +806,7 @@ const CorporateStudents = () => {
           badges={companyName ? [
             { text: `Exclusive benefits for ${companyName} employees`, variant: "secondary" }
           ] : [
-            { text: "Spring 2026 Enrollment Open", variant: "secondary" }
+            { text: `${KEY_DATES.TERM.name} Enrollment Open`, variant: "secondary" }
           ]}
         />
 
@@ -1665,10 +1669,7 @@ const CorporateStudents = () => {
                 development programs. Your employer benefits are ready to be used.
               </p>
               
-              {/* Deadline Notice */}
-              <p className="text-sm text-stevens-yellow font-medium mb-stevens-xl">
-                Spring 2026: Priority Deadline Dec 15 • Final Deadline Jan 10
-              </p>
+              
 
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
@@ -1682,12 +1683,12 @@ const CorporateStudents = () => {
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Request Information
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                 
                 </Button>
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="bg-white/10 border-2 border-white text-white hover:bg-white hover:text-stevens-primary w-full sm:w-auto min-w-[280px] py-4"
+                  variant="default"
+                  className="group bg-stevens-white text-stevens-primary hover:bg-stevens-gray-100 w-full sm:w-auto min-w-[280px] font-semibold py-4 text-base"
                   onClick={() => {
                     handleCTAClick('schedule_consultation_footer');
                     setShowContactOptionsModal(true);

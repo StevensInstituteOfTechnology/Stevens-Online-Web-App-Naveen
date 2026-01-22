@@ -106,7 +106,7 @@ const EmploymentGrowthChart = () => {
     <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-gray-100 shadow-stevens-md">
       <div className="mb-stevens-md">
         <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-xs">
-          Projected Employment Growth (2024–2034)
+          Projected Employment Growth (2025–2034)
         </h3>
        
       </div>
