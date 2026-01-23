@@ -1445,7 +1445,7 @@ export default function Layout({ children, currentPageName }) {
           data-gtm-element="promo-banner"
           data-gtm-category="promotion"
           data-gtm-action="banner-view"
-          className={`bg-stevens-gray-400 text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
+          className={`bg-[#E4E5E6] text-stevens-gray-900 py-4 relative z-[9997] overflow-hidden ${
             showTopNav && !isMobile ? "stevens-lg:mt-16 mt-0" : "mt-0"
           }`}
         >
@@ -1658,7 +1658,7 @@ export default function Layout({ children, currentPageName }) {
       )}
       
       {/* Interactive Chatbot Button */}
-      <ChatbotButton />
+      {/* <ChatbotButton /> */}
     </div>
   );
 }

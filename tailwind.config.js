@@ -87,6 +87,7 @@ module.exports = {
   			'stevens-gray-50': '#F9FAFB',
   			'stevens-gray-100': '#F3F4F6',
   			'stevens-gray-200': '#E5E7EB',
+  			'stevens-gray-250': '#E4E5E6', // Stevens-approved lighter grey for accessibility
   			'stevens-gray-300': '#D1D5DB',
   			'stevens-gray-400': '#9CA3AF',
   			'stevens-gray-500': '#6B7280',

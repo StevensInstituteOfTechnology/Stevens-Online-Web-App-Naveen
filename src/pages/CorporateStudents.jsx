@@ -90,8 +90,6 @@ const CorporateStudents = () => {
     }
   });
 
-  // Seasonal banner state
-  const [showSeasonalBanner, setShowSeasonalBanner] = useState(true);
 
   // Set SEO meta tags - optimized for search and AI engines
   useEffect(() => {
@@ -194,14 +192,14 @@ const CorporateStudents = () => {
     
     {
       quote: "Stakeholder management and collaboration are important. The courses I have taken at Stevens help me apply the knowledge I've learned to my daily tasks...At bigger companies like Pfizer, managing cross-functional projects is critical.",
-      author: "Gullnaz Saeedi '25",
+      author: "Gullnaz Saeedi",
       imageSrc: "/assets/images/corporate-students/corporate-students-3.webp",
       imageAlt: "Gullnaz Saeedi",
       imageObjectPosition: 'center 20%', // Center horizontally, 20% from top
     },
     {
       quote: "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
-      author: "Sara Swanson '22",
+      author: "Sara Swanson ",
     
       imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
       imageAlt: "Sara Swanson",
@@ -211,7 +209,7 @@ const CorporateStudents = () => {
     },
     {
       quote: "I can confidently say that enrolling in the Stevens MBA program was one of my best decisions. Stevens offers a comprehensive curriculum that helps students develop invaluable skills to navigate the complex business world and improve their professional capabilities.",
-      author: "Rupinder Bhullar '21",
+      author: "Rupinder Bhullar",
       title: "Director of Enterprise Automation Services",
       company: "Pfizer",
       imageSrc: "/assets/images/corporate-students/corporate-students-2.webp",
@@ -221,7 +219,7 @@ const CorporateStudents = () => {
     },
     {
       quote: "It [Technology Management program] just fit the bill so perfectly for me, because it was not all about coding. It was diverse and had everything from accounting, finance, how to display data with Tableau, how to be a leader, strategic management, pushing your team to achieve better – all of these checked all the boxes for me.",
-      author: "Anagha Yerande '21",
+      author: "Anagha Yerande",
       title: "Vice President",
       company: "JP Morgan",
       imageSrc: "/assets/images/corporate-students/corporate-students-5.webp",
@@ -358,44 +356,6 @@ const CorporateStudents = () => {
     };
   }, [showContactModal]);
 
-  // Seasonal Banner Component - Year-End Campaign (Stevens Brand Colors)
-  const SeasonalBanner = () => {
-    if (!showSeasonalBanner) return null;
-    
-    return (
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-4 relative border-b border-stevens-yellow/30">
-        <div className="max-w-stevens-content-max mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-          <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-stevens-yellow" />
-            <span className="text-sm sm:text-base font-medium">
-              Use your <span className="font-bold text-stevens-yellow">{KEY_DATES.TERM.year} tuition benefits</span> before they expire
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="hidden sm:inline text-slate-500">|</span>
-            <span className="text-sm font-semibold text-stevens-yellow">
-              {KEY_DATES.TERM.name} Enrollment Now Open
-            </span>
-          </div>
-          <Button 
-            size="sm" 
-            className="bg-stevens-primary hover:bg-stevens-maroon-dark text-white font-semibold"
-            onClick={() => scrollToSection('#programs-section')}
-          >
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Button>
-        </div>
-        <button 
-          onClick={() => setShowSeasonalBanner(false)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-1"
-          aria-label="Dismiss banner"
-        >
-          <X className="w-4 h-4" />
-        </button>
-      </div>
-    );
-  };
 
   // Workforce Development Commitment Section (Stevens Brand)
   const WorkforceCommitmentSection = () => (
@@ -776,16 +736,13 @@ const CorporateStudents = () => {
   return (
     <PageContextProvider pageType="landing" pageName="Corporate Students">
       <div className="min-h-screen bg-stevens-white">
-        {/* Seasonal Banner - Year-End Benefits Campaign */}
-        <SeasonalBanner />
-
         {/* Hero Section */}
         <PageHero
           titleLines={["Invest in Your Future", "with Stevens Online"]}
           subtitle={
             companyName 
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. Spring 2026 enrollment is now open.`
-              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Spring 2 2026 enrollment is now open."
+              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Spring II 2026 enrollment is now open."
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
           bgImagePosition="center 30%"
@@ -845,30 +802,44 @@ const CorporateStudents = () => {
               })}
             </div>
 
-            {/* Mid-section CTA */}
+            {/* Mid-section CTA - Enhanced with Date/Urgency Info */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="mt-stevens-xl bg-gradient-to-r from-stevens-primary/5 via-stevens-primary/10 to-stevens-primary/5 border border-stevens-primary/20 p-8 rounded-2xl text-center"
+              className="mt-stevens-xl bg-gradient-to-r from-stevens-primary/5 via-stevens-primary/10 to-stevens-primary/5 border border-stevens-primary/20 p-8 rounded-2xl"
             >
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-stevens-primary rounded-full flex items-center justify-center">
-                    <Calculator className="w-6 h-6 text-white" />
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                {/* Left: Icons and Messages */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-1">
+                  {/* Icons */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-stevens-primary rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-white" />
+                    </div>
+                    
                   </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-stevens-gray-900">Ready to see your savings?</p>
-                    <p className="text-sm text-stevens-gray-600">Answer 2 questions and calculate your cost</p>
+                  
+                  {/* Messages */}
+                  <div className="flex-1 text-left">
+                   
+                    <p className="font-semibold text-stevens-gray-900 text-base sm:text-lg mb-1">
+                    {KEY_DATES.TERM.name} Enrollment Now Open, Use your <span className="text-stevens-primary font-bold">{KEY_DATES.TERM.year} tuition benefits</span> before they expire
+                    </p>
+                    <p className="text-sm text-stevens-gray-600">
+                      Answer 2 questions and calculate your cost
+                    </p>
                   </div>
                 </div>
+                
+                {/* Right: CTA Button */}
                 <Button 
                   size="lg"
-                  className="text-white"
+                  className="bg-stevens-primary hover:bg-stevens-maroon-dark text-white font-semibold whitespace-nowrap"
                   onClick={() => scrollToSection('#programs-section')}
                 >
-                  Find My Program
+                  Get Started
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
