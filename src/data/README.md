@@ -1,6 +1,6 @@
 # Adding New Blog Posts to blogs.json
 
-## Quick Reference
+## Quick Reference.
 
 To add a new blog post to `blogs.json`, follow this structure:
 

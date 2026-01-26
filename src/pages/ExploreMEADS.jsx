@@ -42,9 +42,9 @@ const ExploreMEADS = () => {
     // Statistics
     statistics: [
       {
-        number: "Top 20",
+        number: "#12",
         label: "For Best Career Placement",
-        description: "Ranked among the top private schools for best career placement by the Princeton Review (2024)."
+        description: "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025)."
       },
       {
         number: "Top 10",

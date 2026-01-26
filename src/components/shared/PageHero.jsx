@@ -19,6 +19,8 @@ export default function PageHero({
   breadcrumbs,
   badges = [],
   bgImage,
+  bgImagePosition = 'center center', // CSS object-position value (e.g., 'center bottom', '50% 60%')
+  bgImageFlip = false, // Flip background image horizontally
   primaryCta, // { label, to? | href? }
   secondaryCta, // { label, to? | href? | useModal? }
   useApplicationModal = false, // New prop for MSCS/MEM pages
@@ -198,6 +200,10 @@ export default function PageHero({
           loading="eager"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
+          style={{ 
+            objectPosition: bgImagePosition,
+            transform: bgImageFlip ? 'scaleX(-1)' : 'none'
+          }}
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-700/10 to-transparent" />

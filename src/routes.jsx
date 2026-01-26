@@ -39,6 +39,8 @@ import EmployerSponsorship from "@/pages/EmployerSponsorship";
 import SiemensPage from "@/pages/corporate/SiemensPage";
 import PSEGPage from "@/pages/corporate/PSEGPage";
 import PSEGEnterpriseAIPage from "@/pages/corporate/PSEGEnterpriseAIPage";
+import CorporatePartners from "@/pages/CorporatePartners";
+import CorporateStudents from "@/pages/CorporateStudents";
 // import CorporatePartners from "@/pages/CorporatePartners";
 // import CorporateStudents from "@/pages/CorporateStudents";
 import AlumniPGC from "@/pages/AlumniPGC";
@@ -399,6 +401,22 @@ export const routes = [
   {
     path: '/pseg-pgceai',
     element: <Navigate to="/pseg-pgceai/" replace />
+  },
+  {
+    path: '/corporate-partners/',
+    element: <CorporatePartners />
+  },
+  {
+    path: '/corporate-partners',
+    element: <Navigate to="/corporate-partners/" replace />
+  },
+  {
+    path: '/corporate-students/',
+    element: <CorporateStudents />
+  },
+  {
+    path: '/corporate-students',
+    element: <Navigate to="/corporate-students/" replace />
   },
   // {
   //   path: '/corporate-partners/',

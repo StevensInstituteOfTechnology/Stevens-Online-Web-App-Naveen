@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-11-20",
-  "description": "Corporate discount configuration for Stevens Online programs",
+  "version": "2.0.0",
+  "lastUpdated": "2025-12-10",
+  "description": "Corporate discount configuration for Stevens Online programs - Simplified calculator version",
   
   "programs": {
     "mscs": {
@@ -12,6 +12,8 @@
         "type": "fixed",
         "value": 30
       },
+      "durationYears": 2,
+      "programType": "masters",
       "cohortPricing": {}
     },
     "mem": {
@@ -22,6 +24,8 @@
         "type": "fixed",
         "value": 30
       },
+      "durationYears": 2,
+      "programType": "masters",
       "cohortPricing": {}
     },
     "mba": {
@@ -35,13 +39,9 @@
         "max": 48,
         "description": "Credits vary by concentration"
       },
-      "cohortPricing": {
-        "pfizer": {
-          "type": "per_credit",
-          "perCredit": 666.66,
-          "description": "Pfizer Cohort: $666.66 per credit"
-        }
-      }
+      "durationYears": 2,
+      "programType": "masters",
+      "cohortPricing": {}
     },
     "meads": {
       "code": "meads",
@@ -51,13 +51,9 @@
         "type": "fixed",
         "value": 30
       },
-      "cohortPricing": {
-        "pfizer": {
-          "type": "per_credit",
-          "perCredit": 555,
-          "description": "Pfizer Cohort: $555 per credit"
-        }
-      }
+      "durationYears": 2,
+      "programType": "masters",
+      "cohortPricing": {}
     },
     "cert-eai": {
       "code": "cert-eai",
@@ -67,6 +63,8 @@
         "type": "fixed",
         "value": 9
       },
+      "durationYears": 1,
+      "programType": "certificate",
       "cohortPricing": {}
     },
     "cert-ads": {
@@ -77,79 +75,25 @@
         "type": "fixed",
         "value": 9
       },
+      "durationYears": 1,
+      "programType": "certificate",
       "cohortPricing": {}
     }
   },
   
-  "corporatePartners": [
-    {
-      "id": "pfizer",
-      "name": "Pfizer",
-      "hasSpecialCohort": true,
-      "eligiblePrograms": ["mba", "meads"],
-      "benefits": "Special cohort pricing available for MBA and MEADS"
-    },
-    {
-      "id": "jpmorgan",
-      "name": "JPMorgan Chase",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for all standard corporate discounts"
-    },
-    {
-      "id": "jnj",
-      "name": "Johnson & Johnson",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for all standard corporate discounts"
-    },
-    {
-      "id": "ibm",
-      "name": "IBM",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for all standard corporate discounts"
-    },
-    {
-      "id": "merck",
-      "name": "Merck",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for all standard corporate discounts"
-    },
-    {
-      "id": "ey",
-      "name": "EY",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for all standard corporate discounts"
-    },
-    {
-      "id": "other",
-      "name": "Other Corporate Partner",
-      "hasSpecialCohort": false,
-      "benefits": "Eligible for standard corporate discounts"
-    },
-    {
-      "id": "none",
-      "name": "I'm not from a partner company",
-      "hasSpecialCohort": false,
-      "benefits": "Individual student pricing with available discounts"
-    }
-  ],
-  
   "discounts": {
-    "cpeRetail": {
-      "id": "cpe-retail-30",
-      "name": "CPE 30% Retail Student Discount",
+    "workforcePartner": {
+      "id": "workforce-partner",
+      "name": "Stevens Workforce Development Partner Discount",
       "type": "percentage",
-      "value": 0.30,
+      "value": 0.20,
       "enabled": true,
-      "validFrom": "2025-01-01",
-      "validUntil": "2026-12-25", 
       "eligibility": {
-        "excludeSpecialCohorts": true,
-        "requiresNewEnrollment": true,
-        "excludedPrograms": ["meads", "cert-eai", "cert-ads"],
-        "description": "Available to new online retail students starting Spring 2026"
+        "excludedPrograms": ["cert-eai", "cert-ads"],
+        "description": "20% discount for employees of Stevens workforce development partners"
       },
-      "applicablePrograms": ["mscs", "mem", "mba"],
-      "stackable": false,
+      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
+      "stackable": true,
       "priority": 1
     },
     
@@ -157,14 +101,13 @@
       "id": "hoboken-resident",
       "name": "Hoboken Resident Discount",
       "type": "percentage",
-      "value": 0.05,
+      "value": 0.15,
       "enabled": true,
       "eligibility": {
-        "excludeSpecialCohorts": true,
-        "excludedPrograms": ["cert-eai", "cert-ads"],
-        "description": "5% discount for Hoboken residents"
+        "excludedPrograms": [],
+        "description": "15% discount for Hoboken residents"
       },
-      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
+      "applicablePrograms": ["mscs", "mem", "mba", "meads", "cert-eai", "cert-ads"],
       "stackable": true,
       "priority": 2
     },
@@ -173,14 +116,13 @@
       "id": "stevens-alumni",
       "name": "Stevens Alumni Discount",
       "type": "percentage",
-      "value": 0.05,
+      "value": 0.15,
       "enabled": true,
       "eligibility": {
-        "excludeSpecialCohorts": true,
-        "excludedPrograms": ["cert-eai", "cert-ads"],
-        "description": "5% discount for Stevens alumni"
+        "excludedPrograms": [],
+        "description": "15% discount for Stevens alumni"
       },
-      "applicablePrograms": ["mscs", "mem", "mba", "meads"],
+      "applicablePrograms": ["mscs", "mem", "mba", "meads", "cert-eai", "cert-ads"],
       "stackable": true,
       "priority": 3
     }
@@ -189,7 +131,17 @@
   "employerReimbursement": {
     "defaultAnnual": 5250,
     "irsLimit": 5250,
-    "typicalYears": 2,
     "description": "Most employers offer up to $5,250/year (IRS Section 127 limit)"
+  },
+
+  "programRecommendations": {
+    "management": {
+      "masters": ["mba", "mem"],
+      "certificate": ["cert-eai"]
+    },
+    "engineering": {
+      "masters": ["mscs", "meads", "mem"],
+      "certificate": ["cert-eai", "cert-ads"]
+    }
   }
 }

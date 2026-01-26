@@ -44,6 +44,7 @@ import {
   User,
   Clock,
   Calendar,
+  DollarSign,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
