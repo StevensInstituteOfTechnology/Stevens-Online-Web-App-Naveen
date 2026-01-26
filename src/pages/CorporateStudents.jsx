@@ -937,11 +937,11 @@ const CorporateStudents = () => {
                       <Alert className="bg-stevens-gray-50 border border-stevens-gray-200">
                         <Clock className="w-5 h-5 text-stevens-primary" />
                         <AlertTitle className="text-stevens-gray-900 font-semibold">
-                          2025 Tuition Benefits
+                          2026 Tuition Benefits
                         </AlertTitle>
                         <AlertDescription className="text-stevens-gray-700 text-sm">
-                          Many employer tuition benefits reset January 1st. Apply now to maximize your 2025 benefits 
-                          for Spring 2026.
+                          Most employer tuition benefits reset on January 1st. Apply now to maximize your 2026 benefits 
+                          for upcoming terms.
                         </AlertDescription>
                       </Alert>
 
