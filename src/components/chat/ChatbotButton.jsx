@@ -131,24 +131,7 @@ export default function ChatbotButton() {
       </AnimatePresence>
 
       {/* Chat Button */}
-      <motion.div
-        animate={{ 
-          y: [0, -8, 0],
-          scale: showHiMessage ? [1, 1.05, 1] : 1
-        }}
-        transition={{ 
-          y: {
-            duration: 2,
-            repeat: showHiMessage ? Infinity : 0,
-            ease: "easeInOut"
-          },
-          scale: {
-            duration: 1,
-            repeat: showHiMessage ? Infinity : 0,
-            ease: "easeInOut"
-          }
-        }}
-      >
+      <div>
         <Button
           onClick={toggleChat}
           className={`w-14 h-14 !rounded-full shadow-2xl transition-all duration-300 hover:scale-110 ${
@@ -173,25 +156,7 @@ export default function ChatbotButton() {
             </motion.div>
           </AnimatePresence>
         </Button>
-      </motion.div>
-
-      {/* Pulse ring animation when showing hi message */}
-      {showHiMessage && !isOpen && (
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            animate={{
-              scale: [1, 1.4, 1],
-              opacity: [0.6, 0, 0.6]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-14 h-14 rounded-full bg-red-400 absolute inset-0"
-          />
-        </div>
-      )}
+      </div>
     </div>
   );
 }

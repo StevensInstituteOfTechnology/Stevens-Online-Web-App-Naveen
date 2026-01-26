@@ -1658,7 +1658,7 @@ export default function Layout({ children, currentPageName }) {
       )}
       
       {/* Interactive Chatbot Button */}
-      {/* <ChatbotButton /> */}
+      <ChatbotButton />
     </div>
   );
 }
