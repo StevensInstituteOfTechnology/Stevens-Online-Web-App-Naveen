@@ -1676,13 +1676,13 @@ const CorporateStudents = () => {
                 <div className="flex flex-wrap justify-center items-center gap-6 text-white/80">
                   <span className="font-medium">Pfizer</span>
                   <span className="text-white/30">•</span>
-                  <span className="font-medium">Johnson & Johnson</span>
+                  <span className="font-medium">Verizon</span>
                   <span className="text-white/30">•</span>
                   <span className="font-medium">JPMorgan Chase</span>
                   <span className="text-white/30">•</span>
-                  <span className="font-medium">IBM</span>
+                  <span className="font-medium">Boeing</span>
                   <span className="text-white/30">•</span>
-                  <span className="font-medium">EY</span>
+                  <span className="font-medium">Lockheed Martin</span>
                 </div>
               </div>
             </motion.div>
