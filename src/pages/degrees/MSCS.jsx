@@ -171,6 +171,7 @@ const programData = {
           "Analyze and work with operating systems, memory management and I/O systems",
           "Apply database design principles using relational models, SQL and normalization techniques",
         ],
+        image: "/assets/images/mscs/premium_vector-1734731870816-1f0d57cd985f.webp",
       },
       {
         title: "Mobile application development and cloud computing",
@@ -181,6 +182,7 @@ const programData = {
           "Implement cloud-based services and architectures using REST, WebSockets and NoSQL databases like Cassandra",
           "Explore the implications of distributed systems through technologies like blockchain and the CAP Theorem",
         ],
+        image: "/assets/images/mscs/pexels-brett-sayles-5203849.webp",
       },
       {
         title: "Agile development methods",
@@ -191,6 +193,7 @@ const programData = {
           "Manage the full development lifecycle, from initial concept to deployment, using iterative and test-driven approaches",
           "Evaluate and compare agile and traditional methodologies to choose the most effective approach for a given project",
         ],
+        image: "/assets/images/mscs/photo-1519389950473-47ba0277781c.webp",
       },
       {
         title: "Algorithm design and testing",
@@ -201,6 +204,7 @@ const programData = {
           "Implement and test data structures like balanced search trees and understand asymptotic complexity",
           "Translate high-level design into low-level, performance-aware code using systems programming techniques",
         ],
+        image: "/assets/images/mscs/pexels-googledeepmind-17483850.webp",
       },
       {
         title:
@@ -212,6 +216,7 @@ const programData = {
           "Apply ensemble learning methods and simulation techniques to build effective predictive models",
           "Translate ML theory into practical solutions through hands-on coding and real-world datasets",
         ],
+        image: "/assets/images/mscs/photo-1620712943543-bcc4688e7485.webp",
       },
     ],
   },
