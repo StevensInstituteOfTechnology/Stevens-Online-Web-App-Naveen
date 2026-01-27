@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
+import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles, Briefcase, Code, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
@@ -169,7 +169,23 @@ export default function AcceleratedApplicationPage() {
     "Faster application review process"
   ];
 
-  const eligiblePrograms = [
+  const degreePrograms = [
+    {
+      id: 'mba',
+      name: 'Master of Business Administration',
+      shortName: 'MBA',
+      path: '/online-mba/',
+      icon: Briefcase,
+      description: 'Develop leadership and business strategy skills'
+    },
+    {
+      id: 'mscs',
+      name: 'Master of Science in Computer Science',
+      shortName: 'M.S. in Computer Science',
+      path: '/online-masters-computer-science-mscs/',
+      icon: Code,
+      description: 'Build advanced coding and AI skills'
+    },
     {
       id: 'meads',
       name: 'M.Eng. in Applied Data Science',
@@ -177,7 +193,10 @@ export default function AcceleratedApplicationPage() {
       path: '/online-masters-engineering-applied-data-science/',
       icon: GraduationCap,
       description: 'Master data science and AI engineering'
-    },
+    }
+  ];
+
+  const certificatePrograms = [
     {
       id: 'cert-eai',
       name: 'Professional Graduate Certificate in Enterprise AI',
@@ -191,7 +210,7 @@ export default function AcceleratedApplicationPage() {
       name: 'Professional Graduate Certificate in Applied Data Science Foundations',
       shortName: 'Applied Data Science Foundations',
       path: '/certificates/applied-data-science-foundations/',
-      icon: Sparkles,
+      icon: Award,
       description: 'Master Python, SQL, and Data Science and AI foundations'
     }
   ];
@@ -240,7 +259,7 @@ export default function AcceleratedApplicationPage() {
 
       {/* Eligible Programs Section */}
       <div className="py-stevens-section bg-white">
-        <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
+        <div className="max-w-6xl mx-auto px-stevens-md lg:px-stevens-lg">
           <div className="text-center mb-stevens-xl">
             <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
               Eligible Programs
@@ -250,27 +269,59 @@ export default function AcceleratedApplicationPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
-            {eligiblePrograms.map((program) => (
-              <Link 
-                key={program.id}
-                to={program.path}
-                className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
-              >
-                <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
-                <h3 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
-                  {program.shortName}
-                </h3>
-                <p className="text-stevens-sm text-stevens-gray-700 text-center">
-                  {program.description}
-                </p>
-              </Link>
-            ))}
+          {/* Degree Programs */}
+          <div className="mb-stevens-xl">
+            <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-center">
+              <GraduationCap className="w-6 h-6 inline-block mr-2 text-stevens-primary" />
+              Degree Programs
+            </h3>
+            <div className="grid md:grid-cols-3 gap-stevens-lg">
+              {degreePrograms.map((program) => (
+                <Link 
+                  key={program.id}
+                  to={program.path}
+                  className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+                >
+                  <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
+                  <h4 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                    {program.shortName}
+                  </h4>
+                  <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                    {program.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Graduate Certificates */}
+          <div className="mb-stevens-xl">
+            <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-center">
+              <Award className="w-6 h-6 inline-block mr-2 text-stevens-primary" />
+              Graduate Certificates
+            </h3>
+            <div className="grid md:grid-cols-2 gap-stevens-lg max-w-4xl mx-auto">
+              {certificatePrograms.map((program) => (
+                <Link 
+                  key={program.id}
+                  to={program.path}
+                  className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+                >
+                  <program.icon className="w-10 h-10 text-stevens-primary mb-stevens-md mx-auto" />
+                  <h4 className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                    {program.shortName}
+                  </h4>
+                  <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                    {program.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm">
             <p className="text-stevens-base text-stevens-gray-900">
-              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
+              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All programs use the same fast, streamlined application below.
             </p>
           </div>
         </div>
