@@ -736,7 +736,7 @@ const programData = {
           <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
           <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
         </ul>
-        <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
+        <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>`,
         buttonText: "Apply Now",
         url: "/accelerated-application",
         buttonGrayOut: false
@@ -748,7 +748,7 @@ const programData = {
         <div>
           <h4 class="font-bold text-lg mb-2">PROOF OF BACHELOR'S DEGREE</h4>
           <p class="mb-2">Upload a copy of your unofficial transcripts from all undergraduate institutions where credit was earned. This allows us to verify your academic background quickly.</p>
-          <p class="text-sm text-gray-600">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>
+          <p class="text-sm text-gray-600">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">PROFESSIONAL BACKGROUND</h4>

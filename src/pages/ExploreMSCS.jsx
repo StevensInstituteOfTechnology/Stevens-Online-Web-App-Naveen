@@ -137,7 +137,7 @@ const ExploreMSCS = () => {
       <p>Our new <strong>Accelerated App</strong> is designed for busy professionals who want to fast-track their application. Get started immediately with simplified requirements:</p>
       <ul class="list-disc pl-5 mt-2 space-y-1">
         <li><strong>No recommendation letters required</strong></li>
-        <li><strong>Upload unofficial transcripts</strong> – official transcripts due within one year</li>
+        <li><strong>Upload unofficial transcripts</strong> – official transcripts due within 2 months</li>
         <li><strong>Share your professional background</strong> – upload your résumé or link your LinkedIn profile</li>
       </ul>
       <p class="mt-2">Apply in under 5 minutes and take the first step toward advancing your career in computer science.</p>

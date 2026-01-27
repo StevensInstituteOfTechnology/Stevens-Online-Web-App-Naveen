@@ -165,7 +165,7 @@ export default function AcceleratedApplicationPage() {
     "No letters of recommendation required",
     "Upload unofficial transcripts to get started",
     "Submit your resume or LinkedIn profile",
-    "Official transcripts due within one year of enrollment",
+    "Official transcripts due within 2 months of enrollment",
     "Faster application review process"
   ];
 

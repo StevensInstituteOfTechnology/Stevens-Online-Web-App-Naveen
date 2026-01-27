@@ -679,7 +679,7 @@ The objective of this course is to give students a basic grounding in designing 
             <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
             <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
           </ul>
-          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
+          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>`,
           buttonText: "Apply Now",
           url: "/accelerated-application",
           buttonGrayOut: false
@@ -785,7 +785,7 @@ The objective of this course is to give students a basic grounding in designing 
   faqs: [
     {
       q: "What is the Accelerated Application?",
-      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your résumé or LinkedIn profile. Official transcripts are due within one year of enrollment. Bachelor's degree is required.",
+      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your résumé or LinkedIn profile. Official transcripts are due within 2 months of enrollment. Bachelor's degree is required.",
     },
     {
       q: "Who should use the Accelerated Application?",
