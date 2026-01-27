@@ -435,7 +435,7 @@ const CorporatePartners = () => {
     { name: "Pfizer", logo: "/assets/company_logo/Pfizer_(2021).png", industry: "Healthcare" },
     { name: "JPMorgan Chase", logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png", industry: "Finance" },
     { name: "Boeing", logo: "/assets/company_logo/Boeing_full_logo.svg.png", industry: "Aerospace" },
-    { name: "IBM", logo: "/assets/company_logo/IBM_logo.svg.png", industry: "Technology" },
+    { name: "PSEG", logo: "/assets/company_logo/PSEG_logo.svg.png", industry: "Energy" },
     { name: "Verizon", logo: "/assets/company_logo/Verizon_2024.svg.png", industry: "Telecommunications" },
     { name: "Lockheed Martin", logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png", industry: "Aerospace" }
   ];
