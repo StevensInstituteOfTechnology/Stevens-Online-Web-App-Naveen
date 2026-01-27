@@ -193,7 +193,7 @@ export default function Tuition() {
               <h2 className="font-display text-3xl font-bold mb-4">Financial Aid</h2>
               <p className="mb-4 text-gray-700">As a graduate student, you may qualify for federal support in the form of loans. We strongly encourage every eligible graduate student to apply for federal financial aid, even if you don’t demonstrate an exceptional financial need. Applying for federal aid is one of the largest and most common ways for graduate students to finance advanced study, and a key part of making your program more affordable.</p>
               <p className="text-sm p-4 bg-red-50 border-l-4 border-red-400 text-red-800">
-                Please note: Students in the Online M.S. in Computer Science and Online MEM programs who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
+                Please note: Students in the Online MEM program who choose the ASAP application will not be eligible for federal financial aid until they matriculate into the master’s degree program, which occurs after successfully completing two courses with a grade of B or higher.
               </p>
               <h3 className="font-display text-2xl font-bold mt-8 mb-4">Financial Assistance Options for Graduate Students</h3>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1">

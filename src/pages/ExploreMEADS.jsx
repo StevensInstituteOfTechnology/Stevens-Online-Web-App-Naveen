@@ -173,7 +173,7 @@ const ExploreMEADS = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ACCELERATED APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)"
       }
     ],
     newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",

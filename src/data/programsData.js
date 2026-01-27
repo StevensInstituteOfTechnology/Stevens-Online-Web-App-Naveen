@@ -20,9 +20,8 @@ export const PROGRAMS_DATA = [
       'Up to $16K Off Tuition'
     ],
     applicationConfig: {
-      type: 'modal', // 'modal' or 'direct'
-      modalOptions: ['standard', 'asap'],
-      standardLink: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
+      type: 'direct',
+      link: '/accelerated-application/'
     },
     programPage: '/online-masters-computer-science-mscs/',
     explorePage: '/explore/online-masters-computer-science/',
@@ -79,7 +78,7 @@ export const PROGRAMS_DATA = [
     ],
     applicationConfig: {
       type: 'direct',
-      link: 'https://gradadmissions.stevens.edu/apply/?pk=GRNP'
+      link: '/accelerated-application/'
     },
     programPage: '/online-mba/',
     explorePage: '/explore/online-mba/',

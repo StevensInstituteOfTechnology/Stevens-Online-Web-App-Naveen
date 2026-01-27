@@ -31,7 +31,7 @@ const programData = {
     },
     badges: [
       { text: "99% Employment Rate", icon: Award },
-      { text: "ASAP Application Available", icon: Check },
+      { text: "Accelerated Application available", icon: Check },
       // { text: "#1 in New Jersey", icon: Star }
     ],
   },
@@ -58,7 +58,7 @@ const programData = {
     title: "Program Overview",
     description: `
       <p>The Stevens Institute of Technology Master of Science in Computer Science (MSCS) offers a career-aligned curriculum designed for real-world impact. Through industry-relevant coursework and focus areas tailored to your goals, we help you build the skills needed to excel in today’s tech workforce.</p>
-      <p>With our new ASAP application, you can bypass the standard application process and secure your spot in the program by successfully completing two trial courses.</p>
+      <p>With our Accelerated Application, you can fast-track your application—no recommendation letters required. Upload unofficial transcripts and your résumé or LinkedIn profile to get started.</p>
     `,
     keySkills: [
       "Enterprise software design and engineering",
@@ -273,7 +273,7 @@ const programData = {
     title: "Why Choose an Online MSCS from Stevens?",
     description: `
       <p>At Stevens, you'll receive an unparalleled computer science education, learning to innovate in a rapidly evolving tech landscape. Our cutting-edge curriculum is continuously updated, blending rigor, depth and real-world relevance to prepare you for what's new and next in the field.</p>
-      <p>With renowned faculty and industry-aligned coursework, you'll develop the theoretical foundation and practical experience needed to excel. Plus, our ASAP application allows you to complete two trial courses before fully committing to the program, ensuring a perfect fit for your educational and career goals.</p>
+      <p>With renowned faculty and industry-aligned coursework, you'll develop the theoretical foundation and practical experience needed to excel. Our Accelerated Application streamlines the process so you can apply in minutes with simplified requirements—no recommendation letters, just transcripts and your professional background.</p>
     `,
   },
   curriculum: {
@@ -784,16 +784,16 @@ The objective of this course is to give students a basic grounding in designing 
   },
   faqs: [
     {
-      q: "What is the ASAP application?",
-      a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree.",
+      q: "What is the Accelerated Application?",
+      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your résumé or LinkedIn profile. Official transcripts are due within one year of enrollment. Bachelor's degree is required.",
     },
     {
-      q: "Who should apply through the ASAP application?",
-      a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required.",
+      q: "Who should use the Accelerated Application?",
+      a: "The Accelerated Application is ideal for working professionals who want to apply quickly with minimal documentation. If you have a bachelor's degree and can provide transcripts plus your professional background, you can get started in minutes.",
     },
     {
-      q: "What resources are available to ASAP students?",
-      a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses.",
+      q: "What happens after I submit my Accelerated Application?",
+      a: "Your application is reviewed by our admissions team. You'll receive a decision and, if admitted, can enroll in the program. You'll have access to the same resources and support as all MSCS students, including academic advising and faculty support.",
     },
   ],
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
