@@ -27,7 +27,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/accelerated-application/",
     },
     badges: [
       { text: "99% Employment Rate", icon: Award },
@@ -49,7 +49,7 @@ const programData = {
         <li>10 Courses</li>
         <li>100% Online</li>
         <li>2 Years or Less Completion Time*</li>
-        <li>Two application options (standard and ASAP)</li>
+        <li>Accelerated Application available</li>
       </ul>
       <p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>
     `,
@@ -667,28 +667,25 @@ The objective of this course is to give students a basic grounding in designing 
     ],
   },
   admissions: {
-    options: [
-      {
-        title: "Standard Application",
-        featured: false,
-        description: `<p>Complete the Standard application and submit the following for review:</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
-        buttonText: "Apply Now",
-        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
-      },
-      {
-        title: "ASAP Application",
-        featured: true,
-        description: `<p>Enroll in two eight-week asynchronous courses and gain full admission to the program by earning a grade of “B” or better in each.</p><ul class="list-disc pl-5 mt-2 space-y-1"><li>Bachelor’s degree required</li><li>No letters of recommendation required</li></ul>`,
-        buttonText: "Apply Now",
-        url: createPageUrl("ASAP"),
-      },
-    ],
-    consultation: {
-      title: "Wondering Which Application Is Right for You?",
-      buttonText: "Get In Touch",
-      url: createPageUrl("RequestInfo"),
+      options: [
+        {
+          title: "Accelerated App",
+          featured: false,
+          description: `<p>
+            Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
+          </p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li><strong>Recommendation Letters:</strong> Not Required</li>
+            <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
+            <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
+          </ul>
+          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
+          buttonText: "Apply Now",
+          url: "/accelerated-application",
+          buttonGrayOut: false
+        }
+      ]
     },
-  },
   keyDates: {
     headers: [
       "Term",
@@ -721,15 +718,11 @@ The objective of this course is to give students a basic grounding in designing 
     description: `<h3 class="font-bold text-xl mb-4">New for Spring & Summer 2026: Up to $13,120 off Tuition Through Grants and Scholarships</h3><p>At Stevens, we’re committed to reducing the financial barriers to graduate education. That’s why we offer grant and scholarship programs designed to help you achieve your goals.</p><p class="text-sm italic mt-2">*The $875/credit rate applies to the first two asynchronous courses in the program.</p>`,
     grants: [
       {
-        title: "Aspire Grant (for standard applicants)",
+        title: "Aspire Grant",
         description:
           "$3,120 in tuition support for the first two asynchronous courses.",
       },
-      {
-        title: "Pathway Grant (for ASAP applicants)",
-        description:
-          "$3,120 in tuition support for the first two asynchronous courses.",
-      },
+      
       {
         title: "Dean’s Merit Scholar Program",
         description:
@@ -827,7 +820,7 @@ export default function MSCSPage() {
       >
         <ProgramPageTemplate
           programData={programData}
-          useApplicationModal={true}
+          useApplicationModal={false}
         />
       </ProgramContextProvider>
     </PageContextProvider>
