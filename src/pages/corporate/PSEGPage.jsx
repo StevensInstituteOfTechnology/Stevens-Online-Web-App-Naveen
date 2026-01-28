@@ -23,7 +23,7 @@ export default function PSEGPage() {
             title: "Online MBA",
             description: "A tech-driven MBA for leaders in innovation.",
             exploreLink: "/online-mba/",
-            applyLink: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+            applyLink: "/accelerated-application/?program=mba&corporate_code=P01S04G",
             useModal: false
         },
         {
@@ -31,8 +31,8 @@ export default function PSEGPage() {
             title: "M.S. in Computer Science",
             description: "Advanced computing education for the digital age.",
             exploreLink: "/online-masters-computer-science-mscs/",
-            applyLink: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
-            useModal: true
+            applyLink: "/accelerated-application/?program=mscs&corporate_code=P01S04G",
+            useModal: false
         },
         {
             code: "mem",

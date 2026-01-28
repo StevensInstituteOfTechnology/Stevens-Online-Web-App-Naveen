@@ -34,6 +34,10 @@ const ExploreMBA = () => {
       { text: "100% Online", icon: Globe },
       { text: "No GMAT Required", icon: Star }
     ],
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "/accelerated-application/",
+    },
     
     // Statistics
     statistics: [
