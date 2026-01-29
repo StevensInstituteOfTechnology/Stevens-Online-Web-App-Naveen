@@ -85,7 +85,7 @@ const programData = {
     programType: "Graduate Certificate",
     headline: "Build AI that works at work",
     tagline: "From idea to deployed AI workflow in 9 graduate credits.",
-    description: `<p class="mb-4">Employers are hiring for "AI-fluent" business talent. AI roles top "Jobs on the Rise 2025," and AI skills carry a salary premium with ~28% higher pay. Over half of postings with AI skills are outside IT, demonstrating the broad demand for practical AI expertise across all business functions.</p><p class="mb-4">Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain critical challenges. This certificate's arc-<strong>strategy → POC → operational workflow</strong>-mirrors what adoption leaders say is required to capture value.</p><p>This short, stackable graduate credential turns managers, analysts, and product/ops professionals into responsible AI doers who can frame, prototype, and run small AI workflows safely, without needing a CS background. Upon completion, you'll earn 9 graduate credits that apply toward existing Stevens degrees including the MBA and M.Eng. in Applied Data Science.</p>`,
+    description: `<p class="mb-4">Employers are hiring for "AI-fluent" business talent. AI roles top "Jobs on the Rise 2025," and AI skills carry a salary premium with ~28% higher pay. Over half of postings with AI skills are outside IT, demonstrating the broad demand for practical AI expertise across all business functions.</p><p class="mb-4">Most firms struggle to operationalize GenAI-governance, data quality, and KPIs remain critical challenges. This certificate's arc-<strong>POC → strategy → operational workflow</strong>-mirrors what adoption leaders say is required to capture value.</p><p>This short, stackable graduate credential turns managers, analysts, and product/ops professionals into responsible AI doers who can frame, prototype, and run small AI workflows safely, without needing a CS background. Upon completion, you'll earn 9 graduate credits that apply toward existing Stevens degrees including the MBA and M.Eng. in Applied Data Science.</p>`,
     keySkills: [
       "AI Strategy & Governance",
       "Generative AI & Prompting",
@@ -94,8 +94,9 @@ const programData = {
       "AI Ethics & Risk Management",
     ],
     concentrations: [],
-    image: "/assets/images/certificate-enterprise-ai/shutterstock_1638173794-crop.webp", 
-    imageAlt: "", 
+    image:
+      "/assets/images/certificate-enterprise-ai/shutterstock_1638173794-crop.webp",
+    imageAlt: "",
     imagePosition: "50% 70%",
   },
   videoSection: {
@@ -149,19 +150,8 @@ const programData = {
   whatYoullLearn: {
     title: "What You'll Learn",
     description:
-      "The Enterprise AI Certificate follows a strategic progression: understand AI capabilities and governance, design and prototype GenAI solutions, then build and deploy operational workflows. Each course builds on the previous, creating a complete skillset for AI implementation.",
+      "The Enterprise AI Certificate follows a strategic progression: design and prototype GenAI solutions, understand AI capabilities and governance, then build and deploy operational workflows. Each course builds on the previous, creating a complete skillset for AI implementation.",
     modules: [
-      {
-        title: "AI Strategy & Management",
-        description:
-          "BIA 568 – Management of AI Technologies: Learn to evaluate, govern, and implement AI at the enterprise level.",
-        skillsLabel: "Course Highlights",
-        skills: [
-          "AI Factory concepts, deployment patterns, and platform evaluation",
-          "FATE principles, governance frameworks, and vendor selection",
-          "Implementation playbook and architecture analysis",
-        ],
-      },
       {
         title: "Generative AI & Prototyping",
         description:
@@ -171,6 +161,17 @@ const programData = {
           "GenAI foundations, prompt engineering, and ethics",
           "Design and scope a proof-of-concept with business value",
           "Team PoC with management plan, demo, and implementation roadmap",
+        ],
+      },
+      {
+        title: "AI Strategy & Management",
+        description:
+          "BIA 568 – Management of AI Technologies: Learn to evaluate, govern, and implement AI at the enterprise level.",
+        skillsLabel: "Course Highlights",
+        skills: [
+          "AI Factory concepts, deployment patterns, and platform evaluation",
+          "FATE principles, governance frameworks, and vendor selection",
+          "Implementation playbook and architecture analysis",
         ],
       },
       {
@@ -187,10 +188,8 @@ const programData = {
     ],
   },
   whyStevens: {
-    
     title: "Why Choose Stevens for Enterprise AI?",
     description: `<p>Stevens Institute of Technology brings 150+ years of engineering excellence and innovation to AI education. Located just minutes from Manhattan, Stevens combines rigorous academic foundations with practical, industry-driven curriculum.</p><p>This certificate is designed for working professionals who need to apply AI immediately. You'll learn from faculty who are active researchers and practitioners, ensuring you gain cutting-edge knowledge that translates directly to workplace challenges.</p><p>Plus, with full stackability toward our MBA and M.Eng. in Applied Data Science programs, your certificate investment continues to pay dividends as you advance your education.</p>`,
-    
   },
   curriculum: {
     description:
@@ -271,7 +270,7 @@ const programData = {
         footer: {
           title: "Recommended Sequence",
           content:
-            "BIA 568 → BIA 662 → PE 810 — This sequence mirrors the AI implementation journey: strategy → proof-of-concept → operationalization. Each course builds essential skills for the next phase.",
+            "BIA 662 → BIA 568 → PE 810 — This sequence mirrors the AI implementation journey: proof-of-concept → strategy → operationalization. Each course builds essential skills for the next phase.",
         },
       },
     ],
