@@ -11,7 +11,7 @@ import {
 import { ArrowRight, Clock } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import LeadCaptureForm from "../../../components/forms/LeadCaptureForm";
-import { BOOKING_URLS, KEY_DATES } from "@/config/constants";
+import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import {
   setPageTitle,
@@ -52,10 +52,10 @@ export default function Admissions() {
   // Set SEO meta tags
   useEffect(() => {
     setPageTitle(
-      "Graduate Admissions & Application Requirements | Stevens Online"
+      "Graduate Admissions & Application Requirements | Stevens Online",
     );
     setMetaDescription(
-      "Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master's programs."
+      "Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master's programs.",
     );
     setOpenGraphTags({
       title: "Graduate Admissions & Application Requirements | Stevens Online",
@@ -69,27 +69,27 @@ export default function Admissions() {
 
   // Data for DeadlinesSection component
   const deadlinesData = {
-    term: KEY_DATES.TERM.nameUppercase,
-    subtitle: `Plan your application for the upcoming ${KEY_DATES.TERM.name} term.`,
+    term: KEY_DATES_SPRING2.TERM.nameUppercase,
+    subtitle: `Plan your application for the upcoming ${KEY_DATES_SPRING2.TERM.name} term.`,
     dates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
-        description: KEY_DATES.EARLY_SUBMIT.details,
+        date: KEY_DATES_SPRING2.EARLY_SUBMIT.date,
+        description: KEY_DATES_SPRING2.EARLY_SUBMIT.details,
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
-        description: KEY_DATES.PRIORITY_SUBMIT.details,
+        date: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date,
+        description: KEY_DATES_SPRING2.PRIORITY_SUBMIT.details,
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_SPRING2.FINAL_SUBMIT.date,
         description: "Last day to submit your application.",
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_SPRING2.START_OF_CLASSES.date,
         description: "Begin your graduate journey at Stevens.",
       },
     ],
@@ -212,7 +212,7 @@ export default function Admissions() {
         </div>
 
         {/* Key Dates & Deadlines - Using shared DeadlinesSection component */}
-        <DeadlinesSection keyDates={deadlinesData}  />
+        <DeadlinesSection keyDates={deadlinesData} />
 
         {/* Admissions FAQ */}
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">

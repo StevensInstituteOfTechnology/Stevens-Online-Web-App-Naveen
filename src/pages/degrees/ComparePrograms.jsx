@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BOOKING_URLS, KEY_DATES } from "@/config/constants";
+import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -41,7 +41,7 @@ export default function ComparePrograms() {
   useEffect(() => {
     setPageTitle("Compare Graduate Programs | Stevens Online");
     setMetaDescription(
-      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests."
+      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
     );
     setOpenGraphTags({
       title: "Compare Graduate Programs | Stevens Online",
@@ -135,7 +135,7 @@ export default function ComparePrograms() {
       name: "Professional Graduate Certificate in Enterprise AI",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "8-16 weeks**",
-      programStart: KEY_DATES.TERM.name,
+      programStart: KEY_DATES_SPRING2.TERM.name,
       cost: "$5,250*",
       creditHours: "9 credits",
       curriculum:
@@ -145,7 +145,7 @@ export default function ComparePrograms() {
       name: "Applied Data Science Foundations Certificate",
       degreeLevel: "Professional Graduate Certificate",
       programLength: "16-20 weeks**",
-      programStart: KEY_DATES.TERM.name,
+      programStart: KEY_DATES_SPRING2.TERM.name,
       cost: "$5,250*",
       creditHours: "9 credits",
       curriculum:
@@ -179,213 +179,213 @@ export default function ComparePrograms() {
 
   return (
     <PageContextProvider pageType="comparison" pageName="ComparePrograms">
-    <div>
-      <PageHero 
-        title="Compare Online Graduate Programs at Stevens" 
-        subtitle="Find your path" 
-        bgImage="/assets/images/compare-programs/compare-hero.webp"
-        rightContent={
+      <div>
+        <PageHero
+          title="Compare Online Graduate Programs at Stevens"
+          subtitle="Find your path"
+          bgImage="/assets/images/compare-programs/compare-hero.webp"
+          rightContent={
             <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
-        }
-      />
+          }
+        />
 
-      {/* Select Programs to Compare */}
+        {/* Select Programs to Compare */}
         <section
           id="compare-programs"
           className="py-16 bg-stevens-white scroll-mt-24"
         >
-        <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
-              Select Programs to Compare
-            </h2>
-            <p className="text-stevens-dark-gray">
+          <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
+            <div className="text-center mb-stevens-xl">
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
+                Select Programs to Compare
+              </h2>
+              <p className="text-stevens-dark-gray">
                 Earn a master’s degree from Stevens to gain a technical
                 advantage in your career. Our programs are 100% online and
                 connect you to renowned faculty and the Stevens alumni network.
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <Card className="shadow-stevens-lg border-0">
-            <CardContent className="p-stevens-xl">
-              <div className="grid stevens-md:grid-cols-3 gap-stevens-lg items-end">
-                <div>
-                  <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
-                    Select Program
-                  </label>
-                  <select
-                    value={left}
-                    onChange={(e) => setLeft(e.target.value)}
-                    className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
-                  >
-                    {PROGRAM_OPTIONS.map((opt) => (
-                      <option
-                        key={opt.value}
-                        value={opt.value}
-                        disabled={opt.value === right}
-                      >
-                        {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+            <Card className="shadow-stevens-lg border-0">
+              <CardContent className="p-stevens-xl">
+                <div className="grid stevens-md:grid-cols-3 gap-stevens-lg items-end">
+                  <div>
+                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                      Select Program
+                    </label>
+                    <select
+                      value={left}
+                      onChange={(e) => setLeft(e.target.value)}
+                      className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
+                    >
+                      {PROGRAM_OPTIONS.map((opt) => (
+                        <option
+                          key={opt.value}
+                          value={opt.value}
+                          disabled={opt.value === right}
+                        >
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-                <div>
-                  <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
-                    Select Program
-                  </label>
-                  <select
-                    value={right}
-                    onChange={(e) => setRight(e.target.value)}
-                    className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
-                  >
-                    {PROGRAM_OPTIONS.map((opt) => (
-                      <option
-                        key={opt.value}
-                        value={opt.value}
-                        disabled={opt.value === left}
-                      >
-                        {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                  <div>
+                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                      Select Program
+                    </label>
+                    <select
+                      value={right}
+                      onChange={(e) => setRight(e.target.value)}
+                      className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
+                    >
+                      {PROGRAM_OPTIONS.map((opt) => (
+                        <option
+                          key={opt.value}
+                          value={opt.value}
+                          disabled={opt.value === left}
+                        >
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-                <div className="stevens-md:justify-self-end">
-                  <Button
-                    variant="default"
-                    className="w-full stevens-md:w-auto"
-                    onClick={handleCompare}
-                  >
-                    Compare
-                  </Button>
-                </div>
-              </div>
-              {showResults && (
-                <div className="mt-stevens-2xl">
-                  <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="bg-stevens-light-gray text-left">
-                          <th className="p-stevens-md font-stevens-semibold w-1/3">
-                            Program Details
-                          </th>
-                          <th className="p-stevens-md font-stevens-semibold text-stevens-center">
-                            {PROGRAM_DETAILS[left].name}
-                          </th>
-                          <th className="p-stevens-md font-stevens-semibold text-stevens-center">
-                            {PROGRAM_DETAILS[right].name}
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {FIELDS.map((field) => (
-                          <tr
-                            key={field.key}
-                            className="border-t border-stevens-light-gray align-top"
-                          >
-                            <td className="p-stevens-md font-stevens-semibold text-stevens-dark-gray">
-                              {field.label}
-                            </td>
-                            <td className="p-stevens-md whitespace-pre-line text-stevens-dark-gray">
-                              {PROGRAM_DETAILS[left][field.key]}
-                            </td>
-                            <td className="p-stevens-md whitespace-pre-line text-stevens-dark-gray">
-                              {PROGRAM_DETAILS[right][field.key]}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                  <div className="stevens-md:justify-self-end">
+                    <Button
+                      variant="default"
+                      className="w-full stevens-md:w-auto"
+                      onClick={handleCompare}
+                    >
+                      Compare
+                    </Button>
                   </div>
                 </div>
-              )}
-              <p className="text-stevens-xs text-stevens-dark-gray mt-stevens-md">
+                {showResults && (
+                  <div className="mt-stevens-2xl">
+                    <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
+                      <table className="w-full">
+                        <thead>
+                          <tr className="bg-stevens-light-gray text-left">
+                            <th className="p-stevens-md font-stevens-semibold w-1/3">
+                              Program Details
+                            </th>
+                            <th className="p-stevens-md font-stevens-semibold text-stevens-center">
+                              {PROGRAM_DETAILS[left].name}
+                            </th>
+                            <th className="p-stevens-md font-stevens-semibold text-stevens-center">
+                              {PROGRAM_DETAILS[right].name}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {FIELDS.map((field) => (
+                            <tr
+                              key={field.key}
+                              className="border-t border-stevens-light-gray align-top"
+                            >
+                              <td className="p-stevens-md font-stevens-semibold text-stevens-dark-gray">
+                                {field.label}
+                              </td>
+                              <td className="p-stevens-md whitespace-pre-line text-stevens-dark-gray">
+                                {PROGRAM_DETAILS[left][field.key]}
+                              </td>
+                              <td className="p-stevens-md whitespace-pre-line text-stevens-dark-gray">
+                                {PROGRAM_DETAILS[right][field.key]}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+                <p className="text-stevens-xs text-stevens-dark-gray mt-stevens-md">
                   *Tuition estimates based on Fall 2025 rates effective
                   September 2025. Tuition and fees are subject to change
                   annually. Additional program fees may apply.
-              </p>
-              <p className="text-stevens-xs text-stevens-dark-gray">
-                **Total program duration is subject to change based on course
-                availability and the number of courses taken each semester.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Program Track Options */}
-      <section className="py-16 bg-stevens-white">
-        <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-          <h3 className="font-stevens-display text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
-            Program Track Options
-          </h3>
-          <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-stevens-light-gray text-left">
-                  <th className="p-stevens-md font-stevens-semibold">
-                    Program
-                  </th>
-                  <th className="p-stevens-md font-stevens-semibold">
-                    Track Options
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-t border-stevens-light-gray">
-                  <td className="p-stevens-md">Online MBA</td>
-                  <td className="p-stevens-md">n/a</td>
-                </tr>
-                <tr className="border-t border-stevens-light-gray">
-                  <td className="p-stevens-md">
-                    Online M.S. in Computer Science
-                  </td>
-                  <td className="p-stevens-md">Traditional | Advanced</td>
-                </tr>
-                <tr className="border-t border-stevens-light-gray">
-                  <td className="p-stevens-md">Online MEM</td>
-                  <td className="p-stevens-md">n/a</td>
-                </tr>
-              </tbody>
-            </table>
+                </p>
+                <p className="text-stevens-xs text-stevens-dark-gray">
+                  **Total program duration is subject to change based on course
+                  availability and the number of courses taken each semester.
+                </p>
+              </CardContent>
+            </Card>
           </div>
+        </section>
 
-          <div className="mt-stevens-sm space-y-stevens-xs text-stevens-xs text-stevens-dark-gray">
-            <p>
-              *Tuition estimates based on Fall 2025 rates effective September
+        {/* Program Track Options */}
+        <section className="py-16 bg-stevens-white">
+          <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
+            <h3 className="font-stevens-display text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+              Program Track Options
+            </h3>
+            <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-stevens-light-gray text-left">
+                    <th className="p-stevens-md font-stevens-semibold">
+                      Program
+                    </th>
+                    <th className="p-stevens-md font-stevens-semibold">
+                      Track Options
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-stevens-light-gray">
+                    <td className="p-stevens-md">Online MBA</td>
+                    <td className="p-stevens-md">n/a</td>
+                  </tr>
+                  <tr className="border-t border-stevens-light-gray">
+                    <td className="p-stevens-md">
+                      Online M.S. in Computer Science
+                    </td>
+                    <td className="p-stevens-md">Traditional | Advanced</td>
+                  </tr>
+                  <tr className="border-t border-stevens-light-gray">
+                    <td className="p-stevens-md">Online MEM</td>
+                    <td className="p-stevens-md">n/a</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-stevens-sm space-y-stevens-xs text-stevens-xs text-stevens-dark-gray">
+              <p>
+                *Tuition estimates based on Fall 2025 rates effective September
                 2025. Tuition and fees are subject to change annually.
                 Additional program fees may apply. Effective Fall 2025, the
                 Online M.S. in Computer Science and Online Master of Engineering
                 in Engineering Management programs will incorporate asynchronous
                 course delivery for the initial phase of their curriculum. This
                 change will impact the tuition rates for some courses.
-            </p>
-            <p>
-              **Total program duration is subject to change based on course
-              availability and the number of courses taken each semester.
-            </p>
+              </p>
+              <p>
+                **Total program duration is subject to change based on course
+                availability and the number of courses taken each semester.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-stevens-white">
-        <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-          <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-dark-gray mb-stevens-md">
-            Ready to discuss how our programs can help you achieve your goals?
-          </h3>
-          <a
-            href={BOOKING_URLS.SCHEDULE_CALL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
-          >
-            <Button variant="default">Connect With Us</Button>
-          </a>
-        </div>
-      </section>
-    </div>
+        {/* CTA */}
+        <section className="py-16 bg-stevens-white">
+          <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
+            <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-dark-gray mb-stevens-md">
+              Ready to discuss how our programs can help you achieve your goals?
+            </h3>
+            <a
+              href={BOOKING_URLS.SCHEDULE_CALL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
+            >
+              <Button variant="default">Connect With Us</Button>
+            </a>
+          </div>
+        </section>
+      </div>
     </PageContextProvider>
   );
 }

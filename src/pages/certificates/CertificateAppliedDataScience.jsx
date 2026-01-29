@@ -81,7 +81,7 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: Jan 20`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 

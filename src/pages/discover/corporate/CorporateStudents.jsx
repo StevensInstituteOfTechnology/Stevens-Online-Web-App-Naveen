@@ -29,7 +29,11 @@ import {
   Phone,
   Calendar,
 } from "lucide-react";
-import { PageHero, TestimonialCarousel, RequestInfoModal } from "@/components/shared";
+import {
+  PageHero,
+  TestimonialCarousel,
+  RequestInfoModal,
+} from "@/components/shared";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,7 +59,11 @@ import {
   getDiscountInfo,
   getProgramRecommendations,
 } from "@/utils/discountCalculator";
-import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
+import {
+  BOOKING_URLS,
+  CONTACT_INFO,
+  KEY_DATES_SPRING2,
+} from "@/config/constants";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
 import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
 
@@ -101,18 +109,17 @@ const CorporateStudents = () => {
   useEffect(() => {
     const canonical = buildCanonicalUrl("/corporate-students/");
     setPageTitle(
-      "Corporate Tuition Benefits 2025 | Save Up to 50% | Stevens Online Masters"
+      "Corporate Tuition Benefits 2025 | Save Up to 50% | Stevens Online Masters",
     );
     setMetaDescription(
-      "Use your 2025 employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required."
+      "Use your 2025 employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.",
     );
     setOpenGraphTags({
       title:
         "Corporate Tuition Benefits | Save Up to 50% on Your Masters Degree | Stevens Online",
-      description:
-        "Stevens workforce development programs help employees maximize tuition benefits. 20% partner discount + 15% stackable discounts. Spring 2026 enrollment open.",
+      description: `Stevens workforce development programs help employees maximize tuition benefits. 20% partner discount + 15% stackable discounts. ${KEY_DATES_SPRING2.TERM.name} enrollment open.`,
       image: buildCanonicalUrl(
-        "/assets/images/corporate-students/corporate-students-1.webp"
+        "/assets/images/corporate-students/corporate-students-1.webp",
       ),
       url: canonical,
       type: "website",
@@ -143,7 +150,7 @@ const CorporateStudents = () => {
     if (selectedInterest && selectedCredentialType) {
       const programCodes = getProgramRecommendations(
         selectedInterest,
-        selectedCredentialType
+        selectedCredentialType,
       );
       const programs = programCodes
         .map((code) => PROGRAMS_DATA.find((p) => p.code === code))
@@ -414,7 +421,7 @@ const CorporateStudents = () => {
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline text-slate-500">|</span>
             <span className="text-sm font-semibold text-stevens-red">
-              Spring 2026 Enrollment Open
+              {KEY_DATES_SPRING2.TERM.name} Enrollment Open
             </span>
           </div>
           <Button
@@ -502,10 +509,7 @@ const CorporateStudents = () => {
                   text: "Discounts stack: Partner + Hoboken + Alumni = up to 50% off",
                 },
               ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 text-white"
-                >
+                <div key={index} className="flex items-center gap-3 text-white">
                   <CheckCircle className="w-5 h-5 text-stevens-red flex-shrink-0" />
                   <span className="text-sm">{item.text}</span>
                 </div>
@@ -537,10 +541,11 @@ const CorporateStudents = () => {
                   </div>
                   <div>
                     <p className="font-light uppercase tracking-wide text-lg text-stevens-black">
-                      Spring 2026 Deadlines
+                      {KEY_DATES_SPRING2.TERM.name} Deadlines
                     </p>
                     <p className="text-sm text-stevens-dark-gray">
-                      Priority: Dec 15 • Final: Jan 10
+                      Priority: {KEY_DATES_SPRING2.PRIORITY_SUBMIT.date} •
+                      Final: {KEY_DATES_SPRING2.FINAL_SUBMIT.date}
                     </p>
                   </div>
                 </div>
@@ -779,8 +784,8 @@ const CorporateStudents = () => {
                 recommendedPrograms.length === 1
                   ? "max-w-xl mx-auto"
                   : recommendedPrograms.length === 2
-                  ? "grid-cols-1 md:grid-cols-2"
-                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    ? "grid-cols-1 md:grid-cols-2"
+                    : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               }`}
             >
               {recommendedPrograms.map((program, index) => (
@@ -872,8 +877,8 @@ const CorporateStudents = () => {
           titleLines={["Invest in Your Future", "with Stevens Online"]}
           subtitle={
             companyName
-              ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. Spring 2026 enrollment is now open.`
-              : "Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. Spring 2026 enrollment is now open."
+              ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
+              : `Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
           bgImagePosition="center 30%"
@@ -900,7 +905,12 @@ const CorporateStudents = () => {
                     variant: "secondary",
                   },
                 ]
-              : [{ text: "Spring 2026 Enrollment Open", variant: "secondary" }]
+              : [
+                  {
+                    text: `${KEY_DATES_SPRING2.TERM.name} Enrollment Open`,
+                    variant: "secondary",
+                  },
+                ]
           }
         />
 
@@ -1202,7 +1212,7 @@ const CorporateStudents = () => {
                       </div>
                     </CardContent>
 
-                        {/* Mobile Price Summary - Only visible on mobile */}
+                    {/* Mobile Price Summary - Only visible on mobile */}
                     {calculatedCost && (
                       <div className="lg:hidden p-stevens-md pt-0 border-t border-gray-200">
                         {/* Final Price */}
@@ -1212,7 +1222,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-base font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
+                                    (s) => s.type === "reimbursement",
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1231,7 +1241,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-base font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
+                                    (s) => s.type === "reimbursement",
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1241,7 +1251,7 @@ const CorporateStudents = () => {
                                 </span>
                               </div>
                               {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement"
+                                (s) => s.type === "reimbursement",
                               ) && (
                                 <p className="text-xs text-stevens-white/70 italic">
                                   * Before employer reimbursement
@@ -1468,14 +1478,14 @@ const CorporateStudents = () => {
                                 step.icon === "building"
                                   ? Building
                                   : step.icon === "sparkles"
-                                  ? Sparkles
-                                  : step.icon === "home"
-                                  ? Home
-                                  : step.icon === "graduation-cap"
-                                  ? GraduationCap
-                                  : step.icon === "briefcase"
-                                  ? Briefcase
-                                  : CheckCircle;
+                                    ? Sparkles
+                                    : step.icon === "home"
+                                      ? Home
+                                      : step.icon === "graduation-cap"
+                                        ? GraduationCap
+                                        : step.icon === "briefcase"
+                                          ? Briefcase
+                                          : CheckCircle;
 
                               return (
                                 <div key={index}>
@@ -1513,7 +1523,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-lg font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
+                                    (s) => s.type === "reimbursement",
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1532,7 +1542,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-lg font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
+                                    (s) => s.type === "reimbursement",
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1542,7 +1552,7 @@ const CorporateStudents = () => {
                                 </span>
                               </div>
                               {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement"
+                                (s) => s.type === "reimbursement",
                               ) && (
                                 <p className="text-xs text-stevens-white/70 italic">
                                   * Before employer reimbursement
@@ -1562,7 +1572,7 @@ const CorporateStudents = () => {
 
                           {/* Prompt to add reimbursement if not entered */}
                           {!calculatedCost.steps.find(
-                            (s) => s.type === "reimbursement"
+                            (s) => s.type === "reimbursement",
                           ) && (
                             <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
                               <div className="flex items-start text-stevens-white/90">
@@ -1630,7 +1640,7 @@ const CorporateStudents = () => {
                                       application_type: "external",
                                     });
                                     trackConversion(
-                                      CONVERSION_LABELS.APPLY_NOW
+                                      CONVERSION_LABELS.APPLY_NOW,
                                     );
                                   }}
                                 >
@@ -1901,7 +1911,7 @@ const CorporateStudents = () => {
             >
               {/* Divider */}
               <div className="border-t border-gray-400 mb-[60px]"></div>
-              
+
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-md text-stevens-black">
                 Ready to Take the Next Step?
               </h2>
@@ -1913,7 +1923,9 @@ const CorporateStudents = () => {
 
               {/* Deadline Notice */}
               <p className="text-sm text-stevens-red font-medium mb-stevens-xl">
-                Spring 2026: Priority Deadline Dec 15 • Final Deadline Jan 10
+                {KEY_DATES_SPRING2.TERM.name}: Priority{" "}
+                {KEY_DATES_SPRING2.PRIORITY_SUBMIT.date} • Final{" "}
+                {KEY_DATES_SPRING2.FINAL_SUBMIT.date}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
