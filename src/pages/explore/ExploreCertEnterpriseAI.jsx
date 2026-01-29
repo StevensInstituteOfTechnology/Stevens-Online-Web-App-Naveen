@@ -1,5 +1,5 @@
 import React from "react";
-import { KEY_DATES } from "@/config/constants";
+import { KEY_DATES_SPRING2 } from "@/config/constants";
 import { Award, Globe, GraduationCap } from "lucide-react";
 import { ExploreTemplate } from "../../components/explore-pages";
 import { TuitionCardsHero } from "../../components/program-pages/primitives";
@@ -135,22 +135,22 @@ const ExploreCertEnterpriseAI = () => {
     keyDates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
+        date: KEY_DATES_SPRING2.EARLY_SUBMIT.date,
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        date: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date,
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_SPRING2.FINAL_SUBMIT.date,
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_SPRING2.START_OF_CLASSES.date,
       },
     ],
-    keyDatesNote: `*The Enterprise AI Certificate launches ${KEY_DATES.TERM.name}. Apply early to secure your spot in this inaugural cohort.`,
+    keyDatesNote: `*The Enterprise AI Certificate launches ${KEY_DATES_SPRING2.TERM.name}. Apply early to secure your spot in this inaugural cohort.`,
 
     // FAQ
     faqs: [

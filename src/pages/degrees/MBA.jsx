@@ -9,7 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
-import { KEY_DATES } from "@/config/constants";
+import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -44,9 +44,11 @@ const programData = {
       },
       {
         supertext: "Apply by",
-        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
-        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
-        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+        labelAbove: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date
+          .split(" ")[1]
+          .replace(",", ""),
+        subtext: `to start ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
       },
       {
         value: "#1",
@@ -69,21 +71,21 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]}`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
     // Legacy
-    termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
+    termStartDate: `${KEY_DATES_SUMMER.TERM.nameUppercase}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
   },
   overview: {
     programType: "Master of Business Administration",
     headline: "Lead with data, strategy, and innovation",
     tagline: "The best MBA for technology in the NYC region.",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
-    image: "/assets/images/mba/10.webp", 
-  imageAlt: "Students collaborating on MBA coursework", 
-  imagePosition: "10% 70%",
+    image: "/assets/images/mba/10.webp",
+    imageAlt: "Students collaborating on MBA coursework",
+    imagePosition: "10% 70%",
     keySkills: [
       "Marketing",
       "Financial Management",
@@ -127,8 +129,6 @@ const programData = {
         "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.",
       note: "1",
     },
-    
-   
 
     {
       ranking: "#12",
@@ -225,7 +225,7 @@ const programData = {
       },
     ],
   },
-  
+
   curriculum: {
     description:
       "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
@@ -778,38 +778,41 @@ const programData = {
     `,
   },
   keyDates: {
-    term: KEY_DATES.TERM.name,
+    term: KEY_DATES_SUMMER.TERM.name,
     rows: [
-      { event: "Early Submit", date: KEY_DATES.EARLY_SUBMIT.date },
-      { event: "Priority Submit", date: KEY_DATES.PRIORITY_SUBMIT.date },
-      { event: "Final Submit", date: KEY_DATES.FINAL_SUBMIT.date },
-      { event: "Start of Classes", date: KEY_DATES.START_OF_CLASSES.date },
+      { event: "Early Submit", date: KEY_DATES_SUMMER.EARLY_SUBMIT.date },
+      { event: "Priority Submit", date: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date },
+      { event: "Final Submit", date: KEY_DATES_SUMMER.FINAL_SUBMIT.date },
+      {
+        event: "Start of Classes",
+        date: KEY_DATES_SUMMER.START_OF_CLASSES.date,
+      },
     ],
   },
   // Deadlines section data (for timeline display)
   deadlines: {
-    term: KEY_DATES.TERM.nameUppercase,
+    term: KEY_DATES_SUMMER.TERM.nameUppercase,
     subtitle: "Plan your application for the upcoming term.",
     dates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
+        date: KEY_DATES_SUMMER.EARLY_SUBMIT.date,
         description:
           "Apply early for priority consideration and potential deposit waiver.",
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        date: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date,
         description: "Recommended deadline for best course selection.",
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_SUMMER.FINAL_SUBMIT.date,
         description: "Last day to submit your application.",
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_SUMMER.START_OF_CLASSES.date,
         description: "Begin your Stevens Online MBA journey.",
       },
     ],

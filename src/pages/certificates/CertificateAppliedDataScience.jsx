@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { CertificateTemplate } from "../../components/program-pages/templates";
 import { TuitionCardsHero } from "../../components/program-pages/primitives";
-import { KEY_DATES, BOOKING_URLS } from "@/config/constants";
+import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -54,9 +54,11 @@ const programData = {
       },
       {
         supertext: "Apply by",
-        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
-        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
-        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+        labelAbove: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date
+          .split(" ")[1]
+          .replace(",", ""),
+        subtext: `to start ${KEY_DATES_SPRING2.START_OF_CLASSES.date}`,
       },
       {
         value: "9",
@@ -79,19 +81,19 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: Jan 20`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 
     // Legacy fields (keep for backward compatibility if needed)
-    termStartDate: `${KEY_DATES.TERM.nameUppercase}: ${KEY_DATES.START_OF_CLASSES.date}`,
+    termStartDate: `${KEY_DATES_SPRING2.TERM.nameUppercase}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date}`,
   },
   overview: {
     programType: "Graduate Certificate",
     headline: "Launch your career in AI and data science",
     tagline:
       "Master Python, SQL, and machine learning through hands-on projects.",
-    
+
     description: `<p class="mb-4">This certificate is designed to launch your career in applied AI and data science. In today's data-driven economy, organizations need professionals who can build and deploy machine learning solutions-not just analyze data, but create AI-powered systems that solve real business problems.</p><p class="mb-4">The Applied Data Science Foundations certificate provides an <strong>AI-first, project-driven curriculum</strong> where you'll master Python, SQL, and machine learning through hands-on work with real datasets. Each course delivers a portfolio artifact tied to an AI/ML use case, ensuring you graduate with tangible evidence of your capabilities.</p><p>Whether you're pivoting into data science, upskilling for AI roles, or preparing for further graduate study, this certificate provides the technical foundation and graduate-level credential that employers value. All 9 credits stack toward Stevens' M.Eng. in Applied Data Science, giving you a clear pathway to continue your education.</p>`,
     keySkills: [
       "Python Programming",
@@ -101,8 +103,9 @@ const programData = {
       "AI Ethics & Explainability",
     ],
     concentrations: [],
-    image: "/assets/images/certificate-applied-data-science/Screenshot_2026-01-15_at_1.webp", 
-    imageAlt: "", 
+    image:
+      "/assets/images/certificate-applied-data-science/Screenshot_2026-01-15_at_1.webp",
+    imageAlt: "",
     imagePosition: "50% 70%",
   },
   videoSection: {
@@ -119,7 +122,7 @@ const programData = {
   career: {
     description: `<p class="mb-4">Data science and AI roles are among the fastest-growing and highest-paying positions in today's job market. From healthcare and finance to retail and technology, every industry is seeking professionals who can turn data into actionable insights and deploy AI-driven solutions.</p><p class="mb-4">This certificate prepares you for entry-level to mid-level roles in applied data science, machine learning engineering, and AI analytics. You'll develop the technical skills employers seek-Python, SQL, ML frameworks-while also learning the soft skills needed to communicate insights and collaborate with stakeholders.</p><p>Graduates of this certificate are positioned to pursue roles such as Data Analyst, ML Associate Engineer, AI Solutions Specialist, and Business Intelligence Developer. With the stackability to MEADS, you also have a clear pathway to advance into senior data science and AI leadership positions.</p>`,
     jobTitles: [
-    { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
+      { title: "Data Analyst", employed: "High Demand", salary: "$90,720" },
       {
         title: "ML Engineer Associate",
         employed: "Growing",
@@ -197,7 +200,7 @@ const programData = {
     tabs: [
       {
         id: "sequence",
-          title: "Course Sequence",
+        title: "Course Sequence",
         sections: [
           {
             title: "Certificate Courses (9 Credits)",
@@ -344,14 +347,14 @@ const programData = {
       "Start of Classes",
     ],
     rows: [
-      { 
-        event: KEY_DATES.TERM.name, 
-        date: KEY_DATES.EARLY_SUBMIT.date, 
-        details: KEY_DATES.EARLY_SUBMIT.details,
-        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date,
+      {
+        event: KEY_DATES_SPRING2.TERM.name,
+        date: KEY_DATES_SPRING2.EARLY_SUBMIT.date,
+        details: KEY_DATES_SPRING2.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES_SPRING2.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES_SPRING2.FINAL_SUBMIT.date,
+        startDate: KEY_DATES_SPRING2.START_OF_CLASSES.date,
       },
     ],
     footnote:
@@ -359,26 +362,26 @@ const programData = {
   },
   // Deadlines section data (for timeline display)
   deadlines: {
-    term: KEY_DATES.TERM.nameUppercase,
+    term: KEY_DATES_SPRING2.TERM.nameUppercase,
     dates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
+        date: KEY_DATES_SPRING2.EARLY_SUBMIT.date,
         description: "Eligible for $250 deposit waiver upon admission.",
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        date: KEY_DATES_SPRING2.PRIORITY_SUBMIT.date,
         description: "Recommended deadline for best course selection.",
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_SPRING2.FINAL_SUBMIT.date,
         description: "Last day to submit your application.",
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_SPRING2.START_OF_CLASSES.date,
         description: "Begin your Data Science journey at Stevens.",
       },
     ],
@@ -387,7 +390,7 @@ const programData = {
   },
   tuition: {
     cards: [
-      { value: "$5,250", label: "Total Certificate Cost" }, 
+      { value: "$5,250", label: "Total Certificate Cost" },
       { value: "$583", label: "Per Credit" },
     ],
     description: `
@@ -403,7 +406,7 @@ const programData = {
         <div class="bg-stevens-light-gray border-l-4 border-stevens-black p-4 rounded-stevens-sm">
           <p class="font-bold text-stevens-md text-stevens-dark-gray mb-2">Financial Aid & Funding Options</p>
           <p class="font-stevens-body text-stevens-sm mb-stevens-sm text-left">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable.</p>
-          <p class="font-stevens-body text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
+          <p class="font-stevens-body text-stevens-sm text-left">Apply by the <strong>priority deadline (${KEY_DATES_SPRING2.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 mt-6">
@@ -490,13 +493,13 @@ export default function CertificateAppliedDataSciencePage() {
     ...programData.hero,
     bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
   };
-  
+
   return (
     <PageContextProvider
       pageType="program"
       pageName="CertificateAppliedDataScience"
     >
-      <ProgramContextProvider 
+      <ProgramContextProvider
         programCode="cert-ads"
         programName="Professional Graduate Certificate in Applied Data Science Foundations"
         programType="certificate"

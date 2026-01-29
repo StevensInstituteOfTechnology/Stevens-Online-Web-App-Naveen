@@ -2,7 +2,7 @@ import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
 import { Globe, Check, Award } from "lucide-react";
 import { createPageUrl } from "@/utils";
-import { KEY_DATES } from "@/config/constants";
+import { KEY_DATES_FALL } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -40,9 +40,11 @@ const programData = {
       },
       {
         supertext: "Apply by",
-        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
-        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
-        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+        labelAbove: KEY_DATES_FALL.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES_FALL.PRIORITY_SUBMIT.date
+          .split(" ")[1]
+          .replace(",", ""),
+        subtext: `to start ${KEY_DATES_FALL.START_OF_CLASSES.date}`,
       },
       {
         value: "30",
@@ -65,19 +67,19 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    termStart: `${KEY_DATES_FALL.TERM.name}: ${KEY_DATES_FALL.START_OF_CLASSES.date.split(",")[0]}`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
     // Legacy
-    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
+    termStartDate: `${KEY_DATES_FALL.TERM.name}: ${KEY_DATES_FALL.START_OF_CLASSES.date}`,
   },
   overview: {
     programType: "Master of Engineering",
     headline: "Lead engineering teams with business acumen",
     tagline: "Bridge technical expertise with strategic management skills.",
-    image: "/assets/images/mem/sustainability_sseminars_windmills.webp", 
-    imageAlt: "", 
+    image: "/assets/images/mem/sustainability_sseminars_windmills.webp",
+    imageAlt: "",
     imagePosition: "50% 80%",
     description: `
       <p class="font-medium text-lg">The Stevens Institute of Technology Master of Engineering in Engineering Management prepares engineers for <strong>leadership roles</strong> by combining technical expertise with <strong>business management principles</strong>. Through an innovative curriculum that bridges engineering and business, you'll develop analytical and social intelligence to manage projects effectively.</p>
@@ -455,7 +457,7 @@ const programData = {
     name: "Sarah Chen '23",
     quote:
       "The MEM program gave me the perfect blend of technical skills and leadership capabilities. I was promoted to Engineering Manager within six months of graduation.",
-    backgroundImage: "/assets/images/mem/student-testimonial.webp", 
+    backgroundImage: "/assets/images/mem/student-testimonial.webp",
     bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
     cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },
@@ -495,7 +497,8 @@ const programData = {
     options: [
       {
         title: "Standard Application",
-        subtitle: "Prestige and rigor. A comprehensive review for the dedicated scholar.",
+        subtitle:
+          "Prestige and rigor. A comprehensive review for the dedicated scholar.",
         theme: "dark",
         image: "/assets/images/shared/stevens-campus.webp",
         featured: false,
@@ -505,7 +508,8 @@ const programData = {
       },
       {
         title: "ASAP Application",
-        subtitle: "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+        subtitle:
+          "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
         theme: "light",
         image: "/assets/images/shared/asap-hero.webp",
         featured: true,
@@ -530,13 +534,13 @@ const programData = {
     ],
     rows: [
       {
-        event: KEY_DATES.TERM.name,
-        date: KEY_DATES.EARLY_SUBMIT.date,
-        details: KEY_DATES.EARLY_SUBMIT.details,
-        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date,
+        event: KEY_DATES_FALL.TERM.name,
+        date: KEY_DATES_FALL.EARLY_SUBMIT.date,
+        details: KEY_DATES_FALL.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES_FALL.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES_FALL.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES_FALL.FINAL_SUBMIT.date,
+        startDate: KEY_DATES_FALL.START_OF_CLASSES.date,
       },
     ],
     footnote:
@@ -544,26 +548,26 @@ const programData = {
   },
   // Deadlines section data (for timeline display)
   deadlines: {
-    term: KEY_DATES.TERM.nameUppercase,
+    term: KEY_DATES_FALL.TERM.nameUppercase,
     dates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
+        date: KEY_DATES_FALL.EARLY_SUBMIT.date,
         description: "Eligible for $250 deposit waiver upon admission.",
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        date: KEY_DATES_FALL.PRIORITY_SUBMIT.date,
         description: "Recommended deadline for best course selection.",
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_FALL.FINAL_SUBMIT.date,
         description: "Last day to submit your application.",
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_FALL.START_OF_CLASSES.date,
         description: "Begin your Engineering Management journey at Stevens.",
       },
     ],

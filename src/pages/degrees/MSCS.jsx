@@ -2,7 +2,7 @@ import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
 import { Award, Check, Star } from "lucide-react";
 import { createPageUrl } from "@/utils";
-import { KEY_DATES } from "@/config/constants";
+import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -42,9 +42,11 @@ const programData = {
       },
       {
         supertext: "Apply by",
-        labelAbove: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[0],
-        value: KEY_DATES.PRIORITY_SUBMIT.date.split(" ")[1].replace(",", ""),
-        subtext: `to start ${KEY_DATES.START_OF_CLASSES.date}`,
+        labelAbove: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date.split(" ")[0],
+        value: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date
+          .split(" ")[1]
+          .replace(",", ""),
+        subtext: `to start ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
       },
       {
         value: "30",
@@ -67,19 +69,19 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES.TERM.name}: Jan 20`,
+    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]}`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
     // Legacy
-    termStartDate: `${KEY_DATES.TERM.name}: ${KEY_DATES.START_OF_CLASSES.date}`,
+    termStartDate: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
   },
   overview: {
     programType: "Master of Science",
     headline: "Build software that shapes the future",
     tagline: "A career-aligned curriculum designed for real-world impact.",
-    image: "/assets/images/mscs/overview.webp", 
-    imageAlt: "", 
+    image: "/assets/images/mscs/overview.webp",
+    imageAlt: "",
     imagePosition: "50% 70%",
     description: `
       <p class="font-medium text-lg">The Stevens Institute of Technology Master of Science in Computer Science (MSCS) offers industry-relevant coursework and focus areas tailored to your goals. We help you build the skills needed to excel in today's tech workforce.</p>
@@ -127,7 +129,8 @@ const programData = {
   ],
   videoSection: {
     title: "Discover Your Future at Stevens",
-    heading: "Build advanced technical skills without putting your career on hold",
+    heading:
+      "Build advanced technical skills without putting your career on hold",
     description:
       "Our 100% online, part-time format empowers working professionals to master cutting-edge computer science concepts while maintaining their current role. Learn from expert faculty who bridge academic research with industry applications, and connect with a network of accomplished peers and alumni across leading tech companies.",
     videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
@@ -171,7 +174,8 @@ const programData = {
           "Analyze and work with operating systems, memory management and I/O systems",
           "Apply database design principles using relational models, SQL and normalization techniques",
         ],
-        image: "/assets/images/mscs/premium_vector-1734731870816-1f0d57cd985f.webp",
+        image:
+          "/assets/images/mscs/premium_vector-1734731870816-1f0d57cd985f.webp",
       },
       {
         title: "Mobile application development and cloud computing",
@@ -646,7 +650,7 @@ const programData = {
     name: "Jaeson Valles ’22",
     quote:
       "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree.",
-    backgroundImage: "/assets/images/mscs/bg_testimonial.webp", 
+    backgroundImage: "/assets/images/mscs/bg_testimonial.webp",
     bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
     cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },
@@ -687,7 +691,8 @@ const programData = {
     options: [
       {
         title: "Standard Application",
-        subtitle: "Prestige and rigor. A comprehensive review for the dedicated scholar.",
+        subtitle:
+          "Prestige and rigor. A comprehensive review for the dedicated scholar.",
         theme: "dark",
         image: "/assets/images/shared/stevens-campus.webp",
         featured: false,
@@ -697,7 +702,8 @@ const programData = {
       },
       {
         title: "ASAP Application",
-        subtitle: "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+        subtitle:
+          "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
         theme: "light",
         image: "/assets/images/shared/asap-hero.webp",
         featured: true,
@@ -722,13 +728,13 @@ const programData = {
     ],
     rows: [
       {
-        event: KEY_DATES.TERM.name,
-        date: KEY_DATES.EARLY_SUBMIT.date,
-        details: KEY_DATES.EARLY_SUBMIT.details,
-        priorityDate: KEY_DATES.PRIORITY_SUBMIT.date,
-        priorityDetails: KEY_DATES.PRIORITY_SUBMIT.details,
-        finalDate: KEY_DATES.FINAL_SUBMIT.date,
-        startDate: KEY_DATES.START_OF_CLASSES.date,
+        event: KEY_DATES_SUMMER.TERM.name,
+        date: KEY_DATES_SUMMER.EARLY_SUBMIT.date,
+        details: KEY_DATES_SUMMER.EARLY_SUBMIT.details,
+        priorityDate: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date,
+        priorityDetails: KEY_DATES_SUMMER.PRIORITY_SUBMIT.details,
+        finalDate: KEY_DATES_SUMMER.FINAL_SUBMIT.date,
+        startDate: KEY_DATES_SUMMER.START_OF_CLASSES.date,
       },
     ],
     footnote:
@@ -736,27 +742,27 @@ const programData = {
   },
   // Deadlines section data (for timeline display)
   deadlines: {
-    term: KEY_DATES.TERM.nameUppercase,
+    term: KEY_DATES_SUMMER.TERM.nameUppercase,
     subtitle: "Plan your application for the upcoming term.",
     dates: [
       {
         label: "Early Submit",
-        date: KEY_DATES.EARLY_SUBMIT.date,
+        date: KEY_DATES_SUMMER.EARLY_SUBMIT.date,
         description: "Eligible for $250 deposit waiver upon admission.",
       },
       {
         label: "Priority Submit",
-        date: KEY_DATES.PRIORITY_SUBMIT.date,
+        date: KEY_DATES_SUMMER.PRIORITY_SUBMIT.date,
         description: "Recommended deadline for best course selection.",
       },
       {
         label: "Final Submit",
-        date: KEY_DATES.FINAL_SUBMIT.date,
+        date: KEY_DATES_SUMMER.FINAL_SUBMIT.date,
         description: "Last day to submit your application.",
       },
       {
         label: "Start of Classes",
-        date: KEY_DATES.START_OF_CLASSES.date,
+        date: KEY_DATES_SUMMER.START_OF_CLASSES.date,
         description: "Begin your Stevens MSCS journey.",
       },
     ],
