@@ -1696,7 +1696,7 @@ export default function Layout({ children, currentPageName }) {
                     trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
                   }
                   className="flex items-center justify-center md:justify-start space-x-2 text-gray-300 hover:text-white hover:underline hover:font-bold underline decoration-gray-400 decoration-1 transition-all duration-300"
-                  aria-label="Schedule a call with Stevens Online"
+                  aria-label="Schedule a Call"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>Schedule a Call</span>
