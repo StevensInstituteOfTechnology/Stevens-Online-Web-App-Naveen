@@ -169,6 +169,7 @@ const programData = {
           "Perform cost-benefit analysis and risk assessment for technical investments",
           "Utilize financial modeling techniques for engineering decision-making",
         ],
+        image: "/assets/images/mem/istockphoto-2190507935-612x612.webp",
       },
       {
         title: "Project Management and Systems Engineering",
@@ -179,6 +180,7 @@ const programData = {
           "Apply systems engineering principles to optimize project outcomes",
           "Manage project scope, timeline, and resources effectively",
         ],
+        image: "/assets/images/mem/pexels-pixabay-416405.webp",
       },
       {
         title: "Operations Research and Data Analytics",
@@ -189,6 +191,7 @@ const programData = {
           "Utilize data analytics tools for process improvement and decision support",
           "Implement statistical methods for quality control and performance measurement",
         ],
+        image: "/assets/images/mem/pexels-thisisengineering-3861957.webp",
       },
       {
         title: "Leadership and Organizational Management",
@@ -199,6 +202,7 @@ const programData = {
           "Apply change management principles in engineering contexts",
           "Foster innovation and continuous improvement in technical environments",
         ],
+        image: "/assets/images/mem/istockphoto-1322842973-612x612.webp",
       },
       {
         title: "Strategic Engineering Management",
@@ -209,6 +213,7 @@ const programData = {
           "Evaluate technology trends and their impact on organizational strategy",
           "Make informed decisions about technology investments and resource allocation",
         ],
+        image: "/assets/images/mem/pexels-anthonyshkraba-production-8279248.webp",
       },
     ],
   },

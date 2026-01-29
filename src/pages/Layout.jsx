@@ -776,7 +776,7 @@ export default function Layout({ children, currentPageName }) {
 
       {showBackToTop && (
         <button
-          className="fixed bottom-6 right-6 bg-stevens-red hover:bg-stevens-dark-gray text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
+          className="fixed bottom-20 right-5 bg-stevens-red hover:bg-stevens-dark-gray text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-[9998]"
           onClick={() => {
             if (typeof window !== "undefined") {
               window.scrollTo({ top: 0, behavior: "smooth" });

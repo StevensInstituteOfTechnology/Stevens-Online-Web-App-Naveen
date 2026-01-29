@@ -256,6 +256,7 @@ const programData = {
           "Use optimization and numerical methods to solve applied data science problems",
           "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data",
         ],
+        image: "/assets/images/meads/pexels-ian-panelo-4494644.webp",
       },
       {
         title: "Programming & Systems",
@@ -266,6 +267,7 @@ const programData = {
           "Design and manage data warehouses, architecture models, and ETL pipelines for business intelligence systems",
           "Implement scalable big data solutions using distributed computing and cloud-based platforms like Dataiku and Spark",
         ],
+        image: "/assets/images/meads/pexels-cottonbro-5473957.webp",
       },
       {
         title: "Machine Learning & AI",
@@ -277,6 +279,7 @@ const programData = {
           "Experiment with generative AI and augmented intelligence through prompt engineering and large language models",
           "Evaluate and manage AI systems ethically, addressing issues of fairness, transparency, and compliance in enterprise contexts",
         ],
+        image: "/assets/images/meads/pexels-googledeepmind-17483874.webp",
       },
       {
         title: "Data Visualization & Communication",
@@ -287,6 +290,7 @@ const programData = {
           "Apply principles of perceptual design and ethical visualization to ensure clarity and integrity in data storytelling",
           "Communicate analytical findings effectively for both technical and business audiences",
         ],
+        image: "/assets/images/meads/pexels-rdne-7948065.webp",
       },
       {
         title: "Applied Analytics & Business Intelligence",
@@ -297,6 +301,7 @@ const programData = {
           "Apply web and text mining techniques-including scraping, clustering, and recommender systems-to extract insights from large-scale data sources",
           "Implement data governance, security, and risk management practices to ensure trustworthy analytics across enterprise environments",
         ],
+        image: "/assets/images/meads/pexels-rdne-7947703.webp",
       },
     ],
   },
