@@ -21,7 +21,7 @@ const ExploreMEM = () => {
     // Hero Section
     heroTitle: "Built for Engineers Who Want to Lead",
     programName: "Online Master of Engineering in Engineering Management",
-    heroSubtitle: "Advance your engineering career with leadership skills. Technical management program designed for engineers seeking executive roles.",
+    heroSubtitle: "Advance your career with a top-ranked engineering management degree that combines online flexibility with an affordable path to leadership.",
     bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     programCode: "mem",
     seo: {
