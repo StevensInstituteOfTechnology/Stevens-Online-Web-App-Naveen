@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
-import { ApplicationModal } from '@/components/shared';
-import { trackEvent } from '@/utils/analytics/vercelTracking';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { ApplicationModal } from "@/components/shared";
+import { trackEvent } from "@/utils/analytics/vercelTracking";
 
 /**
  * ProgramCard - Showcase-style card with full-height image and expandable content
- * 
+ *
  * Design inspired by Home page ProgramShowcaseCard:
  * - Full-bleed program image as background
  * - Floating white label box at bottom
  * - Expand-on-hover to reveal stats, highlights, and CTAs
  * - Retains all Apply button logic (modal, internal link, external link)
- * 
+ *
  * @param {Object} program - Program data object
  * @param {Function} onApplyClick - Optional override for Apply Now button behavior
  * @param {number} index - Index for staggered animation delay
@@ -25,16 +25,17 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
 
   // Determine application link based on config
   const getApplicationLink = () => {
-    if (program.applicationConfig.type === 'direct') {
+    if (program.applicationConfig.type === "direct") {
       return program.applicationConfig.link;
-    } else if (program.applicationConfig.type === 'modal') {
+    } else if (program.applicationConfig.type === "modal") {
       return program.applicationConfig.standardLink;
     }
-    return 'https://gradadmissions.stevens.edu/apply/?pk=GRNP';
+    return "https://gradadmissions.stevens.edu/apply/?pk=GRNP";
   };
 
-  const isInternalAppLink = program.applicationConfig.type === 'direct' && 
-    program.applicationConfig.link.startsWith('/');
+  const isInternalAppLink =
+    program.applicationConfig.type === "direct" &&
+    program.applicationConfig.link.startsWith("/");
 
   return (
     <>
@@ -51,7 +52,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
@@ -68,7 +69,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
           <p className="text-stevens-gray text-xs font-bold uppercase tracking-wider mb-1">
             {program.tagline || program.degree}
           </p>
-          
+
           {/* Program Title */}
           <h3 className="font-stevens-display text-xl lg:text-2xl font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors duration-300 mb-0 group-hover:mb-3">
             {program.shortName}
@@ -109,7 +110,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
               <div className="flex gap-3 pt-2">
                 {/* Explore Button */}
                 <Link
-                  to={program.explorePage}
+                  to={program.programPage}
                   className="flex-1"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -127,11 +128,11 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                       e.stopPropagation();
                       onApplyClick(program);
                       trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                      trackEvent('apply_button_clicked', {
+                      trackEvent("apply_button_clicked", {
                         program_code: program.code,
                         program_name: program.shortName,
-                        button_location: 'admissions_card',
-                        application_type: 'custom_override'
+                        button_location: "admissions_card",
+                        application_type: "custom_override",
                       });
                     }}
                     className="flex-1 h-10 px-4 text-sm font-semibold bg-stevens-red text-white hover:bg-red-700 transition-all duration-200 flex items-center justify-center gap-1"
@@ -139,19 +140,19 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                     Apply Now
                     <ArrowRight className="w-4 h-4" />
                   </button>
-                ) : program.applicationConfig.type === 'modal' ? (
+                ) : program.applicationConfig.type === "modal" ? (
                   // Modal type (MSCS, MEM)
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsModalOpen(true);
                       trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                      trackEvent('apply_button_clicked', {
+                      trackEvent("apply_button_clicked", {
                         program_code: program.code,
                         program_name: program.shortName,
-                        button_location: 'admissions_card',
-                        application_type: 'modal',
-                        modal_options: 'standard,asap'
+                        button_location: "admissions_card",
+                        application_type: "modal",
+                        modal_options: "standard,asap",
                       });
                     }}
                     className="flex-1 h-10 px-4 text-sm font-semibold bg-stevens-red text-white hover:bg-red-700 transition-all duration-200 flex items-center justify-center gap-1"
@@ -166,14 +167,17 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                     className="flex-1"
                     onClick={(e) => {
                       e.stopPropagation();
-                      sessionStorage.setItem('accelerated_application_program', program.code);
+                      sessionStorage.setItem(
+                        "accelerated_application_program",
+                        program.code,
+                      );
                       trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                      trackEvent('apply_button_clicked', {
+                      trackEvent("apply_button_clicked", {
                         program_code: program.code,
                         program_name: program.shortName,
-                        button_location: 'admissions_card',
-                        application_type: 'accelerated',
-                        destination: getApplicationLink()
+                        button_location: "admissions_card",
+                        application_type: "accelerated",
+                        destination: getApplicationLink(),
                       });
                     }}
                   >
@@ -192,13 +196,13 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                      trackEvent('apply_button_clicked', {
+                      trackEvent("apply_button_clicked", {
                         program_code: program.code,
                         program_name: program.shortName,
-                        button_location: 'admissions_card',
-                        application_type: 'standard',
+                        button_location: "admissions_card",
+                        application_type: "standard",
                         destination: getApplicationLink(),
-                        is_external: true
+                        is_external: true,
                       });
                     }}
                   >
@@ -215,7 +219,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
       </motion.div>
 
       {/* Application Modal for MSCS and MEM */}
-      {program.applicationConfig.type === 'modal' && (
+      {program.applicationConfig.type === "modal" && (
         <ApplicationModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -227,4 +231,3 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
 };
 
 export default ProgramCard;
-
