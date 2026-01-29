@@ -387,7 +387,7 @@ const CorporatePartners = () => {
     },
     {
       icon: Shield,
-      title: "Dedicated Corporate Care",
+      title: "Dedicated Corporate Support Team",
       description:
         "Receive one-on-one support from a corporate advisor who manages onboarding and student success.",
     },
@@ -439,9 +439,9 @@ const CorporatePartners = () => {
       industry: "Finance",
     },
     {
-      name: "Johnson & Johnson",
-      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png",
-      industry: "Healthcare",
+      name: "Boeing",
+      logo: "/assets/company_logo/Boeing_full_logo.svg.png",
+      industry: "Aerospace",
     },
     {
       name: "IBM",
@@ -449,14 +449,14 @@ const CorporatePartners = () => {
       industry: "Technology",
     },
     {
-      name: "Merck",
-      logo: "/assets/company_logo/Merck_Logo.svg.png",
-      industry: "Healthcare",
+      name: "Verizon",
+      logo: "/assets/company_logo/Verizon_2024.svg.png",
+      industry: "Telecommunications",
     },
     {
-      name: "EY",
-      logo: "/assets/company_logo/EY_logo_2019.svg.png",
-      industry: "Consulting",
+      name: "Lockheed Martin",
+      logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+      industry: "Aerospace",
     },
   ];
 
@@ -803,6 +803,17 @@ const CorporatePartners = () => {
               description=""
               companies={partnerCompanies}
             />
+            <div className="text-center mt-stevens-xl">
+              <a 
+                href="https://www.stevens.edu/graduate-corporate-education" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white px-stevens-lg py-stevens-md rounded-stevens-md font-semibold transition-colors duration-stevens-normal"
+              >
+                View All Corporate Partners
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </section> */}
         {/* What We Offer */}
