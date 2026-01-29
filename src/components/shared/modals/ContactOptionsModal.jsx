@@ -152,7 +152,7 @@ export default function ContactOptionsModal({
                 {copiedItem === 'email' ? 'Copied!' : 'Email Us'}
               </span>
               <span className="font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors text-sm break-all mb-1">
-                rtowner@stevens.edu
+                cpe@stevens.edu
               </span>
               <span className="text-xs text-stevens-dark-gray/60 mt-1 flex items-center gap-1">
                 <Copy className="w-3 h-3" /> Click to copy

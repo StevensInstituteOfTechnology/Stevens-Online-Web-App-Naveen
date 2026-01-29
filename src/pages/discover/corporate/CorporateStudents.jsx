@@ -112,7 +112,7 @@ const CorporateStudents = () => {
       "Corporate Tuition Benefits 2025 | Save Up to 50% | Stevens Online Masters",
     );
     setMetaDescription(
-      "Use your 2025 employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.",
+      `Use your ${KEY_DATES_SPRING2.TERM.year} employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.`,
     );
     setOpenGraphTags({
       title:
@@ -204,7 +204,7 @@ const CorporateStudents = () => {
     },
     {
       icon: Users,
-      title: "Dedicated Corporate Care Team",
+      title: "Dedicated Corporate Support Team",
       description:
         "From application to graduation, our Corporate Care Advisors are your single point of contact.",
     },
@@ -413,7 +413,7 @@ const CorporateStudents = () => {
             <span className="text-sm sm:text-base font-medium">
               Use your{" "}
               <span className="font-bold text-stevens-red">
-                2025 tuition benefits
+                {KEY_DATES_SPRING2.TERM.year} tuition benefits
               </span>{" "}
               before they expire
             </span>
@@ -878,7 +878,7 @@ const CorporateStudents = () => {
           subtitle={
             companyName
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
-              : `Stevens partners with America's leading employers to make graduate education accessible and affordable. Maximize your 2025 tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
+              : `Stevens partners with America's leading employers to make graduate education accessible and affordable. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
           }
           bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
           bgImagePosition="center 30%"
@@ -1921,13 +1921,6 @@ const CorporateStudents = () => {
                 benefits are ready to be used.
               </p>
 
-              {/* Deadline Notice */}
-              <p className="text-sm text-stevens-red font-medium mb-stevens-xl">
-                {KEY_DATES_SPRING2.TERM.name}: Priority{" "}
-                {KEY_DATES_SPRING2.PRIORITY_SUBMIT.date} • Final{" "}
-                {KEY_DATES_SPRING2.FINAL_SUBMIT.date}
-              </p>
-
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
                   size="lg"
@@ -1940,7 +1933,6 @@ const CorporateStudents = () => {
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Request Information
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   size="lg"

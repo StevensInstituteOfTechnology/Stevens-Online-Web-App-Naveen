@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  TrendingUp, 
-  Users, 
-  Building2, 
-  Briefcase, 
-  Award, 
-  Globe, 
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  TrendingUp,
+  Users,
+  Building2,
+  Briefcase,
+  Award,
+  Globe,
   CheckCircle,
   Star,
   Target,
@@ -17,63 +17,75 @@ import {
   Lightbulb,
   Shield,
   DollarSign,
-} from 'lucide-react';
-import { PageHero, TopCompaniesSection, PullQuoteTestimonial, RequestInfoModal } from '@/components/shared';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
-import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
-import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
-import { trackEvent } from '@/utils/analytics/vercelTracking';
-import EmployerFaqSection from '@/components/corporate/EmployerFaqSection';
-import ContactOptionsModal from '@/components/shared/modals/ContactOptionsModal';
-
+} from "lucide-react";
+import {
+  PageHero,
+  TopCompaniesSection,
+  PullQuoteTestimonial,
+  RequestInfoModal,
+} from "@/components/shared";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
+import {
+  setPageTitle,
+  setMetaDescription,
+  setOpenGraphTags,
+  buildCanonicalUrl,
+} from "@/utils";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { trackEvent } from "@/utils/analytics/vercelTracking";
+import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
+import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
 
 // Employment Growth Bar Chart Component
 const EmploymentGrowthChart = () => {
   const [showSources, setShowSources] = useState(false);
 
   const growthData = [
-    { 
-      discipline: 'Machine Learning', 
-      growth: 34, 
-      color: '#A51C30',
-      source: 'https://www.bls.gov/ooh/math/data-scientists.htm',
-      footnote: 2
+    {
+      discipline: "Machine Learning",
+      growth: 34,
+      color: "#A51C30",
+      source: "https://www.bls.gov/ooh/math/data-scientists.htm",
+      footnote: 2,
     },
-    
-    { 
-      discipline: 'Business Intelligence', 
-      growth: 21, 
-      color: '#D63447',
-      source: 'https://www.bls.gov/ooh/math/operations-research-analysts.htm',
-      footnote: 5
+
+    {
+      discipline: "Business Intelligence",
+      growth: 21,
+      color: "#D63447",
+      source: "https://www.bls.gov/ooh/math/operations-research-analysts.htm",
+      footnote: 5,
     },
-    { 
-      discipline: 'Artificial Intelligence', 
-      growth: 20, 
-      color: '#E63946',
-      source: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm',
-      footnote: 1
+    {
+      discipline: "Artificial Intelligence",
+      growth: 20,
+      color: "#E63946",
+      source:
+        "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm",
+      footnote: 1,
     },
-    { 
-      discipline: 'Computer Science', 
-      growth: 15, 
-      color: '#F25C54',
-      source: 'https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm',
-      footnote: 4
+    {
+      discipline: "Computer Science",
+      growth: 15,
+      color: "#F25C54",
+      source:
+        "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
+      footnote: 4,
     },
-    { 
-      discipline: 'Data Science', 
-      growth: 8, 
-      color: '#FF7F7F',
-      source: 'https://www.bls.gov/ooh/math/mathematicians-and-statisticians.htm',
-      footnote: 3
-    }
+    {
+      discipline: "Data Science",
+      growth: 8,
+      color: "#FF7F7F",
+      source:
+        "https://www.bls.gov/ooh/math/mathematicians-and-statisticians.htm",
+      footnote: 3,
+    },
   ];
 
-  const maxGrowth = Math.max(...growthData.map(d => d.growth));
+  const maxGrowth = Math.max(...growthData.map((d) => d.growth));
   const chartHeight = 400;
   const barHeight = 45;
   const barSpacing = 20;
@@ -81,7 +93,7 @@ const EmploymentGrowthChart = () => {
   const rightMargin = 60;
   const topMargin = 32;
   const bottomMargin = 50;
-  
+
   const chartWidth = 700;
   const availableWidth = chartWidth - leftMargin - rightMargin;
 
@@ -89,13 +101,12 @@ const EmploymentGrowthChart = () => {
     <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
       <div className="mb-stevens-md">
         <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
-          Projected Employment Growth (2024–2034)
+          Projected Employment Growth (2025–2034)
         </h3>
-       
       </div>
 
       <div className="overflow-x-auto">
-        <svg 
+        <svg
           viewBox={`0 0 ${chartWidth} ${chartHeight + bottomMargin}`}
           className="w-full h-auto"
           role="img"
@@ -111,8 +122,8 @@ const EmploymentGrowthChart = () => {
               <motion.g
                 key={`bar-${index}`}
                 whileHover={{ scale: 1.01, x: 2 }}
-                transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-                style={{ cursor: 'default' }}
+                transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                style={{ cursor: "default" }}
               >
                 {/* Y-axis label (discipline) */}
                 <text
@@ -121,7 +132,7 @@ const EmploymentGrowthChart = () => {
                   textAnchor="end"
                   dominantBaseline="middle"
                   className="text-stevens-md fill-stevens-dark-gray"
-                  style={{ fontSize: '17px' }}
+                  style={{ fontSize: "17px" }}
                 >
                   {item.discipline}
                 </text>
@@ -135,7 +146,7 @@ const EmploymentGrowthChart = () => {
                   fill="#F1F5F9"
                   rx="4"
                 />
-                
+
                 {/* Animated bar with subtle hover glow */}
                 <motion.rect
                   x={leftMargin}
@@ -146,18 +157,22 @@ const EmploymentGrowthChart = () => {
                   rx="4"
                   initial={{ width: 0, opacity: 0.9 }}
                   whileInView={{ width: barWidth, opacity: 1 }}
-                  whileHover={{ filter: 'brightness(1.08)' }}
-                  transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
+                  whileHover={{ filter: "brightness(1.08)" }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
                   viewport={{ once: true }}
                 />
-                
+
                 {/* Percentage label */}
                 <text
                   x={leftMargin + barWidth + 8}
                   y={yCenter}
                   dominantBaseline="middle"
                   className="font-stevens-bold fill-stevens-dark-gray"
-                  style={{ fontSize: '16px' }}
+                  style={{ fontSize: "16px" }}
                 >
                   {item.growth}%
                 </text>
@@ -168,7 +183,7 @@ const EmploymentGrowthChart = () => {
                   y={yCenter - 8}
                   dominantBaseline="middle"
                   className="text-stevens-xs fill-stevens-light-gray0"
-                  style={{ fontSize: '11px' }}
+                  style={{ fontSize: "11px" }}
                 >
                   [{item.footnote}]
                 </text>
@@ -179,9 +194,19 @@ const EmploymentGrowthChart = () => {
           {/* X-axis line */}
           <line
             x1={leftMargin}
-            y1={topMargin + growthData.length * (barHeight + barSpacing) - barSpacing + barHeight}
+            y1={
+              topMargin +
+              growthData.length * (barHeight + barSpacing) -
+              barSpacing +
+              barHeight
+            }
             x2={leftMargin + availableWidth}
-            y2={topMargin + growthData.length * (barHeight + barSpacing) - barSpacing + barHeight}
+            y2={
+              topMargin +
+              growthData.length * (barHeight + barSpacing) -
+              barSpacing +
+              barHeight
+            }
             stroke="#CBD5E1"
             strokeWidth="1"
           />
@@ -192,10 +217,8 @@ const EmploymentGrowthChart = () => {
             y={chartHeight - 10}
             textAnchor="middle"
             className="text-stevens-sm font-stevens-medium fill-stevens-dark-gray"
-            style={{ fontSize: '13px' }}
-          >
-            
-          </text>
+            style={{ fontSize: "13px" }}
+          ></text>
         </svg>
       </div>
 
@@ -210,7 +233,7 @@ const EmploymentGrowthChart = () => {
         >
           <span>View data sources (U.S. Bureau of Labor Statistics)</span>
           <span className="ml-stevens-sm text-stevens-base leading-none">
-            {showSources ? '−' : '+'}
+            {showSources ? "−" : "+"}
           </span>
         </button>
 
@@ -224,21 +247,27 @@ const EmploymentGrowthChart = () => {
               .sort((a, b) => a.footnote - b.footnote)
               .map((item) => (
                 <p key={item.footnote}>
-                  <span>[{item.footnote}]</span>{' '}
+                  <span>[{item.footnote}]</span>{" "}
                   <a
                     href={item.source}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-stevens-red hover:underline"
                   >
-                    {item.discipline === 'Artificial Intelligence' && 'Computer & Information Research Scientists'}
-                    {item.discipline === 'Machine Learning' && 'Data Scientists'}
-                    {item.discipline === 'Data Science' && 'Mathematicians & Statisticians'}
-                    {item.discipline === 'Computer Science' && 'Software Developers, QA Analysts & Testers'}
-                    
-                    {item.discipline === 'Business Intelligence' && 'Operations Research Analysts'}
+                    {item.discipline === "Artificial Intelligence" &&
+                      "Computer & Information Research Scientists"}
+                    {item.discipline === "Machine Learning" &&
+                      "Data Scientists"}
+                    {item.discipline === "Data Science" &&
+                      "Mathematicians & Statisticians"}
+                    {item.discipline === "Computer Science" &&
+                      "Software Developers, QA Analysts & Testers"}
+
+                    {item.discipline === "Business Intelligence" &&
+                      "Operations Research Analysts"}
                   </a>
-                  {' — '}U.S. Bureau of Labor Statistics, Occupational Outlook Handbook
+                  {" — "}U.S. Bureau of Labor Statistics, Occupational Outlook
+                  Handbook
                 </p>
               ))}
           </div>
@@ -250,12 +279,12 @@ const EmploymentGrowthChart = () => {
 
 const CorporatePartners = () => {
   usePageTracking({
-    pageType: 'landing',
+    pageType: "landing",
     additionalData: {
-      page_name: 'Corporate Partners',
+      page_name: "Corporate Partners",
       has_form: true,
-      landing_page_type: 'b2b'
-    }
+      landing_page_type: "b2b",
+    },
   });
 
   const [showContactModal, setShowContactModal] = useState(false);
@@ -263,15 +292,22 @@ const CorporatePartners = () => {
 
   // Set SEO meta tags
   useEffect(() => {
-    const canonical = buildCanonicalUrl('/corporate-partners/');
-    setPageTitle('Corporate Partnerships | Workforce Development | Stevens Online');
-    setMetaDescription('Partner with Stevens Online to upskill your workforce. Flexible, career-aligned education with accelerated admissions, dedicated support, and customized learning pathways.');
+    const canonical = buildCanonicalUrl("/corporate-partners/");
+    setPageTitle(
+      "Corporate Partnerships | Workforce Development | Stevens Online",
+    );
+    setMetaDescription(
+      "Partner with Stevens Online to upskill your workforce. Flexible, career-aligned education with accelerated admissions, dedicated support, and customized learning pathways.",
+    );
     setOpenGraphTags({
-      title: 'Corporate Partnerships | Stevens Online',
-      description: 'Transform your workforce with Stevens Online education programs. Customized learning solutions for corporate partners.',
-      image: buildCanonicalUrl('/assets/images/corporate-partners/corporate-partners-1.webp'),
+      title: "Corporate Partnerships | Stevens Online",
+      description:
+        "Transform your workforce with Stevens Online education programs. Customized learning solutions for corporate partners.",
+      image: buildCanonicalUrl(
+        "/assets/images/corporate-partners/corporate-partners-1.webp",
+      ),
       url: canonical,
-      type: 'website'
+      type: "website",
     });
   }, []);
 
@@ -280,27 +316,31 @@ const CorporatePartners = () => {
     {
       icon: Building2,
       title: "Built for Employers",
-      description: "Streamlined partnership setup, custom cohort onboarding, and flexible corporate billing options.",
-      color: "stevens-red"
+      description:
+        "Streamlined partnership setup, custom cohort onboarding, and flexible corporate billing options.",
+      color: "stevens-red",
     },
     {
       icon: Users,
       title: "Integrated Talent Solutions",
-      description: "Learning pathways aligned with your HR and L&D systems for seamless integration.",
-      color: "stevens-red"
+      description:
+        "Learning pathways aligned with your HR and L&D systems for seamless integration.",
+      color: "stevens-red",
     },
     {
       icon: Lightbulb,
       title: "Co-Developed Education",
-      description: "Collaborate directly with Stevens faculty to create skills-based programs that meet your workforce goals.",
-      color: "stevens-tertiary"
+      description:
+        "Collaborate directly with Stevens faculty to create skills-based programs that meet your workforce goals.",
+      color: "stevens-tertiary",
     },
     {
       icon: TrendingUp,
       title: "Agile by Design",
-      description: "Quickly develop and deploy courses or credentials aligned with the latest industry demands.",
-      color: "stevens-accent"
-    }
+      description:
+        "Quickly develop and deploy courses or credentials aligned with the latest industry demands.",
+      color: "stevens-accent",
+    },
   ];
 
   // Statistics for Why Stevens section
@@ -309,26 +349,26 @@ const CorporatePartners = () => {
       value: "#1",
       label: "Online MBA in New Jersey",
       source: "U.S. News 2025",
-      icon: Award
+      icon: Award,
     },
     {
       value: "129%",
       label: "ROI on Tuition Programs",
       source: "Industry Study",
-      icon: TrendingUp
+      icon: TrendingUp,
     },
     {
       value: "93%",
       label: "Employee Skill Development",
       source: "Partner Survey",
-      icon: Star
+      icon: Star,
     },
     {
       value: "$5,250",
       label: "Tailored Reimbursement for you",
       source: "IRS Section 127 Compliant",
-      icon: DollarSign
-    }
+      icon: DollarSign,
+    },
   ];
 
   // What We Offer features
@@ -336,69 +376,97 @@ const CorporatePartners = () => {
     {
       icon: Target,
       title: "Customized Learning Pathways",
-      description: "Curate role-specific programs for data analysts, engineers, project managers, and other key teams."
+      description:
+        "Curate role-specific programs for data analysts, engineers, project managers, and other key teams.",
     },
     {
       icon: Briefcase,
       title: "Interactive Learning Studios",
-      description: "Co-create project-based learning built around your company's real data and challenges."
+      description:
+        "Co-create project-based learning built around your company's real data and challenges.",
     },
     {
       icon: Shield,
       title: "Dedicated Corporate Care",
-      description: "Receive one-on-one support from a corporate advisor who manages onboarding and student success."
+      description:
+        "Receive one-on-one support from a corporate advisor who manages onboarding and student success.",
     },
-    
+
     {
       icon: Users,
       title: "Tailored Info Sessions",
-      description: "Engage employees through customized sessions co-hosted with your subject matter experts."
+      description:
+        "Engage employees through customized sessions co-hosted with your subject matter experts.",
     },
     {
       icon: CheckCircle,
       title: "Accelerated Admissions",
-      description: "Streamlined application process designed for working professionals — no essays or recommendations required."
-    }
+      description:
+        "Streamlined application process designed for working professionals — no essays or recommendations required.",
+    },
   ];
 
   // Areas of expertise
   const expertiseAreas = [
     "Artificial Intelligence",
-    "Machine Learning", 
+    "Machine Learning",
     "Data Science",
     "Computer Science",
-    
-    "Business Intelligence"
+
+    "Business Intelligence",
   ];
 
   // Success stories / testimonials
   const testimonials = [
     {
-      quote: "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously.",
+      quote:
+        "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously.",
       author: "Kim Hanemann",
       title: "President and Chief Operating Officer, PSEG",
-     
     },
-    
   ];
 
   // Company logos for trust signals - using actual filenames from company_logo folder
   const partnerCompanies = [
-    { name: "Pfizer", logo: "/assets/company_logo/Pfizer_(2021).png", industry: "Healthcare" },
-    { name: "JPMorgan Chase", logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png", industry: "Finance" },
-    { name: "Johnson & Johnson", logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png", industry: "Healthcare" },
-    { name: "IBM", logo: "/assets/company_logo/IBM_logo.svg.png", industry: "Technology" },
-    { name: "Merck", logo: "/assets/company_logo/Merck_Logo.svg.png", industry: "Healthcare" },
-    { name: "EY", logo: "/assets/company_logo/EY_logo_2019.svg.png", industry: "Consulting" }
+    {
+      name: "Pfizer",
+      logo: "/assets/company_logo/Pfizer_(2021).png",
+      industry: "Healthcare",
+    },
+    {
+      name: "JPMorgan Chase",
+      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
+      industry: "Finance",
+    },
+    {
+      name: "Johnson & Johnson",
+      logo: "/assets/company_logo/The_new_logo_of_Johnson_&_Johnson.png",
+      industry: "Healthcare",
+    },
+    {
+      name: "IBM",
+      logo: "/assets/company_logo/IBM_logo.svg.png",
+      industry: "Technology",
+    },
+    {
+      name: "Merck",
+      logo: "/assets/company_logo/Merck_Logo.svg.png",
+      industry: "Healthcare",
+    },
+    {
+      name: "EY",
+      logo: "/assets/company_logo/EY_logo_2019.svg.png",
+      industry: "Consulting",
+    },
   ];
 
   const handleCTAClick = (ctaType) => {
-    trackEvent('corporate_cta_clicked', {
-      page: 'corporate_partners',
-      cta_type: ctaType
+    trackEvent("corporate_cta_clicked", {
+      page: "corporate_partners",
+      cta_type: ctaType,
     });
-    
-    if (ctaType === 'schedule_consultation') {
+
+    if (ctaType === "schedule_consultation") {
       trackConversion(CONVERSION_LABELS.CORPORATE_INQUIRY);
     }
   };
@@ -415,21 +483,19 @@ const CorporatePartners = () => {
           primaryCta={{
             label: "Request Information",
             onClick: () => {
-              handleCTAClick('schedule_consultation');
+              handleCTAClick("schedule_consultation");
               setShowContactModal(true);
-            }
+            },
           }}
           secondaryCta={{
             label: "Contact Us",
             onClick: () => {
-              handleCTAClick('contact_us');
+              handleCTAClick("contact_us");
               setShowContactOptionsModal(true);
-            }
+            },
           }}
           secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
         />
-
-        
 
         {/* Why Partner with Stevens - Constellation Layout */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white overflow-hidden">
@@ -444,13 +510,15 @@ const CorporatePartners = () => {
                 className="text-left"
               >
                 <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
-                Education That Moves at the Speed of Industry
-              </h2>
+                  Education That Moves at the Speed of Industry
+                </h2>
                 <p className="text-stevens-base md:text-stevens-lg text-stevens-dark-gray leading-relaxed">
-                Stevens' College of Professional Education (CPE) reimagines how universities collaborate with employers. 
-                Built to be flexible, fast-moving, and interdisciplinary, CPE removes the barriers that slow corporate 
-                partnerships, helping you launch impactful learning initiatives that drive real results.
-              </p>
+                  Stevens' College of Professional Education (CPE) reimagines
+                  how universities collaborate with employers. Built to be
+                  flexible, fast-moving, and interdisciplinary, CPE removes the
+                  barriers that slow corporate partnerships, helping you launch
+                  impactful learning initiatives that drive real results.
+                </p>
               </motion.div>
 
               {/* Right Side: Constellation Quadrant - 2x2 Grid Layout like Stevens.edu */}
@@ -467,7 +535,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.8, delay: 0.2 }}
                       viewport={{ once: true }}
                     />
-                    
+
                     {/* Star with subtle glow */}
                     <motion.svg
                       width="32"
@@ -477,13 +545,20 @@ const CorporatePartners = () => {
                       className="text-[#F9C94E] flex-shrink-0 drop-shadow-[0_0_8px_rgba(249,201,78,0.3)]"
                       initial={{ scale: 0, rotate: -180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.4,
+                        ease: "easeOut",
+                      }}
                       viewport={{ once: true }}
                     >
                       {/* 4-pointed star  - symmetric cross/diamond shape */}
-                      <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="currentColor"/>
+                      <path
+                        d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"
+                        fill="currentColor"
+                      />
                     </motion.svg>
-                    
+
                     {/* Right line with animation */}
                     <motion.div
                       className="flex-1 h-[1px] bg-[#F9C94E]/40 ml-stevens-md"
@@ -492,8 +567,8 @@ const CorporatePartners = () => {
                       transition={{ duration: 0.8, delay: 0.2 }}
                       viewport={{ once: true }}
                     />
-                        </div>
-                  
+                  </div>
+
                   {partnerBenefits.map((benefit, index) => (
                     <motion.div
                       key={benefit.title}
@@ -504,14 +579,14 @@ const CorporatePartners = () => {
                       className="text-center px-stevens-md"
                     >
                       <h3 className="font-stevens-display text-stevens-lg font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
-                          {benefit.title}
+                        {benefit.title}
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-                          {benefit.description}
-                        </p>
+                        {benefit.description}
+                      </p>
                     </motion.div>
                   ))}
-                  </div>
+                </div>
 
                 {/* Desktop: 2x2 Grid with central star and divider lines */}
                 <div className="hidden lg:block relative">
@@ -525,7 +600,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
                       viewport={{ once: true }}
                     />
-                    
+
                     {/* Vertical divider line with animation */}
                     <motion.div
                       className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-[#F9C94E]/40"
@@ -534,7 +609,7 @@ const CorporatePartners = () => {
                       transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                       viewport={{ once: true }}
                     />
-                    
+
                     {/* Central Star at intersection with glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-stevens-white p-1 rounded-full">
                       <motion.svg
@@ -545,11 +620,18 @@ const CorporatePartners = () => {
                         className="text-[#F9C94E] drop-shadow-[0_0_6px_rgba(249,201,78,0.4)]"
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        transition={{
+                          duration: 0.8,
+                          delay: 0.5,
+                          ease: "easeOut",
+                        }}
                         viewport={{ once: true }}
                       >
                         {/* 4-pointed star  - symmetric cross/diamond shape */}
-                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="currentColor"/>
+                        <path
+                          d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"
+                          fill="currentColor"
+                        />
                       </motion.svg>
                     </div>
 
@@ -566,7 +648,8 @@ const CorporatePartners = () => {
                         Built for Employers
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
-                        Streamlined partnership setup, custom cohort onboarding, and flexible corporate billing options.
+                        Streamlined partnership setup, custom cohort onboarding,
+                        and flexible corporate billing options.
                       </p>
                     </motion.div>
 
@@ -583,7 +666,8 @@ const CorporatePartners = () => {
                         Integrated Talent Solutions
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
-                        Learning pathways aligned with your HR and L&D systems for seamless integration.
+                        Learning pathways aligned with your HR and L&D systems
+                        for seamless integration.
                       </p>
                     </motion.div>
 
@@ -600,7 +684,8 @@ const CorporatePartners = () => {
                         Co-Developed Education
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
-                        Collaborate directly with Stevens faculty to create skills-based programs that meet your workforce goals.
+                        Collaborate directly with Stevens faculty to create
+                        skills-based programs that meet your workforce goals.
                       </p>
                     </motion.div>
 
@@ -617,7 +702,8 @@ const CorporatePartners = () => {
                         Agile by Design
                       </h3>
                       <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed mb-stevens-md">
-                        Quickly develop and deploy courses or credentials aligned with the latest industry demands.
+                        Quickly develop and deploy courses or credentials
+                        aligned with the latest industry demands.
                       </p>
                     </motion.div>
                   </div>
@@ -626,7 +712,6 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-        
 
         {/* Why Stevens - Statistics */}
         <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
@@ -640,10 +725,10 @@ const CorporatePartners = () => {
             />
             <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
-          
+
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-stevens-dark-gray/50" />
-          
+
           <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}
             <motion.div
@@ -657,8 +742,10 @@ const CorporatePartners = () => {
                 A University Built for the Future of Work
               </h2>
               <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed px-2 sm:px-0">
-                At Stevens, academic rigor meets real-world application. Our online programs empower professionals 
-                to lead with confidence in a technology-driven world and deliver measurable results for your organization.
+                At Stevens, academic rigor meets real-world application. Our
+                online programs empower professionals to lead with confidence in
+                a technology-driven world and deliver measurable results for
+                your organization.
               </p>
             </motion.div>
 
@@ -684,12 +771,12 @@ const CorporatePartners = () => {
                       <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-stevens-sm md:mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
                         <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
-                      
+
                       {/* Stat value with enhanced styling */}
                       <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums">
                         {stat.value}
                       </div>
-                      
+
                       {/* Label with better hierarchy */}
                       <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white/95 leading-tight sm:leading-normal">
                         {stat.label}
@@ -726,8 +813,9 @@ const CorporatePartners = () => {
                 Co-Design Workforce Education That Fits Your Organization
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
-                Every organization's needs are unique. Stevens partners with you to build tailored learning 
-                experiences that align directly to your talent strategy and business goals.
+                Every organization's needs are unique. Stevens partners with you
+                to build tailored learning experiences that align directly to
+                your talent strategy and business goals.
               </p>
             </div>
 
@@ -773,7 +861,8 @@ const CorporatePartners = () => {
                 Build Expertise in High-Demand Fields
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
-                Develop your workforce&apos;s technical and leadership capabilities in disciplines shaping the future.
+                Develop your workforce&apos;s technical and leadership
+                capabilities in disciplines shaping the future.
               </p>
             </div>
 
@@ -781,59 +870,64 @@ const CorporatePartners = () => {
               {/* Left: Bar Chart */}
               <div className="order-2 lg:order-1">
                 <EmploymentGrowthChart />
-                </div>
+              </div>
 
               {/* Right: Explanatory Text */}
               <div className="order-1 lg:order-2 mt-stevens-xl lg:mt-0 lg:border-l lg:border-stevens-light-gray lg:pl-stevens-2xl">
                 <div className="bg-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
                   <div className="mb-stevens-md">
-                    
                     <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                       Prepare for Careers Growing Faster Than Average
                     </h3>
-                        </div>
-                  
+                  </div>
+
                   <div className="space-y-stevens-md text-stevens-base md:text-stevens-lg leading-relaxed md:leading-loose">
                     <p className="text-stevens-dark-gray">
-                      The fields shown are projected to grow <span className="font-stevens-bold text-stevens-red">significantly faster</span> than 
-                      the average occupation through 2034, according to the U.S. Bureau of Labor Statistics.
+                      The fields shown are projected to grow{" "}
+                      <span className="font-stevens-bold text-stevens-red">
+                        significantly faster
+                      </span>{" "}
+                      than the average occupation through 2034, according to the
+                      U.S. Bureau of Labor Statistics.
                     </p>
                     <p className="text-stevens-dark-gray">
-                      Stevens Online programs are designed to align with this industry demand, equipping your workforce with 
-                      the <span className="font-stevens-semibold text-stevens-dark-gray">technical depth and practical skills</span> employers 
-                      need to stay competitive in a rapidly evolving landscape.
+                      Stevens Online programs are designed to align with this
+                      industry demand, equipping your workforce with the{" "}
+                      <span className="font-stevens-semibold text-stevens-dark-gray">
+                        technical depth and practical skills
+                      </span>{" "}
+                      employers need to stay competitive in a rapidly evolving
+                      landscape.
                     </p>
                     <p className="text-stevens-sm md:text-stevens-base text-stevens-dark-gray italic border-l-2 border-stevens-light-gray pl-stevens-md">
-                      By investing in these high-growth disciplines, you&apos;re positioning your organization to lead in 
-                      AI, data, and emerging technologies.
-                            </p>
-                    
+                      By investing in these high-growth disciplines, you&apos;re
+                      positioning your organization to lead in AI, data, and
+                      emerging technologies.
+                    </p>
+
                     {/* CTA Button to Explore Programs */}
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
                       <Link to="/admissions/#explore-programs">
                         <Button variant="default" className="gap-2">
-                        <GraduationCap className="w-5 h-5" />
-                        Explore Our Programs
-                        <ArrowRight className="w-4 h-4" />
+                          <GraduationCap className="w-5 h-5" />
+                          Explore Our Programs
+                          <ArrowRight className="w-4 h-4" />
                         </Button>
                       </Link>
                       <p className="text-stevens-sm text-stevens-light-gray0 mt-stevens-sm">
-                        Browse masters degrees and certificates available for your workforce
+                        Browse masters degrees and certificates available for
+                        your workforce
                       </p>
                     </div>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Success Stories / Testimonials */}
-        <PullQuoteTestimonial
-          testimonial={testimonials[0]}
-        
-          
-        />
+        <PullQuoteTestimonial testimonial={testimonials[0]} />
 
         {/* FAQ Section */}
         <EmployerFaqSection accordionPrefix="corporate-partners" />
@@ -852,16 +946,17 @@ const CorporatePartners = () => {
                 Ready to Build the Future of Work Together?
               </h2>
               <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto opacity-90">
-                Partner with Stevens Online to upskill your workforce in data science, AI, and beyond.
+                Partner with Stevens Online to upskill your workforce in data
+                science, AI, and beyond.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-stevens-md justify-center">
                 <Button
                   size="lg"
                   variant="outline-white"
                   className="w-full sm:w-auto min-w-[280px]"
                   onClick={() => {
-                    handleCTAClick('request_info_footer');
+                    handleCTAClick("request_info_footer");
                     setShowContactModal(true);
                   }}
                 >
@@ -872,7 +967,7 @@ const CorporatePartners = () => {
                   variant="outline-white"
                   className="w-full sm:w-auto min-w-[280px]"
                   onClick={() => {
-                    handleCTAClick('schedule_consultation_footer');
+                    handleCTAClick("schedule_consultation_footer");
                     setShowContactOptionsModal(true);
                   }}
                 >
