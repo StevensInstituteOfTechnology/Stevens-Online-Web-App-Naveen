@@ -1,46 +1,56 @@
-import React, { useState } from 'react';
-import { Check } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { PageHero, RequestInfoModal } from '@/components/shared';
-import AcceleratedFormEmbed from '@/components/forms/AcceleratedFormEmbed';
-import ProgramCard from '@/components/admissions/ProgramCard';
-import { usePageTracking } from '@/hooks/analytics/usePageTracking';
-import { PageContextProvider } from '@/contexts/analytics/PageContext';
-import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
-import { trackEvent } from '@/utils/analytics/vercelTracking';
-import { getAllPrograms } from '@/data/programsData';
+import React, { useState } from "react";
+import { Check } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PageHero, RequestInfoModal } from "@/components/shared";
+import AcceleratedFormEmbed from "@/components/forms/AcceleratedFormEmbed";
+import ProgramCard from "@/components/admissions/ProgramCard";
+import { usePageTracking } from "@/hooks/analytics/usePageTracking";
+import { PageContextProvider } from "@/contexts/analytics/PageContext";
+import {
+  setPageTitle,
+  setMetaDescription,
+  setOpenGraphTags,
+  buildCanonicalUrl,
+} from "@/utils";
+import { trackEvent } from "@/utils/analytics/vercelTracking";
+import { getAllPrograms } from "@/data/programsData";
 
 const AlumniPGC = () => {
   const [isRFIModalOpen, setIsRFIModalOpen] = useState(false);
 
   usePageTracking({
-    pageType: 'landing',
+    pageType: "landing",
     additionalData: {
-      page_name: 'Alumni PGC',
+      page_name: "Alumni PGC",
       has_form: true,
-      landing_page_type: 'alumni'
-    }
+      landing_page_type: "alumni",
+    },
   });
 
   // Set SEO meta tags
   React.useEffect(() => {
-    const canonical = buildCanonicalUrl('/alumni-pgc/');
-    setPageTitle('Alumni Professional Graduate Certificate | Stevens Online');
-    setMetaDescription('Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.');
+    const canonical = buildCanonicalUrl("/alumni-pgc/");
+    setPageTitle("Alumni Professional Graduate Certificate | Stevens Online");
+    setMetaDescription(
+      "Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.",
+    );
     setOpenGraphTags({
-      title: 'Alumni Professional Graduate Certificate | Stevens Online',
-      description: 'Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.',
-      image: buildCanonicalUrl('/assets/images/alumni-pgc/martin-mom_20web.webp'),
+      title: "Alumni Professional Graduate Certificate | Stevens Online",
+      description:
+        "Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.",
+      image: buildCanonicalUrl(
+        "/assets/images/alumni-pgc/martin-mom_20web.webp",
+      ),
       url: canonical,
-      type: 'website'
+      type: "website",
     });
   }, []);
 
   const handleCTAClick = (ctaType) => {
-    trackEvent('alumni_pgc_cta_clicked', {
-      page: 'alumni_pgc',
-      cta_type: ctaType
+    trackEvent("alumni_pgc_cta_clicked", {
+      page: "alumni_pgc",
+      cta_type: ctaType,
     });
   };
 
@@ -50,43 +60,69 @@ const AlumniPGC = () => {
     campaignUrl: "/alumni-pgc-inquiry",
     corporateCode: "ALUMNI",
     programCode: "pgc-alumni",
-    acceleratedFormTitle: "Apply for Alumni Certificate Program"
+    acceleratedFormTitle: "Apply for Alumni Certificate Program",
   };
 
   // Build URL params for accelerated form
   const acceleratedFormParams = {
     ...(formConfig.mode && { display_mode: formConfig.mode }),
     ...(formConfig.campaignUrl && { utm_campaign: formConfig.campaignUrl }),
-    ...(formConfig.corporateCode && { corporate_code: formConfig.corporateCode })
+    ...(formConfig.corporateCode && {
+      corporate_code: formConfig.corporateCode,
+    }),
   };
 
   // Get certificate programs
   const certificatePrograms = getAllPrograms().filter(
-    program => program.degree === 'Certificate'
+    (program) => program.degree === "Certificate",
   );
 
   // Program benefits for the combined section
   const programBenefits = [
-    { label: "Quick completion", description: "Earn your certificate in as few as 16-24 weeks" },
-    { label: "Immediate ROI", description: "Apply new skills directly to your current role" },
-    { label: "Stackable credits", description: "All 9 credits can be applied toward a master's degree" },
-    { label: "Cost-effective", description: "Aligned with many employer tuition benefit programs" }
+    {
+      label: "Quick completion",
+      description: "Earn your certificate in as few as 16-24 weeks",
+    },
+    {
+      label: "Immediate ROI",
+      description: "Apply new skills directly to your current role",
+    },
+    {
+      label: "Stackable credits",
+      description: "All 9 credits can be applied toward a master's degree",
+    },
+    {
+      label: "Cost-effective",
+      description: "Aligned with many employer tuition benefit programs",
+    },
   ];
 
   // Easy application benefits for alumni
   const applicationBenefits = [
     { label: "No letters of recommendation required" },
-    { label: "No transcripts required. Your Stevens transcripts are already on file" },
-    { label: "15% alumni discount applied automatically" }
+    {
+      label:
+        "No transcripts required. Your Stevens transcripts are already on file",
+    },
+    { label: "15% alumni discount applied automatically" },
   ];
 
   // Pricing information with 15% alumni discount
   const pricing = {
     items: [
-      { label: "Standard Price", value: "$5,250", note: "Regular certificate cost" },
-      { label: "Alumni Price", value: "$4,462.50", note: "15% alumni discount applied" }
+      {
+        label: "Standard Price",
+        value: "$5,250",
+        note: "Regular certificate cost",
+      },
+      {
+        label: "Alumni Price",
+        value: "$4,462.50",
+        note: "15% alumni discount applied",
+      },
     ],
-    description: "Your 15% alumni discount is automatically applied when you complete the application. This exclusive rate is available only to Stevens alumni."
+    description:
+      "Your 15% alumni discount is automatically applied when you complete the application. This exclusive rate is available only to Stevens alumni.",
   };
 
   return (
@@ -94,28 +130,30 @@ const AlumniPGC = () => {
       <div className="min-h-screen bg-stevens-light-gray">
         {/* Hero Section */}
         <PageHero
-          title="Professional Graduate Certificates for Stevens Alumni"
-          subtitle="Build in-demand skills in AI and data science through flexible, career-focused certificates designed for working professionals and stackable into a Stevens master's degree."
+          title="Build In-Demand Skills Now. Stack Toward a Stevens Master's"
+          subtitle="Whether you are looking to upskill or work toward a master's degree, Stevens alumni can take advantage of Professional Graduate Certificates designed for flexibility and career growth. Build in-demand skills in AI and data science while earning credentials that deliver immediate value and stack seamlessly into a Stevens master's degree when you are ready to take the next step."
           bgImage="/assets/images/alumni-pgc/martin-mom_20web.webp"
           primaryCta={{
             label: "Apply in Minutes!",
             onClick: () => {
-              handleCTAClick('apply_now');
-              document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
-            }
+              handleCTAClick("apply_now");
+              document
+                .getElementById("apply-now")
+                ?.scrollIntoView({ behavior: "smooth" });
+            },
           }}
           bottomContent={
             <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
               <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-red">
-                <p className="text-xs sm:text-sm font-semibold text-stevens-red uppercase tracking-wide">Tuition-Reimbursement Friendly</p>
+                <p className="text-xs sm:text-sm font-semibold text-stevens-red uppercase tracking-wide">
+                  Tuition-Reimbursement Friendly
+                </p>
                 <p className="text-lg sm:text-xl font-bold text-stevens-black mt-1">
-                  Alumni rate: <span className="text-stevens-red">$4,462.50</span>*
+                  Alumni discount: <span className="text-stevens-red">15%</span>
+                  *
                 </p>
                 <p className="text-xs sm:text-sm text-stevens-dark-gray mt-1">
                   Aligning with many employer tuition reimbursement programs
-                </p>
-                <p className="text-xs text-stevens-gray mt-1 italic">
-                  *Final cost reflects the 15% Stevens alumni discount
                 </p>
               </div>
             </div>
@@ -124,7 +162,6 @@ const AlumniPGC = () => {
 
         <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section relative z-10">
           <div className="space-y-12">
-
             {/* Certificate Programs Section */}
             <div>
               <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-black mb-6">
@@ -132,12 +169,14 @@ const AlumniPGC = () => {
               </h2>
               <div className="grid stevens-md:grid-cols-2 gap-stevens-lg">
                 {certificatePrograms.map((program) => (
-                  <ProgramCard 
-                    key={program.id} 
-                    program={program} 
+                  <ProgramCard
+                    key={program.id}
+                    program={program}
                     onApplyClick={() => {
-                      handleCTAClick('apply_now_card');
-                      document.getElementById('apply-now')?.scrollIntoView({ behavior: 'smooth' });
+                      handleCTAClick("apply_now_card");
+                      document
+                        .getElementById("apply-now")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                   />
                 ))}
@@ -154,10 +193,23 @@ const AlumniPGC = () => {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {pricing.items.map((item, index) => (
-                    <div key={index} className={`p-4 sm:p-5 rounded-lg ${index === 1 ? 'bg-stevens-light-gray border-2 border-stevens-red' : 'bg-white border border-stevens-light-gray'}`}>
-                      <p className="text-xs sm:text-sm text-stevens-gray uppercase tracking-wide font-semibold">{item.label}</p>
-                      <p className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? 'text-stevens-red' : 'text-stevens-gray line-through'}`}>{item.value}</p>
-                      {item.note && <p className="text-xs text-stevens-dark-gray mt-2 italic">{item.note}</p>}
+                    <div
+                      key={index}
+                      className={`p-4 sm:p-5 rounded-lg ${index === 1 ? "bg-stevens-light-gray border-2 border-stevens-red" : "bg-white border border-stevens-light-gray"}`}
+                    >
+                      <p className="text-xs sm:text-sm text-stevens-gray uppercase tracking-wide font-semibold">
+                        {item.label}
+                      </p>
+                      <p
+                        className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? "text-stevens-red" : "text-stevens-gray line-through"}`}
+                      >
+                        {item.value}
+                      </p>
+                      {item.note && (
+                        <p className="text-xs text-stevens-dark-gray mt-2 italic">
+                          {item.note}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -179,10 +231,13 @@ const AlumniPGC = () => {
                   Why a Professional Graduate Certificate and How to Get Started
                 </h2>
                 <p className="text-white/90 mt-2 text-sm sm:text-base">
-                  Professional Graduate Certificates offer a fast, focused way to gain in-demand skills without committing to a full degree program, with a streamlined application process designed specifically for Stevens alumni.
+                  Professional Graduate Certificates offer a fast, focused way
+                  to gain in-demand skills without committing to a full degree
+                  program, with a streamlined application process designed
+                  specifically for Stevens alumni.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 p-4 sm:p-8">
                 {/* Program Benefits Column */}
                 <div>
@@ -194,8 +249,12 @@ const AlumniPGC = () => {
                       <li key={index} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="font-semibold text-stevens-black text-sm sm:text-base">{benefit.label}</p>
-                          <p className="text-xs sm:text-sm text-stevens-dark-gray">{benefit.description}</p>
+                          <p className="font-semibold text-stevens-black text-sm sm:text-base">
+                            {benefit.label}
+                          </p>
+                          <p className="text-xs sm:text-sm text-stevens-dark-gray">
+                            {benefit.description}
+                          </p>
                         </div>
                       </li>
                     ))}
@@ -211,7 +270,9 @@ const AlumniPGC = () => {
                     {applicationBenefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-stevens-red mt-0.5 flex-shrink-0" />
-                        <p className="text-stevens-dark-gray text-sm sm:text-base">{benefit.label}</p>
+                        <p className="text-stevens-dark-gray text-sm sm:text-base">
+                          {benefit.label}
+                        </p>
                       </li>
                     ))}
                   </ul>
@@ -222,13 +283,16 @@ const AlumniPGC = () => {
             {/* Application Form Section */}
             <div id="apply-now" className="scroll-mt-24">
               <div className="text-center mb-6 sm:mb-8">
-                <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-red mb-2">Ready to Apply?</h2>
+                <h2 className="font-stevens-headers text-2xl sm:text-3xl font-bold text-stevens-red mb-2">
+                  Ready to Apply?
+                </h2>
                 <p className="text-stevens-dark-gray text-base sm:text-lg">
-                  Complete the accelerated application form below to secure your 15% alumni discount.
+                  Complete the accelerated application form below to secure your
+                  15% alumni discount.
                 </p>
               </div>
               <div className="max-w-3xl mx-auto">
-                <AcceleratedFormEmbed 
+                <AcceleratedFormEmbed
                   title={formConfig.acceleratedFormTitle}
                   subtitle="Exclusive application for Stevens alumni"
                   urlParams={acceleratedFormParams}
@@ -243,15 +307,16 @@ const AlumniPGC = () => {
                   Need More Information?
                 </h3>
                 <p className="text-sm sm:text-base text-stevens-dark-gray mt-2">
-                  We're here to help you make the right decision for your career.
+                  We're here to help you make the right decision for your
+                  career.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button
                   size="lg"
                   onClick={() => {
-                    handleCTAClick('explore_certificate');
-                    window.open('/certificates/enterprise-ai/', '_blank');
+                    handleCTAClick("explore_certificate");
+                    window.open("/certificates/enterprise-ai/", "_blank");
                   }}
                   className="w-full sm:w-auto bg-stevens-red hover:bg-red-700 text-white font-bold uppercase tracking-wide px-8 py-3 transition-all duration-200"
                 >
@@ -261,7 +326,7 @@ const AlumniPGC = () => {
                   variant="outline-dark"
                   size="lg"
                   onClick={() => {
-                    handleCTAClick('request_info_secondary');
+                    handleCTAClick("request_info_secondary");
                     setIsRFIModalOpen(true);
                   }}
                   className="w-full sm:w-auto border-2 border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white font-bold uppercase tracking-wide px-8 py-3 transition-all duration-200"
@@ -270,7 +335,6 @@ const AlumniPGC = () => {
                 </Button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -283,7 +347,7 @@ const AlumniPGC = () => {
         programOfInterest=""
         additionalUrlParams={{
           display_mode: formConfig.mode,
-          utm_campaign: formConfig.campaignUrl
+          utm_campaign: formConfig.campaignUrl,
         }}
       />
     </PageContextProvider>
