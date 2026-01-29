@@ -23,6 +23,7 @@ import {
   TopCompaniesSection,
   PullQuoteTestimonial,
   RequestInfoModal,
+  LogoMarqueeSection,
 } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -433,11 +434,7 @@ const CorporatePartners = () => {
       logo: "/assets/company_logo/Pfizer_(2021).png",
       industry: "Healthcare",
     },
-    {
-      name: "JPMorgan Chase",
-      logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
-      industry: "Finance",
-    },
+   
     {
       name: "Boeing",
       logo: "/assets/company_logo/Boeing_full_logo.svg.png",
@@ -457,6 +454,41 @@ const CorporatePartners = () => {
       name: "Lockheed Martin",
       logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
       industry: "Aerospace",
+    },
+    {
+      name: "Microsoft",
+      logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+      industry: "Technology",
+    },
+    {
+      name: "Google",
+      logo: "/assets/company_logo/Google_2015_logo.svg.png",
+      industry: "Technology",
+    },
+    {
+      name: "Cisco",
+      logo: "/assets/company_logo/Cisco_logo.svg.png",
+      industry: "Technology",
+    },
+    {
+      name: "PSEG",
+      logo: "/assets/company_logo/PSEG_logo.svg.png",
+      industry: "Energy",
+    },
+    {
+      name: "Accenture",
+      logo: "/assets/company_logo/Accenture_logo.svg.png",
+      industry: "Consulting",
+    },
+    {
+      name: "General Electric",
+      logo: "/assets/company_logo/General_Electric_logo.svg.png",
+      industry: "Industrials",
+    },
+    {
+      name: "Exxon",
+      logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+      industry: "Energy",
     },
   ];
 
@@ -788,34 +820,14 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-        {/* Trust Signals - Company Logos */}
-        {/* <section className="bg-stevens-light-gray py-stevens-section-sm lg:py-stevens-section">
-          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
-                Trusted by leading organizations
-              </h2>
-              <p className="text-stevens-lg text-stevens-dark-gray max-w-3xl mx-auto">
-                Stevens Online partners with Fortune 500 companies and industry leaders to deliver workforce development solutions
-              </p>
-            </div>
-            <TopCompaniesSection
-              description=""
-              companies={partnerCompanies}
-            />
-            <div className="text-center mt-stevens-xl">
-              <a 
-                href="https://www.stevens.edu/graduate-corporate-education" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-white px-stevens-lg py-stevens-md rounded-stevens-md font-semibold transition-colors duration-stevens-normal"
-              >
-                View All Corporate Partners
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </section> */}
+        {/* Trust Signals - Company Logos Marquee */}
+        <LogoMarqueeSection
+          heading="Trusted by Fortune 500 companies and industry leaders"
+          logos={partnerCompanies}
+          animationDuration={25}
+          pauseOnHover={true}
+          invertLogos={false}
+        />
         {/* What We Offer */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">

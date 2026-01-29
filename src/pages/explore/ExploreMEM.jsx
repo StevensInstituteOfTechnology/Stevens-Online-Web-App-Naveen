@@ -27,9 +27,10 @@ const ExploreMEM = () => {
 
   const memData = {
     // Hero Section
-  
+
     programName: "Online Master of Engineering in Engineering Management",
-    heroSubtitle: "Advance your career with a top-ranked engineering management degree that combines online flexibility with an affordable path to leadership.",
+    heroSubtitle:
+      "Advance your career with a top-ranked engineering management degree that combines online flexibility with an affordable path to leadership.",
     bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
     programCode: "mem",
     seo: {

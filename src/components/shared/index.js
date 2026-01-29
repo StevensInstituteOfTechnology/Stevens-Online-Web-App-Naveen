@@ -23,7 +23,7 @@ export { default as AnimatedSection } from "./layout/AnimatedSection";
 
 // Media components
 export { default as VideoPlayer } from "./media/VideoPlayer";
-export { default as ParallaxImage} from "./media/ParallaxImage"
+export { default as ParallaxImage } from "./media/ParallaxImage"
 export {
   AngledImage,
   AngledImageStack,
@@ -49,6 +49,7 @@ export { default as Asterism, AsterismPresets } from "./brand/Asterism";
 export { default as TopCompaniesSection } from "./sections/TopCompaniesSection";
 export { default as SupportEventsSection } from "./sections/SupportEventsSection";
 export { default as VideoSection } from "./sections/VideoSection";
+export { default as LogoMarqueeSection, LogoMarqueeSectionDouble } from "./sections/LogoMarqueeSection";
 
 // Navigation components
 export { CarouselNavButton } from "./navigation";
