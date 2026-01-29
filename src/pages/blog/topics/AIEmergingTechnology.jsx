@@ -37,7 +37,7 @@ const SinglePost = ({ post }) => (
 // Topic List View Component
 const TopicList = ({ posts }) => {
   const [selectedCategory, setSelectedCategory] = useState(
-    "Engineering Management",
+    "AI & Emerging Technology",
   );
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
@@ -107,24 +107,27 @@ const TopicList = ({ posts }) => {
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="text-center">
             <h1 className="font-stevens-display text-stevens-hero text-stevens-red mb-stevens-lg">
-              Essential Insights for Engineering Management
+              AI & Emerging Technology
             </h1>
 
             <div className="max-w-6xl mx-auto space-y-stevens-md text-left">
               <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
-                Engineering Management is a complex and challenging field
-                requiring unique skills and knowledge. Our Engineering
-                Essentials articles provide valuable resources for professionals
-                looking to develop their leadership and management skills in
-                this industry.
+                Artificial intelligence is reshaping how we build software,
+                manage organizations, and solve complex problems. From agentic
+                AI systems that can reason and self-correct, to the economic
+                realities of deploying large language models at scale, this
+                rapidly evolving field demands both technical depth and
+                strategic insight.
               </p>
               <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
-                In these articles, you will find a range of essential insights
-                and strategies for managing complex engineering projects,
-                building high-performing teams and developing innovative
-                solutions. Whether you are a seasoned engineering manager or in
-                the early stages of your career, our Engineering Essentials
-                resources have something for everyone.
+                In our AI & Emerging Technology section, you will find expert
+                perspectives on building reliable AI systems, architectural
+                patterns for enterprise deployment, and the intersection of
+                systems engineering with machine intelligence. Whether you are
+                an engineering leader evaluating AI adoption, a developer
+                building agentic applications, or a researcher exploring the
+                frontiers of autonomous systems, these resources will help you
+                navigate the future of intelligent technology.
               </p>
             </div>
           </div>
@@ -173,7 +176,7 @@ const TopicList = ({ posts }) => {
   );
 };
 
-export default function EngineeringEssentials() {
+export default function AIEmergingTechnology() {
   const location = useLocation();
   const { slug } = useParams();
 
@@ -186,11 +189,11 @@ export default function EngineeringEssentials() {
         singlePost: foundPost || null,
       };
     } else {
-      const engineeringPosts = completeBlogData.posts.filter(
-        (post) => post.category === "Engineering Management",
+      const aiPosts = completeBlogData.posts.filter(
+        (post) => post.category === "AI & Emerging Technology",
       );
       return {
-        posts: engineeringPosts,
+        posts: aiPosts,
         singlePost: null,
       };
     }

@@ -4,11 +4,44 @@ import "@/data/blogs.json";
 
 // Page imports
 import Home from "@/pages/Home";
-import { ASAP, AcceleratedApplication, Admissions, Tuition, TuitionOutcomes, RequestInfo, CorporatePartners, CorporateStudents, AlumniPGC, EmployerSponsorship, SiemensPage, PSEGPage, PSEGEnterpriseAIPage } from "@/pages/discover";
+import {
+  ASAP,
+  AcceleratedApplication,
+  Admissions,
+  Tuition,
+  TuitionOutcomes,
+  RequestInfo,
+  CorporatePartners,
+  CorporateStudents,
+  AlumniPGC,
+  EmployerSponsorship,
+  SiemensPage,
+  PSEGPage,
+  PSEGEnterpriseAIPage,
+} from "@/pages/discover";
 import { MBA, MSCS, MEM, MEADS, ComparePrograms } from "@/pages/degrees";
-import { ExploreMBA, ExploreMEM, ExploreMEADS, ExploreMSCS, ExploreMSAI, ExploreCertEnterpriseAI, ExploreCertAppliedDataScience } from "@/pages/explore";
-import { CertificateEnterpriseAI, CertificateAppliedDataScience, Certificates } from "@/pages/certificates";
-import { Blog, EngineeringEssentials, MasteringComputerScience, OnlineMBASuccess, OtherPrograms } from "@/pages/blog";
+import {
+  ExploreMBA,
+  ExploreMEM,
+  ExploreMEADS,
+  ExploreMSCS,
+  ExploreMSAI,
+  ExploreCertEnterpriseAI,
+  ExploreCertAppliedDataScience,
+} from "@/pages/explore";
+import {
+  CertificateEnterpriseAI,
+  CertificateAppliedDataScience,
+  Certificates,
+} from "@/pages/certificates";
+import {
+  Blog,
+  AIEmergingTechnology,
+  EngineeringEssentials,
+  MasteringComputerScience,
+  OnlineMBASuccess,
+  OtherPrograms,
+} from "@/pages/blog";
 import { OnlineExperience, Events } from "@/pages/about";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
 import NotFound from "@/pages/NotFound";
@@ -25,20 +58,20 @@ const generateBlogRoutes = () => {
 
   // Main blog listing
   routes.push({
-    path: '/blog/',
-    element: <Blog />
+    path: "/blog/",
+    element: <Blog />,
   });
 
   // Individual blog posts - use parameterized route
   routes.push({
-    path: '/blog/:slug/',
-    element: <Blog />
+    path: "/blog/:slug/",
+    element: <Blog />,
   });
 
   // Blog detail without trailing slash - redirect
   routes.push({
-    path: '/blog/:slug',
-    element: <BlogNoSlashRedirect />
+    path: "/blog/:slug",
+    element: <BlogNoSlashRedirect />,
   });
 
   return routes;
@@ -48,48 +81,59 @@ const generateBlogRoutes = () => {
 const generateTopicRoutes = () => {
   const routes = [];
 
-  // Engineering Essentials topic routes
+  // AI & Emerging Technology topic routes
   routes.push({
-    path: '/topics/engineering-essentials/',
-    element: <EngineeringEssentials />
+    path: "/topics/ai-emerging-technology/",
+    element: <AIEmergingTechnology />,
   });
 
   routes.push({
-    path: '/topics/engineering-essentials/:slug/',
-    element: <EngineeringEssentials />
+    path: "/topics/ai-emerging-technology/:slug/",
+    element: <AIEmergingTechnology />,
+  });
+
+  // Engineering Essentials topic routes
+  routes.push({
+    path: "/topics/engineering-essentials/",
+    element: <EngineeringEssentials />,
+  });
+
+  routes.push({
+    path: "/topics/engineering-essentials/:slug/",
+    element: <EngineeringEssentials />,
   });
 
   // Mastering Computer Science topic routes
   routes.push({
-    path: '/topics/mastering-computer-science/',
-    element: <MasteringComputerScience />
+    path: "/topics/mastering-computer-science/",
+    element: <MasteringComputerScience />,
   });
 
   routes.push({
-    path: '/topics/mastering-computer-science/:slug/',
-    element: <MasteringComputerScience />
+    path: "/topics/mastering-computer-science/:slug/",
+    element: <MasteringComputerScience />,
   });
 
   // Online MBA Success topic routes
   routes.push({
-    path: '/topics/online-mba-success/',
-    element: <OnlineMBASuccess />
+    path: "/topics/online-mba-success/",
+    element: <OnlineMBASuccess />,
   });
 
   routes.push({
-    path: '/topics/online-mba-success/:slug/',
-    element: <OnlineMBASuccess />
+    path: "/topics/online-mba-success/:slug/",
+    element: <OnlineMBASuccess />,
   });
 
   // Uncategorized/Other Programs topic routes
   routes.push({
-    path: '/topics/uncategorized/',
-    element: <OtherPrograms />
+    path: "/topics/uncategorized/",
+    element: <OtherPrograms />,
   });
 
   routes.push({
-    path: '/topics/uncategorized/:slug/',
-    element: <OtherPrograms />
+    path: "/topics/uncategorized/:slug/",
+    element: <OtherPrograms />,
   });
 
   return routes;
@@ -99,142 +143,147 @@ const generateTopicRoutes = () => {
 export const routes = [
   // Home page
   {
-    path: '/',
-    element: <Home />
+    path: "/",
+    element: <Home />,
   },
   {
-    path: '/Home',
-    element: <Home />
+    path: "/Home",
+    element: <Home />,
   },
 
   // ASAP page
   {
-    path: '/asap/',
-    element: <ASAP />
+    path: "/asap/",
+    element: <ASAP />,
   },
   {
-    path: '/ASAP/',
-    element: <Navigate to="/asap/" replace />
+    path: "/ASAP/",
+    element: <Navigate to="/asap/" replace />,
   },
   {
-    path: '/asap',
-    element: <Navigate to="/asap/" replace />
+    path: "/asap",
+    element: <Navigate to="/asap/" replace />,
   },
   {
-    path: '/ASAP',
-    element: <Navigate to="/asap/" replace />
+    path: "/ASAP",
+    element: <Navigate to="/asap/" replace />,
   },
 
   // Accelerated Application page
   {
-    path: '/accelerated-application/',
-    element: <AcceleratedApplication />
+    path: "/accelerated-application/",
+    element: <AcceleratedApplication />,
   },
   {
-    path: '/accelerated-application',
-    element: <Navigate to="/accelerated-application/" replace />
+    path: "/accelerated-application",
+    element: <Navigate to="/accelerated-application/" replace />,
   },
 
   // Tuition pages
   {
-    path: '/tuition-and-financial-aid/',
-    element: <Tuition />
+    path: "/tuition-and-financial-aid/",
+    element: <Tuition />,
   },
   {
-    path: '/Tuition',
-    element: <Navigate to="/tuition-and-financial-aid/" replace />
+    path: "/Tuition",
+    element: <Navigate to="/tuition-and-financial-aid/" replace />,
   },
   {
-    path: '/tuition',
-    element: <Navigate to="/tuition-and-financial-aid/" replace />
+    path: "/tuition",
+    element: <Navigate to="/tuition-and-financial-aid/" replace />,
   },
 
   // Request Info
   {
-    path: '/request-information/',
-    element: <RequestInfo />
+    path: "/request-information/",
+    element: <RequestInfo />,
   },
   {
-    path: '/RequestInfo',
-    element: <Navigate to="/request-information/" replace />
+    path: "/RequestInfo",
+    element: <Navigate to="/request-information/" replace />,
   },
   {
-    path: '/requestinfo',
-    element: <Navigate to="/request-information/" replace />
+    path: "/requestinfo",
+    element: <Navigate to="/request-information/" replace />,
   },
 
   // MBA program
   {
-    path: '/online-mba/',
-    element: <MBA />
+    path: "/online-mba/",
+    element: <MBA />,
   },
   {
-    path: '/MBA',
-    element: <Navigate to="/online-mba/" replace />
+    path: "/MBA",
+    element: <Navigate to="/online-mba/" replace />,
   },
 
   // MSCS program
   {
-    path: '/online-masters-computer-science-mscs/',
-    element: <MSCS />
+    path: "/online-masters-computer-science-mscs/",
+    element: <MSCS />,
   },
   {
-    path: '/MSCS',
-    element: <Navigate to="/online-masters-computer-science-mscs/" replace />
+    path: "/MSCS",
+    element: <Navigate to="/online-masters-computer-science-mscs/" replace />,
   },
 
   // MEM program
   {
-    path: '/online-masters-engineering-management/',
-    element: <MEM />
+    path: "/online-masters-engineering-management/",
+    element: <MEM />,
   },
   {
-    path: '/MEM',
-    element: <Navigate to="/online-masters-engineering-management/" replace />
+    path: "/MEM",
+    element: <Navigate to="/online-masters-engineering-management/" replace />,
   },
 
   // MSDSE program
   {
-    path: '/online-masters-engineering-applied-data-science/',
-    element: <MEADS />
+    path: "/online-masters-engineering-applied-data-science/",
+    element: <MEADS />,
   },
   {
-    path: '/MEADS',
-    element: <Navigate to="/online-masters-engineering-applied-data-science/" replace />
+    path: "/MEADS",
+    element: (
+      <Navigate
+        to="/online-masters-engineering-applied-data-science/"
+        replace
+      />
+    ),
   },
 
   // Certificate Programs
   {
-    path: '/certificates/enterprise-ai/',
-    element: <CertificateEnterpriseAI />
+    path: "/certificates/enterprise-ai/",
+    element: <CertificateEnterpriseAI />,
   },
   {
-    path: '/certificates/applied-data-science-foundations/',
-    element: <CertificateAppliedDataScience />
+    path: "/certificates/applied-data-science-foundations/",
+    element: <CertificateAppliedDataScience />,
   },
 
   // Compare Programs
   {
-    path: '/compare-our-programs/',
-    element: <ComparePrograms />
+    path: "/compare-our-programs/",
+    element: <ComparePrograms />,
   },
   {
-    path: '/ComparePrograms',
-    element: <Navigate to="/compare-our-programs/" replace />
+    path: "/ComparePrograms",
+    element: <Navigate to="/compare-our-programs/" replace />,
   },
 
   // Events
   {
-    path: '/events/',
-    element: <Events />
+    path: "/events/",
+    element: <Events />,
   },
   {
-    path: '/Events',
-    element: <Navigate to="/events/" replace />
+    path: "/Events",
+    element: <Navigate to="/events/" replace />,
   },
   {
-    path: '/events',
-    element: <Navigate to="/events/" replace />
+    path: "/events",
+    element: <Navigate to="/events/" replace />,
   },
 
   // Blog routes (dynamically generated)
@@ -245,134 +294,142 @@ export const routes = [
 
   // Blog redirects - redirect old URLs to new 2025 version
   {
-    path: '/blog/computer-science-salaries-outlook-for-2023/',
-    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    path: "/blog/computer-science-salaries-outlook-for-2023/",
+    element: (
+      <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    ),
   },
   {
-    path: '/blog/computer-science-salaries-outlook-for-2023',
-    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    path: "/blog/computer-science-salaries-outlook-for-2023",
+    element: (
+      <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    ),
   },
   {
-    path: '/blog/explore-computer-science-salary-and-job-outlook-2024/',
-    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    path: "/blog/explore-computer-science-salary-and-job-outlook-2024/",
+    element: (
+      <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    ),
   },
   {
-    path: '/blog/explore-computer-science-salary-and-job-outlook-2024',
-    element: <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    path: "/blog/explore-computer-science-salary-and-job-outlook-2024",
+    element: (
+      <Navigate to="/blog/computer-science-salary-outlook-2025/" replace />
+    ),
   },
 
   // Professional Education
   {
-    path: '/professionaleducation/',
-    element: <ProfessionalEducation />
+    path: "/professionaleducation/",
+    element: <ProfessionalEducation />,
   },
   {
-    path: '/ProfessionalEducation',
-    element: <Navigate to="/professionaleducation/" replace />
+    path: "/ProfessionalEducation",
+    element: <Navigate to="/professionaleducation/" replace />,
   },
   {
-    path: '/professionaleducation',
-    element: <Navigate to="/professionaleducation/" replace />
+    path: "/professionaleducation",
+    element: <Navigate to="/professionaleducation/" replace />,
   },
 
   // Certificates
   {
-    path: '/Certificates',
-    element: <Certificates />
+    path: "/Certificates",
+    element: <Certificates />,
   },
 
   // Online Experience
   {
-    path: '/online-learning-experience/',
-    element: <OnlineExperience />
+    path: "/online-learning-experience/",
+    element: <OnlineExperience />,
   },
   {
-    path: '/OnlineExperience',
-    element: <Navigate to="/online-learning-experience/" replace />
+    path: "/OnlineExperience",
+    element: <Navigate to="/online-learning-experience/" replace />,
   },
   {
-    path: '/OnlineLearning',
-    element: <Navigate to="/online-learning-experience/" replace />
+    path: "/OnlineLearning",
+    element: <Navigate to="/online-learning-experience/" replace />,
   },
 
   // Tuition Outcomes
   {
-    path: '/TuitionOutcomes',
-    element: <TuitionOutcomes />
+    path: "/TuitionOutcomes",
+    element: <TuitionOutcomes />,
   },
 
   // Admissions
   {
-    path: '/admissions/',
-    element: <Admissions />
+    path: "/admissions/",
+    element: <Admissions />,
   },
   {
-    path: '/Admissions',
-    element: <Navigate to="/admissions/" replace />
+    path: "/Admissions",
+    element: <Navigate to="/admissions/" replace />,
   },
   {
-    path: '/admissions',
-    element: <Navigate to="/admissions/" replace />
+    path: "/admissions",
+    element: <Navigate to="/admissions/" replace />,
   },
 
   // Employer Sponsorship
   {
-    path: '/employer-sponsorship/',
-    element: <EmployerSponsorship />
+    path: "/employer-sponsorship/",
+    element: <EmployerSponsorship />,
   },
   {
-    path: '/employer-sponsorship',
-    element: <Navigate to="/employer-sponsorship/" replace />
+    path: "/employer-sponsorship",
+    element: <Navigate to="/employer-sponsorship/" replace />,
   },
 
   // Corporate Partnership Pages
   {
-    path: '/siemens-pgcsef/',
-    element: <SiemensPage />
+    path: "/siemens-pgcsef/",
+    element: <SiemensPage />,
   },
   {
-    path: '/siemens-pgcsef',
-    element: <Navigate to="/siemens-pgcsef/" replace />
+    path: "/siemens-pgcsef",
+    element: <Navigate to="/siemens-pgcsef/" replace />,
   },
   {
-    path: '/siemens/',
-    element: <Navigate to="/siemens-pgcsef/" replace />
+    path: "/siemens/",
+    element: <Navigate to="/siemens-pgcsef/" replace />,
   },
   {
-    path: '/siemens',
-    element: <Navigate to="/siemens-pgcsef/" replace />
+    path: "/siemens",
+    element: <Navigate to="/siemens-pgcsef/" replace />,
   },
   {
-    path: '/pseg-inquiry/',
-    element: <PSEGPage />
+    path: "/pseg-inquiry/",
+    element: <PSEGPage />,
   },
   {
-    path: '/pseg-inquiry',
-    element: <Navigate to="/pseg-inquiry/" replace />
+    path: "/pseg-inquiry",
+    element: <Navigate to="/pseg-inquiry/" replace />,
   },
   {
-    path: '/pseg-pgceai/',
-    element: <PSEGEnterpriseAIPage />
+    path: "/pseg-pgceai/",
+    element: <PSEGEnterpriseAIPage />,
   },
   {
-    path: '/pseg-pgceai',
-    element: <Navigate to="/pseg-pgceai/" replace />
+    path: "/pseg-pgceai",
+    element: <Navigate to="/pseg-pgceai/" replace />,
   },
   {
-    path: '/corporate-partners/',
-    element: <CorporatePartners />
+    path: "/corporate-partners/",
+    element: <CorporatePartners />,
   },
   {
-    path: '/corporate-partners',
-    element: <Navigate to="/corporate-partners/" replace />
+    path: "/corporate-partners",
+    element: <Navigate to="/corporate-partners/" replace />,
   },
   {
-    path: '/corporate-students/',
-    element: <CorporateStudents />
+    path: "/corporate-students/",
+    element: <CorporateStudents />,
   },
   {
-    path: '/corporate-students',
-    element: <Navigate to="/corporate-students/" replace />
+    path: "/corporate-students",
+    element: <Navigate to="/corporate-students/" replace />,
   },
   // {
   //   path: '/corporate-partners/',
@@ -391,58 +448,57 @@ export const routes = [
   //   element: <Navigate to="/corporate-students/" replace />
   // },
   {
-    path: '/alumni-pgc/',
-    element: <AlumniPGC />
+    path: "/alumni-pgc/",
+    element: <AlumniPGC />,
   },
   {
-    path: '/alumni-pgc',
-    element: <Navigate to="/alumni-pgc/" replace />
+    path: "/alumni-pgc",
+    element: <Navigate to="/alumni-pgc/" replace />,
   },
 
   // Explore program pages
   {
-    path: '/explore/online-mba/',
-    element: <ExploreMBA />
+    path: "/explore/online-mba/",
+    element: <ExploreMBA />,
   },
   {
-    path: '/explore/online-masters-engineering-management/',
-    element: <ExploreMEM />
+    path: "/explore/online-masters-engineering-management/",
+    element: <ExploreMEM />,
   },
   {
-    path: '/explore/online-masters-eng-applied-data-science/',
-    element: <ExploreMEADS />
+    path: "/explore/online-masters-eng-applied-data-science/",
+    element: <ExploreMEADS />,
   },
   {
-    path: '/explore/online-masters-computer-science/',
-    element: <ExploreMSCS />
+    path: "/explore/online-masters-computer-science/",
+    element: <ExploreMSCS />,
   },
   {
-    path: '/explore/ai-masters-computer-science/',
-    element: <ExploreMSAI />
+    path: "/explore/ai-masters-computer-science/",
+    element: <ExploreMSAI />,
   },
 
   // Explore certificate pages
   {
-    path: '/explore/certificates/enterprise-ai/',
-    element: <ExploreCertEnterpriseAI />
+    path: "/explore/certificates/enterprise-ai/",
+    element: <ExploreCertEnterpriseAI />,
   },
   {
-    path: '/explore/certificates/applied-data-science-foundations/',
-    element: <ExploreCertAppliedDataScience />
+    path: "/explore/certificates/applied-data-science-foundations/",
+    element: <ExploreCertAppliedDataScience />,
   },
 
   // 404 Not Found page
   {
-    path: '/page-not-found/',
-    element: <NotFound />
+    path: "/page-not-found/",
+    element: <NotFound />,
   },
 
   // Catch-all route - must be last
   {
-    path: '*',
-    element: <Navigate to="/page-not-found/" replace />
-  }
+    path: "*",
+    element: <Navigate to="/page-not-found/" replace />,
+  },
 ];
 
 export default routes;
-

@@ -42,6 +42,7 @@ export const STATIC_ROUTES = [
 
 // Topic category routes (static categories)
 export const TOPIC_CATEGORIES = [
+  'ai-emerging-technology',
   'engineering-essentials',
   'mastering-computer-science',
   'online-mba-success',

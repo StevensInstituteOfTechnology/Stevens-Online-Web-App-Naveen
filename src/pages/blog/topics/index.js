@@ -1,3 +1,4 @@
+export { default as AIEmergingTechnology } from "./AIEmergingTechnology";
 export { default as EngineeringEssentials } from "./EngineeringEssentials";
 export { default as MasteringComputerScience } from "./MasteringComputerScience";
 export { default as OnlineMBASuccess } from "./OnlineMBASuccess";
