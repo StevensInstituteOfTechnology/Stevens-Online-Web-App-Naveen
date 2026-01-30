@@ -436,7 +436,7 @@ const programData = {
       {
         name: "Samuel Kim",
         title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
-        image: "/assets/avatars/certificate-ADS-avatar/skim2.webp",
+        image: "/assets/avatars/certificate-ADS-avatar/Samuel_Kim.webp",
       },
       {
         name: "Upendra Prasad",
@@ -444,7 +444,7 @@ const programData = {
         image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif",
       },
       
-      { name: "David Landaeta", title: "", image: "" },
+      { name: "David Landaeta", title: "Adjunct Lecturer", image: "/assets/logos/Stevens-logo-small-scale.webp" },
     ],
   },
   faqs: [

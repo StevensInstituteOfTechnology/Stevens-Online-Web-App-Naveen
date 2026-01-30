@@ -490,8 +490,8 @@ const programData = {
       },
      
       {
-        name: "Dr. David Landaeta",
-        title: "",
+        name: "David Landaeta",
+        title: "Adjunct Lecturer",
         image: "/assets/logos/Stevens-logo-small-scale.webp",
       },
       

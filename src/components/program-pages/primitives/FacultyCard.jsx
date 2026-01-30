@@ -1,15 +1,18 @@
 import React from 'react';
+import { User } from 'lucide-react';
 
 /**
- * FacultyCard - Displays a faculty member with photo and title
+ * FacultyCard - Individual faculty member card with diagonal-cut corner
  * 
- * Design: CPE Brand Guidelines - Clean B&W design
+ * Design: Modern card with diagonal-cut top-right corner
  * Features:
- * - Circular photo with hover shadow effect
- * - Fallback to initials if no image provided
- * - Responsive width (180px mobile, 220px desktop)
+ * - Diagonal clip-path effect on entire card
+ * - Portrait aspect ratio (3:4) for headshots
+ * - object-top positioning to preserve faces
+ * - Fallback to User icon if no image provided
+ * - Hover shadow effect
  * 
- * Used in: FacultySection (horizontal scroll carousel)
+ * Used in: FacultySection (carousel/grid layout)
  * 
  * @param {Object} member - Faculty member data
  * @param {string} member.name - Full name
@@ -17,34 +20,41 @@ import React from 'react';
  * @param {string} member.image - Image URL (optional)
  */
 export const FacultyCard = ({ member }) => {
-  const { name, title, image } = member;
-  const hasImage = image && image.trim() !== '';
-  const initials = name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase();
+  // Top-right corner diagonal cut - applied to entire card
+  const clipPath = "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)";
 
   return (
-    <div className="text-center snap-center flex-shrink-0 w-[180px] stevens-md:w-[220px] group">
-      {hasImage ? (
-        <img
-          src={image}
-          alt={name}
-          className="w-32 h-32 rounded-full mx-auto mb-stevens-md object-cover shadow-md transition-shadow duration-300 group-hover:shadow-lg"
-          loading="lazy"
-        />
-      ) : (
-        <div className="w-32 h-32 rounded-full mx-auto mb-stevens-md bg-stevens-dark-gray flex items-center justify-center shadow-md transition-shadow duration-300 group-hover:shadow-lg">
-          <span className="text-stevens-white font-stevens-display font-light text-stevens-2xl">
-            {initials}
-          </span>
-        </div>
-      )}
-      <h4 className="font-stevens-display font-light text-stevens-lg text-stevens-dark-gray">
-        {name}
-      </h4>
-      <p className="text-stevens-sm text-stevens-gray">{title}</p>
+    <div
+      className="bg-stevens-light-gray overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+      style={{ clipPath }}
+    >
+      {/* Photo - portrait aspect ratio for headshots */}
+      <div className="relative overflow-hidden aspect-[3/4]">
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full bg-stevens-gray/30 flex items-center justify-center">
+            <User className="w-20 h-20 text-stevens-gray" />
+          </div>
+        )}
+      </div>
+
+      {/* Info */}
+      <div className="px-6 py-8">
+        <h3 className="font-stevens-display text-2xl lg:text-[1.75rem] font-medium text-stevens-black mb-2">
+          {member.name}
+        </h3>
+        {member.title && (
+          <p className="text-stevens-red text-base leading-relaxed">
+            {member.title}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

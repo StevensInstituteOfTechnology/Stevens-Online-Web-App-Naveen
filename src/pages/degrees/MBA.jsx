@@ -884,45 +884,46 @@ const programData = {
       "Our faculty are experienced educators and active researchers who offer industry insights.",
     members: [
       {
+        name: "Wei Zheng",
+        title:
+          "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership",
+        image:
+          "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.webp",
+      },
+      {
         name: "Brian Rothschild",
         title: "Online MBA Program Director",
         image:
           "/assets/avatars/mba-avatar/brian-rothschild-stevens-institute-omba-faculty.webp",
       },
       {
-        name: "Pranav Garg, Ph.D.",
+        name: "Pranav Garg",
         title: "Assistant Professor",
         image: "/assets/avatars/mba-avatar/pranav-garg-stevens-faculty.webp",
       },
       {
-        name: "Peter Dominick, Ph.D.",
+        name: "Peter Dominick",
         title: "Teaching Associate Professor",
         image:
           "/assets/avatars/mba-avatar/peter-dominick-stevents-faculty.webp",
       },
       {
-        name: "Bei Yan, Ph.D.",
+        name: "Bei Yan",
         title: "Assistant Professor",
         image: "/assets/avatars/mba-avatar/bei-yan-stevens-faculty-1.webp",
       },
       {
-        name: "Alkiviadis Vazacopoulos, Ph.D.",
+        name: "Alkiviadis Vazacopoulos",
         title: "Teaching Associate Professor",
         image:
           "/assets/avatars/mba-avatar/alkiviadis-vazacopoulos-stevens-faculty-708x1024.webp",
       },
       {
-        name: "Ann Murphy, Ph.D.",
+        name: "Ann Murphy",
         title: "Associate Professor",
         image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.webp",
       },
-      {
-        name: "Wei Zheng, Ph.D.",
-        title:
-          "Associate Professor & Endowed Richard R. Roscitt Chair in Leadership",
-        image:
-          "/assets/avatars/mba-avatar/wei-zheng-stevens-faculty-737x1024.webp",
-      },
+      
     ],
   },
   faqs: [

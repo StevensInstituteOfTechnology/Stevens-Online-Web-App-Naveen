@@ -6,8 +6,8 @@ import React, {
   useEffect,
   useMemo,
 } from "react";
-import { User } from "lucide-react";
 import { CarouselNavButton } from "@/components/shared";
+import { FacultyCard } from "../primitives";
 
 /**
  * FacultySection - Meet the Faculty with infinite carousel
@@ -150,8 +150,8 @@ export const FacultySection = forwardRef(function FacultySection(
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  // Calculate transform for carousel
-  const gapPercent = 2;
+  // Calculate transform for carousel - larger gap reduces card width/height
+  const gapPercent = 6;
   const cardWidthPercent = (100 - (K - 1) * gapPercent) / K;
 
   return (
@@ -208,82 +208,41 @@ export const FacultySection = forwardRef(function FacultySection(
         </div>
 
         {/* Faculty Cards - Grid or Carousel */}
-        {hasCarousel ? (
-          <div className="overflow-hidden">
-            <div
-              ref={trackRef}
-              onTransitionEnd={handleTransitionEnd}
-              className="flex"
-              style={{
-                transform: `translateX(-${
-                  currentIndex * (cardWidthPercent + gapPercent)
-                }%)`,
-                transition: "transform 0.5s ease-in-out",
-                gap: `${gapPercent}%`,
-              }}
-            >
-              {extendedMembers.map((member) => (
-                <div
-                  key={member._key}
-                  className="flex-shrink-0"
-                  style={{ width: `${cardWidthPercent}%` }}
-                >
-                  <FacultyCard member={member} />
-                </div>
+        <div className="px-4 md:px-8 lg:px-16 xl:px-24">
+          {hasCarousel ? (
+            <div className="overflow-hidden">
+              <div
+                ref={trackRef}
+                onTransitionEnd={handleTransitionEnd}
+                className="flex"
+                style={{
+                  transform: `translateX(-${
+                    currentIndex * (cardWidthPercent + gapPercent)
+                  }%)`,
+                  transition: "transform 0.5s ease-in-out",
+                  gap: `${gapPercent}%`,
+                }}
+              >
+                {extendedMembers.map((member) => (
+                  <div
+                    key={member._key}
+                    className="flex-shrink-0"
+                    style={{ width: `${cardWidthPercent}%` }}
+                  >
+                    <FacultyCard member={member} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+              {members.map((member, index) => (
+                <FacultyCard key={index} member={member} />
               ))}
             </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {members.map((member, index) => (
-              <FacultyCard key={index} member={member} />
-            ))}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );
 });
-
-/**
- * FacultyCard - Individual faculty member card with diagonal-cut corner
- */
-function FacultyCard({ member }) {
-  // Top-right corner diagonal cut - applied to entire card
-  const clipPath = "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)";
-
-  return (
-    <div
-      className="bg-stevens-light-gray overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-      style={{ clipPath }}
-    >
-      {/* Photo - fixed height for consistent card sizing */}
-      <div className="relative overflow-hidden h-[280px]">
-        {member.image ? (
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-full object-cover object-center"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full bg-stevens-gray/30 flex items-center justify-center">
-            <User className="w-20 h-20 text-stevens-gray" />
-          </div>
-        )}
-      </div>
-
-      {/* Info */}
-      <div className="px-6 py-8">
-        <h3 className="font-stevens-display text-2xl lg:text-[1.75rem] font-medium text-stevens-black mb-2">
-          {member.name}
-        </h3>
-        {member.title && (
-          <p className="text-stevens-red text-base leading-relaxed">
-            {member.title}
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
