@@ -1,9 +1,9 @@
-import React from 'react';
-import { User } from 'lucide-react';
+import React from "react";
+import { User } from "lucide-react";
 
 /**
  * FacultyCard - Individual faculty member card with diagonal-cut corner
- * 
+ *
  * Design: Modern card with diagonal-cut top-right corner
  * Features:
  * - Diagonal clip-path effect on entire card
@@ -11,9 +11,9 @@ import { User } from 'lucide-react';
  * - object-top positioning to preserve faces
  * - Fallback to User icon if no image provided
  * - Hover shadow effect
- * 
+ *
  * Used in: FacultySection (carousel/grid layout)
- * 
+ *
  * @param {Object} member - Faculty member data
  * @param {string} member.name - Full name
  * @param {string} member.title - Job title / position

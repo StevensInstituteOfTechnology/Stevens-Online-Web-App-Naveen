@@ -65,7 +65,9 @@ export default function LogoMarqueeSection({
 
         {/* Scrolling logos container */}
         <div
-          className={`flex items-center ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
+          className={`flex items-center ${
+            pauseOnHover ? "hover:[animation-play-state:paused]" : ""
+          }`}
           style={{
             animation: `marquee ${animationDuration}s linear infinite`,
           }}
@@ -81,7 +83,9 @@ export default function LogoMarqueeSection({
                   <img
                     src={logoSrc}
                     alt={`${logoName} logo`}
-                    className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${invertLogos ? "brightness-0 invert" : ""} opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
+                    className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
+                      invertLogos ? "brightness-0 invert" : ""
+                    } opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
                     loading="lazy"
                     onError={(e) => {
                       e.target.style.display = "none";
@@ -147,9 +151,13 @@ export function LogoMarqueeSectionDouble({
 
   const renderLogoRow = (logos, reverse = false) => (
     <div
-      className={`flex items-center ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
+      className={`flex items-center ${
+        pauseOnHover ? "hover:[animation-play-state:paused]" : ""
+      }`}
       style={{
-        animation: `${reverse ? "marquee-reverse" : "marquee"} ${animationDuration}s linear infinite`,
+        animation: `${
+          reverse ? "marquee-reverse" : "marquee"
+        } ${animationDuration}s linear infinite`,
       }}
     >
       {logos.map((logo, index) => {
@@ -165,7 +173,9 @@ export function LogoMarqueeSectionDouble({
               <img
                 src={logoSrc}
                 alt={`${logoName} logo`}
-                className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${invertLogos ? "brightness-0 invert" : ""} opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
+                className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
+                  invertLogos ? "brightness-0 invert" : ""
+                } opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
                 loading="lazy"
               />
             ) : (

@@ -208,7 +208,7 @@ export const FacultySection = forwardRef(function FacultySection(
         </div>
 
         {/* Faculty Cards - Grid or Carousel */}
-        <div className="px-4 md:px-8 lg:px-16 xl:px-24">
+        <div className={hasCarousel ? "px-4 md:px-8 lg:px-16 xl:px-24" : ""}>
           {hasCarousel ? (
             <div className="overflow-hidden">
               <div
@@ -235,7 +235,7 @@ export const FacultySection = forwardRef(function FacultySection(
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 items-start">
               {members.map((member, index) => (
                 <FacultyCard key={index} member={member} />
               ))}
