@@ -434,15 +434,16 @@ const programData = {
       "Learn from expert faculty who bring cutting-edge research and industry experience to every course.",
     members: [
       {
+        name: "Samuel Kim",
+        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        image: "/assets/avatars/certificate-ADS-avatar/skim2.webp",
+      },
+      {
         name: "Upendra Prasad",
         title: "Senior Lecturer",
         image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif",
       },
-      {
-        name: "Samuel Kim",
-        title: "Teaching Professor",
-        image: "/assets/avatars/certificate-ADS-avatar/skim2.webp",
-      },
+      
       { name: "David Landaeta", title: "", image: "" },
     ],
   },

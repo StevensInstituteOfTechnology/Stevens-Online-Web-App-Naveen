@@ -660,7 +660,7 @@ const programData = {
     members: [
       {
         name: "Shudong Hao",
-        title: "Assoc. Chair for Graduate Studies",
+        title: "Teaching Assistant Professor and Associate Chair for Graduate Studies in the Department of Computer Science",
         image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp",
       },
       {
@@ -681,7 +681,7 @@ const programData = {
       },
       {
         name: "Samuel Kim",
-        title: "Teaching Professor",
+        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
         image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
       },
     ],

@@ -490,11 +490,7 @@ const programData = {
         title: "Teaching Associate Professor",
         image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp",
       },
-      {
-        name: "Yeganeh Hayeri",
-        title: "Professor",
-        image: "/assets/avatars/mem-avatar/yeganeh-hayeri-stevens-faculty.webp",
-      },
+      
     ],
   },
   admissions: {

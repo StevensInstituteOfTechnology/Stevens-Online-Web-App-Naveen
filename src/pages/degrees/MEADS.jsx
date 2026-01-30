@@ -468,31 +468,33 @@ const programData = {
       "Our faculty are experienced educators and active researchers who offer industry insights.",
     members: [
       {
-        name: "Dr. Alkis Vazacopoulos",
-        title: "",
+        name: "Samuel Kim",
+        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
+      },
+      {
+        name: "Alkis Vazacopoulos",
+        title: "Teaching Professor",
         image: "/assets/avatars/msdsen-avatar/Vazacopoulos.webp",
       },
       {
-        name: "Dr. Khasha Dehnad",
-        title: "",
-        image: "/assets/avatars/msdsen-avatar/Dehnad.webp",
+        name: "Upendra Prasad",
+        title: "Senior Lecturer",
+        image:
+          "/assets/avatars/msds-avatar/upendra-prasad-stevens-faculty.webp",
       },
       {
-        name: "Dr. Samuel Kim",
-        title: "",
-        image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
+        name: "Khasha Dehnad",
+        title: "Adjunct Lecturer",
+        image: "/assets/avatars/msdsen-avatar/Dehnad.webp",
       },
+     
       {
         name: "Dr. David Landaeta",
         title: "",
         image: "/assets/logos/Stevens-logo-small-scale.webp",
       },
-      {
-        name: "Dr. Upendra Prasad",
-        title: "",
-        image:
-          "/assets/avatars/msds-avatar/upendra-prasad-stevens-faculty.webp",
-      },
+      
     ],
   },
   // ==================================================================
