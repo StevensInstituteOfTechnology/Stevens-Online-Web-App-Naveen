@@ -26,4 +26,3 @@ The LearnWise chat embed runs in an **https** iframe. Browsers block it from rea
 4. Open the **https** URL ngrok gives you (e.g. `https://abc123.ngrok.io`) in the browser. The chatbot should work there.
 
 Once deployed to an **https** host (e.g. production/staging), the chatbot works without any tunnel.
-
