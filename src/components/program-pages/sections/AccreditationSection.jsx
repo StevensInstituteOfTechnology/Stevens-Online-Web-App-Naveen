@@ -31,24 +31,32 @@ export const AccreditationSection = forwardRef(function AccreditationSection(
       ref={ref}
     >
       <div className="relative bg-stevens-dark-gray text-stevens-white overflow-hidden">
-        {/* Background Image */}
+        {/* Top border/separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-stevens-light-gray/30 to-transparent" />
+        
+        {/* Background Image - slightly more visible */}
         <div className="absolute inset-0">
           <img
             src="/assets/images/shared/accreditation.webp"
             alt=""
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-stevens-dark-gray/80"></div>
+          {/* Subtle gradient overlay instead of flat color */}
+          <div className="absolute inset-0  bg-gradient-to-b from-stevens-dark-gray/50 via-stevens-dark-gray/75 to-stevens-dark-gray/90" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center pt-stevens-section-sm lg:pt-stevens-section pb-[60px] ">
-          <h2 className="font-stevens-display uppercase text-stevens-3xl stevens-md:text-stevens-4xl font-light mb-stevens-lg text-stevens-white tracking-wide">
+        <div className="relative max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center pt-stevens-section-sm lg:pt-stevens-section pb-[60px]">
+         
+          
+          <h2 className="font-stevens-display uppercase text-stevens-3xl stevens-md:text-stevens-4xl font-light mb-stevens-lg text-stevens-white tracking-wider">
             Accreditation Statement
           </h2>
+          
+          {/* Body text with improved link styling */}
           <div
-            className="text-stevens-lg text-stevens-white/90 leading-relaxed"
+            className="text-stevens-lg text-stevens-white/90 leading-relaxed max-w-4xl mx-auto [&_a]:text-stevens-white [&_a]:underline [&_a]:decoration-stevens-red [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a]:font-medium [&_a]:transition-colors [&_a]:duration-300 hover:[&_a]:text-stevens-red"
             dangerouslySetInnerHTML={{
               __html:
                 typeof accreditation === 'string'

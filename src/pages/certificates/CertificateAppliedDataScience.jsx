@@ -164,6 +164,8 @@ const programData = {
           "Code-driven labs: PCA, regression, gradient descent",
           "Train and interpret an ML model with AI insight report",
         ],
+        image: "/assets/images/certificate-applied-data-science/1527028764207.webp",
+        
       },
       {
         title: "Python & Data Pipelines",
@@ -175,6 +177,8 @@ const programData = {
           "Build AI-ready pipelines from raw data to training datasets",
           "End-to-end pipeline published to Streamlit app",
         ],
+        image: "/assets/images/certificate-applied-data-science/pexels-thisisengineering-3861976.webp",
+      
       },
       {
         title: "Machine Learning & AI",
@@ -186,6 +190,7 @@ const programData = {
           "Build and evaluate AI solutions with SHAP/LIME for transparency",
           "Deploy an ML model with reproducible code and stakeholder narrative",
         ],
+        image: "/assets/images/certificate-applied-data-science/istockphoto-2084953049-612x612.webp",
       },
     ],
   },

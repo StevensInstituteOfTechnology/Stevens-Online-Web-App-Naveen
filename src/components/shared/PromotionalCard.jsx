@@ -56,7 +56,7 @@ export function PromotionalCard({
   // Ref on OUTER container for more stable aspect ratio calculation
   const containerRef = useRef(null);
   const [clipPath, setClipPath] = useState(
-    "polygon(0 0, 100% 0, 100% 65%, 0 100%)"
+    "polygon(0 0, 100% 0, 100% 65%, 0 100%)",
   );
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -124,10 +124,10 @@ export function PromotionalCard({
                 {/* Term Start */}
                 {quickFacts.termStart && (
                   <div className="mb-5">
-                    <p className="text-sm uppercase tracking-wider text-stevens-red font-medium mb-1">
+                    <p className="text-xl uppercase tracking-wider text-stevens-red font-bold mb-1 ">
                       Upcoming Start
                     </p>
-                    <p className="font-stevens-display text-2xl lg:text-3xl font-light text-white">
+                    <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-light-gray">
                       {quickFacts.termStart}
                     </p>
                   </div>

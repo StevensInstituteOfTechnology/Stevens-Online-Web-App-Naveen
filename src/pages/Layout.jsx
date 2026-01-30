@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
-import { CONTACT_INFO } from "@/config/constants";
+import { CONTACT_INFO, BOOKING_URLS } from "@/config/constants";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import {
   Menu,
   Phone,
@@ -751,10 +752,19 @@ export default function Layout({ children, currentPageName }) {
                 </a>
               </div>
               <div className="mt-6 space-y-2 text-sm">
-                <div className="flex items-center justify-center md:justify-start space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>{CONTACT_INFO.PHONE_DISPLAY}</span>
-                </div>
+                <a
+                  href={BOOKING_URLS.SCHEDULE_CALL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                  }
+                  className="flex items-center justify-center md:justify-start space-x-2 text-stevens-light-gray hover:text-white hover:underline hover:font-bold underline decoration-stevens-light-gray decoration-1 transition-all duration-300"
+                  aria-label="Schedule a call"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <span>Schedule a Call</span>
+                </a>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>{CONTACT_INFO.EMAIL}</span>

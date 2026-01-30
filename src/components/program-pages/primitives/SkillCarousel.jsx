@@ -21,6 +21,7 @@ const PLACEHOLDER_IMAGES = [
  * - Numbered pagination (1 / 3) with arrow buttons
  * - Smooth slide transitions
  * - Dynamic height based on tallest slide content
+ * - Configurable image display (scale, position, fit)
  *
  * Used in: SkillsSection (What You'll Learn)
  *
@@ -30,6 +31,9 @@ const PLACEHOLDER_IMAGES = [
  * @param {Array} modules[].skills - Array of skill strings (learning outcomes or courses)
  * @param {string} modules[].skillsLabel - Optional label for skills section (default: "Learning Outcomes")
  * @param {string} modules[].image - Optional custom image URL
+ * @param {string} modules[].imagePosition - CSS object-position value (default: "center") e.g., "center", "left", "right", "top", "20% 50%"
+ * @param {string} modules[].imageFit - CSS object-fit value (default: "cover") e.g., "cover", "contain", "fill"
+ * @param {number} modules[].imageScale - Scale factor for the image (default: 1) e.g., 0.9 for 90%, 1.2 for 120%
  */
 export const SkillCarousel = ({ modules }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -125,22 +129,34 @@ export const SkillCarousel = ({ modules }) => {
             style={{ minHeight: contentHeight > 0 ? contentHeight : 400 }}
           >
             <div className="absolute inset-0">
-              {modules.map((_, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-400 ease-in-out ${
-                    index === currentIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <img
-                    src={getSlideImage(index)}
-                    alt={modules[index].title}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Subtle gradient overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
-                </div>
-              ))}
+              {modules.map((module, index) => {
+                // Get image display settings with defaults
+                const imagePosition = module.imagePosition || 'center';
+                const imageFit = module.imageFit || 'cover';
+                const imageScale = module.imageScale || 1;
+                
+                return (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-400 ease-in-out ${
+                      index === currentIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <img
+                      src={getSlideImage(index)}
+                      alt={module.title}
+                      className="w-full h-full"
+                      style={{
+                        objectFit: imageFit,
+                        objectPosition: imagePosition,
+                        transform: imageScale !== 1 ? `scale(${imageScale})` : undefined,
+                      }}
+                    />
+                    {/* Subtle gradient overlay for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
+                  </div>
+                );
+              })}
             </div>
           </div>
 

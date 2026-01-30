@@ -164,6 +164,7 @@ const programData = {
           "Design and scope a proof-of-concept with business value",
           "Team PoC with management plan, demo, and implementation roadmap",
         ],
+        image: "/assets/images/certificate-enterprise-ai/pexels-googledeepmind-18069695.webp",
       },
       {
         title: "AI Strategy & Management",
@@ -175,6 +176,7 @@ const programData = {
           "FATE principles, governance frameworks, and vendor selection",
           "Implementation playbook and architecture analysis",
         ],
+        image: "/assets/images/certificate-enterprise-ai/istockphoto-1979289147-612x612.webp",
       },
       {
         title: "Operational AI Workflows",
@@ -186,6 +188,8 @@ const programData = {
           "Guardrails, validation, dashboards, and NLP agents",
           "Running script/app with config, tests, logs, and operational demo",
         ],
+        image: "/assets/images/certificate-enterprise-ai/AI-Workflow-Automation-Guide_-How-to-Achieve-End-to-End-Process-Excellence-Cover-3-2.webp",
+       
       },
     ],
   },
