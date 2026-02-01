@@ -74,6 +74,7 @@ export function DegreeTemplate({
     whyStevens,
     studentSpotlight,
     faculty,
+    applicationOption, // New: singleImageCard for Accelerated Application
     admissions,
     keyDates,
     tuition,
@@ -234,13 +235,21 @@ export function DegreeTemplate({
         {/* 11. Faculty Section */}
         <FacultySection faculty={faculty} ref={registerSectionRef("faculty")} />
 
-        {/* 12. Admissions Section (may include tuition/dates if combined) */}
+        {/* 12a. Application Option (singleImageCard) - if provided, this becomes the admissions anchor */}
+        {applicationOption && (
+          <AdmissionsSection
+            admissions={applicationOption}
+            ref={registerSectionRef("admissions")}
+          />
+        )}
+
+        {/* 12b. Admissions Section (may include tuition/dates if combined) */}
         <AdmissionsSection
           admissions={admissions}
           keyDates={keyDates}
           tuition={tuition}
           programCode={code}
-          ref={registerSectionRef("admissions")}
+          ref={applicationOption ? undefined : registerSectionRef("admissions")}
         />
 
         {/* 13. Tuition Section (standalone if not combined) */}

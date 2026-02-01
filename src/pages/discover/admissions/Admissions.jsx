@@ -18,11 +18,13 @@ import {
   setMetaDescription,
   setOpenGraphTags,
   buildCanonicalUrl,
+  createPageUrl,
 } from "@/utils";
 import ProgramFilterGrid from "../../../components/admissions/ProgramFilterGrid";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import { DeadlinesSection } from "@/components/shared/sections/DeadlinesSection";
+import ApplicationOptionsCards from "@/components/admissions/ApplicationOptionsCards";
 
 export default function Admissions() {
   usePageTracking({
@@ -97,14 +99,49 @@ export default function Admissions() {
       "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply.",
   };
 
+  // Application options data for ApplicationOptionsCards component
+  const applicationOptionsData = {
+    title: "Choose Your Application Option",
+    options: [
+      {
+        title: "Standard Application",
+        subtitle:
+          "Prestige and rigor. A comprehensive review for the dedicated scholar.",
+        theme: "dark",
+        image: "/assets/images/shared/stevens-campus.webp",
+        featured: false,
+        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
+        buttonText: "Apply Now",
+        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      },
+      {
+        title: "Accelerated Application",
+        subtitle:
+          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
+        theme: "light",
+        image: "/assets/images/shared/asap-hero.webp",
+        featured: true,
+        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
+        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+        buttonText: "Apply Now",
+        url: createPageUrl("accelerated-application"),
+      },
+    ],
+    consultation: {
+      title: "Wondering Which Application Is Right for You?",
+      buttonText: "Get In Touch",
+      url: createPageUrl("RequestInfo"),
+    },
+  };
+
   const faqs = [
     {
-      q: "What is the difference between the standard application and the ASAP application?",
-      a: "The standard application requires prospective students to complete and submit a full application, including all necessary documents such as transcripts, recommendation letters and personal statements, before being considered for admission. The ASAP application allows students to bypass parts of the traditional process by successfully completing two preliminary courses, which can fast-track their admission into the program. Bachelor's degree is required for both applications.",
+      q: "What is the difference between the standard application and the Accelerated application?",
+      a: "The standard application requires prospective students to complete and submit a full application, including all necessary documents such as transcripts, recommendation letters and personal statements, before being considered for admission. The Accelerated application allows students to bypass parts of the traditional process and get started immediately with a streamlined application. Bachelor's degree is required for both applications.",
     },
     {
-      q: "How does the ASAP application benefit prospective students?",
-      a: "The ASAP application benefits students by providing a more flexible and expedited route to program admission. By focusing on successfully completing two trial courses, students can demonstrate their capability and commitment to the program, allowing them to start their educational journey more quickly without waiting for the standard application review process to conclude. This option is especially advantageous for those who wish to begin their studies immediately and showcase their readiness through academic performance.",
+      q: "How does the Accelerated application benefit prospective students?",
+      a: "The Accelerated application benefits students by providing a more flexible and expedited route to program admission. With no letters of recommendation required, you can apply in minutes and start your educational journey more quickly. This option is especially advantageous for working professionals who wish to begin their studies immediately.",
     },
     {
       q: "Are there scholarships available to students?",
@@ -134,7 +171,7 @@ export default function Admissions() {
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
+              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
                 Admissions Overview
               </h2>
               <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg">
@@ -157,6 +194,9 @@ export default function Admissions() {
           </div>
         </div>
 
+        {/* Application Options Cards */}
+        <ApplicationOptionsCards {...applicationOptionsData} />
+
         {/* Explore Our Programs - NEW DYNAMIC SECTION */}
         <div
           id="explore-programs"
@@ -164,7 +204,7 @@ export default function Admissions() {
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl text-left stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
                 Explore Our Graduate Programs
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-7xl mx-auto text-left">
@@ -218,7 +258,7 @@ export default function Admissions() {
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
                 Admissions FAQ
               </h2>
             </div>
@@ -246,7 +286,7 @@ export default function Admissions() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-stevens-xl items-center">
                 <div className="text-stevens-white">
-                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md text-stevens-white">
+                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide mb-stevens-md text-stevens-white">
                     Request Information
                   </h2>
                   <p className="text-stevens-lg text-stevens-white mb-stevens-lg">

@@ -687,36 +687,22 @@ const programData = {
     ],
   },
   admissions: {
-    variant: "imageCards",
+    variant: "singleImageCard",
+    title: "Application Option",
+    backgroundImage: "/assets/images/shared/asap-hero.webp",
     options: [
       {
-        title: "Standard Application",
+        title: "Accelerated Application",
         subtitle:
-          "Prestige and rigor. A comprehensive review for the dedicated scholar.",
-        theme: "dark",
-        image: "/assets/images/shared/stevens-campus.webp",
-        featured: false,
-        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
-        buttonText: "Apply Now",
-        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
-      },
-      {
-        title: "ASAP Application",
-        subtitle:
-          "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
         theme: "light",
-        image: "/assets/images/shared/asap-hero.webp",
         featured: true,
-        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>No letters of recommendation required</li></ul>`,
+        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
+        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
-        url: createPageUrl("ASAP"),
+        url: createPageUrl("accelerated-application") + "?program=mscs",
       },
     ],
-    consultation: {
-      title: "Wondering Which Application Is Right for You?",
-      buttonText: "Get In Touch",
-      url: createPageUrl("RequestInfo"),
-    },
   },
   keyDates: {
     headers: [

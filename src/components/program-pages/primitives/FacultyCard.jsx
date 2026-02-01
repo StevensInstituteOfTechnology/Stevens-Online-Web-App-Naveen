@@ -21,7 +21,7 @@ import { User } from "lucide-react";
  */
 export const FacultyCard = ({ member }) => {
   // Top-right corner diagonal cut - applied to entire card
-  const clipPath = "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)";
+  const clipPath = "polygon(0 0, 75% 0, 100% 15%, 100% 100%, 0 100%)";
 
   return (
     <div

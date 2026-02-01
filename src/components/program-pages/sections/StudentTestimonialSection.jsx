@@ -97,7 +97,7 @@ export const StudentTestimonialSection = forwardRef(
 
         {/* Desktop Layout (>=768px): Background image with card overlay */}
         {/* Using flatter aspect ratios for shorter section height */}
-        <div className="hidden md:block relative aspect-[21/9] lg:aspect-[3/1] xl:aspect-[3.5/1]">
+        <div className="hidden md:block relative aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[3/1] min-h-[400px] lg:min-h-[450px]">
           {/* Background Image with responsive position */}
           <div
             className="absolute inset-0 bg-cover"

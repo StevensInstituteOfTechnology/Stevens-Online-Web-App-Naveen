@@ -509,8 +509,7 @@ const programData = {
       },
       {
         title: "ASAP Application",
-        subtitle:
-          "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+        subtitle: "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
         theme: "light",
         image: "/assets/images/shared/asap-hero.webp",
         featured: true,

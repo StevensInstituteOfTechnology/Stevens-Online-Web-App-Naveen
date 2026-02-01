@@ -7,7 +7,7 @@ import { Section } from '../primitives';
 /**
  * AdmissionsSection - Admissions information with multiple layout variants
  * 
- * Design: CPE Brand Guidelines - Complex section with two main layouts
+ * Design: CPE Brand Guidelines - Complex section with multiple layouts
  * 
  * Variants:
  * 1. "combinedWithTuition" / "certificateWithDeadlines":
@@ -15,10 +15,17 @@ import { Section } from '../primitives';
  * 
  * 2. "imageCards":
  *    - Full-bleed two-column layout with background images
- *    - Dark card (left) + Light card (right) with overlays
- *    - Used for MSCS, MEM, MEADS degree pages
+ *    - Dark card (left) + Light card (right) with glass morphism
+ *    - Includes consultation CTA bar at bottom
+ *    - Used for MSCS, MEM degree pages
  * 
- * 3. Default (options layout):
+ * 3. "singleImageCard":
+ *    - Full-width background image with single floating card
+ *    - Card positioned right by default (or left via cardPosition)
+ *    - No consultation CTA bar
+ *    - Used for MEADS and single-option pages
+ * 
+ * 4. Default (options layout):
  *    - Application options as cards (1-3 columns)
  *    - Optional alert message box
  *    - Optional consultation CTA
@@ -26,14 +33,17 @@ import { Section } from '../primitives';
  * Used in: Both Degree and Certificate pages
  * 
  * @param {Object} admissions - Admissions configuration
- * @param {string} admissions.variant - Layout variant
+ * @param {string} admissions.variant - Layout variant ("imageCards", "singleImageCard", "combinedWithTuition", etc.)
+ * @param {string} admissions.backgroundImage - Background image URL for singleImageCard variant
  * @param {string} admissions.requirements - HTML requirements content
  * @param {Array} admissions.options - Array of application option objects
- * @param {Object} admissions.options[].subtitle - Tagline for imageCards variant
- * @param {string} admissions.options[].theme - "dark" or "light" for imageCards variant
+ * @param {string} admissions.options[].subtitle - Tagline for imageCards/singleImageCard variants
+ * @param {string} admissions.options[].theme - "dark" or "light" for card styling
  * @param {string} admissions.options[].image - Background image URL for imageCards variant
+ * @param {string} admissions.options[].cardPosition - "left" or "right" for singleImageCard variant
+ * @param {string} admissions.options[].footnote - Optional footnote text below description
  * @param {Object} admissions.alertMessage - Optional alert message
- * @param {Object} admissions.consultation - Optional consultation CTA
+ * @param {Object} admissions.consultation - Optional consultation CTA (imageCards only)
  * @param {Object} keyDates - Key dates for combined layout
  * @param {Object} tuition - Tuition data for combined layout
  */
@@ -176,7 +186,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                 }`}>
                   <div className="p-8 md:p-10">
                     {/* Title */}
-                    <h3 className={`font-stevens-display text-3xl md:text-4xl font-bold mb-4 leading-tight ${
+                    <h3 className={`font-stevens-display text-3xl font-medium mb-4 leading-tight ${
                       isDark ? 'text-white' : 'text-stevens-black'
                     }`}>
                       {option.title}
@@ -193,13 +203,22 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                       
                       {/* Description/Bullets */}
                       <div
-                        className={`prose prose-sm mb-8 max-w-none prose-li:my-1 [&_*]:no-underline ${
+                        className={`prose prose-sm mb-6 max-w-none prose-li:my-1 [&_*]:no-underline [&_strong]:font-semibold ${
                           isDark 
                             ? 'prose-invert text-white [&_li]:text-white [&_p]:text-white [&_ul]:text-white [&_*]:text-white' 
-                            : '[&_li]:text-stevens-dark-gray [&_p]:text-stevens-dark-gray'
+                            : '[&_li]:text-stevens-dark-gray [&_p]:text-stevens-dark-gray [&_strong]:text-stevens-black'
                         }`}
                         dangerouslySetInnerHTML={{ __html: option.description }}
                       />
+
+                      {/* Footnote */}
+                      {option.footnote && (
+                        <p className={`text-sm mb-6 leading-relaxed italic ${
+                          isDark ? 'text-white/90' : 'text-stevens-dark-gray'
+                        }`}>
+                          {option.footnote}
+                        </p>
+                      )}
                     
                     {/* Button */}
                     {option.buttonText && (
@@ -246,6 +265,120 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
             </div>
           </div>
         )}
+      </section>
+    );
+  }
+
+  // Single Image Card layout - one card on full-width background image
+  // Used for MEADS and pages with only one application option
+  if (admissions.variant === 'singleImageCard' && admissions.options && admissions.options.length > 0) {
+    const option = admissions.options[0];
+    const isDark = option.theme === 'dark';
+    
+    return (
+      <section
+        id="admissions"
+        ref={ref}
+        className="scroll-mt-20 relative bg-white"
+      >
+        {/* Section Title */}
+        <div className="py-12">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h2 className="font-stevens-display text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black uppercase tracking-wide">
+              {admissions.title || "Application Option"}
+            </h2>
+            {admissions.subtitle && (
+              <p className="mt-4 text-lg text-stevens-dark-gray max-w-2xl mx-auto">
+                {admissions.subtitle}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Constrained-width background image with single card - matches imageCards width */}
+        <div className="max-w-7xl mx-auto ">
+          <div className="relative min-h-[500px] lg:min-h-[600px] ">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={admissions.backgroundImage || option.image || '/assets/images/shared/stevens-campus.webp'}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              {/* Subtle overlay for contrast */}
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+
+            {/* Content Container - Card centered */}
+            <div className="relative z-10 h-full flex items-center justify-center px-6 lg:px-8 py-16 lg:py-20">
+              <div className="w-full md:w-2/3 lg:w-2/3 xl:w-2/3">
+              {/* Floating Glass Card */}
+              <div className={`overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-1 backdrop-blur-md ${
+                isDark 
+                  ? 'bg-black/50 border border-white/10' 
+                  : 'bg-white/80 border border-white/30'
+              } ${
+                option.featured ? 'ring-1 ring-stevens-red' : ''
+              }`}>
+                <div className="p-8 md:p-10">
+                  {/* Title */}
+                  <h3 className={`font-stevens-display text-3xl font-medium mb-4 leading-tight ${
+                    isDark ? 'text-white' : 'text-stevens-black'
+                  }`}>
+                    {option.title}
+                  </h3>
+                  
+                  {/* Subtitle */}
+                  {option.subtitle && (
+                    <p className={`text-base md:text-lg mb-8 leading-relaxed font-light ${
+                      isDark ? 'text-white' : 'text-stevens-dark-gray'
+                    }`}>
+                      {option.subtitle}
+                    </p>
+                  )}
+                    
+                  {/* Description/Bullets */}
+                  <div
+                    className={`prose prose-sm mb-6 max-w-none prose-li:my-1 [&_*]:no-underline [&_strong]:font-semibold ${
+                      isDark 
+                        ? 'prose-invert text-white [&_li]:text-white [&_p]:text-white [&_ul]:text-white [&_*]:text-white' 
+                        : '[&_li]:text-stevens-dark-gray [&_p]:text-stevens-dark-gray [&_strong]:text-stevens-black'
+                    }`}
+                    dangerouslySetInnerHTML={{ __html: option.description }}
+                  />
+
+                  {/* Footnote */}
+                  {option.footnote && (
+                    <p className={`text-sm mb-6 leading-relaxed italic ${
+                      isDark ? 'text-white/90' : 'text-stevens-dark-gray'
+                    }`}>
+                      {option.footnote}
+                    </p>
+                  )}
+                  
+                  {/* Button */}
+                  {option.buttonText && (
+                    <a
+                      href={option.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block mt-auto"
+                    >
+                      <Button 
+                        className="w-full h-12 text-lg font-bold tracking-wide bg-black text-white hover:bg-stevens-dark-gray border border-transparent"
+                      >
+                        {option.buttonText}
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
       </section>
     );
   }
