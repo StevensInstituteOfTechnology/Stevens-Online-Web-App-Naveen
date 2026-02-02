@@ -760,21 +760,26 @@ const programData = {
     requirements: `
       <div class="space-y-6">
         <div>
-          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">ACADEMIC TRANSCRIPTS</h4>
-          <p class="font-stevens-body">Applicants must submit transcripts from all undergraduate and graduate institutions where credit was earned. You may submit unofficial transcripts during the application process. After admission, you will be required to submit official transcripts.</p>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROOF OF BACHELOR'S DEGREE</h4>
+          <p class="font-stevens-body mb-stevens-sm">Upload a copy of your unofficial transcripts from all undergraduate institutions where credit was earned. This allows us to verify your academic background quickly.</p>
+          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
         </div>
         <div>
-          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROFESSIONAL Résumé</h4>
-          <p class="font-stevens-body mb-stevens-sm">Work experience is not a requirement for the Online MBA program, but the admissions committee does value applicants with professional experience. You must include a résumé with your application that highlights:</p>
-          <ul class="list-disc pl-5 space-y-1"><li>Academic record</li><li>Work and internship experience</li><li>Leadership abilities</li><li>Professional aspirations</li></ul>
+          <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROFESSIONAL BACKGROUND</h4>
+          <p class="font-stevens-body mb-stevens-sm">Demonstrate your professional experience by providing one of the following:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="font-stevens-body"><strong>Upload your résumé</strong> – Highlight your work experience, leadership roles, and career achievements</li>
+            <li class="font-stevens-body"><strong>Link your LinkedIn profile</strong> – A convenient alternative that showcases your professional journey</li>
+          </ul>
+          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Work experience is valued but not required for admission.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">LETTERS OF RECOMMENDATION</h4>
-          <p class="font-stevens-body">Your application must include two letters of recommendation. The strongest applications will include one letter from a current supervisor, and one from a former supervisor or previous employer who can speak to your leadership potential and discuss your professional performance.</p>
+          <p class="font-stevens-body mt-stevens-sm">The Accelerated Application streamlines your application process by removing the recommendation letter requirement, allowing you to apply faster without coordinating with references.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">GMAT/GRE</h4>
-          <p class="font-stevens-body">Scores are not required.</p>
+          <p class="font-stevens-body mt-stevens-sm">Standardized test scores are not required for admission to the Online MBA program.</p>
         </div>
       </div>
     `,

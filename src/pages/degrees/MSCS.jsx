@@ -774,11 +774,7 @@ const programData = {
         description:
           "$3,120 in tuition support for the first two asynchronous courses.",
       },
-      {
-        title: "Pathway Grant (for Accelerated applicants)",
-        description:
-          "$3,120 in tuition support for the first two asynchronous courses.",
-      },
+      
       {
         title: "Dean’s Merit Scholar Program",
         description:
