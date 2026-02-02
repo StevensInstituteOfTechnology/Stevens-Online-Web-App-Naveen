@@ -29,7 +29,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/accelerated-application/",
     },
   },
   quickFacts: {
@@ -69,7 +69,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${
+      KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
@@ -85,7 +87,7 @@ const programData = {
     imagePosition: "50% 70%",
     description: `
       <p class="font-medium text-lg">The Stevens Institute of Technology Master of Science in Computer Science (MSCS) offers industry-relevant coursework and focus areas tailored to your goals. We help you build the skills needed to excel in today's tech workforce.</p>
-      <p class="font-medium text-lg mt-6">With our new <strong>ASAP application</strong>, you can bypass the standard application process and secure your spot in the program by successfully completing two trial courses.</p>
+      <p class="font-medium text-lg mt-6">With our new <strong>Accelerated Application</strong>, you can fast-track your application—no recommendation letters required. Upload unofficial transcripts and your résumé or LinkedIn profile to get started.</p>
     `,
     keySkills: [
       "Software Engineering",
@@ -330,7 +332,7 @@ const programData = {
     title: "Why Choose an Online MSCS from Stevens?",
     description: `
       <p>At Stevens, you'll receive an unparalleled computer science education, learning to innovate in a rapidly evolving tech landscape. Our cutting-edge curriculum is continuously updated, blending rigor, depth and real-world relevance to prepare you for what's new and next in the field.</p>
-      <p>With renowned faculty and industry-aligned coursework, you'll develop the theoretical foundation and practical experience needed to excel. Plus, our ASAP application allows you to complete two trial courses before fully committing to the program, ensuring a perfect fit for your educational and career goals.</p>
+      <p>With renowned faculty and industry-aligned coursework, you'll develop the theoretical foundation and practical experience needed to excel. Our Accelerated Application streamlines the process so you can apply in minutes with simplified requirements—no recommendation letters, just transcripts and your professional background.</p>
     `,
   },
   curriculum: {
@@ -660,7 +662,8 @@ const programData = {
     members: [
       {
         name: "Shudong Hao",
-        title: "Teaching Assistant Professor and Associate Chair for Graduate Studies in the Department of Computer Science",
+        title:
+          "Teaching Assistant Professor and Associate Chair for Graduate Studies in the Department of Computer Science",
         image: "/assets/avatars/mscs-avatar/Stevens-logo Small Scale.webp",
       },
       {
@@ -681,7 +684,8 @@ const programData = {
       },
       {
         name: "Samuel Kim",
-        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        title:
+          "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
         image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
       },
     ],
@@ -698,7 +702,8 @@ const programData = {
         theme: "light",
         featured: true,
         description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+        footnote:
+          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
         url: createPageUrl("accelerated-application") + "?program=mscs",
       },
@@ -770,7 +775,7 @@ const programData = {
           "$3,120 in tuition support for the first two asynchronous courses.",
       },
       {
-        title: "Pathway Grant (for ASAP applicants)",
+        title: "Pathway Grant (for Accelerated applicants)",
         description:
           "$3,120 in tuition support for the first two asynchronous courses.",
       },
@@ -835,16 +840,16 @@ const programData = {
   },
   faqs: [
     {
-      q: "What is the ASAP application?",
-      a: "The ASAP application enables prospective students to complete two eight-week asynchronous courses to gain full admission to the program, offering an alternative to the standard application process. Bachelor’s degree is required. By earning a grade of “B” or better in each course, you demonstrate your readiness for the program, and the credits you earn are applied toward your degree.",
+      q: "What is the Accelerated Application?",
+      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your resume or LinkedIn profile. Official transcripts are due within 2 months of enrollment. Bachelor's degree is required.",
     },
     {
-      q: "Who should apply through the ASAP application?",
-      a: "The ASAP application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required.",
+      q: "Who should use the Accelerated Application?",
+      a: "The Accelerated Application is ideal for students who may not meet traditional admission criteria but believe they can showcase their academic potential through coursework. Bachelor’s degree is required.",
     },
     {
-      q: "What resources are available to ASAP students?",
-      a: "As an ASAP student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses.",
+      q: "What happens after I submit my Accelerated Application?",
+      a: "As an Accelerated Application student, you’ll have access to the same resources and support as fully admitted students. This includes academic advising, technical support and access to faculty to help ensure your success in the asynchronous courses.",
     },
   ],
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
@@ -869,7 +874,7 @@ export default function MSCSPage() {
         programName="Master of Science in Computer Science"
         programType="degree"
       >
-        <DegreeTemplate programData={programData} useApplicationModal={true} />
+        <DegreeTemplate programData={programData} useApplicationModal={false} />
       </ProgramContextProvider>
     </PageContextProvider>
   );

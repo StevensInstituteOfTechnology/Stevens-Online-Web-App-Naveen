@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
@@ -120,7 +120,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                   </button>
                 </Link>
 
-                {/* Apply Now Button - Different behavior based on application type */}
+                {/* Apply Now Button - Different behavior based on program */}
                 {onApplyClick ? (
                   // Custom override provided
                   <button
@@ -140,8 +140,8 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                     Apply Now
                     <ArrowRight className="w-4 h-4" />
                   </button>
-                ) : program.applicationConfig.type === "modal" ? (
-                  // Modal type (MSCS, MEM)
+                ) : program.code === "mem" ? (
+                  // MEM only: Open modal with ASAP option
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -152,7 +152,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                         program_name: program.shortName,
                         button_location: "admissions_card",
                         application_type: "modal",
-                        modal_options: "standard,asap",
+                        modal_options: "asap",
                       });
                     }}
                     className="flex-1 h-10 px-4 text-sm font-semibold bg-stevens-red text-white hover:bg-red-700 transition-all duration-200 flex items-center justify-center gap-1"
@@ -160,16 +160,19 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                     Apply Now
                     <ArrowRight className="w-4 h-4" />
                   </button>
-                ) : isInternalAppLink ? (
-                  // Internal link (MEADS, Certificates)
+                ) : (
+                  // All other programs: Go to Accelerated Application page
                   <Link
-                    to={getApplicationLink() + `?program=${program.code}`}
+                    to={
+                      createPageUrl("accelerated-application") +
+                      `?program=${program.code}`
+                    }
                     className="flex-1"
                     onClick={(e) => {
                       e.stopPropagation();
                       sessionStorage.setItem(
                         "accelerated_application_program",
-                        program.code,
+                        program.code
                       );
                       trackConversion(CONVERSION_LABELS.APPLY_NOW);
                       trackEvent("apply_button_clicked", {
@@ -177,7 +180,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                         program_name: program.shortName,
                         button_location: "admissions_card",
                         application_type: "accelerated",
-                        destination: getApplicationLink(),
+                        destination: "/accelerated-application/",
                       });
                     }}
                   >
@@ -186,31 +189,6 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </Link>
-                ) : (
-                  // External link (MBA)
-                  <a
-                    href={getApplicationLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                      trackEvent("apply_button_clicked", {
-                        program_code: program.code,
-                        program_name: program.shortName,
-                        button_location: "admissions_card",
-                        application_type: "standard",
-                        destination: getApplicationLink(),
-                        is_external: true,
-                      });
-                    }}
-                  >
-                    <button className="w-full h-10 px-4 text-sm font-semibold bg-stevens-red text-white hover:bg-red-700 transition-all duration-200 flex items-center justify-center gap-1">
-                      Apply Now
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
-                  </a>
                 )}
               </div>
             </div>
@@ -218,8 +196,8 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
         </div>
       </motion.div>
 
-      {/* Application Modal for MSCS and MEM */}
-      {program.applicationConfig.type === "modal" && (
+      {/* Application Modal for MEM only */}
+      {program.code === "mem" && (
         <ApplicationModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}

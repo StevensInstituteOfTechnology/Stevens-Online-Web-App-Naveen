@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Asterism from "./brand/Asterism";
 import ContactOptionsModal from "./modals/ContactOptionsModal";
 
@@ -41,6 +42,9 @@ const calculateDiagonalClipPath = (aspectRatio, angle = 25) => {
  * @param {string} imageAlt - Alt text for image
  * @param {number} angle - Diagonal cut angle in degrees (default: 25)
  * @param {string} sourcePage - Source page identifier for tracking (default: 'promotional_card')
+ * @param {Object} applyButton - Optional apply button config (overrides "Schedule a Call" in quickFacts mode)
+ * @param {string} applyButton.text - Button text (default: "APPLY NOW")
+ * @param {string} applyButton.link - Button link (e.g., "/accelerated-application/?program=mscs")
  */
 export function PromotionalCard({
   quickFacts,
@@ -52,11 +56,12 @@ export function PromotionalCard({
   imageAlt = "Student",
   angle = 25,
   sourcePage = "promotional_card",
+  applyButton = null,
 }) {
   // Ref on OUTER container for more stable aspect ratio calculation
   const containerRef = useRef(null);
   const [clipPath, setClipPath] = useState(
-    "polygon(0 0, 100% 0, 100% 65%, 0 100%)",
+    "polygon(0 0, 100% 0, 100% 65%, 0 100%)"
   );
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -133,16 +138,28 @@ export function PromotionalCard({
                   </div>
                 )}
 
-                {/* CTA Button */}
-                <button
-                  onClick={() => setShowContactModal(true)}
-                  className="inline-flex items-center gap-3 text-white text-md font-bold uppercase tracking-wider hover:text-stevens-red transition-colors group/btn"
-                >
-                  Schedule a Call
-                  <span className="text-xl group-hover/btn:translate-x-1 transition-transform">
-                    ▶
-                  </span>
-                </button>
+                {/* CTA Button - Apply Now link if applyButton provided, else Schedule a Call */}
+                {applyButton ? (
+                  <Link
+                    to={applyButton.link}
+                    className="inline-flex items-center gap-3 text-white text-md font-bold uppercase tracking-wider hover:text-stevens-red transition-colors group/btn"
+                  >
+                    {applyButton.text || "APPLY NOW"}
+                    <span className="text-xl group-hover/btn:translate-x-1 transition-transform">
+                      ▶
+                    </span>
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setShowContactModal(true)}
+                    className="inline-flex items-center gap-3 text-white text-md font-bold uppercase tracking-wider hover:text-stevens-red transition-colors group/btn"
+                  >
+                    Schedule a Call
+                    <span className="text-xl group-hover/btn:translate-x-1 transition-transform">
+                      ▶
+                    </span>
+                  </button>
+                )}
               </>
             ) : (
               /* Default Title/Description Layout */

@@ -31,7 +31,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/accelerated-application/",
     },
   },
   quickFacts: {
@@ -71,7 +71,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SUMMER.TERM.name}: ${
+      KEY_DATES_SUMMER.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
@@ -923,7 +925,6 @@ const programData = {
         title: "Associate Professor",
         image: "/assets/avatars/mba-avatar/ann-murphy-stevens-faculty.webp",
       },
-      
     ],
   },
   // Application Option - singleImageCard variant (appears after faculty, before detailed admissions)
@@ -939,7 +940,8 @@ const programData = {
         theme: "light",
         featured: true,
         description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+        footnote:
+          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
         url: "/accelerated-application/?program=mba",
       },

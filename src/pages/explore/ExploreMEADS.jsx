@@ -165,8 +165,8 @@ const ExploreMEADS = () => {
     keyDatesNote:
       "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive tuition discounts are not eligible. Other eligibility conditions may apply.",
 
-    // New Fall 2025 Section
-    newFall2025Badge: "NEW FOR FALL 2025",
+    // New Fall 2026 Section
+    newFall2025Badge: "NEW FOR 2026",
     newFall2025Title: "START YOUR DEGREE WITH 2 ASYNCHRONOUS COURSES",
     newFall2025Description: `
       <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
@@ -192,7 +192,7 @@ const ExploreMEADS = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ACCELERATED APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
       },
     ],
     newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",

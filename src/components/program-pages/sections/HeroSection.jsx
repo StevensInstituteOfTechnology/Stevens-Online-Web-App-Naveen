@@ -110,8 +110,8 @@ export function HeroSection({
       </div>
     );
 
-  // Tuition cards rendering (same frosted glass style as badges)
-  const renderTuitionCards = () =>
+  // Desktop tuition cards rendering (frosted glass style on image)
+  const renderDesktopTuitionCards = () =>
     tuitionCards.length > 0 && (
       <div className="flex flex-wrap gap-8 mb-stevens-md">
         {tuitionCards.map((card, index) => (
@@ -129,6 +129,28 @@ export function HeroSection({
               className="text-sm text-white/90 mt-0.5 uppercase tracking-wide font-semibold"
               style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)" }}
             >
+              {card.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+
+  // Mobile tuition cards rendering (solid background for better contrast)
+  const renderMobileTuitionCards = () =>
+    tuitionCards.length > 0 && (
+      <div className="flex flex-wrap gap-6 mb-stevens-md">
+        {tuitionCards.map((card, index) => (
+          <div
+            key={index}
+            className={`${
+              isDarkForm
+                ? "bg-stevens-black text-white border-stevens-black"
+                : "bg-stevens-black text-white border-stevens-black"
+            } border-2 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:scale-105 cursor-default shadow-lg`}
+          >
+            <div className="text-2xl sm:text-3xl font-bold">{card.value}</div>
+            <div className="text-xs sm:text-sm mt-0.5 uppercase tracking-wide font-semibold opacity-90">
               {card.label}
             </div>
           </div>
@@ -167,7 +189,7 @@ export function HeroSection({
               {renderDesktopBadges()}
 
               {/* Tuition Cards (Desktop) - Above title */}
-              {renderTuitionCards()}
+              {renderDesktopTuitionCards()}
 
               {/* Title */}
               <div className="space-y-1">
@@ -204,8 +226,8 @@ export function HeroSection({
           <div className="animate-in slide-in-from-bottom duration-500">
             {renderMobileBadges()}
 
-            {/* Tuition Cards (Mobile) - Above title */}
-            {renderTuitionCards()}
+            {/* Tuition Cards (Mobile) - Above title with solid background */}
+            {renderMobileTuitionCards()}
 
             {/* Title */}
             <div className="space-y-1">
@@ -236,9 +258,7 @@ export function HeroSection({
         <div
           className={`order-3 lg:order-2 lg:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md lg:px-stevens-xl py-stevens-lg lg:py-stevens-2xl`}
         >
-          
           <div className="w-full max-w-md mx-auto lg:mx-0 animate-in slide-in-from-bottom lg:slide-in-from-right duration-700">
-          
             {/* Form Header */}
             <div className="text-center mb-stevens-md lg:mb-stevens-lg">
               <h2
@@ -259,20 +279,15 @@ export function HeroSection({
             />
 
             {/* SINGLE Lead Capture Form Instance */}
-           
-              <LeadCaptureForm
-                sourcePage={effectiveSourcePage}
-                programOfInterest={programCode}
-                hideHeader={true}
-                theme={theme}
-              />
-            
-            
+
+            <LeadCaptureForm
+              sourcePage={effectiveSourcePage}
+              programOfInterest={programCode}
+              hideHeader={true}
+              theme={theme}
+            />
           </div>
-          
-          
         </div>
-        
       </div>
     </section>
   );

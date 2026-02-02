@@ -55,7 +55,7 @@ const ExploreCertEnterpriseAI = () => {
       },
       {
         number: "Top Jobs",
-        label: "On the Rise 2025",
+        label: "On the Rise 2026",
         description:
           "AI-related roles dominate LinkedIn's Jobs on the Rise list, with over half of postings outside traditional IT.",
       },
@@ -81,7 +81,7 @@ const ExploreCertEnterpriseAI = () => {
     // Program Benefits
     programBenefitsTitle: "Certificate Benefits",
     programBenefitsDescription:
-      "Employers are hiring for 'AI-fluent' business talent across every function. AI roles top 'Jobs on the Rise 2025,' and AI skills carry a salary premium. This certificate turns managers, analysts, and professionals into responsible AI practitioners who can operationalize AI safely and effectively.<br/><br/>The 9-credit model aligns perfectly with the IRS $5,250 tax-free employer tuition benefit, improving affordability and making it ideal for corporate-sponsored learning.",
+      "Employers are hiring for 'AI-fluent' business talent across every function. AI roles top 'Jobs on the Rise 2026,' and AI skills carry a salary premium. This certificate turns managers, analysts, and professionals into responsible AI practitioners who can operationalize AI safely and effectively.<br/><br/>The 9-credit model aligns perfectly with the IRS $5,250 tax-free employer tuition benefit, improving affordability and making it ideal for corporate-sponsored learning.",
     programBenefitsImage:
       "/assets/images/explore-cert-enterprise-ai/explore-cert-EAI-2.webp",
     programBenefitsHighlights: [
@@ -132,6 +132,7 @@ const ExploreCertEnterpriseAI = () => {
     ],
 
     // Key Dates
+    keyDatesTerm: KEY_DATES_SPRING2.TERM.nameUppercase,
     keyDates: [
       {
         label: "Early Submit",

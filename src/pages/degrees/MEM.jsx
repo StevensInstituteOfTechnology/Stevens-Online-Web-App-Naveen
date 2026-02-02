@@ -67,7 +67,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_FALL.TERM.name}: ${KEY_DATES_FALL.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_FALL.TERM.name}: ${
+      KEY_DATES_FALL.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
@@ -213,7 +215,8 @@ const programData = {
           "Evaluate technology trends and their impact on organizational strategy",
           "Make informed decisions about technology investments and resource allocation",
         ],
-        image: "/assets/images/mem/pexels-anthonyshkraba-production-8279248.webp",
+        image:
+          "/assets/images/mem/pexels-anthonyshkraba-production-8279248.webp",
       },
     ],
   },
@@ -490,7 +493,6 @@ const programData = {
         title: "Teaching Associate Professor",
         image: "/assets/avatars/mem-avatar/teresa-zigh-stevens-faculty.webp",
       },
-      
     ],
   },
   admissions: {
@@ -509,7 +511,8 @@ const programData = {
       },
       {
         title: "ASAP Application",
-        subtitle: "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
+        subtitle:
+          "Accelerated pathway. Earn your spot through two eight-week asynchronous courses.",
         theme: "light",
         image: "/assets/images/shared/asap-hero.webp",
         featured: true,

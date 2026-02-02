@@ -1,5 +1,13 @@
 import React from "react";
-import { Award, Globe, Star } from "lucide-react";
+import {
+  Award,
+  Globe,
+  Star,
+  Target,
+  Clock,
+  Network,
+  ThumbsUp,
+} from "lucide-react";
 import { ExploreTemplate } from "../../components/explore-pages";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -30,6 +38,10 @@ const ExploreMBA = () => {
         "Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.",
       ogImage: "/assets/images/explore-mba/1-omba-hero-scaled.webp",
       url: "/explore/online-mba/",
+    },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "/accelerated-application/",
     },
 
     // Statistics
@@ -144,7 +156,40 @@ const ExploreMBA = () => {
             </ul>`,
     },
 
+    // New Fall 2026 Section
+    newFall2025Badge: "NEW FOR 2026",
+    newFall2025Title: "START YOUR DEGREE WITH 2 ASYNCHRONOUS COURSES",
+    newFall2025Description: `
+      <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>
+
+      <p class="font-stevens-body">Our new asynchronous course format helps you balance graduate study with work and life, without sacrificing the structure or support that defines a Stevens education.</p>
+    `,
+    newFall2025Benefits: [
+      {
+        icon: Globe,
+        text: "NO LIVE CLASS SESSIONS - LEARN ON YOUR OWN TIME",
+      },
+      {
+        icon: Target,
+        text: "WEEKLY MILESTONES THAT KEEP YOU ACCOUNTABLE AND ON TRACK",
+      },
+      {
+        icon: Clock,
+        text: "ACCESS TO FACULTY OFFICE HOURS, AI-POWERED ASSISTANCE AND PEER DISCUSSIONS",
+      },
+      {
+        icon: Network,
+        text: "DESIGNED FOR WORKING PROFESSIONALS SEEKING FLEXIBILITY AND MOMENTUM",
+      },
+      {
+        icon: ThumbsUp,
+        text: "APPLY IN MINUTES WITH OUR ACCELERATED APPLICATION - NO RECOMMENDATION LETTERS REQUIRED",
+      },
+    ],
+    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",
+
     // Key Dates
+    keyDatesTerm: KEY_DATES_SUMMER.TERM.nameUppercase,
     keyDates: [
       {
         label: "Early Submit",

@@ -43,10 +43,10 @@ const ExploreMSCS = () => {
       ogImage: "/assets/images/explore-mscs/stevens-campus.webp",
       url: "/explore/online-masters-computer-science/",
     },
-    useApplicationModal: true,
+    useApplicationModal: false,
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/accelerated-application/",
     },
 
     // Statistics
@@ -93,8 +93,8 @@ const ExploreMSCS = () => {
     whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
     whyChooseStevensVideoCover: "/assets/videos/video-cover-1.avif", // Placeholder
 
-    // New Fall 2025 Section
-    newFall2025Badge: "NEW FOR FALL 2025",
+    // New Fall 2026 Section
+    newFall2025Badge: "NEW FOR 2026",
     newFall2025Title: "START YOUR DEGREE WITH 2–4 ASYNCHRONOUS COURSES",
     newFall2025Description: `
       <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule. Depending on your track (traditional or advanced), your first two to four courses will now be asynchronous.</p>
@@ -120,21 +120,25 @@ const ExploreMSCS = () => {
       },
       {
         icon: ThumbsUp,
-        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
+        text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ACCELERATED APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
       },
     ],
     newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp", // Placeholder
 
     // Just Launched Section
     justLaunchedBadge: "JUST LAUNCHED",
-    justLaunchedTitle: "NEW FLEXIBLE APPLICATION OPTIONS",
+    justLaunchedTitle: "ACCELERATED APPLICATION",
     justLaunchedDescription: `
-      <p class="font-stevens-body">We've introduced new application options designed to make enrollment more accessible. These options reduce prerequisite requirements and offer the opportunity to take trial courses.</p>
-      
-      <p class="font-stevens-body">To learn more, speak with your enrollment advisor to determine the approach that best suits your background, goals and schedule.</p>
+      <p class="font-stevens-body">Our new <strong>Accelerated App</strong> is designed for busy professionals who want to fast-track their application. Get started immediately with simplified requirements:</p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li><strong>No recommendation letters required</strong></li>
+        <li><strong>Upload unofficial transcripts</strong> – official transcripts due within 2 months</li>
+        <li><strong>Share your professional background</strong> – upload your résumé or link your LinkedIn profile</li>
+      </ul>
+      <p class="mt-2 font-stevens-body">Apply in under 5 minutes and take the first step toward advancing your career in computer science.</p>
     `,
-    justLaunchedButtonText: "Request Flexible App Info",
-    justLaunchedButtonLink: "/request-information/",
+    justLaunchedButtonText: "Apply Now",
+    justLaunchedButtonLink: "/accelerated-application/",
     justLaunchedImage: "/assets/images/explore-mscs/3-explore-mscs.webp",
 
     // Program Benefits

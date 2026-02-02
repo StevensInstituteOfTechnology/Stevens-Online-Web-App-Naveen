@@ -43,7 +43,7 @@ const ExploreMEM = () => {
     useApplicationModal: true,
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/asap/?program=mem",
     },
 
     // Statistics
@@ -90,8 +90,8 @@ const ExploreMEM = () => {
       <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
 
-    // New Fall 2025 Section
-    newFall2025Badge: "NEW FOR FALL 2025",
+    // New Fall 2026 Section
+    newFall2025Badge: "NEW FOR 2026",
     newFall2025Title: "START YOUR DEGREE WITH 2 ASYNCHRONOUS COURSES",
     newFall2025Description: `
       <p class="font-stevens-body">Starting this fall, the first phase of your program has been redesigned around your schedule, and the first two courses you take will now be asynchronous.</p>

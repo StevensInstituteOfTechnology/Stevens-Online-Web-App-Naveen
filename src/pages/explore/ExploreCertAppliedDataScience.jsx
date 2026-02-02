@@ -134,6 +134,7 @@ const ExploreCertAppliedDataScience = () => {
     ],
 
     // Key Dates
+    keyDatesTerm: KEY_DATES_SPRING2.TERM.nameUppercase,
     keyDates: [
       {
         label: "Early Submit",
