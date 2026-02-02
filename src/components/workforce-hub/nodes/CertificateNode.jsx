@@ -1,12 +1,17 @@
 import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
 
-const CertificateNode = ({ data, isConnectable }) => {
+const CertificateNode = ({
+  data,
+  isConnectable,
+  targetPosition = Position.Top,
+  sourcePosition = Position.Bottom,
+}) => {
   return (
     <div className="px-4 py-3 shadow-lg rounded-md bg-gray-800 border-2 border-gray-600 w-[200px] hover:border-blue-400 transition-colors duration-300">
       <Handle
         type="target"
-        position={Position.Left}
+        position={targetPosition}
         isConnectable={isConnectable}
         className="w-3 h-3 bg-blue-400"
       />
@@ -23,7 +28,7 @@ const CertificateNode = ({ data, isConnectable }) => {
       </div>
       <Handle
         type="source"
-        position={Position.Right}
+        position={sourcePosition}
         isConnectable={isConnectable}
         className="w-3 h-3 bg-blue-400"
       />

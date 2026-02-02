@@ -1,7 +1,12 @@
 import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
 
-const MastersNode = ({ data, isConnectable }) => {
+const MastersNode = ({
+  data,
+  isConnectable,
+  targetPosition = Position.Top,
+  sourcePosition = Position.Bottom,
+}) => {
   return (
     <div className="relative group">
       {/* Glow Effect */}
@@ -11,7 +16,7 @@ const MastersNode = ({ data, isConnectable }) => {
       <div className="relative px-5 py-4 bg-gray-900 rounded-lg border-2 border-yellow-500 w-[240px] shadow-2xl">
         <Handle
           type="target"
-          position={Position.Left}
+          position={targetPosition}
           isConnectable={isConnectable}
           className="w-4 h-4 bg-yellow-500 border-2 border-gray-900"
         />
@@ -31,7 +36,7 @@ const MastersNode = ({ data, isConnectable }) => {
         {/* No source handle usually for ultimate nodes, but adding one just in case chains continue */}
         <Handle
           type="source"
-          position={Position.Right}
+          position={sourcePosition}
           isConnectable={isConnectable}
           className="w-3 h-3 bg-yellow-500 !opacity-0" // Hidden if end node
         />

@@ -54,21 +54,43 @@ const SkillTree = () => {
         },
       }));
 
-      // 2. Find all outgoing paths from this node recursively
+      // 2. Find all outgoing OR incoming paths depending on node type
       const connectedEdgeIds = new Set();
       const connectedNodeIds = new Set([node.id]);
 
-      const traverse = (currentNodeId) => {
-        // Find outgoing edges
+      const traverseOutgoing = (currentNodeId) => {
         const outgoing = edges.filter((e) => e.source === currentNodeId);
         outgoing.forEach((edge) => {
           connectedEdgeIds.add(edge.id);
           connectedNodeIds.add(edge.target);
-          traverse(edge.target); // Recurse
+          traverseOutgoing(edge.target);
         });
       };
 
-      traverse(node.id);
+      const traverseIncoming = (currentNodeId) => {
+        const incoming = edges.filter((e) => e.target === currentNodeId);
+        incoming.forEach((edge) => {
+          connectedEdgeIds.add(edge.id);
+          connectedNodeIds.add(edge.source);
+          traverseIncoming(edge.source);
+        });
+      };
+
+      // Check if it's a Masters node (target) or Certificate node (source)
+      // Based on our data, certificates are sources, masters are targets.
+      // We can check if the node has outgoing edges (Certificate) or incoming edges (Masters)
+      // Or rely on node type if available in node object passed to handler
+
+      // Simple heuristic: traverse both directions to show full lineage?
+      // Or specific logic:
+      // If Certificate -> Show what it unlocks (outgoing)
+      // If Masters -> Show requirements (incoming)
+
+      if (node.type === "masters") {
+        traverseIncoming(node.id);
+      } else {
+        traverseOutgoing(node.id);
+      }
 
       // 3. Highlight connected edges and nodes
       const newEdges = resetEdges.map((edge) => {
@@ -122,7 +144,10 @@ const SkillTree = () => {
           Select a <span className="text-blue-400 font-bold">Certificate</span>{" "}
           to see which{" "}
           <span className="text-yellow-500 font-bold">Master's Degrees</span> it
-          unlocks.
+          unlocks, or select a{" "}
+          <span className="text-yellow-500 font-bold">Master's Degree</span> to
+          see its prerequisite{" "}
+          <span className="text-blue-400 font-bold">Certificates</span>.
         </p>
       </div>
 
