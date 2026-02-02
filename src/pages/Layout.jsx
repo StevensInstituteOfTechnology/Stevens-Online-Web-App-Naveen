@@ -778,7 +778,7 @@ export default function Layout({ children, currentPageName }) {
           </div>
           <div className="border-t border-stevens-light-gray mt-12 pt-8 text-center text-sm text-stevens-light-gray">
             <p>
-              &copy; 2025 Stevens Institute of Technology. All rights reserved.
+              &copy; 2026 Stevens Institute of Technology. All rights reserved.
             </p>
           </div>
         </div>
