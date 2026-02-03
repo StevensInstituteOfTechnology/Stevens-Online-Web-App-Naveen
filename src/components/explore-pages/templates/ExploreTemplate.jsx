@@ -185,7 +185,7 @@ export function ExploreTemplate({
       description: seo.description,
       image: seo.ogImage
         ? buildCanonicalUrl(seo.ogImage)
-        : buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+        : buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl(seo.url),
       type: "website",
     });

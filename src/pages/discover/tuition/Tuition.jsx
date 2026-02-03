@@ -60,7 +60,7 @@ export default function Tuition() {
       title: "Online Tuition & Financial Aid | Stevens Online",
       description:
         "Discover online master's program costs, tuition rates, and financial aid options for Stevens Online graduate degrees.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/tuition-and-financial-aid/"),
       type: "website",
     });

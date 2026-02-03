@@ -45,7 +45,7 @@ export default function ASAPPage() {
       title: "Accelerated Stevens Admission Process (ASAP)| Stevens Online",
       description:
         "The Accelerated Stevens Admission Process (ASAP) allows you to start graduate courses early and fast-track your degree.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/asap/"),
       type: "website",
     });

@@ -114,7 +114,7 @@ export function DegreeTemplate({
       description: seo.description,
       image: seo.ogImage
         ? buildCanonicalUrl(seo.ogImage)
-        : buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+        : buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl(seo.url),
       type: "website",
     });
@@ -184,7 +184,11 @@ export function DegreeTemplate({
         {videoSection && (
           <VideoSection
             title={videoSection.title}
-            heading={videoSection.heading || videoSection.description || videoSection.title}
+            heading={
+              videoSection.heading ||
+              videoSection.description ||
+              videoSection.title
+            }
             description={videoSection.description || ""}
             videoSrc={videoSection.videoSrc}
             videoPoster={videoSection.posterSrc}

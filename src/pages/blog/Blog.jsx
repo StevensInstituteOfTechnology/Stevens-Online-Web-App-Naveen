@@ -200,7 +200,7 @@ export default function Blog() {
 
   const [posts, setPosts] = useState(() => getInitialState().posts);
   const [singlePost, setSinglePost] = useState(
-    () => getInitialState().singlePost,
+    () => getInitialState().singlePost
   );
 
   // Update state when slug or category changes (for client-side navigation)
@@ -232,7 +232,7 @@ export default function Blog() {
         description: description,
         image: singlePost.featured_image_url
           ? buildCanonicalUrl(singlePost.featured_image_url)
-          : buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+          : buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
         url: canonical,
         type: "article",
       });
