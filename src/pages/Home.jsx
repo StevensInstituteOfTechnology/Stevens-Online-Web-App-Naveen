@@ -105,7 +105,7 @@ const TextRankingItem = ({ value, description, source }) => (
       {value}
     </p>
     {/* Gold underline accent */}
-    <div className="w-12 h-1 bg-yellow-500 mt-2 mb-4" />
+    <div className="w-12 h-1 bg-stevens-primary mt-2 mb-4" />
     <p className="text-stevens-base text-stevens-gray-700 leading-relaxed">
       {description}
       {source && (
