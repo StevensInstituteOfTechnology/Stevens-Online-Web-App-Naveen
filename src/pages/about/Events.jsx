@@ -115,7 +115,7 @@ export default function Events() {
       title: "Upcoming Virtual Events & Webinars | Stevens Online",
       description:
         "Join upcoming virtual events and webinars to explore Stevens Online graduate programs and connect with faculty.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/events/"),
       type: "website",
     });

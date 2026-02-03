@@ -54,16 +54,16 @@ export default function Admissions() {
   // Set SEO meta tags
   useEffect(() => {
     setPageTitle(
-      "Graduate Admissions & Application Requirements | Stevens Online",
+      "Graduate Admissions & Application Requirements | Stevens Online"
     );
     setMetaDescription(
-      "Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master's programs.",
+      "Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master's programs."
     );
     setOpenGraphTags({
       title: "Graduate Admissions & Application Requirements | Stevens Online",
       description:
         "Learn about graduate admissions requirements, application deadlines, and how to apply to Stevens Online master's programs.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/admissions/"),
       type: "website",
     });
@@ -122,7 +122,8 @@ export default function Admissions() {
         image: "/assets/images/shared/asap-hero.webp",
         featured: true,
         description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+        footnote:
+          "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
         url: createPageUrl("accelerated-application"),
       },

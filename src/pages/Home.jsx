@@ -29,10 +29,7 @@ import { BlogCarousel } from "@/components/blog";
 import { ArrowRight, X, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
-import {
-  ParallaxImage,
-  RequestInfoModal,
-} from "@/components/shared";
+import { ParallaxImage, RequestInfoModal } from "@/components/shared";
 
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
@@ -337,7 +334,7 @@ export default function Home() {
       title: "Explore Online Master's Programs | Stevens Online",
       description:
         "Explore accredited online master's programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/"),
       type: "website",
     });

@@ -41,13 +41,13 @@ export default function ComparePrograms() {
   useEffect(() => {
     setPageTitle("Compare Graduate Programs | Stevens Online");
     setMetaDescription(
-      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
+      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests."
     );
     setOpenGraphTags({
       title: "Compare Graduate Programs | Stevens Online",
       description:
         "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
-      image: buildCanonicalUrl("/assets/logos/stevens-crest.webp"),
+      image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/compare-our-programs/"),
       type: "website",
     });
