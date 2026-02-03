@@ -359,7 +359,7 @@ export default function Layout({ children, currentPageName }) {
                 <div className="relative overflow-visible">
                   {/* Main Logo - 60% larger */}
                   <img
-                    src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.png"
+                    src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.svg"
                     alt="Stevens Institute of Technology Professional Education Logo"
                     className="h-[65px] stevens-md:h-[87px] w-auto"
                   />
@@ -647,7 +647,7 @@ export default function Layout({ children, currentPageName }) {
                 }}
               >
                 <img
-                  src="/assets/logos/Stevens-CPE-logo-RGB_Abbreviated-WHT.png"
+                  src="/assets/logos/Stevens-CPE-logo-RGB_Abbreviated-WHT.svg"
                   alt="Stevens Institute of Technology Logo"
                   className="h-48 w-auto"
                 />

@@ -383,7 +383,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/assets/logos/Stevens-CPE-logo-RGB_Primary-WHT.png"
+              src="/assets/logos/Stevens-CPE-logo-RGB_Primary-WHT.svg"
               alt="Stevens College of Professional Education"
               className="w-[180px] lg:w-[220px] h-auto -mt-[200px]"
             />
