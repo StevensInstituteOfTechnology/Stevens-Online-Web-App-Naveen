@@ -647,7 +647,11 @@ export default function Home() {
                   Discover world-class online graduate programs designed for
                   working professionals seeking to advance their careers.
                 </p>
-                <Link to={createPageUrl("admissions/") + "#explore-programs"}>
+                <Link
+                  to={
+                    createPageUrl("compare-our-programs/") + "#explore-programs"
+                  }
+                >
                   <Button
                     variant="outline-white"
                     className="uppercase text-stevens-white"

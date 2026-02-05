@@ -81,7 +81,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${
+      KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 
@@ -164,8 +166,8 @@ const programData = {
           "Code-driven labs: PCA, regression, gradient descent",
           "Train and interpret an ML model with AI insight report",
         ],
-        image: "/assets/images/certificate-applied-data-science/1527028764207.webp",
-        
+        image:
+          "/assets/images/certificate-applied-data-science/1527028764207.webp",
       },
       {
         title: "Python & Data Pipelines",
@@ -177,8 +179,8 @@ const programData = {
           "Build AI-ready pipelines from raw data to training datasets",
           "End-to-end pipeline published to Streamlit app",
         ],
-        image: "/assets/images/certificate-applied-data-science/pexels-thisisengineering-3861976.webp",
-      
+        image:
+          "/assets/images/certificate-applied-data-science/pexels-thisisengineering-3861976.webp",
       },
       {
         title: "Machine Learning & AI",
@@ -190,7 +192,8 @@ const programData = {
           "Build and evaluate AI solutions with SHAP/LIME for transparency",
           "Deploy an ML model with reproducible code and stakeholder narrative",
         ],
-        image: "/assets/images/certificate-applied-data-science/istockphoto-2084953049-612x612.webp",
+        image:
+          "/assets/images/certificate-applied-data-science/istockphoto-2084953049-612x612.webp",
       },
     ],
   },
@@ -290,32 +293,32 @@ const programData = {
     companies: [
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
       {
         name: "Meta",
-        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
+        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.png",
         industry: "Technology",
       },
       {
         name: "Apple",
-        logo: "/assets/company_logo/Apple_logo_black.svg.png",
+        logo: "/assets/company_logo/Apple_logo_black.png",
         industry: "Technology",
       },
     ],
@@ -435,7 +438,8 @@ const programData = {
     members: [
       {
         name: "Samuel Kim",
-        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        title:
+          "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
         image: "/assets/avatars/certificate-ADS-avatar/Samuel_Kim.webp",
       },
       {
@@ -443,8 +447,12 @@ const programData = {
         title: "Senior Lecturer",
         image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif",
       },
-      
-      { name: "David Landaeta", title: "Adjunct Lecturer", image: "/assets/logos/Stevens-logo-small-scale.webp" },
+
+      {
+        name: "David Landaeta",
+        title: "Adjunct Lecturer",
+        image: "/assets/logos/Stevens-logo-small-scale.webp",
+      },
     ],
   },
   faqs: [

@@ -298,32 +298,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Meta",
-        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
+        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.png",
         industry: "Technology",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
       {
         name: "Apple",
-        logo: "/assets/company_logo/Apple_logo_black.svg.png",
+        logo: "/assets/company_logo/Apple_logo_black.png",
         industry: "Technology",
       },
     ],
@@ -774,7 +774,7 @@ const programData = {
         description:
           "$3,120 in tuition support for the first two asynchronous courses.",
       },
-      
+
       {
         title: "Dean’s Merit Scholar Program",
         description:

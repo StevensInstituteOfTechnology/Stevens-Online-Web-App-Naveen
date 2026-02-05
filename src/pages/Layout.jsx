@@ -173,7 +173,7 @@ export default function Layout({ children, currentPageName }) {
   const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const [isMobile, setIsMobile] = React.useState(initialWidth < 768);
   const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(
-    initialWidth <= 1024,
+    initialWidth <= 1024
   );
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = React.useState(null);
@@ -184,7 +184,7 @@ export default function Layout({ children, currentPageName }) {
     setExpandedMobileMenus((prev) =>
       prev.includes(menuName)
         ? prev.filter((name) => name !== menuName)
-        : [...prev, menuName],
+        : [...prev, menuName]
     );
   };
 
@@ -444,7 +444,7 @@ export default function Layout({ children, currentPageName }) {
                     {mobileNavLinks.map((link) => {
                       if (link.isDropdown) {
                         const isExpanded = expandedMobileMenus.includes(
-                          link.name,
+                          link.name
                         );
                         return (
                           <div key={link.name} className="group">
@@ -523,7 +523,7 @@ export default function Layout({ children, currentPageName }) {
                                     >
                                       {item.name}
                                     </Link>
-                                  ),
+                                  )
                                 )}
                               </div>
                             )}
@@ -587,7 +587,7 @@ export default function Layout({ children, currentPageName }) {
                             >
                               {item.name}
                             </Link>
-                          ),
+                          )
                         )}
                   </div>
 
@@ -659,7 +659,9 @@ export default function Layout({ children, currentPageName }) {
               </h3>
               <div className="space-y-2">
                 <Link
-                  to={createPageUrl("admissions/") + "#explore-programs"}
+                  to={
+                    createPageUrl("compare-our-programs/") + "#explore-programs"
+                  }
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Degrees

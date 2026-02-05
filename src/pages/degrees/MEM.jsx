@@ -292,32 +292,32 @@ const programData = {
     companies: [
       {
         name: "BMW",
-        logo: "/assets/company_logo/BMW.svg.png",
+        logo: "/assets/company_logo/BMW.png",
         industry: "Manufacturing",
       },
       {
         name: "Goldman Sachs",
-        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.svg.png",
+        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.png",
         industry: "Finance",
       },
       {
         name: "Lockheed Martin",
-        logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+        logo: "/assets/company_logo/Lockheed_Martin_logo.png",
         industry: "Aerospace & Defense",
       },
       {
         name: "Exxon",
-        logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+        logo: "/assets/company_logo/Exxon_logo_2016.png",
         industry: "Energy",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
       {
         name: "UPS",
-        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.svg.png",
+        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.png",
         industry: "Logistics",
       },
     ],

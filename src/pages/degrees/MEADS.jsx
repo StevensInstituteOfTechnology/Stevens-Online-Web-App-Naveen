@@ -106,7 +106,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${
+      KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "Contact for Pricing",
     applyUrl: "#",
 
@@ -212,32 +214,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Deloitte",
-        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        logo: "/assets/company_logo/Logo_of_Deloitte.png",
         industry: "Consulting",
       },
       {
         name: "Accenture",
-        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        logo: "/assets/company_logo/Accenture_logo.png",
         industry: "Consulting",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
     ],
@@ -469,7 +471,8 @@ const programData = {
     members: [
       {
         name: "Samuel Kim",
-        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        title:
+          "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
         image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
       },
       {
@@ -488,13 +491,12 @@ const programData = {
         title: "Adjunct Lecturer",
         image: "/assets/avatars/msdsen-avatar/Dehnad.webp",
       },
-     
+
       {
         name: "David Landaeta",
         title: "Adjunct Lecturer",
         image: "/assets/logos/Stevens-logo-small-scale.webp",
       },
-      
     ],
   },
   // ==================================================================
@@ -505,12 +507,14 @@ const programData = {
     options: [
       {
         title: "Accelerated Application",
-        subtitle: "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
+        subtitle:
+          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
         theme: "light",
         featured: true,
         cardPosition: "right",
         description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote: "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+        footnote:
+          "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
         url: "/accelerated-application/?program=meads",
       },

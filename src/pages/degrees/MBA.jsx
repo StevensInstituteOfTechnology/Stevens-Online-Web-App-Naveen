@@ -725,32 +725,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Verizon",
-        logo: "/assets/company_logo/Verizon_2024.svg.png",
+        logo: "/assets/company_logo/Verizon_2024.png",
         industry: "Telecommunications",
       },
       {
         name: "JPMorgan Chase",
-        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
+        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.png",
         industry: "Finance",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Deloitte",
-        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        logo: "/assets/company_logo/Logo_of_Deloitte.png",
         industry: "Consulting",
       },
       {
         name: "Accenture",
-        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        logo: "/assets/company_logo/Accenture_logo.png",
         industry: "Consulting",
       },
     ],

@@ -76,7 +76,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${
+      KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 
@@ -164,7 +166,8 @@ const programData = {
           "Design and scope a proof-of-concept with business value",
           "Team PoC with management plan, demo, and implementation roadmap",
         ],
-        image: "/assets/images/certificate-enterprise-ai/pexels-googledeepmind-18069695.webp",
+        image:
+          "/assets/images/certificate-enterprise-ai/pexels-googledeepmind-18069695.webp",
       },
       {
         title: "AI Strategy & Management",
@@ -176,7 +179,8 @@ const programData = {
           "FATE principles, governance frameworks, and vendor selection",
           "Implementation playbook and architecture analysis",
         ],
-        image: "/assets/images/certificate-enterprise-ai/istockphoto-1979289147-612x612.webp",
+        image:
+          "/assets/images/certificate-enterprise-ai/istockphoto-1979289147-612x612.webp",
       },
       {
         title: "Operational AI Workflows",
@@ -188,8 +192,8 @@ const programData = {
           "Guardrails, validation, dashboards, and NLP agents",
           "Running script/app with config, tests, logs, and operational demo",
         ],
-        image: "/assets/images/certificate-enterprise-ai/AI-Workflow-Automation-Guide_-How-to-Achieve-End-to-End-Process-Excellence-Cover-3-2.webp",
-       
+        image:
+          "/assets/images/certificate-enterprise-ai/AI-Workflow-Automation-Guide_-How-to-Achieve-End-to-End-Process-Excellence-Cover-3-2.webp",
       },
     ],
   },
@@ -292,32 +296,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Ecommerce",
       },
       {
         name: "Deloitte",
-        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        logo: "/assets/company_logo/Logo_of_Deloitte.png",
         industry: "Consulting",
       },
       {
         name: "Accenture",
-        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        logo: "/assets/company_logo/Accenture_logo.png",
         industry: "Consulting",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
     ],

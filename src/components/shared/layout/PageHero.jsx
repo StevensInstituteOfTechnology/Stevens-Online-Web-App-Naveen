@@ -199,7 +199,7 @@ export default function PageHero({
           fetchpriority="high"
           loading="eager"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
+          className="absolute inset-0 w-full h-full object-cover "
           style={{ 
             objectPosition: bgImagePosition,
             transform: bgImageFlip ? 'scaleX(-1)' : 'none'
