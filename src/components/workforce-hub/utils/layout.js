@@ -1,19 +1,32 @@
 import dagre from 'dagre';
 import { Position } from 'reactflow';
 
-const nodeWidth = 250;
-const nodeHeight = 160; // Increased from 80 to account for full card height
+// Node dimensions by type
+const nodeDimensions = {
+  foundation: { width: 200, height: 100 },
+  certificate: { width: 220, height: 120 },
+  masters: { width: 260, height: 140 },
+  default: { width: 220, height: 120 },
+};
 
 export const getLayoutedElements = (nodes, edges, direction = 'BT') => {
   const dagreGraph = new dagre.graphlib.Graph();
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-  // nodesep: horizontal spacing between nodes in the same rank
-  // ranksep: vertical spacing between ranks (rows)
-  dagreGraph.setGraph({ rankdir: direction, nodesep: 50, ranksep: 150 });
+  // BT = Bottom to Top (3 rows: Foundations at bottom → Certificates → Degrees at top)
+  // nodesep: horizontal spacing between nodes in the same row
+  // ranksep: vertical spacing between rows
+  dagreGraph.setGraph({
+    rankdir: direction,
+    nodesep: 100,  // Horizontal spacing between nodes in same row
+    ranksep: 150,  // Vertical spacing between rows
+    marginx: 50,
+    marginy: 50,
+  });
 
   nodes.forEach((node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+    const dims = nodeDimensions[node.type] || nodeDimensions.default;
+    dagreGraph.setNode(node.id, { width: dims.width, height: dims.height });
   });
 
   edges.forEach((edge) => {
@@ -24,7 +37,10 @@ export const getLayoutedElements = (nodes, edges, direction = 'BT') => {
 
   const layoutedNodes = nodes.map((node) => {
     const nodeWithPosition = dagreGraph.node(node.id);
+    const dims = nodeDimensions[node.type] || nodeDimensions.default;
+
     if (direction === 'LR') {
+      // Left to Right: edges go from left to right
       node.targetPosition = Position.Left;
       node.sourcePosition = Position.Right;
     } else if (direction === 'BT') {
@@ -39,8 +55,8 @@ export const getLayoutedElements = (nodes, edges, direction = 'BT') => {
     // We are shifting the dagre node position (anchor=center center) to the top left
     // so it matches the React Flow node anchor point (top left).
     node.position = {
-      x: nodeWithPosition.x - nodeWidth / 2,
-      y: nodeWithPosition.y - nodeHeight / 2,
+      x: nodeWithPosition.x - dims.width / 2,
+      y: nodeWithPosition.y - dims.height / 2,
     };
 
     return node;
