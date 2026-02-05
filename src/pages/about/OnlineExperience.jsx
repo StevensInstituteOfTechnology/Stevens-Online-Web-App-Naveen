@@ -45,6 +45,59 @@ export default function OnlineExperience() {
   }, []);
 
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
+  const [activeBreakdownTab, setActiveBreakdownTab] = useState("async");
+
+  // Weekly Breakdown data for both course formats
+  const weeklyBreakdownTabs = {
+    async: {
+      label: "Asynchronous Courses",
+
+      cards: [
+        {
+          title: "Asynchronous Courses",
+          description: "Self-paced classes.",
+        },
+        {
+          title: "Assignments",
+          description:
+            "Work completed according to your own schedule, including homework, projects, reading and research.",
+        },
+      ],
+      total: {
+        hours: "20 Hours",
+        label: "Total Hours",
+        note: "Hours are estimates and are subject to change per course.",
+      },
+    },
+    syncAsync: {
+      label: "Synchronous + Asynchronous Courses",
+
+      cards: [
+        {
+          hours: "1.5 Hours",
+          title: "Synchronous",
+          description: "Live online class meetings held each week.",
+        },
+        {
+          hours: "5 Hours",
+          title: "Asynchronous",
+          description:
+            "Self-paced course work completed according to your own schedule prior to each week's synchronous class meeting.",
+        },
+        {
+          hours: "3-5 Hours",
+          title: "Assignments",
+          description: "Homework, projects, research, etc.",
+        },
+      ],
+      total: {
+        hours: "9-12 Hours",
+        label: "Total Hours",
+        note: "Hours are estimates and are subject to change per course.",
+      },
+    },
+  };
+
   const features = [
     {
       icon: Laptop,
@@ -82,7 +135,7 @@ export default function OnlineExperience() {
         />
 
         {/* Welcome Message from Dean Arshad */}
-        <div className="py-20 bg-stevens-light-gray">
+        <div className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <Card className="shadow-stevens-2xl border border-stevens-light-gray rounded-stevens-lg overflow-hidden">
               <CardContent className="p-0">
@@ -166,7 +219,176 @@ export default function OnlineExperience() {
           </div>
         </div>
 
-        <div className="py-20 bg-stevens-light-gray">
+        {/* Weekly Breakdown Per Class Section */}
+        <section className="py-16 md:py-20 bg-stevens-light-gray">
+          <div className="max-w-7xl mx-auto px-stevens-sm md:px-stevens-lg xl:px-stevens-xl">
+            {/* Heading */}
+            <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray text-center mb-10">
+              Weekly Breakdown Per Class
+            </h2>
+
+            {/* Tabs */}
+            <div className="flex justify-center mb-8">
+              <div className="flex gap-8 border-b border-gray-300">
+                <button
+                  onClick={() => setActiveBreakdownTab("async")}
+                  className={`pb-3 text-sm font-bold uppercase tracking-wider transition-all ${
+                    activeBreakdownTab === "async"
+                      ? "text-stevens-dark-gray border-b-2 border-stevens-red"
+                      : "text-gray-500 hover:text-stevens-dark-gray"
+                  }`}
+                >
+                  Asynchronous Courses
+                </button>
+                <button
+                  onClick={() => setActiveBreakdownTab("syncAsync")}
+                  className={`pb-3 text-sm font-bold uppercase tracking-wider transition-all ${
+                    activeBreakdownTab === "syncAsync"
+                      ? "text-stevens-dark-gray border-b-2 border-stevens-red"
+                      : "text-gray-500 hover:text-stevens-dark-gray"
+                  }`}
+                >
+                  Synchronous + Asynchronous Courses
+                </button>
+              </div>
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-center text-stevens-dark-gray mb-10">
+              {weeklyBreakdownTabs[activeBreakdownTab].subtitle}
+            </p>
+
+            {/* Cards with operators */}
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4">
+              {weeklyBreakdownTabs[activeBreakdownTab].cards.map(
+                (card, index) => (
+                  <React.Fragment key={index}>
+                    {/* Card */}
+                    <div className="bg-white rounded-stevens-md p-6 flex-1 min-w-[200px] shadow-sm border border-gray-200">
+                      {card.hours && (
+                        <p className="text-stevens-red text-2xl md:text-3xl font-bold italic mb-1">
+                          {card.hours}
+                        </p>
+                      )}
+                      <p className="font-bold text-lg text-stevens-dark-gray italic">
+                        {card.title}
+                      </p>
+                      <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+                        {card.description}
+                      </p>
+                    </div>
+
+                    {/* Plus operator (not after last card) */}
+                    {index <
+                      weeklyBreakdownTabs[activeBreakdownTab].cards.length -
+                        1 && (
+                      <div className="hidden lg:flex items-center justify-center px-2">
+                        <span className="text-3xl font-light text-gray-400">
+                          +
+                        </span>
+                      </div>
+                    )}
+                  </React.Fragment>
+                )
+              )}
+
+              {/* Equals operator */}
+              <div className="hidden lg:flex items-center justify-center px-2">
+                <span className="text-3xl font-light text-gray-400">=</span>
+              </div>
+
+              {/* Total Card (Red) */}
+              <div className="bg-stevens-red text-white rounded-stevens-md p-6 flex-1 min-w-[200px]">
+                <p className="text-3xl md:text-4xl font-bold">
+                  {weeklyBreakdownTabs[activeBreakdownTab].total.hours}
+                </p>
+                <p className="font-bold text-lg">
+                  {weeklyBreakdownTabs[activeBreakdownTab].total.label}
+                </p>
+                <p className="text-sm mt-3 text-white/80 leading-relaxed">
+                  {weeklyBreakdownTabs[activeBreakdownTab].total.note}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Overview & Student Support Section */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-stevens-sm md:px-stevens-lg xl:px-stevens-xl space-y-16 md:space-y-20">
+            {/* Row 1: Overview - Text Left, Image Right */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                  Overview
+                </h2>
+                <div className="space-y-stevens-md text-stevens-dark-gray leading-relaxed">
+                  <p>
+                    Recognized as one of the most innovative schools in the
+                    nation, Stevens integrates technology across disciplines,
+                    ensuring that online students benefit from the same rigorous
+                    curriculum and expert faculty as those on campus.
+                  </p>
+                  <p>
+                    This commitment is supported by our substantial investment
+                    in academic and research infrastructure, facilitating a
+                    cutting-edge educational experience. Our 100% online format
+                    includes synchronous and asynchronous courses — and allows
+                    you to access learning materials, lecture notes and
+                    assignments at any time through our online course platform.
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
+                  <img
+                    src="/assets/images/online-experience/online-experience-1.png"
+                    alt="Students collaborating online"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: Student Support - Image Left, Text Right */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative md:order-1 order-2">
+                <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
+                  <img
+                    src="/assets/images/online-experience/Stevens_Two_Cities_20230413_STEVENS-63-CROP.webp"
+                    alt="Student receiving support"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:order-2 order-1">
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                  Student Support
+                </h2>
+                <div className="space-y-stevens-md text-stevens-dark-gray leading-relaxed">
+                  <p>
+                    As an online student, you'll have access to resources and
+                    support designed to help you flourish academically, stay
+                    connected to the university community and benefit from
+                    educational opportunities beyond the classroom. You'll
+                    receive one-on-one guidance from faculty who, with their
+                    deep research and industry backgrounds, will push you to
+                    master advanced topics while ensuring you meet high
+                    standards.
+                  </p>
+                  <p>
+                    These resources include the Continuing and Professional
+                    Student Care Center, which can assist with every aspect of
+                    being an online student, including admissions, registration,
+                    billing, deadlines and graduation requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <div className="text-center mb-16">
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray">
@@ -203,11 +425,6 @@ export default function OnlineExperience() {
 
         <div className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-            <img
-              src="/assets/images/online-experience/online-experience-1.png"
-              alt="Students collaborating online"
-              className="rounded-stevens-md shadow-xl mb-8"
-            />
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">
               Ready to Learn More?
             </h2>
