@@ -8,6 +8,8 @@ import {
   FileCheck,
   GraduationCap,
   Sparkles,
+  Code,
+  Briefcase,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -136,7 +138,24 @@ export default function AcceleratedApplicationPage() {
     "Faster application review process",
   ];
 
-  const eligiblePrograms = [
+  // Organize programs by category
+  const mastersPrograms = [
+    {
+      id: "mscs",
+      name: "Master of Science in Computer Science",
+      shortName: "M.S. Computer Science",
+      path: "/online-masters-computer-science-mscs/",
+      icon: Code,
+      description: "Master advanced computer science and AI skills",
+    },
+    {
+      id: "mba",
+      name: "Master of Business Administration",
+      shortName: "MBA",
+      path: "/online-mba/",
+      icon: Briefcase,
+      description: "AACSB-accredited technology-driven business leadership",
+    },
     {
       id: "meads",
       name: "M.Eng. in Applied Data Science",
@@ -145,6 +164,9 @@ export default function AcceleratedApplicationPage() {
       icon: GraduationCap,
       description: "Master data science and AI engineering",
     },
+  ];
+
+  const certificatePrograms = [
     {
       id: "cert-eai",
       name: "Professional Graduate Certificate in Enterprise AI",
@@ -245,27 +267,69 @@ export default function AcceleratedApplicationPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-stevens-xl">
-              {eligiblePrograms.map((program) => (
-                <Link
-                  key={program.id}
-                  to={program.path}
-                  className="group relative bg-white border border-stevens-red/20 rounded-xl p-8 hover:border-stevens-red hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  {/* Red accent line - always visible */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-xl"></div>
+            {/* Master's Degrees Section */}
+            <div className="mb-stevens-2xl">
+              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-semibold text-stevens-dark-gray mb-stevens-lg text-center">
+                Master's Degrees
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {mastersPrograms.map((program) => (
+                  <Link
+                    key={program.id}
+                    to={program.path}
+                    className="group relative bg-white border border-stevens-red/20 rounded-xl p-8 hover:border-stevens-red hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    {/* Red accent line - always visible */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-xl"></div>
 
-                  <div className="w-16 h-16 bg-stevens-red/10 group-hover:bg-stevens-red/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300">
-                    <program.icon className="w-8 h-8 text-stevens-red transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-bold text-lg text-stevens-dark-gray mb-3 text-center group-hover:text-stevens-red transition-colors">
-                    {program.shortName}
-                  </h3>
-                  <p className="text-sm text-stevens-gray text-center leading-relaxed">
-                    {program.description}
-                  </p>
-                </Link>
-              ))}
+                    <div className="w-16 h-16 bg-stevens-red/10 group-hover:bg-stevens-red/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300">
+                      <program.icon className="w-8 h-8 text-stevens-red transition-colors duration-300" />
+                    </div>
+                    <h4 className="font-bold text-lg text-stevens-dark-gray mb-3 text-center group-hover:text-stevens-red transition-colors">
+                      {program.shortName}
+                    </h4>
+                    <p className="text-sm text-stevens-gray text-center leading-relaxed">
+                      {program.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Subtle Divider */}
+            <div className="flex items-center justify-center mb-stevens-2xl">
+              <div className="flex-1 h-px bg-stevens-light-gray"></div>
+              <div className="mx-4 w-2 h-2 rounded-full bg-stevens-red/30"></div>
+              <div className="flex-1 h-px bg-stevens-light-gray"></div>
+            </div>
+
+            {/* Certificates Section */}
+            <div className="mb-stevens-xl">
+              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-semibold text-stevens-dark-gray mb-stevens-lg text-center">
+                Certificates
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                {certificatePrograms.map((program) => (
+                  <Link
+                    key={program.id}
+                    to={program.path}
+                    className="group relative bg-white border border-stevens-red/20 rounded-xl p-8 hover:border-stevens-red hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    {/* Red accent line - always visible */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-xl"></div>
+
+                    <div className="w-16 h-16 bg-stevens-red/10 group-hover:bg-stevens-red/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-all duration-300">
+                      <program.icon className="w-8 h-8 text-stevens-red transition-colors duration-300" />
+                    </div>
+                    <h4 className="font-bold text-lg text-stevens-dark-gray mb-3 text-center group-hover:text-stevens-red transition-colors">
+                      {program.shortName}
+                    </h4>
+                    <p className="text-sm text-stevens-gray text-center leading-relaxed">
+                      {program.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <div className="bg-gray-50 border-l-4 border-stevens-red p-6 rounded-r-lg shadow-sm">
@@ -274,8 +338,8 @@ export default function AcceleratedApplicationPage() {
                   Not sure which program is right for you?
                 </strong>{" "}
                 Visit each program page to learn more about curriculum, career
-                outcomes, and what makes each program unique. All three programs
-                use the same fast, streamlined application below.
+                outcomes, and what makes each program unique. All programs use
+                the same fast, streamlined application below.
               </p>
             </div>
           </div>
