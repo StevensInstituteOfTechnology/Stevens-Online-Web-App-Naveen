@@ -847,6 +847,10 @@ const programData = {
     },
   ],
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
+  tuitionCalculator: {
+    image: "/assets/images/mscs/mscs-overview.webp",
+    imageAlt: "Students working on computer science projects",
+  },
 };
 
 export default function MSCSPage() {

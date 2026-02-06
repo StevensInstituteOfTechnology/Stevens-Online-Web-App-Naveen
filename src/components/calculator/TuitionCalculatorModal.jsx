@@ -65,22 +65,21 @@ export default function TuitionCalculatorModal({
   if (!programPricing || !programData) return null;
 
   // Build application URL
+  // MEM uses ASAP application, all others use Accelerated Application
   const getApplicationUrl = () => {
-    const appConfig = programData.applicationConfig;
     const utmParams = `utm_source=microsite&utm_medium=tuition_calculator&utm_campaign=calculator-modal&utm_content=${programCode}`;
 
-    if (
-      appConfig?.standardLink ||
-      (appConfig?.type === "direct" && appConfig?.link?.startsWith("http"))
-    ) {
-      const baseUrl = appConfig.standardLink || appConfig.link;
-      const separator = baseUrl.includes("?") ? "&" : "?";
-      return { url: `${baseUrl}${separator}${utmParams}`, isExternal: true };
+    // MEM program uses ASAP application page
+    if (programCode === "mem") {
+      return {
+        url: `/asap/?program=${programCode}&${utmParams}`,
+        isExternal: false,
+      };
     }
 
-    const internalPath = appConfig?.link || "/accelerated-application/";
+    // All other programs use Accelerated Application page
     return {
-      url: `${internalPath}?program=${programCode}&${utmParams}`,
+      url: `/accelerated-application/?program=${programCode}&${utmParams}`,
       isExternal: false,
     };
   };
@@ -188,7 +187,8 @@ export default function TuitionCalculatorModal({
                           cta_location: "tuition_calculator_modal",
                           program_code: programCode,
                           final_price: calculatedCost.finalPrice,
-                          application_type: "accelerated",
+                          application_type:
+                            programCode === "mem" ? "asap" : "accelerated",
                         });
                         trackConversion(CONVERSION_LABELS.APPLY_NOW);
                       }}

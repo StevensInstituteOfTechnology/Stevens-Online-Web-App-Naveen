@@ -24,6 +24,7 @@ import {
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 import { VideoSection } from "../../shared/sections/VideoSection";
+import TuitionCalculatorSection from "../../calculator/TuitionCalculatorSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -82,6 +83,7 @@ export function CertificateTemplate({
     careerOutcomes,
     topCompanies,
     deadlines,
+    tuitionCalculator,
   } = programData;
 
   const location = useLocation();
@@ -233,7 +235,17 @@ export function CertificateTemplate({
           ref={registerSectionRef("admissions")}
         />
 
-        {/* 10b. Deadlines Timeline Section (optional) */}
+        {/* 10b. Tuition Calculator Section (opt-in per program) */}
+        {tuitionCalculator && (
+          <TuitionCalculatorSection
+            programCode={code}
+            image={tuitionCalculator.image}
+            imageAlt={tuitionCalculator.imageAlt}
+            ref={registerSectionRef("tuition-calculator")}
+          />
+        )}
+
+        {/* 10c. Deadlines Timeline Section (optional) */}
         {deadlines && (
           <DeadlinesSection
             keyDates={deadlines}
