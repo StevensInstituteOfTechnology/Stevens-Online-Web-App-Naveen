@@ -271,19 +271,19 @@ export default function Events() {
       title: "Application Overview: Online MBA",
       length: "15 minutes",
       url: "https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE",
-      image: "/assets/images/events/2-event.webp",
+      image: "/assets/images/events/events-mba.webp",
     },
     {
       title: "Application Walkthrough: Computer Science",
       length: "10 minutes",
       url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29",
-      image: "/assets/images/events/3-event.webp",
+      image: "/assets/images/events/events-computer-science.webp",
     },
     {
       title: "Application Walkthrough: Engineering Management",
       length: "24 minutes",
       url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810",
-      image: "/assets/images/events/4-event.webp",
+      image: "/assets/images/events/events-engineering-management.webp",
     },
   ];
 
@@ -293,7 +293,7 @@ export default function Events() {
         <PageHero
           title="Stevens Institute of Technology"
           subtitle="Upcoming Virtual Events & Webinars"
-          bgImage="/assets/images/events/1-event-scaled.webp"
+          bgImage="/assets/images/events/events-hero.webp"
         />
 
         {/* Intro Section */}
@@ -320,7 +320,7 @@ export default function Events() {
                 <div className="stevens-md:w-2/5 overflow-hidden">
                   <img
                     {...getContentImageProps(
-                      "/assets/images/events/1-event.webp",
+                      "/assets/images/events/events-spotlight.webp",
                       "800px"
                     )}
                     alt="Event Spotlight"

@@ -115,6 +115,8 @@ const AngledImage = React.forwardRef(
   (
     {
       src,
+      srcSet,
+      sizes,
       alt = "",
       direction = "right",
       angle = 25,
@@ -167,6 +169,8 @@ const AngledImage = React.forwardRef(
         {/* Image */}
         <img
           src={src}
+          srcSet={srcSet}
+          sizes={sizes}
           alt={alt}
           className={cn(
             "absolute inset-0 w-full h-full object-cover",

@@ -32,13 +32,13 @@ const ExploreMEADS = () => {
     programName: "Build What's Next.",
     heroSubtitle:
       "Train LLMs, deploy production ML systems, and lead AI initiatives. Engineering-first curriculum for the AI age.",
-    bgImage: "/assets/images/explore-meads/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/explore-meads/explore-meads-hero.webp",
     programCode: "meads",
     seo: {
       title: "Online M.Eng. in Applied Data Science - AI & ML | Stevens",
       description:
         "Master AI engineering, machine learning, and LLMs. Build production ML systems. $24,000 for 30 credits. 100% online from Stevens.",
-      ogImage: "/assets/images/explore-meads/stevens-manhattan-skyline-ds.webp",
+      ogImage: "/assets/images/explore-meads/explore-meads-hero.webp",
       url: "/explore/online-masters-eng-applied-data-science/",
     },
     secondaryCta: { label: "Apply In Minutes", to: "accelerated-application" },
@@ -91,7 +91,7 @@ const ExploreMEADS = () => {
       <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
     whyChooseStevensVideo: "/assets/videos/Stevens Online Home - 1.mp4", // Placeholder
-    whyChooseStevensVideoCover: "/assets/videos/video-cover-3.avif", // Placeholder
+    whyChooseStevensVideoCover: "/assets/videos/video-cover-3.webp", // Placeholder
 
     // Program Benefits
     programBenefitsTitle: "Program Overview",
@@ -195,7 +195,8 @@ const ExploreMEADS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ACCELERATED APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
       },
     ],
-    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",
+    newFall2025Image:
+      "/assets/images/explore-mem/explore-mem-asynchronous-courses.webp",
 
     // Just Launched Section
     justLaunchedBadge: "Just Launched",
@@ -207,7 +208,8 @@ const ExploreMEADS = () => {
     `,
     justLaunchedButtonText: "Apply Now",
     justLaunchedButtonLink: "/accelerated-application/",
-    justLaunchedImage: "/assets/images/explore-mem/2-explore-mem.webp",
+    justLaunchedImage:
+      "/assets/images/explore-mem/explore-mem-flexible-application.webp",
 
     // Contact
     contactTitle: "Ready to Take the Next Step?",

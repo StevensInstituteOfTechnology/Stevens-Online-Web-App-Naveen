@@ -15,7 +15,7 @@ const programData = {
       "Online Master’s in Engineering: Applied Data Science | Stevens Online",
     description:
       "Earn your online MS in Engineering – Applied Data Science from Stevens. Build expertise in data visualization, predictive analytics, and machine learning techniques used to solve complex engineering and business challenges.",
-    ogImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
+    ogImage: "/assets/images/meads/meads-hero.webp",
     url: "/online-masters-engineering-applied-data-science/",
   },
   // ==================================================================
@@ -26,7 +26,7 @@ const programData = {
     ],
     subtitle:
       "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
-    bgImage: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
+    bgImage: "/assets/images/meads/meads-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: { label: "Apply In Minutes", to: "accelerated-application" },
     tuitionCards: [
@@ -45,8 +45,7 @@ const programData = {
     headline: "Build AI-Powered Systems",
     tagline:
       "A career-aligned curriculum designed for real-world impact in the AI age.",
-    image:
-      "/assets/images/meads/2025_Stevens_New_Student_Move_In_Day_1_8-21-25_026.webp",
+    image: "/assets/images/meads/meads-overview.webp",
     imageAlt: "",
     imagePosition: "50% 80%",
     description: `
@@ -147,7 +146,7 @@ const programData = {
       "Master data science and AI skills without putting your career on hold",
     description:
       "Our 100% online, part-time format empowers professionals to build expertise in applied data science and artificial intelligence while maintaining their current role. Learn from expert faculty who bridge cutting-edge research with real-world applications, and connect with a network of accomplished peers and alumni driving innovation across industries.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -258,7 +257,7 @@ const programData = {
           "Use optimization and numerical methods to solve applied data science problems",
           "Conduct time series analysis using ARMA, ARIMA, and related models to forecast trends and interpret temporal data",
         ],
-        image: "/assets/images/meads/pexels-ian-panelo-4494644.webp",
+        image: "/assets/images/meads/meads-concentration-mathematics.webp",
       },
       {
         title: "Programming & Systems",
@@ -269,7 +268,7 @@ const programData = {
           "Design and manage data warehouses, architecture models, and ETL pipelines for business intelligence systems",
           "Implement scalable big data solutions using distributed computing and cloud-based platforms like Dataiku and Spark",
         ],
-        image: "/assets/images/meads/pexels-cottonbro-5473957.webp",
+        image: "/assets/images/meads/meads-concentration-programming.webp",
       },
       {
         title: "Machine Learning & AI",
@@ -281,7 +280,7 @@ const programData = {
           "Experiment with generative AI and augmented intelligence through prompt engineering and large language models",
           "Evaluate and manage AI systems ethically, addressing issues of fairness, transparency, and compliance in enterprise contexts",
         ],
-        image: "/assets/images/meads/pexels-googledeepmind-17483874.webp",
+        image: "/assets/images/meads/meads-concentration-machine-learning.webp",
       },
       {
         title: "Data Visualization & Communication",
@@ -292,7 +291,7 @@ const programData = {
           "Apply principles of perceptual design and ethical visualization to ensure clarity and integrity in data storytelling",
           "Communicate analytical findings effectively for both technical and business audiences",
         ],
-        image: "/assets/images/meads/pexels-rdne-7948065.webp",
+        image: "/assets/images/meads/meads-concentration-visualization.webp",
       },
       {
         title: "Applied Analytics & Business Intelligence",
@@ -303,7 +302,7 @@ const programData = {
           "Apply web and text mining techniques-including scraping, clustering, and recommender systems-to extract insights from large-scale data sources",
           "Implement data governance, security, and risk management practices to ensure trustworthy analytics across enterprise environments",
         ],
-        image: "/assets/images/meads/pexels-rdne-7947703.webp",
+        image: "/assets/images/meads/meads-concentration-analytics.webp",
       },
     ],
   },
@@ -473,23 +472,23 @@ const programData = {
         name: "Samuel Kim",
         title:
           "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
-        image: "/assets/avatars/mscs-avatar/Samuel_Kim.webp",
+        image: "/assets/avatars/msads-avatar/Samuel_Kim.webp",
       },
       {
         name: "Alkis Vazacopoulos",
         title: "Teaching Professor",
-        image: "/assets/avatars/msdsen-avatar/Vazacopoulos.webp",
+        image: "/assets/avatars/msads-avatar/Vazacopoulos.webp",
       },
       {
         name: "Upendra Prasad",
         title: "Senior Lecturer",
         image:
-          "/assets/avatars/msds-avatar/upendra-prasad-stevens-faculty.webp",
+          "/assets/avatars/msads-avatar/upendra-prasad-stevens-faculty.webp",
       },
       {
         name: "Khasha Dehnad",
         title: "Adjunct Lecturer",
-        image: "/assets/avatars/msdsen-avatar/Dehnad.webp",
+        image: "/assets/avatars/msads-avatar/Dehnad.webp",
       },
 
       {
@@ -641,6 +640,21 @@ const programData = {
       },
     ],
   },
+  // ==================================================================
+  faqs: [
+    {
+      q: "Do I need a background in computer science to apply?",
+      a: "While a strong quantitative foundation is preferred, the M.Eng. in Applied Data Science welcomes applicants from diverse backgrounds. A bachelor's degree is required. The curriculum includes foundational courses in mathematics, Python programming, and databases to help students build the necessary skills for advanced machine learning and AI coursework.",
+    },
+    {
+      q: "What is the Accelerated Application?",
+      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your resume or LinkedIn profile. Official transcripts are due within one year of enrollment. Bachelor's degree is required.",
+    },
+    {
+      q: "How long does it take to complete the program?",
+      a: "The M.Eng. in Applied Data Science requires 30 credits across 10 courses. Most students complete the program in 2–3 years while studying part-time. The flexible, asynchronous format allows you to pace your studies around your career and personal commitments.",
+    },
+  ],
   // ==================================================================
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-gray-500 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
 };

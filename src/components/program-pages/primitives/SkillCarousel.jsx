@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Generic placeholder images for carousel slides
 const PLACEHOLDER_IMAGES = [
-  '/assets/images/shared/1-explore-msds-640w.webp',
-  '/assets/images/shared/2-explore-msds-640w.webp',
-  '/assets/images/shared/3-explore-msds-640w.webp',
-  '/assets/images/online-experience/online-experience-1-640w.webp',
-  '/assets/images/shared/1-omba-hero-scaled-640w.webp',
+  "/assets/images/shared/1-explore-msds-640w.webp",
+  "/assets/images/shared/2-explore-msds-640w.webp",
+  "/assets/images/shared/3-explore-msds-640w.webp",
+  "/assets/images/online-experience/online-experience-overview-640w.webp",
+  "/assets/images/shared/1-omba-hero-scaled-640w.webp",
 ];
 
 /**
@@ -39,7 +39,7 @@ export const SkillCarousel = ({ modules }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [contentHeight, setContentHeight] = useState(0);
-  
+
   // Refs for measuring content heights
   const contentRefs = useRef([]);
   const containerRef = useRef(null);
@@ -49,7 +49,7 @@ export const SkillCarousel = ({ modules }) => {
   // Calculate the maximum height among all content panels
   const calculateMaxHeight = useCallback(() => {
     if (contentRefs.current.length === 0) return;
-    
+
     let maxHeight = 0;
     contentRefs.current.forEach((ref) => {
       if (ref) {
@@ -57,23 +57,23 @@ export const SkillCarousel = ({ modules }) => {
         const originalDisplay = ref.style.display;
         const originalVisibility = ref.style.visibility;
         const originalPosition = ref.style.position;
-        
-        ref.style.display = 'block';
-        ref.style.visibility = 'hidden';
-        ref.style.position = 'absolute';
-        
+
+        ref.style.display = "block";
+        ref.style.visibility = "hidden";
+        ref.style.position = "absolute";
+
         const height = ref.scrollHeight;
         if (height > maxHeight) {
           maxHeight = height;
         }
-        
+
         // Restore original styles
         ref.style.display = originalDisplay;
         ref.style.visibility = originalVisibility;
         ref.style.position = originalPosition;
       }
     });
-    
+
     // Add padding (p-8 lg:p-10 = 32px or 40px on each side)
     // We'll use a minimum height to ensure good appearance
     const minHeight = 400;
@@ -84,17 +84,17 @@ export const SkillCarousel = ({ modules }) => {
   useEffect(() => {
     // Initial calculation after render
     const timer = setTimeout(calculateMaxHeight, 100);
-    
+
     // Recalculate on window resize
     const handleResize = () => {
       calculateMaxHeight();
     };
-    
-    window.addEventListener('resize', handleResize);
-    
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [calculateMaxHeight]);
 
@@ -124,22 +124,22 @@ export const SkillCarousel = ({ modules }) => {
       <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
         <div className="grid lg:grid-cols-2">
           {/* Left: Image Panel - Hidden on mobile */}
-          <div 
+          <div
             className="hidden lg:block relative overflow-hidden bg-gray-100"
             style={{ minHeight: contentHeight > 0 ? contentHeight : 400 }}
           >
             <div className="absolute inset-0">
               {modules.map((module, index) => {
                 // Get image display settings with defaults
-                const imagePosition = module.imagePosition || 'center';
-                const imageFit = module.imageFit || 'cover';
+                const imagePosition = module.imagePosition || "center";
+                const imageFit = module.imageFit || "cover";
                 const imageScale = module.imageScale || 1;
-                
+
                 return (
                   <div
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-400 ease-in-out ${
-                      index === currentIndex ? 'opacity-100' : 'opacity-0'
+                      index === currentIndex ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <img
@@ -149,7 +149,8 @@ export const SkillCarousel = ({ modules }) => {
                       style={{
                         objectFit: imageFit,
                         objectPosition: imagePosition,
-                        transform: imageScale !== 1 ? `scale(${imageScale})` : undefined,
+                        transform:
+                          imageScale !== 1 ? `scale(${imageScale})` : undefined,
                       }}
                     />
                     {/* Subtle gradient overlay for depth */}
@@ -161,7 +162,7 @@ export const SkillCarousel = ({ modules }) => {
           </div>
 
           {/* Right: Content Panel - Full width on mobile */}
-          <div 
+          <div
             ref={containerRef}
             className="relative p-6 lg:p-10"
             style={{ minHeight: contentHeight > 0 ? contentHeight : undefined }}
@@ -172,8 +173,8 @@ export const SkillCarousel = ({ modules }) => {
                 ref={(el) => (contentRefs.current[index] = el)}
                 className={`transition-all duration-400 ease-in-out ${
                   index === currentIndex
-                    ? 'opacity-100 translate-y-0 relative'
-                    : 'opacity-0 translate-y-4 absolute top-0 left-0 right-0 pointer-events-none p-8 lg:p-10'
+                    ? "opacity-100 translate-y-0 relative"
+                    : "opacity-0 translate-y-4 absolute top-0 left-0 right-0 pointer-events-none p-8 lg:p-10"
                 }`}
               >
                 {/* Module Title */}
@@ -197,12 +198,12 @@ export const SkillCarousel = ({ modules }) => {
                     </h4>
                     <ul className="space-y-3">
                       {module.skills.map((skill, skillIndex) => (
-                        <li
-                          key={skillIndex}
-                          className="flex items-start gap-3"
-                        >
+                        <li key={skillIndex} className="flex items-start gap-3">
                           <div className="flex-shrink-0 w-6 h-6 rounded-full bg-stevens-black flex items-center justify-center mt-0.5">
-                            <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                            <Check
+                              className="w-3.5 h-3.5 text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                           <span className="text-gray-700 leading-relaxed">
                             {skill}
@@ -259,8 +260,8 @@ export const SkillCarousel = ({ modules }) => {
                 }}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                   index === currentIndex
-                    ? 'bg-stevens-black scale-110'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? "bg-stevens-black scale-110"
+                    : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

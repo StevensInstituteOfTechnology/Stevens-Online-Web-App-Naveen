@@ -31,13 +31,13 @@ const ExploreMEM = () => {
     programName: "Online Master of Engineering in Engineering Management",
     heroSubtitle:
       "Advance your career with a top-ranked engineering management degree that combines online flexibility with an affordable path to leadership.",
-    bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
+    bgImage: "/assets/images/mem/mem-hero.webp",
     programCode: "mem",
     seo: {
       title: "Online MEM in Engineering Management | Stevens",
       description:
         "Lead engineering teams with the 100% online MEM in Engineering Management from Stevens Institute of Technology. STEM-designated, flexible format, no GRE required.",
-      ogImage: "/assets/images/mem/1-mem-hero-scaled.webp",
+      ogImage: "/assets/images/mem/mem-hero.webp",
       url: "/explore/online-masters-engineering-management/",
     },
     useApplicationModal: true,
@@ -120,7 +120,8 @@ const ExploreMEM = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ASAP APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
       },
     ],
-    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp",
+    newFall2025Image:
+      "/assets/images/explore-mem/explore-mem-asynchronous-courses.webp",
 
     // Just Launched Section
     justLaunchedBadge: "Just Launched",
@@ -132,13 +133,15 @@ const ExploreMEM = () => {
     `,
     justLaunchedButtonText: "Request Flexible App Info",
     justLaunchedButtonLink: "/request-information/",
-    justLaunchedImage: "/assets/images/explore-mem/2-explore-mem.webp",
+    justLaunchedImage:
+      "/assets/images/explore-mem/explore-mem-flexible-application.webp",
 
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
     programBenefitsDescription:
       "The Stevens Online MEM is a technical leadership degree - built by engineers, for engineers - that blends systems thinking, project execution and organizational strategy. You'll gain the cross-functional fluency top employers demand while building deep technical expertise in data science, modeling and risk analysis.<br/><br/> We produce engineering leaders capable of creating, applying and managing technology to solve complex issues, invent new processes and products, build new enterprises and gain insights from their data.100% of 2023 MEM graduates landed jobs within 3 months at companies like BMW, Lockheed Martin, Goldman Sachs and Turner Construction.¹",
-    programBenefitsImage: "/assets/images/explore-mem/3-explore-mem.webp",
+    programBenefitsImage:
+      "/assets/images/explore-mem/explore-mem-benefits.webp",
     programBenefitsHighlights: [
       {
         title: "Two in-demand concentrations:",

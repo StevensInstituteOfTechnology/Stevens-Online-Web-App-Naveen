@@ -180,7 +180,7 @@ export default function Admissions() {
                 {/* Placeholder Image */}
                 <div className="rounded-lg overflow-hidden shadow-stevens-lg">
                   <img
-                    src="/assets/images/admissions/Weixin Image_20260205140811_156_82.webp"
+                    src="/assets/images/admissions/admissions-consultation.webp"
                     alt="Admissions"
                     className="w-full h-full object-cover"
                   />
@@ -245,8 +245,6 @@ export default function Admissions() {
         </div>
 
         {/* Application Options Cards */}
-
-       
 
         {/* Key Dates & Deadlines - Using shared DeadlinesSection component */}
         <DeadlinesSection keyDates={deadlinesData} />

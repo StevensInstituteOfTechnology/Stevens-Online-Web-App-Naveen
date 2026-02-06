@@ -14,19 +14,21 @@
 const IMAGE_WIDTH_CONFIG = {
   // Hero images with limited variants (400w, 640w, 800w, 1024w only)
   hero: {
-    '/explore-mscs/stevens-campus': [640, 800, 1024],
-    '/explore-cert-enterprise-ai/explore-cert-EAI-1': [640, 800, 1024],
-    '/explore-cert-applied-data-science/explore-cert-ADS-1': [640, 800, 1024],
-    '/events/1-event-scaled': [640, 800, 1024],
-    '/corporate-partners/corporate-partners-1': [640, 1024, 1280, 1920],
-    '/corporate-students/corporate-students-1': [400, 640, 800, 1024],
-    '/request-info/stevens-campus': [400, 640, 800, 1024],
-    '/alumni-pgc/martin-mom_20web': [400, 640, 800, 1024],
+    '/explore-mscs/explore-mscs-hero': [640, 800, 1024],
+    '/explore-cert-enterprise-ai/explore-cert-eai-hero': [640, 800, 1024],
+    '/explore-cert-applied-data-science/explore-cert-ads-hero': [640, 800, 1024],
+    '/events/events-hero': [640, 800, 1024],
+    '/corporate-partners/corporate-partners-hero': [640, 1024, 1280, 1920],
+    '/corporate-students/corporate-students-hero': [400, 640, 800, 1024],
+    '/request-info/request-info-hero': [400, 640, 800, 1024],
+    '/alumni-pgc/alumni-pgc-hero': [400, 640, 800, 1024],
   },
   // Content images with limited variants (400w, 640w only)
   content: {
     '/explore-mem/': [400, 640],
     '/explore-mscs/': [400, 640],
+    '/shared/mem-program-card': [400, 640],
+    '/shared/mscs-program-card': [400, 640],
   }
 };
 
@@ -41,19 +43,19 @@ function findWidthConfig(imagePath, type = 'hero') {
   if (!imagePath || typeof imagePath !== 'string') {
     return null;
   }
-  
+
   const config = IMAGE_WIDTH_CONFIG[type];
   if (!config) {
     return null;
   }
-  
+
   // Check patterns in order (most specific first)
   for (const [pattern, widths] of Object.entries(config)) {
     if (imagePath.includes(pattern)) {
       return widths;
     }
   }
-  
+
   return null;
 }
 
@@ -70,21 +72,21 @@ export function generateSrcSet(basePath, widths = [400, 800, 1200, 1600]) {
   if (!basePath || typeof basePath !== 'string') {
     return '';
   }
-  
+
   // Remove extension
   const pathWithoutExt = basePath.replace(/\.(webp|jpg|jpeg|png|avif)$/i, '');
   const ext = basePath.match(/\.(webp|jpg|jpeg|png|avif)$/i)?.[1] || 'webp';
-  
+
   // Generate srcset entries
   const srcsetEntries = widths.map(width => {
     // Try size-specific filename first (e.g., hero-800w.webp)
     const sizedPath = `${pathWithoutExt}-${width}w.${ext}`;
     return `${sizedPath} ${width}w`;
   });
-  
+
   // Always include original as fallback (with the max width as descriptor)
   srcsetEntries.push(`${basePath} ${Math.max(...widths)}w`);
-  
+
   return srcsetEntries.join(', ');
 }
 
@@ -100,10 +102,10 @@ export function generateSizes(breakpoints = {}, defaultSize = '100vw') {
     .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
     .map(([breakpoint, size]) => `(max-width: ${breakpoint}px) ${size}`)
     .reverse(); // Largest to smallest
-  
+
   // Add default size
   sizeEntries.push(defaultSize);
-  
+
   return sizeEntries.join(', ');
 }
 
@@ -129,19 +131,19 @@ export function getHeroImageProps(imagePath, options = {}) {
   if (!imagePath || typeof imagePath !== 'string' || imagePath.trim() === '') {
     return { src: imagePath || '' };
   }
-  
+
   // Check for configured width overrides
   const configuredWidths = findWidthConfig(imagePath, 'hero');
   const defaultWidths = [640, 1024, 1280];
   const widths = options.widths || configuredWidths || defaultWidths;
-  
+
   // Generate breakpoints for sizes attribute
   const breakpoints = {};
   const sortedWidths = [...widths].sort((a, b) => a - b);
   for (let i = 0; i < sortedWidths.length - 1; i++) {
     breakpoints[sortedWidths[i].toString()] = '100vw';
   }
-  
+
   return {
     src: imagePath,
     srcSet: generateSrcSet(imagePath, widths),
@@ -163,24 +165,24 @@ export function getContentImageProps(imagePath, maxWidthOrOptions = '800px') {
   if (!imagePath || typeof imagePath !== 'string' || imagePath.trim() === '') {
     return { src: imagePath || '' };
   }
-  
+
   const isBlogImage = imagePath.includes('/assets/blogs/');
-  
+
   if (isBlogImage) {
     return {
       src: imagePath
     };
   }
-  
+
   // Handle options object or simple maxWidth string
   const options = typeof maxWidthOrOptions === 'object' ? maxWidthOrOptions : { maxWidth: maxWidthOrOptions };
   const maxWidth = options.maxWidth || '800px';
   const defaultWidths = [400, 640, 800, 1024];
-  
+
   // Check for configured width overrides
   const configuredWidths = findWidthConfig(imagePath, 'content');
   const widths = options.widths || configuredWidths || defaultWidths;
-  
+
   // Generate breakpoints based on available widths
   const breakpoints = {};
   if (widths.includes(640)) {
@@ -189,7 +191,7 @@ export function getContentImageProps(imagePath, maxWidthOrOptions = '800px') {
   if (widths.includes(1024)) {
     breakpoints['1024'] = '50vw';
   }
-  
+
   return {
     src: imagePath,
     srcSet: generateSrcSet(imagePath, widths),
@@ -206,15 +208,15 @@ export function getThumbnailImageProps(imagePath, displayWidth = '200px') {
   if (!imagePath || typeof imagePath !== 'string' || imagePath.trim() === '') {
     return { src: imagePath || '' };
   }
-  
+
   const isBlogImage = imagePath.includes('/assets/blogs/');
-  
+
   if (isBlogImage) {
     return {
       src: imagePath
     };
   }
-  
+
   return {
     src: imagePath,
     srcSet: generateSrcSet(imagePath, [200, 400]),
@@ -231,15 +233,15 @@ export function getCardImageProps(imagePath) {
   if (!imagePath || typeof imagePath !== 'string' || imagePath.trim() === '') {
     return { src: imagePath || '' };
   }
-  
+
   const isBlogImage = imagePath.includes('/assets/blogs/');
-  
+
   if (isBlogImage) {
     return {
       src: imagePath
     };
   }
-  
+
   // Use widths that match actual available image variants (400w, 640w, 800w)
   // Changed from [400, 600, 800] to [400, 640, 800] to fix broken image issue
   // where 600w variants don't exist

@@ -33,14 +33,14 @@ const ExploreMSCS = () => {
     programName: "Online Master's in Computer Science",
     heroSubtitle:
       "Master advanced computer science skills through our 100% online curriculum. No GRE/GMAT required. Up to $13K in scholarships available.",
-    bgImage: "/assets/images/explore-mscs/stevens-campus.webp", // Placeholder
+    bgImage: "/assets/images/explore-mscs/explore-mscs-hero.webp",
     programCode: "mscs",
     seo: {
       title:
         "Online Master's in Computer Science | Stevens Institute of Technology",
       description:
         "Earn your 100% online Master's in Computer Science (MSCS) from Stevens Institute of Technology. Build in-demand tech skills and advance your career in under 2 years.",
-      ogImage: "/assets/images/explore-mscs/stevens-campus.webp",
+      ogImage: "/assets/images/explore-mscs/explore-mscs-hero.webp",
       url: "/explore/online-masters-computer-science/",
     },
     useApplicationModal: false,
@@ -90,8 +90,8 @@ const ExploreMSCS = () => {
       
       <p class="font-stevens-body">Computer science jobs are projected to grow 26% by 2033, according to the U.S. Bureau of Labor Statistics - more than five times the national average. In an increasingly connected world, you will learn in-demand computer science skills with the support of experienced faculty who consult for industry giants like Google, IBM, Bell Labs and Microsoft, and graduate with a competitive edge to meet the critical needs of an expanding job sector across various industries.</p>
     `,
-    whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
-    whyChooseStevensVideoCover: "/assets/videos/video-cover-1.avif", // Placeholder
+    whyChooseStevensVideo: "/assets/videos/Stevens Online Home - 1.mp4", // Placeholder
+    whyChooseStevensVideoCover: "/assets/videos/video-cover-1.webp", // Placeholder
 
     // New Fall 2026 Section
     newFall2025Badge: "NEW FOR 2026",
@@ -123,7 +123,8 @@ const ExploreMSCS = () => {
         text: "APPLY IN UNDER 5 MINUTES WITH OUR STREAMLINED ACCELERATED APP - NO SUPPLEMENTAL DOCUMENTS REQUIRED (BACHELOR'S DEGREE REQUIRED)",
       },
     ],
-    newFall2025Image: "/assets/images/explore-mem/1-explore-mem.webp", // Placeholder
+    newFall2025Image:
+      "/assets/images/explore-mem/explore-mem-asynchronous-courses.webp", // Placeholder
 
     // Just Launched Section
     justLaunchedBadge: "JUST LAUNCHED",
@@ -139,13 +140,15 @@ const ExploreMSCS = () => {
     `,
     justLaunchedButtonText: "Apply Now",
     justLaunchedButtonLink: "/accelerated-application/",
-    justLaunchedImage: "/assets/images/explore-mscs/3-explore-mscs.webp",
+    justLaunchedImage:
+      "/assets/images/explore-mscs/explore-mscs-accelerated-app.webp",
 
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
     programBenefitsDescription:
       "At Stevens, we cultivate the next generation of innovators through our 100% online, leading-edge curriculum. You'll gain future-ready skills taught by faculty who led engineering at IBM, Microsoft and AT&T Labs. Our career-aligned curriculum is designed for real-world impact, so you don't just learn how to code, you learn how to solve complex problems and lead in a fast-changing field.",
-    programBenefitsImage: "/assets/images/explore-mscs/1-explore-mscs.webp", // Placeholder
+    programBenefitsImage:
+      "/assets/images/explore-mscs/explore-mscs-benefits.webp",
     programBenefitsHighlights: [
       {
         title: "Program Advantages:",

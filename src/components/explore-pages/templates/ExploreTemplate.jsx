@@ -102,8 +102,8 @@ export function ExploreTemplate({
   whyChooseStevensTitle = "WHY CHOOSE STEVENS",
   whyChooseStevensSubtitle = "CAREER-ALIGNED CURRICULUM",
   whyChooseStevensContent = "",
-  whyChooseStevensVideo = "/assets/videos/Stevens Online MBA - 1.mp4",
-  whyChooseStevensVideoCover = "/assets/videos/video-cover-1.avif",
+  whyChooseStevensVideo = "/assets/videos/Stevens Online Home - 1.mp4",
+  whyChooseStevensVideoCover = "/assets/videos/video-cover-1.webp",
 
   // New Fall 2025 Section Props
   newFall2025Badge = "NEW FOR 2026",

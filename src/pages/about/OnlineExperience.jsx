@@ -9,6 +9,7 @@ import {
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import { BOOKING_URLS } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -129,7 +130,7 @@ export default function OnlineExperience() {
         <PageHero
           title="Online Education"
           subtitle="A premier, technology-driven education, delivered with flexibility."
-          bgImage="/assets/images/online-experience/1-online-learning-hero-scaled.webp"
+          bgImage="/assets/images/online-experience/online-experience-hero.webp"
         />
 
         {/* Overview & Student Support Section */}
@@ -161,7 +162,9 @@ export default function OnlineExperience() {
               <div className="relative">
                 <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
                   <img
-                    src="/assets/images/online-experience/online-experience-1.png"
+                    {...getContentImageProps(
+                      "/assets/images/online-experience/online-experience-overview.webp"
+                    )}
                     alt="Students collaborating online"
                     className="w-full h-full object-cover"
                   />
@@ -174,7 +177,9 @@ export default function OnlineExperience() {
               <div className="relative md:order-1 order-2">
                 <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
                   <img
-                    src="/assets/images/online-experience/Stevens_Two_Cities_20230413_STEVENS-63-CROP.webp"
+                    {...getContentImageProps(
+                      "/assets/images/online-experience/online-experience-student-support.webp"
+                    )}
                     alt="Student receiving support"
                     className="w-full h-full object-cover"
                   />
@@ -216,7 +221,7 @@ export default function OnlineExperience() {
                 <div className="bg-stevens-dark-gray text-white p-stevens-lg stevens-md:p-stevens-xl">
                   <div className="flex flex-col stevens-md:flex-row items-center gap-stevens-lg">
                     <img
-                      src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                      src="/assets/avatars/online-experience-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed, Chief Online Learning Officer and Dean"
                       className="w-32 h-32 stevens-md:w-40 stevens-md:h-40 rounded-full object-cover border-4 border-white shadow-stevens-xl"
                     />
@@ -270,7 +275,7 @@ export default function OnlineExperience() {
                   {/* Signature */}
                   <div className="mt-stevens-xl">
                     <img
-                      src="/assets/images/online-experience/arshad-signature.webp"
+                      src="/assets/images/online-experience/online-experience-signature.webp"
                       alt="Arshad Saiyed Signature"
                       className="h-16 md:h-20 w-auto mb-stevens-sm"
                     />

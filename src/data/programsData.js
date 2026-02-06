@@ -12,7 +12,7 @@ export const PROGRAMS_DATA = [
     degree: 'M.S.',
     tagline: 'Build What\'s Next in Tech',
     description: 'Master advanced computer science skills through hands-on learning in AI, cloud computing, and software development. Ranked #1 in New Jersey for online CS programs.',
-    image: '/assets/images/explore-mscs/1-explore-mscs.webp',
+    image: '/assets/images/shared/mscs-program-card.webp',
     highlights: [
       '99% Employment Rate',
       'No GRE/GMAT Required',
@@ -41,7 +41,7 @@ export const PROGRAMS_DATA = [
     degree: 'M.Eng.',
     tagline: 'Built for Engineers Who Want to Lead',
     description: 'Bridge technology and business leadership in this program designed for working engineers. Advance your engineering career with strategic management skills.',
-    image: '/assets/images/explore-mem/1-explore-mem.webp',
+    image: '/assets/images/shared/mem-program-card.webp',
     highlights: [
       '100% Online',
       'No GRE Required',
@@ -98,7 +98,7 @@ export const PROGRAMS_DATA = [
     degree: 'M.Eng.',
     tagline: 'Build What\'s Next with Data',
     description: 'Master data science and AI engineering through hands-on projects. Curriculum bridges engineering precision with AI-driven innovation.',
-    image: '/assets/images/explore-meads/stevens-manhattan-skyline-ds.webp',
+    image: '/assets/images/explore-meads/explore-meads-hero.webp',
     highlights: [
       '99% Employment Rate',
       'AI-Driven Curriculum',
@@ -126,7 +126,7 @@ export const PROGRAMS_DATA = [
     degree: 'Certificate',
     tagline: 'Build AI That Works at Work',
     description: 'Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows safely-no CS background required. Stackable toward MBA and M.Eng. in Applied Data Science.',
-    image: '/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp',
+    image: '/assets/images/certificate-enterprise-ai/cert-eai-hero.webp',
     highlights: [
       '$5,250 Total Cost',
       '9 Graduate Credits',
@@ -154,7 +154,7 @@ export const PROGRAMS_DATA = [
     degree: 'Certificate',
     tagline: 'Your First Step Into Applied AI',
     description: 'Master Python, SQL, and machine learning foundations in 9 graduate credits. Build job-ready AI skills with hands-on projects. Stackable toward M.Eng. in Applied Data Science.',
-    image: '/assets/images/certificate-applied-data-science/certificate-ADS-1.webp',
+    image: '/assets/images/certificate-applied-data-science/cert-ads-hero.webp',
     highlights: [
       '$5,250 Total Cost',
       'AI-First Curriculum',

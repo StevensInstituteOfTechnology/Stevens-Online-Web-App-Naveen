@@ -185,7 +185,7 @@ export default function ComparePrograms() {
         <PageHero
           title="Compare Online Graduate Programs at Stevens"
           subtitle="Find your path"
-          bgImage="/assets/images/compare-programs/compare-hero.webp"
+          bgImage="/assets/images/compare-programs/compare-programs-hero.webp"
           rightContent={
             <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
           }

@@ -89,8 +89,8 @@ const ExploreMSAI = () => {
       
       <p class="font-stevens-body">Our faculty produce groundbreaking research that enables better planning and policy, improves healthcare and treatment, builds our understanding of critical questions, shares useful insight, and makes life safer, more secure and more comfortable. The researchers, practitioners and entrepreneurs that comprise the Stevens Institute of Technology faculty bring innovation and insight to students across disciplines and around the world.</p>
     `,
-    whyChooseStevensVideo: "/assets/videos/Stevens Online MBA - 1.mp4", // Placeholder
-    whyChooseStevensVideoCover: "/assets/videos/video-cover-1.avif", // Placeholder
+    whyChooseStevensVideo: "/assets/videos/Stevens Online Home - 1.mp4", // Placeholder
+    whyChooseStevensVideoCover: "/assets/videos/video-cover-1.webp", // Placeholder
 
     // New Fall 2025 Section - Remove this section as it's not on the original page
     // newFall2025Badge: "NEW FOR FALL 2025",

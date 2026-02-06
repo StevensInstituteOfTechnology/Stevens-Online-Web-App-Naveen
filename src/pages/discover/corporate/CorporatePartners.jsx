@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   ArrowRight,
   TrendingUp,
@@ -305,7 +306,7 @@ const CorporatePartners = () => {
       description:
         "Transform your workforce with Stevens Online education programs. Customized learning solutions for corporate partners.",
       image: buildCanonicalUrl(
-        "/assets/images/corporate-partners/corporate-partners-1.webp"
+        "/assets/images/corporate-partners/corporate-partners-hero.webp"
       ),
       url: canonical,
       type: "website",
@@ -510,7 +511,7 @@ const CorporatePartners = () => {
         <PageHero
           titleLines={["Partner with Stevens to Transform Your Workforce"]}
           subtitle="Flexible, career-aligned education designed for your employees, with accelerated admissions, dedicated corporate support, and customized learning pathways."
-          bgImage="/assets/images/corporate-partners/corporate-partners-1.webp"
+          bgImage="/assets/images/corporate-partners/corporate-partners-hero.webp"
           bgImageFlip={true}
           primaryCta={{
             label: "Request Information",
@@ -750,7 +751,9 @@ const CorporatePartners = () => {
           {/* Background image with blur */}
           <div className="absolute inset-0">
             <img
-              src="/assets/images/corporate-partners/corporate-partners-2.webp"
+              {...getContentImageProps(
+                "/assets/images/corporate-partners/corporate-partners-stats-background.webp"
+              )}
               alt=""
               className="w-full h-full object-cover"
               aria-hidden="true"

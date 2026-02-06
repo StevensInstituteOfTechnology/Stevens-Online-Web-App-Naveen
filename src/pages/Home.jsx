@@ -13,7 +13,10 @@ import {
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
-import { getHeroImageProps } from "@/utils/responsiveImage";
+import {
+  getHeroImageProps,
+  getContentImageProps,
+} from "@/utils/responsiveImage";
 import {
   Asterism,
   AnimatedSection,
@@ -70,30 +73,13 @@ const textRankings = [
   },
 ];
 
-const badgeRankings = [
-  {
-    image: "/assets/rankings/ranking-badge-1.webp",
-    description:
-      "No. 1 in New Jersey in Best Online Master's in Computer Information Technology Programs",
-  },
-  {
-    image: "/assets/rankings/ranking-badge-2.webp",
-    description: "No. 1 in New Jersey in Best Online MBA Programs",
-  },
-  {
-    image: "/assets/rankings/ranking-badge-3.webp",
-    description: "No. 36 Nationally in Best Online Engineering Programs",
-  },
-];
-
 // Program showcase carousel data with real program information
 const programShowcaseData = [
   {
     id: 1,
     title: "Computer Science",
     subtitle: "MASTER OF SCIENCE",
-    image:
-      "/assets/images/mscs/stv-blog-artificial-intelligence-and-innovation-in-engineering-management.webp",
+    image: "/assets/images/mscs/mscs-hero.webp",
     url: "online-masters-computer-science-mscs/",
     stats: {
       credits: "30",
@@ -105,7 +91,7 @@ const programShowcaseData = [
     id: 2,
     title: "Business Administration",
     subtitle: "MBA",
-    image: "/assets/images/mba/1-omba-hero-scaled.webp",
+    image: "/assets/images/mba/mba-hero.webp",
     url: "online-mba/",
     stats: {
       credits: "36",
@@ -117,7 +103,7 @@ const programShowcaseData = [
     id: 3,
     title: "Engineering Management",
     subtitle: "MASTER OF ENGINEERING",
-    image: "/assets/images/mem/1-mem-hero-scaled.webp",
+    image: "/assets/images/mem/mem-hero.webp",
     url: "online-masters-engineering-management/",
     stats: {
       credits: "30",
@@ -129,7 +115,7 @@ const programShowcaseData = [
     id: 4,
     title: "Applied Data Science",
     subtitle: "MASTER OF ENGINEERING",
-    image: "/assets/images/meads/stevens-manhattan-skyline-ds.webp",
+    image: "/assets/images/meads/meads-hero.webp",
     url: "online-masters-engineering-applied-data-science/",
     stats: {
       credits: "30",
@@ -145,8 +131,7 @@ const programShowcaseData = [
     id: 5,
     title: "Enterprise AI",
     subtitle: "GRADUATE CERTIFICATE",
-    image:
-      "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
+    image: "/assets/images/certificate-enterprise-ai/cert-eai-hero.webp",
     url: "certificates/enterprise-ai/",
     stats: {
       credits: "9",
@@ -162,8 +147,7 @@ const programShowcaseData = [
     id: 6,
     title: "Applied Data Science Foundations",
     subtitle: "GRADUATE CERTIFICATE",
-    image:
-      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+    image: "/assets/images/certificate-applied-data-science/cert-ads-hero.webp",
     url: "certificates/applied-data-science-foundations/",
     stats: {
       credits: "9",
@@ -191,24 +175,6 @@ const TextRankingItem = ({ value, description, source }) => (
           {source}
         </p>
       )}
-    </div>
-  </div>
-);
-
-const BadgeRankingItem = ({ image, description }) => (
-  <div className="flex items-center gap-stevens-md p-stevens-md bg-stevens-white rounded-stevens-md shadow-stevens-md hover:shadow-stevens-lg transition-all duration-stevens-normal border border-stevens-light-gray hover:border-stevens-light-gray">
-    <div className="relative">
-      <img
-        src={image}
-        alt="Ranking Badge"
-        className="w-20 h-20 shrink-0 object-contain"
-        loading="lazy"
-      />
-    </div>
-    <div className="flex-1">
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-dark-gray leading-relaxed">
-        {description}
-      </p>
     </div>
   </div>
 );
@@ -288,19 +254,19 @@ export default function Home() {
       title: "Application Overview: Online MBA",
       length: "15 minutes",
       url: "https://event.on24.com/wcc/r/4670707/F1184BBC4542A137E5E8852AA0FF2DBE",
-      image: "/assets/images/home/2-event.webp",
+      image: "/assets/images/home/home-event-mba-overview.webp",
     },
     {
       title: "Application Walkthrough: Computer Science",
       length: "10 minutes",
       url: "https://event.on24.com/wcc/r/4455092/4C10B1C30D8D20926A28C1A21C667A29",
-      image: "/assets/images/home/3-event.webp",
+      image: "/assets/images/home/home-event-cs-walkthrough.webp",
     },
     {
       title: "Application Walkthrough: Engineering Management",
       length: "24 minutes",
       url: "https://event.on24.com/wcc/r/5056716/2FEBB6A6A455A2CCC508FB1183A71810",
-      image: "/assets/images/home/4-event.webp",
+      image: "/assets/images/home/home-event-em-walkthrough.webp",
     },
   ];
 
@@ -346,7 +312,7 @@ export default function Home() {
         {/* Hero Section - negative margin pulls it up behind the fixed navbar */}
         <section className="relative h-[900px] bg-stevens-black text-stevens-white overflow-hidden -mt-[87px] pt-[87px]">
           <img
-            {...getHeroImageProps("/assets/images/home/HEADER-0865.webp", {
+            {...getHeroImageProps("/assets/images/home/home-hero.webp", {
               widths: [640, 1024, 1280, 1920],
             })}
             alt=""
@@ -441,7 +407,9 @@ export default function Home() {
                 <AngledImageStack className="h-[600px] lg:h-[800px] relative ">
                   {/* Background layer - larger */}
                   <AngledImage
-                    src="/assets/images/shared/3-explore-msds.webp"
+                    {...getContentImageProps(
+                      "/assets/images/shared/3-explore-msds.webp"
+                    )}
                     alt="Student studying"
                     direction="vertical-left"
                     width="100%"
@@ -452,7 +420,9 @@ export default function Home() {
                   />
                   {/* Foreground layer - smaller, overlapping */}
                   <AngledImage
-                    src="/assets/images/shared/2-explore-msds.webp"
+                    {...getContentImageProps(
+                      "/assets/images/shared/2-explore-msds.webp"
+                    )}
                     alt="Campus life"
                     direction="vertical-right"
                     // height="500px"
@@ -866,7 +836,7 @@ export default function Home() {
                   <div className="overflow-hidden shadow-2xl">
                     {/* Counter-skew image to keep it upright */}
                     <img
-                      src="assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                      src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed - Dean of College of Professional Education"
                       className="w-full h-[418px] transform skew-y-3 scale-110"
                       loading="lazy"

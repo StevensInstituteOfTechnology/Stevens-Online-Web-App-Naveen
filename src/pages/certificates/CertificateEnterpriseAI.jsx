@@ -23,16 +23,14 @@ const programData = {
       "Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology",
     description:
       "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows. $5,250 aligns with employer tuition benefits. Stackable to MBA and M.Eng.",
-    ogImage:
-      "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
+    ogImage: "/assets/images/certificate-enterprise-ai/cert-eai-hero.webp",
     url: "/certificates/enterprise-ai/",
   },
   hero: {
     titleLines: ["Professional Graduate Certificate", "in Enterprise AI"],
     subtitle:
       "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow-no CS degree required.",
-    bgImage:
-      "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
+    bgImage: "/assets/images/certificate-enterprise-ai/cert-eai-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -98,8 +96,7 @@ const programData = {
       "AI Ethics & Risk Management",
     ],
     concentrations: [],
-    image:
-      "/assets/images/certificate-enterprise-ai/shutterstock_1638173794-crop.webp",
+    image: "/assets/images/certificate-enterprise-ai/cert-eai-overview.webp",
     imageAlt: "",
     imagePosition: "50% 70%",
   },
@@ -108,7 +105,7 @@ const programData = {
     heading: "Build AI skills without putting your career on hold",
     description:
       "Our 100% online, flexible format empowers professionals to master enterprise AI capabilities while maintaining their current role. Learn from expert faculty who bridge cutting-edge AI research with real-world business applications, and connect with a network of accomplished peers implementing AI solutions across industries.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -167,7 +164,7 @@ const programData = {
           "Team PoC with management plan, demo, and implementation roadmap",
         ],
         image:
-          "/assets/images/certificate-enterprise-ai/pexels-googledeepmind-18069695.webp",
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-generative-ai.webp",
       },
       {
         title: "AI Strategy & Management",
@@ -180,7 +177,7 @@ const programData = {
           "Implementation playbook and architecture analysis",
         ],
         image:
-          "/assets/images/certificate-enterprise-ai/istockphoto-1979289147-612x612.webp",
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-strategy.webp",
       },
       {
         title: "Operational AI Workflows",
@@ -193,7 +190,7 @@ const programData = {
           "Running script/app with config, tests, logs, and operational demo",
         ],
         image:
-          "/assets/images/certificate-enterprise-ai/AI-Workflow-Automation-Guide_-How-to-Achieve-End-to-End-Process-Excellence-Cover-3-2.webp",
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-workflows.webp",
       },
     ],
   },

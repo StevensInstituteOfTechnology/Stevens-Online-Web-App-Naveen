@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   ArrowRight,
   CheckCircle,
@@ -106,17 +107,17 @@ const CorporateStudents = () => {
   useEffect(() => {
     const canonical = buildCanonicalUrl("/corporate-students/");
     setPageTitle(
-      "Corporate Tuition Benefits 2025 | Save Up to 50% | Stevens Online Masters",
+      "Corporate Tuition Benefits 2025 | Save Up to 50% | Stevens Online Masters"
     );
     setMetaDescription(
-      `Use your ${KEY_DATES_SPRING2.TERM.year} employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.`,
+      `Use your ${KEY_DATES_SPRING2.TERM.year} employer tuition benefits. Stevens workforce partners save up to 50% on AACSB-accredited online MBA, M.S. Computer Science & M.Eng. degrees. $5,250 certificates align with IRS Section 127 limits. No GRE required.`
     );
     setOpenGraphTags({
       title:
         "Corporate Tuition Benefits | Save Up to 50% on Your Masters Degree | Stevens Online",
       description: `Stevens workforce development programs help employees maximize tuition benefits. 20% partner discount + 15% stackable discounts. ${KEY_DATES_SPRING2.TERM.name} enrollment open.`,
       image: buildCanonicalUrl(
-        "/assets/images/corporate-students/corporate-students-1.webp",
+        "/assets/images/corporate-students/corporate-students-hero.webp"
       ),
       url: canonical,
       type: "website",
@@ -147,7 +148,7 @@ const CorporateStudents = () => {
     if (selectedInterest && selectedCredentialType) {
       const programCodes = getProgramRecommendations(
         selectedInterest,
-        selectedCredentialType,
+        selectedCredentialType
       );
       const programs = programCodes
         .map((code) => PROGRAMS_DATA.find((p) => p.code === code))
@@ -225,7 +226,8 @@ const CorporateStudents = () => {
       quote:
         "Stakeholder management and collaboration are important. The courses I have taken at Stevens help me apply the knowledge I've learned to my daily tasks...At bigger companies like Pfizer, managing cross-functional projects is critical.",
       author: "Gullnaz Saeedi",
-      imageSrc: "/assets/images/corporate-students/corporate-students-3.webp",
+      imageSrc:
+        "/assets/images/corporate-students/corporate-students-testimonial-gullnaz.webp",
       imageAlt: "Gullnaz Saeedi",
       imageObjectPosition: "center 20%", // Center horizontally, 20% from top
     },
@@ -234,7 +236,8 @@ const CorporateStudents = () => {
         "I feel like my education is helping me be a more well-rounded design participant, especially at a place that is a financial institution. Being able to empathize more with my business stakeholders and my management has been really helpful.",
       author: "Sara Swanson",
 
-      imageSrc: "/assets/images/corporate-students/corporate-students-4.webp",
+      imageSrc:
+        "/assets/images/corporate-students/corporate-students-testimonial-sara.webp",
       imageAlt: "Sara Swanson",
       buttonText: "Read More",
       buttonLink: "https://www.stevens.edu/news/becoming-a-design-leader",
@@ -246,7 +249,8 @@ const CorporateStudents = () => {
       author: "Rupinder Bhullar",
       title: "Director of Enterprise Automation Services",
       company: "Pfizer",
-      imageSrc: "/assets/images/corporate-students/corporate-students-2.webp",
+      imageSrc:
+        "/assets/images/corporate-students/corporate-students-testimonial-rupinder.webp",
       imageAlt:
         "Rupinder Bhullar, Director of Enterprise Automation Services at Pfizer",
       buttonText: "Read More",
@@ -259,7 +263,8 @@ const CorporateStudents = () => {
       author: "Anagha Yerande",
       title: "Vice President",
       company: "JP Morgan",
-      imageSrc: "/assets/images/corporate-students/corporate-students-5.webp",
+      imageSrc:
+        "/assets/images/corporate-students/corporate-students-testimonial-anagha.webp",
       imageAlt: "Anagha Yerande",
       buttonText: "Read More",
       buttonLink:
@@ -483,7 +488,9 @@ const CorporateStudents = () => {
               {/* Image */}
               <div className="relative">
                 <img
-                  src="/assets/images/shared/accreditation.webp"
+                  {...getContentImageProps(
+                    "/assets/images/shared/accreditation.webp"
+                  )}
                   alt="Stevens Institute of Technology - Top-ranked university for working professionals"
                   className="w-full h-auto object-cover"
                 />
@@ -502,14 +509,14 @@ const CorporateStudents = () => {
                     <p className="text-sm text-stevens-dark-gray">
                       Priority:{" "}
                       {new Date(
-                        KEY_DATES_SPRING2.PRIORITY_SUBMIT.date,
+                        KEY_DATES_SPRING2.PRIORITY_SUBMIT.date
                       ).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                       })}{" "}
                       • Final:{" "}
                       {new Date(
-                        KEY_DATES_SPRING2.FINAL_SUBMIT.date,
+                        KEY_DATES_SPRING2.FINAL_SUBMIT.date
                       ).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
@@ -752,8 +759,8 @@ const CorporateStudents = () => {
                 recommendedPrograms.length === 1
                   ? "max-w-xl mx-auto"
                   : recommendedPrograms.length === 2
-                    ? "grid-cols-1 md:grid-cols-2"
-                    : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               }`}
             >
               {recommendedPrograms.map((program, index) => (
@@ -845,7 +852,7 @@ const CorporateStudents = () => {
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
               : `Stevens partners with America's leading employers to make graduate education accessible and affordable. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
           }
-          bgImage="/assets/images/corporate-students/JV4_7586_4258.webp"
+          bgImage="/assets/images/corporate-students/corporate-students-hero-background.webp"
           bgImagePosition="center 30%"
           primaryCta={{
             label: "Calculate My Savings",
@@ -1200,7 +1207,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-base font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement",
+                                    (s) => s.type === "reimbursement"
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1219,7 +1226,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-base font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement",
+                                    (s) => s.type === "reimbursement"
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1229,7 +1236,7 @@ const CorporateStudents = () => {
                                 </span>
                               </div>
                               {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement",
+                                (s) => s.type === "reimbursement"
                               ) && (
                                 <p className="text-xs text-stevens-white/70 italic">
                                   * Before employer reimbursement
@@ -1456,14 +1463,14 @@ const CorporateStudents = () => {
                                 step.icon === "building"
                                   ? Building
                                   : step.icon === "sparkles"
-                                    ? Sparkles
-                                    : step.icon === "home"
-                                      ? Home
-                                      : step.icon === "graduation-cap"
-                                        ? GraduationCap
-                                        : step.icon === "briefcase"
-                                          ? Briefcase
-                                          : CheckCircle;
+                                  ? Sparkles
+                                  : step.icon === "home"
+                                  ? Home
+                                  : step.icon === "graduation-cap"
+                                  ? GraduationCap
+                                  : step.icon === "briefcase"
+                                  ? Briefcase
+                                  : CheckCircle;
 
                               return (
                                 <div key={index}>
@@ -1501,7 +1508,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-lg font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement",
+                                    (s) => s.type === "reimbursement"
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1520,7 +1527,7 @@ const CorporateStudents = () => {
                               <div className="flex justify-between items-center mb-2">
                                 <span className="text-lg font-semibold">
                                   {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement",
+                                    (s) => s.type === "reimbursement"
                                   )
                                     ? "YOUR FINAL COST"
                                     : "YOUR COST"}
@@ -1530,7 +1537,7 @@ const CorporateStudents = () => {
                                 </span>
                               </div>
                               {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement",
+                                (s) => s.type === "reimbursement"
                               ) && (
                                 <p className="text-xs text-stevens-white/70 italic">
                                   * Before employer reimbursement
@@ -1550,7 +1557,7 @@ const CorporateStudents = () => {
 
                           {/* Prompt to add reimbursement if not entered */}
                           {!calculatedCost.steps.find(
-                            (s) => s.type === "reimbursement",
+                            (s) => s.type === "reimbursement"
                           ) && (
                             <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
                               <div className="flex items-start text-stevens-white/90">
@@ -1618,7 +1625,7 @@ const CorporateStudents = () => {
                                       application_type: "external",
                                     });
                                     trackConversion(
-                                      CONVERSION_LABELS.APPLY_NOW,
+                                      CONVERSION_LABELS.APPLY_NOW
                                     );
                                   }}
                                 >

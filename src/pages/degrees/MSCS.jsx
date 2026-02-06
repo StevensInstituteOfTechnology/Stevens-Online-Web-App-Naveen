@@ -14,8 +14,7 @@ const programData = {
       "Online Master's in Computer Science | Stevens Institute of Technology",
     description:
       "Earn your online Master's in Computer Science (MSCS) from Stevens. Build advanced coding and AI skills for the modern tech workforce.",
-    ogImage:
-      "/assets/images/mscs/stv-blog-artificial-intelligence-and-innovation-in-engineering-management.webp",
+    ogImage: "/assets/images/mscs/mscs-hero.webp",
     url: "/online-masters-computer-science-mscs/",
   },
   hero: {
@@ -24,8 +23,7 @@ const programData = {
       "Build What's Next.",
     ],
     subtitle: "AI/ML, data, systems-top-tier, flexible, industry-aligned.",
-    bgImage:
-      "/assets/images/mscs/stv-blog-artificial-intelligence-and-innovation-in-engineering-management.webp",
+    bgImage: "/assets/images/mscs/mscs-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -82,7 +80,7 @@ const programData = {
     programType: "Master of Science",
     headline: "Build software that shapes the future",
     tagline: "A career-aligned curriculum designed for real-world impact.",
-    image: "/assets/images/mscs/overview.webp",
+    image: "/assets/images/mscs/mscs-overview.webp",
     imageAlt: "",
     imagePosition: "50% 70%",
     description: `
@@ -177,7 +175,7 @@ const programData = {
           "Apply database design principles using relational models, SQL and normalization techniques",
         ],
         image:
-          "/assets/images/mscs/premium_vector-1734731870816-1f0d57cd985f.webp",
+          "/assets/images/mscs/mscs-concentration-enterprise-software.webp",
       },
       {
         title: "Mobile application development and cloud computing",
@@ -188,7 +186,7 @@ const programData = {
           "Implement cloud-based services and architectures using REST, WebSockets and NoSQL databases like Cassandra",
           "Explore the implications of distributed systems through technologies like blockchain and the CAP Theorem",
         ],
-        image: "/assets/images/mscs/pexels-brett-sayles-5203849.webp",
+        image: "/assets/images/mscs/mscs-concentration-mobile-cloud.webp",
       },
       {
         title: "Agile development methods",
@@ -199,7 +197,7 @@ const programData = {
           "Manage the full development lifecycle, from initial concept to deployment, using iterative and test-driven approaches",
           "Evaluate and compare agile and traditional methodologies to choose the most effective approach for a given project",
         ],
-        image: "/assets/images/mscs/photo-1519389950473-47ba0277781c.webp",
+        image: "/assets/images/mscs/mscs-concentration-agile.webp",
       },
       {
         title: "Algorithm design and testing",
@@ -210,7 +208,7 @@ const programData = {
           "Implement and test data structures like balanced search trees and understand asymptotic complexity",
           "Translate high-level design into low-level, performance-aware code using systems programming techniques",
         ],
-        image: "/assets/images/mscs/pexels-googledeepmind-17483850.webp",
+        image: "/assets/images/mscs/mscs-concentration-algorithms.webp",
       },
       {
         title:
@@ -222,7 +220,7 @@ const programData = {
           "Apply ensemble learning methods and simulation techniques to build effective predictive models",
           "Translate ML theory into practical solutions through hands-on coding and real-world datasets",
         ],
-        image: "/assets/images/mscs/photo-1620712943543-bcc4688e7485.webp",
+        image: "/assets/images/mscs/mscs-concentration-machine-learning.webp",
       },
     ],
   },
@@ -652,7 +650,7 @@ const programData = {
     name: "Jaeson Valles ’22",
     quote:
       "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree.",
-    backgroundImage: "/assets/images/mscs/bg_testimonial.webp",
+    backgroundImage: "/assets/images/mscs/mscs-testimonial-background.webp",
     bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
     cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },

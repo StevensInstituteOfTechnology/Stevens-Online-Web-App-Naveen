@@ -26,7 +26,7 @@ const programData = {
     description:
       "Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.",
     ogImage:
-      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-hero.webp",
     url: "/certificates/applied-data-science-foundations/",
   },
   hero: {
@@ -37,7 +37,7 @@ const programData = {
     subtitle:
       "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
     bgImage:
-      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -106,7 +106,7 @@ const programData = {
     ],
     concentrations: [],
     image:
-      "/assets/images/certificate-applied-data-science/Screenshot_2026-01-15_at_1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-overview.webp",
     imageAlt: "",
     imagePosition: "50% 70%",
   },
@@ -115,7 +115,7 @@ const programData = {
     heading: "Launch your data science career without interrupting your work",
     description:
       "Our 100% online, flexible format empowers professionals to build AI and data science expertise while maintaining their current role. Learn from expert faculty who combine technical depth with practical applications, and connect with a network of accomplished peers and alumni driving innovation in data science and AI.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -167,7 +167,7 @@ const programData = {
           "Train and interpret an ML model with AI insight report",
         ],
         image:
-          "/assets/images/certificate-applied-data-science/1527028764207.webp",
+          "/assets/images/certificate-applied-data-science/cert-ads-module-mathematics.webp",
       },
       {
         title: "Python & Data Pipelines",
@@ -180,7 +180,7 @@ const programData = {
           "End-to-end pipeline published to Streamlit app",
         ],
         image:
-          "/assets/images/certificate-applied-data-science/pexels-thisisengineering-3861976.webp",
+          "/assets/images/certificate-applied-data-science/cert-ads-module-python.webp",
       },
       {
         title: "Machine Learning & AI",
@@ -193,7 +193,7 @@ const programData = {
           "Deploy an ML model with reproducible code and stakeholder narrative",
         ],
         image:
-          "/assets/images/certificate-applied-data-science/istockphoto-2084953049-612x612.webp",
+          "/assets/images/certificate-applied-data-science/cert-ads-module-machine-learning.webp",
       },
     ],
   },
