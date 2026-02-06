@@ -153,7 +153,7 @@ export default function Admissions() {
         <PageHero
           title="We Put Our Strengths Behind Your Career"
           subtitle="Admissions"
-          bgImage="/assets/images/admissions/1-hero-admissions-scaled.webp"
+          bgImage="/assets/images/admissions/admissions-hero.webp"
         />
 
         {/* Take Your First Step */}
@@ -204,7 +204,7 @@ export default function Admissions() {
                       trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
                     }
                   >
-                    <Button className="w-full bg-stevens-dark-gray hover:bg-stevens-gray text-white gap-2 uppercase tracking-wider font-semibold">
+                    <Button className="w-full bg-stevens-black hover:bg-stevens-gray text-white gap-2 uppercase tracking-wider font-semibold">
                       Schedule Your Consultation
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -266,7 +266,7 @@ export default function Admissions() {
                 </p>
                 <Link to="/tuition-and-financial-aid/">
                   <Button variant="outline-dark" className="gap-2">
-                    View Tuition & Financial Aid
+                    Tuition & Financial Aid
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

@@ -835,8 +835,8 @@ const programData = {
     description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`,
   },
   tuitionCalculator: {
-    image: "/assets/images/mba/mba-overview.webp",
-    imageAlt: "Students collaborating on MBA coursework",
+    image: "/assets/images/shared/shared-tuition-calculator.webp",
+    imageAlt: "Welcome to Stevens",
   },
   events: {
     title: "On-Demand Content",
