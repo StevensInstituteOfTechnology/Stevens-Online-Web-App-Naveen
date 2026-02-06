@@ -74,6 +74,7 @@ export function CertificateTemplate({
     curriculum,
     whyStevens,
     faculty,
+    applicationOption, // New: singleImageCard for Accelerated Application
     admissions,
     keyDates,
     tuition,
@@ -226,13 +227,21 @@ export function CertificateTemplate({
         {/* 9. Faculty (Minimal) */}
         <FacultySection faculty={faculty} ref={registerSectionRef("faculty")} />
 
-        {/* 10. Admissions Section (combined with Tuition & Key Dates for certificates) */}
+        {/* 10a. Application Option (singleImageCard) - if provided, this becomes the admissions anchor */}
+        {applicationOption && (
+          <AdmissionsSection
+            admissions={applicationOption}
+            ref={registerSectionRef("admissions")}
+          />
+        )}
+
+        {/* 10b. Admissions Section (combined with Tuition & Key Dates for certificates) */}
         <AdmissionsSection
           admissions={admissions}
           keyDates={keyDates}
           tuition={tuition}
           programCode={code}
-          ref={registerSectionRef("admissions")}
+          ref={applicationOption ? undefined : registerSectionRef("admissions")}
         />
 
         {/* 10b. Tuition Calculator Section (opt-in per program) */}

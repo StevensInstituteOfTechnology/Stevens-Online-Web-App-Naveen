@@ -323,6 +323,25 @@ const programData = {
       },
     ],
   },
+  applicationOption: {
+    variant: "singleImageCard",
+    title: "Application Option",
+    backgroundImage: "/assets/images/shared/asap-hero.webp",
+    options: [
+      {
+        title: "Accelerated Application",
+        subtitle:
+          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
+        theme: "light",
+        featured: true,
+        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
+        footnote:
+          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
+        buttonText: "Apply Now",
+        url: "/accelerated-application/?program=cert-ads",
+      },
+    ],
+  },
   admissions: {
     variant: "certificateWithDeadlines",
     requirements: `
