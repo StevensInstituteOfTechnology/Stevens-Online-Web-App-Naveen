@@ -32,7 +32,7 @@ import { Button } from "@/components/ui/button";
  * @param {string} props.consultation.url - CTA button link
  */
 const ApplicationOptionsCards = ({
-  title = "Choose Your Application Option",
+  title = "",
   subtitle,
   options = [],
   consultation,
@@ -40,20 +40,24 @@ const ApplicationOptionsCards = ({
   if (!options || options.length === 0) return null;
 
   return (
-    <section className="scroll-mt-20 relative bg-stevens-light-gray">
-      {/* Section Title */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black uppercase tracking-wide">
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="mt-4 text-lg text-stevens-dark-gray max-w-2xl mx-auto">
-              {subtitle}
-            </p>
-          )}
+    <section className="scroll-mt-20 relative bg-stevens-white pb-stevens-2xl">
+      {/* Section Title - only render when title or subtitle present */}
+      {(title || subtitle) && (
+        <div className="py-12">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            {title && (
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-black uppercase tracking-wide">
+                {title}
+              </h2>
+            )}
+            {subtitle && (
+              <p className="mt-4 text-lg text-stevens-dark-gray max-w-2xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Two-column image cards */}
       <div className="grid lg:grid-cols-2 max-w-7xl mx-auto">
@@ -67,7 +71,9 @@ const ApplicationOptionsCards = ({
               {/* Background Image - Absolute & Full Height */}
               <div className="absolute inset-0 z-0">
                 <img
-                  src={option.image || "/assets/images/shared/stevens-campus.webp"}
+                  src={
+                    option.image || "/assets/images/shared/stevens-campus.webp"
+                  }
                   alt=""
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -147,7 +153,7 @@ const ApplicationOptionsCards = ({
 
       {/* Consultation CTA Bar - Static on mobile, floating on lg */}
       {consultation && (
-        <div className="relative lg:absolute lg:bottom-12 lg:left-0 lg:right-0 z-20 px-4 py-8 lg:py-0 bg-white lg:bg-transparent">
+        <div className="relative lg:absolute lg:bottom-20 lg:left-0 lg:right-0 z-20 px-4 py-8 lg:py-0 bg-white lg:bg-transparent">
           <div className="max-w-[90%] lg:max-w-6xl mx-auto">
             <div className="bg-gray-100/95 backdrop-blur-sm rounded-xl shadow-xl border border-gray-200 px-6 py-5 lg:px-10 lg:py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12">
               <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">

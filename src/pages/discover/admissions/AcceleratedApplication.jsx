@@ -172,7 +172,7 @@ export default function AcceleratedApplicationPage() {
         <PageHero
           title="Accelerated Master's Application Requirements"
           subtitle="Fast-Track Your Graduate Education at Stevens"
-          bgImage="/assets/images/accelerated-application/AcceleratedApplication-3.webp"
+          bgImage="/assets/images/accelerated-application/accelerated-application-hero.webp"
         />
 
         {/* Speed Emphasis Section */}

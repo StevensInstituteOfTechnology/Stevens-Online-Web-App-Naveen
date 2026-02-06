@@ -26,7 +26,7 @@ const programData = {
     description:
       "Master Python, SQL, and ML in 9 graduate credits. Build job-ready AI skills. $5,250 aligns with employer tuition benefits. Stackable to M.Eng. in Applied Data Science.",
     ogImage:
-      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-hero.webp",
     url: "/certificates/applied-data-science-foundations/",
   },
   hero: {
@@ -37,7 +37,7 @@ const programData = {
     subtitle:
       "Build AI that works-Python, SQL, and ML foundations for the real world. Launch your data science career in 9 graduate credits.",
     bgImage:
-      "/assets/images/certificate-applied-data-science/certificate-ADS-1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -81,7 +81,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${
+      KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 
@@ -104,7 +106,7 @@ const programData = {
     ],
     concentrations: [],
     image:
-      "/assets/images/certificate-applied-data-science/Screenshot_2026-01-15_at_1.webp",
+      "/assets/images/certificate-applied-data-science/cert-ads-overview.webp",
     imageAlt: "",
     imagePosition: "50% 70%",
   },
@@ -113,7 +115,7 @@ const programData = {
     heading: "Launch your data science career without interrupting your work",
     description:
       "Our 100% online, flexible format empowers professionals to build AI and data science expertise while maintaining their current role. Learn from expert faculty who combine technical depth with practical applications, and connect with a network of accomplished peers and alumni driving innovation in data science and AI.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -164,8 +166,8 @@ const programData = {
           "Code-driven labs: PCA, regression, gradient descent",
           "Train and interpret an ML model with AI insight report",
         ],
-        image: "/assets/images/certificate-applied-data-science/1527028764207.webp",
-        
+        image:
+          "/assets/images/certificate-applied-data-science/cert-ads-module-mathematics.webp",
       },
       {
         title: "Python & Data Pipelines",
@@ -177,8 +179,8 @@ const programData = {
           "Build AI-ready pipelines from raw data to training datasets",
           "End-to-end pipeline published to Streamlit app",
         ],
-        image: "/assets/images/certificate-applied-data-science/pexels-thisisengineering-3861976.webp",
-      
+        image:
+          "/assets/images/certificate-applied-data-science/cert-ads-module-python.webp",
       },
       {
         title: "Machine Learning & AI",
@@ -190,7 +192,8 @@ const programData = {
           "Build and evaluate AI solutions with SHAP/LIME for transparency",
           "Deploy an ML model with reproducible code and stakeholder narrative",
         ],
-        image: "/assets/images/certificate-applied-data-science/istockphoto-2084953049-612x612.webp",
+        image:
+          "/assets/images/certificate-applied-data-science/cert-ads-module-machine-learning.webp",
       },
     ],
   },
@@ -290,32 +293,32 @@ const programData = {
     companies: [
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
       {
         name: "Meta",
-        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.svg.png",
+        logo: "/assets/company_logo/Meta_Platforms_Inc._logo.png",
         industry: "Technology",
       },
       {
         name: "Apple",
-        logo: "/assets/company_logo/Apple_logo_black.svg.png",
+        logo: "/assets/company_logo/Apple_logo_black.png",
         industry: "Technology",
       },
     ],
@@ -435,7 +438,8 @@ const programData = {
     members: [
       {
         name: "Samuel Kim",
-        title: "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
+        title:
+          "Teaching Professor and Associate Chair for Undergraduate Studies in the Department of Computer Science",
         image: "/assets/avatars/certificate-ADS-avatar/Samuel_Kim.webp",
       },
       {
@@ -443,8 +447,12 @@ const programData = {
         title: "Senior Lecturer",
         image: "/assets/avatars/certificate-ADS-avatar/uprasad.avif",
       },
-      
-      { name: "David Landaeta", title: "Adjunct Lecturer", image: "/assets/logos/Stevens-logo-small-scale.webp" },
+
+      {
+        name: "David Landaeta",
+        title: "Adjunct Lecturer",
+        image: "/assets/logos/Stevens-logo-small-scale.webp",
+      },
     ],
   },
   faqs: [

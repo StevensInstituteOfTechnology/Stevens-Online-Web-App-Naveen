@@ -33,14 +33,14 @@ const AlumniPGC = () => {
     const canonical = buildCanonicalUrl("/alumni-pgc/");
     setPageTitle("Alumni Professional Graduate Certificate | Stevens Online");
     setMetaDescription(
-      "Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.",
+      "Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science."
     );
     setOpenGraphTags({
       title: "Alumni Professional Graduate Certificate | Stevens Online",
       description:
         "Stevens alumni receive 15% off Professional Graduate Certificates. Advance your career with specialized programs in Enterprise AI and Applied Data Science.",
       image: buildCanonicalUrl(
-        "/assets/images/alumni-pgc/martin-mom_20web.webp",
+        "/assets/images/alumni-pgc/alumni-pgc-hero.webp"
       ),
       url: canonical,
       type: "website",
@@ -74,7 +74,7 @@ const AlumniPGC = () => {
 
   // Get certificate programs
   const certificatePrograms = getAllPrograms().filter(
-    (program) => program.degree === "Certificate",
+    (program) => program.degree === "Certificate"
   );
 
   // Program benefits for the combined section
@@ -132,7 +132,7 @@ const AlumniPGC = () => {
         <PageHero
           title="Build In-Demand Skills Now. Stack Toward a Stevens Master's"
           subtitle="Whether you are looking to upskill or work toward a master's degree, Stevens alumni can take advantage of Professional Graduate Certificates designed for flexibility and career growth. Build in-demand skills in AI and data science while earning credentials that deliver immediate value and stack seamlessly into a Stevens master's degree when you are ready to take the next step."
-          bgImage="/assets/images/alumni-pgc/martin-mom_20web.webp"
+          bgImage="/assets/images/alumni-pgc/alumni-pgc-hero.webp"
           primaryCta={{
             label: "Apply in Minutes!",
             onClick: () => {
@@ -195,13 +195,21 @@ const AlumniPGC = () => {
                   {pricing.items.map((item, index) => (
                     <div
                       key={index}
-                      className={`p-4 sm:p-5 rounded-lg ${index === 1 ? "bg-stevens-light-gray border-2 border-stevens-red" : "bg-white border border-stevens-light-gray"}`}
+                      className={`p-4 sm:p-5 rounded-lg ${
+                        index === 1
+                          ? "bg-stevens-light-gray border-2 border-stevens-red"
+                          : "bg-white border border-stevens-light-gray"
+                      }`}
                     >
                       <p className="text-xs sm:text-sm text-stevens-gray uppercase tracking-wide font-semibold">
                         {item.label}
                       </p>
                       <p
-                        className={`text-xl sm:text-2xl font-bold mt-1 ${index === 1 ? "text-stevens-red" : "text-stevens-gray line-through"}`}
+                        className={`text-xl sm:text-2xl font-bold mt-1 ${
+                          index === 1
+                            ? "text-stevens-red"
+                            : "text-stevens-gray line-through"
+                        }`}
                       >
                         {item.value}
                       </p>

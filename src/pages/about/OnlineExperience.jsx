@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { PageHero, RequestInfoModal } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
-import { Laptop, Users, LifeBuoy, Library, ArrowRight } from "lucide-react";
+import { Laptop, Users, LifeBuoy, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import {
-  createPageUrl,
   setPageTitle,
   setMetaDescription,
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import { BOOKING_URLS } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -45,6 +44,59 @@ export default function OnlineExperience() {
   }, []);
 
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
+  const [activeBreakdownTab, setActiveBreakdownTab] = useState("async");
+
+  // Weekly Breakdown data for both course formats
+  const weeklyBreakdownTabs = {
+    async: {
+      label: "Asynchronous Courses",
+
+      cards: [
+        {
+          title: "Asynchronous Courses",
+          description: "Self-paced classes.",
+        },
+        {
+          title: "Assignments",
+          description:
+            "Work completed according to your own schedule, including homework, projects, reading and research.",
+        },
+      ],
+      total: {
+        hours: "20 Hours",
+        label: "Total Hours",
+        note: "Hours are estimates and are subject to change per course.",
+      },
+    },
+    syncAsync: {
+      label: "Synchronous + Asynchronous Courses",
+
+      cards: [
+        {
+          hours: "1.5 Hours",
+          title: "Synchronous",
+          description: "Live online class meetings held each week.",
+        },
+        {
+          hours: "5 Hours",
+          title: "Asynchronous",
+          description:
+            "Self-paced course work completed according to your own schedule prior to each week's synchronous class meeting.",
+        },
+        {
+          hours: "3-5 Hours",
+          title: "Assignments",
+          description: "Homework, projects, research, etc.",
+        },
+      ],
+      total: {
+        hours: "9-12 Hours",
+        label: "Total Hours",
+        note: "Hours are estimates and are subject to change per course.",
+      },
+    },
+  };
+
   const features = [
     {
       icon: Laptop,
@@ -78,11 +130,90 @@ export default function OnlineExperience() {
         <PageHero
           title="Online Education"
           subtitle="A premier, technology-driven education, delivered with flexibility."
-          bgImage="/assets/images/online-experience/1-online-learning-hero-scaled.webp"
+          bgImage="/assets/images/online-experience/online-experience-hero.webp"
         />
 
+        {/* Overview & Student Support Section */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-stevens-sm md:px-stevens-lg xl:px-stevens-xl space-y-16 md:space-y-20">
+            {/* Row 1: Overview - Text Left, Image Right */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                  Overview
+                </h2>
+                <div className="space-y-stevens-md text-stevens-dark-gray leading-relaxed">
+                  <p>
+                    Recognized as one of the most innovative schools in the
+                    nation, Stevens integrates technology across disciplines,
+                    ensuring that online students benefit from the same rigorous
+                    curriculum and expert faculty as those on campus.
+                  </p>
+                  <p>
+                    This commitment is supported by our substantial investment
+                    in academic and research infrastructure, facilitating a
+                    cutting-edge educational experience. Our 100% online format
+                    includes synchronous and asynchronous courses — and allows
+                    you to access learning materials, lecture notes and
+                    assignments at any time through our online course platform.
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
+                  <img
+                    {...getContentImageProps(
+                      "/assets/images/online-experience/online-experience-overview.webp"
+                    )}
+                    alt="Students collaborating online"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: Student Support - Image Left, Text Right */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative md:order-1 order-2">
+                <div className="bg-stevens-light-gray rounded-stevens-lg shadow-stevens-lg overflow-hidden aspect-[4/3]">
+                  <img
+                    {...getContentImageProps(
+                      "/assets/images/online-experience/online-experience-student-support.webp"
+                    )}
+                    alt="Student receiving support"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:order-2 order-1">
+                <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                  Student Support
+                </h2>
+                <div className="space-y-stevens-md text-stevens-dark-gray leading-relaxed">
+                  <p>
+                    As an online student, you'll have access to resources and
+                    support designed to help you flourish academically, stay
+                    connected to the university community and benefit from
+                    educational opportunities beyond the classroom. You'll
+                    receive one-on-one guidance from faculty who, with their
+                    deep research and industry backgrounds, will push you to
+                    master advanced topics while ensuring you meet high
+                    standards.
+                  </p>
+                  <p>
+                    These resources include the Continuing and Professional
+                    Student Care Center, which can assist with every aspect of
+                    being an online student, including admissions, registration,
+                    billing, deadlines and graduation requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Welcome Message from Dean Arshad */}
-        <div className="py-20 bg-stevens-light-gray">
+        <div className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <Card className="shadow-stevens-2xl border border-stevens-light-gray rounded-stevens-lg overflow-hidden">
               <CardContent className="p-0">
@@ -90,7 +221,7 @@ export default function OnlineExperience() {
                 <div className="bg-stevens-dark-gray text-white p-stevens-lg stevens-md:p-stevens-xl">
                   <div className="flex flex-col stevens-md:flex-row items-center gap-stevens-lg">
                     <img
-                      src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
+                      src="/assets/avatars/online-experience-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed, Chief Online Learning Officer and Dean"
                       className="w-32 h-32 stevens-md:w-40 stevens-md:h-40 rounded-full object-cover border-4 border-white shadow-stevens-xl"
                     />
@@ -108,8 +239,6 @@ export default function OnlineExperience() {
 
                 {/* Letter Content */}
                 <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
-                  <h3 className="font-stevens-display text-stevens-xl stevens-md:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg"></h3>
-
                   <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-md">
                     <p>
                       Welcome to Stevens Online. For more than 150 years,
@@ -146,9 +275,9 @@ export default function OnlineExperience() {
                   {/* Signature */}
                   <div className="mt-stevens-xl">
                     <img
-                      src="/assets/images/online-experience/arshad-signature.webp"
+                      src="/assets/images/online-experience/online-experience-signature.webp"
                       alt="Arshad Saiyed Signature"
-                      className="h-16 stevens-md:h-20 w-auto mb-stevens-sm"
+                      className="h-16 md:h-20 w-auto mb-stevens-sm"
                     />
                     <p className="font-stevens-semibold text-stevens-dark-gray">
                       Arshad Saiyed
@@ -166,7 +295,7 @@ export default function OnlineExperience() {
           </div>
         </div>
 
-        <div className="py-20 bg-stevens-light-gray">
+        <div className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <div className="text-center mb-16">
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray">
@@ -203,11 +332,6 @@ export default function OnlineExperience() {
 
         <div className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-            <img
-              src="/assets/images/online-experience/online-experience-1.png"
-              alt="Students collaborating online"
-              className="rounded-stevens-md shadow-xl mb-8"
-            />
             <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">
               Ready to Learn More?
             </h2>

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
+import ProgramFilterGrid from "@/components/admissions/ProgramFilterGrid";
 import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -183,11 +185,65 @@ export default function ComparePrograms() {
         <PageHero
           title="Compare Online Graduate Programs at Stevens"
           subtitle="Find your path"
-          bgImage="/assets/images/compare-programs/compare-hero.webp"
+          bgImage="/assets/images/compare-programs/compare-programs-hero.webp"
           rightContent={
             <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
           }
         />
+
+        {/* Explore Our Programs */}
+        <div
+          id="explore-programs"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
+        >
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                Explore Our Graduate Programs
+              </h2>
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-7xl mx-auto text-left">
+                Choose a program to explore or apply directly. Each program page
+                provides detailed information about curriculum, career outcomes,
+                and admission requirements.
+              </p>
+            </div>
+
+            <ProgramFilterGrid />
+
+            {/* Consultation CTA */}
+            <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
+              <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
+                <div>
+                  <h3 className="font-stevens-display text-stevens-2xl font-light text-stevens-dark-gray">
+                    Wondering Which Application Is Right for You?
+                  </h3>
+                  <p className="text-stevens-lg text-stevens-dark-gray mt-stevens-xs">
+                    Schedule a one-on-one consultation with the enrollment team
+                    today.
+                  </p>
+                </div>
+                <div className="stevens-md:text-right">
+                  <a
+                    href={BOOKING_URLS.SCHEDULE_CALL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                    }
+                  >
+                    <Button
+                      variant="outline-dark"
+                      className="px-stevens-xl py-stevens-md"
+                    >
+                      Get In Touch
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Select Programs to Compare */}
         <section

@@ -20,14 +20,14 @@ const programData = {
     title: "Online MBA Program | Stevens Online",
     description:
       "Earn your 100% online MBA from Stevens Institute of Technology. A tech-driven program designed for business leaders in innovation and strategy.",
-    ogImage: "/assets/images/mba/1-omba-hero-scaled.webp",
+    ogImage: "/assets/images/mba/mba-hero.webp",
     url: "/online-mba/",
   },
   hero: {
     titleLines: ["Earn Your MBA Online.", "Build Your Career Anywhere."],
     subtitle:
       "Tech-driven curriculum. AACSB accredited. Rated one of the best MBA programs in NYC region.",
-    bgImage: "/assets/images/mba/1-omba-hero-scaled.webp",
+    bgImage: "/assets/images/mba/mba-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -85,7 +85,7 @@ const programData = {
     headline: "Lead with data, strategy, and innovation",
     tagline: "The best MBA for technology in the NYC region.",
     description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
-    image: "/assets/images/mba/10.webp",
+    image: "/assets/images/mba/mba-overview.webp",
     imageAlt: "Students collaborating on MBA coursework",
     imagePosition: "10% 70%",
     keySkills: [
@@ -111,8 +111,8 @@ const programData = {
     heading: "Earn your MBA without putting your career on hold",
     description:
       "Our 100% online, part-time format empowers ambitious professionals to lead in data-driven industries while maintaining their current role. Learn from expert faculty who bridge cutting-edge research with real-world business applications, and connect with a network of accomplished peers and alumni across tech, finance, and healthcare.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
-    posterSrc: "/assets/videos/video-cover-1.webp",
+    videoSrc: "/assets/videos/Stevens Online MBA - 2.mp4",
+    posterSrc: "/assets/videos/video-cover-2.webp",
     showControls: true,
     muted: true,
     showCTA: false,
@@ -191,7 +191,7 @@ const programData = {
         description:
           "Master the language of business and develop expertise in financial decision-making. Learn to analyze financial statements, evaluate investments, and drive strategic financial planning.",
         skillsLabel: "Example Courses",
-        image: "/assets/images/mba/3.webp",
+        image: "/assets/images/mba/mba-concentration-finance.webp",
         skills: [
           "FIN 500 - Financial and Managerial Accounting",
           "FIN 523 - Financial Management",
@@ -204,7 +204,7 @@ const programData = {
         description:
           "Develop the skills to lead complex projects from inception to completion. Learn strategic project planning, analytics-driven decision making, and cross-functional team leadership.",
         skillsLabel: "Example Courses",
-        image: "/assets/images/mba/4.webp",
+        image: "/assets/images/mba/mba-concentration-project-analytics.webp",
         skills: [
           "MGT 609 - Project Management Fundamentals",
           "MGT 610 - Strategic Perspectives on Project Management",
@@ -217,7 +217,7 @@ const programData = {
         description:
           "Build expertise in leveraging data and artificial intelligence for business advantage. Learn to extract insights from complex datasets and apply AI technologies strategically.",
         skillsLabel: "Example Courses",
-        image: "/assets/images/mba/5.webp",
+        image: "/assets/images/mba/mba-concentration-business-ai.webp",
         skills: [
           "BIA 500 - Business Analytics: Data, Models and Decisions",
           "BIA 568 - Management of AI Technologies",
@@ -690,7 +690,7 @@ const programData = {
     name: "Olivia Fellbaum '25",
     quote:
       "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network.",
-    backgroundImage: "/assets/images/mba/6.webp",
+    backgroundImage: "/assets/images/mba/mba-testimonial-background.webp",
     bgPosition: "center 60%",
     cardPosition: "right",
   },
@@ -725,32 +725,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Verizon",
-        logo: "/assets/company_logo/Verizon_2024.svg.png",
+        logo: "/assets/company_logo/Verizon_2024.png",
         industry: "Telecommunications",
       },
       {
         name: "JPMorgan Chase",
-        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.svg.png",
+        logo: "/assets/company_logo/Logo_of_JPMorganChase_2024.png",
         industry: "Finance",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Technology",
       },
       {
         name: "Deloitte",
-        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        logo: "/assets/company_logo/Logo_of_Deloitte.png",
         industry: "Consulting",
       },
       {
         name: "Accenture",
-        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        logo: "/assets/company_logo/Accenture_logo.png",
         industry: "Consulting",
       },
     ],
@@ -936,7 +936,7 @@ const programData = {
   applicationOption: {
     variant: "singleImageCard",
     title: "Application Option",
-    backgroundImage: "/assets/images/mba/1-omba-hero-scaled.webp",
+    backgroundImage: "/assets/images/mba/mba-hero.webp",
     options: [
       {
         title: "Accelerated Application",

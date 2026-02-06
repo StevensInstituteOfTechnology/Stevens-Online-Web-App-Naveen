@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   ArrowRight,
   TrendingUp,
@@ -295,17 +296,17 @@ const CorporatePartners = () => {
   useEffect(() => {
     const canonical = buildCanonicalUrl("/corporate-partners/");
     setPageTitle(
-      "Corporate Partnerships | Workforce Development | Stevens Online",
+      "Corporate Partnerships | Workforce Development | Stevens Online"
     );
     setMetaDescription(
-      "Partner with Stevens Online to upskill your workforce. Flexible, career-aligned education with accelerated admissions, dedicated support, and customized learning pathways.",
+      "Partner with Stevens Online to upskill your workforce. Flexible, career-aligned education with accelerated admissions, dedicated support, and customized learning pathways."
     );
     setOpenGraphTags({
       title: "Corporate Partnerships | Stevens Online",
       description:
         "Transform your workforce with Stevens Online education programs. Customized learning solutions for corporate partners.",
       image: buildCanonicalUrl(
-        "/assets/images/corporate-partners/corporate-partners-1.webp",
+        "/assets/images/corporate-partners/corporate-partners-hero.webp"
       ),
       url: canonical,
       type: "website",
@@ -434,60 +435,60 @@ const CorporatePartners = () => {
       logo: "/assets/company_logo/Pfizer_(2021).png",
       industry: "Healthcare",
     },
-   
+
     {
       name: "Boeing",
-      logo: "/assets/company_logo/Boeing_full_logo.svg.png",
+      logo: "/assets/company_logo/Boeing_full_logo.png",
       industry: "Aerospace",
     },
     {
       name: "IBM",
-      logo: "/assets/company_logo/IBM_logo.svg.png",
+      logo: "/assets/company_logo/IBM_logo.png",
       industry: "Technology",
     },
     {
       name: "Verizon",
-      logo: "/assets/company_logo/Verizon_2024.svg.png",
+      logo: "/assets/company_logo/Verizon_2024.png",
       industry: "Telecommunications",
     },
     {
       name: "Lockheed Martin",
-      logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+      logo: "/assets/company_logo/Lockheed_Martin_logo.png",
       industry: "Aerospace",
     },
     {
       name: "Microsoft",
-      logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+      logo: "/assets/company_logo/Microsoft_logo_(2012).png",
       industry: "Technology",
     },
     {
       name: "Google",
-      logo: "/assets/company_logo/Google_2015_logo.svg.png",
+      logo: "/assets/company_logo/Google_2015_logo.png",
       industry: "Technology",
     },
     {
       name: "Cisco",
-      logo: "/assets/company_logo/Cisco_logo.svg.png",
+      logo: "/assets/company_logo/Cisco_logo.png",
       industry: "Technology",
     },
     {
       name: "PSEG",
-      logo: "/assets/company_logo/PSEG_logo.svg.png",
+      logo: "/assets/company_logo/PSEG_logo.png",
       industry: "Energy",
     },
     {
       name: "Accenture",
-      logo: "/assets/company_logo/Accenture_logo.svg.png",
+      logo: "/assets/company_logo/Accenture_logo.png",
       industry: "Consulting",
     },
     {
       name: "General Electric",
-      logo: "/assets/company_logo/General_Electric_logo.svg.png",
+      logo: "/assets/company_logo/General_Electric_logo.png",
       industry: "Industrials",
     },
     {
       name: "Exxon",
-      logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+      logo: "/assets/company_logo/Exxon_logo_2016.png",
       industry: "Energy",
     },
   ];
@@ -510,7 +511,7 @@ const CorporatePartners = () => {
         <PageHero
           titleLines={["Partner with Stevens to Transform Your Workforce"]}
           subtitle="Flexible, career-aligned education designed for your employees, with accelerated admissions, dedicated corporate support, and customized learning pathways."
-          bgImage="/assets/images/corporate-partners/corporate-partners-1.webp"
+          bgImage="/assets/images/corporate-partners/corporate-partners-hero.webp"
           bgImageFlip={true}
           primaryCta={{
             label: "Request Information",
@@ -750,7 +751,9 @@ const CorporatePartners = () => {
           {/* Background image with blur */}
           <div className="absolute inset-0">
             <img
-              src="/assets/images/corporate-partners/corporate-partners-2.webp"
+              {...getContentImageProps(
+                "/assets/images/corporate-partners/corporate-partners-stats-background.webp"
+              )}
               alt=""
               className="w-full h-full object-cover"
               aria-hidden="true"
@@ -930,7 +933,7 @@ const CorporatePartners = () => {
 
                     {/* CTA Button to Explore Programs */}
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
-                      <Link to="/admissions/#explore-programs">
+                      <Link to="/compare-our-programs/#explore-programs">
                         <Button variant="default" className="gap-2">
                           <GraduationCap className="w-5 h-5" />
                           Explore Our Programs

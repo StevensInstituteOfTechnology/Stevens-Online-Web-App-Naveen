@@ -13,7 +13,7 @@ const programData = {
     title: "Online Master’s in Engineering Management (MEM) | Stevens Online",
     description:
       "Earn your Master of Engineering Management online from Stevens. Gain leadership, analytics, and project management skills in a flexible STEM program.",
-    ogImage: "/assets/images/mem/1-mem-hero-scaled.webp",
+    ogImage: "/assets/images/mem/mem-hero.webp",
     url: "/online-masters-engineering-management/",
   },
   hero: {
@@ -23,7 +23,7 @@ const programData = {
     ],
     subtitle:
       "Tech-driven leadership. 100% online. Designed for working engineers.",
-    bgImage: "/assets/images/mem/1-mem-hero-scaled.webp",
+    bgImage: "/assets/images/mem/mem-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -80,7 +80,7 @@ const programData = {
     programType: "Master of Engineering",
     headline: "Lead engineering teams with business acumen",
     tagline: "Bridge technical expertise with strategic management skills.",
-    image: "/assets/images/mem/sustainability_sseminars_windmills.webp",
+    image: "/assets/images/mem/mem-overview.webp",
     imageAlt: "",
     imagePosition: "50% 80%",
     description: `
@@ -127,7 +127,7 @@ const programData = {
     heading: "Advance your engineering career without interrupting your work",
     description:
       "Our 100% online, part-time format empowers engineering professionals to develop leadership and management expertise while maintaining their current role. Learn from expert faculty who combine technical depth with business acumen, and connect with a network of accomplished peers and alumni leading engineering teams across diverse industries.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -171,7 +171,7 @@ const programData = {
           "Perform cost-benefit analysis and risk assessment for technical investments",
           "Utilize financial modeling techniques for engineering decision-making",
         ],
-        image: "/assets/images/mem/istockphoto-2190507935-612x612.webp",
+        image: "/assets/images/mem/mem-concentration-economics.webp",
       },
       {
         title: "Project Management and Systems Engineering",
@@ -182,7 +182,7 @@ const programData = {
           "Apply systems engineering principles to optimize project outcomes",
           "Manage project scope, timeline, and resources effectively",
         ],
-        image: "/assets/images/mem/pexels-pixabay-416405.webp",
+        image: "/assets/images/mem/mem-concentration-project-management.webp",
       },
       {
         title: "Operations Research and Data Analytics",
@@ -193,7 +193,7 @@ const programData = {
           "Utilize data analytics tools for process improvement and decision support",
           "Implement statistical methods for quality control and performance measurement",
         ],
-        image: "/assets/images/mem/pexels-thisisengineering-3861957.webp",
+        image: "/assets/images/mem/mem-concentration-operations.webp",
       },
       {
         title: "Leadership and Organizational Management",
@@ -204,7 +204,7 @@ const programData = {
           "Apply change management principles in engineering contexts",
           "Foster innovation and continuous improvement in technical environments",
         ],
-        image: "/assets/images/mem/istockphoto-1322842973-612x612.webp",
+        image: "/assets/images/mem/mem-concentration-leadership.webp",
       },
       {
         title: "Strategic Engineering Management",
@@ -215,8 +215,7 @@ const programData = {
           "Evaluate technology trends and their impact on organizational strategy",
           "Make informed decisions about technology investments and resource allocation",
         ],
-        image:
-          "/assets/images/mem/pexels-anthonyshkraba-production-8279248.webp",
+        image: "/assets/images/mem/mem-concentration-strategic.webp",
       },
     ],
   },
@@ -292,32 +291,32 @@ const programData = {
     companies: [
       {
         name: "BMW",
-        logo: "/assets/company_logo/BMW.svg.png",
+        logo: "/assets/company_logo/BMW.png",
         industry: "Manufacturing",
       },
       {
         name: "Goldman Sachs",
-        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.svg.png",
+        logo: "/assets/company_logo/Goldman_Sachs_2022_Black.png",
         industry: "Finance",
       },
       {
         name: "Lockheed Martin",
-        logo: "/assets/company_logo/Lockheed_Martin_logo.svg.png",
+        logo: "/assets/company_logo/Lockheed_Martin_logo.png",
         industry: "Aerospace & Defense",
       },
       {
         name: "Exxon",
-        logo: "/assets/company_logo/Exxon_logo_2016.svg.png",
+        logo: "/assets/company_logo/Exxon_logo_2016.png",
         industry: "Energy",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
       {
         name: "UPS",
-        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.svg.png",
+        logo: "/assets/company_logo/United_Parcel_Service_logo_2014.png",
         industry: "Logistics",
       },
     ],
@@ -465,7 +464,7 @@ const programData = {
     name: "Sarah Chen '23",
     quote:
       "The MEM program gave me the perfect blend of technical skills and leadership capabilities. I was promoted to Engineering Manager within six months of graduation.",
-    backgroundImage: "/assets/images/mem/student-testimonial.webp",
+    backgroundImage: "/assets/images/mem/mem-testimonial-background.webp",
     bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
     cardPosition: "right", // Optional: "left" or "right" (default: "right")
   },

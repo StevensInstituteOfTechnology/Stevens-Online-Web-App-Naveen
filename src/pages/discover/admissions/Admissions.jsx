@@ -8,8 +8,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ArrowRight, Clock } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import {
+  Clock,
+  ArrowRight,
+  GraduationCap,
+  FileCheck,
+  DollarSign,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 import LeadCaptureForm from "../../../components/forms/LeadCaptureForm";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
@@ -20,7 +26,6 @@ import {
   buildCanonicalUrl,
   createPageUrl,
 } from "@/utils";
-import ProgramFilterGrid from "../../../components/admissions/ProgramFilterGrid";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import { DeadlinesSection } from "@/components/shared/sections/DeadlinesSection";
@@ -33,23 +38,6 @@ export default function Admissions() {
       page_name: "Admissions Hub",
     },
   });
-
-  const location = useLocation();
-
-  // Smooth scroll to explore-programs section if hash is present
-  useEffect(() => {
-    if (location.hash === "#explore-programs") {
-      setTimeout(() => {
-        const element = document.getElementById("explore-programs");
-        if (element) {
-          const yOffset = -100; // Offset for fixed header
-          const y =
-            element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
-    }
-  }, [location]);
 
   // Set SEO meta tags
   useEffect(() => {
@@ -101,7 +89,7 @@ export default function Admissions() {
 
   // Application options data for ApplicationOptionsCards component
   const applicationOptionsData = {
-    title: "Choose Your Application Option",
+    title: "",
     options: [
       {
         title: "Standard Application",
@@ -168,14 +156,73 @@ export default function Admissions() {
           bgImage="/assets/images/admissions/1-hero-admissions-scaled.webp"
         />
 
+        {/* Take Your First Step */}
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-white">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-stevens-xl lg:gap-stevens-2xl items-center">
+              {/* Left Side */}
+              <div>
+                <h2 className="font-stevens-display text-stevens-4xl md:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg leading-tight">
+                  Take Your
+                  <br />
+                  First Step
+                </h2>
+                <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-md">
+                  Connecting with our enrollment team is your path to a Stevens
+                  graduate degree. We are here to guide you through options and
+                  find the perfect program for your goals.
+                </p>
+                <div className="w-16 h-1 bg-stevens-red" />
+              </div>
+
+              {/* Right Side - Photo with Overlapping Card */}
+              <div className="relative pb-16 md:pb-20">
+                {/* Placeholder Image */}
+                <div className="rounded-lg overflow-hidden shadow-stevens-lg">
+                  <img
+                    src="/assets/images/admissions/admissions-consultation.webp"
+                    alt="Admissions"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Overlapping Card */}
+                <div className="absolute bottom-0 left-4 right-4 translate-y-1/4 bg-white rounded-lg shadow-2xl shadow-black/15 p-stevens-lg">
+                  <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-semibold text-stevens-dark-gray mb-stevens-sm">
+                    Connect with an
+                    <br />
+                    Enrollment Advisor
+                  </h3>
+                  <p className="text-stevens-base text-stevens-dark-gray mb-stevens-md">
+                    Schedule a one-on-one consultation to discuss your goals.
+                  </p>
+                  <a
+                    href={BOOKING_URLS.SCHEDULE_CALL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                    }
+                  >
+                    <Button className="w-full bg-stevens-dark-gray hover:bg-stevens-gray text-white gap-2 uppercase tracking-wider font-semibold">
+                      Schedule Your Consultation
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Admissions Overview */}
-        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="max-w-7xl mx-auto">
               <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
                 Admissions Overview
               </h2>
-              <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg">
+              <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg pb-stevens-2xl">
                 <p>
                   Stevens is technology driven. Our faculty are experts in their
                   fields and experienced in industry. We deliver that expertise
@@ -191,72 +238,67 @@ export default function Admissions() {
                   online education from Stevens Institute of Technology.
                 </p>
               </div>
+
+              <ApplicationOptionsCards {...applicationOptionsData} />
             </div>
           </div>
         </div>
 
         {/* Application Options Cards */}
-        <ApplicationOptionsCards {...applicationOptionsData} />
 
-        {/* Explore Our Programs - NEW DYNAMIC SECTION */}
-        <div
-          id="explore-programs"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
-        >
+        {/* Key Dates & Deadlines - Using shared DeadlinesSection component */}
+        <DeadlinesSection keyDates={deadlinesData} />
+
+        {/* Financial Aid Section */}
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
-                Explore Our Graduate Programs
-              </h2>
-              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-7xl mx-auto text-left">
-                Choose a program to explore or apply directly. Each program page
-                provides detailed information about curriculum, career outcomes,
-                and admission requirements.
-              </p>
-            </div>
+            <div className="grid md:grid-cols-2 gap-stevens-xl lg:gap-stevens-2xl items-center">
+              {/* Left Side - Content */}
+              <div>
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                  Financing Your Graduate Degree
+                </h2>
+                <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-xl">
+                  Invest in your future with confidence. Stevens offers various
+                  financial aid options, including federal loans and
+                  assistantships. Access our Tuition & Financial Aid page for a
+                  full cost breakdown.
+                </p>
+                <Link to="/tuition-and-financial-aid/">
+                  <Button variant="outline-dark" className="gap-2">
+                    View Tuition & Financial Aid
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
 
-            <ProgramFilterGrid />
-
-            {/* Consultation CTA */}
-            <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
-              <div className="grid stevens-md:grid-cols-2 gap-stevens-lg items-center">
-                <div>
-                  <h3 className="font-stevens-display text-stevens-2xl  font-light text-stevens-dark-gray">
-                    Wondering Which Application Is Right for You?
-                  </h3>
-                  <p className="text-stevens-lg text-stevens-dark-gray mt-stevens-xs">
-                    Schedule a one-on-one consultation with the enrollment team
-                    today.
-                  </p>
+              {/* Right Side - FAFSA Code Highlight */}
+              <div className="bg-stevens-light-gray rounded-lg p-stevens-xl">
+                <div className="flex items-center gap-stevens-md mb-stevens-lg">
+                  <div className="w-14 h-14 bg-stevens-red rounded-full flex items-center justify-center">
+                    <DollarSign className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-stevens-sm text-stevens-dark-gray font-semibold uppercase tracking-wider">
+                      Stevens FAFSA School Code
+                    </p>
+                  </div>
                 </div>
-                <div className="stevens-md:text-right">
-                  <a
-                    href={BOOKING_URLS.SCHEDULE_CALL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
-                    }
-                  >
-                    <Button
-                      variant="outline-dark"
-                      className="px-stevens-xl py-stevens-md"
-                    >
-                      Get In Touch
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
+                <div className="text-center py-stevens-lg border-t border-gray-300">
+                  <p className="font-stevens-display text-stevens-5xl md:text-stevens-6xl font-bold text-stevens-red mb-stevens-sm">
+                    002639
+                  </p>
+                  <p className="text-stevens-base text-stevens-dark-gray">
+                    Use this code when completing your FAFSA application
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Key Dates & Deadlines - Using shared DeadlinesSection component */}
-        <DeadlinesSection keyDates={deadlinesData} />
-
         {/* Admissions FAQ */}
-        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">

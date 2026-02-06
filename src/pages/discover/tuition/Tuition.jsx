@@ -71,7 +71,7 @@ export default function Tuition() {
       <PageHero
         title="Tuition & Financial Aid Overview"
         subtitle="Financial Options for Our Online Programs"
-        bgImage="/assets/images/tuition/1-tuition-hero-scaled.webp"
+        bgImage="/assets/images/tuition/tuition-hero.webp"
       />
 
       <div className="max-w-stevens-content-max  mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">

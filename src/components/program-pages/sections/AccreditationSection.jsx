@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import { Section } from "../primitives";
+import { getContentImageProps } from "@/utils/responsiveImage";
 
 /**
  * AccreditationSection - Accreditation statement with dark background
@@ -18,7 +19,7 @@ import { Section } from "../primitives";
  */
 export const AccreditationSection = forwardRef(function AccreditationSection(
   { accreditation },
-  ref,
+  ref
 ) {
   if (!accreditation) return null;
 
@@ -37,7 +38,9 @@ export const AccreditationSection = forwardRef(function AccreditationSection(
         {/* Background Image - slightly more visible */}
         <div className="absolute inset-0">
           <img
-            src="/assets/images/shared/accreditation.webp"
+            {...getContentImageProps(
+              "/assets/images/shared/accreditation.webp"
+            )}
             alt=""
             className="w-full h-full object-cover opacity-40"
             aria-hidden="true"

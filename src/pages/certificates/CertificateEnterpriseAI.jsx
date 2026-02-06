@@ -23,16 +23,14 @@ const programData = {
       "Professional Graduate Certificate in Enterprise AI | Stevens Institute of Technology",
     description:
       "Launch your AI career in 9 graduate credits. Learn to frame, prototype, and deploy AI workflows. $5,250 aligns with employer tuition benefits. Stackable to MBA and M.Eng.",
-    ogImage:
-      "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
+    ogImage: "/assets/images/certificate-enterprise-ai/cert-eai-hero.webp",
     url: "/certificates/enterprise-ai/",
   },
   hero: {
     titleLines: ["Professional Graduate Certificate", "in Enterprise AI"],
     subtitle:
       "Build AI that works at work. In 9 credits, go from idea to a scheduled, monitored AI workflow-no CS degree required.",
-    bgImage:
-      "/assets/images/certificate-enterprise-ai/certificate-enterpriseAI-1.webp",
+    bgImage: "/assets/images/certificate-enterprise-ai/cert-eai-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
@@ -76,7 +74,9 @@ const programData = {
     ],
 
     // Simplified Card
-    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]}`,
+    termStart: `${KEY_DATES_SPRING2.TERM.name}: ${
+      KEY_DATES_SPRING2.START_OF_CLASSES.date.split(",")[0]
+    }`,
     tuition: "$5,250 Total",
     applyUrl: "#",
 
@@ -96,8 +96,7 @@ const programData = {
       "AI Ethics & Risk Management",
     ],
     concentrations: [],
-    image:
-      "/assets/images/certificate-enterprise-ai/shutterstock_1638173794-crop.webp",
+    image: "/assets/images/certificate-enterprise-ai/cert-eai-overview.webp",
     imageAlt: "",
     imagePosition: "50% 70%",
   },
@@ -106,7 +105,7 @@ const programData = {
     heading: "Build AI skills without putting your career on hold",
     description:
       "Our 100% online, flexible format empowers professionals to master enterprise AI capabilities while maintaining their current role. Learn from expert faculty who bridge cutting-edge AI research with real-world business applications, and connect with a network of accomplished peers implementing AI solutions across industries.",
-    videoSrc: "/assets/videos/Stevens Online MBA - 1.mp4",
+    videoSrc: "/assets/videos/Stevens Online Home - 1.mp4",
     posterSrc: "/assets/videos/video-cover-1.webp",
     showControls: true,
     muted: true,
@@ -164,7 +163,8 @@ const programData = {
           "Design and scope a proof-of-concept with business value",
           "Team PoC with management plan, demo, and implementation roadmap",
         ],
-        image: "/assets/images/certificate-enterprise-ai/pexels-googledeepmind-18069695.webp",
+        image:
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-generative-ai.webp",
       },
       {
         title: "AI Strategy & Management",
@@ -176,7 +176,8 @@ const programData = {
           "FATE principles, governance frameworks, and vendor selection",
           "Implementation playbook and architecture analysis",
         ],
-        image: "/assets/images/certificate-enterprise-ai/istockphoto-1979289147-612x612.webp",
+        image:
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-strategy.webp",
       },
       {
         title: "Operational AI Workflows",
@@ -188,8 +189,8 @@ const programData = {
           "Guardrails, validation, dashboards, and NLP agents",
           "Running script/app with config, tests, logs, and operational demo",
         ],
-        image: "/assets/images/certificate-enterprise-ai/AI-Workflow-Automation-Guide_-How-to-Achieve-End-to-End-Process-Excellence-Cover-3-2.webp",
-       
+        image:
+          "/assets/images/certificate-enterprise-ai/cert-eai-module-workflows.webp",
       },
     ],
   },
@@ -292,32 +293,32 @@ const programData = {
     companies: [
       {
         name: "Microsoft",
-        logo: "/assets/company_logo/Microsoft_logo_(2012).svg.png",
+        logo: "/assets/company_logo/Microsoft_logo_(2012).png",
         industry: "Technology",
       },
       {
         name: "Google",
-        logo: "/assets/company_logo/Google_2015_logo.svg.png",
+        logo: "/assets/company_logo/Google_2015_logo.png",
         industry: "Technology",
       },
       {
         name: "Amazon",
-        logo: "/assets/company_logo/Amazon_logo.svg.webp",
+        logo: "/assets/company_logo/Amazon_logo.webp",
         industry: "Ecommerce",
       },
       {
         name: "Deloitte",
-        logo: "/assets/company_logo/Logo_of_Deloitte.svg.png",
+        logo: "/assets/company_logo/Logo_of_Deloitte.png",
         industry: "Consulting",
       },
       {
         name: "Accenture",
-        logo: "/assets/company_logo/Accenture_logo.svg.png",
+        logo: "/assets/company_logo/Accenture_logo.png",
         industry: "Consulting",
       },
       {
         name: "IBM",
-        logo: "/assets/company_logo/IBM_logo.svg.png",
+        logo: "/assets/company_logo/IBM_logo.png",
         industry: "Technology",
       },
     ],

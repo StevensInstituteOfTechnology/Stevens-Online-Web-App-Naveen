@@ -665,7 +665,9 @@ export default function Layout({ children, currentPageName }) {
               </h3>
               <div className="space-y-2">
                 <Link
-                  to={createPageUrl("admissions/") + "#explore-programs"}
+                  to={
+                    createPageUrl("compare-our-programs/") + "#explore-programs"
+                  }
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Degrees
