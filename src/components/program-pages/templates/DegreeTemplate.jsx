@@ -27,6 +27,7 @@ import {
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 import { VideoSection } from "../../shared/sections/VideoSection";
+import TuitionCalculatorSection from "../../calculator/TuitionCalculatorSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -85,6 +86,7 @@ export function DegreeTemplate({
     careerOutcomes,
     topCompanies,
     deadlines,
+    tuitionCalculator,
   } = programData;
 
   const location = useLocation();
@@ -261,6 +263,16 @@ export function DegreeTemplate({
           <TuitionSection
             tuition={tuition}
             ref={registerSectionRef("tuition")}
+          />
+        )}
+
+        {/* 13b. Tuition Calculator Section (opt-in per program) */}
+        {tuitionCalculator && (
+          <TuitionCalculatorSection
+            programCode={code}
+            image={tuitionCalculator.image}
+            imageAlt={tuitionCalculator.imageAlt}
+            ref={registerSectionRef("tuition-calculator")}
           />
         )}
 

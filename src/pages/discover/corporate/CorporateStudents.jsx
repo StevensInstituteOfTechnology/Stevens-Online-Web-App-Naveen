@@ -11,15 +11,10 @@ import {
   Users,
   Award,
   BookOpen,
-  Star,
   Zap,
   TrendingUp,
   Briefcase,
   Target,
-  Info,
-  Sparkles,
-  Home,
-  Building,
   Calculator,
   X,
   ChevronLeft,
@@ -29,6 +24,7 @@ import {
   Mail,
   Phone,
   Calendar,
+  ExternalLink,
 } from "lucide-react";
 import {
   PageHero,
@@ -39,8 +35,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -54,12 +48,7 @@ import {
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
 import { PROGRAMS_DATA } from "@/data/programsData";
-import {
-  calculateProgramCost,
-  getDiscountConfig,
-  getDiscountInfo,
-  getProgramRecommendations,
-} from "@/utils/discountCalculator";
+import { getProgramRecommendations } from "@/utils/discountCalculator";
 import {
   BOOKING_URLS,
   CONTACT_INFO,
@@ -67,6 +56,7 @@ import {
 } from "@/config/constants";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
 import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
+import TuitionCalculatorBody from "@/components/calculator/TuitionCalculatorBody";
 
 const CorporateStudents = () => {
   const [searchParams] = useSearchParams();
@@ -83,15 +73,8 @@ const CorporateStudents = () => {
 
   // Cost Calculator States
   const [selectedProgram, setSelectedProgram] = useState(null);
-  const [isWorkforcePartner, setIsWorkforcePartner] = useState(false);
-  const [isHobokenResident, setIsHobokenResident] = useState(false);
-  const [isStevensAlumni, setIsStevensAlumni] = useState(false);
-  const [annualReimbursement, setAnnualReimbursement] = useState("");
   const [calculatedCost, setCalculatedCost] = useState(null);
   const [showCalculator, setShowCalculator] = useState(false);
-
-  // Get discount info for display
-  const discountInfo = getDiscountInfo();
 
   usePageTracking({
     pageType: "landing",
@@ -156,35 +139,6 @@ const CorporateStudents = () => {
       setRecommendedPrograms(programs);
     }
   }, [selectedInterest, selectedCredentialType]);
-
-  // Calculate cost whenever inputs change
-  useEffect(() => {
-    if (selectedProgram) {
-      const options = {
-        isWorkforcePartner,
-        isHobokenResident,
-        isStevensAlumni,
-        annualReimbursement: annualReimbursement || undefined,
-      };
-
-      const result = calculateProgramCost(selectedProgram.code, options);
-      setCalculatedCost(result);
-
-      trackEvent("cost_calculator_used", {
-        program: selectedProgram.code,
-        has_workforce_partner: isWorkforcePartner,
-        has_hoboken: isHobokenResident,
-        has_alumni: isStevensAlumni,
-        has_reimbursement: !!annualReimbursement,
-      });
-    }
-  }, [
-    selectedProgram,
-    isWorkforcePartner,
-    isHobokenResident,
-    isStevensAlumni,
-    annualReimbursement,
-  ]);
 
   // Partner benefits
   const partnerBenefits = [
@@ -346,18 +300,20 @@ const CorporateStudents = () => {
   const handleProgramSelect = (program) => {
     setSelectedProgram(program);
     setShowCalculator(true);
-    // Reset discount options
-    setIsWorkforcePartner(false);
-    setIsHobokenResident(false);
-    setIsStevensAlumni(false);
-    setAnnualReimbursement("");
 
-    setTimeout(() => {
-      document.getElementById("cost-calculator")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 100);
+    // Scroll to calculator section after React has rendered the new calculator
+    // Use requestAnimationFrame to ensure DOM updates are complete
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const calculatorSection = document.getElementById("cost-calculator");
+        if (calculatorSection) {
+          calculatorSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 150);
+    });
 
     trackEvent("program_selected_from_questionnaire", {
       program_code: program.code,
@@ -1009,710 +965,185 @@ const CorporateStudents = () => {
             </div>
 
             {showCalculator && selectedProgram ? (
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-stevens-md lg:gap-stevens-lg pb-20 lg:pb-0">
-                {/* Left side - Calculator Inputs */}
-                <div className="lg:col-span-2 space-y-stevens-md">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="flex items-center text-stevens-lg">
-                        <Calculator className="w-5 h-5 mr-2" />
-                        Calculate Your Cost
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-stevens-lg">
-                      {/* Selected Program */}
-                      <div>
-                        <label className="text-sm font-semibold text-stevens-dark-gray mb-2 block">
-                          Selected Program
-                        </label>
-                        <Card className="bg-gray-50 border-gray-200">
-                          <CardContent className="p-stevens-md">
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <Badge className="mt-2 bg-stevens-red text-white">
-                                  {selectedProgram.degree}
-                                </Badge>
-                                <p className="font-semibold text-stevens-dark-gray">
-                                  {selectedProgram.name}
-                                </p>
-                                <p className="text-xs text-stevens-dark-gray mt-1">
-                                  {selectedProgram.stats?.credits} credits •{" "}
-                                  {calculatedCost?.durationYears === 1
-                                    ? "1 year"
-                                    : `${calculatedCost?.durationYears} years`}
-                                </p>
-                              </div>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => {
-                                  setSelectedProgram(null);
-                                  setCalculatedCost(null);
-                                  setShowCalculator(false);
-                                  setIsWorkforcePartner(false);
-                                  setIsHobokenResident(false);
-                                  setIsStevensAlumni(false);
-                                  setAnnualReimbursement("");
-                                }}
-                              >
-                                Change
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </div>
-
-                      {/* Year-End Benefits Notice */}
-                      <Alert className="bg-gray-50 border border-gray-200">
-                        <Clock className="w-5 h-5 text-stevens-red" />
-                        <AlertTitle className="text-stevens-dark-gray font-semibold">
-                          2026 Tuition Benefits
-                        </AlertTitle>
-                        <AlertDescription className="text-stevens-dark-gray text-sm">
-                          Most employer tuition benefits reset on January 1st.
-                          Apply now to maximize your 2026 benefits for upcoming
-                          terms.
-                        </AlertDescription>
-                      </Alert>
-
-                      {/* Workforce Partner Discount - Only show for master's programs */}
-                      {selectedProgram &&
-                        !selectedProgram.code.startsWith("cert-") && (
-                          <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <Checkbox
-                              id="workforce-partner"
-                              checked={isWorkforcePartner}
-                              onCheckedChange={setIsWorkforcePartner}
-                              className="mt-0.5"
-                            />
-                            <div className="flex-1">
-                              <label
-                                htmlFor="workforce-partner"
-                                className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
-                              >
-                                <Building className="w-4 h-4 mr-1.5 text-stevens-red" />
-                                Is your employer a Stevens workforce development
-                                partner?
-                              </label>
-                              <p className="text-xs text-stevens-dark-gray mt-1">
-                                {discountInfo.workforcePartner.percentage}%
-                                discount (average savings of ~20%)
-                              </p>
-                            </div>
-                          </div>
-                        )}
-
-                      {/* Hoboken Resident Discount */}
-                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-gray-50 rounded-lg border border-gray-200">
-                        <Checkbox
-                          id="hoboken"
-                          checked={isHobokenResident}
-                          onCheckedChange={setIsHobokenResident}
-                          className="mt-0.5"
-                        />
-                        <div className="flex-1">
-                          <label
-                            htmlFor="hoboken"
-                            className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
-                          >
-                            <Home className="w-4 h-4 mr-1.5 text-stevens-red" />
-                            I am a Hoboken resident
-                          </label>
-                          <p className="text-xs text-stevens-dark-gray mt-1">
-                            {discountInfo.hobokenResident.percentage}%
-                            additional discount for Hoboken residents
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Stevens Alumni Discount */}
-                      <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-stevens-md bg-gray-50 rounded-lg border border-gray-200">
-                        <Checkbox
-                          id="alumni"
-                          checked={isStevensAlumni}
-                          onCheckedChange={setIsStevensAlumni}
-                          className="mt-0.5"
-                        />
-                        <div className="flex-1">
-                          <label
-                            htmlFor="alumni"
-                            className="text-sm font-medium text-stevens-dark-gray cursor-pointer flex items-center"
-                          >
-                            <GraduationCap className="w-4 h-4 mr-1.5 text-stevens-red" />
-                            I am a Stevens Institute of Technology alumni
-                          </label>
-                          <p className="text-xs text-stevens-dark-gray mt-1">
-                            {discountInfo.alumniDiscount.percentage}% alumni
-                            discount for Stevens graduates
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Annual Employer Reimbursement */}
-                      <div>
-                        <label className="text-sm font-semibold text-stevens-dark-gray mb-2 flex items-center">
-                          <Briefcase className="w-4 h-4 mr-2" />
-                          Annual Employer Tuition Reimbursement
-                        </label>
-                        <div className="relative">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stevens-dark-gray font-medium">
-                            $
-                          </span>
-                          <Input
-                            type="number"
-                            placeholder={`e.g., ${discountInfo.employerReimbursement.defaultAnnual}`}
-                            value={annualReimbursement}
-                            onChange={(e) =>
-                              setAnnualReimbursement(e.target.value)
-                            }
-                            className="w-full pl-8"
-                          />
-                          {annualReimbursement && (
-                            <button
-                              onClick={() => setAnnualReimbursement("")}
-                              className="absolute right-3 top-1/2 -translate-y-1/2 text-stevens-gray hover:text-stevens-dark-gray"
-                              aria-label="Clear"
-                            >
-                              <X className="w-4 h-4" />
-                            </button>
-                          )}
-                        </div>
-                        <p className="text-xs text-stevens-light-gray0 mt-1">
-                          {discountInfo.employerReimbursement.description}
+              <div className="space-y-stevens-md">
+                {/* Selected Program Card (page-specific) */}
+                <Card className="border border-stevens-light-gray shadow-stevens-md overflow-hidden">
+                  <CardContent className="p-stevens-md">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <Badge className="mb-1.5 bg-stevens-red text-white text-[11px] font-semibold tracking-wide">
+                          {selectedProgram.degree}
+                        </Badge>
+                        <p className="font-semibold text-stevens-dark-gray leading-snug">
+                          {selectedProgram.name}
                         </p>
-                        {annualReimbursement &&
-                          calculatedCost?.durationYears && (
-                            <p className="text-xs text-stevens-red mt-1 font-medium">
-                              $
-                              {parseFloat(annualReimbursement).toLocaleString()}
-                              /year × {calculatedCost.durationYears} year
-                              {calculatedCost.durationYears > 1 ? "s" : ""} = $
-                              {(
-                                parseFloat(annualReimbursement) *
-                                calculatedCost.durationYears
-                              ).toLocaleString()}{" "}
-                              total
-                            </p>
-                          )}
+                        <p className="text-xs text-stevens-gray mt-1.5 flex items-center gap-1.5">
+                          <span>{selectedProgram.stats?.credits} credits</span>
+                          <span className="w-1 h-1 rounded-full bg-stevens-gray/40" />
+                          <span>
+                            {calculatedCost?.durationYears === 1
+                              ? "1 year"
+                              : `${calculatedCost?.durationYears} years`}
+                          </span>
+                        </p>
                       </div>
-                    </CardContent>
-
-                    {/* Mobile Price Summary - Only visible on mobile */}
-                    {calculatedCost && (
-                      <div className="lg:hidden p-stevens-md pt-0 border-t border-gray-200">
-                        {/* Final Price */}
-                        <div className="bg-stevens-red text-stevens-white p-stevens-md rounded-stevens-md mb-stevens-md">
-                          {calculatedCost.credits.type === "variable" ? (
-                            <>
-                              <div className="flex justify-between items-center mb-2">
-                                <span className="text-base font-semibold">
-                                  {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
-                                  )
-                                    ? "YOUR FINAL COST"
-                                    : "YOUR COST"}
-                                </span>
-                                <span className="text-stevens-2xl font-bold">
-                                  ${calculatedCost.finalPrice.toLocaleString()}
-                                </span>
-                              </div>
-                              <p className="text-xs text-stevens-white/80">
-                                Based on {calculatedCost.credits.typical}{" "}
-                                credits
-                              </p>
-                            </>
-                          ) : (
-                            <>
-                              <div className="flex justify-between items-center mb-2">
-                                <span className="text-base font-semibold">
-                                  {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
-                                  )
-                                    ? "YOUR FINAL COST"
-                                    : "YOUR COST"}
-                                </span>
-                                <span className="text-stevens-2xl font-bold">
-                                  ${calculatedCost.finalPrice.toLocaleString()}
-                                </span>
-                              </div>
-                              {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement"
-                              ) && (
-                                <p className="text-xs text-stevens-white/70 italic">
-                                  * Before employer reimbursement
-                                </p>
-                              )}
-                            </>
-                          )}
-
-                          {calculatedCost.percentSaved > 0 && (
-                            <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
-                              <Star className="w-4 h-4 mr-2 fill-current" />
-                              <span className="text-sm">
-                                You save {calculatedCost.percentSaved}%!
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Mobile CTA Buttons - Only visible on mobile */}
-                    {calculatedCost && (
-                      <div className="lg:hidden p-stevens-md pt-0 space-y-stevens-md border-t border-gray-200">
-                        {/* Primary CTA - Apply */}
-                        {(() => {
-                          // Build the correct application URL based on program config
-                          const appConfig = selectedProgram.applicationConfig;
-                          const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
-
-                          // External application (Stevens grad admissions)
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-stevens-red hover:text-stevens-red hover:bg-stevens-red/10 text-xs font-semibold shrink-0"
+                        onClick={() => {
+                          setSelectedProgram(null);
+                          setCalculatedCost(null);
+                          setShowCalculator(false);
+                          // Ensure questionnaire stays at step 2 to show recommendations
                           if (
-                            appConfig?.standardLink ||
-                            (appConfig?.type === "direct" &&
-                              appConfig?.link?.startsWith("http"))
+                            questionnaireStep !== 2 &&
+                            selectedInterest &&
+                            selectedCredentialType
                           ) {
-                            const baseUrl =
-                              appConfig.standardLink || appConfig.link;
-                            const separator = baseUrl.includes("?") ? "&" : "?";
-                            const fullUrl = `${baseUrl}${separator}${utmParams}`;
-
-                            return (
-                              <a
-                                href={fullUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => {
-                                  trackEvent("cta_click", {
-                                    cta_type: "apply_now",
-                                    cta_location: "calculator_inputs_mobile",
-                                    program_code: selectedProgram.code,
-                                    final_price: calculatedCost.finalPrice,
-                                    application_type: "external",
-                                  });
-                                  trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                                }}
-                              >
-                                <Button
-                                  size="lg"
-                                  className="w-full text-stevens-white group py-4"
-                                >
-                                  <Send className="w-5 h-5 mr-2" />
-                                  Apply Now
-                                  <ExternalLink className="w-4 h-4 ml-2" />
-                                </Button>
-                              </a>
-                            );
+                            setQuestionnaireStep(2);
                           }
+                          // Scroll back to questionnaire
+                          setTimeout(() => {
+                            document
+                              .getElementById("programs-section")
+                              ?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                          }, 100);
+                        }}
+                      >
+                        Change
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                          // Internal accelerated application
-                          const internalPath =
-                            appConfig?.link || "/accelerated-application/";
-                          return (
-                            <Link
-                              to={`${internalPath}?program=${
-                                selectedProgram.code
-                              }${
-                                corporateCode ? `&code=${corporateCode}` : ""
-                              }&${utmParams}`}
-                              onClick={() => {
-                                trackEvent("cta_click", {
-                                  cta_type: "apply_now",
-                                  cta_location: "calculator_inputs_mobile",
-                                  program_code: selectedProgram.code,
-                                  final_price: calculatedCost.finalPrice,
-                                  application_type: "accelerated",
-                                });
-                                trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                              }}
-                            >
-                              <Button
-                                size="lg"
-                                className="w-full text-stevens-white group py-4"
-                              >
-                                <Send className="w-5 h-5 mr-2" />
-                                Apply Now
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </Button>
-                            </Link>
-                          );
-                        })()}
+                {/* Year-End Benefits Notice */}
+                <Alert className="bg-stevens-red/5 border border-stevens-red/15 rounded-lg">
+                  <Clock className="w-5 h-5 text-stevens-red" />
+                  <AlertTitle className="text-stevens-dark-gray font-semibold">
+                    2026 Tuition Benefits
+                  </AlertTitle>
+                  <AlertDescription className="text-stevens-gray text-sm">
+                    Most employer tuition benefits reset on January 1st. Apply
+                    now to maximize your 2026 benefits for upcoming terms.
+                  </AlertDescription>
+                </Alert>
 
-                        {/* Secondary CTA - RFI */}
-                        <Button
-                          size="lg"
-                          variant="outline-dark"
-                          className="w-full py-4"
-                          onClick={() => {
-                            handleCTAClick("request_info_calculator_mobile");
-                            setShowContactModal(true);
-                          }}
-                        >
-                          <Mail className="w-5 h-5 mr-2" />
-                          Request More Information
-                        </Button>
+                {/* Shared Calculator Body */}
+                <Card className="border border-stevens-light-gray shadow-stevens-md overflow-hidden">
+                  <TuitionCalculatorBody
+                    key={selectedProgram.code}
+                    programCode={selectedProgram.code}
+                    onCostChange={setCalculatedCost}
+                  />
+                </Card>
 
-                        <p className="text-center text-xs text-stevens-dark-gray pt-2">
-                          Questions?{" "}
+                {/* CTA Buttons */}
+                {calculatedCost && (
+                  <div className="space-y-stevens-md">
+                    {/* Primary CTA - Apply */}
+                    {(() => {
+                      const appConfig = selectedProgram.applicationConfig;
+                      const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
+
+                      if (
+                        appConfig?.standardLink ||
+                        (appConfig?.type === "direct" &&
+                          appConfig?.link?.startsWith("http"))
+                      ) {
+                        const baseUrl =
+                          appConfig.standardLink || appConfig.link;
+                        const separator = baseUrl.includes("?") ? "&" : "?";
+                        const fullUrl = `${baseUrl}${separator}${utmParams}`;
+
+                        return (
                           <a
-                            href={BOOKING_URLS.SCHEDULE_CALL}
+                            href={fullUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-stevens-red hover:underline font-semibold"
-                          >
-                            Talk to an advisor
-                          </a>
-                        </p>
-                      </div>
-                    )}
-                  </Card>
-                </div>
-
-                {/* Right side - Cost Breakdown */}
-                <div className="hidden lg:block lg:col-span-3 order-first lg:order-last">
-                  {calculatedCost ? (
-                    <Card className="lg:sticky lg:top-4">
-                      <CardHeader className="bg-stevens-red text-stevens-white rounded-t-stevens-md">
-                        <CardTitle className="text-stevens-xl md:text-stevens-2xl">
-                          Your Investment Breakdown
-                        </CardTitle>
-                        <p className="text-stevens-white/90 text-sm">
-                          {calculatedCost.programName}
-                        </p>
-                      </CardHeader>
-                      <CardContent className="p-stevens-md lg:p-stevens-lg pt-stevens-md">
-                        {/* Base Price */}
-                        <div className="mb-stevens-lg pb-stevens-md border-b-2 pt-stevens-md">
-                          <div className="flex justify-between items-center">
-                            <span className="text-stevens-dark-gray">
-                              {calculatedCost.credits.type === "variable"
-                                ? "Program Cost"
-                                : "Standard Program Price"}
-                            </span>
-                            <span className="text-stevens-xl md:text-stevens-2xl font-bold text-stevens-dark-gray">
-                              ${calculatedCost.basePrice.toLocaleString()}
-                            </span>
-                          </div>
-                          {calculatedCost.credits.type === "fixed" && (
-                            <p className="text-xs text-stevens-dark-gray mt-1">
-                              {calculatedCost.credits.value} credits •{" "}
-                              {calculatedCost.durationYears} year
-                              {calculatedCost.durationYears > 1 ? "s" : ""}
-                            </p>
-                          )}
-                          {calculatedCost.credits.type === "variable" && (
-                            <p className="text-xs text-stevens-dark-gray mt-1">
-                              Based on typical {calculatedCost.credits.typical}{" "}
-                              credits
-                            </p>
-                          )}
-                        </div>
-
-                        {/* Variable Credit Info */}
-                        {calculatedCost.credits.type === "variable" && (
-                          <div className="mb-stevens-lg">
-                            <Alert className="bg-gray-50 border border-gray-200">
-                              <Info className="w-5 h-5 text-stevens-red" />
-                              <AlertTitle className="text-stevens-dark-gray font-semibold mb-2">
-                                Variable Credit Program
-                              </AlertTitle>
-                              <AlertDescription>
-                                <p className="text-sm text-stevens-dark-gray mb-2">
-                                  {calculatedCost.programName} requires{" "}
-                                  {calculatedCost.credits.min}-
-                                  {calculatedCost.credits.max} credits based on
-                                  concentration. Estimate uses{" "}
-                                  {calculatedCost.credits.typical} credits.
-                                </p>
-                              </AlertDescription>
-                            </Alert>
-                          </div>
-                        )}
-
-                        {/* Certificate Program Benefits Message */}
-                        {calculatedCost.programCode.startsWith("cert-") && (
-                          <div className="mb-stevens-lg">
-                            <Alert className="bg-gray-50 border border-gray-200">
-                              <Sparkles className="w-5 h-5 text-stevens-red" />
-                              <AlertTitle className="text-stevens-dark-gray font-semibold mb-2">
-                                Certificate Program Benefits
-                              </AlertTitle>
-                              <AlertDescription>
-                                <p className="text-sm text-stevens-dark-gray mb-2">
-                                  Professional certificates are priced at $
-                                  {calculatedCost.basePrice.toLocaleString()}(
-                                  {calculatedCost.credits.value} credits) to
-                                  align with employer tuition reimbursement
-                                  limits.
-                                </p>
-                                <p className="text-xs text-stevens-dark-gray flex items-center">
-                                  <CheckCircle className="w-3 h-3 mr-1 text-stevens-red" />
-                                  This certificate can stack toward a full
-                                  master's degree!
-                                </p>
-                              </AlertDescription>
-                            </Alert>
-                          </div>
-                        )}
-
-                        {/* Discount Steps */}
-                        {calculatedCost.steps.length > 0 && (
-                          <div className="space-y-3 mb-stevens-lg">
-                            {calculatedCost.steps.map((step, index) => {
-                              const Icon =
-                                step.icon === "building"
-                                  ? Building
-                                  : step.icon === "sparkles"
-                                  ? Sparkles
-                                  : step.icon === "home"
-                                  ? Home
-                                  : step.icon === "graduation-cap"
-                                  ? GraduationCap
-                                  : step.icon === "briefcase"
-                                  ? Briefcase
-                                  : CheckCircle;
-
-                              return (
-                                <div key={index}>
-                                  <div className="flex items-start space-x-2 md:space-x-3 p-3 md:p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                    <Icon className="w-5 h-5 text-stevens-red flex-shrink-0 mt-0.5" />
-                                    <div className="flex-1 min-w-0">
-                                      <div className="flex justify-between items-start mb-1">
-                                        <div className="flex-1 min-w-0">
-                                          <p className="font-semibold text-stevens-dark-gray text-sm">
-                                            {step.name}
-                                          </p>
-                                          <p className="text-xs text-stevens-dark-gray mt-0.5">
-                                            {step.description}
-                                          </p>
-                                        </div>
-                                        <div className="text-right ml-4 flex-shrink-0">
-                                          <p className="font-bold text-stevens-red">
-                                            -$
-                                            {step.discountAmount.toLocaleString()}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        )}
-
-                        {/* Final Price */}
-                        <div className="bg-stevens-red text-stevens-white p-stevens-md lg:p-stevens-lg rounded-stevens-md">
-                          {calculatedCost.credits.type === "variable" ? (
-                            <>
-                              <div className="flex justify-between items-center mb-2">
-                                <span className="text-lg font-semibold">
-                                  {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
-                                  )
-                                    ? "YOUR FINAL COST"
-                                    : "YOUR COST"}
-                                </span>
-                                <span className="text-stevens-2xl md:text-stevens-3xl font-bold">
-                                  ${calculatedCost.finalPrice.toLocaleString()}
-                                </span>
-                              </div>
-                              <p className="text-xs text-stevens-white/80">
-                                Based on {calculatedCost.credits.typical}{" "}
-                                credits
-                              </p>
-                            </>
-                          ) : (
-                            <>
-                              <div className="flex justify-between items-center mb-2">
-                                <span className="text-lg font-semibold">
-                                  {calculatedCost.steps.find(
-                                    (s) => s.type === "reimbursement"
-                                  )
-                                    ? "YOUR FINAL COST"
-                                    : "YOUR COST"}
-                                </span>
-                                <span className="text-stevens-2xl md:text-stevens-4xl font-bold">
-                                  ${calculatedCost.finalPrice.toLocaleString()}
-                                </span>
-                              </div>
-                              {!calculatedCost.steps.find(
-                                (s) => s.type === "reimbursement"
-                              ) && (
-                                <p className="text-xs text-stevens-white/70 italic">
-                                  * Before employer reimbursement
-                                </p>
-                              )}
-                            </>
-                          )}
-
-                          {calculatedCost.percentSaved > 0 && (
-                            <div className="flex items-center mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
-                              <Star className="w-5 h-5 mr-2 fill-current" />
-                              <span className="text-lg">
-                                You save {calculatedCost.percentSaved}%!
-                              </span>
-                            </div>
-                          )}
-
-                          {/* Prompt to add reimbursement if not entered */}
-                          {!calculatedCost.steps.find(
-                            (s) => s.type === "reimbursement"
-                          ) && (
-                            <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
-                              <div className="flex items-start text-stevens-white/90">
-                                <Briefcase className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
-                                <div className="text-sm">
-                                  <p className="font-semibold mb-1">
-                                    Add your annual employer reimbursement
-                                  </p>
-                                  <p className="text-xs text-stevens-white/80">
-                                    Most employers offer up to $
-                                    {discountInfo.employerReimbursement.defaultAnnual.toLocaleString()}
-                                    /year
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Certificate FREE message */}
-                          {calculatedCost.programCode.startsWith("cert-") &&
-                            calculatedCost.finalPrice === 0 && (
-                              <div className="mt-stevens-md pt-stevens-md border-t border-stevens-white/20">
-                                <div className="flex items-center text-stevens-white">
-                                  <CheckCircle className="w-6 h-6 mr-2 fill-current" />
-                                  <span className="text-lg font-bold">
-                                    Fully covered by employer benefits!
-                                  </span>
-                                </div>
-                              </div>
-                            )}
-                        </div>
-
-                        {/* CTA Buttons */}
-                        <div className="mt-stevens-lg space-y-stevens-md">
-                          {/* Primary CTA - Apply */}
-                          {(() => {
-                            // Build the correct application URL based on program config
-                            const appConfig = selectedProgram.applicationConfig;
-                            const utmParams = `utm_source=microsite&utm_medium=corporate_landing&utm_campaign=corporate-calculator&utm_content=${selectedProgram.code}`;
-
-                            // External application (Stevens grad admissions)
-                            if (
-                              appConfig?.standardLink ||
-                              (appConfig?.type === "direct" &&
-                                appConfig?.link?.startsWith("http"))
-                            ) {
-                              const baseUrl =
-                                appConfig.standardLink || appConfig.link;
-                              const separator = baseUrl.includes("?")
-                                ? "&"
-                                : "?";
-                              const fullUrl = `${baseUrl}${separator}${utmParams}`;
-
-                              return (
-                                <a
-                                  href={fullUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  onClick={() => {
-                                    trackEvent("cta_click", {
-                                      cta_type: "apply_now",
-                                      cta_location: "calculator_results",
-                                      program_code: selectedProgram.code,
-                                      final_price: calculatedCost.finalPrice,
-                                      application_type: "external",
-                                    });
-                                    trackConversion(
-                                      CONVERSION_LABELS.APPLY_NOW
-                                    );
-                                  }}
-                                >
-                                  <Button
-                                    size="lg"
-                                    className="w-full text-stevens-white group py-4"
-                                  >
-                                    <Send className="w-5 h-5 mr-2" />
-                                    Apply Now
-                                    <ExternalLink className="w-4 h-4 ml-2" />
-                                  </Button>
-                                </a>
-                              );
-                            }
-
-                            // Internal accelerated application
-                            const internalPath =
-                              appConfig?.link || "/accelerated-application/";
-                            return (
-                              <Link
-                                to={`${internalPath}?program=${
-                                  selectedProgram.code
-                                }${
-                                  corporateCode ? `&code=${corporateCode}` : ""
-                                }&${utmParams}`}
-                                onClick={() => {
-                                  trackEvent("cta_click", {
-                                    cta_type: "apply_now",
-                                    cta_location: "calculator_results",
-                                    program_code: selectedProgram.code,
-                                    final_price: calculatedCost.finalPrice,
-                                    application_type: "accelerated",
-                                  });
-                                  trackConversion(CONVERSION_LABELS.APPLY_NOW);
-                                }}
-                              >
-                                <Button
-                                  size="lg"
-                                  className="w-full text-stevens-white group py-4"
-                                >
-                                  <Send className="w-5 h-5 mr-2" />
-                                  Apply Now
-                                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                              </Link>
-                            );
-                          })()}
-
-                          {/* Secondary CTA - RFI */}
-                          <Button
-                            size="lg"
-                            variant="outline-dark"
-                            className="w-full py-4"
                             onClick={() => {
-                              handleCTAClick("request_info_calculator");
-                              setShowContactModal(true);
+                              trackEvent("cta_click", {
+                                cta_type: "apply_now",
+                                cta_location: "calculator_results",
+                                program_code: selectedProgram.code,
+                                final_price: calculatedCost.finalPrice,
+                                application_type: "external",
+                              });
+                              trackConversion(CONVERSION_LABELS.APPLY_NOW);
                             }}
                           >
-                            <Mail className="w-5 h-5 mr-2" />
-                            Request More Information
-                          </Button>
-
-                          <p className="text-center text-xs text-stevens-dark-gray pt-2">
-                            Questions?{" "}
-                            <a
-                              href={BOOKING_URLS.SCHEDULE_CALL}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-stevens-red hover:underline font-semibold"
+                            <Button
+                              size="lg"
+                              className="w-full text-stevens-white bg-stevens-red group py-4"
                             >
-                              Talk to an advisor
-                            </a>
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ) : (
-                    <Card className="h-full flex items-center justify-center p-stevens-2xl">
-                      <div className="text-center text-stevens-light-gray0">
-                        <Calculator className="w-16 h-16 mx-auto mb-stevens-md opacity-50" />
-                        <p className="text-lg font-semibold mb-2">
-                          Calculating your personalized pricing...
-                        </p>
-                      </div>
-                    </Card>
-                  )}
-                </div>
+                              <Send className="w-5 h-5 mr-2" />
+                              Apply Now
+                              <ExternalLink className="w-4 h-4 ml-2" />
+                            </Button>
+                          </a>
+                        );
+                      }
+
+                      const internalPath =
+                        appConfig?.link || "/accelerated-application/";
+                      return (
+                        <Link
+                          to={`${internalPath}?program=${selectedProgram.code}${
+                            corporateCode ? `&code=${corporateCode}` : ""
+                          }&${utmParams}`}
+                          onClick={() => {
+                            trackEvent("cta_click", {
+                              cta_type: "apply_now",
+                              cta_location: "calculator_results",
+                              program_code: selectedProgram.code,
+                              final_price: calculatedCost.finalPrice,
+                              application_type: "accelerated",
+                            });
+                            trackConversion(CONVERSION_LABELS.APPLY_NOW);
+                          }}
+                        >
+                          <Button
+                            size="lg"
+                            className="w-full text-stevens-white bg-stevens-red group py-4"
+                          >
+                            <Send className="w-5 h-5 mr-2" />
+                            Apply Now
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </Link>
+                      );
+                    })()}
+
+                    {/* Secondary CTA - RFI */}
+                    <Button
+                      size="lg"
+                      variant="outline-dark"
+                      className="w-full py-4"
+                      onClick={() => {
+                        handleCTAClick("request_info_calculator");
+                        setShowContactModal(true);
+                      }}
+                    >
+                      <Mail className="w-5 h-5 mr-2" />
+                      Request More Information
+                    </Button>
+
+                    <p className="text-center text-xs text-stevens-dark-gray pt-2">
+                      Questions?{" "}
+                      <a
+                        href={BOOKING_URLS.SCHEDULE_CALL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-stevens-red hover:underline font-semibold"
+                      >
+                        Talk to an advisor
+                      </a>
+                    </p>
+                  </div>
+                )}
               </div>
             ) : (
               /* Default view - select a program message */
@@ -1972,11 +1403,27 @@ const CorporateStudents = () => {
             company: companyName || "unknown",
             corporate_code: corporateCode || "",
             selected_program: selectedProgram?.code || "",
-            // Calculator context for lead scoring
-            is_workforce_partner: isWorkforcePartner ? "yes" : "no",
-            is_hoboken_resident: isHobokenResident ? "yes" : "no",
-            is_alumni: isStevensAlumni ? "yes" : "no",
-            has_reimbursement: annualReimbursement ? "yes" : "no",
+            // Calculator context for lead scoring (derived from calculatedCost)
+            is_workforce_partner: calculatedCost?.steps?.some(
+              (s) => s.icon === "building"
+            )
+              ? "yes"
+              : "no",
+            is_hoboken_resident: calculatedCost?.steps?.some(
+              (s) => s.icon === "home"
+            )
+              ? "yes"
+              : "no",
+            is_alumni: calculatedCost?.steps?.some(
+              (s) => s.icon === "graduation-cap"
+            )
+              ? "yes"
+              : "no",
+            has_reimbursement: calculatedCost?.steps?.some(
+              (s) => s.type === "reimbursement"
+            )
+              ? "yes"
+              : "no",
             // Form type
             formType: "rfi",
             source: "corporate_students_page",

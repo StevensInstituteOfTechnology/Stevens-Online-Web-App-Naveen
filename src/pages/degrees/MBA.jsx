@@ -834,6 +834,10 @@ const programData = {
     ],
     description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`,
   },
+  tuitionCalculator: {
+    image: "/assets/images/mba/mba-overview.webp",
+    imageAlt: "Students collaborating on MBA coursework",
+  },
   events: {
     title: "On-Demand Content",
     description:
