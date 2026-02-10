@@ -8,6 +8,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  FileText,
   Facebook,
   Twitter,
   Instagram,
@@ -671,30 +672,36 @@ export default function Layout({ children, currentPageName }) {
                 />
               </Link>
             </div>
-            <div className="lg:col-start-3">
+            <div>
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
+                Online Programs
+              </h3>
+              <div className="space-y-2">
+                <Link
+                  to="/compare-our-programs/?filter=masters#explore-programs"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Master&apos;s Degrees
+                </Link>
+                <Link
+                  to="/compare-our-programs/?filter=certificates#explore-programs"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Graduate Certificates
+                </Link>
+              
+              </div>
+            </div>
+            <div>
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h3>
               <div className="space-y-2">
                 <Link
-                  to={
-                    createPageUrl("compare-our-programs/") + "#explore-programs"
-                  }
+                  to={createPageUrl("Admissions/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Degrees
-                </Link>
-                {/* <Link
-                  to={createPageUrl("Certificates")}
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  Certificates & Short Courses
-                </Link> */}
-                <Link
-                  to="/online-learning-experience/"
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  The Online Experience
+                  Admissions
                 </Link>
                 <Link
                   to={createPageUrl("Tuition")}
@@ -702,6 +709,25 @@ export default function Layout({ children, currentPageName }) {
                 >
                   Tuition & Financial Aid
                 </Link>
+                <Link
+                  to={createPageUrl("corporate-partners/")}
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Corporate Partners
+                </Link>
+                <Link
+                  to={createPageUrl("corporate-students/")}
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Corporate Students
+                </Link>
+                <Link
+                  to="/online-learning-experience/"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  The Online Experience
+                </Link>
+               
                 <a
                   href="https://www.stevens.edu/development-alumni-engagement"
                   target="_blank"
@@ -710,12 +736,7 @@ export default function Layout({ children, currentPageName }) {
                 >
                   Alumni
                 </a>
-                <Link
-                  to={createPageUrl("RequestInfo")}
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  Contact Us
-                </Link>
+                
               </div>
             </div>
             <div>
@@ -793,6 +814,16 @@ export default function Layout({ children, currentPageName }) {
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>Schedule a Call</span>
                 </a>
+                <Link
+                  to="/request-information/"
+                  onClick={() =>
+                    trackConversion(CONVERSION_LABELS.REQUEST_INFO)
+                  }
+                  className="flex items-center justify-center md:justify-start space-x-2 text-stevens-light-gray hover:text-white hover:underline hover:font-bold underline decoration-stevens-light-gray decoration-1 transition-all duration-300"
+                >
+                  <FileText className="w-4 h-4 flex-shrink-0" />
+                  <span>Request Information</span>
+                </Link>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>{CONTACT_INFO.EMAIL}</span>

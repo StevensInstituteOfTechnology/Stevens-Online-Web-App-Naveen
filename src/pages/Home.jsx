@@ -312,12 +312,10 @@ export default function Home() {
         {/* Hero Section - negative margin pulls it up behind the fixed navbar */}
         <section className="relative h-[900px] bg-stevens-black text-stevens-white overflow-hidden -mt-[87px] pt-[87px]">
           <img
-            {...getHeroImageProps("/assets/images/home/home-hero.webp", {
-              widths: [640, 1024, 1280, 1920],
-            })}
+            src="/assets/images/home/home-hero-1920w.webp"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover "
+            className="absolute inset-0 w-full h-full object-cover"
             fetchpriority="high"
             loading="eager"
             decoding="async"
@@ -398,7 +396,7 @@ export default function Home() {
           </div>
         </section>
         {/* Dimensional Imagery Section - CPE Brand Guidelines */}
-        <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden">
+        <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden ">
           {/* Content container - z-10 to stay below asterism */}
           <div className="mx-auto px-stevens-md lg:px-stevens-3xl relative z-40">
             <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
@@ -478,18 +476,18 @@ export default function Home() {
         </section>
 
         {/* THE STEVENS ONLINE ADVANTAGE */}
-        <VideoSection />
+        <VideoSection  />
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"
-          className="h-[256px] lg:h-[350px]"
+          className="h-[256px] lg:h-[400px] lg:mt-8"
         />
 
         {/* Stats section that continues below parallax */}
         <section className="relative bg-stevens-black pt-1 ">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
           {/* By the Numbers - Dark Mode Premium Design */}
-          <div className="relative z-10 mx-auto max-w-7xl bg-stevens-black -mt-16  px-8 pt-16 lg:px-16 lg:pt-24 scale-[0.90] origin-top">
+          <div className="relative z-10 mx-auto max-w-7xl bg-stevens-black -mt-24  px-8 pt-16 lg:px-16 lg:pt-24 scale-[0.90] origin-top">
             {/* Hero Headline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -896,6 +894,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
           </div>
+          <div className="w-full mx-auto h-px bg-white/20 mt-[80px]" />
         </section>
 
         {/* Browse Courses Modal */}
