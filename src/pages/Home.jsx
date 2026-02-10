@@ -308,7 +308,7 @@ export default function Home() {
 
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
-      <div className="font-sans">
+      <div className="font-sans bg-stevens-black">
         {/* Hero Section - negative margin pulls it up behind the fixed navbar */}
         <section className="relative h-[900px] bg-stevens-black text-stevens-white overflow-hidden -mt-[87px] pt-[87px]">
           <img

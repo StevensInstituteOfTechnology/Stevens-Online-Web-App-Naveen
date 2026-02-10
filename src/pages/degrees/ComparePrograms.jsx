@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,14 @@ export default function ComparePrograms() {
       has_calculator: true,
     },
   });
+
+  // Read ?filter= from URL (masters | certificates) for ProgramFilterGrid
+  const [searchParams] = useSearchParams();
+  const filterFromUrl = searchParams.get("filter") || null;
+  const initialFilter =
+    filterFromUrl === "masters" || filterFromUrl === "certificates"
+      ? filterFromUrl
+      : null;
 
   // Handle hash navigation (scroll to section if hash is present in URL)
   useEffect(() => {
@@ -216,7 +225,7 @@ export default function ComparePrograms() {
               </p>
             </div>
 
-            <ProgramFilterGrid />
+            <ProgramFilterGrid initialFilter={initialFilter} />
 
             {/* Consultation CTA */}
             <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">

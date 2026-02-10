@@ -8,14 +8,34 @@ import { getAllPrograms } from '@/data/programsData';
 
 /**
  * ProgramFilterGrid - Component with search and filters for programs
+ * @param {Object} props
+ * @param {string} [props.initialFilter] - URL-driven filter: "masters" | "certificates". Pre-selects the matching checkbox(es).
  */
-export default function ProgramFilterGrid() {
+export default function ProgramFilterGrid({ initialFilter }) {
   const allPrograms = getAllPrograms();
   const [searchQuery, setSearchQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
-  const [graduateChecked, setGraduateChecked] = useState(true);
-  const [certificateChecked, setCertificateChecked] = useState(true);
+  const [graduateChecked, setGraduateChecked] = useState(
+    initialFilter === 'certificates' ? false : true
+  );
+  const [certificateChecked, setCertificateChecked] = useState(
+    initialFilter === 'masters' ? false : true
+  );
+
+  // Sync filter state when initialFilter changes (e.g. back/forward navigation)
+  useEffect(() => {
+    if (initialFilter === 'masters') {
+      setGraduateChecked(true);
+      setCertificateChecked(false);
+    } else if (initialFilter === 'certificates') {
+      setGraduateChecked(false);
+      setCertificateChecked(true);
+    } else {
+      setGraduateChecked(true);
+      setCertificateChecked(true);
+    }
+  }, [initialFilter]);
   
   const searchInputRef = useRef(null);
   const suggestionsRef = useRef(null);

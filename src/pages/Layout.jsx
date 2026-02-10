@@ -50,47 +50,6 @@ const aboutItems = [
   { name: "Events", page: "Events/" },
 ];
 
-// Explore dropdown items - quick links for easy access
-const exploreItems = [
-  {
-    name: "Alumni",
-    url: "https://www.stevens.edu/development-alumni-engagement",
-    external: true,
-  },
-  { name: "Athletics", url: "https://stevensducks.com/", external: true },
-  {
-    name: "Visit",
-    url: "https://www.stevens.edu/admission-aid/visit-stevens",
-    external: true,
-  },
-  { name: "Apply", url: "https://www.stevens.edu/apply", external: true },
-  {
-    name: "Give",
-    url: "https://www.stevens.edu/development-alumni-engagement/give-to-stevens",
-    external: true,
-  },
-  { name: "myStevens", url: "https://login.stevens.edu", external: true },
-];
-
-// Info For items (sub-dropdown within Explore)
-const infoForItems = [
-  {
-    name: "Faculty and Staff",
-    url: "https://www.stevens.edu/hr",
-    external: true,
-  },
-  {
-    name: "Parents and Families",
-    url: "https://www.stevens.edu/information-for-parents-and-families",
-    external: true,
-  },
-  {
-    name: "Media",
-    url: "https://www.stevens.edu/media-relations",
-    external: true,
-  },
-];
-
 const mainNavLinks = [
   // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
   // { name: "Certificates & Short Courses", page: "Certificates" },
@@ -101,36 +60,35 @@ const mainNavLinks = [
 const admissionsAidItems = [
   { name: "Admissions", page: "Admissions/" },
   { name: "Tuition & Financial Aid", page: "Tuition" },
+  
 ];
 
 const corporateAlumniItems = [
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
+ 
+];
+
+const alumniItems = [
   { name: "Alumni Workforce Development", page: "alumni-pgc/" },
+  
+];
+const visitStevensItems = [
+  {
+    name: "Visit Stevens",
+    page: "https://www.stevens.edu/admission-aid/visit-stevens",
+    external: true,
+  },
 ];
 
 // Combined for mobile menu
-const tuitionAdmissionsItems = [...admissionsAidItems, ...corporateAlumniItems];
+const tuitionAdmissionsItems = [...admissionsAidItems, ...corporateAlumniItems, ...alumniItems, ...visitStevensItems];
 
 // Mega menu items for Degrees dropdown (used in both desktop and mobile)
 const megaMenuDegreeItems = [...graduateProgramItems];
 
 // Mega menu items for Certificates dropdown (used in both desktop and mobile)
 const megaMenuCertificateItems = [...certificateProgramItems];
-
-// Mega menu Explore items (exploreItems + infoForItems, used in both desktop and mobile)
-const megaMenuExploreItems = [
-  ...exploreItems.map((item) => ({
-    name: item.name,
-    page: item.url,
-    external: item.external,
-  })),
-  ...infoForItems.map((item) => ({
-    name: item.name,
-    page: item.url,
-    external: item.external,
-  })),
-];
 
 // Mega menu navigation structure (used in both desktop and mobile)
 const megaMenuLinks = [
@@ -139,14 +97,16 @@ const megaMenuLinks = [
     name: "Degrees",
     isDropdown: true,
     items: megaMenuDegreeItems,
+    categoryLink: "/compare-our-programs/?filter=masters#explore-programs",
   },
   {
     name: "Certificates",
     isDropdown: true,
     items: megaMenuCertificateItems,
+    categoryLink: "/compare-our-programs/?filter=certificates#explore-programs",
   },
   {
-    name: "Discover",
+    name: "Admissions & Aid",
     isDropdown: true,
     items: tuitionAdmissionsItems,
   },
@@ -154,11 +114,6 @@ const megaMenuLinks = [
     name: "About",
     isDropdown: true,
     items: aboutItems,
-  },
-  {
-    name: "Explore",
-    isDropdown: true,
-    items: megaMenuExploreItems,
   },
   ...mainNavLinks,
 ];
@@ -443,58 +398,124 @@ export default function Layout({ children, currentPageName }) {
                         const isExpanded = expandedMobileMenus.includes(
                           link.name
                         );
+                        const linkClass = `text-stevens-xl md:text-stevens-2xl font-stevens-display transition-colors duration-200 py-stevens-sm md:py-0 ${
+                          megaMenuHoveredItem === link.name || isExpanded
+                            ? "text-stevens-red"
+                            : "text-stevens-light-gray hover:text-stevens-white"
+                        }`;
                         return (
-                          <div key={link.name} className="group">
-                            {/* Menu Item Header */}
-                            <button
-                              className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
-                                megaMenuHoveredItem === link.name || isExpanded
-                                  ? "text-stevens-red"
-                                  : "text-stevens-light-gray hover:text-stevens-white"
-                              }`}
-                              onClick={() => toggleMobileAccordion(link.name)}
-                              onMouseEnter={() =>
-                                !isMobile && setMegaMenuHoveredItem(link.name)
-                              }
-                            >
-                              <span className="flex items-center gap-2">
-                                {link.name}
-                                {/* Arrow icon for desktop - indicates sub-menu */}
-                                <svg
-                                  className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
-                                    megaMenuHoveredItem === link.name
-                                      ? "translate-x-1"
-                                      : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
+                          <div
+                            key={link.name}
+                            className="group"
+                            onMouseEnter={() =>
+                              !isMobile && setMegaMenuHoveredItem(link.name)
+                            }
+                          >
+                            {/* Menu Item Header - Link for categoryLink items, button otherwise */}
+                            <div className="flex items-center justify-between">
+                              {link.categoryLink ? (
+                                <>
+                                  <Link
+                                    to={link.categoryLink}
+                                    className={`flex items-center gap-2 ${linkClass}`}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                    {link.name}
+                                    {/* Arrow icon for desktop - indicates sub-menu */}
+                                    <svg
+                                      className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
+                                        megaMenuHoveredItem === link.name
+                                          ? "translate-x-1"
+                                          : ""
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                      />
+                                    </svg>
+                                  </Link>
+                                  {/* Chevron button for mobile accordion - expand sub-items */}
+                                  <button
+                                    type="button"
+                                    className={`md:hidden p-1 -m-1 text-stevens-light-gray hover:text-stevens-white ${
+                                      isExpanded ? "text-stevens-red" : ""
+                                    }`}
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      toggleMobileAccordion(link.name);
+                                    }}
+                                    aria-expanded={isExpanded}
+                                  >
+                                    <svg
+                                      className={`w-5 h-5 transition-transform duration-200 ${
+                                        isExpanded ? "rotate-180" : ""
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                      />
+                                    </svg>
+                                    <span className="sr-only">
+                                      {isExpanded ? "Collapse" : "Expand"}{" "}
+                                      {link.name} submenu
+                                    </span>
+                                  </button>
+                                </>
+                              ) : (
+                                <button
+                                  className={`w-full flex items-center justify-between ${linkClass} cursor-pointer`}
+                                  onClick={() => toggleMobileAccordion(link.name)}
                                 >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 5l7 7-7 7"
-                                  />
-                                </svg>
-                              </span>
-                              {/* Chevron icon - rotates when expanded (mobile only) */}
-                              <svg
-                                className={`w-5 h-5 md:hidden transition-transform duration-200 ${
-                                  isExpanded ? "rotate-180" : ""
-                                }`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M19 9l-7 7-7-7"
-                                />
-                              </svg>
-                            </button>
+                                  <span className="flex items-center gap-2">
+                                    {link.name}
+                                    <svg
+                                      className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
+                                        megaMenuHoveredItem === link.name
+                                          ? "translate-x-1"
+                                          : ""
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <svg
+                                    className={`w-5 h-5 md:hidden transition-transform duration-200 ${
+                                      isExpanded ? "rotate-180" : ""
+                                    }`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M19 9l-7 7-7-7"
+                                    />
+                                  </svg>
+                                </button>
+                              )}
+                            </div>
 
                             {/* Accordion Content - Mobile Only */}
                             {isExpanded && (
@@ -681,6 +702,14 @@ export default function Layout({ children, currentPageName }) {
                 >
                   Tuition & Financial Aid
                 </Link>
+                <a
+                  href="https://www.stevens.edu/development-alumni-engagement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Alumni
+                </a>
                 <Link
                   to={createPageUrl("RequestInfo")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
