@@ -24,29 +24,31 @@ const TuitionCalculatorSection = forwardRef(
         id="tuition-calculator"
       >
         <div className="max-w-7xl mx-auto px-stevens-md">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-stevens-xl items-center">
+          <div className="grid grid-cols-1 md:grid-cols-10 gap-stevens-xl items-center">
             {/* Left - Image */}
-            <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
+            <div className="relative overflow-hidden rounded-xl aspect-[1/1] md:col-span-4">
               <img
                 src={image}
                 alt={imageAlt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-right "
                 loading="lazy"
               />
             </div>
 
             {/* Right - Content */}
-            <div className="flex flex-col justify-center">
-              <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl font-light text-stevens-dark-gray mb-stevens-md">
+            <div className="flex flex-col justify-center md:col-span-6 pl-[10%]">
+              <h2 className="font-stevens-headers text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-8">
                 Tuition Calculator
               </h2>
+              <div className="w-20 h-0.5 bg-stevens-red mb-8"></div>
+              
               <p className="text-stevens-base text-stevens-gray leading-relaxed mb-2">
                 Use our calculator to estimate your tuition with available
                 discounts and employer reimbursement benefits. Keep in mind that
                 most of our students receive some form of financial support,
                 which can significantly reduce out-of-pocket costs.
               </p>
-              <p className="text-stevens-base text-stevens-gray leading-relaxed mb-stevens-lg">
+              <p className="text-stevens-base text-stevens-gray leading-relaxed mb-8">
                 See how much you could save based on your eligibility for
                 workforce partner, alumni, and resident discounts.
               </p>

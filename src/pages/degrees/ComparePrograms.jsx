@@ -2,10 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calculator } from "lucide-react";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import ProgramFilterGrid from "@/components/admissions/ProgramFilterGrid";
 import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
+import TuitionCalculatorBody from "@/components/calculator/TuitionCalculatorBody";
+import { PROGRAMS_DATA } from "@/data/programsData";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -18,10 +20,11 @@ import {
 
 export default function ComparePrograms() {
   usePageTracking({
-    pageType: "comparison",
+    pageType: "programs_hub",
     additionalData: {
-      page_name: "Compare Programs",
+      page_name: "All Programs",
       has_quiz: true,
+      has_calculator: true,
     },
   });
 
@@ -41,14 +44,14 @@ export default function ComparePrograms() {
 
   // Set SEO meta tags
   useEffect(() => {
-    setPageTitle("Compare Graduate Programs | Stevens Online");
+    setPageTitle("Online Graduate Programs & Certificates | Stevens Online");
     setMetaDescription(
-      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests."
+      "Explore Stevens' online graduate degrees and certificates. Compare programs, estimate tuition with our calculator, and find the right fit for your career goals."
     );
     setOpenGraphTags({
-      title: "Compare Graduate Programs | Stevens Online",
+      title: "Online Graduate Programs & Certificates | Stevens Online",
       description:
-        "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
+        "Explore Stevens' online graduate degrees and certificates. Compare programs, estimate tuition with our calculator, and find the right fit for your career goals.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/compare-our-programs/"),
       type: "website",
@@ -67,6 +70,11 @@ export default function ComparePrograms() {
     },
   ];
 
+  // Tuition calculator state
+  const [selectedCalcProgram, setSelectedCalcProgram] = useState("");
+  const [calculatedCost, setCalculatedCost] = useState(null);
+
+  // Program comparison state
   const [left, setLeft] = useState("mba");
   const [right, setRight] = useState("mscs");
   const [showResults, setShowResults] = useState(false);
@@ -180,11 +188,11 @@ export default function ComparePrograms() {
   }, []);
 
   return (
-    <PageContextProvider pageType="comparison" pageName="ComparePrograms">
+    <PageContextProvider pageType="programs_hub" pageName="AllPrograms">
       <div>
         <PageHero
-          title="Compare Online Graduate Programs at Stevens"
-          subtitle="Find your path"
+          title="Explore Online Graduate Programs & Certificates"
+          subtitle="Find the right program for your career"
           bgImage="/assets/images/compare-programs/compare-programs-hero.webp"
           rightContent={
             <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
@@ -194,7 +202,7 @@ export default function ComparePrograms() {
         {/* Explore Our Programs */}
         <div
           id="explore-programs"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray/10"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
@@ -244,6 +252,71 @@ export default function ComparePrograms() {
             </div>
           </div>
         </div>
+
+        {/* Estimate Your Tuition - Inline Calculator */}
+        <section
+          id="tuition-calculator"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white scroll-mt-24"
+        >
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="text-center mb-stevens-2xl">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                Estimate Your Tuition
+              </h2>
+              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-5xl mx-auto">
+                Use our calculator to estimate your tuition with available
+                discounts and employer reimbursement benefits. Select a program
+                to get started.
+              </p>
+            </div>
+
+            {/* Program Selector Dropdown */}
+            <div className="max-w-xl mx-auto mb-stevens-xl">
+              <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                Select a Program
+              </label>
+              <select
+                value={selectedCalcProgram}
+                onChange={(e) => {
+                  setSelectedCalcProgram(e.target.value);
+                  setCalculatedCost(null);
+                }}
+                className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm text-stevens-base"
+              >
+                <option value="">-- Choose a program --</option>
+                {PROGRAMS_DATA.map((program) => (
+                  <option key={program.code} value={program.code}>
+                    {program.shortName}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Calculator Body or Placeholder */}
+            {selectedCalcProgram ? (
+              <Card className="border border-stevens-light-gray shadow-stevens-md overflow-hidden max-w-4xl mx-auto">
+                <TuitionCalculatorBody
+                  key={selectedCalcProgram}
+                  programCode={selectedCalcProgram}
+                  onCostChange={setCalculatedCost}
+                />
+              </Card>
+            ) : (
+              <Card className="max-w-2xl mx-auto border-2">
+                <CardContent className="p-stevens-2xl pt-stevens-2xl text-center">
+                  <Calculator className="w-16 h-16 mx-auto mb-stevens-xl text-stevens-gray" />
+                  <h3 className="font-stevens-display text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
+                    Ready to see your estimated cost?
+                  </h3>
+                  <p className="text-stevens-base lg:text-stevens-lg text-stevens-dark-gray max-w-xl mx-auto leading-relaxed">
+                    Select a program above to calculate your tuition with
+                    workforce partner, alumni, and resident discounts applied.
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </section>
 
         {/* Select Programs to Compare */}
         <section

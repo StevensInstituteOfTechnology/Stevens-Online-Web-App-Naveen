@@ -112,19 +112,14 @@ const corporateAlumniItems = [
 // Combined for mobile menu
 const tuitionAdmissionsItems = [...admissionsAidItems, ...corporateAlumniItems];
 
-// Mobile menu items with Compare Programs added to dropdowns
-const mobileGraduateProgramItems = [
-  ...graduateProgramItems,
-  { name: "Compare All Programs", page: "compare-our-programs/" },
-];
+// Mega menu items for Degrees dropdown (used in both desktop and mobile)
+const megaMenuDegreeItems = [...graduateProgramItems];
 
-const mobileCertificateProgramItems = [
-  ...certificateProgramItems,
-  { name: "Compare All Programs", page: "compare-our-programs/" },
-];
+// Mega menu items for Certificates dropdown (used in both desktop and mobile)
+const megaMenuCertificateItems = [...certificateProgramItems];
 
-// Combined explore items for mega menu (exploreItems + infoForItems)
-const mobileExploreItems = [
+// Mega menu Explore items (exploreItems + infoForItems, used in both desktop and mobile)
+const megaMenuExploreItems = [
   ...exploreItems.map((item) => ({
     name: item.name,
     page: item.url,
@@ -137,16 +132,18 @@ const mobileExploreItems = [
   })),
 ];
 
-const mobileNavLinks = [
+// Mega menu navigation structure (used in both desktop and mobile)
+const megaMenuLinks = [
+  { name: "All Programs", page: "compare-our-programs/" },
   {
     name: "Degrees",
     isDropdown: true,
-    items: mobileGraduateProgramItems,
+    items: megaMenuDegreeItems,
   },
   {
     name: "Certificates",
     isDropdown: true,
-    items: mobileCertificateProgramItems,
+    items: megaMenuCertificateItems,
   },
   {
     name: "Discover",
@@ -161,7 +158,7 @@ const mobileNavLinks = [
   {
     name: "Explore",
     isDropdown: true,
-    items: mobileExploreItems,
+    items: megaMenuExploreItems,
   },
   ...mainNavLinks,
 ];
@@ -441,7 +438,7 @@ export default function Layout({ children, currentPageName }) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
                   {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
                   <div className="space-y-stevens-sm md:space-y-stevens-lg">
-                    {mobileNavLinks.map((link) => {
+                    {megaMenuLinks.map((link) => {
                       if (link.isDropdown) {
                         const isExpanded = expandedMobileMenus.includes(
                           link.name
@@ -564,7 +561,7 @@ export default function Layout({ children, currentPageName }) {
                   {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
                   <div className="hidden md:block space-y-stevens-md min-h-[200px]">
                     {megaMenuHoveredItem &&
-                      mobileNavLinks
+                      megaMenuLinks
                         .find((link) => link.name === megaMenuHoveredItem)
                         ?.items?.map((item) =>
                           item.external ? (

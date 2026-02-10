@@ -16,9 +16,7 @@ npm run build
 
 ## Local development & LearnWise chatbot
 
-The LearnWise chat embed runs in an **https** iframe. Browsers block it from reading tokens when the parent app is served over **http** (e.g. `http://localhost:5173`). So the chat may fail with CORS/403 errors on localhost.
-
-**To test the chatbot locally**, serve the app over https using a tunnel:
+The LearnWise chat embed runs in an **https** iframe. Browsers block it from reading tokens when the parent app is served over **http** (e.g. `http://localhost:5173`). So the chat may fail with CORS/403 errors on localhost.**To test the chatbot locally**, serve the app over https using a tunnel:
 
 1. Install [ngrok](https://ngrok.com/) (or use another HTTPS tunnel).
 2. Start the app: `npm run dev`.

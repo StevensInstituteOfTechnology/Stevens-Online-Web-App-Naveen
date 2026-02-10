@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Asterism from "./brand/Asterism";
-import ContactOptionsModal from "./modals/ContactOptionsModal";
+import Asterism from "../brand/Asterism";
+import ContactOptionsModal from "../modals/ContactOptionsModal";
 
 /**
  * Calculate clip-path for diagonal cut with fixed angle
