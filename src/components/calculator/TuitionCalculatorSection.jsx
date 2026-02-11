@@ -26,7 +26,7 @@ const TuitionCalculatorSection = forwardRef(
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="grid grid-cols-1 md:grid-cols-10 gap-stevens-xl items-center">
             {/* Left - Image */}
-            <div className="relative overflow-hidden rounded-xl aspect-[1/1] md:col-span-4">
+            <div className="relative overflow-hidden aspect-[1/1] md:col-span-4">
               <img
                 src={image}
                 alt={imageAlt}

@@ -402,7 +402,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
               {/* Left: Layered Images */}
               <AnimatedSection>
-                <AngledImageStack className="h-[600px] lg:h-[800px] relative ">
+                <AngledImageStack className="h-[500px] md:h-[600px] lg:h-[800px] relative ">
                   {/* Background layer - larger */}
                   <AngledImage
                     {...getContentImageProps(
@@ -411,7 +411,7 @@ export default function Home() {
                     alt="Student studying"
                     direction="vertical-left"
                     width="100%"
-                    height="600px"
+                    height={windowWidth < 768 ? "500px" : "600px"}
                     translateY={0}
                     translateX={5}
                     className="absolute top-0 left-0 "
@@ -456,12 +456,12 @@ export default function Home() {
           <Asterism
             className="z-10"
             centerX="33%"
-            centerY="55%"
+            centerY="45%"
             rays={2}
             angles={[90, 270]}
             color="stevens-white"
             opacity={0.7}
-            rayLengths={["full", windowWidth < 1024 ? 10 : 300]}
+            rayLengths={["full", windowWidth < 1024 ? windowWidth < 768 ? 40 : 200 : 500]}
             fadeRays={[]} // Disable fading for vertical lines to ensure seamless connection with Hero section
             fadeDirection="out"
             length="full"
@@ -606,7 +606,7 @@ export default function Home() {
         <section className="bg-stevens-black relative  lg:pt-stevens-section">
           <div className="flex flex-col lg:flex-row pb-16">
             {/* Left Content Panel */}
-            <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
+            <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 pb-16 lg:px-12 lg:py-24 flex flex-col justify-center">
               <AnimatedSection>
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-6 leading-tight">
                   Our Programs
@@ -879,7 +879,7 @@ export default function Home() {
         <SupportEventsSection events={supportEvents} />
 
         {/* SARA Accreditation Logo Section */}
-        <section className="pb-20 bg-stevens-black">
+        <section className="md:pb-20 bg-stevens-black">
           {/* 80% width border */}
           <div className="w-[80%] mx-auto h-px bg-white/20 mb-[60px]" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

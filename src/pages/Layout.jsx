@@ -655,7 +655,7 @@ export default function Layout({ children, currentPageName }) {
       <footer className="bg-stevens-black text-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg py-stevens-section">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-stevens-gap-lg">
-            <div className="lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="lg:col-span-1 flex flex-col items-center text-center  md:items-start md:text-left">
               <Link
                 to={createPageUrl("Home")}
                 className="mb-6 transition-opacity duration-300 hover:opacity-80"
@@ -672,7 +672,7 @@ export default function Layout({ children, currentPageName }) {
                 />
               </Link>
             </div>
-            <div>
+            <div className="flex flex-col text-center items-center md:items-start  md:text-left">
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Online Programs
               </h3>
@@ -692,7 +692,7 @@ export default function Layout({ children, currentPageName }) {
               
               </div>
             </div>
-            <div>
+            <div className="flex flex-col text-center items-center md:items-start  md:text-left">
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h3>
@@ -740,7 +740,7 @@ export default function Layout({ children, currentPageName }) {
               </div>
             </div>
             <div>
-              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white flex flex-col text-center items-center md:items-start  md:text-left">
                 Connect With Us
               </h3>
               {/* Social Media Icons Section - Connect With Us */}

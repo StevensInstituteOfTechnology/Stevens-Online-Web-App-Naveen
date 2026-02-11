@@ -35,7 +35,7 @@ export const StudentTestimonialSection = forwardRef(
       <section
         id="student-testimonial"
         ref={ref}
-        className="scroll-mt-20 overflow-hidden"
+        className="scroll-mt-20 overflow-x-hidden"
       >
         {/* Mobile Layout (<768px): Stacked - Image on top, content below */}
         <div className="md:hidden">
@@ -97,26 +97,23 @@ export const StudentTestimonialSection = forwardRef(
 
         {/* Desktop Layout (>=768px): Background image with card overlay */}
         {/* Using flatter aspect ratios for shorter section height */}
-        <div className="hidden md:block relative aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[3/1] min-h-[400px] lg:min-h-[450px]">
-          {/* Background Image with responsive position */}
+        <div className="hidden md:block relative aspect-[21/9] lg:aspect-[2.5/1] xl:aspect-[3/1] min-h-[500px] lg:min-h-[550px] xl:min-h-[600px]">
+          {/* Background Image with parallax effect on desktop */}
           <div
-            className="absolute inset-0 bg-cover"
+            className="absolute inset-0 bg-cover xl:bg-no-repeat xl:bg-fixed"
             style={{
               backgroundImage: `url(${backgroundImage})`,
               backgroundPosition: studentTestimonial.bgPosition || "center 40%",
             }}
-          >
-            {/* Subtle overlay for better card contrast */}
-            <div className="absolute inset-0 bg-black/20" />
-          </div>
+          />
 
           {/* Content Container */}
           <div className="relative z-10 max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl h-full flex items-center">
             {/* Testimonial Card */}
             <div
               className={`
-                w-2/3 lg:w-1/2 xl:w-5/12
-                ${isRight ? "ml-auto" : "mr-auto"}
+                w-2/3 md:w-2/5 lg:w-1/2 
+                
               `}
             >
               <div className="bg-white/95 backdrop-blur-sm p-8 lg:p-10 shadow-2xl">
