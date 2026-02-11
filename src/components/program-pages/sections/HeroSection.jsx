@@ -8,8 +8,8 @@ import Asterism from "@/components/shared/brand/Asterism";
  * HeroSection - Split-layout hero for Program and Certificate pages
  *
  * Layout:
- * - Desktop (lg+): Left-right split (60% image+text / 40% form)
- * - Mobile (< lg): Three-layer stack (image → text → form)
+ * - Desktop (xl+): Left-right split (60% image+text / 40% form)
+ * - Mobile (< xl): Three-layer stack (image → text → form)
  *
  * IMPORTANT: Only ONE LeadCaptureForm is rendered to avoid duplicate HTML IDs.
  * The layout uses CSS flexbox order to position elements differently per breakpoint.
@@ -120,7 +120,7 @@ export function HeroSection({
             className="bg-white/20 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-white/30 hover:border-white/80 hover:scale-105 cursor-default"
           >
             <div
-              className="text-2xl lg:text-3xl font-bold text-white"
+              className="text-2xl xl:text-3xl font-bold text-white"
               style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
             >
               {card.value}
@@ -161,11 +161,11 @@ export function HeroSection({
   return (
     <section className="relative overflow-hidden">
       {/* Main flex container - column on mobile, row on desktop */}
-      <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-155px)]">
+      <div className="flex flex-col xl:flex-row xl:min-h-[calc(100vh-155px)]">
         {/* ==================== IMAGE SECTION ==================== */}
         {/* Mobile: order-1, full width, 40vh height */}
         {/* Desktop: order-1, 60% width, full height with text overlay */}
-        <div className="order-1 relative h-[40vh] min-h-[200px] lg:h-auto lg:w-[60%] bg-stevens-black">
+        <div className="order-1 relative h-[40vh] min-h-[200px] xl:h-auto xl:w-[60%] bg-stevens-black">
           {/* Background Image */}
           {bgImage && (
             <img
@@ -175,16 +175,16 @@ export function HeroSection({
               fetchpriority="high"
               loading="eager"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover lg:opacity-80"
+              className="absolute inset-0 w-full h-full object-cover xl:opacity-80"
               style={{ objectPosition: bgImagePosition }}
             />
           )}
 
           {/* Desktop-only: Gradient Overlay */}
-          <div className="hidden lg:block absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
+          <div className="hidden xl:block absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
 
           {/* Desktop-only: Text Content at bottom */}
-          <div className="hidden lg:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
+          <div className="hidden xl:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
             <div className="animate-in slide-in-from-left duration-700">
               {renderDesktopBadges()}
 
@@ -221,7 +221,7 @@ export function HeroSection({
         {/* Mobile: order-2, shows below image */}
         {/* Desktop: hidden */}
         <div
-          className={`order-2 lg:hidden ${textAreaStyles.container} px-stevens-md py-stevens-lg`}
+          className={`order-2 xl:hidden ${textAreaStyles.container} px-stevens-md py-stevens-lg`}
         >
           <div className="animate-in slide-in-from-bottom duration-500">
             {renderMobileBadges()}
@@ -256,18 +256,18 @@ export function HeroSection({
         {/* Mobile: order-3, full width */}
         {/* Desktop: order-2, 40% width, appears on right */}
         <div
-          className={`order-3 lg:order-2 lg:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md lg:px-stevens-xl py-stevens-lg lg:py-stevens-2xl`}
+          className={`order-3 xl:order-2 xl:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md xl:px-stevens-xl py-stevens-lg xl:py-stevens-2xl`}
         >
-          <div className="w-full max-w-md mx-auto lg:mx-0 animate-in slide-in-from-bottom lg:slide-in-from-right duration-700">
+          <div className="w-full max-w-md mx-auto xl:mx-0 animate-in slide-in-from-bottom xl:slide-in-from-right duration-700">
             {/* Form Header */}
-            <div className="text-center mb-stevens-md lg:mb-stevens-lg">
+            <div className="text-center mb-stevens-md xl:mb-stevens-lg">
               <h2
-                className={`text-stevens-2xl lg:text-stevens-4xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 lg:mb-2`}
+                className={`text-stevens-2xl xl:text-stevens-4xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 xl:mb-2`}
               >
                 {formTitle}
               </h2>
               <p
-                className={`text-stevens-sm lg:text-stevens-base ${formAreaStyles.subtitle}`}
+                className={`text-stevens-sm xl:text-stevens-base ${formAreaStyles.subtitle}`}
               >
                 {formSubtitle}
               </p>
@@ -275,7 +275,7 @@ export function HeroSection({
 
             {/* Divider */}
             <div
-              className={`w-full h-px ${formAreaStyles.divider} mb-stevens-md lg:mb-stevens-lg`}
+              className={`w-full h-px ${formAreaStyles.divider} mb-stevens-md xl:mb-stevens-lg`}
             />
 
             {/* SINGLE Lead Capture Form Instance */}
