@@ -373,9 +373,9 @@ export default function Home() {
             staggerDelay={150}
           />
 
-          <div className="relative min-h-[85vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
+          <div className="relative h-full w-full px-6 pb-16 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
-            <div className="max-w-2xl text-right md:pb-64 lg:pb-16 pr-4 lg:pr-16">
+            <div className="max-w-2xl text-right">
               <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
                 Move your
                 <br />
