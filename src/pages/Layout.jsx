@@ -416,15 +416,51 @@ export default function Layout({ children, currentPageName }) {
                             <div className="flex items-center justify-between">
                               {link.categoryLink ? (
                                 <>
+                                  {/* Mobile: row is clickable to toggle accordion */}
+                                  {/* Desktop: row uses hover via parent onMouseEnter */}
+                                  <div
+                                    className="md:hidden w-full flex items-center justify-between cursor-pointer"
+                                    onClick={() => toggleMobileAccordion(link.name)}
+                                    role="button"
+                                    aria-expanded={isExpanded}
+                                  >
+                                    {/* Text is a link - stops propagation so it navigates instead of toggling */}
+                                    <Link
+                                      to={link.categoryLink}
+                                      className={`flex items-center gap-2 ${linkClass}`}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setMobileMenuOpen(false);
+                                      }}
+                                    >
+                                      {link.name}
+                                    </Link>
+                                    {/* Chevron icon */}
+                                    <svg
+                                      className={`w-5 h-5 transition-transform duration-200 ${
+                                        isExpanded ? "rotate-180 text-stevens-red" : "text-stevens-light-gray"
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                      />
+                                    </svg>
+                                  </div>
+                                  {/* Desktop: Link with hover arrow */}
                                   <Link
                                     to={link.categoryLink}
-                                    className={`flex items-center gap-2 ${linkClass}`}
+                                    className={`hidden md:flex items-center gap-2 ${linkClass}`}
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                     {link.name}
-                                    {/* Arrow icon for desktop - indicates sub-menu */}
                                     <svg
-                                      className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
+                                      className={`w-4 h-4 transition-transform duration-200 ${
                                         megaMenuHoveredItem === link.name
                                           ? "translate-x-1"
                                           : ""
@@ -441,38 +477,6 @@ export default function Layout({ children, currentPageName }) {
                                       />
                                     </svg>
                                   </Link>
-                                  {/* Chevron button for mobile accordion - expand sub-items */}
-                                  <button
-                                    type="button"
-                                    className={`md:hidden p-1 -m-1 text-stevens-light-gray hover:text-stevens-white ${
-                                      isExpanded ? "text-stevens-red" : ""
-                                    }`}
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      toggleMobileAccordion(link.name);
-                                    }}
-                                    aria-expanded={isExpanded}
-                                  >
-                                    <svg
-                                      className={`w-5 h-5 transition-transform duration-200 ${
-                                        isExpanded ? "rotate-180" : ""
-                                      }`}
-                                      fill="none"
-                                      stroke="currentColor"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                      />
-                                    </svg>
-                                    <span className="sr-only">
-                                      {isExpanded ? "Collapse" : "Expand"}{" "}
-                                      {link.name} submenu
-                                    </span>
-                                  </button>
                                 </>
                               ) : (
                                 <button
