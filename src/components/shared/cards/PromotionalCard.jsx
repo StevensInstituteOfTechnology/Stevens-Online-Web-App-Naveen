@@ -102,7 +102,7 @@ export function PromotionalCard({
         <img
           src={image}
           alt={imageAlt}
-          className="w-full h-80 lg:h-64 object-cover object-top"
+          className="w-full h-80 md:h-64 object-cover object-top"
           loading="lazy"
         />
       </div>
@@ -110,7 +110,7 @@ export function PromotionalCard({
       {/* 2. Dark Content Layer (with dynamic clip-path diagonal cut) */}
       <div className="relative z-10">
         <div
-          className="bg-stevens-dark-gray pt-10 pb-24 px-8 lg:px-10 pr-20 lg:pr-28"
+          className="bg-stevens-dark-gray pt-10 pb-24 px-8 md:px-10 pr-20 md:pr-28"
           style={{ clipPath }}
         >
           {/* Content Container */}
@@ -132,7 +132,7 @@ export function PromotionalCard({
                     <p className="text-xl uppercase tracking-wider text-stevens-red font-bold mb-1 ">
                       Upcoming Start
                     </p>
-                    <p className="font-stevens-display text-2xl lg:text-3xl font-light text-stevens-light-gray">
+                    <p className="font-stevens-display text-2xl md:text-3xl font-light text-stevens-light-gray">
                       {quickFacts.termStart}
                     </p>
                   </div>
@@ -165,12 +165,12 @@ export function PromotionalCard({
               /* Default Title/Description Layout */
               <>
                 {/* Title - Italic serif */}
-                <h3 className="font-stevens-display text-4xl lg:text-5xl font-light italic text-white leading-[1.1] mb-5">
+                <h3 className="font-stevens-display text-4xl md:text-5xl font-light italic text-white leading-[1.1] mb-5">
                   {title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-stevens-gray text-base lg:text-lg leading-relaxed mb-10 max-w-sm font-light">
+                <p className="text-stevens-gray text-base md:text-lg leading-relaxed mb-10 max-w-sm font-light">
                   {description}
                 </p>
 
@@ -188,8 +188,8 @@ export function PromotionalCard({
             )}
           </div>
 
-          {/* Asterism - Right Aligned (hidden on mobile < 1024px) */}
-          <div className="hidden lg:block">
+          {/* Asterism - Right Aligned (hidden on mobile < 768px) */}
+          <div className="hidden md:block">
             <Asterism
               centerX="85%"
               centerY="72%"
@@ -217,7 +217,7 @@ export function PromotionalCard({
 
       {/* 3. Spacer for Image Visibility */}
       {/* This ensures the card has enough height to show the image below the diagonal cut */}
-      <div className="relative z-0 h-[150px] lg:h-28 pointer-events-none" />
+      <div className="relative z-0 h-[150px] md:h-28 pointer-events-none" />
 
       {/* Contact Options Modal */}
       <ContactOptionsModal
