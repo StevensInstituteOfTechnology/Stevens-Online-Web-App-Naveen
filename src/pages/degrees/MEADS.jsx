@@ -1,8 +1,6 @@
-import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
 import { TuitionCardsHero } from "../../components/program-pages/primitives";
-import { Award, Check, Star } from "lucide-react";
-import { createPageUrl } from "@/utils";
+import { Award } from "lucide-react";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";

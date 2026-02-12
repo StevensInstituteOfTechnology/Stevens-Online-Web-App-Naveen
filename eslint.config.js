@@ -51,6 +51,8 @@ export default [
             'layout',
             'jsx',
             'fetchpriority', // Native HTML img attribute; React may not support fetchPriority in all versions
+            'cmdk-input-wrapper', // cmdk (Command) component attribute
+            'toast-close', // Radix/sonner toast component attribute
           ],
         },
       ],
@@ -60,7 +62,7 @@ export default [
       ],
       'no-unused-vars': ['error', {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
+        varsIgnorePattern: '^_|^React$',
         caughtErrorsIgnorePattern: '^_',
       }],
       // Allow tabIndex on region/group for keyboard-accessible carousels and video players

@@ -9,11 +9,9 @@ import {
   Building2,
   Briefcase,
   Award,
-  Globe,
   CheckCircle,
   Star,
   Target,
-  BarChart3,
   GraduationCap,
   Lightbulb,
   Shield,
@@ -21,13 +19,11 @@ import {
 } from "lucide-react";
 import {
   PageHero,
-  TopCompaniesSection,
   PullQuoteTestimonial,
   RequestInfoModal,
   LogoMarqueeSection,
 } from "@/components/shared";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import {
@@ -409,7 +405,7 @@ const CorporatePartners = () => {
   ];
 
   // Areas of expertise
-  const expertiseAreas = [
+  const _expertiseAreas = [
     "Artificial Intelligence",
     "Machine Learning",
     "Data Science",

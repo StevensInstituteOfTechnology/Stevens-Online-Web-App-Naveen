@@ -81,7 +81,7 @@ export default function ComparePrograms() {
 
   // Tuition calculator state
   const [selectedCalcProgram, setSelectedCalcProgram] = useState("");
-  const [calculatedCost, setCalculatedCost] = useState(null);
+  const [_calculatedCost, setCalculatedCost] = useState(null);
 
   // Program comparison state
   const [left, setLeft] = useState("mba");

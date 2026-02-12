@@ -1,9 +1,6 @@
-import React from "react";
 import { KEY_DATES_FALL } from "@/config/constants";
 import {
-  Award,
   Globe,
-  Star,
   Target,
   Clock,
   Network,

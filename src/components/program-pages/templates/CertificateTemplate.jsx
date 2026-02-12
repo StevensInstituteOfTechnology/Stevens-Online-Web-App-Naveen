@@ -59,8 +59,8 @@ import { StickyNav, useSectionNavigation } from "../navigation";
 export function CertificateTemplate({
   programData,
   theme = "light",
-  useApplicationModal = false,
-  useRequestInfoModal = true,
+  useApplicationModal: _useApplicationModal = false,
+  useRequestInfoModal: _useRequestInfoModal = true,
 }) {
   const {
     code,

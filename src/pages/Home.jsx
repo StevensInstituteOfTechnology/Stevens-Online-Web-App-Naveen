@@ -135,8 +135,8 @@ export default function Home() {
     },
   });
 
-  const [programs, setPrograms] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [_programs, setPrograms] = useState([]);
+  const [_events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal

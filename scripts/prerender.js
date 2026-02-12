@@ -121,7 +121,7 @@ async function prerender() {
         // Wait for article content to appear (for blog pages)
         try {
           await page.waitForSelector('article, main', { timeout: 5000 });
-        } catch (e) {
+        } catch (_e) {
           // Not all pages have article tag, continue anyway
         }
 

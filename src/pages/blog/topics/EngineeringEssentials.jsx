@@ -1,18 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { createPageUrl } from "@/utils";
-import { format } from "date-fns";
-import { ArrowRight, User, Calendar } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import BlogDetail from "@/components/blog/BlogDetail";
 import BlogList from "@/components/blog/BlogList";
 import completeBlogData from "@/data/blogs.json";
@@ -174,7 +161,6 @@ const TopicList = ({ posts }) => {
 };
 
 export default function EngineeringEssentials() {
-  const location = useLocation();
   const { slug } = useParams();
 
   // Initialize state with data immediately (for SSR)

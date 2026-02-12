@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from "react";
+import { forwardRef, useMemo } from "react";
 import { Check, TrendingUp } from "lucide-react";
 import { Section } from "../primitives";
 
@@ -81,12 +81,11 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
   },
   ref
 ) {
-  if (!careerOutcomes || !career) return null;
-
+  // Compute derived values (safe when career/careerOutcomes is null)
   const hasJobTitles =
-    Array.isArray(career.jobTitles) && career.jobTitles.length > 0;
+    Array.isArray(career?.jobTitles) && career.jobTitles.length > 0;
   const hasIntroHtml =
-    typeof career.description === "string" &&
+    typeof career?.description === "string" &&
     career.description.trim().length > 0;
   const hasLogos =
     variant === "logos" &&
@@ -94,8 +93,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
     Array.isArray(topCompanies.companies) &&
     topCompanies.companies.length > 0;
 
-  if (!hasJobTitles && !hasIntroHtml && !hasLogos) return null;
-
+  // All hooks must be called unconditionally (before any early return)
   const maxIntroParagraphs = useMemo(() => {
     if (isCertificate) return 2;
     // Degree pages: allow 2–3 paragraphs for better visual rhythm
@@ -103,23 +101,23 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
   }, [isCertificate, programCode]);
 
   const introHtml = useMemo(() => {
-    if (!hasIntroHtml) return "";
+    if (!hasIntroHtml || !career?.description) return "";
     return extractParagraphsFromHtml(career.description, maxIntroParagraphs);
-  }, [career.description, hasIntroHtml, maxIntroParagraphs]);
+  }, [career?.description, hasIntroHtml, maxIntroParagraphs]);
 
   const { top: titleTop, bottom: titleBottom } = useMemo(
-    () => splitTitleForTwoLineDisplay(careerOutcomes.title),
-    [careerOutcomes.title]
+    () => splitTitleForTwoLineDisplay(careerOutcomes?.title),
+    [careerOutcomes?.title]
   );
 
-  const kicker = useMemo(() => {
+  const _kicker = useMemo(() => {
     const code = (programCode || "").toString().toLowerCase();
     if (code === "mscs") return "Tech Industry Impact";
     return "Career Outcomes";
   }, [programCode]);
 
   // Calculate max salary for relative bar widths
-  const maxSalary = hasJobTitles
+  const maxSalary = hasJobTitles && career?.jobTitles
     ? Math.max(
         ...career.jobTitles
           .map((job) => toNumberMaybe(job.salary))
@@ -128,7 +126,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
     : 0;
 
   const sortedJobs = useMemo(() => {
-    if (!hasJobTitles) return [];
+    if (!hasJobTitles || !career?.jobTitles) return [];
 
     // Stable-ish sort: salary desc, then original index
     return career.jobTitles
@@ -154,9 +152,13 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
         return a.originalIndex - b.originalIndex;
       })
       .map((x) => x.job);
-  }, [career.jobTitles, hasJobTitles]);
+  }, [career?.jobTitles, hasJobTitles]);
 
   const displayJobs = useMemo(() => sortedJobs.slice(0, 5), [sortedJobs]);
+
+  // Early return only after all hooks have been called
+  if (!careerOutcomes || !career) return null;
+  if (!hasJobTitles && !hasIntroHtml && !hasLogos) return null;
 
   return (
     <Section

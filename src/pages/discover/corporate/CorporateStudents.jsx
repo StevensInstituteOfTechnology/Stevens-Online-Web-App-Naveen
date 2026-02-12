@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, MotionConfig } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
 import { getContentImageProps } from "@/utils/responsiveImage";
 import {
@@ -13,10 +13,8 @@ import {
   BookOpen,
   Zap,
   TrendingUp,
-  Briefcase,
   Target,
   Calculator,
-  X,
   ChevronLeft,
   Wrench,
   BarChart3,
@@ -33,7 +31,7 @@ import {
 } from "@/components/shared";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -43,7 +41,6 @@ import {
   setMetaDescription,
   setOpenGraphTags,
   buildCanonicalUrl,
-  createPageUrl,
 } from "@/utils";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
@@ -51,7 +48,6 @@ import { PROGRAMS_DATA } from "@/data/programsData";
 import { getProgramRecommendations } from "@/utils/discountCalculator";
 import {
   BOOKING_URLS,
-  CONTACT_INFO,
   KEY_DATES_SPRING2,
 } from "@/config/constants";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";

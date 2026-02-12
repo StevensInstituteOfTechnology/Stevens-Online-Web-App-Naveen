@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PageHero, RequestInfoModal } from '@/components/shared';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import LeadCaptureForm from '../forms/LeadCaptureForm';
 import AcceleratedFormEmbed from '../forms/AcceleratedFormEmbed';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
-import { Check, ArrowRight, Building, Users, BookOpen, Phone, Mail, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
+import { Check, Building, Users, BookOpen } from 'lucide-react';
 
 /**
  * CorporateLandingPageTemplate

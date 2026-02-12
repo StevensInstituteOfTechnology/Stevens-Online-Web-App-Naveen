@@ -1,14 +1,10 @@
-import React from "react";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import {
-  Award,
   Globe,
-  Star,
   Target,
   Clock,
   Network,
   ThumbsUp,
-  Code,
 } from "lucide-react";
 import { ExploreTemplate } from "../../components/explore-pages";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";

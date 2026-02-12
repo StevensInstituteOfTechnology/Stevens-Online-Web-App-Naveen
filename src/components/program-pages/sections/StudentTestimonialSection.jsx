@@ -27,7 +27,7 @@ export const StudentTestimonialSection = forwardRef(
     if (!studentTestimonial) return null;
 
     const cardPosition = studentTestimonial.cardPosition || "right";
-    const isRight = cardPosition === "right";
+    const _isRight = cardPosition === "right";
     const backgroundImage =
       studentTestimonial.backgroundImage || DEFAULT_BACKGROUND;
 

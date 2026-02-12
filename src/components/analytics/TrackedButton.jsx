@@ -3,7 +3,6 @@
  * Automatically tracks button clicks with context
  */
 
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { useProgramContext } from '@/contexts/analytics/ProgramContext';

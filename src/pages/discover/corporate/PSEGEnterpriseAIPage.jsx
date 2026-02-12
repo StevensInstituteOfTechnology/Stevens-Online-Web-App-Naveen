@@ -1,4 +1,3 @@
-import React from "react";
 import CorporateLandingPageTemplate from "@/components/corporate/CorporateLandingPageTemplate";
 
 export default function PSEGEnterpriseAIPage() {

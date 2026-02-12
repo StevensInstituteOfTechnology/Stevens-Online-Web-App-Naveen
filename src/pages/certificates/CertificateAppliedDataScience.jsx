@@ -1,15 +1,3 @@
-import {
-  Globe,
-  Award,
-  Check,
-  Briefcase,
-  DollarSign,
-  GraduationCap,
-  TrendingUp,
-  Target,
-  BookOpen,
-  Users,
-} from "lucide-react";
 import { CertificateTemplate } from "../../components/program-pages/templates";
 import { TuitionCardsHero } from "../../components/program-pages/primitives";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";

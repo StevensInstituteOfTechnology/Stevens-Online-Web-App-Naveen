@@ -44,10 +44,10 @@ export default function OnlineExperience() {
   }, []);
 
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false);
-  const [activeBreakdownTab, setActiveBreakdownTab] = useState("async");
+  const [_activeBreakdownTab, _setActiveBreakdownTab] = useState("async");
 
   // Weekly Breakdown data for both course formats
-  const weeklyBreakdownTabs = {
+  const _weeklyBreakdownTabs = {
     async: {
       label: "Asynchronous Courses",
 

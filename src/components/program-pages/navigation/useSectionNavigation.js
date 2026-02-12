@@ -32,7 +32,7 @@ export function useSectionNavigation({
     curriculum,
     studentSpotlight,
     faculty,
-    keyDates,
+    keyDates: _keyDates,
     deadlines,
     admissions,
     tuition,

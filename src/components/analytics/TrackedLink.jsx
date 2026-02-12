@@ -3,7 +3,6 @@
  * Automatically tracks link clicks with context
  */
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { useProgramContext } from '@/contexts/analytics/ProgramContext';

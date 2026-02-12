@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { PageHero } from "@/components/shared";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -8,13 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Clock,
-  ArrowRight,
-  GraduationCap,
-  FileCheck,
-  DollarSign,
-} from "lucide-react";
+import { ArrowRight, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 import LeadCaptureForm from "../../../components/forms/LeadCaptureForm";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
@@ -138,7 +131,7 @@ export default function Admissions() {
     },
   ];
 
-  const events = [
+  const _events = [
     {
       title: "On Demand Application Overview: Online MBA",
       type: "Ongoing",

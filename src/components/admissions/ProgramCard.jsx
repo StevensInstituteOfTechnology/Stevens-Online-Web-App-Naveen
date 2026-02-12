@@ -23,20 +23,6 @@ import { trackEvent } from "@/utils/analytics/vercelTracking";
 const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Determine application link based on config
-  const getApplicationLink = () => {
-    if (program.applicationConfig.type === "direct") {
-      return program.applicationConfig.link;
-    } else if (program.applicationConfig.type === "modal") {
-      return program.applicationConfig.standardLink;
-    }
-    return "https://gradadmissions.stevens.edu/apply/?pk=GRNP";
-  };
-
-  const isInternalAppLink =
-    program.applicationConfig.type === "direct" &&
-    program.applicationConfig.link.startsWith("/");
-
   return (
     <>
       <motion.div

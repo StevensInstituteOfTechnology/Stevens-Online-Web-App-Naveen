@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
-import Asterism from "@/components/shared/brand/Asterism";
 
 /**
  * HeroSection - Split-layout hero for Program and Certificate pages
@@ -38,7 +37,7 @@ export function HeroSection({
   formTitle = "Request Information",
   formSubtitle = "Get detailed program information and connect with an enrollment advisor.",
   sourcePage,
-  variant = "degree",
+  variant: _variant = "degree",
   theme = "light",
 }) {
   // Convert title to array if string

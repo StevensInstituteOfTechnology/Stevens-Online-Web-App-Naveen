@@ -59,8 +59,8 @@ import { StickyNav, useSectionNavigation } from "../navigation";
 export function DegreeTemplate({
   programData,
   theme = "dark",
-  useApplicationModal = false,
-  useRequestInfoModal = true,
+  useApplicationModal: _useApplicationModal = false,
+  useRequestInfoModal: _useRequestInfoModal = true,
 }) {
   const {
     code,

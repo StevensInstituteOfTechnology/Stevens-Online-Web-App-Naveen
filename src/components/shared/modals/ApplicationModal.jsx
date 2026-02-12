@@ -85,13 +85,20 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[99999] overflow-y-auto p-3 sm:p-4 md:p-6 bg-black/60 animate-in fade-in duration-300"
+      role="button"
+      tabIndex={0}
+      className="fixed inset-0 z-[99999] overflow-y-auto p-3 sm:p-4 md:p-6 bg-black/60 animate-in fade-in duration-300 cursor-default"
       onClick={onClose}
+      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') onClose(); }}
+      aria-label="Close modal"
     >
       <div className="min-h-full flex items-center justify-center py-4 sm:py-6 md:py-8">
         <div
+          role="button"
+          tabIndex={0}
           className="relative w-full max-w-lg bg-white rounded-lg shadow-2xl animate-in zoom-in-95 duration-300 mx-auto"
           onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className="bg-stevens-dark-gray text-white px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-t-lg relative">

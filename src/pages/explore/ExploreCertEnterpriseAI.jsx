@@ -1,6 +1,5 @@
 import React from "react";
 import { KEY_DATES_SPRING2 } from "@/config/constants";
-import { Award, Globe, GraduationCap } from "lucide-react";
 import { ExploreTemplate } from "../../components/explore-pages";
 import { TuitionCardsHero } from "../../components/program-pages/primitives";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";

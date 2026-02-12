@@ -119,13 +119,13 @@ const megaMenuLinks = [
   ...mainNavLinks,
 ];
 
-export default function Layout({ children, currentPageName }) {
+export default function Layout({ children, currentPageName: _currentPageName }) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const [isMobile, setIsMobile] = useState(initialWidth < 768);
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
+  const [_isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = useState(null);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState([]); // For mobile accordion

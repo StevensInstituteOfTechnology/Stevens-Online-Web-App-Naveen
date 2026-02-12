@@ -12,8 +12,8 @@ import {
 const VideoPlayer = ({
   src,
   poster,
-  title = "Video Player",
-  description = "",
+  title: _title = "Video Player",
+  description: _description = "",
   className = "",
   showControls = true,
   autoPlay = false,

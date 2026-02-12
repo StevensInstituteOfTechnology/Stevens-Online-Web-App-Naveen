@@ -1,4 +1,4 @@
-import { MoreHorizontal, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 /**
  * Sticky navigation bar for program pages.

@@ -28,7 +28,7 @@ export const DeadlinesSection = forwardRef(function DeadlinesSection(
 ) {
   if (!keyDates || !keyDates.dates || keyDates.dates.length === 0) return null;
 
-  const { term, subtitle, dates, footnote } = keyDates;
+  const { term, subtitle: _subtitle, dates, footnote } = keyDates;
 
   return (
     <Section

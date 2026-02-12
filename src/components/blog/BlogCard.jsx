@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -7,17 +6,12 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, User, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { format } from "date-fns";
-import { createPageUrl } from "@/utils";
 import { getCardImageProps } from "@/utils/responsiveImage";
 
 const BlogCard = ({
   post,
-  showCategory = true,
-  showAuthor = true,
   showDate = true,
   className = "",
 }) => {
@@ -29,19 +23,14 @@ const BlogCard = ({
     image_position,
     author: authorData,
     created_date,
-    category,
     read_time,
-    tags = [],
   } = post;
 
   // Handle author as either string or object
-  const author =
+  const _author =
     typeof authorData === "string"
       ? authorData
       : authorData?.name || "Unknown Author";
-
-  // Ensure all values are strings to prevent React rendering errors
-  const safeAuthor = String(author || "Unknown Author");
   const safeTitle = String(title || "Untitled");
   const safeExcerpt = String(excerpt || "");
 

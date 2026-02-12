@@ -48,7 +48,7 @@ import { Section } from '../primitives';
  * @param {Object} tuition - Tuition data for combined layout
  */
 export const AdmissionsSection = forwardRef(function AdmissionsSection(
-  { admissions, keyDates, tuition },
+  { admissions, keyDates: _keyDates, tuition },
   ref
 ) {
   if (!admissions) return null;

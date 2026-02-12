@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  Award,
   Globe,
-  Star,
   Target,
   Clock,
   Network,

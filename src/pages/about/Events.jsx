@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
-  createPageUrl,
   setPageTitle,
   setMetaDescription,
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
 import { PageHero } from "@/components/shared";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Clock,
   PlayCircle,
-  FileText,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -21,10 +18,7 @@ import { BOOKING_URLS } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
-import {
-  getContentImageProps,
-  getCardImageProps,
-} from "@/utils/responsiveImage";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import { SupportEventsSection } from "@/components/shared/sections/SupportEventsSection";
 
 /**
@@ -381,7 +375,7 @@ export default function Events() {
             </p>
 
             <div className="space-y-stevens-2xl">
-              {onDemandGroups.map((group, groupIndex) => (
+              {onDemandGroups.map((group) => (
                 <EventGroup key={group.heading} group={group} />
               ))}
             </div>

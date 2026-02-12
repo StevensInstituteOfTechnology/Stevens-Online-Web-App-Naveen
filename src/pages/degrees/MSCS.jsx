@@ -1,6 +1,4 @@
-import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
-import { Award, Check, Star } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";

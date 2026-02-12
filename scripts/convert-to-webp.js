@@ -75,7 +75,7 @@ function isWebP(filePath) {
 // Check if file is already a responsive variant (e.g., image-640w.webp)
 function isResponsiveVariant(filePath) {
   const basename = path.basename(filePath, WEBP_EXT);
-  return /\-\d+w$/.test(basename);
+  return /-\d+w$/.test(basename);
 }
 
 // Directories to exclude from conversion
@@ -92,7 +92,7 @@ async function getFileSize(filePath) {
   try {
     const stats = await fs.stat(filePath);
     return (stats.size / (1024 * 1024)).toFixed(2);
-  } catch (error) {
+  } catch (_error) {
     return null;
   }
 }
@@ -295,13 +295,13 @@ async function findImages(dir, fileList = [], includeWebP = false) {
             fileList.push(filePath);
           }
         }
-      } catch (error) {
+      } catch (_error) {
         // Skip files we can't access
         continue;
       }
     }
-  } catch (error) {
-    console.error(`Error reading directory ${dir}:`, error.message);
+  } catch (err) {
+    console.error(`Error reading directory ${dir}:`, err.message);
   }
 
   return fileList;
@@ -328,7 +328,7 @@ async function main() {
   // Check if directory exists
   try {
     await fs.access(targetDirectory);
-  } catch (error) {
+  } catch (_error) {
     console.error(`❌ Error: Directory not found: ${targetDirectory}`);
     process.exit(1);
   }

@@ -1,4 +1,4 @@
-import React, {
+import {
   forwardRef,
   useState,
   useRef,
@@ -26,9 +26,8 @@ export const FacultySection = forwardRef(function FacultySection(
   { faculty },
   ref
 ) {
-  if (!faculty || !faculty.members || faculty.members.length === 0) return null;
-
-  const members = faculty.members;
+  // Must call all hooks unconditionally (before any early return)
+  const members = faculty?.members ?? [];
   const N = members.length;
 
   // Responsive cards per view
@@ -149,6 +148,9 @@ export const FacultySection = forwardRef(function FacultySection(
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // Early return only after all hooks have been called
+  if (!faculty || !faculty.members || faculty.members.length === 0) return null;
 
   // Calculate transform for carousel - larger gap reduces card width/height
   const gapPercent = 6;

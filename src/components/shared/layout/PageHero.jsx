@@ -123,7 +123,7 @@ export default function PageHero({
       return (
         <Link 
           to={to} 
-          onClick={(e) => {
+          onClick={(_e) => {
             // Store program code for accelerated application
             if (isAcceleratedApp && requestInfoProgramCode) {
               sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
@@ -162,7 +162,7 @@ export default function PageHero({
           href={href} 
           target={isInternal ? "_self" : "_blank"} 
           rel={isInternal ? "" : "noopener noreferrer"} 
-          onClick={(e) => {
+          onClick={(_e) => {
             // Store program code for accelerated application
             if (isAcceleratedApp && requestInfoProgramCode && isInternal) {
               sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
