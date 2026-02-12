@@ -683,6 +683,7 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <Checkbox
                         id="masters-filter"
+                        aria-label="Filter by Masters programs"
                         checked={mastersChecked}
                         onCheckedChange={(checked) =>
                           setMastersChecked(checked)
@@ -700,6 +701,7 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <Checkbox
                         id="certificates-filter"
+                        aria-label="Filter by Certificates"
                         checked={certificatesChecked}
                         onCheckedChange={(checked) =>
                           setCertificatesChecked(checked)
@@ -770,6 +772,7 @@ export default function Home() {
           />
           {/* Content layer - Grid: Testimonial Left (2/3), Image Right (1/3) */}
           <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
+            <h2 className="sr-only">Featured testimonial from leadership</h2>
             <div className="grid xl:grid-cols-3 gap-12 xl:gap-16 items-center">
               {/* Left: Pull Quote Testimonial - 2/3 width on xl+ */}
               <AnimatedSection className="xl:col-span-2">
@@ -810,9 +813,9 @@ export default function Home() {
                           />
                         </div>
                         <div>
-                          <p className="font-stevens-display text-lg font-bold text-stevens-white">
+                          <h3 className="font-stevens-display text-lg font-bold text-stevens-white">
                             Arshad Saiyed
-                          </p>
+                          </h3  >
                           <p className="text-stevens-light-gray text-sm">
                             Chief Online Learning Officer and Dean of the
                             College of Professional Education

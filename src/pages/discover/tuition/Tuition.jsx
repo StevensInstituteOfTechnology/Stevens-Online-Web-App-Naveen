@@ -95,10 +95,10 @@ export default function Tuition() {
             {/* Tuition Structure Update */}
             <Card className="bg-white border-0 shadow-md">
               <CardHeader className="pb-4">
-                <CardTitle className="font-stevens-display text-xl md:text-2xl text-stevens-black font-medium leading-tight">
+                <h3 className="font-stevens-display text-xl md:text-2xl text-stevens-black font-medium leading-tight">
                   Tuition Structure Update: For Online M.S. in Computer Science
                   and Online MEM Programs
-                </CardTitle>
+                </h3>
               </CardHeader>
               <CardContent className="space-y-5">
                 <p className="text-stevens-dark-gray leading-relaxed">

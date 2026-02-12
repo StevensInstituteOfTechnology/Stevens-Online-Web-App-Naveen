@@ -228,6 +228,7 @@ export default function ProgramFilterGrid({ initialFilter }) {
             onChange={handleInputChange}
             onFocus={handleInputFocus}
             className="pl-10 pr-10 h-12 text-stevens-base"
+            aria-label="Search programs"
           />
           {searchQuery && (
             <button
@@ -276,6 +277,7 @@ export default function ProgramFilterGrid({ initialFilter }) {
           <div className="flex items-center gap-2">
             <Checkbox
               id="graduate"
+              aria-label="Filter by Masters programs"
               checked={graduateChecked}
               onCheckedChange={(checked) => setGraduateChecked(checked)}
             />
@@ -290,6 +292,7 @@ export default function ProgramFilterGrid({ initialFilter }) {
           <div className="flex items-center gap-2">
             <Checkbox
               id="certificate"
+              aria-label="Filter by Certificates"
               checked={certificateChecked}
               onCheckedChange={(checked) => setCertificateChecked(checked)}
             />

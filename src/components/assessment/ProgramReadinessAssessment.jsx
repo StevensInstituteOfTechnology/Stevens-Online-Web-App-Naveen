@@ -398,9 +398,9 @@ function ProgramReadinessAssessment({ onComplete }) {
   return (
     <Card className="w-full max-w-lg mx-auto shadow-stevens-lg card-hover rounded-stevens-md">
       <CardHeader className="bg-stevens-black text-white rounded-stevens-md">
-        <CardTitle className="text-stevens-3xl font-stevens-display">
+        <h2 className="text-stevens-3xl font-stevens-display font-semibold leading-none tracking-tight">
           Find Your Perfect Program
-        </CardTitle>
+        </h2>
         <div className="w-full bg-stevens-light-gray rounded-stevens-md h-2 mt-stevens-sm">
           <div
             className="bg-stevens-red h-2 rounded-stevens-md transition-all duration-500 ease-out"

@@ -761,8 +761,8 @@ const CorporatePartners = () => {
             <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
 
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-stevens-dark-gray/50" />
+          {/* Dark overlay - sufficient opacity for WCAG contrast with white text */}
+          <div className="absolute inset-0 bg-stevens-black/50" />
 
           <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}
@@ -773,10 +773,10 @@ const CorporatePartners = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-4 sm:mb-stevens-md md:mb-stevens-lg">
+              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-4 sm:mb-stevens-md md:mb-stevens-lg text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]">
                 A University Built for the Future of Work
               </h2>
-              <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed px-2 sm:px-0">
+              <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white leading-relaxed px-2 sm:px-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
                 At Stevens, academic rigor meets real-world application. Our
                 online programs empower professionals to lead with confidence in
                 a technology-driven world and deliver measurable results for
@@ -808,12 +808,12 @@ const CorporatePartners = () => {
                       </div>
 
                       {/* Stat value with enhanced styling */}
-                      <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums">
+                      <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
                         {stat.value}
                       </div>
 
                       {/* Label with better hierarchy */}
-                      <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white/95 leading-tight sm:leading-normal">
+                      <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white leading-tight sm:leading-normal [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
                         {stat.label}
                       </div>
                     </motion.div>

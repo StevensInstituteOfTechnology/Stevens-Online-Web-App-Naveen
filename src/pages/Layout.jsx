@@ -309,12 +309,12 @@ export default function Layout({ children, currentPageName }) {
                 to={createPageUrl("Home")}
                 className="flex items-center gap-2 stevens-md:gap-3 transition-opacity duration-stevens-normal hover:opacity-80"
               >
-                <div className="relative overflow-visible">
-                  {/* Main Logo - 60% larger */}
+                <div className="relative overflow-visible flex items-center rounded px-1 bg-stevens-black">
+                  {/* Main Logo - 60% larger, dark background ensures WCAG contrast */}
                   <img
                     src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.svg"
                     alt="Stevens Institute of Technology Professional Education Logo"
-                    className="h-[65px] stevens-md:h-[87px] w-auto"
+                    className="h-[65px] stevens-md:h-[87px] w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                   />
                 </div>
               </Link>

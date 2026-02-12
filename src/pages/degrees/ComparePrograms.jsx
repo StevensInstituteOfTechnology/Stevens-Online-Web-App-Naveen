@@ -240,22 +240,23 @@ export default function ComparePrograms() {
                   </p>
                 </div>
                 <div className="stevens-md:text-right">
-                  <a
-                    href={BOOKING_URLS.SCHEDULE_CALL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
-                    }
+                  <Button
+                    asChild
+                    variant="outline-dark"
+                    className="px-stevens-xl py-stevens-md"
                   >
-                    <Button
-                      variant="outline-dark"
-                      className="px-stevens-xl py-stevens-md"
+                    <a
+                      href={BOOKING_URLS.SCHEDULE_CALL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                      }
                     >
                       Get In Touch
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -525,14 +526,16 @@ export default function ComparePrograms() {
             <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-16">
               Ready to discuss how our programs can help you achieve your goals?
             </h2>
-            <a
-              href={BOOKING_URLS.SCHEDULE_CALL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
-            >
-              <Button variant="default">Connect With Us</Button>
-            </a>
+            <Button asChild variant="default">
+              <a
+                href={BOOKING_URLS.SCHEDULE_CALL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
+              >
+                Connect With Us
+              </a>
+            </Button>
           </div>
         </section>
       </div>

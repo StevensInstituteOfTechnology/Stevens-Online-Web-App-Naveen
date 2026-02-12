@@ -108,11 +108,11 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                             {card.value}
                           </p>
                         </div>
-                        {/* Bottom layer: Label */}
+                        {/* Bottom layer: Label - h3 for proper heading hierarchy under Tuition h2 */}
                         <div className="flex-1 flex items-center justify-center min-h-[40%] pt-stevens-md">
-                          <p className="text-stevens-xs mb-stevens-md stevens-sm:text-stevens-sm text-stevens-dark-gray">
+                          <h3 className="text-stevens-xs mb-stevens-md stevens-sm:text-stevens-sm text-stevens-dark-gray font-semibold m-0">
                             {card.label}
-                          </p>
+                          </h3>
                         </div>
                       </Card>
                     ))}

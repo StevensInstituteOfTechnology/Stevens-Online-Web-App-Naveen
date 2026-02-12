@@ -237,6 +237,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                       e.target.value === "0" ? "" : e.target.value
                     )
                   }
+                  aria-label="Annual tuition reimbursement amount"
                   className="w-full h-2 rounded-full appearance-none cursor-pointer
                     [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-stevens-red [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:z-10
                     [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-stevens-red [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
@@ -270,6 +271,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                   step="250"
                   placeholder="0"
                   value={annualReimbursement}
+                  aria-label="Annual tuition reimbursement amount in dollars"
                   onChange={(e) => {
                     const val = Math.min(
                       Math.max(0, parseInt(e.target.value) || 0),
