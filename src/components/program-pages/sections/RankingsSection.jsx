@@ -240,9 +240,9 @@ export const RankingsSection = forwardRef(function RankingsSection(
           })}
         </div>
 
-        {/* Footnotes */}
-        {footnotes && footnotes.length > 0 && (
-          <div className="mt-stevens-3xl pt-stevens-lg border-t border-stevens-gray/30 max-w-4xl">
+        {/* Footnotes + Rankings Link */}
+        <div className="mt-stevens-3xl pt-stevens-lg border-t border-stevens-gray/30 max-w-4xl">
+          {footnotes && footnotes.length > 0 && (
             <div className="font-stevens-body text-stevens-xs text-stevens-dark-gray space-y-stevens-xs">
               {footnotes.map((footnote, i) => (
                 <p key={i}>
@@ -251,8 +251,16 @@ export const RankingsSection = forwardRef(function RankingsSection(
                 </p>
               ))}
             </div>
-          </div>
-        )}
+          )}
+          <a
+            href="https://www.stevens.edu/discover-stevens/stevens-by-the-numbers/rankings-recognition"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-stevens-body text-stevens-sm text-stevens-dark-gray hover:text-stevens-red underline transition-colors duration-200 mt-stevens-md inline-block"
+          >
+            View all rankings and recognition
+          </a>
+        </div>
       </div>
     </section>
   );
