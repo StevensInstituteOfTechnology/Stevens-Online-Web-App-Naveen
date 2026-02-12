@@ -38,7 +38,7 @@ const getReferrerInfo = () => {
     if (domain.includes('stevens.edu')) return { source: 'internal', domain };
     
     return { source: 'other', domain };
-  } catch (e) {
+  } catch (_e) {
     return { source: 'unknown', domain: null };
   }
 };

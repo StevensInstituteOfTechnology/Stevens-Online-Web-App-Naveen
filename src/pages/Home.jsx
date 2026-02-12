@@ -13,10 +13,7 @@ import {
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
-import {
-  getHeroImageProps,
-  getContentImageProps,
-} from "@/utils/responsiveImage";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   Asterism,
   AnimatedSection,
@@ -38,40 +35,6 @@ import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
-
-const StatItem = ({ value, label, icon: Icon }) => (
-  <div className="text-center flex flex-col items-center justify-center">
-    <Icon className="w-10 h-10 mx-auto mb-3" />
-    <div className="text-3xl font-stevens-headers font-bold">{value}</div>
-    <div className="uppercase tracking-wider text-stevens-base">{label}</div>
-  </div>
-);
-
-// NEW DATA and COMPONENTS for the redesigned rankings section
-const textRankings = [
-  {
-    value: "#1",
-    description: "Online MBA from a New Jersey school in 2025",
-    source: "U.S. News & World Report",
-  },
-  {
-    value: "#1",
-    description: "No. 1 in New Jersey for Graduate Earnings",
-    source: "U.S. Department of Education College Scorecard (2025)",
-  },
-  {
-    value: "7x",
-    description:
-      "Winner of the 21st Century Award for Best Practices in Distance Learning",
-    source: "USDLA",
-  },
-
-  {
-    value: "#9",
-    description: "Ranks No. 9 among 'Best ROI Colleges'",
-    source: "*Based on the cost of a four-year bachelor's degree program",
-  },
-];
 
 // Program showcase carousel data with real program information
 const programShowcaseData = [
@@ -161,24 +124,6 @@ const programShowcaseData = [
   },
 ];
 
-const TextRankingItem = ({ value, description, source }) => (
-  <div className="flex items-center gap-stevens-md py-stevens-md border-b border-stevens-light-gray last:border-b-0">
-    <p className="font-stevens-display text-stevens-4xl font-stevens-bold text-stevens-red w-36 shrink-0 text-center leading-none">
-      {value}
-    </p>
-    <div>
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-dark-gray leading-relaxed">
-        {description}
-      </p>
-      {source && (
-        <p className="text-stevens-base text-stevens-dark-gray mt-stevens-xs italic">
-          {source}
-        </p>
-      )}
-    </div>
-  </div>
-);
-
 export default function Home() {
   usePageTracking({
     pageType: "home",
@@ -195,7 +140,6 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
-  const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );

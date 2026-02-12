@@ -196,7 +196,7 @@ export default function PageHero({
           {...getHeroImageProps(bgImage)}
           alt=""
           aria-hidden="true"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover "

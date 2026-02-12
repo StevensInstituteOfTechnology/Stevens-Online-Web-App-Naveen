@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import Layout from "./Layout.jsx";
 import {
   BrowserRouter as Router,
@@ -66,7 +66,7 @@ function PagesContent() {
   const location = useLocation();
   const currentPage = _getCurrentPage(location.pathname);
   
-  React.useEffect(() => {
+  useEffect(() => {
     // Scroll to top on route change - only if no hash is present
     // If hash is present, let the page component handle scrolling to the hash target
     if (typeof window !== 'undefined' && !location.hash) {

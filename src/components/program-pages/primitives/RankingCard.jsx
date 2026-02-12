@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * RankingCard - Displays a ranking/statistic with source citation
  * 

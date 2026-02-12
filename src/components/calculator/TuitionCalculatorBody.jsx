@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Building,
   Home,
@@ -115,12 +115,20 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
               {/* Workforce Partner Discount - Only for master's programs */}
               {!isCertificate && (
                 <div
+                  role="button"
+                  tabIndex={0}
                   className={`flex items-start space-x-3 p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
                     isWorkforcePartner
                       ? "border-stevens-dark-gray/30 bg-stevens-dark-gray/5 shadow-sm"
                       : "border-stevens-light-gray bg-white hover:border-stevens-dark-gray/20 hover:bg-stevens-dark-gray/[0.03]"
                   }`}
                   onClick={() => setIsWorkforcePartner(!isWorkforcePartner)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setIsWorkforcePartner(!isWorkforcePartner);
+                    }
+                  }}
                 >
                   <Checkbox
                     id="calc-workforce-partner"
@@ -146,12 +154,20 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
 
               {/* Hoboken Resident Discount */}
               <div
+                role="button"
+                tabIndex={0}
                 className={`flex items-start space-x-3 p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
                   isHobokenResident
                     ? "border-stevens-dark-gray/30 bg-stevens-dark-gray/5 shadow-sm"
                     : "border-stevens-light-gray bg-white hover:border-stevens-dark-gray/20 hover:bg-stevens-dark-gray/[0.03]"
                 }`}
                 onClick={() => setIsHobokenResident(!isHobokenResident)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setIsHobokenResident(!isHobokenResident);
+                  }
+                }}
               >
                 <Checkbox
                   id="calc-hoboken"
@@ -176,12 +192,20 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
 
               {/* Stevens Alumni Discount */}
               <div
+                role="button"
+                tabIndex={0}
                 className={`flex items-start space-x-3 p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
                   isStevensAlumni
                     ? "border-stevens-dark-gray/30 bg-stevens-dark-gray/5 shadow-sm"
                     : "border-stevens-light-gray bg-white hover:border-stevens-dark-gray/20 hover:bg-stevens-dark-gray/[0.03]"
                 }`}
                 onClick={() => setIsStevensAlumni(!isStevensAlumni)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setIsStevensAlumni(!isStevensAlumni);
+                  }
+                }}
               >
                 <Checkbox
                   id="calc-alumni"
@@ -215,7 +239,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
             </div>
             <div className="p-4 rounded-lg border border-stevens-light-gray bg-white">
               <div className="flex items-center justify-between mb-4">
-                <label className="text-sm font-medium text-stevens-dark-gray flex items-center">
+                <label htmlFor="calc-reimbursement" className="text-sm font-medium text-stevens-dark-gray flex items-center">
                   <Briefcase className="w-4 h-4 mr-2 text-stevens-dark-gray" />
                   Annual Tuition Reimbursement
                 </label>
@@ -227,6 +251,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
               {/* Slider */}
               <div className="relative">
                 <input
+                  id="calc-reimbursement"
                   type="range"
                   min="0"
                   max="5250"

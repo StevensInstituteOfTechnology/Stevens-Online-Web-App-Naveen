@@ -1,5 +1,4 @@
-import React from "react";
-import { Navigate, useLocation, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import "@/data/blogs.json";
 
 // Page imports

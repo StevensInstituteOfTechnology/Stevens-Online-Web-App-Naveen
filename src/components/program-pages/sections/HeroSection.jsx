@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
@@ -172,7 +171,7 @@ export function HeroSection({
               {...getHeroImageProps(bgImage)}
               alt=""
               aria-hidden="true"
-              fetchpriority="high"
+              fetchPriority="high"
               loading="eager"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover xl:opacity-80"

@@ -9,7 +9,14 @@ module.exports = {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'stevens-none': '0',
+				'stevens-sm': '0.25rem',
+				'stevens-md': '0.375rem',
+				'stevens-lg': '0.5rem',
+				'stevens-xl': '0.75rem',
+				'stevens-card': '1rem',
+				'stevens-button': '0.5rem'
 			},
 			colors: {
 				background: 'hsl(var(--background))',
@@ -202,16 +209,6 @@ module.exports = {
 				'stevens-container-3xl': '1400px',    // Reduced from 1536px
 				'stevens-content-max': '1152px',      // Standard content width
 				'stevens-wide-max': '1280px',         // Wide content sections
-			},
-			// Stevens Border Radius System
-			borderRadius: {
-				'stevens-none': '0',
-				'stevens-sm': '0.25rem',
-				'stevens-md': '0.375rem',
-				'stevens-lg': '0.5rem',
-				'stevens-xl': '0.75rem',
-				'stevens-card': '1rem',
-				'stevens-button': '0.5rem'
 			},
 			// Stevens Shadow System
 			boxShadow: {

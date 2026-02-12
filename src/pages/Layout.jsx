@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
 import { CONTACT_INFO, BOOKING_URLS } from "@/config/constants";
@@ -121,16 +121,14 @@ const megaMenuLinks = [
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [showBackToTop, setShowBackToTop] = React.useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-  const [isMobile, setIsMobile] = React.useState(initialWidth < 768);
-  const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(
-    initialWidth <= 1024
-  );
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [megaMenuHoveredItem, setMegaMenuHoveredItem] = React.useState(null);
-  const [expandedMobileMenus, setExpandedMobileMenus] = React.useState([]); // For mobile accordion
+  const [isMobile, setIsMobile] = useState(initialWidth < 768);
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [megaMenuHoveredItem, setMegaMenuHoveredItem] = useState(null);
+  const [expandedMobileMenus, setExpandedMobileMenus] = useState([]); // For mobile accordion
 
   // Toggle accordion item on mobile
   const toggleMobileAccordion = (menuName) => {
@@ -141,7 +139,7 @@ export default function Layout({ children, currentPageName }) {
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Only run on client side
     if (typeof window === "undefined") return;
 
@@ -246,13 +244,13 @@ export default function Layout({ children, currentPageName }) {
   }, []);
 
   // Close mobile menu and reset accordion when page changes
-  React.useEffect(() => {
+  useEffect(() => {
     setMobileMenuOpen(false);
     setExpandedMobileMenus([]);
   }, [location.pathname]);
 
   // Update canonical tag on route change
-  React.useEffect(() => {
+  useEffect(() => {
     // Only run on client side
     if (typeof window === "undefined" || typeof document === "undefined")
       return;
@@ -267,7 +265,6 @@ export default function Layout({ children, currentPageName }) {
     link.setAttribute("href", canonicalHref);
   }, [location.pathname]);
 
-  const isActive = (page) => currentPageName === page;
 
   // Check if we're on the home page by pathname (more reliable than currentPageName)
   const isHomePage =
@@ -421,7 +418,14 @@ export default function Layout({ children, currentPageName }) {
                                   <div
                                     className="md:hidden w-full flex items-center justify-between cursor-pointer"
                                     onClick={() => toggleMobileAccordion(link.name)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        toggleMobileAccordion(link.name);
+                                      }
+                                    }}
                                     role="button"
+                                    tabIndex={0}
                                     aria-expanded={isExpanded}
                                   >
                                     {/* Text is a link - stops propagation so it navigates instead of toggling */}

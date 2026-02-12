@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import { ArrowRight, CheckCircle, Phone, Mail, Calendar } from 'lucide-react';
 import LeadCaptureForm from '@/components/forms/LeadCaptureForm';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { trackConversion, CONVERSION_LABELS } from '@/utils/gtmTracking';
+import { BOOKING_URLS } from '@/config/constants';
 
 /**
  * CorporateCTA - Flexible CTA section for corporate pages
@@ -183,7 +184,7 @@ const CorporateCTA = ({
                   <Calendar className={`w-8 h-8 ${textColor}`} />
                 </div>
                 <h3 className={`font-stevens-medium mb-stevens-xs ${textColor}`}>Schedule Meeting</h3>
-                <a href="#" className={`${textColor} opacity-90 hover:opacity-100`}>
+                <a href={BOOKING_URLS.SCHEDULE_CALL} target="_blank" rel="noopener noreferrer" className={`${textColor} opacity-90 hover:opacity-100`}>
                   Book a consultation
                 </a>
               </motion.div>
