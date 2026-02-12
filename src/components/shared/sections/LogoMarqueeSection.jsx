@@ -84,8 +84,8 @@ export default function LogoMarqueeSection({
                     src={logoSrc}
                     alt={`${logoName} logo`}
                     className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
-                      invertLogos ? "brightness-0 invert" : ""
-                    } opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
+                      invertLogos ? "brightness-0 invert" : "brightness-150"
+                    } opacity-90 hover:opacity-100 transition-opacity duration-stevens-normal`}
                     loading="lazy"
                     onError={(e) => {
                       e.target.style.display = "none";
@@ -174,8 +174,8 @@ export function LogoMarqueeSectionDouble({
                 src={logoSrc}
                 alt={`${logoName} logo`}
                 className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
-                  invertLogos ? "brightness-0 invert" : ""
-                } opacity-80 hover:opacity-100 transition-opacity duration-stevens-normal`}
+                  invertLogos ? "brightness-0 invert" : "brightness-150"
+                } opacity-90 hover:opacity-100 transition-opacity duration-stevens-normal`}
                 loading="lazy"
               />
             ) : (

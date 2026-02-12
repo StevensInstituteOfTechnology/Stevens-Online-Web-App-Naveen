@@ -200,7 +200,7 @@ export const FacultySection = forwardRef(function FacultySection(
                 />
               </div>
               {/* Pagination Indicator */}
-              <span className="text-stevens-gray text-sm tabular-nums tracking-wide pt-4 pr-8">
+              <span className="text-stevens-dark-gray text-sm tabular-nums tracking-wide pt-4 pr-8">
                 {realIndex} / {N}
               </span>
             </div>

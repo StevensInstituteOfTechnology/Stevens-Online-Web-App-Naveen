@@ -64,7 +64,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
 
             {/* Hero Source - Pinned to bottom */}
             {heroStat.source && (
-              <p className="font-stevens-body text-stevens-sm text-stevens-gray mt-auto pt-stevens-md leading-relaxed max-w-xs">
+              <p className="font-stevens-body text-stevens-sm text-stevens-dark-gray mt-auto pt-stevens-md leading-relaxed max-w-xs">
                 {heroStat.note && <sup className="mr-0.5">{heroStat.note}</sup>}
                 {heroStat.source}
               </p>
@@ -113,7 +113,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
 
                   {/* Secondary Source - Pinned to bottom */}
                   {stat.source && (
-                    <p className="font-stevens-body text-stevens-xs text-stevens-gray mt-auto pt-stevens-md leading-relaxed">
+                    <p className="font-stevens-body text-stevens-xs text-stevens-dark-gray mt-auto pt-stevens-md leading-relaxed">
                       {stat.note && <sup className="mr-0.5">{stat.note}</sup>}
                       {stat.source}
                     </p>
@@ -127,7 +127,7 @@ export const RankingsSection = forwardRef(function RankingsSection(
         {/* Footnotes */}
         {footnotes && footnotes.length > 0 && (
           <div className="mt-stevens-3xl pt-stevens-lg border-t border-stevens-gray/30 max-w-4xl">
-            <div className="font-stevens-body text-stevens-xs text-stevens-gray space-y-stevens-xs">
+            <div className="font-stevens-body text-stevens-xs text-stevens-dark-gray space-y-stevens-xs">
               {footnotes.map((footnote, i) => (
                 <p key={i}>
                   <sup className="mr-1">{footnote.note}</sup>

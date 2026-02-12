@@ -57,7 +57,7 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
 
                 {/* Supertext (small text above value, e.g., "Apply by") */}
                 {stat.supertext && (
-                  <p className="text-base uppercase tracking-wider text-stevens-gray mb-1">
+                    <p className="text-base uppercase tracking-wider text-stevens-dark-gray mb-1">
                     {stat.supertext}
                   </p>
                 )}
@@ -88,14 +88,14 @@ export const QuickStatsBar = forwardRef(function QuickStatsBar(
 
                 {/* Description */}
                 {stat.description && (
-                  <p className="text-base text-stevens-gray mt-2 max-w-[200px] leading-relaxed">
+                  <p className="text-base text-stevens-dark-gray mt-2 max-w-[200px] leading-relaxed">
                     {stat.description}
                   </p>
                 )}
 
                 {/* Subtext (e.g., "$800 per credit") */}
                 {stat.subtext && (
-                  <p className="text-base text-stevens-gray mt-1">
+                    <p className="text-base text-stevens-dark-gray mt-1">
                     {stat.subtext}
                   </p>
                 )}

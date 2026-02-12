@@ -855,6 +855,7 @@ export default function Layout({ children, currentPageName }) {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
+          aria-label="Back to top"
         >
           <ArrowUp className="w-5 h-5" />
         </button>

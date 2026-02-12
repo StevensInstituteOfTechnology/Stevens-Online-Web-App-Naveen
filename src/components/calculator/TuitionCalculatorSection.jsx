@@ -42,13 +42,13 @@ const TuitionCalculatorSection = forwardRef(
               </h2>
               <div className="w-20 h-0.5 bg-stevens-red mb-8"></div>
               
-              <p className="text-stevens-base text-stevens-gray leading-relaxed mb-2">
+              <p className="text-stevens-base text-stevens-dark-gray leading-relaxed mb-2">
                 Use our calculator to estimate your tuition with available
                 discounts and employer reimbursement benefits. Keep in mind that
                 most of our students receive some form of financial support,
                 which can significantly reduce out-of-pocket costs.
               </p>
-              <p className="text-stevens-base text-stevens-gray leading-relaxed mb-8">
+              <p className="text-stevens-base text-stevens-dark-gray leading-relaxed mb-8">
                 See how much you could save based on your eligibility for
                 workforce partner, alumni, and resident discounts.
               </p>

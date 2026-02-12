@@ -324,7 +324,7 @@ export default function Admissions() {
         </div>
 
         {/* Request Information */}
-        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray">
+        <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-dark-gray">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-stevens-xl items-center">

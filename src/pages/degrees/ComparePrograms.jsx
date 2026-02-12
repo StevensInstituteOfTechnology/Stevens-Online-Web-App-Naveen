@@ -281,10 +281,14 @@ export default function ComparePrograms() {
 
             {/* Program Selector Dropdown */}
             <div className="max-w-xl mx-auto mb-stevens-xl">
-              <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+              <label
+                htmlFor="tuition-calc-program-select"
+                className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
+              >
                 Select a Program
               </label>
               <select
+                id="tuition-calc-program-select"
                 value={selectedCalcProgram}
                 onChange={(e) => {
                   setSelectedCalcProgram(e.target.value);
@@ -334,7 +338,7 @@ export default function ComparePrograms() {
         >
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <div className="text-center mb-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
                 Select Programs to Compare
               </h2>
               <p className="text-stevens-dark-gray">
@@ -348,10 +352,14 @@ export default function ComparePrograms() {
               <CardContent className="p-stevens-xl">
                 <div className="grid stevens-md:grid-cols-3 gap-stevens-lg items-end">
                   <div>
-                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                    <label
+                      htmlFor="compare-left-program"
+                      className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
+                    >
                       Select Program
                     </label>
                     <select
+                      id="compare-left-program"
                       value={left}
                       onChange={(e) => setLeft(e.target.value)}
                       className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
@@ -369,10 +377,14 @@ export default function ComparePrograms() {
                   </div>
 
                   <div>
-                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                    <label
+                      htmlFor="compare-right-program"
+                      className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
+                    >
                       Select Program
                     </label>
                     <select
+                      id="compare-right-program"
                       value={right}
                       onChange={(e) => setRight(e.target.value)}
                       className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
@@ -455,9 +467,9 @@ export default function ComparePrograms() {
         {/* Program Track Options */}
         <section className="py-16 bg-stevens-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-            <h3 className="font-stevens-display text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
               Program Track Options
-            </h3>
+            </h2>
             <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
               <table className="w-full">
                 <thead>
@@ -510,9 +522,9 @@ export default function ComparePrograms() {
         {/* CTA */}
         <section className="py-16 bg-stevens-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-            <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-dark-gray mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-16">
               Ready to discuss how our programs can help you achieve your goals?
-            </h3>
+            </h2>
             <a
               href={BOOKING_URLS.SCHEDULE_CALL}
               target="_blank"

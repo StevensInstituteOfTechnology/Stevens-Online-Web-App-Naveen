@@ -183,7 +183,7 @@ export default function Tuition() {
                       <Award className="text-stevens-red w-6 h-6" /> Pathway
                       Grant
                     </CardTitle>
-                    <p className="text-sm text-stevens-gray">
+                    <p className="text-sm text-stevens-dark-gray">
                       (for Accelerated applicants)
                     </p>
                   </CardHeader>
@@ -738,7 +738,7 @@ export default function Tuition() {
                     </div>
                   </div>
                   <div className="pt-2 border-t border-gray-200">
-                    <p className="text-sm text-stevens-gray">
+                    <p className="text-sm text-stevens-dark-gray">
                       Wesley J. Howe Center, First Floor
                       <br />
                       1 Castle Point Terrace

@@ -38,13 +38,13 @@ export function StickyNav({
       : "bg-white shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]",
     text: isDark
       ? "text-white/60 hover:text-white"
-      : "text-stevens-gray hover:text-stevens-black",
+      : "text-stevens-dark-gray hover:text-stevens-black",
     textActive: isDark
       ? "text-white font-semibold"
       : "text-stevens-black font-semibold",
     moreButton: isDark
       ? "text-white/60 border-white/30 hover:text-white hover:border-white/60 hover:shadow-sm"
-      : "text-stevens-gray border-stevens-light-gray hover:text-stevens-black hover:border-stevens-dark-gray hover:shadow-sm",
+      : "text-stevens-dark-gray border-stevens-light-gray hover:text-stevens-black hover:border-stevens-dark-gray hover:shadow-sm",
     moreButtonActive: isDark
       ? "text-white bg-white/10 border-white/50 shadow-md"
       : "text-stevens-black bg-white border-stevens-dark-gray shadow-md",

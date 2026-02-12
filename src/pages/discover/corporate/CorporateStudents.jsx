@@ -371,7 +371,7 @@ const CorporateStudents = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-stevens-red font-semibold text-sm uppercase tracking-wider mb-stevens-sm">
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-stevens-sm">
               Our Commitment to Workforce Development
             </p>
             <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold mb-stevens-lg leading-tight text-white">
@@ -387,28 +387,28 @@ const CorporateStudents = () => {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mb-stevens-xl">
-              <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
+              <div className="bg-white/5 rounded-lg p-5 border border-white/30">
+                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
                   50+
                 </p>
                 <p className="text-sm text-white/90">Corporate Partners</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
+              <div className="bg-white/5 rounded-lg p-5 border border-white/30">
+                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
                   $5,250
                 </p>
                 <p className="text-sm text-white/90">
                   Tuition Reimbursement Aligned
                 </p>
               </div>
-              <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
+              <div className="bg-white/5 rounded-lg p-5 border border-white/30">
+                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
                   100%
                 </p>
                 <p className="text-sm text-white/90">Online & Flexible</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-5 border border-white/10">
-                <p className="text-3xl lg:text-4xl font-light text-stevens-red mb-1">
+              <div className="bg-white/5 rounded-lg p-5 border border-white/30">
+                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
                   Top 20
                 </p>
                 <p className="text-sm text-white/90">Nationally Ranked</p>

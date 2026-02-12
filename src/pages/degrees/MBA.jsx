@@ -762,7 +762,7 @@ const programData = {
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROOF OF BACHELOR'S DEGREE</h4>
           <p class="font-stevens-body mb-stevens-sm">Upload a copy of your unofficial transcripts from all undergraduate institutions where credit was earned. This allows us to verify your academic background quickly.</p>
-          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
+          <p class="font-stevens-body text-stevens-dark-gray text-stevens-sm mt-stevens-sm">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROFESSIONAL BACKGROUND</h4>
@@ -771,7 +771,7 @@ const programData = {
             <li class="font-stevens-body"><strong>Upload your résumé</strong> – Highlight your work experience, leadership roles, and career achievements</li>
             <li class="font-stevens-body"><strong>Link your LinkedIn profile</strong> – A convenient alternative that showcases your professional journey</li>
           </ul>
-          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Work experience is valued but not required for admission.</p>
+          <p class="font-stevens-body text-stevens-dark-gray text-stevens-sm mt-stevens-sm">Work experience is valued but not required for admission.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">LETTERS OF RECOMMENDATION</h4>

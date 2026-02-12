@@ -959,7 +959,7 @@ const CorporatePartners = () => {
         <EmployerFaqSection accordionPrefix="corporate-partners" />
 
         {/* Final CTA Section */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray text-stevens-white">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-dark-gray text-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div
               initial={{ opacity: 0, y: 20 }}
@@ -971,7 +971,7 @@ const CorporatePartners = () => {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">
                 Ready to Build the Future of Work Together?
               </h2>
-              <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto opacity-90">
+              <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto">
                 Partner with Stevens Online to upskill your workforce in data
                 science, AI, and beyond.
               </p>

@@ -66,7 +66,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
         {/* Floating Content Box - Bottom */}
         <div className="absolute bottom-0 left-4 right-4 lg:left-6 lg:right-6 bg-white p-5 lg:p-6 transform translate-y-2 group-hover:translate-y-[-8px] transition-all duration-300 ease-out shadow-xl">
           {/* Program Type Label */}
-          <p className="text-stevens-gray text-xs font-bold uppercase tracking-wider mb-1">
+          <p className="text-stevens-dark-gray text-xs font-bold uppercase tracking-wider mb-1">
             {program.tagline || program.degree}
           </p>
 
@@ -81,13 +81,13 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
               {/* Stats Row */}
               <div className="flex gap-6 mb-3 text-sm">
                 <div>
-                  <span className="text-stevens-gray">Credits:</span>
+                  <span className="text-stevens-dark-gray">Credits:</span>
                   <span className="font-semibold text-stevens-dark-gray ml-1">
                     {program.stats?.credits || "30"}
                   </span>
                 </div>
                 <div>
-                  <span className="text-stevens-gray">Duration:</span>
+                  <span className="text-stevens-dark-gray">Duration:</span>
                   <span className="font-semibold text-stevens-dark-gray ml-1">
                     {program.stats?.duration || "18-24 mo"}
                   </span>
@@ -96,7 +96,7 @@ const ProgramCard = ({ program, onApplyClick, index = 0 }) => {
 
               {/* Highlights List */}
               {program.highlights && program.highlights.length > 0 && (
-                <ul className="text-sm text-stevens-gray space-y-1.5 mb-4">
+                <ul className="text-sm text-stevens-dark-gray space-y-1.5 mb-4">
                   {program.highlights.slice(0, 3).map((highlight, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-stevens-red rounded-full flex-shrink-0"></span>

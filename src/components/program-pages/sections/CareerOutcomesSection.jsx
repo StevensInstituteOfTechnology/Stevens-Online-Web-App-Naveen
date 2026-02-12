@@ -415,7 +415,7 @@ export const CareerOutcomesSection = forwardRef(function CareerOutcomesSection(
       {/* Source: match screenshot (bottom, subtle) - hidden for logos variant */}
       {career.source && variant !== "logos" && (
         <div className="mt-stevens-3xl">
-          <p className="text-stevens-sm text-stevens-gray/80">
+          <p className="text-stevens-sm text-stevens-dark-gray">
             Source: {career.source}
           </p>
         </div>

@@ -201,14 +201,14 @@ const AlumniPGC = () => {
                           : "bg-white border border-stevens-light-gray"
                       }`}
                     >
-                      <p className="text-xs sm:text-sm text-stevens-gray uppercase tracking-wide font-semibold">
+                      <p className="text-xs sm:text-sm text-stevens-dark-gray uppercase tracking-wide font-semibold">
                         {item.label}
                       </p>
                       <p
                         className={`text-xl sm:text-2xl font-bold mt-1 ${
                           index === 1
                             ? "text-stevens-red"
-                            : "text-stevens-gray line-through"
+                            : "text-stevens-dark-gray line-through"
                         }`}
                       >
                         {item.value}

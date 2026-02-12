@@ -229,6 +229,7 @@ const VideoPlayer = ({
           <button
             onClick={togglePlayPause}
             className="w-14 h-14 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
+            aria-label="Play video"
           >
             <PlayCircle className="w-7 h-7 text-white/90" />
           </button>
