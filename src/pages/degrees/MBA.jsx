@@ -114,12 +114,7 @@ const programData = {
       source:
         "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2026).",
     },
-    {
-      ranking: "#16",
-      description: "MBA - BUSINESS ANALYTICS",
-      source:
-        "Best Online MBA - Business Analytics, No. 16 nationally (No. 1 in New Jersey) — U.S. News & World Report (2026).",
-    },
+    
     {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
@@ -130,16 +125,17 @@ const programData = {
       ranking: "#15",
       description: "FOR BEST VALUE",
       source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
-      note: "2",
+     
+    },
+    {
+      ranking: "#16",
+      description: "MBA - BUSINESS ANALYTICS",
+      source:
+        "Best Online MBA - Business Analytics, No. 16 nationally (No. 1 in New Jersey) — U.S. News & World Report (2026).",
     },
   ],
 
-  rankings_footnotes: [
-    {
-      note: "2",
-      text: "Based on the cost of a four-year bachelor's degree program.",
-    },
-  ],
+  
 
   career: {
     description: `<p class="mb-4">The Stevens Online MBA prepares you for leadership roles in New York City and other major business hubs where management talent is in high demand.</p><p class="mb-4">You’ll build strategic, analytical, and cross-functional skills for careers in finance, operations, marketing, and project leadership—within tech-forward organizations and beyond.</p><p>Through core, concentration, and elective coursework, you’ll strengthen decision-making, data-driven execution, and innovation to accelerate career growth.</p>`,

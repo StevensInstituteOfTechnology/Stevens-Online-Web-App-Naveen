@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 
 /**
  * RankingsSection - "By the Numbers" statistics grid
@@ -7,29 +7,50 @@ import React, { forwardRef } from "react";
  * Uses Stevens Design System colors and fonts from tailwind.config.js
  *
  * Layout:
- * - Desktop: Hero stat (40% left) + secondary stats in columns (60% right)
- * - Mobile: Vertical stack with horizontal dividers
+ * - Desktop (lg+): Single flex row. Hovered stat expands to ~40% with hero styling;
+ *   others share ~60%. First stat is default hero. Staggered transitions.
+ * - Mobile/Tablet (<lg): First stat is permanently the hero (full-width, top).
+ *   Remaining stats in a 2-column grid below with dividers.
  *
  * Features:
- * - First ranking becomes the "Hero Stat" with 2x larger typography
- * - Thin 1px light-gray dividers between columns
- * - Generous white space for premium feel
+ * - First ranking is the default "Active Stat" with hero typography
+ * - Desktop: hover any stat to promote it to active with smooth staggered transitions
+ * - Mobile: static layout, no hover interaction (touch devices)
+ * - On mouse leave (desktop), resets to first stat
  *
- * @param {Array} rankings - Array of ranking objects (first one becomes hero)
+ * @param {Array} rankings - Array of ranking objects (first one is default hero)
  * @param {string} rankings[].ranking - The main statistic
  * @param {string} rankings[].description - Short label (displayed uppercase)
  * @param {string} rankings[].source - Source citation
  * @param {string} rankings[].note - Optional footnote reference
  * @param {Array} footnotes - Optional array of footnote objects
  */
+
+// Detect desktop breakpoint (lg = 1024px) to gate hover behavior
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 1024 : true
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 1024px)");
+    const handler = (e) => setIsDesktop(e.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
+
+  return isDesktop;
+}
+
 export const RankingsSection = forwardRef(function RankingsSection(
   { rankings, footnotes },
   ref
 ) {
-  if (!rankings || rankings.length === 0) return null;
+  // Track which stat is currently "active" (hero-styled). Default: first stat.
+  const [activeIndex, setActiveIndex] = useState(0);
+  const isDesktop = useIsDesktop();
 
-  // Split rankings: first is hero, rest are secondary
-  const [heroStat, ...secondaryStats] = rankings;
+  if (!rankings || rankings.length === 0) return null;
 
   return (
     <section id="rankings" ref={ref} className="bg-white scroll-mt-20">
@@ -39,89 +60,184 @@ export const RankingsSection = forwardRef(function RankingsSection(
           BY THE NUMBERS
         </h2>
 
-        {/* Stats Grid - Vertical on mobile/tablet, Horizontal on desktop */}
-        <div className="flex flex-col lg:flex-row">
-          {/* Hero Stat - Top on mobile/tablet, Left Side (40%) on desktop */}
-          <div className="pb-stevens-xl px-stevens-lg lg:px-0 lg:pb-0 lg:w-[40%] lg:pr-stevens-lg lg:border-r lg:border-b-0 border-b border-stevens-gray/30 flex flex-col h-full min-h-[280px] lg:min-h-[320px]">
-            {/* Top accent bar */}
-            <div className="w-full h-1 bg-stevens-red mb-stevens-lg" />
+        {/* Stats Grid:
+            - Mobile/Tablet: 2-col grid, first stat spans both cols as hero
+            - Desktop: flex row with hover-driven active stat */}
+        <div
+          className="grid grid-cols-2 lg:flex lg:flex-row"
+          onMouseLeave={isDesktop ? () => setActiveIndex(0) : undefined}
+        >
+          {rankings.map((stat, index) => {
+            const isFirstStat = index === 0;
+            // Desktop: active = hovered stat; Mobile: active = first stat only
+            const isActive = isDesktop
+              ? index === activeIndex
+              : isFirstStat;
+            // Secondary stat index for mobile 2-col grid border logic
+            const secIndex = index - 1;
 
-            {/* Main Content Container */}
-            <div className="flex-grow">
-              {/* Hero Number - Dynamic font size based on container width */}
-              <p
-                className="font-stevens-display font-bold text-stevens-red leading-[0.85] tracking-tighter"
-                style={{ fontSize: "clamp(2.5rem, 10vw, 8rem)" }}
+            return (
+              <div
+                key={index}
+                onMouseEnter={
+                  isDesktop ? () => setActiveIndex(index) : undefined
+                }
+                className={`
+                  flex flex-col
+                  ${isDesktop ? "cursor-pointer" : ""}
+                  ${
+                    isFirstStat
+                      ? // Hero stat: full-width on mobile (col-span-2), border below on mobile
+                        "col-span-2 min-h-[280px] lg:min-h-[320px] pb-stevens-xl px-stevens-lg lg:pb-0 lg:px-0 border-b border-stevens-gray/30 lg:border-b-0"
+                      : // Secondary stat: single col on mobile
+                        "col-span-1 min-h-[200px] lg:min-h-[320px] px-stevens-lg py-stevens-lg lg:px-0 lg:py-0"
+                  }
+                  ${
+                    // Mobile: right-column items get left border
+                    !isFirstStat && secIndex % 2 === 1
+                      ? "border-l border-stevens-gray/30"
+                      : ""
+                  }
+                  ${
+                    // Mobile: second row+ items get top border
+                    !isFirstStat && secIndex >= 2
+                      ? "border-t border-stevens-gray/30 lg:border-t-0"
+                      : ""
+                  }
+                  ${
+                    // Desktop: all non-first stats get left border
+                    !isFirstStat ? "lg:border-l lg:border-stevens-gray/30" : ""
+                  }
+                `}
+                style={
+                  isDesktop
+                    ? {
+                        // Desktop flex layout: active expands, inactive shrinks
+                        flexGrow: isActive ? 2 : 1,
+                        flexShrink: 1,
+                        flexBasis: "0%",
+                        // Width transition — slowest layer (500ms) for staggered feel
+                        transition:
+                          "flex-grow 500ms cubic-bezier(0.4, 0, 0.2, 1), padding 400ms cubic-bezier(0.4, 0, 0.2, 1)",
+                        // Position-aware padding: first stat at edge needs no left padding;
+                        // middle/right stats need both sides for breathing room from dividers
+                        paddingLeft:
+                          isActive && isFirstStat ? "0" : "2rem",
+                        paddingRight: "2rem",
+                      }
+                    : undefined // Mobile: let Tailwind classes handle padding/layout
+                }
               >
-                {heroStat.ranking}
-              </p>
-
-              {/* Hero Label */}
-              <p className="font-stevens-headers text-stevens-xl md:text-stevens-2xl font-bold text-stevens-black uppercase tracking-wide mt-stevens-md">
-                {heroStat.description}
-              </p>
-            </div>
-
-            {/* Hero Source - Pinned to bottom */}
-            {heroStat.source && (
-              <p className="font-stevens-body text-stevens-sm text-stevens-dark-gray mt-auto pt-stevens-md leading-relaxed max-w-xs">
-                {heroStat.note && <sup className="mr-0.5">{heroStat.note}</sup>}
-                {heroStat.source}
-              </p>
-            )}
-          </div>
-
-          {/* Secondary Stats - Below on mobile/tablet, Right Side (60%) on desktop */}
-          <div className="lg:w-[60%] lg:mt-0 h-full">
-            {/* Mobile/Tablet: 2-column grid, Desktop: Flex row */}
-            <div className="grid grid-cols-2 lg:flex lg:flex-nowrap h-full">
-              {secondaryStats.map((stat, index) => (
+                {/* Top accent bar:
+                    - Desktop: red for active, gray for inactive (always visible)
+                    - Mobile: red for hero only, hidden for secondary */}
                 <div
-                  key={index}
-                  className={`
-                    flex flex-col flex-1 min-h-[200px] lg:min-h-[280px]
-                    px-stevens-lg lg:px-stevens-xl py-stevens-lg lg:py-0
-                    ${
-                      // Mobile/Tablet: 2-column grid borders
-                      index % 2 === 1 ? "border-l border-stevens-gray/30" : ""
-                    }
-                    ${
-                      // Mobile/Tablet: rows after first row get top border
-                      index >= 2 ? "border-t border-stevens-gray/30" : ""
-                    }
-                    ${
-                      // Desktop: all get left border
-                      "lg:border-l lg:border-t-0 border-stevens-gray/30"
-                    }
-                  `}
-                >
-                  {/* Top accent bar (desktop only, mobile uses border) */}
-                  <div className="hidden lg:block w-full h-1 bg-stevens-gray/30 mb-stevens-lg" />
+                  className={`w-full h-1 mb-stevens-lg ${
+                    !isFirstStat && !isDesktop ? "hidden" : ""
+                  }`}
+                  style={{
+                    backgroundColor: isActive
+                      ? "#a32638"
+                      : "rgba(127, 127, 127, 0.3)",
+                    transition: isDesktop
+                      ? "background-color 300ms ease"
+                      : "none",
+                  }}
+                />
 
-                  {/* Main Content Container */}
-                  <div className="flex-grow">
-                    {/* Secondary Number */}
-                    <p className="font-stevens-display text-stevens-5xl md:text-stevens-6xl lg:text-stevens-7xl font-bold text-stevens-black leading-[0.9] tracking-tight">
-                      {stat.ranking}
-                    </p>
+                {/* Main Content Container */}
+                <div className="flex-grow">
+                  {/* Stat Number — scales up and turns red when active */}
+                  <p
+                    className={`font-stevens-display font-bold leading-[0.85] tracking-tighter ${
+                      // Mobile secondary: use Tailwind responsive classes for font size
+                      !isDesktop && !isActive
+                        ? "text-stevens-5xl md:text-stevens-6xl text-stevens-black"
+                        : ""
+                    }`}
+                    style={
+                      isDesktop
+                        ? {
+                            // Desktop: inline font-size for smooth transitions
+                            fontSize: isActive
+                              ? "clamp(2.5rem, 10vw, 8rem)"
+                              : "4.5rem",
+                            color: isActive ? "#a32638" : "#000000",
+                            // Typography transition — middle layer (400ms)
+                            transition:
+                              "font-size 400ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms ease",
+                          }
+                        : isActive
+                          ? {
+                              // Mobile hero: large red number
+                              fontSize: "clamp(2.5rem, 10vw, 8rem)",
+                              color: "#a32638",
+                            }
+                          : {
+                              // Mobile secondary: color only, Tailwind handles size
+                              color: "#000000",
+                            }
+                    }
+                  >
+                    {stat.ranking}
+                  </p>
 
-                    {/* Secondary Label */}
-                    <p className="font-stevens-headers text-stevens-sm md:text-stevens-base font-bold text-stevens-black uppercase tracking-wide mt-stevens-sm leading-tight">
-                      {stat.description}
-                    </p>
-                  </div>
-
-                  {/* Secondary Source - Pinned to bottom */}
-                  {stat.source && (
-                    <p className="font-stevens-body text-stevens-xs text-stevens-dark-gray mt-auto pt-stevens-md leading-relaxed">
-                      {stat.note && <sup className="mr-0.5">{stat.note}</sup>}
-                      {stat.source}
-                    </p>
-                  )}
+                  {/* Stat Label */}
+                  <p
+                    className={`font-stevens-headers font-bold text-stevens-black uppercase tracking-wide leading-tight ${
+                      // Mobile: use Tailwind responsive classes for label sizing
+                      !isDesktop && isActive
+                        ? "text-stevens-xl md:text-stevens-2xl mt-stevens-md"
+                        : !isDesktop
+                          ? "text-stevens-sm md:text-stevens-base mt-stevens-sm"
+                          : ""
+                    }`}
+                    style={
+                      isDesktop
+                        ? {
+                            fontSize: isActive ? "1.5rem" : "1rem",
+                            marginTop: isActive ? "1rem" : "0.75rem",
+                            transition:
+                              "font-size 400ms cubic-bezier(0.4, 0, 0.2, 1), margin 400ms cubic-bezier(0.4, 0, 0.2, 1)",
+                          }
+                        : undefined // Mobile: Tailwind classes handle sizing
+                    }
+                  >
+                    {stat.description}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+
+                {/* Source - Pinned to bottom */}
+                {stat.source && (
+                  <p
+                    className={`font-stevens-body text-stevens-dark-gray mt-auto pt-stevens-md leading-relaxed ${
+                      // Mobile source sizing
+                      !isDesktop && isActive
+                        ? "text-stevens-sm max-w-xs"
+                        : !isDesktop
+                          ? "text-stevens-xs"
+                          : ""
+                    }`}
+                    style={
+                      isDesktop
+                        ? {
+                            fontSize: isActive ? "0.875rem" : "0.75rem",
+                            maxWidth: isActive ? "20rem" : "none",
+                            transition:
+                              "font-size 400ms cubic-bezier(0.4, 0, 0.2, 1), max-width 400ms ease",
+                          }
+                        : undefined // Mobile: Tailwind classes handle sizing
+                    }
+                  >
+                    {stat.note && (
+                      <sup className="mr-0.5">{stat.note}</sup>
+                    )}
+                    {stat.source}
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Footnotes */}
