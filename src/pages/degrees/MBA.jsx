@@ -112,16 +112,14 @@ const programData = {
       ranking: "#1",
       description: "ONLINE MBA IN N.J.",
       source:
-        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
+        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2026).",
     },
     {
-      ranking: "100%",
-      description: "EMPLOYMENT",
+      ranking: "#16",
+      description: "MBA - BUSINESS ANALYTICS",
       source:
-        "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.",
-      note: "1",
+        "Best Online MBA - Business Analytics, No. 16 nationally (No. 1 in New Jersey) — U.S. News & World Report (2026).",
     },
-
     {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
@@ -137,10 +135,6 @@ const programData = {
   ],
 
   rankings_footnotes: [
-    {
-      note: "1",
-      text: "Based on data from 82% of the 2021-2022 full-time program graduates.",
-    },
     {
       note: "2",
       text: "Based on the cost of a four-year bachelor's degree program.",

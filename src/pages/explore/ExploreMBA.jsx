@@ -45,10 +45,10 @@ const ExploreMBA = () => {
     // Statistics
     statistics: [
       {
-        number: "100%",
-        label: "Employment",
+        number: "No. 16",
+        label: "MBA - Business Analytics",
         description:
-          "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.¹",
+          "Best Online MBA - Business Analytics, No. 16 nationally (No. 1 in New Jersey) — U.S. News & World Report (2026).",
       },
       {
         number: "No. 15",
@@ -60,14 +60,9 @@ const ExploreMBA = () => {
         number: "No. 1",
         label: "Online MBA in N.J.",
         description:
-          "Stevens' Online MBA has been ranked No. 1 in New Jersey since 2015 (U.S. News & World Report, 2025).",
+          "Stevens' Online MBA has been ranked No. 1 in New Jersey since 2015 (U.S. News & World Report, 2026).",
       },
-      {
-        number: "No. 14",
-        label: "For Economic Return",
-        description:
-          "Stevens ranked No. 14 among top business schools for economic return by Georgetown University's Center on Education and the Workforce (2022).³",
-      },
+      
       {
         number: "#12",
         label: "For Best Career Placement",

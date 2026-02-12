@@ -115,27 +115,31 @@ const programData = {
   // ==================================================================
   rankings: [
     {
+      ranking: "No. 1",
+      description: "Online Graduate Engineering in N.J.",
+      source:
+        "Best Online Graduate Engineering, No. 1 in New Jersey  (No. 38 nationally) — U.S. News & World Report (2026).",
+    },
+    {
+      ranking: "7x",
+      description: "Winner",
+      source:
+        "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning.",
+    },
+    {
       ranking: "#12",
-      description: "For Best Career Placement",
+      description: "FOR BEST CAREER PLACEMENT",
       source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
-    {
-      ranking: "Top 15",
-      description: "For ROI",
-      source:
-        "Stevens ranks among the top 15 in the nation for ROI, according to U.S. News & World Report (2025).",
-    },
-    {
-      ranking: "99%",
-      description: "Employment",
-      source:
-        "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.",
-    },
+   
+   
+    
     {
       ranking: "#15",
-      description: "For Best Value",
-      source: "Payscale (2024).",
+      description: "FOR BEST VALUE",
+      source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
+     
     },
   ],
   videoSection: {

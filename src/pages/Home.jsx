@@ -474,24 +474,24 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
               >
                 <div>
-                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight ">
-                    #1
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
+                    #7
                   </p>
                   <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
-                    Online MBA
+                    Online Graduate
                     <br />
-                    from a New
+                    Engineering
                     <br />
-                    Jersey School
+                    Management
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  U.S. News & World Report 2025
+                  No. 1 in N.J. — U.S. News 2026
                 </p>
               </motion.div>
 
@@ -521,25 +521,29 @@ export default function Home() {
               </motion.div>
 
               {/* Stat 3 */}
+              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px]"
+                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
               >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
-                    #9
+                    #16
                   </p>
                   <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
-                    Among 'Best
+                    Online MBA
                     <br />
-                    ROI Colleges'
+                    Business
+                    <br />
+                    Analytics
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  Based on 4-year degree cost
+                  No. 1 in N.J. — U.S. News 2026
                 </p>
               </motion.div>
             </div>

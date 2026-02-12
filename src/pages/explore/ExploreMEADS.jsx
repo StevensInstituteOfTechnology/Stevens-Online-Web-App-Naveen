@@ -50,27 +50,10 @@ const ExploreMEADS = () => {
     // Statistics
     statistics: [
       {
-        number: "#12",
-        label: "For Best Career Placement",
+        number: "No. 1",
+        label: "Online Graduate Engineering in N.J.",
         description:
-          "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
-      },
-      {
-        number: "Top 10",
-        label: "For ROI",
-        description:
-          "Stevens ranks among the top 10 in the nation for ROI, according to U.S. News & World Report (2025).²",
-      },
-      {
-        number: "99%",
-        label: "Employment",
-        description:
-          "99% of MSCS graduates in the Class of 2023 accepted job offers within three months of graduating.",
-      },
-      {
-        number: "#15",
-        label: "For Best Value",
-        description: "Payscale (2024).",
+          "Best Online Graduate Engineering, No. 1 in New Jersey (No. 38 nationally) — U.S. News & World Report (2026).",
       },
       {
         number: "7x",
@@ -78,6 +61,20 @@ const ExploreMEADS = () => {
         description:
           "U.S. Distance Learning Association's 21st Century Award for Best Practices in Distance Learning.",
       },
+      {
+        number: "#12",
+        label: "For Best Career Placement",
+        description:
+          "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
+      },
+     
+      
+      {
+        number: "#15",
+        label: "For Best Value",
+        description: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
+      },
+      
     ],
 
     // Why Choose Stevens Section

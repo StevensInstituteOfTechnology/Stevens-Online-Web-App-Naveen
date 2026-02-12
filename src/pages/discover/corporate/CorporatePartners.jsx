@@ -346,7 +346,7 @@ const CorporatePartners = () => {
     {
       value: "#1",
       label: "Online MBA in New Jersey",
-      source: "U.S. News 2025",
+      source: "U.S. News 2026",
       icon: Award,
     },
     {

@@ -55,9 +55,9 @@ const ExploreMSCS = () => {
       },
       {
         number: "No. 1",
-        label: "In N.J.",
+        label: "In N.J. (11 Years)",
         description:
-          "Stevens is ranked No. 1 in New Jersey for Best Online Master's in Computer Information Technology Programs by U.S. News & World Report (2024).",
+          "Stevens is ranked No. 1 in New Jersey for Best Online Master's in Computer Information Technology Programs — 11 years in a row — by U.S. News & World Report (2026).",
       },
       {
         number: "7x",

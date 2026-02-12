@@ -96,29 +96,31 @@ const programData = {
   },
   rankings: [
     {
-      ranking: "No. 6",
+      ranking: "No. 11",
       description: "In the Nation",
       source:
-        "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025).",
+        "Recognized as the No. 11 Best Online Master's in Industrial (Systems) Engineering Program in the country by U.S. News & World Report (2026).",
+    },
+    {
+      ranking: "No. 1",
+      description: "In N.J.",
+      source:
+        "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2026).",
+    },
+    {
+      ranking: "#12",
+      description: "For Best Career Placement",
+      source:
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
     {
       ranking: "No. 15",
       description: "For Best Value",
       source: 'Ranks No. 15 among "Best Value Colleges" By Payscale (2024).',
     },
-    {
-      ranking: "#12",
-      description: "For Best Career Placement",
-      source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
-    },
+   
 
-    {
-      ranking: "No. 1",
-      description: "In N.J.",
-      source:
-        "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022).",
-    },
+    
   ],
   videoSection: {
     title: "Discover Your Future at Stevens",
