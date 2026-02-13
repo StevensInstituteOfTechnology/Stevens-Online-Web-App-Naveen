@@ -131,7 +131,8 @@
   "employerReimbursement": {
     "defaultAnnual": 5250,
     "irsLimit": 5250,
-    "description": "Most employers offer up to $5,250/year (IRS Section 127 limit)"
+    "maxAnnual": 20500,
+    "description": "Many employers offer $5,250–$20,500/year (IRS Section 127: $5,250 tax-free)"
   },
 
   "programRecommendations": {

@@ -391,7 +391,7 @@ const CorporateStudents = () => {
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/30">
                 <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
-                  $5,250
+                  Up to $20,500
                 </p>
                 <p className="text-sm text-white/90">
                   Tuition Reimbursement Aligned

@@ -247,6 +247,7 @@ export class DiscountCalculator {
       employerReimbursement: {
         defaultAnnual: discountConfig.employerReimbursement.defaultAnnual,
         irsLimit: discountConfig.employerReimbursement.irsLimit,
+        maxAnnual: discountConfig.employerReimbursement.maxAnnual ?? 5250,
         description: discountConfig.employerReimbursement.description
       }
     };

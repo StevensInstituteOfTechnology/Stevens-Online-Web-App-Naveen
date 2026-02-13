@@ -18,6 +18,7 @@ import {
   getProgramPricing,
 } from "@/utils/discountCalculator";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
+import { BOOKING_URLS, CONTACT_INFO } from "@/config/constants";
 
 /**
  * TuitionCalculatorBody
@@ -44,6 +45,8 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
   const discountInfo = getDiscountInfo();
   const programPricing = getProgramPricing(programCode);
   const isCertificate = programCode?.startsWith("cert-");
+  const maxReimbursement =
+    discountInfo?.employerReimbursement?.maxAnnual ?? 20500;
 
   // Calculate cost whenever inputs change
   useEffect(() => {
@@ -254,7 +257,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                   id="calc-reimbursement"
                   type="range"
                   min="0"
-                  max="5250"
+                  max={maxReimbursement}
                   step="250"
                   value={annualReimbursement || 0}
                   onChange={(e) =>
@@ -268,9 +271,9 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                     [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-stevens-red [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
                   style={{
                     background: `linear-gradient(to right, #A32638 0%, #A32638 ${
-                      ((annualReimbursement || 0) / 5250) * 100
+                      ((annualReimbursement || 0) / maxReimbursement) * 100
                     }%, #e5e7eb ${
-                      ((annualReimbursement || 0) / 5250) * 100
+                      ((annualReimbursement || 0) / maxReimbursement) * 100
                     }%, #e5e7eb 100%)`,
                   }}
                 />
@@ -280,7 +283,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
               <div className="flex justify-between mt-2 mb-3">
                 <span className="text-[11px] text-stevens-gray">$0</span>
                 <span className="text-[11px] text-stevens-gray">
-                  $5,250 (IRS Limit)
+                  ${maxReimbursement.toLocaleString()} max
                 </span>
               </div>
 
@@ -292,7 +295,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                 <Input
                   type="number"
                   min="0"
-                  max="5250"
+                  max={maxReimbursement}
                   step="250"
                   placeholder="0"
                   value={annualReimbursement}
@@ -300,7 +303,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                   onChange={(e) => {
                     const val = Math.min(
                       Math.max(0, parseInt(e.target.value) || 0),
-                      5250
+                      maxReimbursement
                     );
                     setAnnualReimbursement(val === 0 ? "" : String(val));
                   }}
@@ -458,11 +461,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                 <>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-lg font-semibold">
-                      {calculatedCost.steps.find(
-                        (s) => s.type === "reimbursement"
-                      )
-                        ? "YOUR FINAL COST"
-                        : "YOUR COST"}
+                      Estimated Cost
                     </span>
                     <span className="text-2xl md:text-3xl font-bold tabular-nums">
                       ${calculatedCost.finalPrice.toLocaleString()}
@@ -476,11 +475,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                 <>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-lg font-semibold">
-                      {calculatedCost.steps.find(
-                        (s) => s.type === "reimbursement"
-                      )
-                        ? "YOUR FINAL COST"
-                        : "YOUR COST"}
+                      Estimated Cost
                     </span>
                     <span className="text-2xl md:text-4xl font-bold tabular-nums">
                       ${calculatedCost.finalPrice.toLocaleString()}
@@ -517,8 +512,8 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                         Add your annual employer reimbursement
                       </p>
                       <p className="text-xs text-white/70">
-                        Most employers offer up to $
-                        {discountInfo.employerReimbursement.defaultAnnual.toLocaleString()}
+                        Many employers offer up to $
+                        {(discountInfo.employerReimbursement.maxAnnual ?? 20500).toLocaleString()}
                         /year
                       </p>
                     </div>
@@ -537,6 +532,25 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                   </div>
                 </div>
               )}
+
+              {/* Estimate disclaimer footer */}
+              <div className="mt-4 pt-4 border-t border-white/20">
+                <p className="text-xs text-white/70">
+                  Tuition estimates are based on current rates and are subject to
+                  change. Your official cost will be provided by our admissions
+                  team.{" "}
+                  <a
+                    href={BOOKING_URLS.SCHEDULE_CALL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white underline hover:text-white/90 transition-colors"
+                  >
+                    Schedule a call
+                  </a>{" "}
+                 {" "}
+                 to reach out for your official cost.
+                </p>
+              </div>
             </div>
           </div>
         ) : (
