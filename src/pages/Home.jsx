@@ -225,7 +225,11 @@ export default function Home() {
       // Load recent blog posts
       try {
         const blogsData = await import("@/data/blogs.json");
-        const recentBlogs = blogsData.posts.slice(0, 5);
+        const recentBlogs = blogsData.posts
+        .sort((a, b) => {
+          return new Date(b.created_date) - new Date(a.created_date);
+        })
+        .slice(0, 5);
         setBlogs(recentBlogs);
       } catch (error) {
         console.error("Error loading blogs:", error);
