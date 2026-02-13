@@ -192,7 +192,7 @@ export default function AcceleratedApplicationPage() {
     >
       <div className="bg-stevens-light-gray font-stevens-body">
         <PageHero
-          title="Accelerated Master's Application Requirements"
+          title="Accelerated Application"
           subtitle="Fast-Track Your Graduate Education at Stevens"
           bgImage="/assets/images/accelerated-application/accelerated-application-hero.webp"
         />

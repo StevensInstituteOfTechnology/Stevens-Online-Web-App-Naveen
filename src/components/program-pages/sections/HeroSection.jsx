@@ -1,6 +1,9 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { Calculator, ExternalLink } from "lucide-react";
 
 /**
  * HeroSection - Split-layout hero for Program and Certificate pages
@@ -25,6 +28,8 @@ import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
  * - sourcePage: Source page for analytics tracking
  * - variant: "degree" | "certificate" - affects styling
  * - theme: "light" | "dark" - theme for the form and nav (default: "light")
+ * - secondaryCta: { label, href } - secondary CTA button (e.g. "Apply In Minutes")
+ * - showTuitionCalculatorLink: boolean - whether to show the Tuition Calculator anchor link
  */
 export function HeroSection({
   programCode,
@@ -39,6 +44,8 @@ export function HeroSection({
   sourcePage,
   variant: _variant = "degree",
   theme = "light",
+  secondaryCta,
+  showTuitionCalculatorLink = false,
 }) {
   // Convert title to array if string
   const titleLines = Array.isArray(title) ? title : [title];
@@ -55,6 +62,7 @@ export function HeroSection({
     title: isDarkForm ? "text-white" : "text-stevens-black",
     subtitle: isDarkForm ? "text-gray-400" : "text-gray-600",
     divider: isDarkForm ? "bg-gray-700" : "bg-gray-300",
+    dividerBright: isDarkForm ? "bg-white/50" : "bg-gray-400",
   };
 
   // Text area styles (OPPOSITE of theme for mobile)
@@ -173,13 +181,13 @@ export function HeroSection({
               fetchPriority="high"
               loading="eager"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover xl:opacity-80"
+              className="absolute inset-0 w-full h-full object-cover "
               style={{ objectPosition: bgImagePosition }}
             />
           )}
 
           {/* Desktop-only: Gradient Overlay */}
-          <div className="hidden xl:block absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
+          <div className="hidden xl:block absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
 
           {/* Desktop-only: Text Content at bottom */}
           <div className="hidden xl:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
@@ -284,6 +292,74 @@ export function HeroSection({
               hideHeader={true}
               theme={theme}
             />
+
+            {/* "Or" Quick Actions - Below the form */}
+            {(secondaryCta || showTuitionCalculatorLink) && (
+              <div className="mt-stevens-lg">
+                {/* Divider with "Or" label */}
+                <div className="flex items-center gap-3 mb-stevens-md">
+                  <div
+                    className={`flex-1 h-px ${formAreaStyles.dividerBright}`}
+                  />
+                  <span
+                    className={`text-xs font-semibold uppercase tracking-widest ${formAreaStyles.subtitle}`}
+                  >
+                    Or
+                  </span>
+                  <div
+                    className={`flex-1 h-px ${formAreaStyles.dividerBright}`}
+                  />
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {secondaryCta && (
+                    <Button
+                      asChild
+                      variant="filled-red"
+                      className="flex-1 py-3 text-sm font-semibold bg-stevens-red text-white border-stevens-red "
+                    >
+                      <a
+                        href={secondaryCta.href}
+                        target={
+                          secondaryCta.href?.startsWith("http")
+                            ? "_blank"
+                            : undefined
+                        }
+                        rel={
+                          secondaryCta.href?.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        onClick={() =>
+                          trackConversion(CONVERSION_LABELS.APPLY_NOW)
+                        }
+                      >
+                 
+                        {secondaryCta.label || "Apply In Minutes"}
+                      </a>
+                    </Button>
+                  )}
+
+                  {showTuitionCalculatorLink && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      className={`flex-1 py-3 text-sm font-semibold transition-all duration-300 ${
+                        isDarkForm
+                          ? "bg-white text-stevens-black border-white hover:bg-transparent hover:border-white/40 hover:text-white"
+                          : "bg-stevens-dark-gray text-white border-stevens-dark-gray hover:bg-transparent hover:border-stevens-dark-gray hover:text-stevens-dark-gray"
+                      }`}
+                    >
+                      <a href="#tuition-calculator">
+                        <Calculator className="w-4 h-4 mr-2" />
+                        Tuition Calculator
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

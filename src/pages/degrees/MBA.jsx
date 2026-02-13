@@ -119,7 +119,7 @@ const programData = {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
       source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
     {
       ranking: "#15",

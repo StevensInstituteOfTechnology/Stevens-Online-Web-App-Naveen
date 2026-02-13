@@ -143,6 +143,8 @@ export function CertificateTemplate({
         formSubtitle="Get program details and start your application."
         variant="certificate"
         theme={theme}
+        secondaryCta={hero?.secondaryCta}
+        showTuitionCalculatorLink={!!tuitionCalculator}
       />
 
       {/* Sticky Navigation */}

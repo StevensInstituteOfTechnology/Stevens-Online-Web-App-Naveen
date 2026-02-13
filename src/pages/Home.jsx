@@ -750,7 +750,7 @@ export default function Home() {
 
                       {/* Quote Text */}
                       <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-white mb-8">
-                        Stevens Online empowers working professionals to advance
+                        Stevens College of Professional Education empowers working professionals to advance
                         their careers through flexible, industry-relevant
                         programs.
                       </blockquote>

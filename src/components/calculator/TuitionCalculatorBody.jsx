@@ -343,7 +343,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                     : "Standard Program Price"}
                 </span>
                 <span className="text-xl md:text-2xl font-bold text-stevens-dark-gray tabular-nums">
-                  ${calculatedCost.basePrice.toLocaleString()}
+                  ${calculatedCost.basePrice.toLocaleString()}*
                 </span>
               </div>
               {calculatedCost.credits.type === "fixed" && (
@@ -464,7 +464,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                       Estimated Cost
                     </span>
                     <span className="text-2xl md:text-3xl font-bold tabular-nums">
-                      ${calculatedCost.finalPrice.toLocaleString()}
+                      ${calculatedCost.finalPrice.toLocaleString()}*
                     </span>
                   </div>
                   <p className="text-xs text-white/70">
@@ -478,7 +478,7 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
                       Estimated Cost
                     </span>
                     <span className="text-2xl md:text-4xl font-bold tabular-nums">
-                      ${calculatedCost.finalPrice.toLocaleString()}
+                      ${calculatedCost.finalPrice.toLocaleString()}*
                     </span>
                   </div>
                   {!calculatedCost.steps.find(
@@ -536,9 +536,9 @@ export default function TuitionCalculatorBody({ programCode, onCostChange }) {
               {/* Estimate disclaimer footer */}
               <div className="mt-4 pt-4 border-t border-white/20">
                 <p className="text-xs text-white/70">
-                  Tuition estimates are based on current rates and are subject to
-                  change. Your official cost will be provided by our admissions
-                  team.{" "}
+                  * Tuition estimates are based on current rates and are
+                  subject to change. Your official cost will be provided by our
+                  admissions team.{" "}
                   <a
                     href={BOOKING_URLS.SCHEDULE_CALL}
                     target="_blank"

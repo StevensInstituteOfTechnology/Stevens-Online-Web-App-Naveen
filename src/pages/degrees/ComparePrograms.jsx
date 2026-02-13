@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -526,16 +526,26 @@ export default function ComparePrograms() {
             <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-16">
               Ready to discuss how our programs can help you achieve your goals?
             </h2>
-            <Button asChild variant="default">
-              <a
-                href={BOOKING_URLS.SCHEDULE_CALL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
-              >
-                Connect With Us
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild variant="default">
+                <a
+                  href={BOOKING_URLS.SCHEDULE_CALL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
+                >
+                  Connect With Us
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <Link
+                  to="/request-information/"
+                  onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+                >
+                  Request Information
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>

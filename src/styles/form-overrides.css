@@ -173,7 +173,7 @@
 #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
   width: 100% !important;
   padding: var(--form-padding-input) !important;
-  border: 1px solid #404040 !important; /* Subtle dark border */
+  border: 1px solid rgba(255, 255, 255, 0.35) !important; /* Brighter border for visibility */
   border-radius: var(--form-border-radius) !important;
   font-size: var(--form-font-size-input) !important;
   color: var(--form-text) !important;
@@ -266,7 +266,7 @@
   box-shadow: var(--form-shadow-button-active) !important;
 }
 
-/* Back Buttons - Ghost style for dark theme */
+/* Back Buttons - Ghost style for dark theme (brighter text & border) */
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button[type="button"],
 #form_f55a243b-abd6-45ea-8ff2-cd7f7af4d532 button:not([type="submit"]),
 #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c button[type="button"],
@@ -274,8 +274,8 @@
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
 #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
   background: transparent !important;
-  color: #999999 !important;
-  border: 1px solid #505050 !important;
+  color: #e5e5e5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
   padding: var(--form-padding-button) !important;
   border-radius: var(--form-border-radius-button) !important;
   font-size: var(--form-font-size-button) !important;

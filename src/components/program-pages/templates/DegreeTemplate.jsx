@@ -151,6 +151,8 @@ export function DegreeTemplate({
         formSubtitle="Take the next step in your career."
         variant="degree"
         theme={theme}
+        secondaryCta={hero?.secondaryCta}
+        showTuitionCalculatorLink={!!tuitionCalculator}
       />
 
       {/* Sticky Navigation */}
