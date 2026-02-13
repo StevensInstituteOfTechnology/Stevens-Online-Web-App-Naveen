@@ -152,7 +152,7 @@ const CorporateStudents = () => {
     },
     {
       icon: Users,
-      title: "Dedicated Corporate Support Team",
+      title: "Dedicated Corporate Care Team",
       description:
         "From application to graduation, our Corporate Care Advisors are your single point of contact.",
     },
@@ -566,6 +566,9 @@ const CorporateStudents = () => {
                       </span>
                       <span className="text-xs px-2 py-1 bg-stevens-light-gray text-stevens-dark-gray rounded">
                         Data Science
+                      </span>
+                      <span className="text-xs px-2 py-1 bg-stevens-light-gray text-stevens-dark-gray rounded">
+                        Artificial Intelligence
                       </span>
                     </div>
                   </div>

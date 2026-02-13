@@ -385,7 +385,7 @@ const CorporatePartners = () => {
     },
     {
       icon: Shield,
-      title: "Dedicated Corporate Support Team",
+      title: "Dedicated Corporate Care Team",
       description:
         "Receive one-on-one support from a corporate advisor who manages onboarding and student success.",
     },
@@ -418,7 +418,7 @@ const CorporatePartners = () => {
   const testimonials = [
     {
       quote:
-        "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously.",
+        "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously",
       author: "Kim Hanemann",
       title: "President and Chief Operating Officer, PSEG",
     },
