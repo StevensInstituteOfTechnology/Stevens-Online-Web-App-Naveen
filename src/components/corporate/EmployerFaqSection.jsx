@@ -10,10 +10,10 @@ const faqItems = [
           <li>The employer must provide a written plan.</li>
           <li>The plan can&apos;t offer other benefits besides education.</li>
           <li>The employee can&apos;t receive more than $5,250 per year from all employers combined.</li>
-          <li>The plan must not favor highly compensated employees (for 2020, that means those earning more than $130,000 in total compensation).</li>
+          <li>The plan must not favor highly compensated employees (for 2025, that means those earning more than $160,000 in total compensation).</li>
         </ul>
         <p>
-          You can find further details in the Educational Reimbursements and Allowances section of the{' '}
+          You can find further details in the Educational Assistance and Allowances section of the{' '}
           <a
             href="https://www.irs.gov/publications/p15b"
             target="_blank"
