@@ -26,7 +26,10 @@ const programData = {
       "Master machine learning, LLMs, and AI engineering. Turn data into intelligent systems that shape the future of technology.",
     bgImage: "/assets/images/meads/meads-hero.webp",
     primaryCta: { label: "Request Information", to: "RequestInfo" },
-    secondaryCta: { label: "Apply In Minutes", to: "accelerated-application" },
+    secondaryCta: {
+      label: "Apply In Minutes",
+      href: "/accelerated-application/?program=meads",
+    },
     tuitionCards: [
       { value: "$800", label: "Per Credit" },
       { value: "$24,000", label: "Total Program Cost" },

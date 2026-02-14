@@ -28,7 +28,7 @@ import { Calculator, ExternalLink } from "lucide-react";
  * - sourcePage: Source page for analytics tracking
  * - variant: "degree" | "certificate" - affects styling
  * - theme: "light" | "dark" - theme for the form and nav (default: "light")
- * - secondaryCta: { label, href } - secondary CTA button (e.g. "Apply In Minutes")
+ * - secondaryCta: { label, href?, to? } - secondary CTA button (e.g. "Apply In Minutes"). Use href for full URL, or to (e.g. "accelerated-application") + programCode to build link.
  * - showTuitionCalculatorLink: boolean - whether to show the Tuition Calculator anchor link
  */
 export function HeroSection({
@@ -313,33 +313,41 @@ export function HeroSection({
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  {secondaryCta && (
-                    <Button
-                      asChild
-                      variant="filled-red"
-                      className="flex-1 py-3 text-sm font-semibold bg-stevens-red text-white border-stevens-red "
-                    >
-                      <a
-                        href={secondaryCta.href}
-                        target={
-                          secondaryCta.href?.startsWith("http")
-                            ? "_blank"
-                            : undefined
-                        }
-                        rel={
-                          secondaryCta.href?.startsWith("http")
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                        onClick={() =>
-                          trackConversion(CONVERSION_LABELS.APPLY_NOW)
-                        }
+                  {secondaryCta && (() => {
+                    // Resolve href: use explicit href, or build from to + programCode
+                    const applyHref =
+                      secondaryCta.href ??
+                      (secondaryCta.to && programCode
+                        ? `/${String(secondaryCta.to).replace(/^\/+|\/+$/g, "")}/?program=${programCode}`
+                        : undefined);
+                    if (!applyHref) return null;
+                    return (
+                      <Button
+                        asChild
+                        variant="filled-red"
+                        className="flex-1 py-3 text-sm font-semibold bg-stevens-red text-white border-stevens-red "
                       >
-                 
-                        {secondaryCta.label || "Apply In Minutes"}
-                      </a>
-                    </Button>
-                  )}
+                        <a
+                          href={applyHref}
+                          target={
+                            applyHref.startsWith("http")
+                              ? "_blank"
+                              : undefined
+                          }
+                          rel={
+                            applyHref.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
+                          onClick={() =>
+                            trackConversion(CONVERSION_LABELS.APPLY_NOW)
+                          }
+                        >
+                          {secondaryCta.label || "Apply In Minutes"}
+                        </a>
+                      </Button>
+                    );
+                  })()}
 
                   {showTuitionCalculatorLink && (
                     <Button

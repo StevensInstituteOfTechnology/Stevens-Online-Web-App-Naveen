@@ -25,7 +25,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "/accelerated-application/",
+      href: "/accelerated-application/?program=mscs",
     },
   },
   quickFacts: {
