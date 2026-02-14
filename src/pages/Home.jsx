@@ -834,7 +834,7 @@ export default function Home() {
         <SupportEventsSection events={supportEvents} />
 
         {/* SARA Accreditation Logo Section */}
-        <section className="md:pb-20 bg-stevens-black">
+        <section className=" bg-stevens-white">
           {/* 80% width border */}
           <div className="w-[80%] mx-auto h-px bg-white/20 mb-[60px]" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
