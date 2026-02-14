@@ -23,6 +23,7 @@ import {
   Phone,
   Calendar,
   ExternalLink,
+  Check,
 } from "lucide-react";
 import {
   PageHero,
@@ -384,13 +385,13 @@ const CorporateStudents = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mb-stevens-xl">
               <div className="bg-white/5 rounded-lg p-5 border border-white/30">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
+                <p className="text-3xl font-bold text-stevens-white mb-1">
                   50+
                 </p>
                 <p className="text-sm text-white/90">Corporate Partners</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/30">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
+                <p className="text-3xl font-bold text-stevens-white mb-1">
                   Up to $20,500
                 </p>
                 <p className="text-sm text-white/90">
@@ -398,13 +399,13 @@ const CorporateStudents = () => {
                 </p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/30">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
+                <p className="text-3xl  font-bold text-stevens-white mb-1">
                   100%
                 </p>
                 <p className="text-sm text-white/90">Online & Flexible</p>
               </div>
               <div className="bg-white/5 rounded-lg p-5 border border-white/30">
-                <p className="text-3xl lg:text-4xl font-bold text-stevens-white mb-1">
+                <p className="text-3xl  font-bold text-stevens-white mb-1">
                   Top 20
                 </p>
                 <p className="text-sm text-white/90">Nationally Ranked</p>
@@ -476,12 +477,73 @@ const CorporateStudents = () => {
                     </p>
                   </div>
                 </div>
+                <Button
+                  asChild
+                  className="w-full mt-4 py-3 bg-stevens-red hover:bg-stevens-red/90 text-white font-semibold rounded-lg transition-colors"
+                >
+                  <Link
+                    to="/accelerated-application/"
+                    onClick={() =>
+                      trackConversion(CONVERSION_LABELS.APPLY_NOW)
+                    }
+                    className="flex items-center justify-center gap-2"
+                  >
+                    Apply in Minutes
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
+  );
+
+  // Step progress indicator for the questionnaire flow
+  const stepLabels = ["Career Focus", "Credential Type", "Your Programs"];
+  const StepIndicator = ({ currentStep }) => (
+    <div className="flex items-center justify-center mb-stevens-xl">
+      {stepLabels.map((label, index) => (
+        <React.Fragment key={label}>
+          {/* Step circle + label */}
+          <div className="flex flex-col items-center">
+            <div
+              className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
+                index < currentStep
+                  ? "bg-stevens-red text-white"
+                  : index === currentStep
+                  ? "bg-stevens-red text-white ring-4 ring-stevens-red/20"
+                  : "border-2 border-stevens-gray/30 text-stevens-gray"
+              }`}
+            >
+              {index < currentStep ? (
+                <Check className="w-4 h-4" />
+              ) : (
+                index + 1
+              )}
+            </div>
+            <span
+              className={`mt-2 text-xs font-medium whitespace-nowrap ${
+                index <= currentStep
+                  ? "text-stevens-red"
+                  : "text-stevens-gray"
+              }`}
+            >
+              {label}
+            </span>
+          </div>
+          {/* Connecting line between steps */}
+          {index < stepLabels.length - 1 && (
+            <div
+              className={`flex-1 h-0.5 mx-3 -mt-5 min-w-[3rem] max-w-[6rem] transition-colors duration-300 ${
+                index < currentStep ? "bg-stevens-red" : "bg-stevens-gray/20"
+              }`}
+            />
+          )}
+        </React.Fragment>
+      ))}
+    </div>
   );
 
   // Questionnaire Component
@@ -498,9 +560,6 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <Badge className="mb-stevens-md bg-stevens-red text-white border-none">
-                Step 1 of 2
-              </Badge>
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
@@ -509,6 +568,8 @@ const CorporateStudents = () => {
                 recommendations.
               </p>
             </div>
+            <StepIndicator currentStep={0} />
+            
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-stevens-lg">
               {/* Management Option */}
@@ -589,16 +650,6 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <button
-                onClick={() => setQuestionnaireStep(0)}
-                className="inline-flex items-center text-stevens-red hover:text-stevens-red mb-stevens-md transition-colors"
-              >
-                <ChevronLeft className="w-4 h-4 mr-1" />
-                Back
-              </button>
-              <Badge className="mb-stevens-md bg-stevens-red text-white border-none ml-4">
-                Step 2 of 2
-              </Badge>
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
@@ -607,6 +658,9 @@ const CorporateStudents = () => {
                 certificate.
               </p>
             </div>
+            <StepIndicator currentStep={1} />
+            
+            
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Master's Degree Option */}
@@ -679,17 +733,6 @@ const CorporateStudents = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="text-center mb-stevens-xl">
-              <button
-                onClick={() => setQuestionnaireStep(1)}
-                className="inline-flex items-center text-stevens-red hover:text-stevens-red mb-stevens-md transition-colors"
-              >
-                <ChevronLeft className="w-4 h-4 mr-1" />
-                Back
-              </button>
-              <Badge className="mb-stevens-md bg-stevens-red text-white border-none ml-4">
-                <CheckCircle className="w-3 h-3 mr-1" />
-                Personalized Recommendations
-              </Badge>
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
                 Find Your Perfect Program
               </h2>
@@ -708,6 +751,9 @@ const CorporateStudents = () => {
                 </span>
               </p>
             </div>
+            <StepIndicator currentStep={2} />
+            
+            
 
             <div
               className={`grid gap-stevens-lg ${
@@ -932,7 +978,7 @@ const CorporateStudents = () => {
         {/* Program Selection Questionnaire */}
         <section
           id="programs-section"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <motion.div
@@ -1372,6 +1418,8 @@ const CorporateStudents = () => {
                   <span className="font-medium">Pfizer</span>
                   <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">Verizon</span>
+                  <span className="text-stevens-light-gray0">•</span>
+                  <span className="font-medium">PSEG</span>
                   <span className="text-stevens-light-gray0">•</span>
                   <span className="font-medium">JPMorgan Chase</span>
                   <span className="text-stevens-light-gray0">•</span>

@@ -449,7 +449,7 @@ export default function Home() {
                 <br />
                 Graduate Earnings
               </h2>
-              <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mb-4">
+              <p className="text-[24px] sm:text-xs text-stevens-white uppercase italic tracking-wider mb-4">
                 U.S. Dept. of Education 2025
               </p>
               <a
@@ -494,7 +494,7 @@ export default function Home() {
                     Management
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. — U.S. News 2026
                 </p>
               </motion.div>
@@ -519,7 +519,7 @@ export default function Home() {
                     Award
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   USDLA Distance Learning
                 </p>
               </motion.div>
@@ -546,7 +546,7 @@ export default function Home() {
                     Analytics
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. — U.S. News 2026
                 </p>
               </motion.div>
@@ -791,7 +791,7 @@ export default function Home() {
                     <img
                       src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed - Dean of College of Professional Education"
-                      className="w-full h-[418px] transform skew-y-3 scale-110"
+                      className="w-full h-[455px] transform skew-y-3 scale-110"
                       loading="lazy"
                     />
                   </div>
