@@ -27,7 +27,7 @@ const TopicList = ({ posts }) => {
     "Engineering Management",
   );
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
+  const pageSize = 9;
   const navigate = useNavigate();
 
   const categories = [
@@ -88,24 +88,24 @@ const TopicList = ({ posts }) => {
   };
 
   return (
-    <div>
+    <div className="bg-stevens-black">
       {/* Hero Section */}
-      <section className="bg-stevens-white py-stevens-3xl">
-        <div className="max-w-7xl mx-auto px-stevens-md">
+      <section className="bg-stevens-black py-stevens-3xl">
+        <div className="max-w-7xl mx-auto px-stevens-md mt-stevens-lg">
           <div className="text-center">
-            <h1 className="font-stevens-display text-stevens-hero text-stevens-red mb-stevens-lg">
+            <h1 className="font-stevens-display text-stevens-hero text-white mb-stevens-lg">
               Essential Insights for Engineering Management
             </h1>
 
             <div className="max-w-6xl mx-auto space-y-stevens-md text-left">
-              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
+              <p className="text-stevens-lg text-white/80 leading-relaxed">
                 Engineering Management is a complex and challenging field
                 requiring unique skills and knowledge. Our Engineering
                 Essentials articles provide valuable resources for professionals
                 looking to develop their leadership and management skills in
                 this industry.
               </p>
-              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed">
+              <p className="text-stevens-lg text-white/80 leading-relaxed">
                 In these articles, you will find a range of essential insights
                 and strategies for managing complex engineering projects,
                 building high-performing teams and developing innovative
@@ -119,21 +119,21 @@ const TopicList = ({ posts }) => {
       </section>
 
       {/* Categories Section */}
-      <section className="bg-stevens-white py-stevens-xl">
+      <section className="bg-stevens-black py-12">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <div className="flex flex-col items-center">
-            <h2 className="font-stevens-display text-stevens-2xl text-stevens-red mb-stevens-lg">
+            <h1 className="font-stevens-display text-stevens-hero text-white mb-stevens-2xl">
               Categories:
-            </h2>
-            <div className="flex flex-wrap justify-center gap-stevens-sm">
+            </h1>
+            <div className="flex flex-wrap justify-center gap-4">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className={`px-stevens-md py-stevens-sm text-stevens-sm font-medium border border-stevens-light-gray bg-stevens-white text-stevens-dark-gray hover:border-stevens-red hover:text-stevens-red transition-all duration-stevens-normal ${
+                  className={`px-5 py-3 text-base font-medium border transition-all duration-stevens-normal ${
                     selectedCategory === category
-                      ? "border-stevens-red text-stevens-red bg-stevens-light-gray"
-                      : "hover:bg-stevens-light-gray"
+                      ? "border-stevens-red text-stevens-red bg-white/10"
+                      : "border-white/30 text-white/80 hover:border-stevens-red hover:text-stevens-red"
                   }`}
                 >
                   {category}
@@ -145,7 +145,7 @@ const TopicList = ({ posts }) => {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="bg-stevens-white py-stevens-3xl">
+      <section className="bg-stevens-black py-stevens-3xl">
         <div className="max-w-7xl mx-auto px-stevens-md">
           <BlogList
             posts={visiblePosts}
@@ -156,6 +156,8 @@ const TopicList = ({ posts }) => {
           />
         </div>
       </section>
+      {/* Divider */}
+      <div className="border-t border-white/20 mt-12 pt-12 bg-stevens-black"></div>
     </div>
   );
 };
