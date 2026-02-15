@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -31,25 +31,27 @@ export default function ComparePrograms() {
 
   // Read ?filter= from URL (masters | certificates) for ProgramFilterGrid
   const [searchParams] = useSearchParams();
+  const location = useLocation();
   const filterFromUrl = searchParams.get("filter") || null;
   const initialFilter =
     filterFromUrl === "masters" || filterFromUrl === "certificates"
       ? filterFromUrl
       : null;
 
-  // Handle hash navigation (scroll to section if hash is present in URL)
+  // Handle hash navigation: scroll to #explore-programs when URL hash/params change
+  // (e.g. footer "Master's Degrees" / "Graduate Certificates" links when already on compare page)
   useEffect(() => {
-    const hash = window.location.hash;
+    const hash = location.hash || window.location.hash;
     if (hash) {
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
+      return () => clearTimeout(timeoutId);
     }
-  }, []);
+  }, [location.search, location.hash]);
 
   // Set SEO meta tags
   useEffect(() => {
@@ -211,7 +213,7 @@ export default function ComparePrograms() {
         {/* Explore Our Programs */}
         <div
           id="explore-programs"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray/10"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray/10 scroll-mt-24"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">

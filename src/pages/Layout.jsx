@@ -688,12 +688,36 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                 <Link
                   to="/compare-our-programs/?filter=masters#explore-programs"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  onClick={(e) => {
+                    const isSame =
+                      location.pathname.includes("compare-our-programs") &&
+                      location.search === "?filter=masters" &&
+                      location.hash === "#explore-programs";
+                    if (isSame) {
+                      e.preventDefault();
+                      document
+                        .getElementById("explore-programs")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                 >
                   Master&apos;s Degrees
                 </Link>
                 <Link
                   to="/compare-our-programs/?filter=certificates#explore-programs"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  onClick={(e) => {
+                    const isSame =
+                      location.pathname.includes("compare-our-programs") &&
+                      location.search === "?filter=certificates" &&
+                      location.hash === "#explore-programs";
+                    if (isSame) {
+                      e.preventDefault();
+                      document
+                        .getElementById("explore-programs")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                 >
                   Graduate Certificates
                 </Link>
