@@ -124,6 +124,35 @@ const programShowcaseData = [
   },
 ];
 
+// Framer Motion variants for hero typewriter effect
+const heroTypewriterContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.6,
+    },
+  },
+};
+
+const heroTypewriterChar = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.1, ease: "easeOut" },
+  },
+};
+
+const heroFadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Home() {
   usePageTracking({
     pageType: "home",
@@ -140,6 +169,7 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
+  const [heroTitleComplete, setHeroTitleComplete] = useState(false); // Triggers subtitle/button when title typewriter finishes
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
@@ -324,22 +354,59 @@ export default function Home() {
           <div className="relative h-full w-full px-6 pb-16 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
             <div className="max-w-2xl text-right">
-              <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
-                Move your
-                <br />
-                career forward
-              </h1>
-              <p className="font-stevens-body text-base md:text-xl text-stevens-white mb-6">
-                A flexible, tailored education that drives competitive advantage
-              </p>
-              <Link
-                to="/request-information/"
-                onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+              {/* Typewriter stagger animation on hero heading */}
+              <motion.h1
+                className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white"
+                variants={heroTypewriterContainer}
+                initial="hidden"
+                animate="visible"
+                onAnimationComplete={() => setHeroTitleComplete(true)}
               >
-                <Button variant="outline-red" className="uppercase">
-                  Request Information
-                </Button>
-              </Link>
+                {"Move your".split("").map((char, i) => (
+                  <motion.span
+                    key={`line1-${i}`}
+                    variants={heroTypewriterChar}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                <br />
+                {"career forward".split("").map((char, i) => (
+                  <motion.span
+                    key={`line2-${i}`}
+                    variants={heroTypewriterChar}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+              {/* Subtitle fades in only after title typewriter completes */}
+              <motion.p
+                className="font-stevens-body text-base md:text-xl text-stevens-white mb-6"
+                variants={heroFadeInUp}
+                initial="hidden"
+                animate={heroTitleComplete ? "visible" : "hidden"}
+              >
+                A flexible, tailored education that drives competitive advantage
+              </motion.p>
+              {/* Button fades in after subtitle */}
+              <motion.div
+                variants={heroFadeInUp}
+                initial="hidden"
+                animate={heroTitleComplete ? "visible" : "hidden"}
+                transition={{ delay: 0.25 }}
+              >
+                <Link
+                  to="/request-information/"
+                  onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+                >
+                  <Button variant="outline-red" className="uppercase">
+                    Request Information
+                  </Button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
