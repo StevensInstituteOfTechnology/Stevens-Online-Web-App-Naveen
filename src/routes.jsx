@@ -261,14 +261,18 @@ export const routes = [
     element: <CertificateAppliedDataScience />,
   },
 
-  // Compare Programs
+  // Explore Programs (formerly Compare Programs)
   {
-    path: "/compare-our-programs/",
+    path: "/explore-programs/",
     element: <ComparePrograms />,
   },
   {
+    path: "/compare-our-programs/",
+    element: <Navigate to="/explore-programs/" replace />,
+  },
+  {
     path: "/ComparePrograms",
-    element: <Navigate to="/compare-our-programs/" replace />,
+    element: <Navigate to="/explore-programs/" replace />,
   },
 
   // Events

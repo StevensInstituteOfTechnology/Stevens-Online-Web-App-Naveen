@@ -636,7 +636,7 @@ export default function Home() {
                 </p>
                 <Link
                   to={
-                    createPageUrl("compare-our-programs/") + "#explore-programs"
+                    createPageUrl("explore-programs/") + "#explore-programs"
                   }
                 >
                   <Button
@@ -671,7 +671,7 @@ export default function Home() {
 
                   {/* Compare Programs - Slim Vertical Link */}
                   <a
-                    href="/compare-our-programs/#compare-programs"
+                    href="/explore-programs/#compare-programs"
                     className="flex-shrink-0 w-[120px] snap-start group"
                   >
                     <motion.div

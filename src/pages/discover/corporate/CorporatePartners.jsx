@@ -929,7 +929,7 @@ const CorporatePartners = () => {
 
                     {/* CTA Button to Explore Programs */}
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
-                      <Link to="/compare-our-programs/#explore-programs">
+                      <Link to="/explore-programs/#explore-programs">
                         <Button variant="default" className="gap-2">
                           <GraduationCap className="w-5 h-5" />
                           Explore Our Programs

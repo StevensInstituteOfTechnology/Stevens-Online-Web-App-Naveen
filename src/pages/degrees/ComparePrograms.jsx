@@ -64,7 +64,7 @@ export default function ComparePrograms() {
       description:
         "Explore Stevens' online graduate degrees and certificates. Compare programs, estimate tuition with our calculator, and find the right fit for your career goals.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
-      url: buildCanonicalUrl("/compare-our-programs/"),
+      url: buildCanonicalUrl("/explore-programs/"),
       type: "website",
     });
   }, []);

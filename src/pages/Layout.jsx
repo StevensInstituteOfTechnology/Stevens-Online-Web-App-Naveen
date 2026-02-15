@@ -93,18 +93,18 @@ const megaMenuCertificateItems = [...certificateProgramItems];
 
 // Mega menu navigation structure (used in both desktop and mobile)
 const megaMenuLinks = [
-  { name: "All Programs", page: "compare-our-programs/" },
+  { name: "All Programs", page: "explore-programs/" },
   {
     name: "Degrees",
     isDropdown: true,
     items: megaMenuDegreeItems,
-    categoryLink: "/compare-our-programs/?filter=masters#explore-programs",
+    categoryLink: "/explore-programs/?filter=masters#explore-programs",
   },
   {
     name: "Certificates",
     isDropdown: true,
     items: megaMenuCertificateItems,
-    categoryLink: "/compare-our-programs/?filter=certificates#explore-programs",
+    categoryLink: "/explore-programs/?filter=certificates#explore-programs",
   },
   {
     name: "Admissions & Aid",
@@ -686,11 +686,11 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
               </h3>
               <div className="space-y-2">
                 <Link
-                  to="/compare-our-programs/?filter=masters#explore-programs"
+                  to="/explore-programs/?filter=masters#explore-programs"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                   onClick={(e) => {
                     const isSame =
-                      location.pathname.includes("compare-our-programs") &&
+                      location.pathname.includes("explore-programs") &&
                       location.search === "?filter=masters" &&
                       location.hash === "#explore-programs";
                     if (isSame) {
@@ -704,11 +704,11 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                   Master&apos;s Degrees
                 </Link>
                 <Link
-                  to="/compare-our-programs/?filter=certificates#explore-programs"
+                  to="/explore-programs/?filter=certificates#explore-programs"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                   onClick={(e) => {
                     const isSame =
-                      location.pathname.includes("compare-our-programs") &&
+                      location.pathname.includes("explore-programs") &&
                       location.search === "?filter=certificates" &&
                       location.hash === "#explore-programs";
                     if (isSame) {

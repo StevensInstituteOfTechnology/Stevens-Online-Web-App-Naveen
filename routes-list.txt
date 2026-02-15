@@ -38,7 +38,7 @@ Explore Certificate Pages
 
 Other Pages
 -----------
-/compare-our-programs/
+/explore-programs/
 /events/
 /professionaleducation/
 /online-learning-experience/
