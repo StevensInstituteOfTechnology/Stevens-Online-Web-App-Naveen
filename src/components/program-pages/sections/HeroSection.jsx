@@ -123,7 +123,7 @@ export function HeroSection({
         {tuitionCards.map((card, index) => (
           <div
             key={index}
-            className="bg-white/20 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-white/30 hover:border-white/80 hover:scale-105 cursor-default"
+            className="bg-stevens-white/40 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-stevens-black/80 hover:border-white/80 hover:scale-105 cursor-default"
           >
             <div
               className="text-2xl xl:text-3xl font-bold text-white"

@@ -1,5 +1,4 @@
 import { CertificateTemplate } from "../../components/program-pages/templates";
-import { TuitionCardsHero } from "../../components/program-pages/primitives";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
@@ -30,6 +29,10 @@ const programData = {
       label: "Apply In Minutes",
       href: "/accelerated-application/?program=cert-ads",
     },
+    tuitionCards: [
+      { value: "$5,250", label: "Total Certificate Cost" },
+      { value: "$583", label: "Per Credit" },
+    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)
@@ -512,12 +515,6 @@ export default function CertificateAppliedDataSciencePage() {
     },
   });
 
-  // Add bottomContent to hero for certificate pages
-  const heroWithTuitionCards = {
-    ...programData.hero,
-    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
-  };
-
   return (
     <PageContextProvider
       pageType="program"
@@ -529,7 +526,7 @@ export default function CertificateAppliedDataSciencePage() {
         programType="certificate"
       >
         <CertificateTemplate
-          programData={{ ...programData, hero: heroWithTuitionCards }}
+          programData={programData}
           theme="dark"
         />
       </ProgramContextProvider>
