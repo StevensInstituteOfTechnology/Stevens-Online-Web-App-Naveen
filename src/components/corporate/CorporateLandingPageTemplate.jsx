@@ -27,12 +27,14 @@ import { Check, Building, Users, BookOpen } from 'lucide-react';
  * @param {Array} props.programDetails - Array of program content sections
  * @param {Object} props.pricing - Pricing information object
  * @param {React.ReactNode} props.customContent - Additional custom content
+ * @param {boolean} props.heroImageFlip - Flip hero background image horizontally
  */
 export default function CorporateLandingPageTemplate({
     partnerName,
     heroTitle,
     heroSubtitle,
     heroImage,
+    heroImageFlip = false,
     heroPrimaryCta,
     heroSecondaryCta,
     formConfig,
@@ -86,7 +88,7 @@ export default function CorporateLandingPageTemplate({
             <PageHero
                 title={
                     <div className="flex flex-col gap-4">
-                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-black text-white text-2xl font-light tracking-wide uppercase shadow-md border border-white/20">
+                        <span className="inline-block w-fit px-10 py-3 rounded-full bg-stevens-red text-white text-xl font-light tracking-wide uppercase shadow-md border border-white/20">
                             A Stevens × {partnerName} Partnership
                         </span>
                         <span>{heroTitle}</span>
@@ -94,11 +96,12 @@ export default function CorporateLandingPageTemplate({
                 }
                 subtitle={heroSubtitle}
                 bgImage={heroImage}
+                bgImageFlip={heroImageFlip}
                 className="min-h-[500px]"
                 primaryCta={effectiveHeroPrimaryCta}
                 secondaryCta={heroSecondaryCta}
                 primaryButtonClassName="text-[1.3em] px-[31px] py-[21px] min-h-[57px]"
-                secondaryButtonClassName="text-[1.3em] px-[31px] py-[21px] min-h-[57px]"
+                secondaryButtonClassName="text-white text-[1.3em] px-[31px] py-[21px] min-h-[57px]"
             />
 
             <div className="max-w-stevens-content-max mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl py-stevens-section-sm lg:py-stevens-section relative z-10">
@@ -155,25 +158,25 @@ export default function CorporateLandingPageTemplate({
 
                             {/* Pricing Section */}
                             {pricing && (
-                                <Card className="bg-stevens-light-gray border-stevens-light-gray">
+                                <Card className="bg-stevens-dark-gray border-stevens-dark-gray">
                                     <CardHeader>
-                                        <CardTitle className="flex items-center gap-2 font-stevens-display font-light uppercase tracking-wide">
-                                            <Users className="w-6 h-6 text-stevens-black" />
+                                        <CardTitle className="flex items-center gap-2 font-stevens-display font-light uppercase tracking-wide text-white">
+                                            <Users className="w-6 h-6 text-stevens-red" />
                                             Tuition & Billing
                                         </CardTitle>
                                     </CardHeader>
                                     <CardContent className="space-y-4">
                                         <div className="grid md:grid-cols-2 gap-6">
                                             {pricing.items.map((item, index) => (
-                                                <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                                                    <p className="text-sm text-stevens-gray uppercase tracking-wide font-semibold">{item.label}</p>
-                                                    <p className="text-2xl font-light text-stevens-black mt-1">{item.value}</p>
-                                                    {item.note && <p className="text-xs text-stevens-dark-gray mt-2 italic">{item.note}</p>}
+                                                <div key={index} className="bg-white/10 p-4 rounded-lg shadow-sm border border-white/20">
+                                                    <p className="text-sm text-stevens-light-gray uppercase tracking-wide font-semibold">{item.label}</p>
+                                                    <p className="text-2xl font-light text-white mt-1">{item.value}</p>
+                                                    {item.note && <p className="text-xs text-white/80 mt-2 italic">{item.note}</p>}
                                                 </div>
                                             ))}
                                         </div>
                                         {pricing.description && (
-                                            <p className="text-sm text-stevens-dark-gray mt-4 border-t pt-4 border-stevens-light-gray">
+                                            <p className="text-sm text-stevens-light-gray mt-4 border-t pt-4 border-white/20">
                                                 {pricing.description}
                                             </p>
                                         )}

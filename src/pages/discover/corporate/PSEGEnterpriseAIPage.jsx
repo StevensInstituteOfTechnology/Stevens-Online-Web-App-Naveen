@@ -27,8 +27,9 @@ export default function PSEGEnterpriseAIPage() {
       content:
         "<p>The program consists of three core courses delivered 100% online:</p>",
       items: [
-        "BIA 568 – Management of AI Technologies",
+        
         "BIA 662 – Augmented Intelligence & GenAI",
+        "BIA 568 – Management of AI Technologies",
         "PE 810 – Applied AI for Business",
       ],
     },
