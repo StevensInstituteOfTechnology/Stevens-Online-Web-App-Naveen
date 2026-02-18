@@ -140,7 +140,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
       <section
         id="admissions"
         ref={ref}
-        className="scroll-mt-20 relative bg-white" // Full-width white background
+        className="scroll-mt-20 relative bg-white " // Full-width white background
       >
         {/* Section Title */}
         <div className="bg-white py-12">
@@ -279,7 +279,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
       <section
         id="admissions"
         ref={ref}
-        className="scroll-mt-20 relative bg-white"
+        className="scroll-mt-20 relative bg-white pb-16"
       >
         {/* Section Title */}
         <div className="py-12">
