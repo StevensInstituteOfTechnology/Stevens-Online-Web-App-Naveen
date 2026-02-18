@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 /**
@@ -7,8 +7,8 @@ import { ChevronDown } from "lucide-react";
  * Design: Modern card layout with:
  * - Course code as red pill badge
  * - Course name as bold title
- * - Credits badge on the right
- * - 2-line description preview with "Read More" toggle
+ * - Credits badge on the left of description (visible only when expanded)
+ * - Badge and description hidden until expand arrow is clicked
  * - Smooth expand/collapse animation
  *
  * Supports two variants:
@@ -38,168 +38,158 @@ export const CourseCard = ({
   defaultOpen = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultOpen);
-  const [hasExpandableContent, setHasExpandableContent] = useState(false);
-  const descriptionRef = useRef(null);
 
-  // Measure if description exceeds 2 lines
-  useEffect(() => {
-    if (variant === "degree" && course.description && descriptionRef.current) {
-      const element = descriptionRef.current;
-      // Temporarily remove line-clamp to measure full height
-      const wasClamped = element.classList.contains('line-clamp-2');
-      if (wasClamped) {
-        element.classList.remove('line-clamp-2');
-      }
-      
-      const fullHeight = element.scrollHeight;
-      const lineHeight = parseFloat(getComputedStyle(element).lineHeight) || 24;
-      const twoLineHeight = lineHeight * 2;
-      
-      if (wasClamped) {
-        element.classList.add('line-clamp-2');
-      }
-      
-      // Show toggle if content exceeds 2 lines or has a note
-      setHasExpandableContent(fullHeight > twoLineHeight || course.note);
-    } else if (variant === "certificate") {
-      setHasExpandableContent(
-        course.faculty ||
-        course.focus ||
-        course.whatYouDo ||
-        course.topics?.length ||
-        course.modules ||
-        course.labs ||
-        course.practice ||
-        course.project ||
-        course.deliverable
-      );
-    }
-  }, [course, variant]);
+  const hasExpandableContent =
+    variant === "degree"
+      ? !!(course.description || course.note)
+      : !!(
+          course.faculty ||
+          course.focus ||
+          course.whatYouDo ||
+          course.topics?.length ||
+          course.modules ||
+          course.labs ||
+          course.practice ||
+          course.project ||
+          course.deliverable
+        );
 
   return (
     <div className="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6">
       {/* Card Header */}
-      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+      <div className="flex flex-wrap items-start justify-between gap-4">
         {/* Left: Course Code Badge + Title */}
         <div className="flex flex-wrap items-center gap-3 flex-1">
-          {/* Course Code Badge */}
           {course.code && (
             <span className="inline-flex items-center px-3 py-1 text-sm font-semibold bg-stevens-red text-white rounded-full whitespace-nowrap">
               {course.code}
             </span>
           )}
-          {/* Course Name */}
           <h4 className="font-stevens-display text-lg md:text-xl font-bold text-stevens-dark-gray">
             {course.name}
           </h4>
         </div>
 
-        {/* Right: Credits Badge */}
-        {course.credits && (
-          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-gray-100 text-stevens-dark-gray rounded-full whitespace-nowrap border border-gray-200">
-            {course.credits} {course.credits === 1 ? "Credit" : "Credits"}
-          </span>
+        {/* Right: Expand/collapse arrow icon */}
+        {hasExpandableContent && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 text-stevens-dark-gray transition-colors duration-200"
+            aria-expanded={isExpanded}
+            aria-label={isExpanded ? "Collapse" : "Expand"}
+          >
+            <ChevronDown
+              className={`w-5 h-5 transition-transform duration-300 ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+            />
+          </button>
         )}
       </div>
 
-      {/* Description Preview (always visible) - 2 lines when collapsed */}
-      {variant === "degree" && course.description && (
-        <p
-          ref={descriptionRef}
-          className={`text-stevens-dark-gray leading-relaxed mb-3 ${
-            !isExpanded ? "line-clamp-2" : ""
-          }`}
-        >
-          {course.description}
-        </p>
-      )}
-
-      {/* Certificate Preview (always visible) - 2 lines when collapsed */}
-      {variant === "certificate" && course.focus && (
-        <p
-          className={`text-stevens-dark-gray leading-relaxed mb-3 ${
-            !isExpanded ? "line-clamp-2" : ""
-          }`}
-        >
-          {course.focus}
-        </p>
-      )}
-
-      {/* Expanded Content for Certificate Variant */}
-      {variant === "certificate" && isExpanded && (
-        <div className="space-y-3 mt-4 pt-4 border-t border-gray-200 animate-in fade-in slide-in-from-top-2 duration-300">
-          {course.faculty && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Faculty:
-              </strong>{" "}
-              {course.faculty}
-            </p>
-          )}
-          {course.whatYouDo && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                What You'll Do:
-              </strong>{" "}
-              {course.whatYouDo}
-            </p>
-          )}
-          {course.topics && course.topics.length > 0 && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Topics:
-              </strong>{" "}
-              {course.topics.join(", ")}
-            </p>
-          )}
-          {course.modules && (
-            <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Modules:
-              </strong>
-              {Array.isArray(course.modules) ? (
-                <ol className="list-decimal ml-5 mt-2 space-y-1">
-                  {course.modules.map((mod, i) => (
-                    <li key={i}>{mod}</li>
-                  ))}
-                </ol>
-              ) : (
-                <span> {course.modules}</span>
-              )}
+      {/* Expanded content: Credits badge on left, description on right (only visible after Read More) */}
+      {isExpanded && (
+        <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-200 animate-in fade-in slide-in-from-top-2 duration-300">
+          {/* Left: Credits Badge */}
+          {course.credits && (
+            <div className="flex-shrink-0 flex flex-col items-center justify-center w-20 py-3 px-4 bg-gray-50 rounded-lg border border-stevens-light-gray shadow-sm">
+              <span className="text-3xl font-bold text-stevens-dark-gray leading-none">
+                {course.credits}
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-stevens-dark-gray mt-1">
+                {course.credits === 1 ? "Credit" : "Credits"}
+              </span>
             </div>
           )}
-          {course.labs && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Labs:
-              </strong>{" "}
-              {course.labs}
-            </p>
-          )}
-          {course.practice && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Practice:
-              </strong>{" "}
-              {course.practice}
-            </p>
-          )}
-          {course.project && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Project:
-              </strong>{" "}
-              {course.project}
-            </p>
-          )}
-          {course.deliverable && (
-            <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
-              <strong className="font-semibold text-stevens-dark-gray">
-                Deliverable:
-              </strong>{" "}
-              {course.deliverable}
-            </p>
-          )}
+          {/* Right: Description / Content */}
+          <div
+            className={`flex-1 min-w-0 space-y-3 ${
+              course.credits ? "border-l border-gray-200 pl-4" : ""
+            }`}
+          >
+            {variant === "degree" && course.description && (
+              <p className="text-stevens-dark-gray leading-relaxed">
+                {course.description}
+              </p>
+            )}
+            {variant === "certificate" && course.focus && (
+              <p className="text-stevens-dark-gray leading-relaxed">
+                {course.focus}
+              </p>
+            )}
+            {variant === "certificate" && course.faculty && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Faculty:
+                </strong>{" "}
+                {course.faculty}
+              </p>
+            )}
+            {variant === "certificate" && course.whatYouDo && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  What You'll Do:
+                </strong>{" "}
+                {course.whatYouDo}
+              </p>
+            )}
+            {variant === "certificate" && course.topics && course.topics.length > 0 && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Topics:
+                </strong>{" "}
+                {course.topics.join(", ")}
+              </p>
+            )}
+            {variant === "certificate" && course.modules && (
+              <div className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Modules:
+                </strong>
+                {Array.isArray(course.modules) ? (
+                  <ol className="list-decimal ml-5 mt-2 space-y-1">
+                    {course.modules.map((mod, i) => (
+                      <li key={i}>{mod}</li>
+                    ))}
+                  </ol>
+                ) : (
+                  <span> {course.modules}</span>
+                )}
+              </div>
+            )}
+            {variant === "certificate" && course.labs && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Labs:
+                </strong>{" "}
+                {course.labs}
+              </p>
+            )}
+            {variant === "certificate" && course.practice && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Practice:
+                </strong>{" "}
+                {course.practice}
+              </p>
+            )}
+            {variant === "certificate" && course.project && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Project:
+                </strong>{" "}
+                {course.project}
+              </p>
+            )}
+            {variant === "certificate" && course.deliverable && (
+              <p className="text-stevens-sm text-stevens-dark-gray leading-relaxed">
+                <strong className="font-semibold text-stevens-dark-gray">
+                  Deliverable:
+                </strong>{" "}
+                {course.deliverable}
+              </p>
+            )}
+          </div>
         </div>
       )}
 
@@ -208,22 +198,6 @@ export const CourseCard = ({
         <p className="text-stevens-sm text-gray-500 leading-relaxed italic mt-3 border-l-2 border-stevens-red pl-3 animate-in fade-in duration-300">
           Note: {course.note}
         </p>
-      )}
-
-      {/* Read More / Read Less Toggle */}
-      {hasExpandableContent && (
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-1 text-stevens-red hover:text-stevens-dark-gray font-medium text-sm mt-3 transition-colors duration-200 group"
-          aria-expanded={isExpanded}
-        >
-          {isExpanded ? "Read Less" : "Read More"}
-          <ChevronDown
-            className={`w-4 h-4 transition-transform duration-300 ${
-              isExpanded ? "rotate-180" : ""
-            }`}
-          />
-        </button>
       )}
     </div>
   );

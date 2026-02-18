@@ -132,7 +132,6 @@ export function useSectionNavigation({
           return (
             curriculum &&
             (curriculum.description ||
-              curriculum.courseTabs ||
               curriculum.tabs ||
               curriculum.completeCourseCatalog)
           );

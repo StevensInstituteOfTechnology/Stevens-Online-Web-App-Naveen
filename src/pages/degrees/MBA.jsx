@@ -391,35 +391,35 @@ const programData = {
               {
                 code: "FE 511",
                 name: "Introduction to Bloomberg and Thomson Reuters",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "This course is designed to teach students the nature and availability of the financial data available at Stevens. The focus of the course will be on equity, futures, FX, options, swaps, CDSs, interest rate swaps, etc. They will learn how to use a Bloomberg terminal. As part of the course the students will be certified in the 4 areas that Bloomberg offers certification. We will cover the Thomson-Reuters Tick history data and basics of using this data. The course also introduces basics of applied statistics. Bloomberg terminal access will be required for any student taking the course on the web.",
               },
               {
                 code: "FE 515",
                 name: "Introduction to R",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "In this course, students will learn the basics of the open-source programming language R using financial data and applications. Basic statistical knowledge is required to complete the course. Upon completion, students will be able to use R for assignments and research using data in finance.",
               },
               {
                 code: "FE 520",
                 name: "Intro to Python for Financial Applications",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "This course is a primer on Python (language syntax, data structures, basic data processing, Python functions, modules and classes). The remainder of the course covers open-source Python tools relevant to solving financial programming problems. There will be reading assignments of the corresponding chapters in the textbook and additional materials will be provided.",
               },
               {
                 code: "FA 582",
                 name: "Foundations of Financial Data Science",
-                credits: "2-Credit Lab",
+                credits: 2,
                 description:
                   "This course will provide an overview of issues and trends in data quality, data storage, data scrubbing, data flows and data encryption. Topics will include data abstractions and integration, enterprise-level data issues, data management issues with collection, warehousing, preprocessing, and querying. Furthermore, the Hadoop based programming framework for big data issues will be introduced along with any governance and policy issues. Corequisite: FE 513",
               },
               {
                 code: "FE 513",
                 name: "Practical Aspects of Database Design",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "The course provides a practical introduction to SQL databases and Hadoop cluster systems. Students will receive hands-on instruction about setting up and working with databases. Most of the software will be introduced using case studies or demonstrations, followed by a lecture of related fundamental knowledge. The course covers SQL, NoSQL and database management systems. The course will cover accessing databases using API.",
               },
