@@ -36,6 +36,50 @@ import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
 import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const StatCard = ({ stat, index }) => {
+  const Icon = stat.icon;
+  const { ref, display } = useCountUp(stat.value, { duration: 1.5 });
+
+  return (
+    <motion.div
+      key={stat.label}
+      className="text-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className="bg-white/20 backdrop-blur-md rounded-stevens-lg sm:rounded-stevens-xl p-5 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/20 h-full transition-all duration-300 hover:bg-white/25 hover:border-white/30 group relative overflow-hidden"
+        whileHover={{ y: -4, scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 md:mb-stevens-sm flex items-center justify-center">
+          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+        </div>
+
+        <div
+          ref={ref}
+          className="text-2xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-extrabold mb-1 sm:mb-stevens-xs tracking-tight leading-none tabular-nums text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]"
+        >
+          {display}
+        </div>
+
+        <div className="text-sm sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white leading-snug sm:leading-normal [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+          {stat.label}
+        </div>
+
+        {stat.source && (
+          <div className="text-white/70 text-xs italic mt-1.5 [text-shadow:0_1px_1px_rgba(0,0,0,0.4)]">
+            {stat.source}
+          </div>
+        )}
+      </motion.div>
+    </motion.div>
+  );
+};
 
 // Employment Growth Bar Chart Component
 const EmploymentGrowthChart = () => {
@@ -753,11 +797,11 @@ const CorporatePartners = () => {
               className="w-full h-full object-cover"
               aria-hidden="true"
             />
-            <div className="absolute inset-0 backdrop-blur-sm" />
+         
           </div>
 
           {/* Dark overlay - sufficient opacity for WCAG contrast with white text */}
-          <div className="absolute inset-0 bg-stevens-black/50" />
+          <div className="absolute inset-0 bg-stevens-black/20" />
 
           <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}
@@ -779,42 +823,10 @@ const CorporatePartners = () => {
               </p>
             </motion.div>
 
-            {/* Stats grid with enhanced cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-stevens-lg lg:gap-stevens-xl">
-              {stevensStats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className="bg-white/10 backdrop-blur-sm rounded-stevens-lg sm:rounded-stevens-xl p-4 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/10 h-full transition-all duration-300 hover:bg-white/15 hover:border-white/20 group"
-                      whileHover={{ y: -4, scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {/* Icon with background circle */}
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-stevens-sm md:mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
-                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-
-                      {/* Stat value with enhanced styling */}
-                      <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-                        {stat.value}
-                      </div>
-
-                      {/* Label with better hierarchy */}
-                      <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white leading-tight sm:leading-normal [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-                        {stat.label}
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+              {stevensStats.map((stat, index) => (
+                <StatCard key={stat.label} stat={stat} index={index} />
+              ))}
             </div>
           </div>
         </section>
