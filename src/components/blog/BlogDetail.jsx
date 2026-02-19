@@ -242,7 +242,7 @@ const BlogDetail = ({ post, relatedPosts = [], className = "" }) => {
           <img
             {...getContentImageProps(featured_image_url, "1200px")}
             alt={title}
-            className="w-full h-96 object-cover rounded-stevens-md shadow-stevens-md"
+            className="w-full  h-auto max-h-[32rem] rounded-stevens-md shadow-stevens-md"
             style={{ objectPosition: image_position || "center" }}
             loading="lazy"
           />
