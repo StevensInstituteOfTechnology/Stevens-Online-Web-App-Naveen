@@ -96,7 +96,7 @@ const EmploymentGrowthChart = () => {
   const availableWidth = chartWidth - leftMargin - rightMargin;
 
   return (
-    <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
+    <div className="bg-stevens-light-gray/30 rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
       <div className="mb-stevens-md">
         <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
           Projected Employment Growth (2025–2034)
@@ -472,16 +472,8 @@ const CorporatePartners = () => {
       logo: "/assets/company_logo/PSEG_logo.png",
       industry: "Energy",
     },
-    {
-      name: "Accenture",
-      logo: "/assets/company_logo/Accenture_logo.png",
-      industry: "Consulting",
-    },
-    {
-      name: "General Electric",
-      logo: "/assets/company_logo/General_Electric_logo.png",
-      industry: "Industrials",
-    },
+  
+    
     {
       name: "Exxon",
       logo: "/assets/company_logo/Exxon_logo_2016.png",
@@ -525,7 +517,14 @@ const CorporatePartners = () => {
           }}
           secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
         />
-
+         {/* Trust Signals - Company Logos Marquee */}
+         <LogoMarqueeSection
+          heading="Trusted by Fortune 500 companies and industry leaders"
+          logos={partnerCompanies}
+          animationDuration={25}
+          pauseOnHover={true}
+          invertLogos={false}
+        />
         {/* Why Partner with Stevens - Constellation Layout */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white overflow-hidden">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -538,7 +537,7 @@ const CorporatePartners = () => {
                 viewport={{ once: true }}
                 className="text-left"
               >
-                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
                   Education That Moves at the Speed of Industry
                 </h2>
                 <p className="text-stevens-base md:text-stevens-lg text-stevens-dark-gray leading-relaxed">
@@ -741,7 +740,7 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-
+                        
         {/* Why Stevens - Statistics */}
         <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
           {/* Background image with blur */}
@@ -819,16 +818,9 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-        {/* Trust Signals - Company Logos Marquee */}
-        <LogoMarqueeSection
-          heading="Trusted by Fortune 500 companies and industry leaders"
-          logos={partnerCompanies}
-          animationDuration={25}
-          pauseOnHover={true}
-          invertLogos={false}
-        />
+       
         {/* What We Offer */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -853,7 +845,7 @@ const CorporatePartners = () => {
                     viewport={{ once: true }}
                     className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
                   >
-                    <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg h-full shadow-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal transform group-hover:-translate-y-1">
+                    <div className="bg-stevens-light-gray/30 rounded-stevens-lg p-stevens-lg h-full border border-stevens-light-gray shadow-stevens-md hover:shadow-stevens-lg hover:border-stevens-gray/50 transition-all duration-stevens-normal transform group-hover:-translate-y-1">
                       <div className="flex items-start space-x-stevens-md">
                         <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
                           <Icon className="w-6 h-6 text-stevens-black group-hover:text-white transition-colors" />
@@ -876,7 +868,7 @@ const CorporatePartners = () => {
         </section>
 
         {/* Areas of Expertise - Employment Growth Chart */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -896,7 +888,7 @@ const CorporatePartners = () => {
 
               {/* Right: Explanatory Text */}
               <div className="order-1 lg:order-2 mt-stevens-xl lg:mt-0 lg:border-l lg:border-stevens-light-gray lg:pl-stevens-2xl">
-                <div className="bg-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
+                <div className="bg-stevens-light-gray/30 rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
                   <div className="mb-stevens-md">
                     <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                       Prepare for Careers Growing Faster Than Average

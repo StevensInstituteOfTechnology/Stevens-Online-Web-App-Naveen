@@ -1,31 +1,28 @@
 import { motion } from "framer-motion";
 
 /**
- * LogoMarqueeSection - Auto-scrolling logo carousel with dark background
- *
+ * LogoMarqueeSection - Auto-scrolling logo carousel
  *
  * Features:
- * - Stevens black background (matches design system)
  * - Stevens typography (Saira display font)
  * - Infinite auto-scrolling logo carousel (marquee effect)
- * - Logos displayed in white/monochrome style
  * - Responsive design
  *
  * @param {Object} props
  * @param {string} props.heading - Main heading text (supports line breaks with \n)
  * @param {Array} props.logos - Array of logo objects with { name, logo, url? }
- * @param {string} props.bgColor - Background color class (default: stevens-black)
+ * @param {string} props.bgColor - Background color class (default: white)
  * @param {number} props.animationDuration - Duration of one complete scroll cycle in seconds
  * @param {boolean} props.pauseOnHover - Whether to pause animation on hover
- * @param {boolean} props.invertLogos - Whether to invert logo colors to white (default: true)
+ * @param {boolean} props.invertLogos - Whether to invert logo colors (default: false for white bg)
  */
 export default function LogoMarqueeSection({
   heading = "Trusted by industry leaders",
   logos = [],
-  bgColor = "bg-stevens-black",
+  bgColor = "bg-white",
   animationDuration = 30,
   pauseOnHover = true,
-  invertLogos = true,
+  invertLogos = false,
 }) {
   if (!logos || logos.length === 0) {
     return null;
@@ -43,7 +40,7 @@ export default function LogoMarqueeSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="font-stevens-display text-stevens-white text-stevens-xl md:text-stevens-3xl lg:text-stevens-4xl font-light italic text-center mb-stevens-xl md:mb-stevens-2xl lg:mb-stevens-3xl leading-tight tracking-wide"
+          className="font-stevens-display text-stevens-dark-gray text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-center mb-stevens-xl md:mb-stevens-2xl lg:mb-stevens-3xl leading-tight"
         >
           {heading.split("\n").map((line, index) => (
             <span key={index}>
@@ -56,11 +53,11 @@ export default function LogoMarqueeSection({
 
       {/* Logo Marquee Container */}
       <div className="relative w-full">
-        {/* Gradient fade on left edge - matches stevens-black */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-r from-stevens-black to-transparent z-10 pointer-events-none" />
+        {/* Gradient fade on left edge - matches section background */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
-        {/* Gradient fade on right edge - matches stevens-black */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-l from-stevens-black to-transparent z-10 pointer-events-none" />
+        {/* Gradient fade on right edge - matches section background */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling logos container */}
         <div
@@ -83,7 +80,7 @@ export default function LogoMarqueeSection({
                     src={logoSrc}
                     alt={`${logoName} logo`}
                     className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
-                      invertLogos ? "brightness-0 invert" : "brightness-150"
+                      invertLogos ? "brightness-0 invert" : ""
                     } opacity-90 hover:opacity-100 transition-opacity duration-stevens-normal`}
                     loading="lazy"
                     onError={(e) => {
@@ -91,7 +88,7 @@ export default function LogoMarqueeSection({
                     }}
                   />
                 ) : (
-                  <span className="text-stevens-white/80 text-stevens-sm md:text-stevens-base font-stevens-body font-medium whitespace-nowrap">
+                  <span className="text-stevens-dark-gray/80 text-stevens-sm md:text-stevens-base font-stevens-body font-medium whitespace-nowrap">
                     {logoName}
                   </span>
                 )}
@@ -140,10 +137,10 @@ export function LogoMarqueeSectionDouble({
   heading = "Trusted by industry leaders",
   logosRow1 = [],
   logosRow2 = [],
-  bgColor = "bg-stevens-black",
+  bgColor = "bg-white",
   animationDuration = 30,
   pauseOnHover = true,
-  invertLogos = true,
+  invertLogos = false,
 }) {
   const duplicatedLogosRow1 = [...logosRow1, ...logosRow1, ...logosRow1];
   const duplicatedLogosRow2 = [...logosRow2, ...logosRow2, ...logosRow2];
@@ -173,12 +170,12 @@ export function LogoMarqueeSectionDouble({
                 src={logoSrc}
                 alt={`${logoName} logo`}
                 className={`h-8 md:h-10 lg:h-12 w-auto object-contain ${
-                  invertLogos ? "brightness-0 invert" : "brightness-150"
+                  invertLogos ? "brightness-0 invert" : ""
                 } opacity-90 hover:opacity-100 transition-opacity duration-stevens-normal`}
                 loading="lazy"
               />
             ) : (
-              <span className="text-stevens-white/80 text-stevens-sm md:text-stevens-base font-stevens-body font-medium whitespace-nowrap">
+              <span className="text-stevens-dark-gray/80 text-stevens-sm md:text-stevens-base font-stevens-body font-medium whitespace-nowrap">
                 {logoName}
               </span>
             )}
@@ -196,16 +193,16 @@ export function LogoMarqueeSectionDouble({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="font-stevens-display text-stevens-white text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light italic text-center mb-stevens-xl md:mb-stevens-2xl lg:mb-stevens-3xl leading-tight tracking-wide"
+          className="font-stevens-display text-stevens-dark-gray text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-center mb-stevens-xl md:mb-stevens-2xl lg:mb-stevens-3xl leading-tight"
         >
           {heading}
         </motion.h2>
       </div>
 
       <div className="relative w-full space-y-stevens-lg md:space-y-stevens-xl">
-        {/* Gradient fades - matches stevens-black */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-r from-stevens-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-l from-stevens-black to-transparent z-10 pointer-events-none" />
+        {/* Gradient fades - matches section background */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 lg:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         {/* Row 1 - scrolls left */}
         {renderLogoRow(duplicatedLogosRow1, false)}
