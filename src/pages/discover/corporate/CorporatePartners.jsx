@@ -52,12 +52,12 @@ const StatCard = ({ stat, index }) => {
       viewport={{ once: true }}
     >
       <motion.div
-        className="bg-white/20 backdrop-blur-md rounded-stevens-lg sm:rounded-stevens-xl p-5 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/20 h-full transition-all duration-300 hover:bg-white/25 hover:border-white/30 group relative overflow-hidden"
+        className="bg-white/20 backdrop-blur-md rounded-stevens-lg sm:rounded-stevens-xl p-5 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/20 h-full transition-all duration-300 hover:bg-white/25 hover:border-white/30 group relative overflow-hidden flex flex-col items-center text-center"
         whileHover={{ y: -4, scale: 1.02 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 md:mb-stevens-sm flex items-center justify-center">
-          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-stevens-sm rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors duration-300">
+          <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
         </div>
 
         <div
@@ -561,14 +561,7 @@ const CorporatePartners = () => {
           }}
           secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
         />
-         {/* Trust Signals - Company Logos Marquee */}
-         <LogoMarqueeSection
-          heading="Trusted by Fortune 500 companies and industry leaders"
-          logos={partnerCompanies}
-          animationDuration={25}
-          pauseOnHover={true}
-          invertLogos={false}
-        />
+        
         {/* Why Partner with Stevens - Constellation Layout */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white overflow-hidden">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -784,6 +777,7 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
+        
                         
         {/* Why Stevens - Statistics */}
         <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
@@ -830,7 +824,15 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-       
+         
+       {/* Trust Signals - Company Logos Marquee */}
+       <LogoMarqueeSection
+          heading="Trusted by Fortune 500 companies and industry leaders"
+          logos={partnerCompanies}
+          animationDuration={25}
+          pauseOnHover={true}
+          invertLogos={false}
+        />
         {/* What We Offer */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -878,7 +880,7 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Areas of Expertise - Employment Growth Chart */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">

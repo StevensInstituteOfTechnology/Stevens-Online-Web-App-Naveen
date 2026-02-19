@@ -18,5 +18,4 @@ npm run build
 2. Start the app: `npm run dev`.
 3. In another terminal, run: `ngrok http 5173` (or whatever port Vite uses).
 4. Open the **https** URL ngrok gives you (e.g. `https://abc123.ngrok.io`) in the browser. The chatbot should work there.
-
 Once deployed to an **https** host (e.g. production/staging), the chatbot works without any tunnel.
