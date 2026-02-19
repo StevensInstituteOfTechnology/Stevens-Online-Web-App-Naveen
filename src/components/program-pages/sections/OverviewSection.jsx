@@ -65,7 +65,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
           )}
 
           {/* Divider */}
-          <div className="w-20 h-0.5 bg-stevens-red mb-8" />
+          <div className="w-16 h-1 bg-stevens-red mb-8" />
 
           {/* Description */}
           {overview.description && (

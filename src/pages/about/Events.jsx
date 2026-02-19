@@ -288,6 +288,9 @@ export default function Events() {
           title="Stevens Institute of Technology"
           subtitle="Upcoming Virtual Events & Webinars"
           bgImage="/assets/images/events/events-hero.webp"
+          bgImagePosition="50% 40%"
+          minHeight="400px"
+          contentVerticalCenter
         />
 
         {/* Intro Section */}

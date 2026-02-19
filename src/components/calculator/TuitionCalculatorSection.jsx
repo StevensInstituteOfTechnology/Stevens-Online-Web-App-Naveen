@@ -37,10 +37,10 @@ const TuitionCalculatorSection = forwardRef(
 
             {/* Right - Content */}
             <div className="flex flex-col justify-center md:col-span-6 pl-[10%]">
-              <h2 className="font-stevens-headers uppercase text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-8">
+              <h2 className="font-stevens-headers uppercase text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-6">
                 Tuition Calculator
               </h2>
-              <div className="w-20 h-0.5 bg-stevens-red mb-8"></div>
+              <div className="w-16 h-1 bg-stevens-red mb-8"></div>
               
               <p className="text-stevens-base text-stevens-dark-gray leading-relaxed mb-2">
                 Use our calculator to estimate your tuition with available
