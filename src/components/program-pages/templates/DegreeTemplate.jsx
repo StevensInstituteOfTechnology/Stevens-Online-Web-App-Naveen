@@ -133,9 +133,6 @@ export function DegreeTemplate({
   // Check if admissions is combined with tuition/dates
   const isCombinedAdmissions = admissions?.variant === "combinedWithTuition";
 
-  // Opposite theme for sticky nav
-  const navTheme = theme === "dark" ? "light" : "dark";
-
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
       {/* Hero Section with Embedded Form */}
@@ -163,7 +160,6 @@ export function DegreeTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
-        theme={navTheme}
       />
 
       <main>

@@ -126,9 +126,6 @@ export function CertificateTemplate({
 
   if (!programData) return <div>Loading program data...</div>;
 
-  // Opposite theme for sticky nav
-  const navTheme = theme === "dark" ? "light" : "dark";
-
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
       {/* Hero Section - Minimal style with form */}
@@ -155,7 +152,6 @@ export function CertificateTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
-        theme={navTheme}
       />
 
       <main>
