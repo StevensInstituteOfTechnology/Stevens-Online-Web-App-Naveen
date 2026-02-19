@@ -884,10 +884,10 @@ export default function Home() {
               <Link to={createPageUrl("blog/")}>
                 <Button
                   variant="link"
-                  className=" h-auto  text-stevens-white pb-0"
+                  className=" h-auto  text-stevens-white pb-0 group"
                 >
                   View all insights
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </Link>
             </AnimatedSection>
