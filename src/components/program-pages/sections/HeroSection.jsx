@@ -127,17 +127,18 @@ export function HeroSection({
         {tuitionCards.map((card, index) => (
           <div
             key={index}
-            className="bg-stevens-white/40 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-stevens-black/80 hover:border-white/80 hover:scale-105 cursor-default"
+            className="animate-scale-pop bg-stevens-white/50 backdrop-blur-xl border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-stevens-black/80 hover:border-white/80 hover:scale-115 cursor-default"
+            style={{ animationDelay: `${0.8 + index * 0.2}s` }}
           >
             <div
               className="text-2xl xl:text-3xl font-bold text-white"
-              style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
+              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5)" }}
             >
               {card.value}
             </div>
             <div
               className="text-sm text-white/90 mt-0.5 uppercase tracking-wide font-semibold"
-              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)" }}
+              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               {card.label}
             </div>
@@ -190,8 +191,9 @@ export function HeroSection({
             />
           )}
 
-          {/* Desktop-only: Gradient Overlay */}
+          {/* Desktop-only: Gradient Overlays */}
           <div className="hidden xl:block absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
+          <div className="hidden xl:block absolute left-0 top-0 bottom-0 w-[20%] bg-gradient-to-r from-stevens-black/60 via-stevens-black/30 to-transparent" />
 
           {/* Desktop-only: Text Content at bottom */}
           <div className="hidden xl:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
