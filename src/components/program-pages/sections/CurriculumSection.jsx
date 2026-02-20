@@ -29,6 +29,11 @@ import { ChevronDown, ChevronUp } from "lucide-react";
  *       { title: "Term 1", intro: "...", courses: [{ code, name, credits, description }] }
  *     ],
  *     footer: { title: "...", content: "..." } // optional
+ *   },
+ *   {
+ *     id: "immersions",
+ *     title: "Immersion",
+ *     htmlContent: "<p>...</p>" // alternative to sections - raw HTML for custom content
  *   }
  * ]
  *
@@ -141,6 +146,11 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
                       </div>
                     )}
                   </div>
+                ) : tab.htmlContent ? (
+                  <div
+                    className="prose prose-invert max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-white [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-white [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-xl [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-stevens-lg [&_ul]:space-y-stevens-sm [&_li]:text-white/80"
+                    dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
+                  />
                 ) : null}
               </TabsContent>
             ))}
