@@ -4,6 +4,8 @@ import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { Calculator, ExternalLink } from "lucide-react";
+import { useState} from "react";
+import TuitionCalculatorModal from "@/components/calculator/TuitionCalculatorModal";
 
 /**
  * HeroSection - Split-layout hero for Program and Certificate pages
@@ -47,6 +49,8 @@ export function HeroSection({
   secondaryCta,
   showTuitionCalculatorLink = false,
 }) {
+
+  const [isTuitionCalculatorModalOpen, setIsTuitionCalculatorModalOpen] = useState(false);
   // Convert title to array if string
   const titleLines = Array.isArray(title) ? title : [title];
 
@@ -351,18 +355,19 @@ export function HeroSection({
 
                   {showTuitionCalculatorLink && (
                     <Button
-                      asChild
+                  
                       variant="outline"
                       className={`flex-1 py-3 text-sm font-semibold transition-all duration-300 ${
                         isDarkForm
                           ? "bg-white text-stevens-black border-white hover:bg-transparent hover:border-white/40 hover:text-white"
                           : "bg-stevens-dark-gray text-white border-stevens-dark-gray hover:bg-transparent hover:border-stevens-dark-gray hover:text-stevens-dark-gray"
                       }`}
+                      onClick={() => setIsTuitionCalculatorModalOpen(true)}
                     >
-                      <a href="#tuition-calculator">
+                      
                         <Calculator className="w-4 h-4 mr-2" />
                         Tuition Calculator
-                      </a>
+                    
                     </Button>
                   )}
                 </div>
@@ -371,6 +376,14 @@ export function HeroSection({
           </div>
         </div>
       </div>
+
+      {showTuitionCalculatorLink && programCode && (
+        <TuitionCalculatorModal
+          programCode={programCode}
+          isOpen={isTuitionCalculatorModalOpen}
+          onClose={() => setIsTuitionCalculatorModalOpen(false)}
+        />
+      )}
     </section>
   );
 }
