@@ -22,6 +22,7 @@ import {
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import { DeadlinesSection } from "@/components/shared/sections/DeadlinesSection";
+import { VideoSection } from "@/components/shared/sections/VideoSection";
 import ApplicationOptionsCards from "@/components/admissions/ApplicationOptionsCards";
 
 export default function Admissions() {
@@ -212,7 +213,7 @@ export default function Admissions() {
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
                 Admissions Overview
               </h2>
               <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg pb-stevens-2xl">
@@ -248,7 +249,7 @@ export default function Admissions() {
             <div className="grid md:grid-cols-2 gap-stevens-xl lg:gap-stevens-2xl items-center">
               {/* Left Side - Content */}
               <div>
-                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
                   Financing Your Graduate Degree
                 </h2>
                 <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed mb-stevens-xl">
@@ -290,6 +291,18 @@ export default function Admissions() {
           </div>
         </div>
 
+        {/* Why Choose Stevens - Video Section */}
+        <VideoSection
+          title="WHY CHOOSE STEVENS"
+          heading="Discover what makes Stevens a leader in graduate education"
+          description="Learn from our community why Stevens Institute of Technology stands out for working professionals seeking to advance their careers through technology-driven, flexible online programs."
+          youtubeVideoId="RLPsCcxwAz0"
+          youtubeQuality="hd1080"
+          ctaText="Explore our programs"
+          ctaLink={createPageUrl("explore-programs/") + "#explore-programs"}
+          showCTA={true}
+        />
+
         {/* Admissions FAQ */}
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -322,7 +335,7 @@ export default function Admissions() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-stevens-xl items-center">
                 <div className="text-stevens-white">
-                  <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide mb-stevens-md text-stevens-white">
+                  <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide mb-stevens-md text-stevens-white">
                     Request Information
                   </h2>
                   <p className="text-stevens-lg text-stevens-white mb-stevens-lg">

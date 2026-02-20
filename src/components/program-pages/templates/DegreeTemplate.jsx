@@ -190,6 +190,8 @@ export function DegreeTemplate({
               videoSection.title
             }
             description={videoSection.description || ""}
+            youtubeVideoId={videoSection.youtubeVideoId}
+            youtubeQuality={videoSection.youtubeQuality}
             videoSrc={videoSection.videoSrc}
             videoPoster={videoSection.posterSrc}
             videoTitle={videoSection.title}

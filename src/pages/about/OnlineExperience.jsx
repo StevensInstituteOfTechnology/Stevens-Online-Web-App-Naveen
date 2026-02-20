@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PageHero, RequestInfoModal } from "@/components/shared";
+import { VideoSection } from "@/components/shared/sections/VideoSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Laptop, Users, LifeBuoy, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import {
   setMetaDescription,
   setOpenGraphTags,
   buildCanonicalUrl,
+  createPageUrl,
 } from "@/utils";
 import { getContentImageProps } from "@/utils/responsiveImage";
 import { BOOKING_URLS } from "@/config/constants";
@@ -211,6 +213,18 @@ export default function OnlineExperience() {
             </div>
           </div>
         </section>
+
+        {/* Online Experience Video Section */}
+        <VideoSection
+          title="THE ONLINE LEARNING EXPERIENCE"
+          heading="A premier, technology-driven education, delivered by our College of Professional Education"
+          description="Our online format combines synchronous and asynchronous learning with 24/7 access to materials, live sessions with faculty, and comprehensive student support—designed for working professionals who need flexibility without compromise."
+          youtubeVideoId="iYohu3lqR3s"
+          youtubeQuality="hd1080"
+          ctaText="Explore our programs"
+          ctaLink={createPageUrl("explore-programs/") + "#explore-programs"}
+          showCTA={true}
+        />
 
         {/* Welcome Message from Dean Arshad */}
         <div className="py-20 bg-white">

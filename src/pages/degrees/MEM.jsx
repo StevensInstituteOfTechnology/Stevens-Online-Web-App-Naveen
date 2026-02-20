@@ -96,17 +96,18 @@ const programData = {
   },
   rankings: [
     {
-      ranking: "No. 11",
-      description: "In the Nation",
-      source:
-        "Recognized as the No. 11 Best Online Master's in Industrial (Systems) Engineering Program in the country by U.S. News & World Report (2026).",
-    },
-    {
       ranking: "No. 1",
       description: "In N.J.",
       source:
         "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2026).",
     },
+    {
+      ranking: "No. 11",
+      description: "In the Nation",
+      source:
+        "Recognized as the No. 11 Best Online Master's in Industrial (Systems) Engineering Program in the country by U.S. News & World Report (2026).",
+    },
+    
     {
       ranking: "#12",
       description: "For Best Career Placement",

@@ -490,8 +490,8 @@ export default function Home() {
           />
         </section>
 
-        {/* THE STEVENS ONLINE ADVANTAGE */}
-        <VideoSection  />
+        {/* THE STEVENS CPE ADVANTAGE VIDEO */}
+        <VideoSection youtubeVideoId="4xvsdp_We2w" />
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"

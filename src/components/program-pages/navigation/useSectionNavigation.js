@@ -113,7 +113,7 @@ export function useSectionNavigation({
               (overview.concentrations && overview.concentrations.length > 0))
           );
         case "video":
-          return videoSection && videoSection.videoSrc;
+          return videoSection && (videoSection.videoSrc || videoSection.youtubeVideoId);
         case "rankings":
           return rankings && rankings.length > 0;
         case "what-youll-learn":
