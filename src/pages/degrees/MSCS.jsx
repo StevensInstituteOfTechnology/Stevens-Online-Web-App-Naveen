@@ -688,7 +688,7 @@ const programData = {
   },
   admissions: {
     variant: "singleImageCard",
-    title: "Application Option",
+    title: "Application",
     backgroundImage: "/assets/images/shared/asap-hero.webp",
     options: [
       {

@@ -919,7 +919,7 @@ const programData = {
   // Application Option - singleImageCard variant (appears after faculty, before detailed admissions)
   applicationOption: {
     variant: "singleImageCard",
-    title: "Application Option",
+    title: "Application",
     backgroundImage: "/assets/images/mba/mba-hero.webp",
     options: [
       {

@@ -195,8 +195,6 @@ export default function ApplicationModal({ isOpen, onClose }) {
               Have questions?{" "}
               <a
                 href={BOOKING_URLS.SCHEDULE_CALL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-stevens-red hover:underline font-semibold"
               >
                 Contact our admissions team

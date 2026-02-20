@@ -45,8 +45,6 @@ const ApplicationOptionsDisplay = ({ applicationConfig, programCode: _programCod
         ) : (
           <a
             href={applicationConfig.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn-stevens-red w-full flex items-center justify-center gap-stevens-sm"
           >
             <ExternalLink className="w-5 h-5" />
