@@ -29,7 +29,7 @@ import { FacultyCard } from "../primitives";
  * Used in: Both Degree and Certificate pages
  */
 export const FacultySection = forwardRef(function FacultySection(
-  { faculty, autoScroll = true, autoScrollInterval = 3000 },
+  { faculty, autoScroll = true, autoScrollInterval = 1000 },
   ref
 ) {
   // Must call all hooks unconditionally (before any early return)
@@ -61,8 +61,8 @@ export const FacultySection = forwardRef(function FacultySection(
     pauseTimeoutRef.current = setTimeout(() => {
       setIsClickPaused(false);
       pauseTimeoutRef.current = null;
-    }, autoScrollInterval);
-  }, [autoScrollInterval]);
+    }, 3000);
+  }, []);
 
   // Cleanup pause timeout on unmount
   useEffect(() => {
