@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   ArrowRight,
   TrendingUp,
@@ -780,22 +779,14 @@ const CorporatePartners = () => {
         
                         
         {/* Why Stevens - Statistics */}
-        <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
-          {/* Background image with blur */}
-          <div className="absolute inset-0">
-            <img
-              {...getContentImageProps(
-                "/assets/images/corporate-partners/corporate-partners-stats-background.webp"
-              )}
-              alt=""
-              className="w-full h-full object-cover"
-              aria-hidden="true"
-            />
-         
-          </div>
-
+        <section
+          className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/assets/images/corporate-partners/corporate-partners-stats-background.webp)`,
+          }}
+        >
           {/* Dark overlay - sufficient opacity for WCAG contrast with white text */}
-          <div className="absolute inset-0 bg-stevens-black/20" />
+          <div className="absolute inset-0 bg-stevens-black/20" aria-hidden="true" />
 
           <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}

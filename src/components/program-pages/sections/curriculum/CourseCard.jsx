@@ -8,7 +8,8 @@ import { ChevronDown } from "lucide-react";
  * - Course code as red pill badge
  * - Course name as bold title
  * - Credits badge on the left of description (visible only when expanded)
- * - Badge and description hidden until expand arrow is clicked
+ * - Badge and description hidden until the card (or expand arrow) is clicked
+ * - Whole card is clickable when expandable content exists
  * - Smooth expand/collapse animation
  *
  * Supports two variants:
@@ -54,8 +55,27 @@ export const CourseCard = ({
           course.deliverable
         );
 
+  const handleToggle = () => hasExpandableContent && setIsExpanded((prev) => !prev);
+
+  const handleKeyDown = (e) => {
+    if (hasExpandableContent && (e.key === "Enter" || e.key === " ")) {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
+
   return (
-    <div className="course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6">
+    <div
+      className={`course-card bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 ${
+        hasExpandableContent ? "cursor-pointer" : ""
+      }`}
+      onClick={handleToggle}
+      onKeyDown={handleKeyDown}
+      role={hasExpandableContent ? "button" : undefined}
+      tabIndex={hasExpandableContent ? 0 : undefined}
+      aria-expanded={hasExpandableContent ? isExpanded : undefined}
+      aria-label={hasExpandableContent ? (isExpanded ? "Collapse course details" : "Expand course details") : undefined}
+    >
       {/* Card Header */}
       <div className="flex flex-wrap items-start justify-between gap-4">
         {/* Left: Course Code Badge + Title */}
@@ -72,18 +92,16 @@ export const CourseCard = ({
 
         {/* Right: Expand/collapse arrow icon */}
         {hasExpandableContent && (
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 text-stevens-dark-gray transition-colors duration-200"
-            aria-expanded={isExpanded}
-            aria-label={isExpanded ? "Collapse" : "Expand"}
+          <div
+            className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 text-stevens-dark-gray transition-colors duration-200 pointer-events-none"
+            aria-hidden="true"
           >
             <ChevronDown
               className={`w-5 h-5 transition-transform duration-300 ${
                 isExpanded ? "rotate-180" : ""
               }`}
             />
-          </button>
+          </div>
         )}
       </div>
 
