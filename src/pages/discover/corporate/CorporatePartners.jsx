@@ -910,7 +910,8 @@ const CorporatePartners = () => {
                       U.S. Bureau of Labor Statistics.
                     </p>
                     <p className="text-stevens-dark-gray">
-                      Stevens Online programs are designed to align with this
+                      Stevens programs, delivered through our College of
+                      Professional Education, are designed to align with this
                       industry demand, equipping your workforce with the{" "}
                       <span className="font-stevens-semibold text-stevens-dark-gray">
                         technical depth and practical skills
@@ -965,7 +966,7 @@ const CorporatePartners = () => {
                 Ready to Build the Future of Work Together?
               </h2>
               <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto">
-                Partner with Stevens Online to upskill your workforce in data
+                Partner with Stevens to upskill your workforce in data
                 science, AI, and beyond.
               </p>
 

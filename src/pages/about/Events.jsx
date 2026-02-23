@@ -285,8 +285,8 @@ export default function Events() {
     <PageContextProvider pageType="content" pageName="Events">
       <div>
         <PageHero
-          title="Stevens Institute of Technology"
-          subtitle="Upcoming Virtual Events & Webinars"
+          title="Events & Webinars"
+          subtitle="Connect with faculty, explore programs, and get your questions answered."
           bgImage="/assets/images/events/events-hero.webp"
           bgImagePosition="50% 40%"
           minHeight="400px"

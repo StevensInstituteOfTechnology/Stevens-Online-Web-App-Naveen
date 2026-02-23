@@ -42,7 +42,7 @@ import {
   OnlineMBASuccess,
   OtherPrograms,
 } from "@/pages/blog";
-import { OnlineExperience, Events } from "@/pages/about";
+import { OnlineExperience, Events, StudentOutcomes } from "@/pages/about";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
 import NotFound from "@/pages/NotFound";
 
@@ -340,6 +340,16 @@ export const routes = [
   {
     path: "/Certificates",
     element: <Certificates />,
+  },
+
+  // Student Outcomes
+  {
+    path: "/student-outcomes/",
+    element: <StudentOutcomes />,
+  },
+  {
+    path: "/student-outcomes",
+    element: <Navigate to="/student-outcomes/" replace />,
   },
 
   // Online Experience

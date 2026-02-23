@@ -3,11 +3,10 @@ import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import ProgramFilterGrid from "@/components/admissions/ProgramFilterGrid";
 import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
-import TuitionCalculatorBody from "@/components/calculator/TuitionCalculatorBody";
 import { PROGRAMS_DATA } from "@/data/programsData";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -25,7 +24,6 @@ export default function ComparePrograms() {
     additionalData: {
       page_name: "All Programs",
       has_quiz: true,
-      has_calculator: true,
     },
   });
 
@@ -80,10 +78,6 @@ export default function ComparePrograms() {
       value: "cert-ads",
     },
   ];
-
-  // Tuition calculator state
-  const [selectedCalcProgram, setSelectedCalcProgram] = useState("");
-  const [_calculatedCost, setCalculatedCost] = useState(null);
 
   // Program comparison state
   const [left, setLeft] = useState("mba");
@@ -265,72 +259,26 @@ export default function ComparePrograms() {
           </div>
         </div>
 
-        {/* Estimate Your Tuition - Inline Calculator */}
-        <section
-          id="tuition-calculator"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white scroll-mt-24"
-        >
+        {/* Tuition & Financial Aid Link */}
+        <section className="py-12 bg-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
-            <div className="text-center mb-stevens-2xl">
-              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
-                Estimate Your Tuition
-              </h2>
-              <p className="text-stevens-lg text-stevens-dark-gray leading-relaxed max-w-5xl mx-auto">
-                Use our calculator to estimate your tuition with available
-                discounts and employer reimbursement benefits. Select a program
-                to get started.
-              </p>
+            <div className="border border-stevens-light-gray rounded-lg p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-stevens-display text-xl font-semibold text-stevens-dark-gray mb-1">
+                  Need to estimate your tuition?
+                </h3>
+                <p className="text-stevens-dark-gray">
+                  Use our tuition calculator with workforce partner, alumni, and
+                  resident discounts.
+                </p>
+              </div>
+              <Link to="/tuition-and-financial-aid/">
+                <Button variant="default" className="whitespace-nowrap">
+                  Tuition & Financial Aid
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
             </div>
-
-            {/* Program Selector Dropdown */}
-            <div className="max-w-xl mx-auto mb-stevens-xl">
-              <label
-                htmlFor="tuition-calc-program-select"
-                className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
-              >
-                Select a Program
-              </label>
-              <select
-                id="tuition-calc-program-select"
-                value={selectedCalcProgram}
-                onChange={(e) => {
-                  setSelectedCalcProgram(e.target.value);
-                  setCalculatedCost(null);
-                }}
-                className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm text-stevens-base"
-              >
-                <option value="">-- Choose a program --</option>
-                {PROGRAMS_DATA.map((program) => (
-                  <option key={program.code} value={program.code}>
-                    {program.shortName}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Calculator Body or Placeholder */}
-            {selectedCalcProgram ? (
-              <Card className="border border-stevens-light-gray shadow-stevens-md overflow-hidden max-w-4xl mx-auto">
-                <TuitionCalculatorBody
-                  key={selectedCalcProgram}
-                  programCode={selectedCalcProgram}
-                  onCostChange={setCalculatedCost}
-                />
-              </Card>
-            ) : (
-              <Card className="max-w-2xl mx-auto border-2">
-                <CardContent className="p-stevens-2xl pt-stevens-2xl text-center">
-                  <Calculator className="w-16 h-16 mx-auto mb-stevens-xl text-stevens-gray" />
-                  <h3 className="font-stevens-display text-stevens-xl lg:text-stevens-2xl font-stevens-bold text-stevens-dark-gray mb-stevens-lg">
-                    Ready to see your estimated cost?
-                  </h3>
-                  <p className="text-stevens-base lg:text-stevens-lg text-stevens-dark-gray max-w-xl mx-auto leading-relaxed">
-                    Select a program above to calculate your tuition with
-                    workforce partner, alumni, and resident discounts applied.
-                  </p>
-                </CardContent>
-              </Card>
-            )}
           </div>
         </section>
 

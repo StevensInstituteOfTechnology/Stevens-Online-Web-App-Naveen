@@ -847,7 +847,7 @@ const CorporateStudents = () => {
       <div className="min-h-screen bg-stevens-white">
         {/* Hero Section */}
         <PageHero
-          titleLines={["Invest in Your Future", "with Stevens Online"]}
+          titleLines={["Invest in Your Future", "with Stevens"]}
           subtitle={
             companyName
               ? `As a ${companyName} employee, you have exclusive access to Stevens' workforce development programs. Save up to 50% with partner discounts and employer tuition benefits. ${KEY_DATES_SPRING2.TERM.name} enrollment is now open.`
@@ -895,7 +895,7 @@ const CorporateStudents = () => {
                 Exclusive Benefits for Partner Employees
               </h2>
               <p className="text-stevens-lg text-stevens-dark-gray max-w-5xl mx-auto">
-                Through your employer's partnership with Stevens Online, you can
+                Through your employer's partnership with Stevens, you can
                 access a fast, flexible, and career-aligned path to earn a
                 graduate certificate, master's degree, or professional
                 credential.
