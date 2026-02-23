@@ -11,6 +11,7 @@ import {
   Target,
 } from "lucide-react";
 import { PageHero, RequestInfoModal } from "@/components/shared";
+import SkillTree from "@/components/workforce-hub/SkillTree";
 import { Button } from "@/components/ui/button";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -155,6 +156,28 @@ export default function WorkforceDevelopmentHub() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Interactive Roadmap */}
+        <section className="py-16 md:py-20 bg-stevens-dark-gray">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="mb-12 text-center">
+              <span className="text-stevens-red font-bold tracking-widest uppercase text-sm mb-2 block">
+                Interactive Roadmap
+              </span>
+              <h2 className="font-stevens-display text-3xl md:text-4xl font-light text-white mb-4">
+                Stackable Credentials
+              </h2>
+              <p className="text-stevens-light-gray max-w-2xl mx-auto">
+                Visualize how your learning journey evolves. Start with a
+                specialized{" "}
+                <span className="text-stevens-red">Graduate Certificate</span>{" "}
+                and stack your credits directly into a full{" "}
+                <span className="text-yellow-400">Master&apos;s Degree</span>.
+              </p>
+            </div>
+            <SkillTree />
           </div>
         </section>
 
