@@ -970,11 +970,19 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <CardContent className="space-y-4">
                     <div className="prose" dangerouslySetInnerHTML={{ __html: option.description }}/>
                     {option.buttonText && !option.buttonGrayOut && (
-                      <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                        <div className="flex justify-center items-center w-full btn-secondary mt-2">
-                          {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
-                        </div>
-                      </a>
+                      option.url.startsWith('http') ? (
+                        <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                          <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                            {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
+                          </div>
+                        </a>
+                      ) : (
+                        <Link to={option.url} className="w-full">
+                          <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                            {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
+                          </div>
+                        </Link>
+                      )
                     )}
                   </CardContent>
                 </Card>
