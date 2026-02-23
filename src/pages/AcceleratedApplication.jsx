@@ -311,7 +311,7 @@ export default function AcceleratedApplicationPage() {
 
               <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md border border-stevens-primary/20">
                 <p className="text-stevens-sm text-stevens-gray-700">
-                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Official transcripts from all post-secondary institutions you have attended are required (regardless of whether you earned a degree). Stevens may request additional documentation if needed to confirm your academic or professional background.
+                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Only your unofficial transcript showing degree conferred is required to apply. Official transcripts from all post-secondary institutions you have attended are required within 2 months of enrollment (regardless of whether you earned a degree). Stevens may request additional documentation if needed to confirm your academic or professional background.
                 </p>
               </div>
 
@@ -354,7 +354,7 @@ export default function AcceleratedApplicationPage() {
                       Note &amp; questions
                     </AccordionTrigger>
                     <AccordionContent className="text-stevens-base text-stevens-gray-700">
-                      <p className="mb-stevens-sm">The Accelerated Application is available for select professional online programs. Official transcripts from all post-secondary institutions attended are required. Stevens may request additional documentation if needed.</p>
+                      <p className="mb-stevens-sm">The Accelerated Application is available for select professional online programs. Only your unofficial transcript showing degree conferred is required to apply. Official transcripts from all post-secondary institutions you have attended are required within 2 months of enrollment (regardless of whether you earned a degree). Stevens may request additional documentation if needed.</p>
                       <p><strong>Questions?</strong> Contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.</p>
                     </AccordionContent>
                   </AccordionItem>
