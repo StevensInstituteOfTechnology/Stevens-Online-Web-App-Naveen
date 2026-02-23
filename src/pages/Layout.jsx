@@ -62,22 +62,28 @@ const whyStevensItems = [
   { name: "Events", page: "events/" },
 ];
 
-const megaMenuDegreeItems = [...graduateProgramItems];
-const megaMenuCertificateItems = [...certificateProgramItems];
-
-const megaMenuLinks = [
+const programsItems = [
   { name: "All Programs", page: "explore-programs/" },
+  { name: "Compare Programs", page: "explore-programs/#compare-programs" },
   {
     name: "Degrees",
-    isDropdown: true,
-    items: megaMenuDegreeItems,
+    hasSubItems: true,
     categoryLink: "/explore-programs/?filter=masters#explore-programs",
+    subItems: graduateProgramItems,
   },
   {
-    name: "Certificates",
-    isDropdown: true,
-    items: megaMenuCertificateItems,
+    name: "Professional Graduate Certificates",
+    hasSubItems: true,
     categoryLink: "/explore-programs/?filter=certificates#explore-programs",
+    subItems: certificateProgramItems,
+  },
+];
+
+const megaMenuLinks = [
+  {
+    name: "Programs",
+    isDropdown: true,
+    items: programsItems,
   },
   {
     name: "Admissions & Aid",
@@ -107,6 +113,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
   const [_isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = useState(null);
+  const [expandedSubCategory, setExpandedSubCategory] = useState(null);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState([]); // For mobile accordion
 
   // Toggle accordion item on mobile
@@ -226,6 +233,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
   useEffect(() => {
     setMobileMenuOpen(false);
     setExpandedMobileMenus([]);
+    setExpandedSubCategory(null);
   }, [location.pathname]);
 
   // Update canonical tag on route change
@@ -342,8 +350,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                 onClick={() => {
                   const newMenuState = !mobileMenuOpen;
                   setMobileMenuOpen(newMenuState);
-                  // Show "Degrees" sub-links by default when opening the menu
-                  setMegaMenuHoveredItem(newMenuState ? "Degrees" : null);
+                  setMegaMenuHoveredItem(newMenuState ? "Programs" : null);
                 }}
               >
                 <Menu className="h-10 w-10" />
@@ -509,7 +516,55 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                             {isExpanded && (
                               <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
                                 {link.items?.map((item) =>
-                                  item.external ? (
+                                  item.hasSubItems ? (
+                                    <div key={item.name}>
+                                      <button
+                                        className="w-full flex items-center justify-between text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                        onClick={() =>
+                                          setExpandedSubCategory(
+                                            expandedSubCategory === item.name
+                                              ? null
+                                              : item.name
+                                          )
+                                        }
+                                      >
+                                        <span>{item.name}</span>
+                                        <svg
+                                          className={`w-4 h-4 transition-transform duration-200 ${
+                                            expandedSubCategory === item.name
+                                              ? "rotate-180 text-stevens-red"
+                                              : ""
+                                          }`}
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                          />
+                                        </svg>
+                                      </button>
+                                      {expandedSubCategory === item.name && (
+                                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-stevens-red/30 pl-3">
+                                          {item.subItems.map((sub) => (
+                                            <Link
+                                              key={sub.name}
+                                              to={createPageUrl(sub.page)}
+                                              className="block text-stevens-base text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-1"
+                                              onClick={() =>
+                                                setMobileMenuOpen(false)
+                                              }
+                                            >
+                                              {sub.name}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ) : item.external ? (
                                     <a
                                       key={item.name}
                                       href={item.page}
@@ -573,7 +628,59 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                       megaMenuLinks
                         .find((link) => link.name === megaMenuHoveredItem)
                         ?.items?.map((item) =>
-                          item.external ? (
+                          item.hasSubItems ? (
+                            <div key={item.name}>
+                              <div
+                                className="flex items-center justify-between cursor-pointer group"
+                                onMouseEnter={() =>
+                                  setExpandedSubCategory(item.name)
+                                }
+                              >
+                                <Link
+                                  to={item.categoryLink}
+                                  className={`text-stevens-xl font-stevens-display transition-colors duration-200 ${
+                                    expandedSubCategory === item.name
+                                      ? "text-stevens-red"
+                                      : "text-stevens-light-gray hover:text-stevens-white"
+                                  }`}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {item.name}
+                                </Link>
+                                <svg
+                                  className={`w-4 h-4 transition-transform duration-200 ${
+                                    expandedSubCategory === item.name
+                                      ? "rotate-90 text-stevens-red"
+                                      : "text-stevens-light-gray"
+                                  }`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
+                              {expandedSubCategory === item.name && (
+                                <div className="ml-4 mt-2 space-y-2 border-l-2 border-stevens-red/30 pl-4">
+                                  {item.subItems.map((sub) => (
+                                    <Link
+                                      key={sub.name}
+                                      to={createPageUrl(sub.page)}
+                                      className="block text-stevens-base font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.external ? (
                             <a
                               key={item.name}
                               href={item.page}
@@ -590,6 +697,9 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                               to={createPageUrl(item.page)}
                               className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
                               onClick={() => setMobileMenuOpen(false)}
+                              onMouseEnter={() =>
+                                setExpandedSubCategory(null)
+                              }
                             >
                               {item.name}
                             </Link>
