@@ -182,7 +182,7 @@ const ExploreMEADS = () => {
     justLaunchedBadge: "Just Launched",
     justLaunchedTitle: "Accelerated Application Now Available",
     justLaunchedDescription: `
-      <p>Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. This streamlined process removes traditional barriers while maintaining Stevens' academic standards.</p>
+      <p>Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. This streamlined process removes traditional barriers while maintaining Stevens' academic standards.</p>
       
       <p>Get started immediately with no letters of recommendation required, upload unofficial transcripts, and submit your resume or LinkedIn profile. Official transcripts are due within 2 months of enrollment.</p>
     `,

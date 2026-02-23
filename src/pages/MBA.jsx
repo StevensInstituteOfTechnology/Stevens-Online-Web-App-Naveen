@@ -726,10 +726,10 @@ const programData = {
   admissions: {
     options: [
       {
-        title: "Accelerated App",
+        title: "Accelerated Application",
         featured: false,
         description: `<p>
-          Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
+          Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application gets you started immediately:
         </p>
         <ul class="list-disc pl-5 mt-2 space-y-1">
           <li><strong>Recommendation Letters:</strong> Not Required</li>
@@ -762,7 +762,7 @@ const programData = {
         <div>
           <h4 class="font-bold text-lg mb-2">LETTERS OF RECOMMENDATION</h4>
           
-          <p class="mt-2">The Accelerated App streamlines your application process by removing the recommendation letter requirement, allowing you to apply faster without coordinating with references.</p>
+          <p class="mt-2">The Accelerated Application streamlines your application process by removing the recommendation letter requirement, allowing you to apply faster without coordinating with references.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">GMAT/GRE</h4>

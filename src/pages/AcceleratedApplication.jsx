@@ -337,18 +337,18 @@ export default function AcceleratedApplicationPage() {
                 Your Path to Graduate Success
               </h2>
               <p className="text-stevens-lg text-stevens-gray-900 mb-stevens-lg leading-relaxed">
-                Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App streamlines the admissions process so you can get started immediately on your graduate education journey.
+                Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application streamlines the admissions process so you can get started immediately on your graduate education journey.
               </p>
               
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
                 <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">What Makes It Different?</h3>
                 <p className="text-stevens-base text-stevens-gray-700 mb-stevens-md">
-                  We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated App removes traditional barriers while maintaining Stevens' academic standards.
+                  We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated Application removes traditional barriers while maintaining Stevens' academic standards.
                 </p>
               </div>
 
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose the Accelerated App?</h3>
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose the Accelerated Application?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                     <li key={index} className="flex items-start gap-stevens-md">

@@ -134,7 +134,7 @@ const ExploreMSCS = () => {
     justLaunchedBadge: "JUST LAUNCHED",
     justLaunchedTitle: "ACCELERATED APPLICATION",
     justLaunchedDescription: `
-      <p>Our new <strong>Accelerated App</strong> is designed for busy professionals who want to fast-track their application. Get started immediately with simplified requirements:</p>
+      <p>Our new <strong>Accelerated Application</strong> is designed for busy professionals who want to fast-track their application. Get started immediately with simplified requirements:</p>
       <ul class="list-disc pl-5 mt-2 space-y-1">
         <li><strong>No recommendation letters required</strong></li>
         <li><strong>Upload unofficial transcripts</strong> – official transcripts due within 2 months</li>

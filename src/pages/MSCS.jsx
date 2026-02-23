@@ -669,10 +669,10 @@ The objective of this course is to give students a basic grounding in designing 
   admissions: {
       options: [
         {
-          title: "Accelerated App",
+          title: "Accelerated Application",
           featured: false,
           description: `<p>
-            Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
+            Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application gets you started immediately:
           </p>
           <ul class="list-disc pl-5 mt-2 space-y-1">
             <li><strong>Recommendation Letters:</strong> Not Required</li>
