@@ -7,6 +7,7 @@ import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
+import { CONTACT_INFO } from '@/config/constants';
 
 export default function AcceleratedApplicationPage() {
   // Get program code from URL or sessionStorage
@@ -58,7 +59,7 @@ export default function AcceleratedApplicationPage() {
     
     const script = document.createElement('script');
     script.id = 'slate-form-script-accelerated';
-    script.src = 'https://gradadmissions.stevens.edu/register/?id=89080626-7bc4-4c48-9437-fd47479d7371&output=embed&div=form_89080626-7bc4-4c48-9437-fd47479d7371';
+    script.src = 'https://gradadmissions.stevens.edu/register/?id=4be285ae-ef97-4493-a41b-9f27bcd981dc&output=embed&div=form_4be285ae-ef97-4493-a41b-9f27bcd981dc';
     script.async = true;
     
     // Append container to body, then script to container
@@ -69,7 +70,7 @@ export default function AcceleratedApplicationPage() {
     const submitHandlers = [];
     script.onload = () => {
       setTimeout(() => {
-        const formContainer = document.getElementById('form_89080626-7bc4-4c48-9437-fd47479d7371');
+        const formContainer = document.getElementById('form_4be285ae-ef97-4493-a41b-9f27bcd981dc');
         if (formContainer) {
           const forms = formContainer.querySelectorAll('form');
           forms.forEach(form => {
@@ -359,11 +360,39 @@ export default function AcceleratedApplicationPage() {
                 </ul>
               </div>
 
-              <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md border border-stevens-primary/20">
-                <p className="text-stevens-sm text-stevens-gray-700">
-                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Stevens may request additional documentation if needed to confirm your academic or professional background.
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">Submitting Your Application</h3>
+                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-sm">
+                  Once you have completed the required sections and uploaded required documents, click &quot;Submit&quot; in the Review section. Once you have submitted your application, you will not be able to add information or make changes. If you need to adjust your application after submission, please contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.
                 </p>
               </div>
+
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">After You Submit</h3>
+                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-sm">
+                  You will receive a confirmation email that includes a link to your Applicant Status Page. The Applicant Status Page is where you will pay your application fee and receive updates on the status of your application.
+                </p>
+              </div>
+
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">Application Review Process</h3>
+                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-sm">
+                  Stevens conducts admissions on a rolling basis, so decisions are released as they are rendered. Master&apos;s degree and graduate certificate applications are typically reviewed within 48 hours of submission.
+                </p>
+                <p className="text-stevens-base text-stevens-gray-700">
+                  If you would like to apply to more than one program for a given semester, you must submit a separate application for each program. Prospective students should apply to no more than three programs.
+                </p>
+              </div>
+
+              <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md border border-stevens-primary/20">
+                <p className="text-stevens-sm text-stevens-gray-700">
+                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Official transcripts from all post-secondary institutions you have attended are required (regardless of whether you earned a degree). Stevens may request additional documentation if needed to confirm your academic or professional background.
+                </p>
+              </div>
+
+              <p className="text-stevens-base text-stevens-gray-700 mt-stevens-lg">
+                <strong>Questions?</strong> Please contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.
+              </p>
             </div>
 
             {/* Right Column - Form */}
@@ -371,12 +400,12 @@ export default function AcceleratedApplicationPage() {
               <Card className="shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden">
                 <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white rounded-t-stevens-md">
                   <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-stevens-bold leading-tight">Submit Your Application</CardTitle>
-                  <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below to get started</p>
+                  <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below, then click Submit in the Review section. After submitting, you&apos;ll receive a confirmation email with a link to pay your fee and check status.</p>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="relative">
                     <style jsx>{`
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc {
                         max-width: 100% !important;
                         width: 100% !important;
                         overflow: hidden !important;
@@ -386,12 +415,12 @@ export default function AcceleratedApplicationPage() {
                         z-index: 1 !important;
                       }
                       
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 * {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc * {
                         max-width: 100% !important;
                         box-sizing: border-box !important;
                       }
                       
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc iframe {
                         width: 100% !important;
                         max-width: 100% !important;
                         border: none !important;
@@ -400,7 +429,7 @@ export default function AcceleratedApplicationPage() {
                         position: relative !important;
                       }
                       
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc form {
                         width: 100% !important;
                         max-width: 100% !important;
                         padding: 1.5rem !important;
@@ -458,8 +487,8 @@ export default function AcceleratedApplicationPage() {
                       /* ===== BUTTON STYLING - START ===== */
                       
                       /* Submit button styling */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
                         background: #a32638 !important;
                         color: #ffffff !important;
                         border: none !important;
@@ -476,34 +505,34 @@ export default function AcceleratedApplicationPage() {
                       }
                       
                       /* Submit button hover */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:hover,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:hover {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"]:hover,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"]:hover {
                         background: #8b1e2f !important;
                         transform: translateY(-1px) !important;
                         box-shadow: 0 4px 12px rgba(163, 38, 56, 0.3) !important;
                       }
                       
                       /* Submit button active */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:active,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:active {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"]:active,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"]:active {
                         transform: translateY(0) !important;
                         box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
                       }
 
                       /* Button container - ensures buttons have proper spacing */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .button-container,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-actions,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div[class*="button"],
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div:has(> button[type="submit"]) {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .button-container,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form-actions,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc div[class*="button"],
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc div:has(> button[type="submit"]) {
                         display: flex !important;
                         gap: 1rem !important;
                         flex-wrap: wrap !important;
                       }
 
                       /* Back button styling to match submit button */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="button"],
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .back-button,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button:not([type="submit"]) {
                         background: #6b7280 !important;
                         color: #ffffff !important;
                         border: none !important;
@@ -520,19 +549,19 @@ export default function AcceleratedApplicationPage() {
                       }
 
                       /* Back button hover */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button:hover {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="button"]:hover,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .back-button:hover {
                         background: #4b5563 !important;
                         transform: translateY(-1px) !important;
                         box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3) !important;
                       }
 
                       /* Ensure buttons are inline but with spacing */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button {
                         margin-left: 0 !important;
                       }
 
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button + button {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button + button {
                         margin-left: 1rem !important;
                       }
 
@@ -541,8 +570,8 @@ export default function AcceleratedApplicationPage() {
                       /* ===== TEST STYLING FOR "Personal Information" LABEL ===== */
                       
                       /* Target the "Personal Information" header label */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header .form_label,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form_header .form_label,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
                         color: #a32638 !important; /* Stevens red color */
                         font-size: 1.25rem !important; /* Larger font size */
                         font-weight: 700 !important; /* Bold */
@@ -556,16 +585,16 @@ export default function AcceleratedApplicationPage() {
                       }
                       
                       /* Remove gray background from parent container */
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
-                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header {
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
+                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form_header {
                         background: transparent !important;
                         background-color: transparent !important;
                       }
                       
                       /* Mobile responsive - Tablet */
                       @media (max-width: 1024px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
                           padding: 0.75rem 1.5rem !important;
                           font-size: 14px !important;
                         }
@@ -573,20 +602,20 @@ export default function AcceleratedApplicationPage() {
                       
                       /* Mobile responsive - Mobile */
                       @media (max-width: 768px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 {
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc {
                           font-size: 13px !important;
                         }
                         
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input,
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc select,
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc textarea {
                           width: 100% !important;
                           max-width: 100% !important;
                           font-size: 16px !important;
                         }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
                           padding: 0.75rem 1.25rem !important;
                           font-size: 14px !important;
                         }
@@ -594,8 +623,8 @@ export default function AcceleratedApplicationPage() {
                       
                       /* Mobile responsive - Small Mobile */
                       @media (max-width: 480px) {
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
+                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
                           padding: 0.75rem 1rem !important;
                           font-size: 13px !important;
                         }
@@ -603,7 +632,7 @@ export default function AcceleratedApplicationPage() {
                     `}</style>
                     <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
                       <div
-                        id="form_89080626-7bc4-4c48-9437-fd47479d7371"
+                        id="form_4be285ae-ef97-4493-a41b-9f27bcd981dc"
                         className="min-h-[600px] w-full">
                         <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-gray-300 rounded-stevens-md bg-stevens-white">
                           <div className="text-center">

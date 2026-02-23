@@ -10,8 +10,8 @@ export const FORM_IDS = {
   /** ASAP Application Form */
   ASAP: 'form_9268876a-a7c7-484d-a41e-7d0cb4c5613c',
   
-  /** Accelerated Application Form */
-  ACCELERATED: 'form_89080626-7bc4-4c48-9437-fd47479d7371'
+  /** Accelerated Application Form (test: 4be285ae; prod: 89080626-7bc4-4c48-9437-fd47479d7371) */
+  ACCELERATED: 'form_4be285ae-ef97-4493-a41b-9f27bcd981dc'
 };
 
 /**
