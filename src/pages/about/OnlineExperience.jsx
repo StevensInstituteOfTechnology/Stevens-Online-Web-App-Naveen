@@ -30,15 +30,15 @@ export default function OnlineExperience() {
   // Set SEO meta tags
   useEffect(() => {
     setPageTitle(
-      "Online Learning Experience & Student Support | Stevens Online"
+      "The Learning Experience | Stevens College of Professional Education"
     );
     setMetaDescription(
-      "Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement."
+      "Market-driven, tech-infused education built for working professionals. Discover how Stevens CPE delivers flexible online programs with world-class faculty and dedicated student support."
     );
     setOpenGraphTags({
-      title: "Online Learning Experience & Student Support | Stevens Online",
+      title: "The Learning Experience | Stevens College of Professional Education",
       description:
-        "Explore the online and distance learning experience at Stevens. Benefit from 24/7 access to resources, dedicated support, and a collaborative virtual classroom designed for flexibility and engagement.",
+        "Market-driven, tech-infused education built for working professionals. Discover how Stevens CPE delivers flexible online programs with world-class faculty and dedicated student support.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/online-learning-experience/"),
       type: "website",
@@ -130,8 +130,8 @@ export default function OnlineExperience() {
     <PageContextProvider pageType="content" pageName="OnlineExperience">
       <div>
         <PageHero
-          title="Online Education"
-          subtitle="A premier, technology-driven education, delivered with flexibility."
+          title="The Learning Experience"
+          subtitle="Market-driven, technology-infused education designed for professionals ready to stay ahead."
           bgImage="/assets/images/online-experience/online-experience-hero.webp"
         />
 
@@ -142,22 +142,22 @@ export default function OnlineExperience() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
-                  Overview
+                  How We Deliver
                 </h2>
                 <div className="space-y-stevens-md text-stevens-dark-gray leading-relaxed">
                   <p>
-                    Recognized as one of the most innovative schools in the
-                    nation, Stevens integrates technology across disciplines,
-                    ensuring that online students benefit from the same rigorous
-                    curriculum and expert faculty as those on campus.
+                    The College of Professional Education delivers rigorous,
+                    market-driven curriculum shaped by our close partnerships
+                    with leading employers. Every program is designed to equip
+                    professionals with practical, job-ready skills that align
+                    with what today's economy demands.
                   </p>
                   <p>
-                    This commitment is supported by our substantial investment
-                    in academic and research infrastructure, facilitating a
-                    cutting-edge educational experience. Our 100% online format
-                    includes synchronous and asynchronous courses — and allows
-                    you to access learning materials, lecture notes and
-                    assignments at any time through our online course platform.
+                    Our 100% online format combines synchronous and asynchronous
+                    courses, giving you the flexibility to learn on your schedule
+                    while still engaging in live sessions with world-class
+                    Stevens faculty. Access learning materials, lecture notes,
+                    and assignments at any time through our online platform.
                   </p>
                 </div>
               </div>
@@ -216,9 +216,9 @@ export default function OnlineExperience() {
 
         {/* Online Experience Video Section */}
         <VideoSection
-          title="THE ONLINE LEARNING EXPERIENCE"
-          heading="A premier, technology-driven education, delivered by our College of Professional Education"
-          description="Our online format combines synchronous and asynchronous learning with 24/7 access to materials, live sessions with faculty, and comprehensive student support—designed for working professionals who need flexibility without compromise."
+          title="THE CPE LEARNING EXPERIENCE"
+          heading="Technology-driven education, purpose-built for working professionals"
+          description="Our online format combines synchronous and asynchronous learning with 24/7 access to materials, live sessions with faculty, and comprehensive student support - designed for professionals who need flexibility without compromise."
           youtubeVideoId="iYohu3lqR3s"
           youtubeQuality="hd1080"
           ctaText="Explore our programs"
@@ -255,34 +255,33 @@ export default function OnlineExperience() {
                 <div className="p-stevens-lg stevens-md:p-stevens-2xl bg-white">
                   <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-md">
                     <p>
-                      Welcome to Stevens Online. For more than 150 years,
-                      Stevens Institute of Technology has been at the forefront
-                      of innovation, shaping the future through technology,
-                      research, and education. Stevens is consistently ranked
-                      among the nation's top universities for return on
-                      investment, reflecting both the quality and long-term
-                      value of a Stevens education.
+                      Welcome to the College of Professional Education at
+                      Stevens Institute of Technology. For more than 150 years,
+                      Stevens has been at the forefront of innovation, shaping
+                      the future through technology, research, and education.
+                      We are consistently ranked among the nation's top
+                      universities for return on investment, reflecting both
+                      the quality and long-term value of a Stevens education.
                     </p>
                     <p>
-                      That same commitment to excellence defines our online
-                      learning experience. Stevens Online offers rigorous,
-                      engaging, and flexible programs designed by expert
-                      faculty, industry-aligned, and focused on real-world
-                      application. Our students learn alongside professionals
-                      from across the world, gaining skills that are immediately
-                      relevant to their careers and preparing them to lead in a
-                      rapidly changing environment.
+                      That same commitment to excellence defines our learning
+                      experience. The College of Professional Education delivers
+                      rigorous, market-driven programs designed by expert
+                      faculty, informed by our industry partnerships, and
+                      focused on real-world application. Our students learn
+                      alongside professionals from across the world, gaining
+                      skills that are immediately relevant to their careers.
                     </p>
                     <p>
-                      Building on this strong foundation, Stevens has created a
-                      new College of Professional Education to expand access to
-                      high-impact, technology-driven education for working
-                      professionals and corporate partners.
+                      Whether you are looking to upskill, reskill, or pivot
+                      into a new field, CPE provides flexible, tailored
+                      pathways - from stackable credentials to full master's
+                      degrees - that work with your schedule and your goals.
                     </p>
                     <p>
                       I invite you to explore our programs and experience how
                       Stevens continues to set the standard for excellence and
-                      innovation in online learning and professional education.
+                      innovation in professional education.
                     </p>
                   </div>
 
