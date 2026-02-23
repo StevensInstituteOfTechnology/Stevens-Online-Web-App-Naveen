@@ -27,7 +27,6 @@ const graduateProgramItems = [
     name: "M.S. in Computer Science",
     page: "online-masters-computer-science-mscs/",
   },
-  // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
   {
     name: "M.Eng. in Applied Data Science",
     page: "online-masters-engineering-applied-data-science/",
@@ -46,52 +45,26 @@ const certificateProgramItems = [
   },
 ];
 
-const aboutItems = [
-  { name: "Online Experience", page: "online-learning-experience/" },
-  { name: "Events", page: "Events/" },
-];
-
-const mainNavLinks = [
-  // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
-  // { name: "Certificates & Short Courses", page: "Certificates" },
-
-  { name: "Blog", page: "Blog/" },
-];
-
 const admissionsAidItems = [
-  { name: "Admissions", page: "Admissions/" },
-  { name: "Tuition & Financial Aid", page: "Tuition" },
-  
+  { name: "Admissions", page: "admissions/" },
+  { name: "Tuition & Financial Aid", page: "tuition-and-financial-aid/" },
 ];
 
-const corporateAlumniItems = [
+const workforceDevelopmentItems = [
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
- 
-];
-
-const alumniItems = [
   { name: "Alumni Workforce Development", page: "alumni-pgc/" },
-  
-];
-const visitStevensItems = [
-  {
-    name: "Visit Stevens",
-    page: "https://www.stevens.edu/admission-aid/visit-stevens",
-    external: true,
-  },
 ];
 
-// Combined for mobile menu
-const tuitionAdmissionsItems = [...admissionsAidItems, ...corporateAlumniItems, ...alumniItems, ...visitStevensItems];
+const whyStevensItems = [
+  { name: "Learning Experience", page: "online-learning-experience/" },
+  { name: "Student Outcomes", page: "student-outcomes/" },
+  { name: "Events", page: "events/" },
+];
 
-// Mega menu items for Degrees dropdown (used in both desktop and mobile)
 const megaMenuDegreeItems = [...graduateProgramItems];
-
-// Mega menu items for Certificates dropdown (used in both desktop and mobile)
 const megaMenuCertificateItems = [...certificateProgramItems];
 
-// Mega menu navigation structure (used in both desktop and mobile)
 const megaMenuLinks = [
   { name: "All Programs", page: "explore-programs/" },
   {
@@ -109,14 +82,20 @@ const megaMenuLinks = [
   {
     name: "Admissions & Aid",
     isDropdown: true,
-    items: tuitionAdmissionsItems,
+    items: admissionsAidItems,
   },
   {
-    name: "About",
+    name: "Workforce Development Hub",
     isDropdown: true,
-    items: aboutItems,
+    items: workforceDevelopmentItems,
+    categoryLink: "/workforce-development/",
   },
-  ...mainNavLinks,
+  {
+    name: "Why Stevens",
+    isDropdown: true,
+    items: whyStevensItems,
+  },
+  { name: "Insights", page: "blog/" },
 ];
 
 export default function Layout({ children, currentPageName: _currentPageName }) {
@@ -625,9 +604,9 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                         College of Professional Education
                       </h3>
                       <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
-                        Advance your career with Stevens' forward-looking vision
-                        for higher education—flexible online programs designed
-                        for working professionals.
+                        A bold new education designed for a fast-changing
+                        future. Flexible, market-driven programs that equip
+                        professionals with the skills today's economy demands.
                       </p>
                     </div>
                     <Link
@@ -730,45 +709,41 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
               </h3>
               <div className="space-y-2">
                 <Link
-                  to={createPageUrl("Admissions/")}
+                  to={createPageUrl("admissions/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Admissions
                 </Link>
                 <Link
-                  to={createPageUrl("Tuition")}
+                  to={createPageUrl("tuition-and-financial-aid/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Tuition & Financial Aid
                 </Link>
                 <Link
-                  to={createPageUrl("corporate-partners/")}
+                  to="/workforce-development/"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Corporate Partners
-                </Link>
-                <Link
-                  to={createPageUrl("corporate-students/")}
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  Corporate Students
+                  Workforce Development Hub
                 </Link>
                 <Link
                   to="/online-learning-experience/"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  The Online Experience
+                  Learning Experience
                 </Link>
-               
-                <a
-                  href="https://www.stevens.edu/development-alumni-engagement"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={createPageUrl("events/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Alumni
-                </a>
-                
+                  Events
+                </Link>
+                <Link
+                  to={createPageUrl("blog/")}
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Insights
+                </Link>
               </div>
             </div>
             <div>

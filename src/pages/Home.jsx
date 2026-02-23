@@ -270,14 +270,14 @@ export default function Home() {
 
   // Set SEO meta tags
   useEffect(() => {
-    setPageTitle("Explore Online Master's Programs | Stevens Online");
+    setPageTitle("College of Professional Education | Stevens Institute of Technology");
     setMetaDescription(
-      "Explore accredited online master's programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options."
+      "A bold new education designed for a fast-changing future. Stevens CPE delivers flexible, market-driven programs that equip professionals with job-ready skills."
     );
     setOpenGraphTags({
-      title: "Explore Online Master's Programs | Stevens Online",
+      title: "College of Professional Education | Stevens Institute of Technology",
       description:
-        "Explore accredited online master's programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.",
+        "A bold new education designed for a fast-changing future. Stevens CPE delivers flexible, market-driven programs that equip professionals with job-ready skills.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/"),
       type: "website",
@@ -353,16 +353,16 @@ export default function Home() {
 
           <div className="relative h-full w-full px-6 pb-16 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
-            <div className="max-w-2xl text-right">
+            <div className="max-w-3xl text-right">
               {/* Typewriter stagger animation on hero heading */}
               <motion.h1
-                className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white"
+                className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4 text-stevens-white"
                 variants={heroTypewriterContainer}
                 initial="hidden"
                 animate="visible"
                 onAnimationComplete={() => setHeroTitleComplete(true)}
               >
-                {"Move your".split("").map((char, i) => (
+                {"A bold new education".split("").map((char, i) => (
                   <motion.span
                     key={`line1-${i}`}
                     variants={heroTypewriterChar}
@@ -372,7 +372,7 @@ export default function Home() {
                   </motion.span>
                 ))}
                 <br />
-                {"career forward".split("").map((char, i) => (
+                {"for a fast-changing future".split("").map((char, i) => (
                   <motion.span
                     key={`line2-${i}`}
                     variants={heroTypewriterChar}
@@ -389,7 +389,8 @@ export default function Home() {
                 initial="hidden"
                 animate={heroTitleComplete ? "visible" : "hidden"}
               >
-                A flexible, tailored education that drives competitive advantage
+                Flexible, market-driven learning that today's professionals
+                need - and today's employers demand.
               </motion.p>
               {/* Button fades in after subtitle */}
               <motion.div
@@ -457,11 +458,18 @@ export default function Home() {
                   exceptional technology education
                 </h2>
                 <p className="text-stevens-white text-stevens-lg mb-stevens-xl leading-relaxed">
-                  For more than a century, Stevens has delivered worldclass,
-                  technology-focused education that meets the moment. The
-                  College of Professional Education is an exciting new chapter -
-                  the chance for a whole new generation of working professionals
-                  to experience Stevens technology leadership and excellence.
+                  The College of Professional Education at Stevens Institute of
+                  Technology delivers flexible, market-aligned learning that
+                  equips professionals with the job-ready skills today's economy
+                  demands. Backed by 150 years of leadership in technology
+                  education, we partner with top employers across the New York
+                  region to ensure our programs stay relevant and responsive to
+                  market shifts - while connecting professionals to opportunity.
+                </p>
+                <p className="text-stevens-white text-stevens-lg leading-relaxed">
+                  From stackable credentials to full master's degrees, our
+                  programs are built for real life - offering flexible, tailored
+                  pathways that drive career advancement and measurable results.
                 </p>
               </AnimatedSection>
             </div>
@@ -491,7 +499,14 @@ export default function Home() {
         </section>
 
         {/* THE STEVENS CPE ADVANTAGE VIDEO */}
-        <VideoSection youtubeVideoId="4xvsdp_We2w" />
+        <VideoSection
+          youtubeVideoId="4xvsdp_We2w"
+          title="THE CPE DIFFERENCE"
+          heading="Delivering the outcomes that drive career success"
+          description="The College of Professional Education is much more than courses and credentials - it's a powerful new model centered on giving professionals at every stage of their careers the unique mix of skills and qualifications they need to excel in today's complex global economy."
+          ctaText="Explore the learning experience"
+          ctaLink="/online-learning-experience/"
+        />
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"
@@ -562,7 +577,7 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
-                  No. 1 in N.J. — U.S. News 2026
+                  No. 1 in N.J. - U.S. News 2026
                 </p>
               </motion.div>
 
@@ -614,7 +629,7 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
-                  No. 1 in N.J. — U.S. News 2026
+                  No. 1 in N.J. - U.S. News 2026
                 </p>
               </motion.div>
             </div>
@@ -628,11 +643,12 @@ export default function Home() {
             <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 pb-16 lg:px-12 lg:py-24 flex flex-col justify-center">
               <AnimatedSection>
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-6 leading-tight">
-                  Our Programs
+                  Explore Our Programs
                 </h2>
                 <p className="text-stevens-white text-lg mb-8 leading-relaxed">
-                  Discover world-class online graduate programs designed for
-                  working professionals seeking to advance their careers.
+                  From stackable credentials to market-driven master's degrees,
+                  our programs are purpose-built for working professionals ready
+                  to upskill, reskill, or pivot.
                 </p>
                 <Link
                   to={
@@ -874,11 +890,11 @@ export default function Home() {
             <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
               <div>
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-2">
-                  Latest from Our Blog
+                  Latest Insights
                 </h2>
                 <p className="text-stevens-lg text-stevens-white max-w-2xl">
-                  Insights on online education, career advancement, and
-                  technology trends.
+                  Perspectives on technology, career advancement, and the
+                  future of professional education.
                 </p>
               </div>
               <Link to={createPageUrl("blog/")}>

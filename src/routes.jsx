@@ -14,6 +14,7 @@ import {
   CorporateStudents,
   AlumniPGC,
   EmployerSponsorship,
+  WorkforceDevelopmentHub,
   SiemensPage,
   PSEGPage,
   PSEGEnterpriseAIPage,
@@ -383,6 +384,16 @@ export const routes = [
   {
     path: "/employer-sponsorship",
     element: <Navigate to="/employer-sponsorship/" replace />,
+  },
+
+  // Workforce Development Hub
+  {
+    path: "/workforce-development/",
+    element: <WorkforceDevelopmentHub />,
+  },
+  {
+    path: "/workforce-development",
+    element: <Navigate to="/workforce-development/" replace />,
   },
 
   // Corporate Partnership Pages
