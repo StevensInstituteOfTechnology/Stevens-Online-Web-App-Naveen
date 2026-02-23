@@ -73,13 +73,19 @@ const textRankings = [
     description: "Online MBA from a New Jersey school in 2025",
     source: "U.S. News & World Report",
   },
+
+  {
+    value: "#7",
+    description:
+      "Best Online Master's in Engineering Management Programs nationally",
+    source: "U.S. News & World Report (2026)",
+  },
   {
     value: "7x",
     description:
       "Winner of the 21st Century Award for Best Practices in Distance Learning",
     source: "USDLA",
   },
-
   {
     value: "#9",
     description: "Ranks No. 9 among 'Best ROI Colleges'",
@@ -93,55 +99,21 @@ const textRankings = [
   },
 ];
 
-const badgeRankings = [
-  {
-    image: "/assets/rankings/ranking-badge-1.webp",
-    description:
-      "No. 1 in New Jersey in Best Online Master's in Computer Information Technology Programs",
-  },
-  {
-    image: "/assets/rankings/ranking-badge-2.webp",
-    description: "No. 1 in New Jersey in Best Online MBA Programs",
-  },
-  {
-    image: "/assets/rankings/ranking-badge-3.webp",
-    description: "No. 36 Nationally in Best Online Engineering Programs",
-  },
-];
-
 const TextRankingItem = ({ value, description, source }) => (
-  <div className="flex items-center gap-stevens-md py-stevens-md border-b border-stevens-gray-200 last:border-b-0">
-    <p className="font-stevens-display text-stevens-4xl font-stevens-bold text-stevens-maroon w-36 shrink-0 text-center leading-none">
+  <div className="flex flex-col">
+    <p className="font-stevens-display text-stevens-4xl font-stevens-bold text-stevens-gray-900 leading-none">
       {value}
     </p>
-    <div>
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-gray-900 leading-relaxed">
-        {description}
-      </p>
+    {/* Gold underline accent */}
+    <div className="w-12 h-1 bg-stevens-primary mt-2 mb-4" />
+    <p className="text-stevens-base text-stevens-gray-700 leading-relaxed">
+      {description}
       {source && (
-        <p className="text-stevens-base text-stevens-gray-900 mt-stevens-xs italic">
-          {source}
-        </p>
+        <span className="text-stevens-sm text-stevens-gray-600 italic ml-1">
+          ({source})
+        </span>
       )}
-    </div>
-  </div>
-);
-
-const BadgeRankingItem = ({ image, description }) => (
-  <div className="flex items-center gap-stevens-md p-stevens-md bg-stevens-white rounded-stevens-md shadow-stevens-md hover:shadow-stevens-lg transition-all duration-stevens-normal border border-stevens-gray-100 hover:border-stevens-gray-200">
-    <div className="relative">
-      <img
-        src={image}
-        alt="Ranking Badge"
-        className="w-20 h-20 shrink-0 object-contain"
-        loading="lazy"
-      />
-    </div>
-    <div className="flex-1">
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-gray-900 leading-relaxed">
-        {description}
-      </p>
-    </div>
+    </p>
   </div>
 );
 
@@ -178,6 +150,7 @@ export default function Home() {
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
   const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
+  const [showAllRankings, setShowAllRankings] = useState(false); // State for rankings "Show more" toggle
 
   // Application Support Events (reuse same content as Events page)
   const supportEvents = [
@@ -330,26 +303,25 @@ export default function Home() {
               </p>
             </AnimatedSection>
 
-            <div className="grid lg:grid-cols-2 gap-x-stevens-gap-lg gap-y-stevens-xl items-center">
-              <AnimatedSection>
-                <div className="flex flex-col gap-stevens-xs">
-                  {textRankings.map((point, index) => (
+            <AnimatedSection className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                {textRankings
+                  .slice(0, showAllRankings ? textRankings.length : 4)
+                  .map((point, index) => (
                     <TextRankingItem key={index} {...point} />
                   ))}
+              </div>
+              {textRankings.length > 4 && (
+                <div className="text-center mt-12">
+                  <button
+                    onClick={() => setShowAllRankings(!showAllRankings)}
+                    className="text-stevens-primary hover:underline font-stevens-medium"
+                  >
+                    {showAllRankings ? "Show less" : "Show more"}
+                  </button>
                 </div>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.2}>
-                <div className="flex flex-col gap-stevens-md">
-                  {badgeRankings.map((ranking, index) => (
-                    <BadgeRankingItem key={index} {...ranking} />
-                  ))}
-                  <p className="text-center font-stevens-semibold text-stevens-gray-900 mt-stevens-sm italic">
-                    Source: U.S. News & World Report 2025
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
+              )}
+            </AnimatedSection>
           </div>
         </section>
 
