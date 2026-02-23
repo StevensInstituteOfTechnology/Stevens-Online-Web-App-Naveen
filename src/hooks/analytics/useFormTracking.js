@@ -20,7 +20,7 @@ export const useFormTracking = (options = {}) => {
     sourcePage
   } = options;
   
-  const formLoadTime = useRef(Date.now());
+  const _formLoadTime = useRef(Date.now());
   const formStartTime = useRef(null);
   const hasTrackedView = useRef(false);
   const hasTrackedStart = useRef(false);
@@ -171,7 +171,7 @@ export const useFormTracking = (options = {}) => {
    * Get form props with automatic tracking
    */
   const getFormProps = () => ({
-    onSubmit: (e) => {
+    onSubmit: (_e) => {
       trackFormSubmit();
     }
   });

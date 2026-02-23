@@ -20,7 +20,9 @@ import { VideoPlayer } from "@/components/shared";
  * @param {string} title - Section title (default: "THE STEVENS ONLINE ADVANTAGE")
  * @param {string} heading - Content heading (default: "Delivering the outcomes that drive career success")
  * @param {string} description - Content description text
- * @param {string} videoSrc - Video source path
+ * @param {string} youtubeVideoId - YouTube video ID (e.g., "4xvsdp_We2w"). When set, embeds YouTube instead of local video.
+ * @param {string} youtubeQuality - Preferred quality hint for YouTube embed (e.g., "hd1080", "hd720"). Optional; YouTube may ignore.
+ * @param {string} videoSrc - Video source path (used when youtubeVideoId is not set)
  * @param {string} videoPoster - Video poster image path
  * @param {string} videoTitle - Video title attribute
  * @param {boolean} showControls - Whether to show video controls (default: true)
@@ -32,9 +34,11 @@ import { VideoPlayer } from "@/components/shared";
  */
 export const VideoSection = forwardRef(function VideoSection(
   {
-    title = "THE STEVENS ONLINE ADVANTAGE",
+    title = "THE STEVENS CPE ADVANTAGE",
     heading = "Delivering the outcomes that drive career success",
     description = "The College of Professional Education is much more than courses and credentials - it's a powerful new model centered on giving working professionals at every stage of their careers the unique mix of skills and qualifications they need to excel in today's complex global economy.",
+    youtubeVideoId = "",
+    youtubeQuality = "hd1080",
     videoSrc = "/assets/videos/Stevens Online Home - 1.mp4",
     videoPoster = "/assets/videos/video-cover-3.webp",
     videoTitle = "",
@@ -64,14 +68,25 @@ export const VideoSection = forwardRef(function VideoSection(
         <div className="grid lg:grid-cols-3 gap-stevens-gap-lg items-center">
           <AnimatedSection className="relative lg:col-span-2">
             <div className="bg-stevens-white rounded-stevens-md overflow-hidden shadow-stevens-lg border border-white/20">
-              {/* Video Player Component */}
-              <VideoPlayer
-                src={videoSrc}
-                poster={videoPoster}
-                title={videoTitle}
-                showControls={showControls}
-                muted={muted}
-              />
+              {youtubeVideoId ? (
+                <div className="relative aspect-video w-full overflow-hidden">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0&modestbranding=1${youtubeQuality ? `&vq=${youtubeQuality}` : ""}`}
+                    title={videoTitle || "YouTube video"}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              ) : (
+                <VideoPlayer
+                  src={videoSrc}
+                  poster={videoPoster}
+                  title={videoTitle}
+                  showControls={showControls}
+                  muted={muted}
+                />
+              )}
             </div>
           </AnimatedSection>
 

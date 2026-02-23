@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -132,12 +131,7 @@ const ApplicationOptionsCards = ({
 
                   {/* Button */}
                   {option.buttonText && (
-                    <a
-                      href={option.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block mt-auto"
-                    >
+                    <a href={option.url} className="block mt-auto">
                       <Button className="w-full h-12 text-lg font-bold tracking-wide bg-black text-white hover:bg-stevens-dark-gray border border-transparent">
                         {option.buttonText}
                         <ArrowRight className="w-5 h-5 ml-2" />
@@ -159,11 +153,7 @@ const ApplicationOptionsCards = ({
               <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
                 {consultation.title}
               </h3>
-              <a
-                href={consultation.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={consultation.url}>
                 <Button
                   variant="outline-dark"
                   className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white"

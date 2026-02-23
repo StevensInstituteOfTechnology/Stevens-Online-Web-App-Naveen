@@ -13,10 +13,7 @@ import {
   setOpenGraphTags,
   buildCanonicalUrl,
 } from "@/utils";
-import {
-  getHeroImageProps,
-  getContentImageProps,
-} from "@/utils/responsiveImage";
+import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   Asterism,
   AnimatedSection,
@@ -38,40 +35,6 @@ import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
-
-const StatItem = ({ value, label, icon: Icon }) => (
-  <div className="text-center flex flex-col items-center justify-center">
-    <Icon className="w-10 h-10 mx-auto mb-3" />
-    <div className="text-3xl font-stevens-headers font-bold">{value}</div>
-    <div className="uppercase tracking-wider text-stevens-base">{label}</div>
-  </div>
-);
-
-// NEW DATA and COMPONENTS for the redesigned rankings section
-const textRankings = [
-  {
-    value: "#1",
-    description: "Online MBA from a New Jersey school in 2025",
-    source: "U.S. News & World Report",
-  },
-  {
-    value: "#1",
-    description: "No. 1 in New Jersey for Graduate Earnings",
-    source: "U.S. Department of Education College Scorecard (2025)",
-  },
-  {
-    value: "7x",
-    description:
-      "Winner of the 21st Century Award for Best Practices in Distance Learning",
-    source: "USDLA",
-  },
-
-  {
-    value: "#9",
-    description: "Ranks No. 9 among 'Best ROI Colleges'",
-    source: "*Based on the cost of a four-year bachelor's degree program",
-  },
-];
 
 // Program showcase carousel data with real program information
 const programShowcaseData = [
@@ -161,23 +124,34 @@ const programShowcaseData = [
   },
 ];
 
-const TextRankingItem = ({ value, description, source }) => (
-  <div className="flex items-center gap-stevens-md py-stevens-md border-b border-stevens-light-gray last:border-b-0">
-    <p className="font-stevens-display text-stevens-4xl font-stevens-bold text-stevens-red w-36 shrink-0 text-center leading-none">
-      {value}
-    </p>
-    <div>
-      <p className="text-stevens-lg font-stevens-semibold text-stevens-dark-gray leading-relaxed">
-        {description}
-      </p>
-      {source && (
-        <p className="text-stevens-base text-stevens-dark-gray mt-stevens-xs italic">
-          {source}
-        </p>
-      )}
-    </div>
-  </div>
-);
+// Framer Motion variants for hero typewriter effect
+const heroTypewriterContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.6,
+    },
+  },
+};
+
+const heroTypewriterChar = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.1, ease: "easeOut" },
+  },
+};
+
+const heroFadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function Home() {
   usePageTracking({
@@ -190,12 +164,12 @@ export default function Home() {
     },
   });
 
-  const [programs, setPrograms] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [_programs, setPrograms] = useState([]);
+  const [_events, setEvents] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [showBrowseModal, setShowBrowseModal] = useState(false); // State for modal visibility
   const [showRequestInfoModal, setShowRequestInfoModal] = useState(false); // State for Request Info modal
-  const [showAssessment, setShowAssessment] = useState(false); // State for assessment toggle
+  const [heroTitleComplete, setHeroTitleComplete] = useState(false); // Triggers subtitle/button when title typewriter finishes
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
@@ -281,7 +255,11 @@ export default function Home() {
       // Load recent blog posts
       try {
         const blogsData = await import("@/data/blogs.json");
-        const recentBlogs = blogsData.posts.slice(0, 5);
+        const recentBlogs = blogsData.posts
+        .sort((a, b) => {
+          return new Date(b.created_date) - new Date(a.created_date);
+        })
+        .slice(0, 5);
         setBlogs(recentBlogs);
       } catch (error) {
         console.error("Error loading blogs:", error);
@@ -292,14 +270,14 @@ export default function Home() {
 
   // Set SEO meta tags
   useEffect(() => {
-    setPageTitle("Explore Online Master's Programs | Stevens Online");
+    setPageTitle("College of Professional Education | Stevens Institute of Technology");
     setMetaDescription(
-      "Explore accredited online master's programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options."
+      "A bold new education designed for a fast-changing future. Stevens CPE delivers flexible, market-driven programs that equip professionals with job-ready skills."
     );
     setOpenGraphTags({
-      title: "Explore Online Master's Programs | Stevens Online",
+      title: "College of Professional Education | Stevens Institute of Technology",
       description:
-        "Explore accredited online master's programs from Stevens Institute of Technology. Earn your degree 100% online with expert faculty and flexible options.",
+        "A bold new education designed for a fast-changing future. Stevens CPE delivers flexible, market-driven programs that equip professionals with job-ready skills.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
       url: buildCanonicalUrl("/"),
       type: "website",
@@ -308,16 +286,14 @@ export default function Home() {
 
   return (
     <PageContextProvider pageType="home" pageName="Homepage">
-      <div className="font-sans">
+      <div className="font-sans bg-stevens-black">
         {/* Hero Section - negative margin pulls it up behind the fixed navbar */}
         <section className="relative h-[900px] bg-stevens-black text-stevens-white overflow-hidden -mt-[87px] pt-[87px]">
           <img
-            {...getHeroImageProps("/assets/images/home/home-hero.webp", {
-              widths: [640, 1024, 1280, 1920],
-            })}
+            src="/assets/images/home/home-hero-1920w.webp"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover "
+            className="absolute inset-0 w-full h-full object-cover"
             fetchpriority="high"
             loading="eager"
             decoding="async"
@@ -375,36 +351,74 @@ export default function Home() {
             staggerDelay={150}
           />
 
-          <div className="relative min-h-[85vh] w-full px-stevens-md sm:px-stevens-lg lg:px-stevens-xl  flex flex-col justify-end items-end">
+          <div className="relative h-full w-full px-6 pb-16 sm:px-8 lg:px-12 xl:px-16 flex flex-col justify-end items-end">
             {/* Hero Content - Right Bottom (per CPE Brand Guidelines) */}
-            <div className="max-w-2xl text-right md:pb-64 lg:pb-16 pr-4 lg:pr-16">
-              <h1 className="font-stevens-headers text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-4 text-stevens-white">
-                Move your
-                <br />
-                career forward
-              </h1>
-              <p className="font-stevens-body text-base md:text-xl text-stevens-white mb-6">
-                A flexible, tailored education that drives competitive advantage
-              </p>
-              <Link
-                to="/request-information/"
-                onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+            <div className="max-w-3xl text-right">
+              {/* Typewriter stagger animation on hero heading */}
+              <motion.h1
+                className="font-stevens-headers text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4 text-stevens-white"
+                variants={heroTypewriterContainer}
+                initial="hidden"
+                animate="visible"
+                onAnimationComplete={() => setHeroTitleComplete(true)}
               >
-                <Button variant="outline-red" className="uppercase">
-                  Request Information
-                </Button>
-              </Link>
+                {"A bold new education".split("").map((char, i) => (
+                  <motion.span
+                    key={`line1-${i}`}
+                    variants={heroTypewriterChar}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                <br />
+                {"for a fast-changing future".split("").map((char, i) => (
+                  <motion.span
+                    key={`line2-${i}`}
+                    variants={heroTypewriterChar}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+              {/* Subtitle fades in only after title typewriter completes */}
+              <motion.p
+                className="font-stevens-body text-base md:text-xl text-stevens-white mb-6"
+                variants={heroFadeInUp}
+                initial="hidden"
+                animate={heroTitleComplete ? "visible" : "hidden"}
+              >
+                Flexible, market-driven learning that today's professionals
+                need - and today's employers demand.
+              </motion.p>
+              {/* Button fades in after subtitle */}
+              <motion.div
+                variants={heroFadeInUp}
+                initial="hidden"
+                animate={heroTitleComplete ? "visible" : "hidden"}
+                transition={{ delay: 0.25 }}
+              >
+                <Link
+                  to="/request-information/"
+                  onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+                >
+                  <Button variant="outline-red" className="uppercase">
+                    Request Information
+                  </Button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
         {/* Dimensional Imagery Section - CPE Brand Guidelines */}
-        <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden">
+        <section className="bg-stevens-black py-stevens-section-sm lg:py-stevens-section relative overflow-hidden ">
           {/* Content container - z-10 to stay below asterism */}
           <div className="mx-auto px-stevens-md lg:px-stevens-3xl relative z-40">
             <div className="grid lg:grid-cols-2 gap-stevens-gap-lg items-center">
               {/* Left: Layered Images */}
               <AnimatedSection>
-                <AngledImageStack className="h-[600px] lg:h-[800px] relative ">
+                <AngledImageStack className="h-[500px] md:h-[600px] lg:h-[800px] relative ">
                   {/* Background layer - larger */}
                   <AngledImage
                     {...getContentImageProps(
@@ -413,7 +427,7 @@ export default function Home() {
                     alt="Student studying"
                     direction="vertical-left"
                     width="100%"
-                    height="600px"
+                    height={windowWidth < 768 ? "500px" : "600px"}
                     translateY={0}
                     translateX={5}
                     className="absolute top-0 left-0 "
@@ -444,11 +458,18 @@ export default function Home() {
                   exceptional technology education
                 </h2>
                 <p className="text-stevens-white text-stevens-lg mb-stevens-xl leading-relaxed">
-                  For more than a century, Stevens has delivered worldclass,
-                  technology-focused education that meets the moment. The
-                  College of Professional Education is an exciting new chapter -
-                  the chance for a whole new generation of working professionals
-                  to experience Stevens technology leadership and excellence.
+                  The College of Professional Education at Stevens Institute of
+                  Technology delivers flexible, market-aligned learning that
+                  equips professionals with the job-ready skills today's economy
+                  demands. Backed by 150 years of leadership in technology
+                  education, we partner with top employers across the New York
+                  region to ensure our programs stay relevant and responsive to
+                  market shifts - while connecting professionals to opportunity.
+                </p>
+                <p className="text-stevens-white text-stevens-lg leading-relaxed">
+                  From stackable credentials to full master's degrees, our
+                  programs are built for real life - offering flexible, tailored
+                  pathways that drive career advancement and measurable results.
                 </p>
               </AnimatedSection>
             </div>
@@ -458,12 +479,12 @@ export default function Home() {
           <Asterism
             className="z-10"
             centerX="33%"
-            centerY="55%"
+            centerY="45%"
             rays={2}
             angles={[90, 270]}
             color="stevens-white"
             opacity={0.7}
-            rayLengths={["full", windowWidth < 1024 ? 10 : 300]}
+            rayLengths={["full", windowWidth < 1024 ? windowWidth < 768 ? 40 : 200 : 500]}
             fadeRays={[]} // Disable fading for vertical lines to ensure seamless connection with Hero section
             fadeDirection="out"
             length="full"
@@ -477,19 +498,26 @@ export default function Home() {
           />
         </section>
 
-        {/* THE STEVENS ONLINE ADVANTAGE */}
-        <VideoSection />
+        {/* THE STEVENS CPE ADVANTAGE VIDEO */}
+        <VideoSection
+          youtubeVideoId="4xvsdp_We2w"
+          title="THE CPE DIFFERENCE"
+          heading="Delivering the outcomes that drive career success"
+          description="The College of Professional Education is much more than courses and credentials - it's a powerful new model centered on giving professionals at every stage of their careers the unique mix of skills and qualifications they need to excel in today's complex global economy."
+          ctaText="Explore the learning experience"
+          ctaLink="/online-learning-experience/"
+        />
         {/* Parallax Fixed Background Section */}
         <ParallaxImage
           src="/assets/images/shared/1-explore-msds.webp"
-          className="h-[256px] lg:h-[350px]"
+          className="h-[256px] lg:h-[400px] lg:mt-8"
         />
 
         {/* Stats section that continues below parallax */}
         <section className="relative bg-stevens-black pt-1 ">
           {/* Overlapping Card - negative margin pulls it up into parallax section */}
           {/* By the Numbers - Dark Mode Premium Design */}
-          <div className="relative z-10 mx-auto max-w-7xl bg-stevens-black -mt-16  px-8 pt-16 lg:px-16 lg:pt-24 scale-[0.90] origin-top">
+          <div className="relative z-10 mx-auto max-w-7xl bg-stevens-black -mt-24  px-8 pt-16 lg:px-16 lg:pt-24 scale-[0.90] origin-top">
             {/* Hero Headline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -503,7 +531,7 @@ export default function Home() {
                 <br />
                 Graduate Earnings
               </h2>
-              <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mb-4">
+              <p className="text-[24px] sm:text-xs text-stevens-white uppercase italic tracking-wider mb-4">
                 U.S. Dept. of Education 2025
               </p>
               <a
@@ -532,24 +560,24 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
                 className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
               >
                 <div>
-                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight ">
-                    #1
+                  <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
+                    #7
                   </p>
                   <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
-                    Online MBA
+                    Online Graduate
                     <br />
-                    from a New
+                    Engineering
                     <br />
-                    Jersey School
+                    Management
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  U.S. News & World Report 2025
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
+                  No. 1 in N.J. - U.S. News 2026
                 </p>
               </motion.div>
 
@@ -573,31 +601,35 @@ export default function Home() {
                     Award
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   USDLA Distance Learning
                 </p>
               </motion.div>
 
               {/* Stat 3 */}
+              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px]"
+                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 border-[#333333]"
               >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
-                    #9
+                    #16
                   </p>
                   <p className="font-stevens-headers text-sm sm:text-base lg:text-lg font-bold text-white uppercase tracking-wider leading-tight">
-                    Among 'Best
+                    Online MBA
                     <br />
-                    ROI Colleges'
+                    Business
+                    <br />
+                    Analytics
                   </p>
                 </div>
-                <p className="text-[10px] sm:text-xs text-stevens-gray uppercase tracking-wider mt-6">
-                  Based on 4-year degree cost
+                <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
+                  No. 1 in N.J. - U.S. News 2026
                 </p>
               </motion.div>
             </div>
@@ -608,18 +640,19 @@ export default function Home() {
         <section className="bg-stevens-black relative  lg:pt-stevens-section">
           <div className="flex flex-col lg:flex-row pb-16">
             {/* Left Content Panel */}
-            <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
+            <div className="lg:w-[35%] xl:w-[30%] bg-stevens-black px-8 pb-16 lg:px-12 lg:py-24 flex flex-col justify-center">
               <AnimatedSection>
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-6 leading-tight">
-                  Our Programs
+                  Explore Our Programs
                 </h2>
                 <p className="text-stevens-white text-lg mb-8 leading-relaxed">
-                  Discover world-class online graduate programs designed for
-                  working professionals seeking to advance their careers.
+                  From stackable credentials to market-driven master's degrees,
+                  our programs are purpose-built for working professionals ready
+                  to upskill, reskill, or pivot.
                 </p>
                 <Link
                   to={
-                    createPageUrl("compare-our-programs/") + "#explore-programs"
+                    createPageUrl("explore-programs/") + "#explore-programs"
                   }
                 >
                   <Button
@@ -654,7 +687,7 @@ export default function Home() {
 
                   {/* Compare Programs - Slim Vertical Link */}
                   <a
-                    href="/compare-our-programs/#compare-programs"
+                    href="/explore-programs/#compare-programs"
                     className="flex-shrink-0 w-[120px] snap-start group"
                   >
                     <motion.div
@@ -685,6 +718,7 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <Checkbox
                         id="masters-filter"
+                        aria-label="Filter by Masters programs"
                         checked={mastersChecked}
                         onCheckedChange={(checked) =>
                           setMastersChecked(checked)
@@ -702,6 +736,7 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <Checkbox
                         id="certificates-filter"
+                        aria-label="Filter by Certificates"
                         checked={certificatesChecked}
                         onCheckedChange={(checked) =>
                           setCertificatesChecked(checked)
@@ -772,6 +807,7 @@ export default function Home() {
           />
           {/* Content layer - Grid: Testimonial Left (2/3), Image Right (1/3) */}
           <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
+            <h2 className="sr-only">Featured testimonial from leadership</h2>
             <div className="grid xl:grid-cols-3 gap-12 xl:gap-16 items-center">
               {/* Left: Pull Quote Testimonial - 2/3 width on xl+ */}
               <AnimatedSection className="xl:col-span-2">
@@ -797,7 +833,7 @@ export default function Home() {
 
                       {/* Quote Text */}
                       <blockquote className="font-stevens-display text-2xl lg:text-3xl xl:text-4xl leading-snug font-light text-stevens-white mb-8">
-                        Stevens Online empowers working professionals to advance
+                        Stevens College of Professional Education empowers working professionals to advance
                         their careers through flexible, industry-relevant
                         programs.
                       </blockquote>
@@ -812,9 +848,9 @@ export default function Home() {
                           />
                         </div>
                         <div>
-                          <p className="font-stevens-display text-lg font-bold text-stevens-white">
+                          <h3 className="font-stevens-display text-lg font-bold text-stevens-white">
                             Arshad Saiyed
-                          </p>
+                          </h3  >
                           <p className="text-stevens-light-gray text-sm">
                             Chief Online Learning Officer and Dean of the
                             College of Professional Education
@@ -838,7 +874,7 @@ export default function Home() {
                     <img
                       src="/assets/avatars/home-avatar/ArshadS_H_S_L.webp"
                       alt="Arshad Saiyed - Dean of College of Professional Education"
-                      className="w-full h-[418px] transform skew-y-3 scale-110"
+                      className="w-full h-[455px] transform skew-y-3 scale-110"
                       loading="lazy"
                     />
                   </div>
@@ -854,20 +890,20 @@ export default function Home() {
             <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-stevens-xl">
               <div>
                 <h2 className="font-stevens-display text-4xl lg:text-5xl font-light text-stevens-white mb-2">
-                  Latest from Our Blog
+                  Latest Insights
                 </h2>
                 <p className="text-stevens-lg text-stevens-white max-w-2xl">
-                  Insights on online education, career advancement, and
-                  technology trends.
+                  Perspectives on technology, career advancement, and the
+                  future of professional education.
                 </p>
               </div>
               <Link to={createPageUrl("blog/")}>
                 <Button
                   variant="link"
-                  className=" h-auto  text-stevens-white pb-0"
+                  className=" h-auto  text-stevens-white pb-0 group"
                 >
                   View all insights
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </Link>
             </AnimatedSection>
@@ -881,7 +917,7 @@ export default function Home() {
         <SupportEventsSection events={supportEvents} />
 
         {/* SARA Accreditation Logo Section */}
-        <section className="pb-20 bg-stevens-black">
+        <section className=" bg-stevens-white">
           {/* 80% width border */}
           <div className="w-[80%] mx-auto h-px bg-white/20 mb-[60px]" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -896,6 +932,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
           </div>
+          <div className="w-full mx-auto h-px bg-white/20 mt-[80px]" />
         </section>
 
         {/* Browse Courses Modal */}

@@ -8,7 +8,7 @@ import { ApplicationModal } from '@/components/shared';
  * @param {Object} applicationConfig - Program's application configuration
  * @param {string} programCode - Program code for tracking
  */
-const ApplicationOptionsDisplay = ({ applicationConfig, programCode }) => {
+const ApplicationOptionsDisplay = ({ applicationConfig, programCode: _programCode }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // If it's a direct link (MBA or MEADS)
@@ -45,8 +45,6 @@ const ApplicationOptionsDisplay = ({ applicationConfig, programCode }) => {
         ) : (
           <a
             href={applicationConfig.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn-stevens-red w-full flex items-center justify-center gap-stevens-sm"
           >
             <ExternalLink className="w-5 h-5" />

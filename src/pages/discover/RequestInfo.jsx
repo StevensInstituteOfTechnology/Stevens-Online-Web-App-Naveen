@@ -35,6 +35,7 @@ export default function RequestInfo() {
         title="Request Information"
         subtitle="Let's connect. Complete the form below and an enrollment advisor will be in touch to answer your questions."
         bgImage="/assets/images/request-info/request-info-hero.webp"
+        bgImagePosition="50% 70%"
       />
       <div className="py-stevens-section">
         <div className="max-w-7xl mx-auto px-stevens-lg">

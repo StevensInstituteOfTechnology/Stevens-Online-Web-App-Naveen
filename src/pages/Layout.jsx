@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
 import { CONTACT_INFO, BOOKING_URLS } from "@/config/constants";
@@ -8,6 +8,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  FileText,
   Facebook,
   Twitter,
   Instagram,
@@ -26,7 +27,6 @@ const graduateProgramItems = [
     name: "M.S. in Computer Science",
     page: "online-masters-computer-science-mscs/",
   },
-  // { name: "M.S. in Data Science", page: "online-masters-data-science-msds/" }, // Temporarily disabled
   {
     name: "M.Eng. in Applied Data Science",
     page: "online-masters-engineering-applied-data-science/",
@@ -45,145 +45,77 @@ const certificateProgramItems = [
   },
 ];
 
-const aboutItems = [
-  { name: "Online Experience", page: "online-learning-experience/" },
-  { name: "Events", page: "Events/" },
-];
-
-// Explore dropdown items - quick links for easy access
-const exploreItems = [
-  {
-    name: "Alumni",
-    url: "https://www.stevens.edu/development-alumni-engagement",
-    external: true,
-  },
-  { name: "Athletics", url: "https://stevensducks.com/", external: true },
-  {
-    name: "Visit",
-    url: "https://www.stevens.edu/admission-aid/visit-stevens",
-    external: true,
-  },
-  { name: "Apply", url: "https://www.stevens.edu/apply", external: true },
-  {
-    name: "Give",
-    url: "https://www.stevens.edu/development-alumni-engagement/give-to-stevens",
-    external: true,
-  },
-  { name: "myStevens", url: "https://login.stevens.edu", external: true },
-];
-
-// Info For items (sub-dropdown within Explore)
-const infoForItems = [
-  {
-    name: "Faculty and Staff",
-    url: "https://www.stevens.edu/hr",
-    external: true,
-  },
-  {
-    name: "Parents and Families",
-    url: "https://www.stevens.edu/information-for-parents-and-families",
-    external: true,
-  },
-  {
-    name: "Media",
-    url: "https://www.stevens.edu/media-relations",
-    external: true,
-  },
-];
-
-const mainNavLinks = [
-  // The "GRADUATE" and "Academics" are handled separately with custom dropdowns.
-  // { name: "Certificates & Short Courses", page: "Certificates" },
-
-  { name: "Blog", page: "Blog/" },
-];
-
 const admissionsAidItems = [
-  { name: "Admissions", page: "Admissions/" },
-  { name: "Tuition & Financial Aid", page: "Tuition" },
+  { name: "Admissions", page: "admissions/" },
+  { name: "Tuition & Financial Aid", page: "tuition-and-financial-aid/" },
 ];
 
-const workforceHubItem = [{ name: "Workforce Hub", page: "workforce-hub/" }];
-
-const corporateAlumniItems = [
+const workforceDevelopmentItems = [
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
   { name: "Alumni Workforce Development", page: "alumni-pgc/" },
+  { name: "Workforce Hub", page: "workforce-hub/" },
 ];
 
-// Combined for mobile menu (Discover mega menu)
-const tuitionAdmissionsItems = [
-  ...admissionsAidItems,
-  ...workforceHubItem,
-  ...corporateAlumniItems,
+const whyStevensItems = [
+  { name: "Learning Experience", page: "online-learning-experience/" },
+  { name: "Student Outcomes", page: "student-outcomes/" },
+  { name: "Events", page: "events/" },
 ];
 
-// Mobile menu items with Compare Programs added to dropdowns
-const mobileGraduateProgramItems = [
-  ...graduateProgramItems,
-  { name: "Compare All Programs", page: "compare-our-programs/" },
-];
-
-const mobileCertificateProgramItems = [
-  ...certificateProgramItems,
-  { name: "Compare All Programs", page: "compare-our-programs/" },
-];
-
-// Combined explore items for mega menu (exploreItems + infoForItems)
-const mobileExploreItems = [
-  ...exploreItems.map((item) => ({
-    name: item.name,
-    page: item.url,
-    external: item.external,
-  })),
-  ...infoForItems.map((item) => ({
-    name: item.name,
-    page: item.url,
-    external: item.external,
-  })),
-];
-
-const mobileNavLinks = [
+const programsItems = [
+  { name: "All Programs", page: "explore-programs/" },
+  { name: "Compare Programs", page: "explore-programs/#compare-programs" },
   {
     name: "Degrees",
-    isDropdown: true,
-    items: mobileGraduateProgramItems,
+    hasSubItems: true,
+    categoryLink: "/explore-programs/?filter=masters#explore-programs",
+    subItems: graduateProgramItems,
   },
   {
-    name: "Certificates",
-    isDropdown: true,
-    items: mobileCertificateProgramItems,
+    name: "Professional Graduate Certificates",
+    hasSubItems: true,
+    categoryLink: "/explore-programs/?filter=certificates#explore-programs",
+    subItems: certificateProgramItems,
   },
-  {
-    name: "Discover",
-    isDropdown: true,
-    items: tuitionAdmissionsItems,
-  },
-  {
-    name: "About",
-    isDropdown: true,
-    items: aboutItems,
-  },
-  {
-    name: "Explore",
-    isDropdown: true,
-    items: mobileExploreItems,
-  },
-  ...mainNavLinks,
 ];
 
-export default function Layout({ children, currentPageName }) {
+const megaMenuLinks = [
+  {
+    name: "Programs",
+    isDropdown: true,
+    items: programsItems,
+  },
+  {
+    name: "Admissions & Aid",
+    isDropdown: true,
+    items: admissionsAidItems,
+  },
+  {
+    name: "Workforce Development Hub",
+    isDropdown: true,
+    items: workforceDevelopmentItems,
+    categoryLink: "/workforce-development/",
+  },
+  {
+    name: "Why Stevens",
+    isDropdown: true,
+    items: whyStevensItems,
+  },
+  { name: "Insights", page: "blog/" },
+];
+
+export default function Layout({ children, currentPageName: _currentPageName }) {
   const location = useLocation();
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [showBackToTop, setShowBackToTop] = React.useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-  const [isMobile, setIsMobile] = React.useState(initialWidth < 768);
-  const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(
-    initialWidth <= 1024
-  );
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [megaMenuHoveredItem, setMegaMenuHoveredItem] = React.useState(null);
-  const [expandedMobileMenus, setExpandedMobileMenus] = React.useState([]); // For mobile accordion
+  const [isMobile, setIsMobile] = useState(initialWidth < 768);
+  const [_isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [megaMenuHoveredItem, setMegaMenuHoveredItem] = useState(null);
+  const [expandedSubCategory, setExpandedSubCategory] = useState(null);
+  const [expandedMobileMenus, setExpandedMobileMenus] = useState([]); // For mobile accordion
 
   // Toggle accordion item on mobile
   const toggleMobileAccordion = (menuName) => {
@@ -194,7 +126,7 @@ export default function Layout({ children, currentPageName }) {
     );
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Only run on client side
     if (typeof window === "undefined") return;
 
@@ -299,13 +231,14 @@ export default function Layout({ children, currentPageName }) {
   }, []);
 
   // Close mobile menu and reset accordion when page changes
-  React.useEffect(() => {
+  useEffect(() => {
     setMobileMenuOpen(false);
     setExpandedMobileMenus([]);
+    setExpandedSubCategory(null);
   }, [location.pathname]);
 
   // Update canonical tag on route change
-  React.useEffect(() => {
+  useEffect(() => {
     // Only run on client side
     if (typeof window === "undefined" || typeof document === "undefined")
       return;
@@ -320,7 +253,6 @@ export default function Layout({ children, currentPageName }) {
     link.setAttribute("href", canonicalHref);
   }, [location.pathname]);
 
-  const isActive = (page) => currentPageName === page;
 
   // Check if we're on the home page by pathname (more reliable than currentPageName)
   const isHomePage =
@@ -362,12 +294,12 @@ export default function Layout({ children, currentPageName }) {
                 to={createPageUrl("Home")}
                 className="flex items-center gap-2 stevens-md:gap-3 transition-opacity duration-stevens-normal hover:opacity-80"
               >
-                <div className="relative overflow-visible">
-                  {/* Main Logo - 60% larger */}
+                <div className="relative overflow-visible flex items-center rounded px-1 bg-stevens-black">
+                  {/* Main Logo - 60% larger, dark background ensures WCAG contrast */}
                   <img
                     src="/assets/logos/Stevens-CPE-logo-RGB_Linear-WHT.svg"
                     alt="Stevens Institute of Technology Professional Education Logo"
-                    className="h-[65px] stevens-md:h-[87px] w-auto"
+                    className="h-[65px] stevens-md:h-[87px] w-auto drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                   />
                 </div>
               </Link>
@@ -419,8 +351,7 @@ export default function Layout({ children, currentPageName }) {
                 onClick={() => {
                   const newMenuState = !mobileMenuOpen;
                   setMobileMenuOpen(newMenuState);
-                  // Show "Degrees" sub-links by default when opening the menu
-                  setMegaMenuHoveredItem(newMenuState ? "Degrees" : null);
+                  setMegaMenuHoveredItem(newMenuState ? "Programs" : null);
                 }}
               >
                 <Menu className="h-10 w-10" />
@@ -447,69 +378,194 @@ export default function Layout({ children, currentPageName }) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
                   {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
                   <div className="space-y-stevens-sm md:space-y-stevens-lg">
-                    {mobileNavLinks.map((link) => {
+                    {megaMenuLinks.map((link) => {
                       if (link.isDropdown) {
                         const isExpanded = expandedMobileMenus.includes(
                           link.name
                         );
+                        const linkClass = `text-stevens-xl md:text-stevens-2xl font-stevens-display transition-colors duration-200 py-stevens-sm md:py-0 ${
+                          megaMenuHoveredItem === link.name || isExpanded
+                            ? "text-stevens-red"
+                            : "text-stevens-light-gray hover:text-stevens-white"
+                        }`;
                         return (
-                          <div key={link.name} className="group">
-                            {/* Menu Item Header */}
-                            <button
-                              className={`w-full flex items-center justify-between text-stevens-xl md:text-stevens-2xl font-stevens-display cursor-pointer transition-colors duration-200 py-stevens-sm md:py-0 ${
-                                megaMenuHoveredItem === link.name || isExpanded
-                                  ? "text-stevens-red"
-                                  : "text-stevens-light-gray hover:text-stevens-white"
-                              }`}
-                              onClick={() => toggleMobileAccordion(link.name)}
-                              onMouseEnter={() =>
-                                !isMobile && setMegaMenuHoveredItem(link.name)
-                              }
-                            >
-                              <span className="flex items-center gap-2">
-                                {link.name}
-                                {/* Arrow icon for desktop - indicates sub-menu */}
-                                <svg
-                                  className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
-                                    megaMenuHoveredItem === link.name
-                                      ? "translate-x-1"
-                                      : ""
-                                  }`}
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
+                          <div
+                            key={link.name}
+                            className="group"
+                            onMouseEnter={() =>
+                              !isMobile && setMegaMenuHoveredItem(link.name)
+                            }
+                          >
+                            {/* Menu Item Header - Link for categoryLink items, button otherwise */}
+                            <div className="flex items-center justify-between">
+                              {link.categoryLink ? (
+                                <>
+                                  {/* Mobile: row is clickable to toggle accordion */}
+                                  {/* Desktop: row uses hover via parent onMouseEnter */}
+                                  <div
+                                    className="md:hidden w-full flex items-center justify-between cursor-pointer"
+                                    onClick={() => toggleMobileAccordion(link.name)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        toggleMobileAccordion(link.name);
+                                      }
+                                    }}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-expanded={isExpanded}
+                                  >
+                                    {/* Text is a link - stops propagation so it navigates instead of toggling */}
+                                    <Link
+                                      to={link.categoryLink}
+                                      className={`flex items-center gap-2 ${linkClass}`}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setMobileMenuOpen(false);
+                                      }}
+                                    >
+                                      {link.name}
+                                    </Link>
+                                    {/* Chevron icon */}
+                                    <svg
+                                      className={`w-5 h-5 transition-transform duration-200 ${
+                                        isExpanded ? "rotate-180 text-stevens-red" : "text-stevens-light-gray"
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                      />
+                                    </svg>
+                                  </div>
+                                  {/* Desktop: Link with hover arrow */}
+                                  <Link
+                                    to={link.categoryLink}
+                                    className={`hidden md:flex items-center gap-2 ${linkClass}`}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                    {link.name}
+                                    <svg
+                                      className={`w-4 h-4 transition-transform duration-200 ${
+                                        megaMenuHoveredItem === link.name
+                                          ? "translate-x-1"
+                                          : ""
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                      />
+                                    </svg>
+                                  </Link>
+                                </>
+                              ) : (
+                                <button
+                                  className={`w-full flex items-center justify-between ${linkClass} cursor-pointer`}
+                                  onClick={() => toggleMobileAccordion(link.name)}
                                 >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 5l7 7-7 7"
-                                  />
-                                </svg>
-                              </span>
-                              {/* Chevron icon - rotates when expanded (mobile only) */}
-                              <svg
-                                className={`w-5 h-5 md:hidden transition-transform duration-200 ${
-                                  isExpanded ? "rotate-180" : ""
-                                }`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M19 9l-7 7-7-7"
-                                />
-                              </svg>
-                            </button>
+                                  <span className="flex items-center gap-2">
+                                    {link.name}
+                                    <svg
+                                      className={`hidden md:block w-4 h-4 transition-transform duration-200 ${
+                                        megaMenuHoveredItem === link.name
+                                          ? "translate-x-1"
+                                          : ""
+                                      }`}
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <svg
+                                    className={`w-5 h-5 md:hidden transition-transform duration-200 ${
+                                      isExpanded ? "rotate-180" : ""
+                                    }`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M19 9l-7 7-7-7"
+                                    />
+                                  </svg>
+                                </button>
+                              )}
+                            </div>
 
                             {/* Accordion Content - Mobile Only */}
                             {isExpanded && (
                               <div className="md:hidden mt-stevens-sm ml-stevens-md space-y-stevens-sm border-l-2 border-stevens-gray pl-stevens-md">
                                 {link.items?.map((item) =>
-                                  item.external ? (
+                                  item.hasSubItems ? (
+                                    <div key={item.name}>
+                                      <button
+                                        className="w-full flex items-center justify-between text-stevens-lg text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-xs"
+                                        onClick={() =>
+                                          setExpandedSubCategory(
+                                            expandedSubCategory === item.name
+                                              ? null
+                                              : item.name
+                                          )
+                                        }
+                                      >
+                                        <span>{item.name}</span>
+                                        <svg
+                                          className={`w-4 h-4 transition-transform duration-200 ${
+                                            expandedSubCategory === item.name
+                                              ? "rotate-180 text-stevens-red"
+                                              : ""
+                                          }`}
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                          />
+                                        </svg>
+                                      </button>
+                                      {expandedSubCategory === item.name && (
+                                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-stevens-red/30 pl-3">
+                                          {item.subItems.map((sub) => (
+                                            <Link
+                                              key={sub.name}
+                                              to={createPageUrl(sub.page)}
+                                              className="block text-stevens-base text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-1"
+                                              onClick={() =>
+                                                setMobileMenuOpen(false)
+                                              }
+                                            >
+                                              {sub.name}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ) : item.external ? (
                                     <a
                                       key={item.name}
                                       href={item.page}
@@ -570,10 +626,62 @@ export default function Layout({ children, currentPageName }) {
                   {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
                   <div className="hidden md:block space-y-stevens-md min-h-[200px]">
                     {megaMenuHoveredItem &&
-                      mobileNavLinks
+                      megaMenuLinks
                         .find((link) => link.name === megaMenuHoveredItem)
                         ?.items?.map((item) =>
-                          item.external ? (
+                          item.hasSubItems ? (
+                            <div key={item.name}>
+                              <div
+                                className="flex items-center justify-between cursor-pointer group"
+                                onMouseEnter={() =>
+                                  setExpandedSubCategory(item.name)
+                                }
+                              >
+                                <Link
+                                  to={item.categoryLink}
+                                  className={`text-stevens-xl font-stevens-display transition-colors duration-200 ${
+                                    expandedSubCategory === item.name
+                                      ? "text-stevens-red"
+                                      : "text-stevens-light-gray hover:text-stevens-white"
+                                  }`}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {item.name}
+                                </Link>
+                                <svg
+                                  className={`w-4 h-4 transition-transform duration-200 ${
+                                    expandedSubCategory === item.name
+                                      ? "rotate-90 text-stevens-red"
+                                      : "text-stevens-light-gray"
+                                  }`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
+                              {expandedSubCategory === item.name && (
+                                <div className="ml-4 mt-2 space-y-2 border-l-2 border-stevens-red/30 pl-4">
+                                  {item.subItems.map((sub) => (
+                                    <Link
+                                      key={sub.name}
+                                      to={createPageUrl(sub.page)}
+                                      className="block text-stevens-base font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.external ? (
                             <a
                               key={item.name}
                               href={item.page}
@@ -590,6 +698,9 @@ export default function Layout({ children, currentPageName }) {
                               to={createPageUrl(item.page)}
                               className="block text-stevens-xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200"
                               onClick={() => setMobileMenuOpen(false)}
+                              onMouseEnter={() =>
+                                setExpandedSubCategory(null)
+                              }
                             >
                               {item.name}
                             </Link>
@@ -604,9 +715,9 @@ export default function Layout({ children, currentPageName }) {
                         College of Professional Education
                       </h3>
                       <p className="text-stevens-sm md:text-stevens-base text-stevens-light-gray leading-relaxed">
-                        Advance your career with Stevens' forward-looking vision
-                        for higher education—flexible online programs designed
-                        for working professionals.
+                        A bold new education designed for a fast-changing
+                        future. Flexible, market-driven programs that equip
+                        professionals with the skills today's economy demands.
                       </p>
                     </div>
                     <Link
@@ -642,7 +753,7 @@ export default function Layout({ children, currentPageName }) {
       <footer className="bg-stevens-black text-stevens-white">
         <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg py-stevens-section">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-stevens-gap-lg">
-            <div className="lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="lg:col-span-1 flex flex-col items-center text-center  md:items-start md:text-left">
               <Link
                 to={createPageUrl("Home")}
                 className="mb-6 transition-opacity duration-300 hover:opacity-80"
@@ -659,47 +770,95 @@ export default function Layout({ children, currentPageName }) {
                 />
               </Link>
             </div>
-            <div className="lg:col-start-3">
+            <div className="flex flex-col text-center items-center md:items-start  md:text-left">
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
+                Online Programs
+              </h3>
+              <div className="space-y-2">
+                <Link
+                  to="/explore-programs/?filter=masters#explore-programs"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  onClick={(e) => {
+                    const isSame =
+                      location.pathname.includes("explore-programs") &&
+                      location.search === "?filter=masters" &&
+                      location.hash === "#explore-programs";
+                    if (isSame) {
+                      e.preventDefault();
+                      document
+                        .getElementById("explore-programs")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                >
+                  Master&apos;s Degrees
+                </Link>
+                <Link
+                  to="/explore-programs/?filter=certificates#explore-programs"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                  onClick={(e) => {
+                    const isSame =
+                      location.pathname.includes("explore-programs") &&
+                      location.search === "?filter=certificates" &&
+                      location.hash === "#explore-programs";
+                    if (isSame) {
+                      e.preventDefault();
+                      document
+                        .getElementById("explore-programs")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                >
+                  Graduate Certificates
+                </Link>
+              
+              </div>
+            </div>
+            <div className="flex flex-col text-center items-center md:items-start  md:text-left">
               <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h3>
               <div className="space-y-2">
                 <Link
-                  to={
-                    createPageUrl("compare-our-programs/") + "#explore-programs"
-                  }
+                  to={createPageUrl("admissions/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Degrees
-                </Link>
-                {/* <Link
-                  to={createPageUrl("Certificates")}
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  Certificates & Short Courses
-                </Link> */}
-                <Link
-                  to="/online-learning-experience/"
-                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
-                >
-                  The Online Experience
+                  Admissions
                 </Link>
                 <Link
-                  to={createPageUrl("Tuition")}
+                  to={createPageUrl("tuition-and-financial-aid/")}
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
                   Tuition & Financial Aid
                 </Link>
                 <Link
-                  to={createPageUrl("RequestInfo")}
+                  to="/workforce-development/"
                   className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
                 >
-                  Contact Us
+                  Workforce Development Hub
+                </Link>
+                <Link
+                  to="/online-learning-experience/"
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Learning Experience
+                </Link>
+                <Link
+                  to={createPageUrl("events/")}
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Events
+                </Link>
+                <Link
+                  to={createPageUrl("blog/")}
+                  className="block text-stevens-light-gray hover:text-white hover:underline hover:font-bold transition-all duration-300"
+                >
+                  Insights
                 </Link>
               </div>
             </div>
             <div>
-              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white">
+              <h3 className="font-stevens-headers text-lg font-semibold mb-4 text-white flex flex-col text-center items-center md:items-start  md:text-left">
                 Connect With Us
               </h3>
               {/* Social Media Icons Section - Connect With Us */}
@@ -773,6 +932,16 @@ export default function Layout({ children, currentPageName }) {
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>Schedule a Call</span>
                 </a>
+                <Link
+                  to="/request-information/"
+                  onClick={() =>
+                    trackConversion(CONVERSION_LABELS.REQUEST_INFO)
+                  }
+                  className="flex items-center justify-center md:justify-start space-x-2 text-stevens-light-gray hover:text-white hover:underline hover:font-bold underline decoration-stevens-light-gray decoration-1 transition-all duration-300"
+                >
+                  <FileText className="w-4 h-4 flex-shrink-0" />
+                  <span>Request Information</span>
+                </Link>
                 <div className="flex items-center justify-center md:justify-start space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>{CONTACT_INFO.EMAIL}</span>
@@ -800,6 +969,7 @@ export default function Layout({ children, currentPageName }) {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
+          aria-label="Back to top"
         >
           <ArrowUp className="w-5 h-5" />
         </button>

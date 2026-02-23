@@ -48,7 +48,7 @@ import { Section } from '../primitives';
  * @param {Object} tuition - Tuition data for combined layout
  */
 export const AdmissionsSection = forwardRef(function AdmissionsSection(
-  { admissions, keyDates, tuition },
+  { admissions, keyDates: _keyDates, tuition },
   ref
 ) {
   if (!admissions) return null;
@@ -108,11 +108,11 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                             {card.value}
                           </p>
                         </div>
-                        {/* Bottom layer: Label */}
+                        {/* Bottom layer: Label - h3 for proper heading hierarchy under Tuition h2 */}
                         <div className="flex-1 flex items-center justify-center min-h-[40%] pt-stevens-md">
-                          <p className="text-stevens-xs mb-stevens-md stevens-sm:text-stevens-sm text-stevens-dark-gray">
+                          <h3 className="text-stevens-xs mb-stevens-md stevens-sm:text-stevens-sm text-stevens-dark-gray font-semibold m-0">
                             {card.label}
-                          </p>
+                          </h3>
                         </div>
                       </Card>
                     ))}
@@ -140,7 +140,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
       <section
         id="admissions"
         ref={ref}
-        className="scroll-mt-20 relative bg-white" // Full-width white background
+        className="scroll-mt-20 relative bg-white " // Full-width white background
       >
         {/* Section Title */}
         <div className="bg-white py-12">
@@ -224,8 +224,6 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                     {option.buttonText && (
                       <a
                         href={option.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="block mt-auto"
                       >
                         <Button 
@@ -251,11 +249,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                 <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
                   {admissions.consultation.title}
                 </h3>
-                <a
-                  href={admissions.consultation.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={admissions.consultation.url}>
                   <Button variant="outline-dark" className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white">
                     {admissions.consultation.buttonText}
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -279,7 +273,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
       <section
         id="admissions"
         ref={ref}
-        className="scroll-mt-20 relative bg-white"
+        className="scroll-mt-20 relative bg-white pb-16"
       >
         {/* Section Title */}
         <div className="py-12">
@@ -359,12 +353,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                   
                   {/* Button */}
                   {option.buttonText && (
-                    <a
-                      href={option.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block mt-auto"
-                    >
+                    <a href={option.url} className="block mt-auto">
                       <Button 
                         className="w-full h-12 text-lg font-bold tracking-wide bg-black text-white hover:bg-stevens-dark-gray border border-transparent"
                       >
@@ -427,12 +416,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                   dangerouslySetInnerHTML={{ __html: option.description }}
                 />
                 {option.buttonText && !option.buttonGrayOut && (
-                  <a
-                    href={option.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
+                  <a href={option.url} className="w-full">
                     <Button variant="default" className="w-full mt-2">
                       {option.buttonText}{' '}
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -455,11 +439,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
                 }}
               />
               {admissions.alertMessage.url && (
-                <a
-                  href={admissions.alertMessage.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={admissions.alertMessage.url}>
                   <Button variant="outline-white">
                     {admissions.alertMessage.buttonText}
                   </Button>
@@ -475,11 +455,7 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
             {admissions.consultation.title}
           </h3>
           {admissions.consultation.url && (
-            <a
-              href={admissions.consultation.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={admissions.consultation.url}>
               <Button variant="outline-dark">
                 {admissions.consultation.buttonText}
               </Button>

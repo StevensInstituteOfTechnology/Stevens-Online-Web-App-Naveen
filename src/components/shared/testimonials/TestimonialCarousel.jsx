@@ -243,6 +243,8 @@ const TestimonialCarousel = ({
             {/* Names Navigation */}
             <div 
               ref={navContainerRef}
+              role="tablist"
+              aria-label="Select testimonial"
               className="relative flex items-center justify-between gap-x-2 sm:gap-x-4 md:gap-x-8 lg:gap-x-12 mb-0"
             >
               {testimonials.map((testimonial, index) => (
@@ -307,11 +309,11 @@ const TestimonialCarousel = ({
           </div>
         </div>
 
-        {/* Mobile Navigation Bar (< 1024px) - Matches Stevens site design */}
+        {/* Mobile Navigation Bar (< 1024px) */}
         <div className="lg:hidden bg-white relative">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md">
-            {/* Navigation Bar - All elements on one line */}
-            <div className="relative flex items-center gap-2 sm:gap-3 md:gap-4 py-4">
+            {/* Row 1: Arrows + Centered Name */}
+            <div className="flex items-center py-4">
               {/* Left Arrow */}
               <button
                 onClick={() => {
@@ -346,21 +348,6 @@ const TestimonialCarousel = ({
                 </h3>
               </div>
               
-              {/* Horizontal Line with Gold Diamond Indicator */}
-              <div className="relative flex items-center justify-center flex-shrink-0 w-12 sm:w-16">
-                {/* Horizontal Line */}
-                <div 
-                  className="absolute left-0 right-0 h-[2px]"
-                  style={{ backgroundColor: accentColor }}
-                  aria-hidden="true"
-                />
-                
-                {/* Gold Diamond Indicator - Centered */}
-                <div className="relative z-10">
-                  <GoldDiamond className="w-3 h-3 sm:w-4 sm:h-4" />
-                </div>
-              </div>
-              
               {/* Right Arrow */}
               <button
                 onClick={() => {
@@ -389,6 +376,25 @@ const TestimonialCarousel = ({
               </button>
             </div>
             
+            {/* Row 2: Gold Line with Diamond centered under the name */}
+            <div className="relative flex items-center pb-2 w-[80%] mx-auto">
+              {/* Left segment of gold line */}
+              <div 
+                className="flex-1 h-[2px]"
+                style={{ backgroundColor: accentColor }}
+                aria-hidden="true"
+              />
+              {/* Gold Diamond Indicator - Centered */}
+              <div className="relative z-10 mx-1">
+                <GoldDiamond className="w-3 h-3 sm:w-4 sm:h-4" />
+              </div>
+              {/* Right segment of gold line */}
+              <div 
+                className="flex-1 h-[2px]"
+                style={{ backgroundColor: accentColor }}
+                aria-hidden="true"
+              />
+            </div>
           </div>
         </div>
 

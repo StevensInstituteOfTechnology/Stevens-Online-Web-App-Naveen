@@ -8,7 +8,7 @@ class BlogErrorBoundary extends React.Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(_error) {
     // Update state so the next render will show the fallback UI
     return { hasError: true };
   }
@@ -56,7 +56,7 @@ class BlogErrorBoundary extends React.Component {
                   Reload Page
                 </Button>
               </div>
-              {process.env.NODE_ENV === 'development' && this.state.error && (
+              {import.meta.env.DEV && this.state.error && (
                 <details className="mt-stevens-lg text-left">
                   <summary className="cursor-pointer text-stevens-sm text-stevens-light-gray0">
                     Error Details (Development)

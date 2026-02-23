@@ -1,5 +1,4 @@
-import React from "react";
-import { MoreHorizontal, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 /**
  * Sticky navigation bar for program pages.
@@ -9,7 +8,6 @@ import { MoreHorizontal, ChevronDown } from "lucide-react";
  * - Active section highlighting with red underline
  * - "More" dropdown for overflow items
  * - Special handling for combined tuition/admissions sections
- * - Light/Dark theme support (matches form theme)
  *
  * @param {Object} props
  * @param {Array} props.navItems - Navigation items (already filtered)
@@ -18,7 +16,6 @@ import { MoreHorizontal, ChevronDown } from "lucide-react";
  * @param {Function} props.setMoreMenuOpen - Toggle "More" dropdown
  * @param {Object} props.moreMenuRef - Ref for "More" dropdown (click outside handling)
  * @param {Object} props.admissions - Admissions data (for variant detection)
- * @param {string} props.theme - "light" | "dark" - theme for the nav bar (default: "light")
  */
 export function StickyNav({
   navItems,
@@ -27,36 +24,20 @@ export function StickyNav({
   setMoreMenuOpen,
   moreMenuRef,
   admissions,
-  theme = "light",
 }) {
-  const isDark = theme === "dark";
-
-  // Theme-based styles
   const styles = {
-    container: isDark
-      ? "bg-stevens-black shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)]"
-      : "bg-white shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]",
-    text: isDark
-      ? "text-white/60 hover:text-white"
-      : "text-stevens-gray hover:text-stevens-black",
-    textActive: isDark
-      ? "text-white font-semibold"
-      : "text-stevens-black font-semibold",
-    moreButton: isDark
-      ? "text-white/60 border-white/30 hover:text-white hover:border-white/60 hover:shadow-sm"
-      : "text-stevens-gray border-stevens-light-gray hover:text-stevens-black hover:border-stevens-dark-gray hover:shadow-sm",
-    moreButtonActive: isDark
-      ? "text-white bg-white/10 border-white/50 shadow-md"
-      : "text-stevens-black bg-white border-stevens-dark-gray shadow-md",
-    dropdown: isDark
-      ? "bg-stevens-dark-gray border-white/20"
-      : "bg-white border-stevens-light-gray",
-    dropdownItem: isDark
-      ? "text-white/80 hover:text-white hover:bg-white/10 border-transparent hover:border-white/30"
-      : "text-stevens-dark-gray hover:text-stevens-black hover:bg-stevens-light-gray border-transparent hover:border-stevens-gray",
-    dropdownItemActive: isDark
-      ? "text-stevens-red bg-white/10 font-semibold border-l-4 border-stevens-red"
-      : "text-stevens-red bg-red-50 font-semibold border-l-4 border-stevens-red",
+    container: "bg-white shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]",
+    text: "text-stevens-dark-gray hover:text-stevens-black",
+    textActive: "text-stevens-black font-semibold",
+    moreButton:
+      "text-stevens-dark-gray border-stevens-light-gray hover:text-stevens-black hover:border-stevens-red hover:border-2 hover:shadow-sm",
+    moreButtonActive:
+      "text-stevens-black bg-white border-stevens-red border-2 shadow-md",
+    dropdown: "bg-white border-stevens-light-gray",
+    dropdownItem:
+      "text-stevens-dark-gray hover:text-stevens-black hover:bg-stevens-light-gray border-transparent hover:border-stevens-gray",
+    dropdownItemActive:
+      "text-stevens-red bg-red-50 font-semibold border-l-4 border-stevens-red",
   };
   if (!navItems || navItems.length === 0) return null;
 
@@ -79,6 +60,10 @@ export function StickyNav({
     isCombinedTuition(item.id)
       ? activeSection === "admissions"
       : activeSection === item.id;
+
+  // Show border on More button only after scrolling past the first four sections
+  const activeIndex = navItems.findIndex((item) => item.id === activeSection);
+  const hasScrolledToFifthOrBeyond = activeIndex >= 4;
 
   return (
     <div className={`sticky top-[65px] md:top-[87px] z-[9990] ${styles.container}`}>
@@ -120,16 +105,18 @@ export function StickyNav({
             <div className="relative flex justify-center" ref={moreMenuRef}>
               <button
                 onClick={() => setMoreMenuOpen(!moreMenuOpen)}
-                className={`flex items-center justify-center gap-1 md:gap-2 py-2 md:py-3 px-2 md:px-4 text-sm md:text-base lg:text-lg whitespace-nowrap transition-all duration-300 border-2 rounded-lg ${
+                className={`flex items-center  justify-center gap-1 md:gap-2 py-2 md:py-3 px-2 md:px-4 text-sm md:text-base lg:text-lg whitespace-nowrap transition-all duration-300 rounded-lg ${
+                  hasScrolledToFifthOrBeyond ? "border-2" : "border-0"
+                } ${
                   moreMenuOpen ||
                   navItems
-                    .slice(3) // Check from index 3 on mobile (4th tab + rest)
+                    .slice(4) // Check from index 3 on mobile (4th tab + rest)
                     .some((item) => isNavItemActive(item))
                     ? styles.moreButtonActive
                     : styles.moreButton
                 }`}
               >
-                <MoreHorizontal className="w-4 h-4 md:w-5 md:h-5" />
+               
                 <span className="font-medium hidden sm:inline">More</span>
                 <ChevronDown
                   className={`w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 ${

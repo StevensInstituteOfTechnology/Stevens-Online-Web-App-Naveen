@@ -167,7 +167,13 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
   if (N === 0) return null;
 
   return (
-    <div onKeyDown={handleKeyDown} tabIndex={0} className="focus:outline-none">
+    <div
+      role="region"
+      aria-label="Blog carousel"
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      className="focus:outline-none"
+    >
       {/* Pagination + Navigation Row */}
       <AnimatedSection className="flex items-center justify-between w-full mb-8">
         {/* Left: Pagination */}
@@ -232,6 +238,7 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
                     }
                     alt={blog.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: blog.image_position || "center" }}
                     loading="lazy"
                   />
                 </div>

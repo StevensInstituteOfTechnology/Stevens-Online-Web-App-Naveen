@@ -1,13 +1,3 @@
-import React from "react";
-import {
-  Globe,
-  Award,
-  Check,
-  BrainCircuit,
-  Target,
-  TrendingUp,
-  Users,
-} from "lucide-react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -31,7 +21,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "/accelerated-application/",
+      href: "/accelerated-application/?program=mba",
     },
   },
   quickFacts: {
@@ -122,40 +112,30 @@ const programData = {
       ranking: "#1",
       description: "ONLINE MBA IN N.J.",
       source:
-        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2024).",
+        "Stevens' Online MBA has been ranked #1 in New Jersey since 2015 (U.S. News & World Report, 2026).",
     },
-    {
-      ranking: "100%",
-      description: "EMPLOYMENT",
-      source:
-        "100% of MBA graduates in the Class of 2022 accepted job offers within three months of graduating.",
-      note: "1",
-    },
-
+    
     {
       ranking: "#12",
       description: "FOR BEST CAREER PLACEMENT",
       source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
     {
       ranking: "#15",
       description: "FOR BEST VALUE",
       source: 'Ranked #15 among "Best Value Colleges" By Payscale (2024).',
-      note: "2",
+     
+    },
+    {
+      ranking: "#16",
+      description: "MBA - BUSINESS ANALYTICS",
+      source:
+        "Best Online MBA - Business Analytics, No. 16 nationally (No. 1 in New Jersey) — U.S. News & World Report (2026).",
     },
   ],
 
-  rankings_footnotes: [
-    {
-      note: "1",
-      text: "Based on data from 82% of the 2021-2022 full-time program graduates.",
-    },
-    {
-      note: "2",
-      text: "Based on the cost of a four-year bachelor's degree program.",
-    },
-  ],
+  
 
   career: {
     description: `<p class="mb-4">The Stevens Online MBA prepares you for leadership roles in New York City and other major business hubs where management talent is in high demand.</p><p class="mb-4">You’ll build strategic, analytical, and cross-functional skills for careers in finance, operations, marketing, and project leadership—within tech-forward organizations and beyond.</p><p>Through core, concentration, and elective coursework, you’ll strengthen decision-making, data-driven execution, and innovation to accelerate career growth.</p>`,
@@ -411,35 +391,35 @@ const programData = {
               {
                 code: "FE 511",
                 name: "Introduction to Bloomberg and Thomson Reuters",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "This course is designed to teach students the nature and availability of the financial data available at Stevens. The focus of the course will be on equity, futures, FX, options, swaps, CDSs, interest rate swaps, etc. They will learn how to use a Bloomberg terminal. As part of the course the students will be certified in the 4 areas that Bloomberg offers certification. We will cover the Thomson-Reuters Tick history data and basics of using this data. The course also introduces basics of applied statistics. Bloomberg terminal access will be required for any student taking the course on the web.",
               },
               {
                 code: "FE 515",
                 name: "Introduction to R",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "In this course, students will learn the basics of the open-source programming language R using financial data and applications. Basic statistical knowledge is required to complete the course. Upon completion, students will be able to use R for assignments and research using data in finance.",
               },
               {
                 code: "FE 520",
                 name: "Intro to Python for Financial Applications",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "This course is a primer on Python (language syntax, data structures, basic data processing, Python functions, modules and classes). The remainder of the course covers open-source Python tools relevant to solving financial programming problems. There will be reading assignments of the corresponding chapters in the textbook and additional materials will be provided.",
               },
               {
                 code: "FA 582",
                 name: "Foundations of Financial Data Science",
-                credits: "2-Credit Lab",
+                credits: 2,
                 description:
                   "This course will provide an overview of issues and trends in data quality, data storage, data scrubbing, data flows and data encryption. Topics will include data abstractions and integration, enterprise-level data issues, data management issues with collection, warehousing, preprocessing, and querying. Furthermore, the Hadoop based programming framework for big data issues will be introduced along with any governance and policy issues. Corequisite: FE 513",
               },
               {
                 code: "FE 513",
                 name: "Practical Aspects of Database Design",
-                credits: "1-Credit Lab",
+                credits: 1,
                 description:
                   "The course provides a practical introduction to SQL databases and Hadoop cluster systems. Students will receive hands-on instruction about setting up and working with databases. Most of the software will be introduced using case studies or demonstrations, followed by a lecture of related fundamental knowledge. The course covers SQL, NoSQL and database management systems. The course will cover accessing databases using API.",
               },
@@ -762,7 +742,7 @@ const programData = {
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROOF OF BACHELOR'S DEGREE</h4>
           <p class="font-stevens-body mb-stevens-sm">Upload a copy of your unofficial transcripts from all undergraduate institutions where credit was earned. This allows us to verify your academic background quickly.</p>
-          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
+          <p class="font-stevens-body text-stevens-dark-gray text-stevens-sm mt-stevens-sm">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">PROFESSIONAL BACKGROUND</h4>
@@ -771,7 +751,7 @@ const programData = {
             <li class="font-stevens-body"><strong>Upload your résumé</strong> – Highlight your work experience, leadership roles, and career achievements</li>
             <li class="font-stevens-body"><strong>Link your LinkedIn profile</strong> – A convenient alternative that showcases your professional journey</li>
           </ul>
-          <p class="font-stevens-body text-stevens-gray text-stevens-sm mt-stevens-sm">Work experience is valued but not required for admission.</p>
+          <p class="font-stevens-body text-stevens-dark-gray text-stevens-sm mt-stevens-sm">Work experience is valued but not required for admission.</p>
         </div>
         <div>
           <h4 class="font-stevens-headers font-bold text-stevens-lg mb-stevens-sm">LETTERS OF RECOMMENDATION</h4>
@@ -833,6 +813,10 @@ const programData = {
       { value: "$250", label: "Enrollment Deposit" },
     ],
     description: `<p>Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>`,
+  },
+  tuitionCalculator: {
+    image: "/assets/images/shared/shared-tuition-calculator.webp",
+    imageAlt: "Welcome to Stevens",
   },
   events: {
     title: "On-Demand Content",
@@ -935,7 +919,7 @@ const programData = {
   // Application Option - singleImageCard variant (appears after faculty, before detailed admissions)
   applicationOption: {
     variant: "singleImageCard",
-    title: "Application Option",
+    title: "Application",
     backgroundImage: "/assets/images/mba/mba-hero.webp",
     options: [
       {

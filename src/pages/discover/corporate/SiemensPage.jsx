@@ -1,4 +1,3 @@
-import React from "react";
 import CorporateLandingPageTemplate from "@/components/corporate/CorporateLandingPageTemplate";
 
 export default function SiemensPage() {
@@ -90,6 +89,7 @@ export default function SiemensPage() {
       heroTitle="Professional Graduate Certificate in Systems Engineering Foundations"
       heroSubtitle="Accelerate your career with a specialized program designed for Siemens professionals."
       heroImage="/assets/images/corporate-partners/corporate-partners-hero.webp"
+      heroImageFlip={true}
       heroSecondaryCta={{
         label: "Apply In Minutes",
         href: "#apply-now",

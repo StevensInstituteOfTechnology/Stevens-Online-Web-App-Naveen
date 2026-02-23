@@ -2,20 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { getContentImageProps } from "@/utils/responsiveImage";
-import {
-  ChevronDown,
-  ChevronUp,
-  Users,
-  Building2,
-  DollarSign,
-  TrendingUp,
-  CheckCircle,
-  Handshake,
-  BookOpen,
-  Award,
-} from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { PageHero } from "@/components/shared";
-import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import {
@@ -181,7 +169,7 @@ const EmployerSponsorship = () => {
     },
   ];
 
-  const employerBenefits = [
+  const _employerBenefits = [
     "Talent development: Build a more skilled workforce that fosters innovation and growth.",
     "Higher recruitment and retention: Spend less time, money and effort recruiting new workers when you keep long-term employees.",
     "Employee engagement: Keep employees interested through new challenges while allowing them to turn their passions into productivity at work.",

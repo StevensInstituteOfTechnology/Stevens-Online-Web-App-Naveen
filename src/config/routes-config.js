@@ -19,7 +19,7 @@ export const STATIC_ROUTES = [
   '/online-masters-engineering-applied-data-science/', // MEADS
   '/certificates/enterprise-ai/',
   '/certificates/applied-data-science-foundations/',
-  '/compare-our-programs/',
+  '/explore-programs/',
   '/events/',
   '/online-learning-experience/',
   '/admissions/',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Generic placeholder images for carousel slides
@@ -44,9 +44,7 @@ export const SkillCarousel = ({ modules }) => {
   const contentRefs = useRef([]);
   const containerRef = useRef(null);
 
-  if (!modules || modules.length === 0) return null;
-
-  // Calculate the maximum height among all content panels
+  // Calculate the maximum height among all content panels (must run before any early return)
   const calculateMaxHeight = useCallback(() => {
     if (contentRefs.current.length === 0) return;
 
@@ -97,6 +95,9 @@ export const SkillCarousel = ({ modules }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [calculateMaxHeight]);
+
+  // Early return only after all hooks have been called
+  if (!modules || modules.length === 0) return null;
 
   const nextSlide = () => {
     if (isTransitioning) return;

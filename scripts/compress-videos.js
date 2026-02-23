@@ -51,7 +51,7 @@ function checkFFmpeg() {
   try {
     execSync('ffmpeg -version', { stdio: 'ignore' });
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 }

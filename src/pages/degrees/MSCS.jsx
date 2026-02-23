@@ -1,6 +1,4 @@
-import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
-import { Award, Check, Star } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -27,7 +25,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "/accelerated-application/",
+      href: "/accelerated-application/?program=mscs",
     },
   },
   quickFacts: {
@@ -110,21 +108,21 @@ const programData = {
     },
     {
       ranking: "#1",
-      description: "In N.J.",
+      description: "In N.J. (11 Years in a Row)",
       source:
-        "U.S. News & World Report, Best Online Master's in Computer Information Technology Programs (2024).",
+        "U.S. News & World Report, Best Online Master's in Computer Information Technology Programs — No. 1 in New Jersey for 11 years in a row (2026).",
     },
 
     {
       ranking: "#12",
       description: "For Best Career Placement",
       source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
     {
       ranking: "#15",
       description: "For Best Value",
-      source: "Payscale (2024)",
+      source: 'Ranks No. 15 among "Best Value Colleges" By Payscale (2024).',
     },
   ],
   videoSection: {
@@ -440,7 +438,7 @@ const programData = {
                 name: "Systems Programming",
                 credits: 3,
                 description:
-                  'The objective of this course is to give students a basic grounding in designing and implementing distributed and cloud systems, including issues in the implementation of backend services in the cloud itself. What are global consensus and Paxos, and what is their application in building cloud systems? What are the advantages and disadvantages of using distributed NoSQL stores such as Cassandra instead of relational stores such as MySQL? What are strong and weak consistency, what are the "CAP Theorem" and the "CALM Theorem" and what are their implications for building highly available services? What is a blockchain, such as the Bitcoin blockchain, and how does it relate to issues in coordinating distributed systems? What are the roles of REST, Websockets and stream processing in cloud applications? This course will combine hands-on experience in developing cloud services, with a firm grounding in the tools and principles for building distributed and cloud applications, including advanced architectures such as peer-to-peer and publish-subscribe. Besides cloud services, we will also be looking at cloud support for batch processing, such as the Hadoop framework, and its use with NoSQL data stores, such as Cassandra.',
+                  'In this course, students will learn to develop system-level software in the C programming language while gaining an understanding of the UNIX family of operating systems and their programming environment. Topics covered will include the user/kernel interface, LINUX/UNIX operating system essentials, user authentication, basic and advanced I/O, file systems, signals, process relationships, and inter-process communication. Concepts of software development, debugging, and maintenance on LINUX/UNIX systems will also be covered.',
               },
               {
                 code: "CS 550",
@@ -690,7 +688,7 @@ const programData = {
   },
   admissions: {
     variant: "singleImageCard",
-    title: "Application Option",
+    title: "Application",
     backgroundImage: "/assets/images/shared/asap-hero.webp",
     options: [
       {
@@ -847,6 +845,10 @@ const programData = {
     },
   ],
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
+  tuitionCalculator: {
+    image: "/assets/images/shared/shared-tuition-calculator.webp",
+    imageAlt: "Welcome to Stevens",
+  },
 };
 
 export default function MSCSPage() {

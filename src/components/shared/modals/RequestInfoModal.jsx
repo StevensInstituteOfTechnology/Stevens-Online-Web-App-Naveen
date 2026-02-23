@@ -79,14 +79,21 @@ export default function RequestInfoModal({ isOpen, onClose, sourcePage = 'unknow
   if (!isOpen) return null;
 
   return (
-    <div 
-      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in-0 duration-200"
+    <div
+      role="button"
+      tabIndex={0}
+      className="fixed inset-0 z-[99999] overflow-y-auto p-2 sm:p-4 bg-black/60 animate-in fade-in-0 duration-200 cursor-default"
       onClick={onClose}
+      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') onClose(); }}
+      aria-label="Close modal"
     >
       <div className="min-h-full flex items-center justify-center py-4 sm:py-8">
-        <div 
+        <div
+          role="button"
+          tabIndex={0}
           className="relative w-full max-w-2xl bg-stevens-white rounded-stevens-lg shadow-stevens-2xl animate-in zoom-in-95 duration-200"
           onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
         >
           
 

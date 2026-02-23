@@ -1,5 +1,4 @@
-import React from "react";
-import { Navigate, useLocation, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import "@/data/blogs.json";
 
 // Page imports
@@ -16,6 +15,7 @@ import {
   CorporateStudents,
   AlumniPGC,
   EmployerSponsorship,
+  WorkforceDevelopmentHub,
   SiemensPage,
   PSEGPage,
   PSEGEnterpriseAIPage,
@@ -43,7 +43,7 @@ import {
   OnlineMBASuccess,
   OtherPrograms,
 } from "@/pages/blog";
-import { OnlineExperience, Events } from "@/pages/about";
+import { OnlineExperience, Events, StudentOutcomes } from "@/pages/about";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
 import NotFound from "@/pages/NotFound";
 
@@ -273,14 +273,18 @@ export const routes = [
     element: <CertificateAppliedDataScience />,
   },
 
-  // Compare Programs
+  // Explore Programs (formerly Compare Programs)
   {
-    path: "/compare-our-programs/",
+    path: "/explore-programs/",
     element: <ComparePrograms />,
   },
   {
+    path: "/compare-our-programs/",
+    element: <Navigate to="/explore-programs/" replace />,
+  },
+  {
     path: "/ComparePrograms",
-    element: <Navigate to="/compare-our-programs/" replace />,
+    element: <Navigate to="/explore-programs/" replace />,
   },
 
   // Events
@@ -349,6 +353,16 @@ export const routes = [
     element: <Certificates />,
   },
 
+  // Student Outcomes
+  {
+    path: "/student-outcomes/",
+    element: <StudentOutcomes />,
+  },
+  {
+    path: "/student-outcomes",
+    element: <Navigate to="/student-outcomes/" replace />,
+  },
+
   // Online Experience
   {
     path: "/online-learning-experience/",
@@ -391,6 +405,16 @@ export const routes = [
   {
     path: "/employer-sponsorship",
     element: <Navigate to="/employer-sponsorship/" replace />,
+  },
+
+  // Workforce Development Hub
+  {
+    path: "/workforce-development/",
+    element: <WorkforceDevelopmentHub />,
+  },
+  {
+    path: "/workforce-development",
+    element: <Navigate to="/workforce-development/" replace />,
   },
 
   // Corporate Partnership Pages

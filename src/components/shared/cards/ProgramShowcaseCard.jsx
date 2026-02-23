@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -51,7 +50,7 @@ export function ProgramShowcaseCard({ program, index = 0, className = "" }) {
 
         {/* Label Box - Expandable on hover */}
         <div className="absolute bottom-0 left-8 right-8 bg-white p-6 transform translate-y-2 group-hover:translate-y-[-10px] transition-all duration-300 ease-out shadow-xl">
-          <p className="text-stevens-gray text-xs font-bold uppercase tracking-wider mb-1">
+          <p className="text-stevens-dark-gray text-xs font-bold uppercase tracking-wider mb-1">
             {program.subtitle}
           </p>
           <h3 className="font-stevens-display text-xl font-bold text-stevens-dark-gray group-hover:text-stevens-red transition-colors mb-0 group-hover:mb-4">
@@ -64,13 +63,13 @@ export function ProgramShowcaseCard({ program, index = 0, className = "" }) {
               {/* Program stats - dynamic from program data */}
               <div className="flex gap-4 mb-3 text-sm">
                 <div>
-                  <span className="text-stevens-gray">Credits:</span>
+                  <span className="text-stevens-dark-gray">Credits:</span>
                   <span className="font-semibold text-stevens-dark-gray ml-1">
                     {program.stats?.credits || "30"}
                   </span>
                 </div>
                 <div>
-                  <span className="text-stevens-gray">Duration:</span>
+                  <span className="text-stevens-dark-gray">Duration:</span>
                   <span className="font-semibold text-stevens-dark-gray ml-1">
                     {program.stats?.duration || "18-24 mo"}
                   </span>
@@ -79,7 +78,7 @@ export function ProgramShowcaseCard({ program, index = 0, className = "" }) {
 
               {/* Key highlights - dynamic from program data */}
               {program.highlights && program.highlights.length > 0 && (
-                <ul className="text-sm text-stevens-gray space-y-1 mb-4">
+                <ul className="text-sm text-stevens-dark-gray space-y-1 mb-4">
                   {program.highlights.slice(0, 3).map((highlight, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-stevens-red rounded-full flex-shrink-0"></span>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { getContentImageProps } from "@/utils/responsiveImage";
 import {
   ArrowRight,
   TrendingUp,
@@ -9,11 +8,9 @@ import {
   Building2,
   Briefcase,
   Award,
-  Globe,
   CheckCircle,
   Star,
   Target,
-  BarChart3,
   GraduationCap,
   Lightbulb,
   Shield,
@@ -21,13 +18,11 @@ import {
 } from "lucide-react";
 import {
   PageHero,
-  TopCompaniesSection,
   PullQuoteTestimonial,
   RequestInfoModal,
   LogoMarqueeSection,
 } from "@/components/shared";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import {
@@ -40,6 +35,50 @@ import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
 import EmployerFaqSection from "@/components/corporate/EmployerFaqSection";
 import ContactOptionsModal from "@/components/shared/modals/ContactOptionsModal";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const StatCard = ({ stat, index }) => {
+  const Icon = stat.icon;
+  const { ref, display } = useCountUp(stat.value, { duration: 1.5 });
+
+  return (
+    <motion.div
+      key={stat.label}
+      className="text-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className="bg-white/20 backdrop-blur-md rounded-stevens-lg sm:rounded-stevens-xl p-5 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/20 h-full transition-all duration-300 hover:bg-white/25 hover:border-white/30 group relative overflow-hidden flex flex-col items-center text-center"
+        whileHover={{ y: -4, scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-stevens-sm rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors duration-300">
+          <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+        </div>
+
+        <div
+          ref={ref}
+          className="text-2xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-extrabold mb-1 sm:mb-stevens-xs tracking-tight leading-none tabular-nums text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]"
+        >
+          {display}
+        </div>
+
+        <div className="text-sm sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white leading-snug sm:leading-normal [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+          {stat.label}
+        </div>
+
+        {stat.source && (
+          <div className="text-white/70 text-xs italic mt-1.5 [text-shadow:0_1px_1px_rgba(0,0,0,0.4)]">
+            {stat.source}
+          </div>
+        )}
+      </motion.div>
+    </motion.div>
+  );
+};
 
 // Employment Growth Bar Chart Component
 const EmploymentGrowthChart = () => {
@@ -100,7 +139,7 @@ const EmploymentGrowthChart = () => {
   const availableWidth = chartWidth - leftMargin - rightMargin;
 
   return (
-    <div className="bg-stevens-white rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
+    <div className="bg-stevens-light-gray/30 rounded-stevens-xl p-stevens-lg border border-stevens-light-gray shadow-stevens-md">
       <div className="mb-stevens-md">
         <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xs">
           Projected Employment Growth (2025–2034)
@@ -350,7 +389,7 @@ const CorporatePartners = () => {
     {
       value: "#1",
       label: "Online MBA in New Jersey",
-      source: "U.S. News 2025",
+      source: "U.S. News 2026",
       icon: Award,
     },
     {
@@ -389,7 +428,7 @@ const CorporatePartners = () => {
     },
     {
       icon: Shield,
-      title: "Dedicated Corporate Support Team",
+      title: "Dedicated Corporate Care Team",
       description:
         "Receive one-on-one support from a corporate advisor who manages onboarding and student success.",
     },
@@ -409,7 +448,7 @@ const CorporatePartners = () => {
   ];
 
   // Areas of expertise
-  const expertiseAreas = [
+  const _expertiseAreas = [
     "Artificial Intelligence",
     "Machine Learning",
     "Data Science",
@@ -422,7 +461,7 @@ const CorporatePartners = () => {
   const testimonials = [
     {
       quote:
-        "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously.",
+        "PSEG’s partnership with Stevens Institute of Technology is unquestionably one of our company’s most prized relationships – and one that benefits both of our organizations tremendously",
       author: "Kim Hanemann",
       title: "President and Chief Operating Officer, PSEG",
     },
@@ -476,16 +515,8 @@ const CorporatePartners = () => {
       logo: "/assets/company_logo/PSEG_logo.png",
       industry: "Energy",
     },
-    {
-      name: "Accenture",
-      logo: "/assets/company_logo/Accenture_logo.png",
-      industry: "Consulting",
-    },
-    {
-      name: "General Electric",
-      logo: "/assets/company_logo/General_Electric_logo.png",
-      industry: "Industrials",
-    },
+  
+    
     {
       name: "Exxon",
       logo: "/assets/company_logo/Exxon_logo_2016.png",
@@ -529,7 +560,7 @@ const CorporatePartners = () => {
           }}
           secondaryButtonClassName="text-white border-white hover:bg-white hover:text-stevens-dark-gray"
         />
-
+        
         {/* Why Partner with Stevens - Constellation Layout */}
         <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white overflow-hidden">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
@@ -542,7 +573,7 @@ const CorporatePartners = () => {
                 viewport={{ once: true }}
                 className="text-left"
               >
-                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
+                <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-lg leading-tight">
                   Education That Moves at the Speed of Industry
                 </h2>
                 <p className="text-stevens-base md:text-stevens-lg text-stevens-dark-gray leading-relaxed">
@@ -745,24 +776,17 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-
+        
+                        
         {/* Why Stevens - Statistics */}
-        <section className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
-          {/* Background image with blur */}
-          <div className="absolute inset-0">
-            <img
-              {...getContentImageProps(
-                "/assets/images/corporate-partners/corporate-partners-stats-background.webp"
-              )}
-              alt=""
-              className="w-full h-full object-cover"
-              aria-hidden="true"
-            />
-            <div className="absolute inset-0 backdrop-blur-sm" />
-          </div>
-
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-stevens-dark-gray/50" />
+        <section
+          className="py-stevens-section-sm sm:py-stevens-section md:py-stevens-section-lg lg:py-stevens-section-lg text-stevens-white relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/assets/images/corporate-partners/corporate-partners-stats-background.webp)`,
+          }}
+        >
+          {/* Dark overlay - sufficient opacity for WCAG contrast with white text */}
+          <div className="absolute inset-0 bg-stevens-black/20" aria-hidden="true" />
 
           <div className="max-w-stevens-content-max mx-auto px-4 sm:px-stevens-md md:px-stevens-lg lg:px-stevens-lg relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
             {/* Header with enhanced typography */}
@@ -773,10 +797,10 @@ const CorporatePartners = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-4 sm:mb-stevens-md md:mb-stevens-lg">
+              <h2 className="font-stevens-display text-2xl sm:text-stevens-2xl md:text-stevens-3xl lg:text-stevens-4xl font-light uppercase tracking-wide mb-4 sm:mb-stevens-md md:mb-stevens-lg text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)]">
                 A University Built for the Future of Work
               </h2>
-              <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white/90 leading-relaxed px-2 sm:px-0">
+              <p className="text-sm sm:text-stevens-sm md:text-stevens-base lg:text-stevens-lg max-w-3xl mx-auto text-white leading-relaxed px-2 sm:px-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
                 At Stevens, academic rigor meets real-world application. Our
                 online programs empower professionals to lead with confidence in
                 a technology-driven world and deliver measurable results for
@@ -784,47 +808,16 @@ const CorporatePartners = () => {
               </p>
             </motion.div>
 
-            {/* Stats grid with enhanced cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-stevens-lg lg:gap-stevens-xl">
-              {stevensStats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className="bg-white/10 backdrop-blur-sm rounded-stevens-lg sm:rounded-stevens-xl p-4 sm:p-6 md:p-stevens-lg lg:p-stevens-xl border border-white/10 h-full transition-all duration-300 hover:bg-white/15 hover:border-white/20 group"
-                      whileHover={{ y: -4, scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {/* Icon with background circle */}
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-stevens-sm md:mb-stevens-md rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
-                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-
-                      {/* Stat value with enhanced styling */}
-                      <div className="text-3xl sm:text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-stevens-display font-stevens-bold mb-2 sm:mb-stevens-xs md:mb-stevens-sm tracking-tight tabular-nums">
-                        {stat.value}
-                      </div>
-
-                      {/* Label with better hierarchy */}
-                      <div className="text-xs sm:text-stevens-sm md:text-stevens-base font-stevens-semibold text-white/95 leading-tight sm:leading-normal">
-                        {stat.label}
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+              {stevensStats.map((stat, index) => (
+                <StatCard key={stat.label} stat={stat} index={index} />
+              ))}
             </div>
           </div>
         </section>
-        {/* Trust Signals - Company Logos Marquee */}
-        <LogoMarqueeSection
+         
+       {/* Trust Signals - Company Logos Marquee */}
+       <LogoMarqueeSection
           heading="Trusted by Fortune 500 companies and industry leaders"
           logos={partnerCompanies}
           animationDuration={25}
@@ -832,7 +825,7 @@ const CorporatePartners = () => {
           invertLogos={false}
         />
         {/* What We Offer */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -857,7 +850,7 @@ const CorporatePartners = () => {
                     viewport={{ once: true }}
                     className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
                   >
-                    <div className="bg-stevens-white rounded-stevens-lg p-stevens-lg h-full shadow-stevens-md hover:shadow-stevens-xl transition-all duration-stevens-normal transform group-hover:-translate-y-1">
+                    <div className="bg-stevens-light-gray/30 rounded-stevens-lg p-stevens-lg h-full border border-stevens-light-gray shadow-stevens-md hover:shadow-stevens-lg hover:border-stevens-gray/50 transition-all duration-stevens-normal transform group-hover:-translate-y-1">
                       <div className="flex items-start space-x-stevens-md">
                         <div className="w-12 h-12 bg-stevens-light-gray rounded-stevens-md flex items-center justify-center flex-shrink-0 group-hover:bg-stevens-black transition-colors">
                           <Icon className="w-6 h-6 text-stevens-black group-hover:text-white transition-colors" />
@@ -878,9 +871,9 @@ const CorporatePartners = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Areas of Expertise - Employment Growth Chart */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-black mb-stevens-md">
@@ -900,7 +893,7 @@ const CorporatePartners = () => {
 
               {/* Right: Explanatory Text */}
               <div className="order-1 lg:order-2 mt-stevens-xl lg:mt-0 lg:border-l lg:border-stevens-light-gray lg:pl-stevens-2xl">
-                <div className="bg-stevens-white rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
+                <div className="bg-stevens-light-gray/30 rounded-stevens-xl p-stevens-xl border border-stevens-light-gray shadow-stevens-md">
                   <div className="mb-stevens-md">
                     <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-md">
                       Prepare for Careers Growing Faster Than Average
@@ -917,7 +910,8 @@ const CorporatePartners = () => {
                       U.S. Bureau of Labor Statistics.
                     </p>
                     <p className="text-stevens-dark-gray">
-                      Stevens Online programs are designed to align with this
+                      Stevens programs, delivered through our College of
+                      Professional Education, are designed to align with this
                       industry demand, equipping your workforce with the{" "}
                       <span className="font-stevens-semibold text-stevens-dark-gray">
                         technical depth and practical skills
@@ -933,7 +927,7 @@ const CorporatePartners = () => {
 
                     {/* CTA Button to Explore Programs */}
                     <div className="mt-stevens-xl pt-stevens-md border-t border-stevens-light-gray">
-                      <Link to="/compare-our-programs/#explore-programs">
+                      <Link to="/explore-programs/#explore-programs">
                         <Button variant="default" className="gap-2">
                           <GraduationCap className="w-5 h-5" />
                           Explore Our Programs
@@ -959,7 +953,7 @@ const CorporatePartners = () => {
         <EmployerFaqSection accordionPrefix="corporate-partners" />
 
         {/* Final CTA Section */}
-        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray text-stevens-white">
+        <section className="py-stevens-section-sm lg:py-stevens-section bg-stevens-dark-gray text-stevens-white">
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div
               initial={{ opacity: 0, y: 20 }}
@@ -971,8 +965,8 @@ const CorporatePartners = () => {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-light uppercase tracking-wide mb-stevens-md">
                 Ready to Build the Future of Work Together?
               </h2>
-              <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto opacity-90">
-                Partner with Stevens Online to upskill your workforce in data
+              <p className="text-stevens-lg mb-stevens-xl max-w-2xl mx-auto">
+                Partner with Stevens to upskill your workforce in data
                 science, AI, and beyond.
               </p>
 

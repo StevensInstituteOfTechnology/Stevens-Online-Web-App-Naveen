@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * TopCompaniesSection - Slim horizontal bar displaying company logos
  * Design: Trust signal bar, not a hero section

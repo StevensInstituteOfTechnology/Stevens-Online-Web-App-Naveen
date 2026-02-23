@@ -12,8 +12,8 @@ import {
 const VideoPlayer = ({
   src,
   poster,
-  title = "Video Player",
-  description = "",
+  title: _title = "Video Player",
+  description: _description = "",
   className = "",
   showControls = true,
   autoPlay = false,
@@ -202,6 +202,8 @@ const VideoPlayer = ({
   return (
     <div
       ref={containerRef}
+      role="group"
+      aria-label="Video player"
       className={`video-container relative aspect-video bg-stevens-black group  overflow-hidden ${className}`}
       onMouseEnter={() => setShowControlsOverlay(true)}
       onMouseLeave={() => setShowControlsOverlay(false)}
@@ -220,6 +222,7 @@ const VideoPlayer = ({
         onEnded={handleEnded}
       >
         <source src={src} type="video/mp4" />
+        <track kind="captions" src="" srcLang="en" label="English" />
         Your browser does not support the video tag.
       </video>
 
@@ -229,6 +232,7 @@ const VideoPlayer = ({
           <button
             onClick={togglePlayPause}
             className="w-14 h-14 bg-black/60 hover:bg-black/80 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
+            aria-label="Play video"
           >
             <PlayCircle className="w-7 h-7 text-white/90" />
           </button>
@@ -245,8 +249,29 @@ const VideoPlayer = ({
           {/* Progress Bar */}
           <div className="mb-stevens-sm">
             <div
+              role="slider"
+              tabIndex={0}
+              aria-valuemin={0}
+              aria-valuemax={duration || 100}
+              aria-valuenow={currentTime}
+              aria-label="Seek"
               className="w-full h-1 bg-stevens-dark-gray rounded-full cursor-pointer hover:h-2 transition-all duration-stevens-normal"
               onClick={handleSeek}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowLeft') {
+                  e.preventDefault();
+                  skipTime(-10);
+                } else if (e.key === 'ArrowRight') {
+                  e.preventDefault();
+                  skipTime(10);
+                } else if (e.key === 'Home') {
+                  e.preventDefault();
+                  if (videoRef.current) videoRef.current.currentTime = 0;
+                } else if (e.key === 'End') {
+                  e.preventDefault();
+                  if (videoRef.current) videoRef.current.currentTime = duration;
+                }
+              }}
             >
               <div
                 className="h-full bg-stevens-red rounded-full transition-all duration-stevens-normal"

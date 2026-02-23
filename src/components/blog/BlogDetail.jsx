@@ -1,19 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
-  ArrowLeft,
   Calendar,
-  User,
   Clock,
+  User,
   Facebook,
   Twitter,
   Linkedin,
 } from "lucide-react";
 import { format } from "date-fns";
 import ReactMarkdown from "react-markdown";
-import { createPageUrl } from "@/utils";
 import {
   getContentImageProps,
   getThumbnailImageProps,
@@ -135,23 +130,19 @@ const renderTextWithFormatting = (text, bold = [], links = []) => {
   return <span dangerouslySetInnerHTML={{ __html: processedText }} />;
 };
 
-const BlogDetail = ({ post, relatedPosts = [], onBack, className = "" }) => {
+const BlogDetail = ({ post, relatedPosts = [], className = "" }) => {
   const {
-    id,
     title,
-    subtitle,
+    subtitle: _subtitle,
     content,
     featured_image_url,
     image_position,
     author: authorData,
     author_bio,
-    author_image,
     created_date,
     updated_date,
     category,
-    tags = [],
     read_time,
-    social_sharing = true,
   } = post;
 
   // Handle author as either string or object
@@ -160,13 +151,11 @@ const BlogDetail = ({ post, relatedPosts = [], onBack, className = "" }) => {
       ? authorData
       : authorData?.name || "Unknown Author";
   const authorBio = author_bio || authorData?.bio || "";
-  const authorImage = author_image || authorData?.image || "";
 
   // Ensure all values are strings to prevent React rendering errors
   const safeAuthor = String(author || "Unknown Author");
-  const safeAuthorBio = String(authorBio || "");
+  const _safeAuthorBio = String(authorBio || "");
   const safeTitle = String(title || "Untitled");
-  const safeSubtitle = subtitle ? String(subtitle) : "";
   const safeContent = String(content || "");
 
   return (
@@ -253,7 +242,7 @@ const BlogDetail = ({ post, relatedPosts = [], onBack, className = "" }) => {
           <img
             {...getContentImageProps(featured_image_url, "1200px")}
             alt={title}
-            className="w-full h-96 object-cover rounded-stevens-md shadow-stevens-md"
+            className="w-full  h-auto max-h-[32rem] rounded-stevens-md shadow-stevens-md"
             style={{ objectPosition: image_position || "center" }}
             loading="lazy"
           />

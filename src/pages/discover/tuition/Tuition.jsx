@@ -95,10 +95,10 @@ export default function Tuition() {
             {/* Tuition Structure Update */}
             <Card className="bg-white border-0 shadow-md">
               <CardHeader className="pb-4">
-                <CardTitle className="font-stevens-display text-xl md:text-2xl text-stevens-black font-medium leading-tight">
+                <h3 className="font-stevens-display text-xl md:text-2xl text-stevens-black font-medium leading-tight">
                   Tuition Structure Update: For Online M.S. in Computer Science
                   and Online MEM Programs
-                </CardTitle>
+                </h3>
               </CardHeader>
               <CardContent className="space-y-5">
                 <p className="text-stevens-dark-gray leading-relaxed">
@@ -183,7 +183,7 @@ export default function Tuition() {
                       <Award className="text-stevens-red w-6 h-6" /> Pathway
                       Grant
                     </CardTitle>
-                    <p className="text-sm text-stevens-gray">
+                    <p className="text-sm text-stevens-dark-gray">
                       (for Accelerated applicants)
                     </p>
                   </CardHeader>
@@ -206,7 +206,7 @@ export default function Tuition() {
                 <span className="block w-16 h-1 bg-stevens-red mt-4"></span>
               </h2>
               <Tabs defaultValue="mscs" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 h-auto p-1 bg-white rounded-lg mb-6 shadow-sm">
+                <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 h-auto p-1 bg-white rounded-lg mb-6 shadow-sm">
                   <TabsTrigger
                     value="mscs"
                     className="py-3 px-4 text-sm font-semibold data-[state=active]:bg-stevens-red data-[state=active]:text-white rounded-md transition-all"
@@ -224,6 +224,12 @@ export default function Tuition() {
                     className="py-3 px-4 text-sm font-semibold data-[state=active]:bg-stevens-red data-[state=active]:text-white rounded-md transition-all"
                   >
                     Online MBA
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="meads"
+                    className="py-3 px-4 text-sm font-semibold data-[state=active]:bg-stevens-red data-[state=active]:text-white rounded-md transition-all"
+                  >
+                    Online MEADS
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="mscs">
@@ -364,6 +370,40 @@ export default function Tuition() {
                           <TableCell className="py-4">$1,395</TableCell>
                           <TableCell className="py-4 text-right font-medium text-stevens-red text-lg">
                             $54,405 - $66,960
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </Card>
+                </TabsContent>
+                <TabsContent value="meads">
+                  <Card className="shadow-md border-0 overflow-hidden">
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="bg-stevens-dark-gray hover:bg-stevens-dark-gray">
+                          <TableHead className="text-white font-semibold py-4">
+                            Program
+                          </TableHead>
+                          <TableHead className="text-white font-semibold py-4">
+                            Credits
+                          </TableHead>
+                          <TableHead className="text-white font-semibold py-4">
+                            Cost Per Credit
+                          </TableHead>
+                          <TableHead className="text-white font-semibold py-4 text-right">
+                            Est. Tuition*
+                          </TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        <TableRow className="bg-white hover:bg-gray-50">
+                          <TableCell className="py-4 font-medium">
+                            Online MEADS
+                          </TableCell>
+                          <TableCell className="py-4">30</TableCell>
+                          <TableCell className="py-4">$800</TableCell>
+                          <TableCell className="py-4 text-right font-medium text-stevens-red text-lg">
+                            $24,000
                           </TableCell>
                         </TableRow>
                       </TableBody>
@@ -738,7 +778,7 @@ export default function Tuition() {
                     </div>
                   </div>
                   <div className="pt-2 border-t border-gray-200">
-                    <p className="text-sm text-stevens-gray">
+                    <p className="text-sm text-stevens-dark-gray">
                       Wesley J. Howe Center, First Floor
                       <br />
                       1 Castle Point Terrace

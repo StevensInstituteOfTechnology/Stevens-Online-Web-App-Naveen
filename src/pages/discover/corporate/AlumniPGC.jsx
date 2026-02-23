@@ -142,6 +142,7 @@ const AlumniPGC = () => {
                 ?.scrollIntoView({ behavior: "smooth" });
             },
           }}
+          primaryButtonClassName="px-10 py-6 text-xl"  
           bottomContent={
             <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
               <div className="bg-white px-4 sm:px-6 py-4 rounded-lg shadow-lg border-l-4 border-l-stevens-red">
@@ -201,14 +202,14 @@ const AlumniPGC = () => {
                           : "bg-white border border-stevens-light-gray"
                       }`}
                     >
-                      <p className="text-xs sm:text-sm text-stevens-gray uppercase tracking-wide font-semibold">
+                      <p className="text-xs sm:text-sm text-stevens-dark-gray uppercase tracking-wide font-semibold">
                         {item.label}
                       </p>
                       <p
                         className={`text-xl sm:text-2xl font-bold mt-1 ${
                           index === 1
                             ? "text-stevens-red"
-                            : "text-stevens-gray line-through"
+                            : "text-stevens-dark-gray line-through"
                         }`}
                       >
                         {item.value}

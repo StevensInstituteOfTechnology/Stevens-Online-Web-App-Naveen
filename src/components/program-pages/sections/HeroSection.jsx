@@ -1,15 +1,18 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
-import Asterism from "@/components/shared/brand/Asterism";
+import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
+import { Calculator, ExternalLink } from "lucide-react";
+import { useState} from "react";
+import TuitionCalculatorModal from "@/components/calculator/TuitionCalculatorModal";
 
 /**
  * HeroSection - Split-layout hero for Program and Certificate pages
  *
  * Layout:
- * - Desktop (lg+): Left-right split (60% image+text / 40% form)
- * - Mobile (< lg): Three-layer stack (image → text → form)
+ * - Desktop (xl+): Left-right split (60% image+text / 40% form)
+ * - Mobile (< xl): Three-layer stack (image → text → form)
  *
  * IMPORTANT: Only ONE LeadCaptureForm is rendered to avoid duplicate HTML IDs.
  * The layout uses CSS flexbox order to position elements differently per breakpoint.
@@ -27,6 +30,8 @@ import Asterism from "@/components/shared/brand/Asterism";
  * - sourcePage: Source page for analytics tracking
  * - variant: "degree" | "certificate" - affects styling
  * - theme: "light" | "dark" - theme for the form and nav (default: "light")
+ * - secondaryCta: { label, href?, to? } - secondary CTA button (e.g. "Apply In Minutes"). Use href for full URL, or to (e.g. "accelerated-application") + programCode to build link.
+ * - showTuitionCalculatorLink: boolean - whether to show the Tuition Calculator anchor link
  */
 export function HeroSection({
   programCode,
@@ -39,9 +44,13 @@ export function HeroSection({
   formTitle = "Request Information",
   formSubtitle = "Get detailed program information and connect with an enrollment advisor.",
   sourcePage,
-  variant = "degree",
+  variant: _variant = "degree",
   theme = "light",
+  secondaryCta,
+  showTuitionCalculatorLink = false,
 }) {
+
+  const [isTuitionCalculatorModalOpen, setIsTuitionCalculatorModalOpen] = useState(false);
   // Convert title to array if string
   const titleLines = Array.isArray(title) ? title : [title];
 
@@ -57,6 +66,7 @@ export function HeroSection({
     title: isDarkForm ? "text-white" : "text-stevens-black",
     subtitle: isDarkForm ? "text-gray-400" : "text-gray-600",
     divider: isDarkForm ? "bg-gray-700" : "bg-gray-300",
+    dividerBright: isDarkForm ? "bg-white/50" : "bg-gray-400",
   };
 
   // Text area styles (OPPOSITE of theme for mobile)
@@ -117,17 +127,18 @@ export function HeroSection({
         {tuitionCards.map((card, index) => (
           <div
             key={index}
-            className="bg-white/20 backdrop-blur-lg border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-white/30 hover:border-white/80 hover:scale-105 cursor-default"
+            className="animate-scale-pop bg-stevens-white/50 backdrop-blur-xl border border-white/60 rounded-stevens-md px-5 py-3 text-center transition-all duration-300 hover:bg-stevens-black/80 hover:border-white/80 hover:scale-115 cursor-default"
+            style={{ animationDelay: `${0.8 + index * 0.2}s` }}
           >
             <div
-              className="text-2xl lg:text-3xl font-bold text-white"
-              style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)" }}
+              className="text-2xl xl:text-3xl font-bold text-white"
+              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5)" }}
             >
               {card.value}
             </div>
             <div
               className="text-sm text-white/90 mt-0.5 uppercase tracking-wide font-semibold"
-              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)" }}
+              style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               {card.label}
             </div>
@@ -161,30 +172,31 @@ export function HeroSection({
   return (
     <section className="relative overflow-hidden">
       {/* Main flex container - column on mobile, row on desktop */}
-      <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-155px)]">
+      <div className="flex flex-col xl:flex-row xl:min-h-[calc(100vh-155px)]">
         {/* ==================== IMAGE SECTION ==================== */}
         {/* Mobile: order-1, full width, 40vh height */}
         {/* Desktop: order-1, 60% width, full height with text overlay */}
-        <div className="order-1 relative h-[40vh] min-h-[200px] lg:h-auto lg:w-[60%] bg-stevens-black">
+        <div className="order-1 relative h-[40vh] min-h-[200px] xl:h-auto xl:w-[60%] bg-stevens-black">
           {/* Background Image */}
           {bgImage && (
             <img
               {...getHeroImageProps(bgImage)}
               alt=""
               aria-hidden="true"
-              fetchpriority="high"
+              fetchPriority="high"
               loading="eager"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover lg:opacity-80"
+              className="absolute inset-0 w-full h-full object-cover "
               style={{ objectPosition: bgImagePosition }}
             />
           )}
 
-          {/* Desktop-only: Gradient Overlay */}
-          <div className="hidden lg:block absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
+          {/* Desktop-only: Gradient Overlays */}
+          <div className="hidden xl:block absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-stevens-black/90 via-stevens-black/60 to-transparent" />
+          <div className="hidden xl:block absolute left-0 top-0 bottom-0 w-[20%] bg-gradient-to-r from-stevens-black/60 via-stevens-black/30 to-transparent" />
 
           {/* Desktop-only: Text Content at bottom */}
-          <div className="hidden lg:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
+          <div className="hidden xl:flex relative h-full flex-col justify-end px-stevens-2xl py-stevens-2xl text-stevens-white">
             <div className="animate-in slide-in-from-left duration-700">
               {renderDesktopBadges()}
 
@@ -221,7 +233,7 @@ export function HeroSection({
         {/* Mobile: order-2, shows below image */}
         {/* Desktop: hidden */}
         <div
-          className={`order-2 lg:hidden ${textAreaStyles.container} px-stevens-md py-stevens-lg`}
+          className={`order-2 xl:hidden ${textAreaStyles.container} px-stevens-md py-stevens-lg`}
         >
           <div className="animate-in slide-in-from-bottom duration-500">
             {renderMobileBadges()}
@@ -256,18 +268,18 @@ export function HeroSection({
         {/* Mobile: order-3, full width */}
         {/* Desktop: order-2, 40% width, appears on right */}
         <div
-          className={`order-3 lg:order-2 lg:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md lg:px-stevens-xl py-stevens-lg lg:py-stevens-2xl`}
+          className={`order-3 xl:order-2 xl:w-[40%] ${formAreaStyles.container} flex items-center justify-center px-stevens-md xl:px-stevens-xl py-stevens-lg xl:py-stevens-2xl`}
         >
-          <div className="w-full max-w-md mx-auto lg:mx-0 animate-in slide-in-from-bottom lg:slide-in-from-right duration-700">
+          <div className="w-full max-w-md mx-auto xl:mx-0 animate-in slide-in-from-bottom xl:slide-in-from-right duration-700">
             {/* Form Header */}
-            <div className="text-center mb-stevens-md lg:mb-stevens-lg">
+            <div className="text-center mb-stevens-md xl:mb-stevens-lg">
               <h2
-                className={`text-stevens-2xl lg:text-stevens-4xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 lg:mb-2`}
+                className={`text-stevens-2xl xl:text-stevens-4xl font-stevens-headers font-bold ${formAreaStyles.title} mb-1 xl:mb-2`}
               >
                 {formTitle}
               </h2>
               <p
-                className={`text-stevens-sm lg:text-stevens-base ${formAreaStyles.subtitle}`}
+                className={`text-stevens-sm xl:text-stevens-base ${formAreaStyles.subtitle}`}
               >
                 {formSubtitle}
               </p>
@@ -275,7 +287,7 @@ export function HeroSection({
 
             {/* Divider */}
             <div
-              className={`w-full h-px ${formAreaStyles.divider} mb-stevens-md lg:mb-stevens-lg`}
+              className={`w-full h-px ${formAreaStyles.divider} mb-stevens-md xl:mb-stevens-lg`}
             />
 
             {/* SINGLE Lead Capture Form Instance */}
@@ -286,9 +298,94 @@ export function HeroSection({
               hideHeader={true}
               theme={theme}
             />
+
+            {/* "Or" Quick Actions - Below the form */}
+            {(secondaryCta || showTuitionCalculatorLink) && (
+              <div className="mt-stevens-lg">
+                {/* Divider with "Or" label */}
+                <div className="flex items-center gap-3 mb-stevens-md">
+                  <div
+                    className={`flex-1 h-px ${formAreaStyles.dividerBright}`}
+                  />
+                  <span
+                    className={`text-xs font-semibold uppercase tracking-widest ${formAreaStyles.subtitle}`}
+                  >
+                    Or
+                  </span>
+                  <div
+                    className={`flex-1 h-px ${formAreaStyles.dividerBright}`}
+                  />
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {secondaryCta && (() => {
+                    // Resolve href: use explicit href, or build from to + programCode
+                    const applyHref =
+                      secondaryCta.href ??
+                      (secondaryCta.to && programCode
+                        ? `/${String(secondaryCta.to).replace(/^\/+|\/+$/g, "")}/?program=${programCode}`
+                        : undefined);
+                    if (!applyHref) return null;
+                    return (
+                      <Button
+                        asChild
+                        variant="filled-red"
+                        className="flex-1 py-3 text-sm font-semibold bg-stevens-red text-white border-stevens-red "
+                      >
+                        <a
+                          href={applyHref}
+                          target={
+                            applyHref.startsWith("http")
+                              ? "_blank"
+                              : undefined
+                          }
+                          rel={
+                            applyHref.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
+                          onClick={() =>
+                            trackConversion(CONVERSION_LABELS.APPLY_NOW)
+                          }
+                        >
+                          {secondaryCta.label || "Apply In Minutes"}
+                        </a>
+                      </Button>
+                    );
+                  })()}
+
+                  {showTuitionCalculatorLink && (
+                    <Button
+                  
+                      variant="outline"
+                      className={`flex-1 py-3 text-sm font-semibold transition-all duration-300 ${
+                        isDarkForm
+                          ? "bg-white text-stevens-black border-white hover:bg-transparent hover:border-white/40 hover:text-white"
+                          : "bg-stevens-dark-gray text-white border-stevens-dark-gray hover:bg-transparent hover:border-stevens-dark-gray hover:text-stevens-dark-gray"
+                      }`}
+                      onClick={() => setIsTuitionCalculatorModalOpen(true)}
+                    >
+                      
+                        <Calculator className="w-4 h-4 mr-2" />
+                        Tuition Calculator
+                    
+                    </Button>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {showTuitionCalculatorLink && programCode && (
+        <TuitionCalculatorModal
+          programCode={programCode}
+          isOpen={isTuitionCalculatorModalOpen}
+          onClose={() => setIsTuitionCalculatorModalOpen(false)}
+        />
+      )}
     </section>
   );
 }

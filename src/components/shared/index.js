@@ -41,7 +41,7 @@ export { default as RequestInfoModal } from "./modals/RequestInfoModal";
 
 // Card components
 export { default as ProgramCard } from "./cards/ProgramCard";
-export { PromotionalCard } from "./PromotionalCard";
+export { PromotionalCard } from "./cards/PromotionalCard";
 
 // Brand components
 export { default as Asterism, AsterismPresets } from "./brand/Asterism";

@@ -18,8 +18,8 @@ const TestimonialCarousel = ({
   title,
   subtitle,
   testimonials = [],
-  autoPlay = true,
-  interval = 5000,
+  autoPlay: _autoPlay = true,
+  interval: _interval = 5000,
   variant = 'default'
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);

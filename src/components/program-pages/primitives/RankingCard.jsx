@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * RankingCard - Displays a ranking/statistic with source citation
  * 
@@ -27,7 +25,7 @@ export const RankingCard = ({ ranking, description, source, note }) => (
     </div>
     {/* Source text */}
     {source && (
-      <p className="text-stevens-sm text-stevens-gray mt-auto pt-stevens-sm">
+      <p className="text-stevens-sm text-stevens-dark-gray mt-auto pt-stevens-sm">
         {source} {note && <sup>{note}</sup>}
       </p>
     )}

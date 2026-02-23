@@ -14,12 +14,12 @@ export const trackConversion = (conversionLabel, additionalParams = {}) => {
       'send_to': `AW-392135590/${conversionLabel}`,
       ...additionalParams,
       'event_callback': () => {
-        if (process.env.NODE_ENV === 'development') {
+        if (import.meta.env.DEV) {
           console.log('✅ Conversion tracked:', conversionLabel, additionalParams);
         }
       }
     });
-  } else if (process.env.NODE_ENV === 'development') {
+  } else if (import.meta.env.DEV) {
     console.warn('⚠️ gtag not available. Conversion not tracked:', conversionLabel);
   }
 };

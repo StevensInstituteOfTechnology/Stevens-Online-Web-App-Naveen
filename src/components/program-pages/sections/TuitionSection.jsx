@@ -39,12 +39,12 @@ export const TuitionSection = forwardRef(function TuitionSection(
           {tuition.cards.map((card, i) => (
             <Card key={i} className="shadow-md">
               <CardHeader>
-                <CardTitle className="font-stevens-display text-4xl font-light text-stevens-red">
+                <p className="font-stevens-display text-4xl font-light text-stevens-red">
                   {card.value}
-                </CardTitle>
-                <p className="font-semibold text-stevens-dark-gray">
-                  {card.label}
                 </p>
+                <h3 className="font-semibold text-stevens-dark-gray text-base mt-1 mb-0">
+                  {card.label}
+                </h3>
               </CardHeader>
             </Card>
           ))}

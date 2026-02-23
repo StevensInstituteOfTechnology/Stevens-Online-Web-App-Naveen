@@ -1,6 +1,4 @@
-import React from "react";
 import { DegreeTemplate } from "../../components/program-pages/templates";
-import { Globe, Check, Award } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import { KEY_DATES_FALL } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -27,7 +25,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/asap/?program=mem",
     },
   },
   quickFacts: {
@@ -98,29 +96,32 @@ const programData = {
   },
   rankings: [
     {
-      ranking: "No. 6",
+      ranking: "No. 1",
+      description: "In N.J.",
+      source:
+        "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2026).",
+    },
+    {
+      ranking: "No. 11",
       description: "In the Nation",
       source:
-        "Recognized as the No. 6 Best Online Master's in Industrial Engineering Program in the country by U.S. News & World Report (2025).",
+        "Recognized as the No. 11 Best Online Master's in Industrial (Systems) Engineering Program in the country by U.S. News & World Report (2026).",
+    },
+    
+    {
+      ranking: "#12",
+      description: "For Best Career Placement",
+      source:
+        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2026).",
     },
     {
       ranking: "No. 15",
       description: "For Best Value",
       source: 'Ranks No. 15 among "Best Value Colleges" By Payscale (2024).',
     },
-    {
-      ranking: "#12",
-      description: "For Best Career Placement",
-      source:
-        "Ranked No. 12 on The Princeton Review's 'Top 20 Best Career Placement' list (2025).",
-    },
+   
 
-    {
-      ranking: "No. 1",
-      description: "In N.J.",
-      source:
-        "Named the No. 1 Online Master's in Engineering Program at a N.J. school (U.S. News & World Report, 2022).",
-    },
+    
   ],
   videoSection: {
     title: "Discover Your Future at Stevens",
@@ -657,6 +658,10 @@ const programData = {
     },
   ],
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. Stevens is accredited until 2027 and the next self-study evaluation is scheduled to take place during 2026-2027.`,
+  tuitionCalculator: {
+    image: "/assets/images/shared/shared-tuition-calculator.webp",
+    imageAlt: "Welcome to Stevens",
+  },
 };
 
 export default function MEMPage() {

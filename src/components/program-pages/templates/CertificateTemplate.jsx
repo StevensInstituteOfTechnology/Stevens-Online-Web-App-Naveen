@@ -24,6 +24,7 @@ import {
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 import { VideoSection } from "../../shared/sections/VideoSection";
+import TuitionCalculatorSection from "../../calculator/TuitionCalculatorSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -58,8 +59,8 @@ import { StickyNav, useSectionNavigation } from "../navigation";
 export function CertificateTemplate({
   programData,
   theme = "light",
-  useApplicationModal = false,
-  useRequestInfoModal = true,
+  useApplicationModal: _useApplicationModal = false,
+  useRequestInfoModal: _useRequestInfoModal = true,
 }) {
   const {
     code,
@@ -73,6 +74,7 @@ export function CertificateTemplate({
     curriculum,
     whyStevens,
     faculty,
+    applicationOption, // New: singleImageCard for Accelerated Application
     admissions,
     keyDates,
     tuition,
@@ -82,6 +84,7 @@ export function CertificateTemplate({
     careerOutcomes,
     topCompanies,
     deadlines,
+    tuitionCalculator,
   } = programData;
 
   const location = useLocation();
@@ -123,9 +126,6 @@ export function CertificateTemplate({
 
   if (!programData) return <div>Loading program data...</div>;
 
-  // Opposite theme for sticky nav
-  const navTheme = theme === "dark" ? "light" : "dark";
-
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
       {/* Hero Section - Minimal style with form */}
@@ -140,6 +140,8 @@ export function CertificateTemplate({
         formSubtitle="Get program details and start your application."
         variant="certificate"
         theme={theme}
+        secondaryCta={hero?.secondaryCta}
+        showTuitionCalculatorLink={!!tuitionCalculator}
       />
 
       {/* Sticky Navigation */}
@@ -150,7 +152,6 @@ export function CertificateTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
-        theme={navTheme}
       />
 
       <main>
@@ -185,6 +186,8 @@ export function CertificateTemplate({
               videoSection.title
             }
             description={videoSection.description || ""}
+            youtubeVideoId={videoSection.youtubeVideoId}
+            youtubeQuality={videoSection.youtubeQuality}
             videoSrc={videoSection.videoSrc}
             videoPoster={videoSection.posterSrc}
             videoTitle={videoSection.title}
@@ -224,16 +227,34 @@ export function CertificateTemplate({
         {/* 9. Faculty (Minimal) */}
         <FacultySection faculty={faculty} ref={registerSectionRef("faculty")} />
 
-        {/* 10. Admissions Section (combined with Tuition & Key Dates for certificates) */}
+        {/* 10a. Application Option (singleImageCard) - if provided, this becomes the admissions anchor */}
+        {applicationOption && (
+          <AdmissionsSection
+            admissions={applicationOption}
+            ref={registerSectionRef("admissions")}
+          />
+        )}
+
+        {/* 10b. Admissions Section (combined with Tuition & Key Dates for certificates) */}
         <AdmissionsSection
           admissions={admissions}
           keyDates={keyDates}
           tuition={tuition}
           programCode={code}
-          ref={registerSectionRef("admissions")}
+          ref={applicationOption ? undefined : registerSectionRef("admissions")}
         />
 
-        {/* 10b. Deadlines Timeline Section (optional) */}
+        {/* 10b. Tuition Calculator Section (opt-in per program) */}
+        {tuitionCalculator && (
+          <TuitionCalculatorSection
+            programCode={code}
+            image={tuitionCalculator.image}
+            imageAlt={tuitionCalculator.imageAlt}
+            ref={registerSectionRef("tuition-calculator")}
+          />
+        )}
+
+        {/* 10c. Deadlines Timeline Section (optional) */}
         {deadlines && (
           <DeadlinesSection
             keyDates={deadlines}

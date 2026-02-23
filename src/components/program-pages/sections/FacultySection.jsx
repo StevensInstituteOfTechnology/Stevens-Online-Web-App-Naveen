@@ -1,4 +1,4 @@
-import React, {
+import {
   forwardRef,
   useState,
   useRef,
@@ -19,16 +19,21 @@ import { FacultyCard } from "../primitives";
  * - Clone technique for seamless looping
  * - 3-column responsive layout
  * - Cards with diagonal-cut photo effect
+ * - Auto-scroll (2s interval, pauses on hover and nav click)
+ *
+ * Props:
+ * - faculty: { members } - faculty data
+ * - autoScroll: boolean (default true)
+ * - autoScrollInterval: number ms (default 2000)
  *
  * Used in: Both Degree and Certificate pages
  */
 export const FacultySection = forwardRef(function FacultySection(
-  { faculty },
+  { faculty, autoScroll = true, autoScrollInterval = 1000 },
   ref
 ) {
-  if (!faculty || !faculty.members || faculty.members.length === 0) return null;
-
-  const members = faculty.members;
+  // Must call all hooks unconditionally (before any early return)
+  const members = faculty?.members ?? [];
   const N = members.length;
 
   // Responsive cards per view
@@ -43,6 +48,28 @@ export const FacultySection = forwardRef(function FacultySection(
   const trackRef = useRef(null);
   const navButtonsRef = useRef(null);
   const isInitialized = useRef(false);
+  const pauseTimeoutRef = useRef(null);
+
+  // Auto-scroll pause: hover (while over carousel) + click (2s cooldown)
+  const [isHovering, setIsHovering] = useState(false);
+  const [isClickPaused, setIsClickPaused] = useState(false);
+  const isAutoScrollPaused = isHovering || isClickPaused;
+
+  const pauseAutoScrollOnClick = useCallback(() => {
+    setIsClickPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsClickPaused(false);
+      pauseTimeoutRef.current = null;
+    }, 3000);
+  }, []);
+
+  // Cleanup pause timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    };
+  }, []);
 
   // Handle responsive cardsPerView
   useEffect(() => {
@@ -150,6 +177,38 @@ export const FacultySection = forwardRef(function FacultySection(
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // Auto-scroll: advance every interval when not paused; respect prefers-reduced-motion
+  useEffect(() => {
+    if (
+      !hasCarousel ||
+      !autoScroll ||
+      isAutoScrollPaused ||
+      N === 0 ||
+      typeof window === "undefined"
+    )
+      return;
+
+    const prefersReducedMotion =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    const id = setInterval(() => {
+      navigate("next");
+    }, autoScrollInterval);
+
+    return () => clearInterval(id);
+  }, [
+    hasCarousel,
+    autoScroll,
+    autoScrollInterval,
+    isAutoScrollPaused,
+    N,
+    navigate,
+  ]);
+
+  // Early return only after all hooks have been called
+  if (!faculty || !faculty.members || faculty.members.length === 0) return null;
+
   // Calculate transform for carousel - larger gap reduces card width/height
   const gapPercent = 6;
   const cardWidthPercent = (100 - (K - 1) * gapPercent) / K;
@@ -182,6 +241,7 @@ export const FacultySection = forwardRef(function FacultySection(
                   direction="prev"
                   onClick={() => {
                     setActiveButton("prev");
+                    pauseAutoScrollOnClick();
                     navigate("prev");
                   }}
                   isActive={activeButton === "prev"}
@@ -192,6 +252,7 @@ export const FacultySection = forwardRef(function FacultySection(
                   direction="next"
                   onClick={() => {
                     setActiveButton("next");
+                    pauseAutoScrollOnClick();
                     navigate("next");
                   }}
                   isActive={activeButton === "next"}
@@ -200,7 +261,7 @@ export const FacultySection = forwardRef(function FacultySection(
                 />
               </div>
               {/* Pagination Indicator */}
-              <span className="text-stevens-gray text-sm tabular-nums tracking-wide pt-4 pr-8">
+              <span className="text-stevens-dark-gray text-sm tabular-nums tracking-wide pt-4 pr-8">
                 {realIndex} / {N}
               </span>
             </div>
@@ -210,7 +271,11 @@ export const FacultySection = forwardRef(function FacultySection(
         {/* Faculty Cards - Grid or Carousel */}
         <div className={hasCarousel ? "px-4 md:px-8 lg:px-16 xl:px-24" : ""}>
           {hasCarousel ? (
-            <div className="overflow-hidden">
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
               <div
                 ref={trackRef}
                 onTransitionEnd={handleTransitionEnd}

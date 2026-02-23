@@ -4,19 +4,9 @@
  * Used for Explore pages (ExploreMBA, ExploreMSCS, etc.)
  * These are simplified, marketing-focused versions of the main program pages.
  */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  ChevronDown,
-  Check,
-  Award,
-  Globe,
-  Star,
-  Target,
-  Clock,
-  Network,
-  ThumbsUp,
-} from "lucide-react";
+import { Check, Globe } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -53,7 +43,7 @@ export function ExploreTemplate({
   programCode = "",
   seo,
   secondaryCta,
-  useApplicationModal = false,
+  useApplicationModal: _useApplicationModal = false,
   traditionalAppLink = "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
   theme = "light", // Theme for the form and nav
 
@@ -70,7 +60,7 @@ export function ExploreTemplate({
   programDetails,
 
   // Excellence Section Props
-  excellenceSectionTitle,
+  excellenceSectionTitle: _excellenceSectionTitle,
   excellenceSectionItems,
 
   // Additional Why Choose Stevens Section Props

@@ -32,10 +32,11 @@ export function useSectionNavigation({
     curriculum,
     studentSpotlight,
     faculty,
-    keyDates,
+    keyDates: _keyDates,
     deadlines,
     admissions,
     tuition,
+    tuitionCalculator,
     events,
     faqs,
     accreditation,
@@ -77,6 +78,7 @@ export function useSectionNavigation({
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
       { id: "tuition", label: "Tuition" },
+      { id: "tuition-calculator", label: "Tuition Calculator" },
       { id: "deadlines", label: "Deadlines" },
       { id: "events", label: "Events" },
       { id: "faqs", label: "FAQs" },
@@ -94,6 +96,7 @@ export function useSectionNavigation({
       { id: "faculty", label: "Faculty" },
       { id: "admissions", label: "Admissions" },
       { id: "tuition", label: "Tuition" },
+      { id: "tuition-calculator", label: "Tuition Calculator" },
       { id: "deadlines", label: "Deadlines" },
       { id: "faqs", label: "FAQs" },
       { id: "accreditation", label: "Accreditation" },
@@ -110,7 +113,7 @@ export function useSectionNavigation({
               (overview.concentrations && overview.concentrations.length > 0))
           );
         case "video":
-          return videoSection && videoSection.videoSrc;
+          return videoSection && (videoSection.videoSrc || videoSection.youtubeVideoId);
         case "rankings":
           return rankings && rankings.length > 0;
         case "what-youll-learn":
@@ -129,7 +132,6 @@ export function useSectionNavigation({
           return (
             curriculum &&
             (curriculum.description ||
-              curriculum.courseTabs ||
               curriculum.tabs ||
               curriculum.completeCourseCatalog)
           );
@@ -163,6 +165,8 @@ export function useSectionNavigation({
               tuition.description ||
               (tuition.grants && tuition.grants.length > 0))
           );
+        case "tuition-calculator":
+          return tuitionCalculator && tuitionCalculator.image;
         case "events":
           return events && events.items && events.items.length > 0;
         case "faqs":
@@ -214,6 +218,7 @@ export function useSectionNavigation({
     deadlines,
     admissions,
     tuition,
+    tuitionCalculator,
     events,
     faqs,
     accreditation,

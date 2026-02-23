@@ -1,4 +1,3 @@
-import React from 'react';
 import BlogCard from './BlogCard';
 import BlogPagination from './BlogPagination';
 
@@ -12,17 +11,18 @@ const BlogList = ({
 }) => {
   if (loading) {
     return (
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-stevens-xl ${className}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-xl ${className}`}>
         {Array.from({ length: 6 }).map((_, index) => (
-          <div key={index} className="skeleton-stevens-card border border-stevens-light-gray rounded-stevens-md overflow-hidden">
-            <div className="aspect-square skeleton-stevens"></div>
-            <div className="p-stevens-xl">
-              <div className="skeleton-stevens-title mb-stevens-lg h-8"></div>
-              <div className="skeleton-stevens-text mb-stevens-sm h-4"></div>
-              <div className="skeleton-stevens-text mb-stevens-sm h-4"></div>
-              <div className="skeleton-stevens-text w-3/4 mb-stevens-lg h-4"></div>
-              <div className="skeleton-stevens-text mb-stevens-lg h-3 w-1/2"></div>
-              <div className="skeleton-stevens-button h-12"></div>
+          <div key={index} className="rounded-sm overflow-hidden">
+            <div className="aspect-[4/3] bg-white/10 animate-pulse rounded-sm"></div>
+            <div className="pt-5">
+              <div className="bg-white/10 animate-pulse mb-3 h-7 rounded"></div>
+              <div className="bg-white/10 animate-pulse mb-2 h-4 w-1/2 rounded"></div>
+              <div className="bg-white/10 animate-pulse mb-4 h-4 w-1/3 rounded"></div>
+              <div className="bg-white/10 animate-pulse mb-2 h-4 rounded"></div>
+              <div className="bg-white/10 animate-pulse mb-2 h-4 rounded"></div>
+              <div className="bg-white/10 animate-pulse mb-5 h-4 w-3/4 rounded"></div>
+              <div className="bg-white/10 animate-pulse h-12 border-2 border-white/10 rounded"></div>
             </div>
           </div>
         ))}
@@ -33,10 +33,10 @@ const BlogList = ({
   if (posts.length === 0) {
     return (
       <div className={`text-center py-stevens-3xl ${className}`}>
-        <h3 className="font-stevens-display text-stevens-2xl text-stevens-dark-gray mb-stevens-md">
+        <h3 className="font-stevens-display text-stevens-2xl text-white mb-stevens-md">
           No blog posts found
         </h3>
-        <p className="text-stevens-light-gray0">
+        <p className="text-white/60">
           Check back later for new content.
         </p>
       </div>
@@ -46,13 +46,11 @@ const BlogList = ({
   return (
     <div className={className}>
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-stevens-lg mb-stevens-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stevens-xl mb-stevens-2xl">
         {posts.map((post) => (
           <BlogCard 
             key={post.id} 
             post={post}
-            showCategory={true}
-            showAuthor={true}
             showDate={true}
           />
         ))}

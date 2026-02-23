@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { getHeroImageProps } from "@/utils/responsiveImage";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
@@ -38,7 +37,7 @@ export function HeroSection({
   formTitle = "Request Information",
   formSubtitle = "Get detailed program information and connect with an enrollment advisor.",
   sourcePage,
-  variant = "degree",
+  variant: _variant = "degree",
   theme = "light",
 }) {
   // Convert title to array if string
@@ -149,7 +148,7 @@ export function HeroSection({
               {...getHeroImageProps(bgImage)}
               alt=""
               aria-hidden="true"
-              fetchpriority="high"
+              fetchPriority="high"
               loading="eager"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover lg:opacity-80"

@@ -1,7 +1,6 @@
 import React, { forwardRef } from "react";
-import { Button } from "../../ui/button";
 import { Section } from "../primitives";
-import { PromotionalCard } from "../../shared/PromotionalCard";
+import { PromotionalCard } from "../../shared/cards/PromotionalCard";
 
 /**
  * OverviewSection - Program overview with simplified Quick Facts card
@@ -34,9 +33,9 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
   return (
     <Section id="overview" bgClassName="bg-stevens-white" ref={ref}>
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-6 gap-x-16 gap-y-8">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-[1fr_327px] gap-x-16 gap-y-8">
         {/* Left Column - Overview Content */}
-        <div className="lg:col-span-4">
+        <div className="min-w-0">
           {/* Program Type Label */}
           {overview.programType && (
             <div className="flex items-center gap-3 mb-5">
@@ -66,7 +65,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
           )}
 
           {/* Divider */}
-          <div className="w-20 h-0.5 bg-stevens-red mb-8" />
+          <div className="w-16 h-1 bg-stevens-red mb-8" />
 
           {/* Description */}
           {overview.description && (
@@ -111,7 +110,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
         </div>
 
         {/* Right Column - Enhanced Quick Facts Card */}
-        <div className="lg:col-span-2">
+        <div className="min-w-0">
           {/* Promotional Card - Quick Facts with Image */}
           <div className="mt-8 sticky top-56">
             <PromotionalCard

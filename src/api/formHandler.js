@@ -88,7 +88,7 @@ export const LeadSubmission = {
 
 // Option 1: Formspree integration
 export const submitToFormspree = async (formData) => {
-  const FORMSPREE_ENDPOINT = process.env.VITE_FORMSPREE_ENDPOINT;
+  const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   
   if (!FORMSPREE_ENDPOINT) {
     throw new Error('Formspree endpoint not configured');
@@ -110,7 +110,7 @@ export const submitToFormspree = async (formData) => {
 };
 
 // Option 2: EmailJS integration (install with: npm install @emailjs/browser)
-export const submitViaEmailJS = async (formData) => {
+export const submitViaEmailJS = async (_formData) => {
   // This function is available but requires EmailJS to be installed
   // To use: npm install @emailjs/browser
   throw new Error('EmailJS not installed. Run: npm install @emailjs/browser');

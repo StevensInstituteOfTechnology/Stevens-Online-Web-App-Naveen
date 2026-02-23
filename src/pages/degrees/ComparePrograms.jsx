@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { PageHero } from "@/components/shared";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import ProgramFilterGrid from "@/components/admissions/ProgramFilterGrid";
 import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
+import { PROGRAMS_DATA } from "@/data/programsData";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
@@ -18,39 +20,49 @@ import {
 
 export default function ComparePrograms() {
   usePageTracking({
-    pageType: "comparison",
+    pageType: "programs_hub",
     additionalData: {
-      page_name: "Compare Programs",
+      page_name: "All Programs",
       has_quiz: true,
     },
   });
 
-  // Handle hash navigation (scroll to section if hash is present in URL)
+  // Read ?filter= from URL (masters | certificates) for ProgramFilterGrid
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const filterFromUrl = searchParams.get("filter") || null;
+  const initialFilter =
+    filterFromUrl === "masters" || filterFromUrl === "certificates"
+      ? filterFromUrl
+      : null;
+
+  // Handle hash navigation: scroll to #explore-programs when URL hash/params change
+  // (e.g. footer "Master's Degrees" / "Graduate Certificates" links when already on compare page)
   useEffect(() => {
-    const hash = window.location.hash;
+    const hash = location.hash || window.location.hash;
     if (hash) {
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
+      return () => clearTimeout(timeoutId);
     }
-  }, []);
+  }, [location.search, location.hash]);
 
   // Set SEO meta tags
   useEffect(() => {
-    setPageTitle("Compare Graduate Programs | Stevens Online");
+    setPageTitle("Online Graduate Programs & Certificates | Stevens Online");
     setMetaDescription(
-      "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests."
+      "Explore Stevens' online graduate degrees and certificates. Compare programs, estimate tuition with our calculator, and find the right fit for your career goals."
     );
     setOpenGraphTags({
-      title: "Compare Graduate Programs | Stevens Online",
+      title: "Online Graduate Programs & Certificates | Stevens Online",
       description:
-        "Compare Stevens' online graduate programs to find the master's degree that best fits your career goals and interests.",
+        "Explore Stevens' online graduate degrees and certificates. Compare programs, estimate tuition with our calculator, and find the right fit for your career goals.",
       image: buildCanonicalUrl("/assets/images/shared/stevens-campus.webp"),
-      url: buildCanonicalUrl("/compare-our-programs/"),
+      url: buildCanonicalUrl("/explore-programs/"),
       type: "website",
     });
   }, []);
@@ -67,6 +79,7 @@ export default function ComparePrograms() {
     },
   ];
 
+  // Program comparison state
   const [left, setLeft] = useState("mba");
   const [right, setRight] = useState("mscs");
   const [showResults, setShowResults] = useState(false);
@@ -180,11 +193,11 @@ export default function ComparePrograms() {
   }, []);
 
   return (
-    <PageContextProvider pageType="comparison" pageName="ComparePrograms">
+    <PageContextProvider pageType="programs_hub" pageName="AllPrograms">
       <div>
         <PageHero
-          title="Compare Online Graduate Programs at Stevens"
-          subtitle="Find your path"
+          title="Explore Online Graduate Programs & Certificates"
+          subtitle="Find the right program for your career"
           bgImage="/assets/images/compare-programs/compare-programs-hero.webp"
           rightContent={
             <ProgramReadinessAssessment onComplete={handleAssessmentComplete} />
@@ -194,7 +207,7 @@ export default function ComparePrograms() {
         {/* Explore Our Programs */}
         <div
           id="explore-programs"
-          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-light-gray"
+          className="py-stevens-section-sm lg:py-stevens-section bg-stevens-gray/10 scroll-mt-24"
         >
           <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
             <div className="text-center mb-stevens-2xl">
@@ -208,7 +221,7 @@ export default function ComparePrograms() {
               </p>
             </div>
 
-            <ProgramFilterGrid />
+            <ProgramFilterGrid initialFilter={initialFilter} />
 
             {/* Consultation CTA */}
             <div className="border-t border-stevens-light-gray py-stevens-xl mt-stevens-2xl">
@@ -223,27 +236,51 @@ export default function ComparePrograms() {
                   </p>
                 </div>
                 <div className="stevens-md:text-right">
-                  <a
-                    href={BOOKING_URLS.SCHEDULE_CALL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
-                    }
+                  <Button
+                    asChild
+                    variant="outline-dark"
+                    className="px-stevens-xl py-stevens-md"
                   >
-                    <Button
-                      variant="outline-dark"
-                      className="px-stevens-xl py-stevens-md"
+                    <a
+                      href={BOOKING_URLS.SCHEDULE_CALL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                      }
                     >
                       Get In Touch
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Tuition & Financial Aid Link */}
+        <section className="py-12 bg-stevens-white">
+          <div className="max-w-stevens-content-max mx-auto px-stevens-md lg:px-stevens-lg">
+            <div className="border border-stevens-light-gray rounded-lg p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="font-stevens-display text-xl font-semibold text-stevens-dark-gray mb-1">
+                  Need to estimate your tuition?
+                </h3>
+                <p className="text-stevens-dark-gray">
+                  Use our tuition calculator with workforce partner, alumni, and
+                  resident discounts.
+                </p>
+              </div>
+              <Link to="/tuition-and-financial-aid/">
+                <Button variant="default" className="whitespace-nowrap">
+                  Tuition & Financial Aid
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Select Programs to Compare */}
         <section
@@ -252,7 +289,7 @@ export default function ComparePrograms() {
         >
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
             <div className="text-center mb-stevens-xl">
-              <h2 className="font-stevens-display text-stevens-3xl stevens-md:text-stevens-4xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
+              <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-sm">
                 Select Programs to Compare
               </h2>
               <p className="text-stevens-dark-gray">
@@ -266,10 +303,14 @@ export default function ComparePrograms() {
               <CardContent className="p-stevens-xl">
                 <div className="grid stevens-md:grid-cols-3 gap-stevens-lg items-end">
                   <div>
-                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                    <label
+                      htmlFor="compare-left-program"
+                      className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
+                    >
                       Select Program
                     </label>
                     <select
+                      id="compare-left-program"
                       value={left}
                       onChange={(e) => setLeft(e.target.value)}
                       className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
@@ -287,10 +328,14 @@ export default function ComparePrograms() {
                   </div>
 
                   <div>
-                    <label className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs">
+                    <label
+                      htmlFor="compare-right-program"
+                      className="block text-stevens-sm font-stevens-semibold text-stevens-dark-gray mb-stevens-xs"
+                    >
                       Select Program
                     </label>
                     <select
+                      id="compare-right-program"
                       value={right}
                       onChange={(e) => setRight(e.target.value)}
                       className="w-full border border-stevens-light-gray rounded-stevens-md p-stevens-sm"
@@ -373,9 +418,9 @@ export default function ComparePrograms() {
         {/* Program Track Options */}
         <section className="py-16 bg-stevens-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
-            <h3 className="font-stevens-display text-stevens-2xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-lg">
               Program Track Options
-            </h3>
+            </h2>
             <div className="overflow-x-auto bg-stevens-white rounded-stevens-md border border-stevens-light-gray">
               <table className="w-full">
                 <thead>
@@ -428,17 +473,29 @@ export default function ComparePrograms() {
         {/* CTA */}
         <section className="py-16 bg-stevens-white">
           <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl text-center">
-            <h3 className="font-stevens-display text-stevens-2xl stevens-md:text-stevens-3xl font-light text-stevens-dark-gray mb-stevens-md">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light text-stevens-dark-gray mb-16">
               Ready to discuss how our programs can help you achieve your goals?
-            </h3>
-            <a
-              href={BOOKING_URLS.SCHEDULE_CALL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
-            >
-              <Button variant="default">Connect With Us</Button>
-            </a>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild variant="default">
+                <a
+                  href={BOOKING_URLS.SCHEDULE_CALL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)}
+                >
+                  Connect With Us
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <Link
+                  to="/request-information/"
+                  onClick={() => trackConversion(CONVERSION_LABELS.REQUEST_INFO)}
+                >
+                  Request Information
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>

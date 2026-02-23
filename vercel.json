@@ -103,7 +103,17 @@
     },
     {
       "source": "/ComparePrograms",
-      "destination": "/compare-our-programs/",
+      "destination": "/explore-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/compare-our-programs",
+      "destination": "/explore-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/compare-our-programs/",
+      "destination": "/explore-programs/",
       "permanent": true
     },
     {

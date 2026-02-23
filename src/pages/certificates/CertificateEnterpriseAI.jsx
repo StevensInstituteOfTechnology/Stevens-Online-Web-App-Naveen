@@ -1,16 +1,4 @@
-import React from "react";
-import {
-  Globe,
-  Award,
-  Check,
-  DollarSign,
-  GraduationCap,
-  TrendingUp,
-  BookOpen,
-  Users,
-} from "lucide-react";
 import { CertificateTemplate } from "../../components/program-pages/templates";
-import { TuitionCardsHero } from "../../components/program-pages/primitives";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
@@ -34,8 +22,12 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "/accelerated-application/",
+      href: "/accelerated-application/?program=cert-eai",
     },
+    tuitionCards: [
+      { value: "$5,250", label: "Total Certificate Cost" },
+      { value: "$583", label: "Per Credit" },
+    ],
   },
   quickFacts: {
     // Enhanced Stats Bar (Penn State style)
@@ -323,6 +315,25 @@ const programData = {
       },
     ],
   },
+  applicationOption: {
+    variant: "singleImageCard",
+    title: "Application",
+    backgroundImage: "/assets/images/shared/asap-hero.webp",
+    options: [
+      {
+        title: "Accelerated Application",
+        subtitle:
+          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
+        theme: "light",
+        featured: true,
+        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
+        footnote:
+          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
+        buttonText: "Apply Now",
+        url: "/accelerated-application/?program=cert-eai",
+      },
+    ],
+  },
   admissions: {
     variant: "certificateWithDeadlines",
     requirements: `
@@ -482,6 +493,10 @@ const programData = {
   ],
 
   accreditation: `Stevens Institute of Technology has been continually accredited by the <a href="https://www.msche.org/" target="_blank" rel="noopener noreferrer" class="text-stevens-white underline hover:text-stevens-light-gray0 transition-colors duration-stevens-normal">Middle States Commission on Higher Education (MSCHE)</a> since 1927. The Professional Graduate Certificate in Enterprise AI awards graduate credit that appears on your official Stevens transcript.`,
+  tuitionCalculator: {
+    image: "/assets/images/shared/shared-tuition-calculator.webp",
+    imageAlt: "Welcome to Stevens",
+  },
 };
 
 export default function CertificateEnterpriseAIPage() {
@@ -496,12 +511,6 @@ export default function CertificateEnterpriseAIPage() {
     },
   });
 
-  // Add bottomContent to hero for certificate pages
-  const heroWithTuitionCards = {
-    ...programData.hero,
-    bottomContent: <TuitionCardsHero cards={programData.tuition.cards} />,
-  };
-
   return (
     <PageContextProvider pageType="program" pageName="CertificateEnterpriseAI">
       <ProgramContextProvider
@@ -510,7 +519,7 @@ export default function CertificateEnterpriseAIPage() {
         programType="certificate"
       >
         <CertificateTemplate
-          programData={{ ...programData, hero: heroWithTuitionCards }}
+          programData={programData}
           theme="dark"
         />
       </ProgramContextProvider>

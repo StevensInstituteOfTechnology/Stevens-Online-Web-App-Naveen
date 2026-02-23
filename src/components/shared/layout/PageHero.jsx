@@ -21,6 +21,8 @@ export default function PageHero({
   bgImage,
   bgImagePosition = 'center center', // CSS object-position value (e.g., 'center bottom', '50% 60%')
   bgImageFlip = false, // Flip background image horizontally
+  minHeight, // Optional min-height for the hero section (e.g., '400px', '50vh')
+  contentVerticalCenter = false, // When true, vertically center the text content (use with minHeight)
   primaryCta, // { label, to? | href? }
   secondaryCta, // { label, to? | href? | useModal? }
   useApplicationModal = false, // New prop for MSCS/MEM pages
@@ -123,7 +125,7 @@ export default function PageHero({
       return (
         <Link 
           to={to} 
-          onClick={(e) => {
+          onClick={(_e) => {
             // Store program code for accelerated application
             if (isAcceleratedApp && requestInfoProgramCode) {
               sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
@@ -162,7 +164,7 @@ export default function PageHero({
           href={href} 
           target={isInternal ? "_self" : "_blank"} 
           rel={isInternal ? "" : "noopener noreferrer"} 
-          onClick={(e) => {
+          onClick={(_e) => {
             // Store program code for accelerated application
             if (isAcceleratedApp && requestInfoProgramCode && isInternal) {
               sessionStorage.setItem('accelerated_application_program', requestInfoProgramCode);
@@ -190,13 +192,16 @@ export default function PageHero({
   };
 
   return (
-    <section className="relative bg-stevens-black text-stevens-white overflow-hidden">
+    <section
+      className={`relative bg-stevens-black text-stevens-white overflow-hidden ${contentVerticalCenter ? 'flex flex-col' : ''}`}
+      style={minHeight ? { minHeight } : undefined}
+    >
       {bgImage && (
         <img
           {...getHeroImageProps(bgImage)}
           alt=""
           aria-hidden="true"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover "
@@ -208,7 +213,9 @@ export default function PageHero({
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-stevens-black/80 via-stevens-black/20 to-transparent" />
 
-      <div className="relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section">
+      <div
+        className={`relative max-w-stevens-content-max mx-auto px-stevens-md sm:px-stevens-lg lg:px-stevens-xl py-stevens-section-sm lg:py-stevens-section ${contentVerticalCenter ? 'flex-1 flex flex-col justify-center min-h-0' : ''}`}
+      >
         {breadcrumbs && (
           <div className="mb-stevens-md text-stevens-sm text-stevens-light-gray" style={{ textShadow: '0 0.5px 1px rgba(0, 0, 0, 0.5)' }}>
             {breadcrumbs.map((crumb, index) => (

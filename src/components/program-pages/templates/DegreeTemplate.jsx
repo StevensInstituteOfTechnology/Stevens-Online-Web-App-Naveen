@@ -27,6 +27,7 @@ import {
 } from "../sections";
 import { DeadlinesSection } from "../../shared/sections/DeadlinesSection";
 import { VideoSection } from "../../shared/sections/VideoSection";
+import TuitionCalculatorSection from "../../calculator/TuitionCalculatorSection";
 
 // Import navigation
 import { StickyNav, useSectionNavigation } from "../navigation";
@@ -58,8 +59,8 @@ import { StickyNav, useSectionNavigation } from "../navigation";
 export function DegreeTemplate({
   programData,
   theme = "dark",
-  useApplicationModal = false,
-  useRequestInfoModal = true,
+  useApplicationModal: _useApplicationModal = false,
+  useRequestInfoModal: _useRequestInfoModal = true,
 }) {
   const {
     code,
@@ -85,6 +86,7 @@ export function DegreeTemplate({
     careerOutcomes,
     topCompanies,
     deadlines,
+    tuitionCalculator,
   } = programData;
 
   const location = useLocation();
@@ -131,9 +133,6 @@ export function DegreeTemplate({
   // Check if admissions is combined with tuition/dates
   const isCombinedAdmissions = admissions?.variant === "combinedWithTuition";
 
-  // Opposite theme for sticky nav
-  const navTheme = theme === "dark" ? "light" : "dark";
-
   return (
     <div className="bg-stevens-light-gray font-stevens-body">
       {/* Hero Section with Embedded Form */}
@@ -149,6 +148,8 @@ export function DegreeTemplate({
         formSubtitle="Take the next step in your career."
         variant="degree"
         theme={theme}
+        secondaryCta={hero?.secondaryCta}
+        showTuitionCalculatorLink={!!tuitionCalculator}
       />
 
       {/* Sticky Navigation */}
@@ -159,7 +160,6 @@ export function DegreeTemplate({
         setMoreMenuOpen={setMoreMenuOpen}
         moreMenuRef={moreMenuRef}
         admissions={admissions}
-        theme={navTheme}
       />
 
       <main>
@@ -190,6 +190,8 @@ export function DegreeTemplate({
               videoSection.title
             }
             description={videoSection.description || ""}
+            youtubeVideoId={videoSection.youtubeVideoId}
+            youtubeQuality={videoSection.youtubeQuality}
             videoSrc={videoSection.videoSrc}
             videoPoster={videoSection.posterSrc}
             videoTitle={videoSection.title}
@@ -261,6 +263,16 @@ export function DegreeTemplate({
           <TuitionSection
             tuition={tuition}
             ref={registerSectionRef("tuition")}
+          />
+        )}
+
+        {/* 13b. Tuition Calculator Section (opt-in per program) */}
+        {tuitionCalculator && (
+          <TuitionCalculatorSection
+            programCode={code}
+            image={tuitionCalculator.image}
+            imageAlt={tuitionCalculator.imageAlt}
+            ref={registerSectionRef("tuition-calculator")}
           />
         )}
 

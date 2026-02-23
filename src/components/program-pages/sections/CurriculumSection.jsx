@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 import { Card, CardContent } from "../../ui/card";
 import { Button } from "../../ui/button";
@@ -15,33 +15,32 @@ import { ChevronDown, ChevronUp } from "lucide-react";
  * - Dynamic title with program code fallback
  * - Description paragraphs (newline separated)
  * - Horizontal scrollable tabs for course categories
- * - Supports BOTH structured data AND legacy HTML injection
+ * - Structured tab data with CourseSection/CourseCard components
  * - Optional Complete Course Catalog section
  *
  * Used in: Both Degree and Certificate pages
  *
- * NEW STRUCTURED DATA FORMAT:
+ * Data format:
  * curriculum.tabs = [
  *   {
- *     id: "traditional",
- *     title: "Traditional Coursework",
+ *     id: "coursework",
+ *     title: "Coursework",
  *     sections: [
- *       { title: "Term 1", intro: "...", courses: [...] }
+ *       { title: "Term 1", intro: "...", courses: [{ code, name, credits, description }] }
  *     ],
  *     footer: { title: "...", content: "..." } // optional
+ *   },
+ *   {
+ *     id: "immersions",
+ *     title: "Immersion",
+ *     htmlContent: "<p>...</p>" // alternative to sections - raw HTML for custom content
  *   }
  * ]
- *
- * LEGACY HTML FORMAT (still supported):
- * curriculum.courseTabs = {
- *   traditional: { title: "...", content: "<html>..." }
- * }
  *
  * @param {Object} curriculum - Curriculum configuration
  * @param {string} curriculum.title - Section title (optional)
  * @param {string} curriculum.description - Description text
- * @param {Array} curriculum.tabs - NEW: Array of structured tab data
- * @param {Object} curriculum.courseTabs - LEGACY: Object with HTML content
+ * @param {Array} curriculum.tabs - Array of structured tab data
  * @param {string} curriculum.completeCourseCatalog - Optional HTML for full catalog
  * @param {string} curriculum.variant - "degree" or "certificate"
  * @param {string} programCode - Program code for title fallback
@@ -50,58 +49,12 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
   { curriculum, programCode },
   ref
 ) {
-  // State for collapsible course list
   const [isExpanded, setIsExpanded] = useState(false);
-  // Handle collapsible course toggles for LEGACY HTML injection
-  // Using document-level event delegation for reliable click handling
-  useEffect(() => {
-    const handleCourseToggle = (e) => {
-      // Use event delegation - check if clicked element is or is inside a .course-toggle
-      const button = e.target.closest(".course-toggle");
-      if (!button) return;
-
-      const targetId = button.getAttribute("data-target");
-      if (targetId) {
-        const content = document.getElementById(targetId);
-        const arrow = button.querySelector(".course-arrow");
-
-        if (content && arrow) {
-          const isHidden = content.classList.contains("hidden");
-          if (isHidden) {
-            content.classList.remove("hidden");
-            arrow.textContent = "▲";
-          } else {
-            content.classList.add("hidden");
-            arrow.textContent = "▼";
-          }
-        }
-      }
-    };
-
-    // Attach listener to document for reliable event delegation
-    document.addEventListener("click", handleCourseToggle);
-
-    return () => {
-      document.removeEventListener("click", handleCourseToggle);
-    };
-  }, []); // Empty dependency - runs once on mount
 
   if (!curriculum) return null;
 
-  // Determine if using new structured format or legacy HTML format
-  const isStructuredFormat = curriculum.tabs && Array.isArray(curriculum.tabs);
+  const tabsData = curriculum.tabs && Array.isArray(curriculum.tabs) ? curriculum.tabs : [];
   const variant = curriculum.variant || "degree";
-
-  // Get tabs data - either from new format or legacy format
-  const tabsData = isStructuredFormat
-    ? curriculum.tabs
-    : curriculum.courseTabs
-    ? Object.keys(curriculum.courseTabs).map((key) => ({
-        id: key,
-        title: curriculum.courseTabs[key].title,
-        htmlContent: curriculum.courseTabs[key].content,
-      }))
-    : [];
 
   return (
     <Section id="curriculum" bgClassName="bg-stevens-dark-gray" ref={ref}>
@@ -164,7 +117,6 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
                 value={tab.id}
                 className="mt-stevens-xl"
               >
-                {/* NEW: Structured data rendering */}
                 {tab.sections && tab.sections.length > 0 ? (
                   <div className="space-y-8">
                     {tab.sections.map((section, index) => (
@@ -175,7 +127,6 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
                       />
                     ))}
 
-                    {/* Optional footer (e.g., "Recommended Sequence" box or footnotes) */}
                     {tab.footer && (
                       <div className="bg-white/10 border-l-4 border-stevens-red p-stevens-lg rounded-stevens-sm">
                         {tab.footer.title && (
@@ -196,12 +147,9 @@ export const CurriculumSection = forwardRef(function CurriculumSection(
                     )}
                   </div>
                 ) : tab.htmlContent ? (
-                  /* LEGACY: HTML injection rendering */
                   <div
-                    className="prose prose-invert max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-white [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-white [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-2xl [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-stevens-lg"
-                    dangerouslySetInnerHTML={{
-                      __html: tab.htmlContent,
-                    }}
+                    className="prose prose-invert max-w-none [&_h4]:font-stevens-display [&_h4]:text-stevens-2xl [&_h4]:stevens-md:text-stevens-3xl [&_h4]:font-light [&_h4]:text-white [&_h4]:mb-stevens-lg [&_h4]:uppercase [&_h4]:tracking-wide [&_h5]:font-semibold [&_h5]:text-stevens-xl [&_h5]:stevens-md:text-stevens-2xl [&_h5]:text-white [&_h5]:mb-stevens-lg [&_h5]:mt-stevens-xl [&_p]:text-white/80 [&_p]:leading-relaxed [&_p]:mb-stevens-lg [&_ul]:space-y-stevens-sm [&_li]:text-white/80"
+                    dangerouslySetInnerHTML={{ __html: tab.htmlContent }}
                   />
                 ) : null}
               </TabsContent>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, Check } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../../ui/card';
 

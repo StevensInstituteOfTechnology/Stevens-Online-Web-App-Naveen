@@ -1,23 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, User, Clock } from "lucide-react";
-import { format } from "date-fns";
-import { createPageUrl } from "@/utils";
-import { getCardImageProps } from "@/utils/responsiveImage";
+import { ArrowRight } from "lucide-react";
 
 const BlogCard = ({
   post,
-  showCategory = true,
-  showAuthor = true,
   showDate = true,
   className = "",
 }) => {
@@ -29,76 +14,74 @@ const BlogCard = ({
     image_position,
     author: authorData,
     created_date,
-    category,
     read_time,
-    tags = [],
   } = post;
 
-  // Handle author as either string or object
   const author =
     typeof authorData === "string"
       ? authorData
       : authorData?.name || "Unknown Author";
-
-  // Ensure all values are strings to prevent React rendering errors
-  const safeAuthor = String(author || "Unknown Author");
   const safeTitle = String(title || "Untitled");
   const safeExcerpt = String(excerpt || "");
 
   return (
-    <Link to={`/blog/${id}/`} className="block">
-      <Card
-        className={`flex flex-col hover:shadow-stevens-xl transition-all duration-300 hover:-translate-y-2 border border-stevens-light-gray hover:border-stevens-light-gray cursor-pointer ${className}`}
-      >
-        <CardHeader className="p-0">
-          <div className="relative overflow-hidden">
-            {/* Optimized image container - 3/5 of square size */}
-            <div className="aspect-[5/4] w-full">
-              <img
-                {...getCardImageProps(
-                  featured_image_url || "/assets/blog/placeholder-blog.jpg",
-                )}
-                alt={safeTitle}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                style={{ objectPosition: image_position || "center" }}
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </CardHeader>
+    <Link
+      to={`/blog/${id}/`}
+      className={`group cursor-pointer block ${className}`}
+    >
+      <article className="flex flex-col h-full">
+        {/* Image Container */}
+        <div className="aspect-[4/3] overflow-hidden mb-5">
+          <img
+            src={
+              featured_image_url || "/assets/blog/placeholder-blog.jpg"
+            }
+            alt={safeTitle}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: image_position || "center" }}
+            loading="lazy"
+          />
+        </div>
 
-        <CardContent className="flex-grow p-stevens-xl">
-          <CardTitle className="font-stevens-display text-3xl text-stevens-red mb-stevens-lg mt-stevens-lg line-clamp-2 leading-tight">
+        {/* Content */}
+        <div className="flex flex-col flex-1">
+          <h3 className="font-stevens-display text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug line-clamp-2 group-hover:text-stevens-red transition-colors duration-200">
             {safeTitle}
-          </CardTitle>
+          </h3>
 
-          <p className="text-stevens-dark-gray line-clamp-3 mb-stevens-lg text-stevens-base leading-relaxed">
+          {showDate && created_date && (
+            <p className="text-white/70 font-stevens-condensed mb-2">
+              {new Date(created_date).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </p>
+          )}
+
+          {author ? (
+            <p className="text-white/70 font-stevens-condensed mb-4">
+              By {author}
+            </p>
+          ) : read_time ? (
+            <p className="text-white/70 mb-4">
+              {read_time} min read
+            </p>
+          ) : null}
+
+          <p className="text-white/80 leading-relaxed line-clamp-3 mb-5">
             {safeExcerpt}
           </p>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-stevens-md text-stevens-sm text-stevens-light-gray0 mb-stevens-lg">
-            {showDate && created_date && (
-              <span className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                {format(new Date(created_date), "MMM d, yyyy")}
-              </span>
-            )}
-            {read_time && (
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {read_time} min read
-              </span>
-            )}
-          </div>
-        </CardContent>
-
-        <CardFooter className="p-stevens-xl pt-0">
-          <div className="w-full border-2 border-stevens-red text-stevens-red hover:bg-stevens-red hover:text-stevens-white font-medium py-stevens-md transition-all duration-300 group flex items-center justify-center">
+        {/* Read More Button */}
+        <div className="mt-auto">
+          <div className="w-full border-2 border-stevens-red text-stevens-red group-hover:bg-stevens-red group-hover:text-white font-medium py-stevens-md transition-all duration-300 flex items-center justify-center">
             Read More
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </div>
-        </CardFooter>
-      </Card>
+        </div>
+      </article>
     </Link>
   );
 };
