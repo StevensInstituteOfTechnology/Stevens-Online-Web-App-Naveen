@@ -56,7 +56,16 @@ const StructuredContentRenderer = ({ content }) => {
                 key={index}
                 className={headingClasses[item.level] || headingClasses[2]}
               >
-                {item.text}
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    className="hover:underline transition-colors duration-300"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  item.text
+                )}
               </HeadingTag>
             );
 
@@ -82,6 +91,36 @@ const StructuredContentRenderer = ({ content }) => {
                   </li>
                 ))}
               </ListTag>
+            );
+
+          case "cta":
+            return (
+              <div
+                key={index}
+                className="my-stevens-2xl rounded-stevens-md border border-stevens-gray-200 bg-gradient-to-br from-stevens-gray-50 to-stevens-white p-stevens-xl text-center shadow-stevens-md"
+              >
+                {item.heading && (
+                  <h3 className="font-stevens-display text-stevens-2xl text-stevens-primary mb-stevens-sm">
+                    {item.heading}
+                  </h3>
+                )}
+                {item.text && (
+                  <p className="text-stevens-lg text-stevens-gray-700 mb-stevens-lg max-w-2xl mx-auto leading-relaxed">
+                    {item.text}
+                  </p>
+                )}
+                {item.button_text && item.button_url && (
+                  <a
+                    href={item.button_url === "SCHEDULE_CALL" ? BOOKING_URLS.SCHEDULE_CALL : item.button_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-stevens-primary hover:bg-stevens-maroon-dark text-stevens-white font-stevens-semibold px-stevens-xl py-stevens-md rounded-stevens-md transition-colors duration-stevens-normal text-stevens-lg"
+                  >
+                    {item.button_text}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                )}
+              </div>
             );
 
           default:
@@ -122,12 +161,16 @@ const renderTextWithFormatting = (text, bold = [], links = []) => {
         actualUrl = BOOKING_URLS.SCHEDULE_CALL;
       }
 
+      // Internal links (path-only) open in same tab; external links open in new tab
+      const isInternal = actualUrl.startsWith("/");
+      const targetAttr = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+
       // Escape special regex characters in link text
       const escapedLinkText = link.text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const regex = new RegExp(escapedLinkText, "g");
       processedText = processedText.replace(
         regex,
-        `<a href="${actualUrl}" target="_blank" rel="noopener noreferrer" class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`
+        `<a href="${actualUrl}"${targetAttr} class="text-stevens-primary hover:text-stevens-maroon underline">${link.text}</a>`
       );
     });
   }
