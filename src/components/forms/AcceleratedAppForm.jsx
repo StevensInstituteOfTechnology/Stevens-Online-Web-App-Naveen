@@ -12,7 +12,7 @@ export default function AcceleratedAppForm({
 }) {
   const formSubmittedRef = useRef(false);
   const formId = FORM_IDS.ACCELERATED;
-  const rawId = '4be285ae-ef97-4493-a41b-9f27bcd981dc'; // test form; prod: 89080626-7bc4-4c48-9437-fd47479d7371
+  const rawId = '89080626-7bc4-4c48-9437-fd47479d7371';
 
   useEffect(() => {
     // Only run on client side

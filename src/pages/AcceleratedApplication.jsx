@@ -60,7 +60,7 @@ export default function AcceleratedApplicationPage() {
     
     const script = document.createElement('script');
     script.id = 'slate-form-script-accelerated';
-    script.src = 'https://gradadmissions.stevens.edu/register/?id=4be285ae-ef97-4493-a41b-9f27bcd981dc&output=embed&div=form_4be285ae-ef97-4493-a41b-9f27bcd981dc';
+    script.src = 'https://gradadmissions.stevens.edu/register/?id=89080626-7bc4-4c48-9437-fd47479d7371&output=embed&div=form_89080626-7bc4-4c48-9437-fd47479d7371';
     script.async = true;
     
     // Append container to body, then script to container
@@ -71,7 +71,7 @@ export default function AcceleratedApplicationPage() {
     const submitHandlers = [];
     script.onload = () => {
       setTimeout(() => {
-        const formContainer = document.getElementById('form_4be285ae-ef97-4493-a41b-9f27bcd981dc');
+        const formContainer = document.getElementById('form_89080626-7bc4-4c48-9437-fd47479d7371');
         if (formContainer) {
           const forms = formContainer.querySelectorAll('form');
           forms.forEach(form => {
@@ -372,7 +372,7 @@ export default function AcceleratedApplicationPage() {
                 <CardContent className="p-0">
                   <div className="relative">
                     <style jsx>{`
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 {
                         max-width: 100% !important;
                         width: 100% !important;
                         overflow: hidden !important;
@@ -382,12 +382,12 @@ export default function AcceleratedApplicationPage() {
                         z-index: 1 !important;
                       }
                       
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc * {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 * {
                         max-width: 100% !important;
                         box-sizing: border-box !important;
                       }
                       
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc iframe {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
                         width: 100% !important;
                         max-width: 100% !important;
                         border: none !important;
@@ -396,7 +396,7 @@ export default function AcceleratedApplicationPage() {
                         position: relative !important;
                       }
                       
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc form {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
                         width: 100% !important;
                         max-width: 100% !important;
                         padding: 1.5rem !important;
@@ -454,8 +454,8 @@ export default function AcceleratedApplicationPage() {
                       /* ===== BUTTON STYLING - START ===== */
                       
                       /* Submit button styling */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
                         background: #a32638 !important;
                         color: #ffffff !important;
                         border: none !important;
@@ -472,34 +472,34 @@ export default function AcceleratedApplicationPage() {
                       }
                       
                       /* Submit button hover */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"]:hover,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"]:hover {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:hover,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:hover {
                         background: #8b1e2f !important;
                         transform: translateY(-1px) !important;
                         box-shadow: 0 4px 12px rgba(163, 38, 56, 0.3) !important;
                       }
                       
                       /* Submit button active */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"]:active,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"]:active {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:active,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:active {
                         transform: translateY(0) !important;
                         box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
                       }
 
                       /* Button container - ensures buttons have proper spacing */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .button-container,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form-actions,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc div[class*="button"],
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc div:has(> button[type="submit"]) {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .button-container,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-actions,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div[class*="button"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 div:has(> button[type="submit"]) {
                         display: flex !important;
                         gap: 1rem !important;
                         flex-wrap: wrap !important;
                       }
 
                       /* Back button styling to match submit button */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="button"],
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .back-button,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button:not([type="submit"]) {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
                         background: #6b7280 !important;
                         color: #ffffff !important;
                         border: none !important;
@@ -516,19 +516,19 @@ export default function AcceleratedApplicationPage() {
                       }
 
                       /* Back button hover */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="button"]:hover,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .back-button:hover {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .back-button:hover {
                         background: #4b5563 !important;
                         transform: translateY(-1px) !important;
                         box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3) !important;
                       }
 
                       /* Ensure buttons are inline but with spacing */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button {
                         margin-left: 0 !important;
                       }
 
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button + button {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 button + button {
                         margin-left: 1rem !important;
                       }
 
@@ -537,8 +537,8 @@ export default function AcceleratedApplicationPage() {
                       /* ===== TEST STYLING FOR "Personal Information" LABEL ===== */
                       
                       /* Target the "Personal Information" header label */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form_header .form_label,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header .form_label,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
                         color: #a32638 !important; /* Stevens red color */
                         font-size: 1.25rem !important; /* Larger font size */
                         font-weight: 700 !important; /* Bold */
@@ -552,16 +552,16 @@ export default function AcceleratedApplicationPage() {
                       }
                       
                       /* Remove gray background from parent container */
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
-                      #form_4be285ae-ef97-4493-a41b-9f27bcd981dc .form_header {
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
+                      #form_89080626-7bc4-4c48-9437-fd47479d7371 .form_header {
                         background: transparent !important;
                         background-color: transparent !important;
                       }
                       
                       /* Mobile responsive - Tablet */
                       @media (max-width: 1024px) {
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
                           padding: 0.75rem 1.5rem !important;
                           font-size: 14px !important;
                         }
@@ -569,20 +569,20 @@ export default function AcceleratedApplicationPage() {
                       
                       /* Mobile responsive - Mobile */
                       @media (max-width: 768px) {
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc {
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 {
                           font-size: 13px !important;
                         }
                         
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input,
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc select,
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc textarea {
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
                           width: 100% !important;
                           max-width: 100% !important;
                           font-size: 16px !important;
                         }
 
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
                           padding: 0.75rem 1.25rem !important;
                           font-size: 14px !important;
                         }
@@ -590,8 +590,8 @@ export default function AcceleratedApplicationPage() {
                       
                       /* Mobile responsive - Small Mobile */
                       @media (max-width: 480px) {
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc button[type="submit"],
-                        #form_4be285ae-ef97-4493-a41b-9f27bcd981dc input[type="submit"] {
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
+                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
                           padding: 0.75rem 1rem !important;
                           font-size: 13px !important;
                         }
@@ -599,7 +599,7 @@ export default function AcceleratedApplicationPage() {
                     `}</style>
                     <div className="bg-stevens-gray-50 text-stevens-gray-900 ">
                       <div
-                        id="form_4be285ae-ef97-4493-a41b-9f27bcd981dc"
+                        id="form_89080626-7bc4-4c48-9437-fd47479d7371"
                         className="min-h-[600px] w-full">
                         <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-gray-300 rounded-stevens-md bg-stevens-white">
                           <div className="text-center">
