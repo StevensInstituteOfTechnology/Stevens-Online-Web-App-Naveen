@@ -373,7 +373,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
 
             {/* Mega Menu Content */}
             <div className="absolute left-0 right-0 top-full bg-stevens-dark-gray z-[9991] shadow-2xl max-h-[calc(100vh-87px)] overflow-y-auto">
-              <div className="max-w-stevens-content-max mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
+              <div className="max-w-[1300px] mx-auto px-stevens-md md:px-stevens-xl py-stevens-xl md:py-stevens-2xl">
                 {/* Mobile: Single column accordion | Desktop: 3-column grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-stevens-lg md:gap-stevens-2xl">
                   {/* Left Column - Main Navigation Links (Accordion on Mobile) */}
