@@ -153,35 +153,21 @@ export default function Layout({ children, currentPageName }) {
   // Determine banner redirect based on current page
   const getBannerRedirect = () => {
     const pathname = location.pathname.toLowerCase();
-
-    // MSCS or MEM (including explore pages) -> ASAP application
-    if (
-      pathname.includes("online-masters-computer-science") ||
-      pathname.includes("online-masters-engineering-management")
-    ) {
-      return { type: "internal", url: createPageUrl("ASAP/") };
+    
+    // MEM (including explore pages) -> ASAP application
+    if (pathname.includes('online-masters-engineering-management')) {
+      return { type: 'internal', url: createPageUrl('ASAP/') };
     }
 
-    // MEADS or Certificates (including explore pages) -> Accelerated application
-    if (
-      pathname.includes("online-masters-engineering-applied-data-science") ||
-      pathname.includes("online-masters-eng-applied-data-science") ||
-      pathname.includes("certificates/")
-    ) {
-      return {
-        type: "internal",
-        url: createPageUrl("accelerated-application/"),
-      };
+    // MSCS, MBA, MEADS, or Certificates (including explore pages) -> Accelerated application
+    if (pathname.includes('online-masters-computer-science') ||
+        pathname.includes('online-mba') ||
+        pathname.includes('online-masters-engineering-applied-data-science') ||
+        pathname.includes('online-masters-eng-applied-data-science') ||
+        pathname.includes('certificates/')) {
+      return { type: 'internal', url: createPageUrl('accelerated-application/') };
     }
-
-    // MBA (including explore pages) -> External Stevens application
-    if (pathname.includes("online-mba")) {
-      return {
-        type: "external",
-        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
-      };
-    }
-
+    
     // Non-program pages -> Accelerated application page
     return { type: "internal", url: createPageUrl("accelerated-application/") };
   };

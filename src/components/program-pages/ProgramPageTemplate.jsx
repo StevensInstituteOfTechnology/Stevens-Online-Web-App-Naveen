@@ -857,7 +857,32 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
         )}
 
         {admissions && (admissions.variant === 'combinedWithTuition' || admissions.variant === 'certificateWithDeadlines') && tuition ? (
-          <Section id="admissions" bgClassName="bg-stevens-gray-100" refProp={el => sectionRefs.current.admissions = el}>
+          <Section id="admissions"  refProp={el => sectionRefs.current.admissions = el}>
+            {/* Application Options Cards (if provided) */}
+            {admissions.options && admissions.options.length > 0 && (
+              <div className="mb-stevens-2xl">
+                <h2 className="font-stevens-display text-stevens-4xl font-stevens-bold text-center mb-stevens-lg">
+                  {admissions.options.length === 1 ? "Application Option" : "Choose Your Application Option"}
+                </h2>
+                <div className={`flex flex-wrap justify-center ${admissions.options.length === 1 ? 'max-w-3xl mx-auto' : admissions.options.length === 2 ? 'max-w-6xl mx-auto' : ''} gap-8`}>
+                  {admissions.options.map((option, i) => (
+                    <Card key={i} className={`w-full ${admissions.options.length === 1 ? '' : admissions.options.length === 2 ? 'md:w-[48%]' : 'md:w-[48%] lg:w-[31%]'} shadow-lg ${option.featured ? 'border-2 border-stevens-primary' : ''}`}>
+                      <CardHeader>
+                        <CardTitle>{option.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="prose text-sm mb-4" dangerouslySetInnerHTML={{ __html: option.description }} />
+                        {option.url && (
+                          <a href={option.url} target={option.url.startsWith('http') ? '_blank' : '_self'} rel={option.url.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                            <Button className={`w-full ${option.buttonGrayOut ? 'bg-gray-400 hover:bg-gray-500' : 'btn-stevens-primary'}`}>{option.buttonText}</Button>
+                          </a>
+                        )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="grid lg:grid-cols-5 gap-stevens-2xl items-start">
               {/* Left Column - Admissions */}
               <div className="lg:col-span-3">
@@ -945,11 +970,19 @@ export default function ProgramPageTemplate({ programData, useApplicationModal =
                   <CardContent className="space-y-4">
                     <div className="prose" dangerouslySetInnerHTML={{ __html: option.description }}/>
                     {option.buttonText && !option.buttonGrayOut && (
-                      <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                        <div className="flex justify-center items-center w-full btn-secondary mt-2">
-                          {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
-                        </div>
-                      </a>
+                      option.url.startsWith('http') ? (
+                        <a href={option.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                          <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                            {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
+                          </div>
+                        </a>
+                      ) : (
+                        <Link to={option.url} className="w-full">
+                          <div className="flex justify-center items-center w-full btn-secondary mt-2">
+                            {option.buttonText} <ArrowRight className="w-4 h-4 ml-2"/>
+                          </div>
+                        </Link>
+                      )
                     )}
                   </CardContent>
                 </Card>

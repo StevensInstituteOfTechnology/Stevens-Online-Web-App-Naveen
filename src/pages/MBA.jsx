@@ -34,7 +34,7 @@ const programData = {
     primaryCta: { label: "Request Information", to: "RequestInfo" },
     secondaryCta: {
       label: "Apply In Minutes",
-      href: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
+      href: "/accelerated-application/",
     },
     badges: [
       { text: "100% Online", icon: Globe },
@@ -724,25 +724,50 @@ const programData = {
     ],
   },
   admissions: {
+    options: [
+      {
+        title: "Accelerated Application",
+        featured: false,
+        description: `<p>
+          Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application gets you started immediately:
+        </p>
+        <ul class="list-disc pl-5 mt-2 space-y-1">
+          <li><strong>Recommendation Letters:</strong> Not Required</li>
+          <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
+          <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
+        </ul>
+        <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>`,
+        buttonText: "Apply Now",
+        url: "/accelerated-application",
+        buttonGrayOut: false
+      }
+    ],
     variant: "combinedWithTuition",
     requirements: `
       <div class="space-y-6">
         <div>
-          <h4 class="font-bold text-lg mb-2">ACADEMIC TRANSCRIPTS</h4>
-          <p>Applicants must submit transcripts from all undergraduate and graduate institutions where credit was earned. You may submit unofficial transcripts during the application process. After admission, you will be required to submit official transcripts.</p>
+          <h4 class="font-bold text-lg mb-2">PROOF OF BACHELOR'S DEGREE</h4>
+          <p class="mb-2">Upload a copy of your unofficial transcripts from all undergraduate institutions where credit was earned. This allows us to verify your academic background quickly.</p>
+          <p class="text-sm text-gray-600">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>
         </div>
         <div>
-          <h4 class="font-bold text-lg mb-2">PROFESSIONAL Résumé</h4>
-          <p class="mb-2">Work experience is not a requirement for the Online MBA program, but the admissions committee does value applicants with professional experience. You must include a résumé with your application that highlights:</p>
-          <ul class="list-disc pl-5 space-y-1"><li>Academic record</li><li>Work and internship experience</li><li>Leadership abilities</li><li>Professional aspirations</li></ul>
+          <h4 class="font-bold text-lg mb-2">PROFESSIONAL BACKGROUND</h4>
+          <p class="mb-2">Demonstrate your professional experience by providing one of the following:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Upload your résumé</strong> – Highlight your work experience, leadership roles, and career achievements</li>
+            <li><strong>Link your LinkedIn profile</strong> – A convenient alternative that showcases your professional journey</li>
+          </ul>
+          <p class="text-sm text-gray-600 mt-2">Work experience is valued but not required for admission.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">LETTERS OF RECOMMENDATION</h4>
-          <p>Your application must include two letters of recommendation. The strongest applications will include one letter from a current supervisor, and one from a former supervisor or previous employer who can speak to your leadership potential and discuss your professional performance.</p>
+          
+          <p class="mt-2">The Accelerated Application streamlines your application process by removing the recommendation letter requirement, allowing you to apply faster without coordinating with references.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">GMAT/GRE</h4>
-          <p>Scores are not required.</p>
+         
+          <p class="mt-2">Standardized test scores are not required for admission to the Online MBA program.</p>
         </div>
       </div>
     `,

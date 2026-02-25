@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import PageHero from '../components/shared/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles } from 'lucide-react';
+import { Check, Clock, Zap, FileCheck, GraduationCap, Sparkles, Briefcase, Code, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePageTracking } from '@/hooks/analytics/usePageTracking';
 import { PageContextProvider } from '@/contexts/analytics/PageContext';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
 import { setPageTitle, setMetaDescription, setOpenGraphTags, buildCanonicalUrl } from '@/utils';
+import { CONTACT_INFO } from '@/config/constants';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export default function AcceleratedApplicationPage() {
   // Get program code from URL or sessionStorage
@@ -165,11 +167,27 @@ export default function AcceleratedApplicationPage() {
     "No letters of recommendation required",
     "Upload unofficial transcripts to get started",
     "Submit your resume or LinkedIn profile",
-    "Official transcripts due within one year of enrollment",
+    "Official transcripts due within 2 months of enrollment",
     "Faster application review process"
   ];
 
-  const eligiblePrograms = [
+  const degreePrograms = [
+    {
+      id: 'mba',
+      name: 'Master of Business Administration',
+      shortName: 'MBA',
+      path: '/online-mba/',
+      icon: Briefcase,
+      description: 'Develop leadership and business strategy skills'
+    },
+    {
+      id: 'mscs',
+      name: 'Master of Science in Computer Science',
+      shortName: 'M.S. in Computer Science',
+      path: '/online-masters-computer-science-mscs/',
+      icon: Code,
+      description: 'Build advanced coding and AI skills'
+    },
     {
       id: 'meads',
       name: 'M.Eng. in Applied Data Science',
@@ -177,7 +195,10 @@ export default function AcceleratedApplicationPage() {
       path: '/online-masters-engineering-applied-data-science/',
       icon: GraduationCap,
       description: 'Master data science and AI engineering'
-    },
+    }
+  ];
+
+  const certificatePrograms = [
     {
       id: 'cert-eai',
       name: 'Professional Graduate Certificate in Enterprise AI',
@@ -191,7 +212,7 @@ export default function AcceleratedApplicationPage() {
       name: 'Professional Graduate Certificate in Applied Data Science Foundations',
       shortName: 'Applied Data Science Foundations',
       path: '/certificates/applied-data-science-foundations/',
-      icon: Sparkles,
+      icon: Award,
       description: 'Master Python, SQL, and Data Science and AI foundations'
     }
   ];
@@ -201,8 +222,12 @@ export default function AcceleratedApplicationPage() {
     <div className="bg-stevens-gray-50 font-stevens-body">
       <PageHero
         title="Accelerated Master's Application Requirements"
-        subtitle="Fast-Track Your Graduate Education at Stevens" 
+        subtitle="Fast-Track Your Graduate Education at Stevens"
         bgImage="/assets/images/accelerated-application/AcceleratedApplication-3.webp"
+        primaryCta={{
+          label: 'Start application',
+          onClick: () => document.getElementById('accelerated-application-form')?.scrollIntoView({ behavior: 'smooth' })
+        }}
       />
 
       {/* Speed Emphasis Section */}
@@ -238,66 +263,29 @@ export default function AcceleratedApplicationPage() {
         </div>
       </div>
 
-      {/* Eligible Programs Section */}
-      <div className="py-stevens-section bg-white">
-        <div className="max-w-5xl mx-auto px-stevens-md lg:px-stevens-lg">
-          <div className="text-center mb-stevens-xl">
-            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
-              Eligible Programs
-            </h2>
-            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
-              The Accelerated Application is available for the following programs. Choose your program and get started today.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-stevens-lg mb-stevens-xl">
-            {eligiblePrograms.map((program) => (
-              <Link 
-                key={program.id}
-                to={program.path}
-                className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
-              >
-                <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
-                <h3 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
-                  {program.shortName}
-                </h3>
-                <p className="text-stevens-sm text-stevens-gray-700 text-center">
-                  {program.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm">
-            <p className="text-stevens-base text-stevens-gray-900">
-              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All three programs use the same fast, streamlined application below.
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="py-stevens-section bg-stevens-gray-50">
         <div className="max-w-7xl mx-auto px-stevens-sm stevens-md:px-stevens-lg stevens-xl:px-stevens-xl">
           <div className="grid lg:grid-cols-2 gap-stevens-2xl items-start">
             
             {/* Left Column - Info */}
-            <div>
+            <div className="order-2 lg:order-1">
+              <div className="hidden md:block">
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
                 Your Path to Graduate Success
               </h2>
               <p className="text-stevens-lg text-stevens-gray-900 mb-stevens-lg leading-relaxed">
-                Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App streamlines the admissions process so you can get started immediately on your graduate education journey.
+                Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application streamlines the admissions process so you can get started immediately on your graduate education journey.
               </p>
               
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
                 <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-sm">What Makes It Different?</h3>
                 <p className="text-stevens-base text-stevens-gray-700 mb-stevens-md">
-                  We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated App removes traditional barriers while maintaining Stevens' academic standards.
+                  We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom. The Accelerated Application removes traditional barriers while maintaining Stevens' academic standards.
                 </p>
               </div>
 
               <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
-                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose the Accelerated App?</h3>
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Why Choose the Accelerated Application?</h3>
                 <ul className="space-y-stevens-md">
                   {benefits.map((benefit, index) =>
                     <li key={index} className="flex items-start gap-stevens-md">
@@ -308,19 +296,78 @@ export default function AcceleratedApplicationPage() {
                 </ul>
               </div>
 
+              <div className="bg-stevens-white rounded-stevens-md p-stevens-md shadow-stevens-lg mb-stevens-lg border border-stevens-gray-200">
+                <h3 className="font-stevens-display text-stevens-xl font-stevens-semibold text-stevens-gray-900 mb-stevens-md">Application process</h3>
+                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-sm">
+                  <strong className="text-stevens-gray-900">Submitting your application.</strong> Once you have completed the required sections and uploaded required documents, click &quot;Submit&quot; in the Review section. Once you have submitted your application, you will not be able to add information or make changes. If you need to adjust your application after submission, please contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.
+                </p>
+                <p className="text-stevens-base text-stevens-gray-700 mb-stevens-sm">
+                  <strong className="text-stevens-gray-900">After you submit.</strong> You will receive a confirmation email that includes a link to your Applicant Status Page. The Applicant Status Page is where you will pay your application fee and receive updates on the status of your application.
+                </p>
+                <p className="text-stevens-base text-stevens-gray-700">
+                  <strong className="text-stevens-gray-900">Application review.</strong> Stevens conducts admissions on a rolling basis, so decisions are released as they are rendered. Master&apos;s degree and graduate certificate applications are typically reviewed within 48 hours of submission. If you would like to apply to more than one program for a given semester, you must submit a separate application for each program. Prospective students should apply to no more than three programs.
+                </p>
+              </div>
+
               <div className="bg-stevens-primary/10 rounded-stevens-md p-stevens-md border border-stevens-primary/20">
                 <p className="text-stevens-sm text-stevens-gray-700">
-                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Stevens may request additional documentation if needed to confirm your academic or professional background.
+                  <strong>Note:</strong> The Accelerated Application is available for select professional online programs offered at Stevens. Only your unofficial transcript showing degree conferred is required to apply. Official transcripts from all post-secondary institutions you have attended are required within 2 months of enrollment (regardless of whether you earned a degree). Stevens may request additional documentation if needed to confirm your academic or professional background.
                 </p>
+              </div>
+
+              <p className="text-stevens-base text-stevens-gray-700 mt-stevens-lg">
+                <strong>Questions?</strong> Please contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.
+              </p>
+              </div>
+
+              {/* Mobile: accordion for progressive disclosure */}
+              <div className="md:hidden mt-stevens-lg">
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="why">
+                    <AccordionTrigger className="text-left font-stevens-semibold text-stevens-lg text-stevens-gray-900">
+                      Why choose the Accelerated Application?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-stevens-base text-stevens-gray-700">
+                      <p className="mb-stevens-md">Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. We recognize that working professionals have been vetted through their employment and bring valuable experience to the classroom.</p>
+                      <ul className="space-y-stevens-sm">
+                        {benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start gap-stevens-sm">
+                            <Check className="w-4 h-4 text-stevens-primary mt-0.5 flex-shrink-0" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="process">
+                    <AccordionTrigger className="text-left font-stevens-semibold text-stevens-lg text-stevens-gray-900">
+                      Application process
+                    </AccordionTrigger>
+                    <AccordionContent className="text-stevens-base text-stevens-gray-700">
+                      <p className="mb-stevens-sm"><strong>Submitting your application.</strong> Complete required sections and upload documents, then click &quot;Submit&quot; in the Review section. After submission you cannot make changes; contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.</p>
+                      <p className="mb-stevens-sm"><strong>After you submit.</strong> You will receive a confirmation email with a link to your Applicant Status Page to pay your fee and check status.</p>
+                      <p><strong>Application review.</strong> Rolling admissions; Master&apos;s and certificate applications typically reviewed within 48 hours. One application per program per semester; apply to no more than three programs.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="note">
+                    <AccordionTrigger className="text-left font-stevens-semibold text-stevens-lg text-stevens-gray-900">
+                      Note &amp; questions
+                    </AccordionTrigger>
+                    <AccordionContent className="text-stevens-base text-stevens-gray-700">
+                      <p className="mb-stevens-sm">The Accelerated Application is available for select professional online programs. Only your unofficial transcript showing degree conferred is required to apply. Official transcripts from all post-secondary institutions you have attended are required within 2 months of enrollment (regardless of whether you earned a degree). Stevens may request additional documentation if needed.</p>
+                      <p><strong>Questions?</strong> Contact <a href={CONTACT_INFO.EMAIL_LINK} className="text-stevens-primary font-stevens-semibold hover:underline">{CONTACT_INFO.EMAIL}</a> for assistance.</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
             </div>
 
             {/* Right Column - Form */}
-            <div className="lg:sticky lg:top-8">
+            <div id="accelerated-application-form" className="order-1 lg:order-2 lg:sticky lg:top-8">
               <Card className="shadow-stevens-2xl border-0 bg-stevens-white rounded-stevens-md overflow-hidden">
                 <CardHeader className="flex flex-col space-y-1 p-3 sm:p-stevens-md bg-gradient-to-r from-gray-600 to-red-800 text-stevens-white rounded-t-stevens-md">
                   <CardTitle className="font-stevens-display text-base sm:text-stevens-lg md:text-stevens-xl text-center font-stevens-bold leading-tight">Submit Your Application</CardTitle>
-                  <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below to get started</p>
+                  <p className="text-xs sm:text-stevens-sm text-stevens-white/90 leading-tight">Complete the form below.</p>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="relative">
@@ -568,6 +615,76 @@ export default function AcceleratedApplicationPage() {
               </Card>
             </div>
             
+          </div>
+        </div>
+      </div>
+
+      {/* Eligible Programs Section */}
+      <div className="py-stevens-section bg-white">
+        <div className="max-w-6xl mx-auto px-stevens-md lg:px-stevens-lg">
+          <div className="text-center mb-stevens-xl">
+            <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl font-stevens-bold text-stevens-gray-900 mb-stevens-md">
+              Eligible Programs
+            </h2>
+            <p className="text-stevens-lg text-stevens-gray-700 max-w-3xl mx-auto">
+              The Accelerated Application is available for the following programs. Choose your program and get started today.
+            </p>
+          </div>
+
+          {/* Degree Programs */}
+          <div className="mb-stevens-xl">
+            <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-center">
+              <GraduationCap className="w-6 h-6 inline-block mr-2 text-stevens-primary" />
+              Degree Programs
+            </h3>
+            <div className="grid md:grid-cols-3 gap-stevens-lg">
+              {degreePrograms.map((program) => (
+                <Link 
+                  key={program.id}
+                  to={program.path}
+                  className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+                >
+                  <program.icon className="w-12 h-12 text-stevens-primary mb-stevens-md mx-auto" />
+                  <h4 className="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                    {program.shortName}
+                  </h4>
+                  <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                    {program.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Graduate Certificates */}
+          <div className="mb-stevens-xl">
+            <h3 className="font-stevens-display text-stevens-2xl font-stevens-bold text-stevens-gray-900 mb-stevens-lg text-center">
+              <Award className="w-6 h-6 inline-block mr-2 text-stevens-primary" />
+              Graduate Certificates
+            </h3>
+            <div className="grid md:grid-cols-2 gap-stevens-lg max-w-4xl mx-auto">
+              {certificatePrograms.map((program) => (
+                <Link 
+                  key={program.id}
+                  to={program.path}
+                  className="group bg-stevens-gray-50 border-2 border-stevens-gray-200 rounded-stevens-lg p-stevens-lg hover:border-stevens-primary hover:shadow-stevens-lg transition-all duration-200"
+                >
+                  <program.icon className="w-10 h-10 text-stevens-primary mb-stevens-md mx-auto" />
+                  <h4 className="font-stevens-bold text-stevens-base text-stevens-gray-900 mb-stevens-xs text-center group-hover:text-stevens-primary transition-colors">
+                    {program.shortName}
+                  </h4>
+                  <p className="text-stevens-sm text-stevens-gray-700 text-center">
+                    {program.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-stevens-primary/10 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm">
+            <p className="text-stevens-base text-stevens-gray-900">
+              <strong>Not sure which program is right for you?</strong> Visit each program page to learn more about curriculum, career outcomes, and what makes each program unique. All programs use the same fast, streamlined application above.
+            </p>
           </div>
         </div>
       </div>

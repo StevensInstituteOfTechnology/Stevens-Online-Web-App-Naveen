@@ -192,7 +192,7 @@ export default function CorporateLandingPageTemplate({
                                 </Card>
                             )}
 
-                            {/* Body Accelerated App Section */}
+                            {/* Body Accelerated Application Section */}
                             {showBodyAcceleratedApp && (
                                 <div id="apply-now" className="scroll-mt-24">
                                     <div className="text-center mb-8">

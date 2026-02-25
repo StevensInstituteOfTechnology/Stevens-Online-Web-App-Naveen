@@ -453,17 +453,17 @@ const programData = {
   admissions: {
       options: [
         {
-          title: "Accelerated App",
+          title: "Accelerated Application",
           featured: false,
           description: `<p>
-            Fast-track your application with our new <strong>Accelerated App</strong> designed for busy professionals. The Accelerated App gets you started immediately:
+            Fast-track your application with our new <strong>Accelerated Application</strong> designed for busy professionals. The Accelerated Application gets you started immediately:
           </p>
           <ul class="list-disc pl-5 mt-2 space-y-1">
             <li><strong>Recommendation Letters:</strong> Not Required</li>
             <li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li>
             <li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li>
           </ul>
-          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.</p>`,
+          <p class="text-sm text-stevens-gray-600 mt-2">Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.</p>`,
           buttonText: "Apply Now",
           url: "/accelerated-application",
           buttonGrayOut: false

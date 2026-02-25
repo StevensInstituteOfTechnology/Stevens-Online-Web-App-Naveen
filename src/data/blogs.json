@@ -1,6 +1,740 @@
 {
   "posts": [
     {
+      "id": "talk-to-employer-about-tuition-assistance",
+      "title": "How to Talk to Your Employer About Tuition Assistance for a Master's Degree",
+      "subtitle": "Pursuing a master's degree while working full time is a strategic career move. Before you apply, take a smarter first step: build a clear, business-driven case for employer tuition assistance.",
+      "excerpt": "Pursuing a master's degree in business administration, artificial intelligence, computer science, engineering, or data science while working full time is a strategic career move. But before you apply, take a smarter first step: build a clear, business-driven case for employer tuition assistance.",
+      "featured_image_url": "/assets/blogs/uncategorized/talk-to-employer-about-tuition-assistance/20220414_STEVENS_SPRING-708.webp",
+      "image_position": "top",
+      "category": "Other Programs",
+      "author": "College of Professional Education",
+      "author_bio": "Stevens Institute of Technology provides expert insights on graduate education.",
+      "author_image": "/assets/blogs/uncategorized/talk-to-employer-about-tuition-assistance/20220414_STEVENS_SPRING-708.webp",
+      "created_date": "2026-02-25T10:00:00.000Z",
+      "updated_date": "2026-02-25T10:00:00.000Z",
+      "read_time": 10,
+      "tags": [
+        "Tuition Assistance",
+        "Employer Sponsorship",
+        "Graduate Education",
+        "Career Development",
+        "Stevens Online"
+      ],
+      "social_sharing": true,
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Pursuing a master's degree in business administration, artificial intelligence, computer science, engineering, or data science while working full time is a strategic career move.",
+          "links": [
+            { "text": "business administration", "url": "/online-mba/" },
+            { "text": "computer science", "url": "/online-masters-computer-science-mscs/" },
+            { "text": "engineering", "url": "/online-masters-engineering-management/" },
+            { "text": "data science", "url": "/online-masters-engineering-applied-data-science/" }
+          ],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "But before you apply, take a smarter first step: build a clear, business-driven case for employer tuition assistance.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Organizations across industries are investing in AI adoption, cybersecurity, cloud infrastructure, automation, and advanced analytics. Technical graduate education isn't just professional development. It's workforce capability building.",
+          "links": [],
+          "bold": [
+            "workforce capability building"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This guide shows you how to position your degree as a measurable investment: one that advances both your career and your organization's competitive advantage.",
+          "links": [],
+          "bold": [
+            "measurable investment"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why Employers Fund Technical Master's Degrees"
+        },
+        {
+          "type": "paragraph",
+          "text": "Today's talent gaps are urgent and technical. Many organizations are facing challenges in hiring and retaining expertise in:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Artificial intelligence and machine learning",
+              "links": [{ "text": "Artificial intelligence", "url": "/certificates/enterprise-ai/" }]
+            },
+            {
+              "text": "Computer science and software engineering",
+              "links": [{ "text": "Computer science", "url": "/online-masters-computer-science-mscs/" }]
+            },
+            {
+              "text": "Data science and predictive analytics",
+              "links": [{ "text": "Data science", "url": "/online-masters-engineering-applied-data-science/" }]
+            },
+            {
+              "text": "Cloud computing and cybersecurity"
+            },
+            {
+              "text": "Systems optimization and technical leadership"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Hiring externally is costly and competitive. Upskilling high-performing employees is often faster, lower risk, and more cost-effective.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "When you demonstrate how your graduate program supports digital transformation, AI integration, risk mitigation, or operational efficiency, you shift the conversation from personal growth to business impact. That's when leaders lean in.",
+          "links": [],
+          "bold": [
+            "business impact"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Employer Tuition Assistance?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employer tuition assistance (also called tuition reimbursement or sponsorship) is a benefit that helps cover the cost of higher education while you work full time.",
+          "links": [],
+          "bold": [
+            "Employer tuition assistance"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Depending on your organization, it may include:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Annual reimbursement (often up to IRS tax-free limits)"
+            },
+            {
+              "text": "Full or partial funding for graduate degrees"
+            },
+            {
+              "text": "Coverage for stackable graduate certificates"
+            },
+            {
+              "text": "Direct billing partnerships with universities"
+            },
+            {
+              "text": "Professional development stipends"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Many companies require:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Manager approval"
+            },
+            {
+              "text": "A minimum grade (often a B or higher)"
+            },
+            {
+              "text": "Continued employment for a defined period"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Before initiating the conversation, understand your company's policy and approval process. Preparation signals professionalism and increases your likelihood of approval.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 1: Review Your Company's Tuition Policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with your HR portal, benefits handbook, or learning and development resources. Look for:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Annual reimbursement caps"
+            },
+            {
+              "text": "Eligible programs (STEM, online, part-time)"
+            },
+            {
+              "text": "Application timelines"
+            },
+            {
+              "text": "Work commitment requirements"
+            },
+            {
+              "text": "Existing university partnerships"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "If your organization already partners with institutions like Stevens Institute of Technology, the pathway may be structured and streamlined. Speak with your company's HR department to confirm available benefits.",
+          "links": [
+            {
+              "text": "already partners with institutions like Stevens Institute of Technology",
+              "url": "https://www.stevens.edu"
+            }
+          ],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 2: Identify Skill Gaps That Matter to Your Organization"
+        },
+        {
+          "type": "paragraph",
+          "text": "This is where your case becomes strategic.",
+          "links": [],
+          "bold": [
+            "strategic"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead of saying: \"I want to pursue a master's in computer science.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Say: \"As we scale our AI and cloud capabilities, I'd like to deepen my expertise in advanced machine learning and distributed systems to support upcoming initiatives.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Look for opportunities where advanced technical skills would create measurable value:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "AI roadmaps that need internal expertise"
+            },
+            {
+              "text": "Cybersecurity posture that requires stronger governance"
+            },
+            {
+              "text": "Analytics work outsourced to consultants"
+            },
+            {
+              "text": "Software scalability challenges"
+            },
+            {
+              "text": "Siloed or underutilized data"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Align your degree with solving real business problems.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 3: Translate Your Program into Business Outcomes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Executives approve funding when they see ROI. Be explicit about outcomes.",
+          "links": [],
+          "bold": [
+            "ROI"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Master's in Computer Science",
+          "link": "/online-masters-computer-science-mscs/"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Improve system architecture and scalability"
+            },
+            {
+              "text": "Advance cybersecurity knowledge"
+            },
+            {
+              "text": "Strengthen cloud-native development"
+            },
+            {
+              "text": "Implement advanced algorithms"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Master's in Applied Data Science",
+          "link": "/online-masters-engineering-applied-data-science/"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Build predictive models that improve forecasting"
+            },
+            {
+              "text": "Develop machine learning pipelines"
+            },
+            {
+              "text": "Enhance data governance"
+            },
+            {
+              "text": "Deliver executive-ready insights"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Master of Business Administration",
+          "link": "/online-mba/"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Translate technical insights into executive-level strategy"
+            },
+            {
+              "text": "Lead cross-functional AI and data initiatives"
+            },
+            {
+              "text": "Improve financial modeling and capital allocation decisions"
+            },
+            {
+              "text": "Strengthen leadership, negotiation, and change management skills"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Graduate Certificate in Enterprise AI",
+          "link": "/certificates/enterprise-ai/"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Identify automation opportunities"
+            },
+            {
+              "text": "Implement responsible AI governance"
+            },
+            {
+              "text": "Deploy generative AI use cases"
+            },
+            {
+              "text": "Improve operational efficiency"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Programs offered through the Stevens College of Professional Education are built for working professionals. Coursework emphasizes applied projects that can be implemented immediately, creating impact while you learn.",
+          "links": [
+            { "text": "Stevens College of Professional Education", "url": "https://online.stevens.edu" }
+          ],
+          "bold": [
+            "Stevens College of Professional Education"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 4: Quantify the ROI"
+        },
+        {
+          "type": "paragraph",
+          "text": "Frame your education as a cost-benefit decision.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Example:",
+          "links": [],
+          "bold": ["Example:"]
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            { "text": "Tuition investment: $X" },
+            { "text": "Comparable consulting engagement: $Y" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "If one internal initiative reduces vendor spend, improves forecasting accuracy, strengthens cybersecurity resilience, or accelerates deployment cycles, the program can offset its cost.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Additional measurable benefits may include:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Reduced external consulting expenses"
+            },
+            {
+              "text": "Faster innovation cycles"
+            },
+            {
+              "text": "Improved model performance"
+            },
+            {
+              "text": "Lower risk exposure"
+            },
+            {
+              "text": "Higher operational efficiency"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Leaders respond to clarity. Present numbers whenever possible.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 5: Structure the Conversation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep your message direct, strategic, and outcome-focused.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Strategic Alignment"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"As our organization expands its AI capabilities, I'd like to strengthen my expertise in machine learning and distributed systems.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Program Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I'm exploring a flexible online master's program designed for working professionals.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "3. Immediate Application"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The curriculum includes applied machine learning and cloud systems architecture that align with our roadmap.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "4. ROI Framing"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Building this capability internally can reduce reliance on external consultants and accelerate delivery.\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "5. Clear Ask"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Can we explore tuition assistance options to support this investment?\"",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Focus on organizational value, not just personal growth.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 6: Address Concerns Proactively"
+        },
+        {
+          "type": "paragraph",
+          "text": "Your manager may ask about time commitment, performance, or retention. Be prepared.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Time Management"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Online, flexible structure"
+            },
+            {
+              "text": "Designed for full-time professionals"
+            },
+            {
+              "text": "Predictable scheduling"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Performance Impact"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Coursework aligns with current projects"
+            },
+            {
+              "text": "Skills are immediately applicable"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Retention"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Position your growth within the organization"
+            },
+            {
+              "text": "Reinforce your commitment to long-term contribution"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Show that this investment strengthens your team, not just your résumé.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Step 7: Offer Knowledge Transfer"
+        },
+        {
+          "type": "paragraph",
+          "text": "Increase approval likelihood by multiplying the impact. Propose:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "text": "Quarterly knowledge-sharing sessions"
+            },
+            {
+              "text": "Internal AI or cybersecurity workshops"
+            },
+            {
+              "text": "Documentation of best practices"
+            },
+            {
+              "text": "Capstone projects aligned with company initiatives"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This turns your degree into shared organizational capability.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Common Questions"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Can I complete a master's degree while working full time in tech?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yes. Many online graduate programs are structured specifically for mid-career professionals balancing work and study.",
+          "links": [
+            { "text": "online graduate programs", "url": "/compare-our-programs/" }
+          ],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Is tuition reimbursement taxable?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employers may provide tax-free annual education benefits under federal guidelines. Confirm details with HR.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Should I start with a certificate or a master's degree?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stackable graduate certificates in AI, data science, or computer science allow you to demonstrate value quickly before committing to a full degree.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Final Takeaway: Lead with Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "A master's degree in AI, computer science, engineering, or data science is more than a credential. It's a strategic capability.",
+          "links": [],
+          "bold": [
+            "strategic capability"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "When you frame tuition assistance as:",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            { "text": "Internal upskilling" },
+            { "text": "Digital transformation support" },
+            { "text": "Risk mitigation" },
+            { "text": "Cost efficiency" },
+            { "text": "Innovation acceleration" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "You make it easier for leadership to say yes.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with alignment. Build your ROI case. Then initiate the conversation with confidence.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "paragraph",
+          "text": "If you're evaluating flexible, industry-informed technical graduate programs, explore employer sponsorship options before applying — and approach the discussion as a business proposal designed to drive measurable impact.",
+          "links": [],
+          "bold": []
+        },
+        {
+          "type": "cta",
+          "heading": "Ready to Take the Next Step?",
+          "text": "Connect with an admissions advisor to discuss your goals, explore tuition assistance options, and get started on your application.",
+          "button_text": "Schedule a Call",
+          "button_url": "SCHEDULE_CALL"
+        }
+      ],
+
+      
+      "related_posts": []
+    },
+    {
       "id": "the-agentic-shift-reliable-ai-architecture",
       "title": "The Agentic Shift: Why Reliable AI Depends on Architecture, Not Bigger Models",
       "subtitle": "The artificial intelligence landscape is undergoing a fundamental transition. We are moving from stateless, prompt-based interactions to stateful, autonomous agentic systems. This evolution represents a departure from viewing Large Language Models as solitary oracles to treating them as cognitive engines within broader, engineered systems.",
@@ -14,14 +748,22 @@
       "created_date": "2026-01-07T10:00:00.000Z",
       "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 6,
-      "tags": ["Artificial Intelligence", "AI Architecture", "Agentic AI", "Systems Engineering", "Enterprise AI"],
+      "tags": [
+        "Artificial Intelligence",
+        "AI Architecture",
+        "Agentic AI",
+        "Systems Engineering",
+        "Enterprise AI"
+      ],
       "social_sharing": true,
       "content": [
         {
           "type": "paragraph",
           "text": "The artificial intelligence landscape is undergoing a fundamental transition. We are moving from stateless, prompt-based interactions to stateful, autonomous agentic systems. This evolution, often termed the Agentic Shift, represents a departure from viewing Large Language Models (LLMs) as solitary oracles to treating them as cognitive engines within broader, engineered systems.",
           "links": [],
-          "bold": ["Agentic Shift"]
+          "bold": [
+            "Agentic Shift"
+          ]
         },
         {
           "type": "heading",
@@ -44,7 +786,11 @@
           "type": "paragraph",
           "text": "The core problem driving the industry today is that while LLMs are reasoning engines, they are not autonomous agents by default. They lack episodic memory, the ability to retain state across distinct actions. They lack self-correction, the capacity to recognize an error in output and iteratively refine it. And they struggle with tool orchestration, the dynamic ability to select, execute, and validate inputs from external software tools.",
           "links": [],
-          "bold": ["episodic memory", "self-correction", "tool orchestration"]
+          "bold": [
+            "episodic memory",
+            "self-correction",
+            "tool orchestration"
+          ]
         },
         {
           "type": "heading",
@@ -55,7 +801,10 @@
           "type": "paragraph",
           "text": "The industry is shifting from Workflows to Agents. It is critical to distinguish between these two concepts. Workflows operate on predefined code paths where control flow moves from step A to B to C in a rigid, prescriptive manner. They break when inputs deviate from expectations, and the LLM serves merely as a processor within the structure.",
           "links": [],
-          "bold": ["Workflows", "Agents"]
+          "bold": [
+            "Workflows",
+            "Agents"
+          ]
         },
         {
           "type": "paragraph",
@@ -67,7 +816,9 @@
           "type": "paragraph",
           "text": "Modern architectures are adopting compound AI systems where autonomy is bounded by reliability patterns. This shift mirrors the transition in distributed computing from monolithic applications to microservices, where specialized components communicate to achieve a larger goal.",
           "links": [],
-          "bold": ["compound AI systems"]
+          "bold": [
+            "compound AI systems"
+          ]
         },
         {
           "type": "heading",
@@ -84,7 +835,9 @@
           "type": "paragraph",
           "text": "Specifically, we are moving from a probabilistic era of AI, where we hope the model gets it right, to a deterministic wrapper era, where systems ensure that the probabilistic output is verified, critiqued, and refined before execution. This requires feedback loops, state machines, and evaluator-optimizer patterns.",
           "links": [],
-          "bold": ["deterministic wrapper era"]
+          "bold": [
+            "deterministic wrapper era"
+          ]
         },
         {
           "type": "paragraph",
@@ -119,7 +872,10 @@
           "bold": []
         }
       ],
-      "related_posts": ["building-self-healing-ai-orchestrator-reflexion-patterns", "hidden-economics-ai-agents-token-costs-latency"]
+      "related_posts": [
+        "building-self-healing-ai-orchestrator-reflexion-patterns",
+        "hidden-economics-ai-agents-token-costs-latency"
+      ]
     },
     {
       "id": "building-self-healing-ai-orchestrator-reflexion-patterns",
@@ -135,14 +891,23 @@
       "created_date": "2026-01-07T10:00:00.000Z",
       "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 7,
-      "tags": ["AI Architecture", "Multi-Agent Systems", "Self-Healing AI", "Orchestrator Pattern", "Software Engineering"],
+      "tags": [
+        "AI Architecture",
+        "Multi-Agent Systems",
+        "Self-Healing AI",
+        "Orchestrator Pattern",
+        "Software Engineering"
+      ],
       "social_sharing": true,
       "content": [
         {
           "type": "paragraph",
           "text": "To operationalize the agentic shift, developers and architects are coalescing around specific design patterns. These patterns solve the fundamental problems of coordination, error handling, and task decomposition that plague traditional AI implementations. Two patterns have emerged as particularly powerful: the Orchestrator-Workers pattern for scalability, and the Reflexion pattern for reliability.",
           "links": [],
-          "bold": ["Orchestrator-Workers pattern", "Reflexion pattern"]
+          "bold": [
+            "Orchestrator-Workers pattern",
+            "Reflexion pattern"
+          ]
         },
         {
           "type": "heading",
@@ -153,13 +918,17 @@
           "type": "paragraph",
           "text": "For highly complex tasks where the number and nature of subtasks cannot be known in advance, the Orchestrator-Workers pattern has emerged as the standard for scalable agentic systems. In this pattern, a central Orchestrator LLM acts as the project manager. Its role is not to do the work, but to parse intent, decompose tasks, delegate, and synthesize results.",
           "links": [],
-          "bold": ["Orchestrator"]
+          "bold": [
+            "Orchestrator"
+          ]
         },
         {
           "type": "paragraph",
           "text": "The Orchestrator analyzes the user's high-level request and breaks it into a dynamic set of sub-tasks. It then assigns these sub-tasks to specialized Worker agents and aggregates their results into a cohesive response. This separation of concerns allows for remarkable efficiency gains.",
           "links": [],
-          "bold": ["Worker"]
+          "bold": [
+            "Worker"
+          ]
         },
         {
           "type": "heading",
@@ -187,7 +956,9 @@
           "type": "paragraph",
           "text": "This architecture also allows for economic optimization. The Orchestrator requires a capable and therefore more expensive model to handle the complex reasoning of planning and synthesis. However, the Workers, which perform scoped tasks like summarizing text or extracting entities, can often utilize smaller, faster, and cheaper models. This Smart Orchestrator plus Cheap Workers configuration optimizes cost-per-task while maintaining high overall system intelligence.",
           "links": [],
-          "bold": ["Smart Orchestrator plus Cheap Workers"]
+          "bold": [
+            "Smart Orchestrator plus Cheap Workers"
+          ]
         },
         {
           "type": "heading",
@@ -198,7 +969,9 @@
           "type": "paragraph",
           "text": "If the Orchestrator-Worker pattern solves scalability, the Reflexion pattern solves reliability. Standard LLM chains are brittle. If one step fails or hallucinates, the error propagates downstream, ruining the final output. The Reflexion architecture introduces a self-healing loop.",
           "links": [],
-          "bold": ["self-healing loop"]
+          "bold": [
+            "self-healing loop"
+          ]
         },
         {
           "type": "heading",
@@ -209,7 +982,11 @@
           "type": "paragraph",
           "text": "Reflexion replaces the linear execution path with a cycle. First, an Actor attempts a task such as writing code or answering a query. Then an Evaluator or Critic inspects the output against specific criteria. Does the code compile? Is the citation valid? If the evaluation fails, the agent generates a verbal critique of why it failed through Self-Reflection. Finally, the agent tries again, explicitly conditioned on its own previous error and the generated critique.",
           "links": [],
-          "bold": ["Actor", "Evaluator", "Self-Reflection"]
+          "bold": [
+            "Actor",
+            "Evaluator",
+            "Self-Reflection"
+          ]
         },
         {
           "type": "heading",
@@ -225,7 +1002,9 @@
               "url": "https://www.arxiv.org/abs/2512.07094"
             }
           ],
-          "bold": ["VIGIL"]
+          "bold": [
+            "VIGIL"
+          ]
         },
         {
           "type": "paragraph",
@@ -247,7 +1026,9 @@
               "url": "https://arxiv.org/html/2507.11222v1"
             }
           ],
-          "bold": ["Finite State Machines"]
+          "bold": [
+            "Finite State Machines"
+          ]
         },
         {
           "type": "paragraph",
@@ -263,11 +1044,15 @@
         {
           "type": "paragraph",
           "text": "The debate between frameworks like LangChain, AutoGen, and CrewAI is settling. Graph-based orchestrators like LangGraph are emerging as the superior choice for production reliability. Linear chains are insufficient for loops required by Reflexion patterns. Graph architectures allow developers to define cycles such as Action to Evaluate to Fail to Action. This explicit state management is necessary for self-healing systems.",
-          "links": [{
-            "text": "LangGraph",
-            "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
-          }],
-          "bold": ["LangGraph"]
+          "links": [
+            {
+              "text": "LangGraph",
+              "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+            }
+          ],
+          "bold": [
+            "LangGraph"
+          ]
         },
         {
           "type": "paragraph",
@@ -276,7 +1061,10 @@
           "bold": []
         }
       ],
-      "related_posts": ["the-agentic-shift-reliable-ai-architecture", "hidden-economics-ai-agents-token-costs-latency"]
+      "related_posts": [
+        "the-agentic-shift-reliable-ai-architecture",
+        "hidden-economics-ai-agents-token-costs-latency"
+      ]
     },
     {
       "id": "hidden-economics-ai-agents-token-costs-latency",
@@ -292,14 +1080,22 @@
       "created_date": "2026-01-07T10:00:00.000Z",
       "updated_date": "2026-01-07T10:00:00.000Z",
       "read_time": 8,
-      "tags": ["AI Economics", "LLM Costs", "Token Optimization", "Enterprise AI", "Agentic RAG"],
+      "tags": [
+        "AI Economics",
+        "LLM Costs",
+        "Token Optimization",
+        "Enterprise AI",
+        "Agentic RAG"
+      ],
       "social_sharing": true,
       "content": [
         {
           "type": "paragraph",
           "text": "The shift to agentic AI is not just technical. It is economic. The cost model of software is changing from fixed infrastructure to variable intelligence, and engineering leaders must understand the hidden economics that can make or break an AI deployment. As organizations move pilots into production, they encounter what researchers call the Unreliability Tax.",
           "links": [],
-          "bold": ["Unreliability Tax"]
+          "bold": [
+            "Unreliability Tax"
+          ]
         },
         {
           "type": "heading",
@@ -316,7 +1112,12 @@
           "type": "paragraph",
           "text": "The sources of unreliability are well documented. Hallucination occurs when the agent invents facts or code libraries. Looping happens when the agent gets stuck trying the same failed action repeatedly. Context overflow occurs when the agent accumulates so much history that it forgets the original instruction or exceeds the token window. Tool misuse happens when the agent calls an API with the wrong schema.",
           "links": [],
-          "bold": ["Hallucination", "Looping", "Context overflow", "Tool misuse"]
+          "bold": [
+            "Hallucination",
+            "Looping",
+            "Context overflow",
+            "Tool misuse"
+          ]
         },
         {
           "type": "heading",
@@ -344,13 +1145,17 @@
           "type": "paragraph",
           "text": "Research from Google's Gemini Robotics team introduces the concept of a flexible thinking budget. This allows developers to tune the system based on task requirements. For reactive tasks like turning on the lights, skip the Orchestrator and use a rule-based or single LLM approach for low latency. For reasoning tasks like planning a supply chain route, allocate more tokens and time for the Orchestrator to decompose and reflect.",
           "links": [],
-          "bold": ["thinking budget"]
+          "bold": [
+            "thinking budget"
+          ]
         },
         {
           "type": "paragraph",
           "text": "The strategic insight here is that one size does not fit all. A robust system must employ a Routing Pattern that classifies the complexity of an incoming query and routes it to the appropriate tier of agent. Cheap and fast for simple queries. Deep and slow for complex ones.",
           "links": [],
-          "bold": ["Routing Pattern"]
+          "bold": [
+            "Routing Pattern"
+          ]
         },
         {
           "type": "heading",
@@ -360,18 +1165,20 @@
         {
           "type": "paragraph",
           "text": "The most dangerous economic trap in agent design is quadratic token growth. In a multi-turn conversation, the cost accumulates rapidly. Turn 1 takes 100 input tokens and 100 output tokens for a total context of 200. Turn 2 takes 200 history tokens plus 100 new, adding 100 output. By Turn 3, the context has grown to 500 tokens and continues expanding.",
-          "links": [
-            
-          ],
-          "bold": ["quadratic token growth"]
+          "links": [],
+          "bold": [
+            "quadratic token growth"
+          ]
         },
         {
           "type": "paragraph",
           "text": "Because LLMs charge for every input token sent in every turn, the cost accumulates rapidly. A Reflexion loop that runs for 10 cycles can consume 50 times the tokens of a single linear pass. Research indicates that an unconstrained agent can cost 5 to 8 dollars per task to solve a software engineering issue.",
-          "links": [{
-            "text": "Research indicates that an unconstrained agent can cost 5 to 8 dollars per task ",
-            "url": "https://arxiv.org/html/2510.14278v1"
-          }],
+          "links": [
+            {
+              "text": "Research indicates that an unconstrained agent can cost 5 to 8 dollars per task ",
+              "url": "https://arxiv.org/html/2510.14278v1"
+            }
+          ],
           "bold": []
         },
         {
@@ -393,11 +1200,15 @@
         {
           "type": "paragraph",
           "text": "If an agent always starts with the same 20-page system instruction or knowledge base, the LLM provider can cache these tokens. Subsequent calls reference the cache rather than reprocessing the text. This reduces input costs by approximately 90 percent and latency by approximately 75 percent. For an Orchestrator agent that spawns 50 workers all sharing the same context, caching effectively eliminates the redundancy penalty.",
-          "links": [{
-            "text": "approximately 90 percent",
-            "url": "https://sylphai.substack.com/p/the-complete-guide-to-prompt-caching"
-          }],
-          "bold": ["Prompt Caching"]
+          "links": [
+            {
+              "text": "approximately 90 percent",
+              "url": "https://sylphai.substack.com/p/the-complete-guide-to-prompt-caching"
+            }
+          ],
+          "bold": [
+            "Prompt Caching"
+          ]
         },
         {
           "type": "heading",
@@ -408,7 +1219,9 @@
           "type": "paragraph",
           "text": "Instead of a hard cap on iterations, systems should use dynamic turn limits based on the probability of success. Research shows this approach can cut costs by 24 percent while maintaining solve rates. The key is to recognize when additional iterations are unlikely to succeed and exit gracefully.",
           "links": [],
-          "bold": ["dynamic turn limits"]
+          "bold": [
+            "dynamic turn limits"
+          ]
         },
         {
           "type": "heading",
@@ -419,7 +1232,9 @@
           "type": "paragraph",
           "text": "The standard RAG pipeline of Vector DB to Top K to LLM is being replaced by Agentic RAG. Instead of a single retrieval, the agent uses a multi-step planner. It first hypothesizes a potential answer to guide the search. Then it retrieves documents. It verifies whether the documents actually contain the answer. If not, it rewrites the search query and tries again. This solves the lost in the middle phenomenon and dramatically improves recall for complex queries.",
           "links": [],
-          "bold": ["Agentic RAG"]
+          "bold": [
+            "Agentic RAG"
+          ]
         },
         {
           "type": "heading",
@@ -430,7 +1245,9 @@
           "type": "paragraph",
           "text": "To solve the latency versus accuracy tradeoff, implement a distinct Memory Layer. Store not just documents, but past user interactions and successful plans in a vector store. Before asking the Orchestrator to plan at high cost, query the Memory Layer: Have we solved a similar problem before? If a match is found, retrieve the cached plan. This reduces latency from 30 seconds to 300 milliseconds and reduces cost to near zero.",
           "links": [],
-          "bold": ["Memory Layer"]
+          "bold": [
+            "Memory Layer"
+          ]
         },
         {
           "type": "heading",
@@ -450,7 +1267,10 @@
           "bold": []
         }
       ],
-      "related_posts": ["the-agentic-shift-reliable-ai-architecture", "building-self-healing-ai-orchestrator-reflexion-patterns"]
+      "related_posts": [
+        "the-agentic-shift-reliable-ai-architecture",
+        "building-self-healing-ai-orchestrator-reflexion-patterns"
+      ]
     },
     {
       "id": "alkis-vazacopoulos-on-business-analytics-turning-data-into-decisions",
@@ -592,7 +1412,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -921,7 +1740,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -1418,7 +2236,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -1623,7 +2440,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -1727,7 +2543,6 @@
           "type": "paragraph",
           "text": "StevensOnline's M.Eng. in Applied Data Science program attracts domestic and international students with academic backgrounds and professional specializations in data analytics, data visualization, business intelligence, business analytics, information technology, information systems, computer science, and statistical mathematics. While some enroll in the online program because they want to transition into data science, others pursue this degree to further advance in analytics careers or learn how to leverage the vast quantities of data generated in their professional spheres.",
           "links": [
-            
             {
               "text": "attracts domestic and international students",
               "url": "/online-masters-engineering-applied-data-science/#admissions"
@@ -2019,7 +2834,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -2334,7 +3148,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -2438,7 +3251,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -2560,7 +3372,6 @@
           "level": 2,
           "text": "Prepare for Success With a Stevens MSCS"
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -2886,7 +3697,6 @@
           "links": [],
           "bold": []
         },
-      
         {
           "type": "paragraph",
           "text": "But I wasn’t interested in hitting pause on my career, especially during the pandemic. Most people who go into a coding bootcamp are looking to go from zero to 100 - to get an entry-level junior front-end developer position right away. If that’s the goal, then bootcamps are great. But if you want to understand computer science fundamentals, if you’re going to make a career out of it and you want to be serious about it, then I think you can’t compare the value of a CS degree to a boot camp career-wise.",
@@ -2990,7 +3800,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -3077,7 +3886,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 3,
@@ -3241,7 +4049,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "One of the benefits that sets Stevens apart from other programs is the online aspect of our program. We are flexible so you don’t have to make a choice between higher education and staying at your job. Removing the requirement to be on-campus allows the best and brightest from anywhere in the country to enroll.",
@@ -3355,7 +4162,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "In the beginning, it was a little difficult because I really had to study. It’s not an easy computer science master’s program that lets you relax and take your time. It’s up to individual students to catch up to everybody else. You have to accept that you’re not going to be at the same level in terms of knowledge and skills as students who have taken four years of undergraduate computer science classes. But overall, it wasn’t bad because my classmates with computer science degrees were very helpful and encouraging.",
@@ -3447,7 +4253,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -3551,7 +4356,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "For others, their draw to computer science is more exciting. The thrills experienced on the job may not be the same as cliff diving, but there are many emotional rewards in creating something that people use around the world. Seeing a creation of your own come to life and perform as programmed is something that’s truly special.",
@@ -3618,9 +4422,7 @@
           "type": "paragraph",
           "text": "The certificates a person has can also have a positive impact on salaries. These programs offer the opportunity to stay current with trends. There are both vendor-specific trainings (Cisco, Microsoft) but also vendor-neutral certificates that apply to broader concepts, like software and programming languages. Specializations in high-demand areas like AI/ML, cybersecurity, and cloud computing are particularly valuable—for example, machine learning engineers average $119,000 per year and are projected to see a 26% employment increase.",
           "links": [
-            {
-              
-            }
+            {}
           ],
           "bold": []
         },
@@ -3628,9 +4430,7 @@
           "type": "paragraph",
           "text": "The last factor that can affect salary is education. Unlike boot camps, master's degrees go deeper and wider in the subjects that are taught, ultimately making it more beneficial. According to PayScale data for 2025, workers with a master's in computer science earn an average base salary of about $114,000, while colleagues with a bachelor's degree earn around $98,000—representing a ~17% earnings premium for master's-degree holders. When comparing advanced education to certificates, a master's is a stronger addition to your resume because the process of earning builds upon your bachelor degree to bolster your skillset in significant ways.",
           "links": [
-            {
-             
-            }
+            {}
           ],
           "bold": []
         },
@@ -3655,7 +4455,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "These courses establish a foundational understanding of the field and then build upon that. The first year focuses on programming, data structures, database management, web programming, mobile systems and machine learning. The second year follows up on those pillars with courses centered around algorithms, systems programming, operating systems, software development and human computer interaction.",
@@ -4117,7 +4916,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -4272,7 +5070,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "These are some of the key ways COVID-19 has affected the MBA and higher education admissions process, online learning and sparked innovation in the field. Another aspect of COVID-19 is the way applications have been impacted. While the effects were most noticeable at the beginning of the pandemic, there are still changes that have remained.",
@@ -5707,7 +6504,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "paragraph",
           "text": "The coursework in the best engineering management master’s degree programs equips students with a three-fold set of skills: leading-edge technical abilities, leadership skills and financial management skills. Technical skills, including proficiency in Python and software management, allow managers to contribute to projects meaningfully. Leadership skills help them inspire success and optimize efficiency.",
@@ -5943,7 +6739,6 @@
             "history of graduate success"
           ]
         },
-        
         {
           "type": "paragraph",
           "text": "Wherever you decide to apply for an engineering management degree, do your research. Any program that emphasizes technology management should also offer hands-on experiences with the latest technologies and plenty of resources to help you achieve your career goals. The 30-credit hour M.Eng.EM is a 100% online program, but that does not mean you will be studying management theory exclusively. Online students at Stevens “become comfortable working and collaborating in a virtual environment,” said Costas Chassapis, senior vice provost for graduate education. This focus on collaboration is essential in an increasingly remote workforce, so consider applying only to those programs that will give you opportunities to flex your team building and people management muscles.",
@@ -6457,7 +7252,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 3,
@@ -6624,7 +7418,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 3,
@@ -6736,7 +7529,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -6988,7 +7780,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -7096,7 +7887,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "paragraph",
           "text": "Programs that focus on both the technical and business aspects of engineering projects attract engineers who want to:",
@@ -7285,7 +8075,6 @@
           "links": [],
           "bold": []
         },
-      
         {
           "type": "paragraph",
           "text": "“Few other schools have anything like it,” said alumni Cecelia Kaido. “It checked all the boxes for me: online, part-time, easy credit transfer and it aligned with my interests… All of the students are professionals working full-time jobs. We’re all in the same boat, and it’s been enriching to talk to other people, learn about what they’re doing and see how that real-world experience enhances conversations during lectures.”",
@@ -7402,7 +8191,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -7584,7 +8372,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -7680,7 +8467,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -7862,7 +8648,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -7937,7 +8722,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -8140,7 +8924,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -8261,7 +9044,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 3,
@@ -8424,7 +9206,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 3,
@@ -8602,7 +9383,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -8831,7 +9611,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -8937,7 +9716,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -9267,7 +10045,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -9347,7 +10124,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -9538,7 +10314,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -9628,7 +10403,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -9847,7 +10621,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -9931,7 +10704,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -10195,7 +10967,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -10374,7 +11145,6 @@
             }
           ]
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -10525,7 +11295,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -10636,7 +11405,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "We have courses in leadership. We teach people to lead and manage projects, but also how to identify underlying engineering problems. Engineering can be complex, and, as a manager, you are in charge of the project, so you need to understand everything down to the details.",
@@ -10781,7 +11549,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "paragraph",
           "text": "You need someone to guide you. Find a mentor. That can be a formal education, which is something I would definitely recommend.",
@@ -10911,7 +11678,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -11003,7 +11769,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "On the other side of that coin, an MBA can give you the skills to become your own boss. Entrepreneurship is also one of the common career paths for MBA graduates, providing you control over what you do next and how it takes shape. This degree also helps in joining startups as they look to bring on talent rich candidates.",
@@ -11118,7 +11883,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -11298,7 +12062,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -11385,7 +12148,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "This common misconception in our mindset overlooks the diversity in various paths and achievements of business leaders who have contributed significantly to other industries beyond the sole confines of extraordinary financial success. Hence it is essential to keep in mind that financial success is not the only reason why a professional would choose to take up an MBA program.",
@@ -11537,7 +12299,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 4,
@@ -11670,7 +12431,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "paragraph",
           "text": "“I’ve been pleasantly surprised by how close I’ve gotten to my classmates. I didn’t realize that I would actually get to know these people beyond the classroom, but I have, and it’s been great.”",
@@ -11784,7 +12544,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "Don’t expect it to be easy, though. Computer science requires a very different way of thinking and it has unique pacing as well. There are lots of new things to get used to. Keep pressing forward. This program does a good job of making sure you have the resources you need to succeed. You won’t just be handed them; this is a graduate program, so a lot of the learning is you-driven. Part of what you learn here is that being a computer scientist requires a lot of digging, a lot of looking online to figure out what has been done before, what works and what doesn’t.",
@@ -11908,7 +12667,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "There are numerous well-defined career paths open to Master of Science in Computer Science graduates. “One of the greatest things about a computer science degree is that it allows you to work in whatever industry you desire,” Sam Gavis-Hughson, CEO and founder of Byte by Byte, told U.S. News & World Report. There are jobs for computer science professionals in every industry, from finance and manufacturing to healthcare and retail. MSCS graduates work in positions such as:",
@@ -12543,7 +13301,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "Stevens ranks #8 in the nation on U.S. News & World Report's lineup of the best graduate-level online computer information technology degree programs. The MSCS and M.Eng. in Applied Data Science faculty includes world-class computer science and data science experts who conduct cutting-edge, future-focused research in artificial intelligence, cybersecurity, Big Data and information science. The curricula in the MSCS and M.Eng. in Applied Data Science programs follow industry demand. And the online learning experience the Schaefer School of Engineering & Science offers is supportive and designed to foster career success.",
@@ -12687,7 +13444,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "Another nice thing is that online programs attract students from all over. The other students in my cohort are from different states, so I get to meet people I wouldn’t encounter if I was studying on campus.",
@@ -12838,7 +13594,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -13107,9 +13862,7 @@
         {
           "type": "paragraph",
           "text": "After reviewing the kinds of job transitions engineers typically undergo after earning an engineering management master’s, some prospective students still wonder if an M.Eng.EM is a better option than the traditional MBA. Consider the data. More of the world’s 100 top-performing CEOs have engineering degrees than have MBAs, which speaks to the value of technical knowledge in management. Additionally, many companies are willing to pay job candidates with both specialized engineering knowledge and advanced business expertise more than those with just one or the other, showcasing the significance of meeting engineering management requirements in the job market.Ultimately, what all engineering management graduates bring to the table are the leading-edge technical skills and knowledge they would not get in a purely business-focused program. These skills are a vital part of the engineering management requirements that make them stand out in the job market. What Charles V. Schaefer Jr. School of Engineering & Science M.Eng.EM graduates bring to the table are advanced technology management skills plus the weight of Stevens Institute of Technology’s reputation for nurturing decisive leaders who can solve complex organizational challenges in a technology-driven world.",
-          "links": [
-            
-          ],
+          "links": [],
           "bold": [
             "Director of Engineering",
             "Engineering Manager"
@@ -13189,7 +13942,6 @@
           "links": [],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -13377,7 +14129,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -13478,7 +14229,6 @@
             "2019 American Time Use Survey"
           ]
         },
-       
         {
           "type": "paragraph",
           "text": "Working from home isn’t easy, and not everyone has what it takes to succeed in distributed workplaces.",
@@ -14047,7 +14797,6 @@
             "Remote.co"
           ]
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -14177,7 +14926,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -14373,7 +15121,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -14748,7 +15495,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -15013,7 +15759,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -16035,7 +16780,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -16223,7 +16967,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -16298,7 +17041,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -16520,7 +17262,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -16606,7 +17347,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -16821,7 +17561,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -16951,7 +17690,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -17131,7 +17869,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -17609,7 +18346,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -17725,7 +18461,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -18060,7 +18795,6 @@
             "stakeholder demand and external pressure"
           ]
         },
-        
         {
           "type": "paragraph",
           "text": "While some engineering managers may feel strong-armed into adopting sustainable practices, they soon discover that their initial forays into planet- and people-driven SCM produce unexpected results. Sustainable supply chain management can, for example, reduce overhead and increase profitability when environmental improvements reduce resource usage and waste along the supply chain, lowering the cost of manufacturing processes. Organizations that commit to working with diverse, environmentally conscious vendors who use natural resources wisely may also have a competitive advantage - especially if their target demographic is Millennials. Research shows this group is willing to pay more for products produced and sold by companies that share their values.",
@@ -18231,7 +18965,6 @@
           "level": 2,
           "text": "HOW STEVENSONLINE’S M.ENG.EM CAN HELP ENGINEERS FOSTER SSCM"
         },
-        
         {
           "type": "paragraph",
           "text": "Taught by Stevens’ world-class educators and groundbreaking researchers, the Master of Engineering in Engineering Management with a focus on supply chain management is an interdisciplinary, cross-industry degree because it has to be. Engineering leaders need both a deep understanding of the technology involved in engineering projects and the management processes through which organizations utilize technology. Fostering sustainability in supply chains requires an amalgamation of management, operations and engineering competencies - all of which students hone in a flexible, online program that takes, on average, one and a half years to complete.",
@@ -18346,7 +19079,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "heading",
           "level": 2,
@@ -18554,7 +19286,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -19306,7 +20037,6 @@
           "level": 2,
           "text": "The Powerful Combination of Online MBA Coursework & Networking"
         },
-       
         {
           "type": "paragraph",
           "text": "Unlocking Skills that Transform Your GrowthOne of the other most powerful aspects of an MBA are the skills learned as part of the program. It’s often said “it’s a journey, not a destination.” When it comes to advanced degrees, that’s absolutely true. Our coursework teaches, develops and sharpens skills that elevate your  resume-and these problem solving benefits manifest on day one of class.",
@@ -19577,7 +20307,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "With the real life experience gained from an MBA program, a Personal Financial Manager can innovate and evolve their decision making skills. When it comes to money and wealth management, having risk-averse processes in place is a must-have.",
@@ -20039,7 +20768,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -20520,7 +21248,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -20609,12 +21336,9 @@
         {
           "type": "paragraph",
           "text": "Stevens has a very long history in online education, offering a unique advantage in delivering an exceptional engineering curriculum. Our faculty knows how to deliver material so that students can easily follow and understand it. Especially during the pandemic, many schools realized that online teaching is hard. It’s not just teaching the same thing on Zoom. You have to design the courses for online graduate programs from scratch. We have been doing it for a long time, which is part of what makes Stevens unique. We didn’t just start bringing graduate programs online during the pandemic.",
-          "links": [
-            
-          ],
+          "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "We also have faculty members in our program who work in healthcare systems, transportation, smart cities, energy systems, space systems, etc. They bring their industry expertise into the engineering management curricula. Our faculty knows the problems organizations face in the real world, and what we teach is more valuable and impactful for students.",
@@ -20713,7 +21437,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -20899,7 +21622,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -21071,7 +21793,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "list",
           "style": "unordered",
@@ -21157,7 +21878,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "Later, I moved into software development. I developed software for mobile systems and provisioning systems. At that point, I started to miss teaching - I am an educator. Friends told me there was a great opportunity at Stevens, so I joined. At this point, I’ve taught most of the courses in the program.",
@@ -21267,7 +21987,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "Students here learn the fundamentals as well as today’s hot areas, like how to develop cloud service and how to do application programming for distributed systems, not just client server-side applications. We cover data structure, algorithms, and the nuts and bolts of the machine. We cover computer organization and design to really understand how computers work, even how GPUs work. Students learn agile processes for software development. When they leave here and enter a work environment, they will be able to be productive. From the time they enter, they can join the teams and work on those processes, or become a web programmer or mobile systems applications programmer.",
@@ -21433,7 +22152,6 @@
           ],
           "bold": []
         },
-        
         {
           "type": "heading",
           "level": 2,
@@ -21675,7 +22393,6 @@
           ],
           "bold": []
         },
-       
         {
           "type": "list",
           "style": "unordered",
@@ -21761,7 +22478,6 @@
           "links": [],
           "bold": []
         },
-        
         {
           "type": "paragraph",
           "text": "With regard to business management, the online or in-person MBA program works to familiarize you with the responsibilities of jobs with more senior roles. The time to learn the ins and outs of these types of positions is before stepping into the role. Our coursework gives you that exposure.",
@@ -21891,7 +22607,6 @@
           "links": [],
           "bold": []
         },
-      
         {
           "type": "heading",
           "level": 3,
