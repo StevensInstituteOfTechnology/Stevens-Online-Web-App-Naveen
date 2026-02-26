@@ -65,8 +65,11 @@ export function StickyNav({
   const activeIndex = navItems.findIndex((item) => item.id === activeSection);
   const hasScrolledToFifthOrBeyond = activeIndex >= 4;
 
+  // ≤1024px (tablet/mobile): header sticks, position below it. >1024px (desktop): header scrolls away, stick at top
   return (
-    <div className={`sticky top-[65px] md:top-[87px] z-[9990] ${styles.container}`}>
+    <div
+      className={`sticky top-[65px] md:top-[87px] lg:top-0 z-[9990] ${styles.container}`}
+    >
       <div className="max-w-stevens-content-max mx-auto px-2 md:px-stevens-md lg:px-stevens-lg">
         {/* Responsive grid: 4 cols on mobile (3 tabs + More), 5 cols on desktop (4 tabs + More) */}
         <nav className="grid grid-cols-4 md:grid-cols-5 items-center">

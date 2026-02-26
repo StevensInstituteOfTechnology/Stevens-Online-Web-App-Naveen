@@ -230,7 +230,7 @@ const BlogCarousel = ({ items = [], maxItems = 5 }) => {
             >
               <article className="flex flex-col h-full">
                 {/* Image Container */}
-                <div className="aspect-[4/3] overflow-hidden rounded-sm mb-5">
+                <div className="aspect-[4/3] overflow-hidden mb-5">
                   <img
                     src={
                       blog.featured_image_url ||

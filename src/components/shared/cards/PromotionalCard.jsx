@@ -95,7 +95,7 @@ export function PromotionalCard({
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden rounded-sm shadow-xl bg-stevens-dark-gray"
+      className="relative w-full overflow-hidden shadow-xl bg-stevens-dark-gray"
     >
       {/* 1. Background Image Layer (fixed at bottom of container) */}
       <div className="absolute bottom-0 left-0 right-0 z-0">
