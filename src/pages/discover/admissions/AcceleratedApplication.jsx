@@ -22,6 +22,7 @@ import {
   buildCanonicalUrl,
 } from "@/utils";
 import { BOOKING_URLS } from "@/config/constants";
+import { FORM_IDS, FORM_CLASSES, SLATE_FORM_WRAPPER, buildSlateEmbedUrl } from "@/config/formIds";
 
 export default function AcceleratedApplicationPage() {
   // Get program code from URL or sessionStorage
@@ -79,8 +80,7 @@ export default function AcceleratedApplicationPage() {
 
     const script = document.createElement("script");
     script.id = "slate-form-script-accelerated";
-    script.src =
-      "https://gradadmissions.stevens.edu/register/?id=89080626-7bc4-4c48-9437-fd47479d7371&output=embed&div=form_89080626-7bc4-4c48-9437-fd47479d7371";
+    script.src = buildSlateEmbedUrl(FORM_IDS.ACCELERATED);
     script.async = true;
 
     // Append container to body, then script to container
@@ -92,7 +92,7 @@ export default function AcceleratedApplicationPage() {
     script.onload = () => {
       setTimeout(() => {
         const formContainer = document.getElementById(
-          "form_89080626-7bc4-4c48-9437-fd47479d7371"
+          FORM_IDS.ACCELERATED
         );
         if (formContainer) {
           const forms = formContainer.querySelectorAll("form");
@@ -423,7 +423,7 @@ export default function AcceleratedApplicationPage() {
                   <CardContent className="p-0">
                     <div className="relative bg-white">
                       <style jsx>{`
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 {
+                        .${FORM_CLASSES.ACCELERATED} {
                           max-width: 100% !important;
                           width: 100% !important;
                           overflow: hidden !important;
@@ -433,12 +433,12 @@ export default function AcceleratedApplicationPage() {
                           z-index: 1 !important;
                         }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 * {
+                        .${FORM_CLASSES.ACCELERATED} * {
                           max-width: 100% !important;
                           box-sizing: border-box !important;
                         }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+                        .${FORM_CLASSES.ACCELERATED} iframe {
                           width: 100% !important;
                           max-width: 100% !important;
                           border: none !important;
@@ -447,7 +447,7 @@ export default function AcceleratedApplicationPage() {
                           position: relative !important;
                         }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
+                        .${FORM_CLASSES.ACCELERATED} form {
                           width: 100% !important;
                           max-width: 100% !important;
                           padding: 1.5rem !important;
@@ -479,9 +479,9 @@ export default function AcceleratedApplicationPage() {
                         /* ===== BUTTON STYLING - START ===== */
 
                         /* Submit button styling - Stevens Red */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button[type="submit"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="submit"] {
                           background: #a32638 !important;
                           color: #ffffff !important;
@@ -499,9 +499,9 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Submit button hover */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button[type="submit"]:hover,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="submit"]:hover {
                           background: #8b1e2f !important;
                           transform: translateY(-2px) !important;
@@ -509,18 +509,18 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Submit button active */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button[type="submit"]:active,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="submit"]:active {
                           transform: translateY(0) !important;
                           box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
                         }
 
                         /* Secondary button styling */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button[type="button"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button:not([type="submit"]) {
                           background: #374151 !important;
                           color: #ffffff !important;
@@ -537,7 +537,7 @@ export default function AcceleratedApplicationPage() {
                           margin-right: 1rem !important;
                         }
 
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           button[type="button"]:hover {
                           background: #1f2937 !important;
                           transform: translateY(-2px) !important;
@@ -549,20 +549,20 @@ export default function AcceleratedApplicationPage() {
                         /* ===== FORM FIELD STYLING - WHITE BACKGROUND ===== */
 
                         /* Form field enhancements - White background for all states */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="text"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="email"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="tel"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="number"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="date"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="password"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
+                        .${FORM_CLASSES.ACCELERATED} select,
+                        .${FORM_CLASSES.ACCELERATED} textarea {
                           background-color: #ffffff !important;
                           border: 1px solid #d1d5db !important;
                           border-radius: 6px !important;
@@ -574,29 +574,29 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Ensure placeholder text is visible */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input::placeholder,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           textarea::placeholder {
                           color: #9ca3af !important;
                         }
 
                         /* Focus state - more specific selectors to override Slate styles */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} input:focus,
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="text"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="email"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="tel"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="number"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="date"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[type="password"]:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} select:focus,
+                        .${FORM_CLASSES.ACCELERATED}
                           textarea:focus {
                           outline: none !important;
                           background: #ffffff !important;
@@ -606,9 +606,9 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Focus-within for parent containers */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:focus-within,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           *:focus
                           input {
                           background: #ffffff !important;
@@ -616,15 +616,15 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Override any inline styles or class-based dark backgrounds - Nuclear option */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[class],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input[style],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} input,
+                        .${FORM_CLASSES.ACCELERATED} input[class],
+                        .${FORM_CLASSES.ACCELERATED} input[style],
+                        .${FORM_CLASSES.ACCELERATED}
                           .form-control,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} .form-input,
+                        .${FORM_CLASSES.ACCELERATED}
                           [class*="input"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           [class*="field"]
                           input {
                           background: #ffffff !important;
@@ -632,13 +632,13 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Target active/focus states with high specificity */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input:active,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 input.active,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} input:active,
+                        .${FORM_CLASSES.ACCELERATED} input.active,
+                        .${FORM_CLASSES.ACCELERATED}
                           input.focused,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input[aria-selected="true"],
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:not(:placeholder-shown) {
                           background: #ffffff !important;
                           background-color: #ffffff !important;
@@ -646,31 +646,31 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Slate form specific overrides */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           .slate-field
                           input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 .slate-input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED} .slate-input,
+                        .${FORM_CLASSES.ACCELERATED}
                           [data-slate]
                           input,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 form input {
+                        .${FORM_CLASSES.ACCELERATED} form input {
                           background: #ffffff !important;
                           background-color: #ffffff !important;
                         }
 
                         /* iframe inner content override attempt */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+                        .${FORM_CLASSES.ACCELERATED} iframe {
                           background: #ffffff !important;
                         }
 
                         /* Autofill override - keep white background */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:-webkit-autofill,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:-webkit-autofill:hover,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:-webkit-autofill:focus,
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371
+                        .${FORM_CLASSES.ACCELERATED}
                           input:-webkit-autofill:active {
                           -webkit-box-shadow: 0 0 0 30px white inset !important;
                           -webkit-text-fill-color: #1f2937 !important;
@@ -678,7 +678,7 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Select dropdown styling */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 select {
+                        .${FORM_CLASSES.ACCELERATED} select {
                           background-color: #ffffff !important;
                           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
                           background-position: right 0.5rem center !important;
@@ -691,7 +691,7 @@ export default function AcceleratedApplicationPage() {
                         }
 
                         /* Label styling */
-                        #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
+                        .${FORM_CLASSES.ACCELERATED} label {
                           font-weight: 500 !important;
                           color: #374151 !important;
                           font-size: 14px !important;
@@ -701,9 +701,12 @@ export default function AcceleratedApplicationPage() {
                       {/* Form Container */}
                       <div className="p-4 sm:p-6">
                         <div
-                          id="form_89080626-7bc4-4c48-9437-fd47479d7371"
-                          className="min-h-[600px] w-full"
+                          className={`${SLATE_FORM_WRAPPER} ${FORM_CLASSES.ACCELERATED}`}
                         >
+                          <div
+                            id={FORM_IDS.ACCELERATED}
+                            className="min-h-[600px] w-full"
+                          >
                           {/* Enhanced Loading State */}
                           <div className="flex flex-col items-center justify-center h-96 bg-gray-50 rounded-lg border border-gray-200">
                             <div className="relative">
@@ -718,6 +721,7 @@ export default function AcceleratedApplicationPage() {
                             <p className="text-sm text-gray-500 mt-2">
                               Please wait while we prepare your application
                             </p>
+                          </div>
                           </div>
                         </div>
                       </div>

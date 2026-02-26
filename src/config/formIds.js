@@ -14,6 +14,16 @@ export const FORM_IDS = {
   ACCELERATED: 'form_89080626-7bc4-4c48-9437-fd47479d7371'
 };
 
+/** Wrapper class names for styling - no hardcoded IDs in CSS */
+export const FORM_CLASSES = {
+  RFI: 'slate-form-rfi',
+  ASAP: 'slate-form-asap',
+  ACCELERATED: 'slate-form-accelerated',
+};
+
+/** Shared wrapper class applied to all Slate form containers */
+export const SLATE_FORM_WRAPPER = 'slate-form-wrapper';
+
 /**
  * Get all form IDs as an array
  */
@@ -32,5 +42,27 @@ export const getFormSelector = () => {
  */
 export const isValidFormId = (id) => {
   return Object.values(FORM_IDS).includes(id);
+};
+
+/**
+ * Get the Slate UUID from a form ID (strips "form_" prefix)
+ * @param {string} formId - Full form ID (e.g. "form_89080626-7bc4-4c48-9437-fd47479d7371")
+ * @returns {string} - UUID for Slate URL id param
+ */
+export const getSlateUuid = (formId) => {
+  return (formId || '').replace(/^form_/, '');
+};
+
+/**
+ * Build Slate embed URL for a form
+ * @param {string} formId - Full form ID from FORM_IDS (e.g. FORM_IDS.ACCELERATED)
+ * @param {URLSearchParams|object} [params] - Optional URL params to append
+ * @returns {string} - Full Slate register/embed URL
+ */
+export const buildSlateEmbedUrl = (formId, params = {}) => {
+  const uuid = getSlateUuid(formId);
+  const base = `https://gradadmissions.stevens.edu/register/?id=${uuid}&output=embed&div=${formId}`;
+  const search = new URLSearchParams(params).toString();
+  return search ? `${base}&${search}` : base;
 };
 

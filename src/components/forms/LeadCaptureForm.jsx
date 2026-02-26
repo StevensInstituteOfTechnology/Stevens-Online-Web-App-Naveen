@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { trackEvent } from "@/utils/analytics/vercelTracking";
 import { useProgramContext } from "@/contexts/analytics/ProgramContext";
-import { FORM_IDS } from "@/config/formIds";
+import { FORM_IDS, FORM_CLASSES, SLATE_FORM_WRAPPER } from "@/config/formIds";
 // Import centralized form styles (supports all form IDs)
 import "@/styles/form-overrides.css";
 
@@ -332,10 +332,10 @@ export default function LeadCaptureForm({
             }
           >
             <div
-              id={FORM_IDS.RFI}
+              className={`${SLATE_FORM_WRAPPER} ${FORM_CLASSES.RFI}`}
               data-theme={theme}
-              className="min-h-[320px] w-full"
             >
+              <div id={FORM_IDS.RFI} className="min-h-[320px] w-full">
               {/* Loading state */}
               <div className="flex items-center justify-center py-12">
                 <div className="text-center">
@@ -359,6 +359,7 @@ export default function LeadCaptureForm({
                     This may take a moment
                   </p>
                 </div>
+              </div>
               </div>
             </div>
 

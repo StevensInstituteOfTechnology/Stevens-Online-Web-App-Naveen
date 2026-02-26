@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BOOKING_URLS } from '@/config/constants';
+import { FORM_IDS, FORM_CLASSES, SLATE_FORM_WRAPPER, buildSlateEmbedUrl } from '@/config/formIds';
 
 /**
  * AcceleratedFormEmbed - Branded wrapper for Slate accelerated application form
@@ -25,10 +26,9 @@ export default function AcceleratedFormEmbed({
     script.async = true;
     
     // Build URL with parameters
-    const baseUrl = 'https://gradadmissions.stevens.edu/register/?id=89080626-7bc4-4c48-9437-fd47479d7371&output=embed&div=form_89080626-7bc4-4c48-9437-fd47479d7371';
-    const params = new URLSearchParams(urlParams);
-    
-    script.src = `${baseUrl}&${params.toString()}`;
+    const baseUrl = buildSlateEmbedUrl(FORM_IDS.ACCELERATED, urlParams);
+
+    script.src = baseUrl;
     
     const firstScript = document.getElementsByTagName('script')[0];
     firstScript.parentNode.insertBefore(script, firstScript);
@@ -37,7 +37,7 @@ export default function AcceleratedFormEmbed({
       const scriptElement = document.getElementById(scriptId);
       if (scriptElement) scriptElement.remove();
       
-      const formContainer = document.getElementById('form_89080626-7bc4-4c48-9437-fd47479d7371');
+      const formContainer = document.getElementById(FORM_IDS.ACCELERATED);
       if (formContainer) formContainer.innerHTML = '';
     };
   }, [JSON.stringify(urlParams)]);
@@ -60,7 +60,7 @@ export default function AcceleratedFormEmbed({
       {/* Form Content Area */}
       <div className="relative bg-white">
         <style jsx>{`
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 {
+          .${FORM_CLASSES.ACCELERATED} {
             max-width: 100% !important;
             width: 100% !important;
             overflow: hidden !important;
@@ -70,12 +70,12 @@ export default function AcceleratedFormEmbed({
             z-index: 1 !important;
           }
           
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 * {
+          .${FORM_CLASSES.ACCELERATED} * {
             max-width: 100% !important;
             box-sizing: border-box !important;
           }
           
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+          .${FORM_CLASSES.ACCELERATED} iframe {
             width: 100% !important;
             max-width: 100% !important;
             border: none !important;
@@ -84,7 +84,7 @@ export default function AcceleratedFormEmbed({
             position: relative !important;
           }
           
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 form {
+          .${FORM_CLASSES.ACCELERATED} form {
             width: 100% !important;
             max-width: 100% !important;
             padding: 1.5rem !important;
@@ -114,8 +114,8 @@ export default function AcceleratedFormEmbed({
           }
 
           /* Submit button styling - Stevens Red */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"] {
+          .${FORM_CLASSES.ACCELERATED} button[type="submit"],
+          .${FORM_CLASSES.ACCELERATED} input[type="submit"] {
             background: #a32638 !important;
             color: #ffffff !important;
             border: none !important;
@@ -131,22 +131,22 @@ export default function AcceleratedFormEmbed({
             margin-top: 1rem !important;
           }
           
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:hover,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:hover {
+          .${FORM_CLASSES.ACCELERATED} button[type="submit"]:hover,
+          .${FORM_CLASSES.ACCELERATED} input[type="submit"]:hover {
             background: #8b1e2f !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 6px 16px rgba(163, 38, 56, 0.35) !important;
           }
           
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="submit"]:active,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="submit"]:active {
+          .${FORM_CLASSES.ACCELERATED} button[type="submit"]:active,
+          .${FORM_CLASSES.ACCELERATED} input[type="submit"]:active {
             transform: translateY(0) !important;
             box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
           }
 
           /* Secondary button styling */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button:not([type="submit"]) {
+          .${FORM_CLASSES.ACCELERATED} button[type="button"],
+          .${FORM_CLASSES.ACCELERATED} button:not([type="submit"]) {
             background: #374151 !important;
             color: #ffffff !important;
             border: none !important;
@@ -162,21 +162,21 @@ export default function AcceleratedFormEmbed({
             margin-right: 1rem !important;
           }
 
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 button[type="button"]:hover {
+          .${FORM_CLASSES.ACCELERATED} button[type="button"]:hover {
             background: #1f2937 !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 6px 16px rgba(55, 65, 81, 0.35) !important;
           }
 
           /* Form field enhancements - White background for all states */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="text"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="email"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="tel"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="number"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="date"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="password"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 select,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea {
+          .${FORM_CLASSES.ACCELERATED} input[type="text"],
+          .${FORM_CLASSES.ACCELERATED} input[type="email"],
+          .${FORM_CLASSES.ACCELERATED} input[type="tel"],
+          .${FORM_CLASSES.ACCELERATED} input[type="number"],
+          .${FORM_CLASSES.ACCELERATED} input[type="date"],
+          .${FORM_CLASSES.ACCELERATED} input[type="password"],
+          .${FORM_CLASSES.ACCELERATED} select,
+          .${FORM_CLASSES.ACCELERATED} textarea {
             background-color: #ffffff !important;
             border: 1px solid #d1d5db !important;
             border-radius: 6px !important;
@@ -187,21 +187,21 @@ export default function AcceleratedFormEmbed({
           }
 
           /* Ensure placeholder text is visible */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input::placeholder,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea::placeholder {
+          .${FORM_CLASSES.ACCELERATED} input::placeholder,
+          .${FORM_CLASSES.ACCELERATED} textarea::placeholder {
             color: #9ca3af !important;
           }
 
           /* Focus state - more specific selectors to override Slate styles */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="text"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="email"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="tel"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="number"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="date"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[type="password"]:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 select:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 textarea:focus {
+          .${FORM_CLASSES.ACCELERATED} input:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="text"]:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="email"]:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="tel"]:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="number"]:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="date"]:focus,
+          .${FORM_CLASSES.ACCELERATED} input[type="password"]:focus,
+          .${FORM_CLASSES.ACCELERATED} select:focus,
+          .${FORM_CLASSES.ACCELERATED} textarea:focus {
             outline: none !important;
             background: #ffffff !important;
             background-color: #ffffff !important;
@@ -210,61 +210,61 @@ export default function AcceleratedFormEmbed({
           }
 
           /* Focus-within for parent containers */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:focus-within,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 *:focus input {
+          .${FORM_CLASSES.ACCELERATED} input:focus-within,
+          .${FORM_CLASSES.ACCELERATED} *:focus input {
             background: #ffffff !important;
             background-color: #ffffff !important;
           }
 
           /* Override any inline styles or class-based dark backgrounds - Nuclear option */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[class],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[style],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-control,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 .form-input,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="input"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 [class*="field"] input {
+          .${FORM_CLASSES.ACCELERATED} input,
+          .${FORM_CLASSES.ACCELERATED} input[class],
+          .${FORM_CLASSES.ACCELERATED} input[style],
+          .${FORM_CLASSES.ACCELERATED} .form-control,
+          .${FORM_CLASSES.ACCELERATED} .form-input,
+          .${FORM_CLASSES.ACCELERATED} [class*="input"],
+          .${FORM_CLASSES.ACCELERATED} [class*="field"] input {
             background: #ffffff !important;
             background-color: #ffffff !important;
           }
 
           /* Target active/focus states with high specificity */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:active,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input.active,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input.focused,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input[aria-selected="true"],
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:not(:placeholder-shown) {
+          .${FORM_CLASSES.ACCELERATED} input:active,
+          .${FORM_CLASSES.ACCELERATED} input.active,
+          .${FORM_CLASSES.ACCELERATED} input.focused,
+          .${FORM_CLASSES.ACCELERATED} input[aria-selected="true"],
+          .${FORM_CLASSES.ACCELERATED} input:not(:placeholder-shown) {
             background: #ffffff !important;
             background-color: #ffffff !important;
             color: #1f2937 !important;
           }
 
           /* Slate form specific overrides */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 .slate-field input,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 .slate-input,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 [data-slate] input,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 form input {
+          .${FORM_CLASSES.ACCELERATED} .slate-field input,
+          .${FORM_CLASSES.ACCELERATED} .slate-input,
+          .${FORM_CLASSES.ACCELERATED} [data-slate] input,
+          .${FORM_CLASSES.ACCELERATED} form input {
             background: #ffffff !important;
             background-color: #ffffff !important;
           }
 
           /* iframe inner content override attempt */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 iframe {
+          .${FORM_CLASSES.ACCELERATED} iframe {
             background: #ffffff !important;
           }
 
           /* Autofill override - keep white background */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:hover,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:focus,
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 input:-webkit-autofill:active {
+          .${FORM_CLASSES.ACCELERATED} input:-webkit-autofill,
+          .${FORM_CLASSES.ACCELERATED} input:-webkit-autofill:hover,
+          .${FORM_CLASSES.ACCELERATED} input:-webkit-autofill:focus,
+          .${FORM_CLASSES.ACCELERATED} input:-webkit-autofill:active {
             -webkit-box-shadow: 0 0 0 30px white inset !important;
             -webkit-text-fill-color: #1f2937 !important;
             background-color: #ffffff !important;
           }
 
           /* Select dropdown styling */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 select {
+          .${FORM_CLASSES.ACCELERATED} select {
             background-color: #ffffff !important;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
             background-position: right 0.5rem center !important;
@@ -277,7 +277,7 @@ export default function AcceleratedFormEmbed({
           }
 
           /* Label styling */
-          #form_89080626-7bc4-4c48-9437-fd47479d7371 label {
+          .${FORM_CLASSES.ACCELERATED} label {
             font-weight: 500 !important;
             color: #374151 !important;
             font-size: 14px !important;
@@ -288,9 +288,12 @@ export default function AcceleratedFormEmbed({
         {/* Form Container */}
         <div className="p-4 sm:p-6">
           <div
-            id="form_89080626-7bc4-4c48-9437-fd47479d7371"
-            className="min-h-[600px] w-full"
+            className={`${SLATE_FORM_WRAPPER} ${FORM_CLASSES.ACCELERATED}`}
           >
+            <div
+              id={FORM_IDS.ACCELERATED}
+              className="min-h-[600px] w-full"
+            >
             {/* Enhanced Loading State */}
             <div className="flex flex-col items-center justify-center h-96 bg-gray-50 rounded-lg border border-gray-200">
               <div className="relative">
@@ -301,6 +304,7 @@ export default function AcceleratedFormEmbed({
               </div>
               <p className="text-stevens-dark-gray font-semibold mt-6">Loading Application Form...</p>
               <p className="text-sm text-gray-500 mt-2">Please wait while we prepare your application</p>
+            </div>
             </div>
           </div>
         </div>

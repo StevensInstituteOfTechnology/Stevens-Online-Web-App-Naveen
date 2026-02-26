@@ -12,6 +12,7 @@ import {
   buildCanonicalUrl,
 } from "@/utils";
 import { BOOKING_URLS } from "@/config/constants";
+import { FORM_IDS, FORM_CLASSES, SLATE_FORM_WRAPPER, buildSlateEmbedUrl } from "@/config/formIds";
 
 export default function ASAPPage() {
   // Get program code from URL or sessionStorage
@@ -69,8 +70,7 @@ export default function ASAPPage() {
 
     const script = document.createElement("script");
     script.id = "slate-form-script";
-    script.src =
-      "https://gradadmissions.stevens.edu/register/?id=9268876a-a7c7-484d-a41e-7d0cb4c5613c&output=embed&div=form_9268876a-a7c7-484d-a41e-7d0cb4c5613c";
+    script.src = buildSlateEmbedUrl(FORM_IDS.ASAP);
     script.async = true;
 
     // Append container to body, then script to container
@@ -82,7 +82,7 @@ export default function ASAPPage() {
     script.onload = () => {
       setTimeout(() => {
         const formContainer = document.getElementById(
-          "form_9268876a-a7c7-484d-a41e-7d0cb4c5613c"
+          FORM_IDS.ASAP
         );
         if (formContainer) {
           const forms = formContainer.querySelectorAll("form");
@@ -186,7 +186,7 @@ export default function ASAPPage() {
                   <CardContent className="p-0">
                     <div className="relative bg-white">
                       <style jsx>{`
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c {
+                        .slate-form-asap {
                           max-width: 100% !important;
                           width: 100% !important;
                           overflow: hidden !important;
@@ -196,12 +196,12 @@ export default function ASAPPage() {
                           z-index: 1 !important;
                         }
 
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c * {
+                        .slate-form-asap * {
                           max-width: 100% !important;
                           box-sizing: border-box !important;
                         }
 
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c iframe {
+                        .slate-form-asap iframe {
                           width: 100% !important;
                           max-width: 100% !important;
                           border: none !important;
@@ -210,7 +210,7 @@ export default function ASAPPage() {
                           position: relative !important;
                         }
 
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c form {
+                        .slate-form-asap form {
                           width: 100% !important;
                           max-width: 100% !important;
                           padding: 1.5rem !important;
@@ -242,9 +242,9 @@ export default function ASAPPage() {
                         /* ===== BUTTON STYLING - START ===== */
 
                         /* Submit button styling - Stevens Red */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button[type="submit"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="submit"] {
                           background: #a32638 !important;
                           color: #ffffff !important;
@@ -262,9 +262,9 @@ export default function ASAPPage() {
                         }
 
                         /* Submit button hover */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button[type="submit"]:hover,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="submit"]:hover {
                           background: #8b1e2f !important;
                           transform: translateY(-2px) !important;
@@ -272,18 +272,18 @@ export default function ASAPPage() {
                         }
 
                         /* Submit button active */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button[type="submit"]:active,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="submit"]:active {
                           transform: translateY(0) !important;
                           box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
                         }
 
                         /* Secondary button styling */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button[type="button"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button:not([type="submit"]) {
                           background: #374151 !important;
                           color: #ffffff !important;
@@ -300,7 +300,7 @@ export default function ASAPPage() {
                           margin-right: 1rem !important;
                         }
 
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           button[type="button"]:hover {
                           background: #1f2937 !important;
                           transform: translateY(-2px) !important;
@@ -312,20 +312,20 @@ export default function ASAPPage() {
                         /* ===== FORM FIELD STYLING - WHITE BACKGROUND ===== */
 
                         /* Form field enhancements - White background for all states */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="text"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="email"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="tel"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="number"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="date"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="password"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c select,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c textarea {
+                        .slate-form-asap select,
+                        .slate-form-asap textarea {
                           background-color: #ffffff !important;
                           border: 1px solid #d1d5db !important;
                           border-radius: 6px !important;
@@ -337,29 +337,29 @@ export default function ASAPPage() {
                         }
 
                         /* Ensure placeholder text is visible */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input::placeholder,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           textarea::placeholder {
                           color: #9ca3af !important;
                         }
 
                         /* Focus state - more specific selectors to override Slate styles */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap input:focus,
+                        .slate-form-asap
                           input[type="text"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="email"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="tel"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="number"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="date"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[type="password"]:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c select:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap select:focus,
+                        .slate-form-asap
                           textarea:focus {
                           outline: none !important;
                           background: #ffffff !important;
@@ -369,15 +369,15 @@ export default function ASAPPage() {
                         }
 
                         /* Override any inline styles or class-based dark backgrounds */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input[class],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input[style],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap input,
+                        .slate-form-asap input[class],
+                        .slate-form-asap input[style],
+                        .slate-form-asap
                           .form-control,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c .form-input,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap .form-input,
+                        .slate-form-asap
                           [class*="input"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           [class*="field"]
                           input {
                           background: #ffffff !important;
@@ -385,13 +385,13 @@ export default function ASAPPage() {
                         }
 
                         /* Target active/focus states with high specificity */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input:active,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c input.active,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap input:active,
+                        .slate-form-asap input.active,
+                        .slate-form-asap
                           input.focused,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input[aria-selected="true"],
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input:not(:placeholder-shown) {
                           background: #ffffff !important;
                           background-color: #ffffff !important;
@@ -399,31 +399,31 @@ export default function ASAPPage() {
                         }
 
                         /* Slate form specific overrides */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           .slate-field
                           input,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c .slate-input,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap .slate-input,
+                        .slate-form-asap
                           [data-slate]
                           input,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c form input {
+                        .slate-form-asap form input {
                           background: #ffffff !important;
                           background-color: #ffffff !important;
                         }
 
                         /* iframe inner content override attempt */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c iframe {
+                        .slate-form-asap iframe {
                           background: #ffffff !important;
                         }
 
                         /* Autofill override - keep white background */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input:-webkit-autofill,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input:-webkit-autofill:hover,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input:-webkit-autofill:focus,
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c
+                        .slate-form-asap
                           input:-webkit-autofill:active {
                           -webkit-box-shadow: 0 0 0 30px white inset !important;
                           -webkit-text-fill-color: #1f2937 !important;
@@ -431,7 +431,7 @@ export default function ASAPPage() {
                         }
 
                         /* Select dropdown styling */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c select {
+                        .slate-form-asap select {
                           background-color: #ffffff !important;
                           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
                           background-position: right 0.5rem center !important;
@@ -444,7 +444,7 @@ export default function ASAPPage() {
                         }
 
                         /* Label styling */
-                        #form_9268876a-a7c7-484d-a41e-7d0cb4c5613c label {
+                        .slate-form-asap label {
                           font-weight: 500 !important;
                           color: #374151 !important;
                           font-size: 14px !important;
@@ -454,9 +454,12 @@ export default function ASAPPage() {
                       {/* Form Container */}
                       <div className="p-4 sm:p-6">
                         <div
-                          id="form_9268876a-a7c7-484d-a41e-7d0cb4c5613c"
-                          className="min-h-[600px] w-full"
+                          className={`${SLATE_FORM_WRAPPER} ${FORM_CLASSES.ASAP}`}
                         >
+                          <div
+                            id={FORM_IDS.ASAP}
+                            className="min-h-[600px] w-full"
+                          >
                           {/* Enhanced Loading State */}
                           <div className="flex flex-col items-center justify-center h-96 bg-gray-50 rounded-lg border border-gray-200">
                             <div className="relative">
@@ -471,6 +474,7 @@ export default function ASAPPage() {
                             <p className="text-sm text-gray-500 mt-2">
                               Please wait while we prepare your application
                             </p>
+                          </div>
                           </div>
                         </div>
                       </div>

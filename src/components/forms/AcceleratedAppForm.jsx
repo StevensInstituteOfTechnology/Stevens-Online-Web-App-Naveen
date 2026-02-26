@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { trackEvent } from '@/utils/analytics/vercelTracking';
-import { FORM_IDS } from '@/config/formIds';
+import { FORM_IDS, FORM_CLASSES, SLATE_FORM_WRAPPER } from '@/config/formIds';
 
 export default function AcceleratedAppForm({
   programCode = 'unknown',
@@ -12,7 +12,7 @@ export default function AcceleratedAppForm({
 }) {
   const formSubmittedRef = useRef(false);
   const formId = FORM_IDS.ACCELERATED;
-  const rawId = '89080626-7bc4-4c48-9437-fd47479d7371';
+  const rawId = formId.replace(/^form_/, '');
 
   useEffect(() => {
     // Only run on client side
@@ -134,7 +134,7 @@ export default function AcceleratedAppForm({
       <CardContent className="p-0">
         <div className="relative">
           <style jsx>{`
-            #${formId} {
+            .${FORM_CLASSES.ACCELERATED} {
               max-width: 100% !important;
               width: 100% !important;
               overflow: hidden !important;
@@ -144,12 +144,12 @@ export default function AcceleratedAppForm({
               z-index: 1 !important;
             }
             
-            #${formId} * {
+            .${FORM_CLASSES.ACCELERATED} * {
               max-width: 100% !important;
               box-sizing: border-box !important;
             }
             
-            #${formId} iframe {
+            .${FORM_CLASSES.ACCELERATED} iframe {
               width: 100% !important;
               max-width: 100% !important;
               border: none !important;
@@ -158,7 +158,7 @@ export default function AcceleratedAppForm({
               position: relative !important;
             }
             
-            #${formId} form {
+            .${FORM_CLASSES.ACCELERATED} form {
               width: 100% !important;
               max-width: 100% !important;
               padding: 1.5rem !important;
@@ -190,8 +190,8 @@ export default function AcceleratedAppForm({
             /* ===== BUTTON STYLING - START ===== */
             
             /* Submit button styling */
-            #${formId} button[type="submit"],
-            #${formId} input[type="submit"] {
+            .${FORM_CLASSES.ACCELERATED} button[type="submit"],
+            .${FORM_CLASSES.ACCELERATED} input[type="submit"] {
               background: #a32638 !important;
               color: #ffffff !important;
               border: none !important;
@@ -208,34 +208,34 @@ export default function AcceleratedAppForm({
             }
             
             /* Submit button hover */
-            #${formId} button[type="submit"]:hover,
-            #${formId} input[type="submit"]:hover {
+            .${FORM_CLASSES.ACCELERATED} button[type="submit"]:hover,
+            .${FORM_CLASSES.ACCELERATED} input[type="submit"]:hover {
               background: #8b1e2f !important;
               transform: translateY(-1px) !important;
               box-shadow: 0 4px 12px rgba(163, 38, 56, 0.3) !important;
             }
             
             /* Submit button active */
-            #${formId} button[type="submit"]:active,
-            #${formId} input[type="submit"]:active {
+            .${FORM_CLASSES.ACCELERATED} button[type="submit"]:active,
+            .${FORM_CLASSES.ACCELERATED} input[type="submit"]:active {
               transform: translateY(0) !important;
               box-shadow: 0 2px 4px rgba(163, 38, 56, 0.2) !important;
             }
 
             /* Button container - ensures buttons have proper spacing */
-            #${formId} .button-container,
-            #${formId} .form-actions,
-            #${formId} div[class*="button"],
-            #${formId} div:has(> button[type="submit"]) {
+            .${FORM_CLASSES.ACCELERATED} .button-container,
+            .${FORM_CLASSES.ACCELERATED} .form-actions,
+            .${FORM_CLASSES.ACCELERATED} div[class*="button"],
+            .${FORM_CLASSES.ACCELERATED} div:has(> button[type="submit"]) {
               display: flex !important;
               gap: 1rem !important;
               flex-wrap: wrap !important;
             }
 
             /* Back button styling to match submit button */
-            #${formId} button[type="button"],
-            #${formId} .back-button,
-            #${formId} button:not([type="submit"]) {
+            .${FORM_CLASSES.ACCELERATED} button[type="button"],
+            .${FORM_CLASSES.ACCELERATED} .back-button,
+            .${FORM_CLASSES.ACCELERATED} button:not([type="submit"]) {
               background: #6b7280 !important;
               color: #ffffff !important;
               border: none !important;
@@ -252,19 +252,19 @@ export default function AcceleratedAppForm({
             }
 
             /* Back button hover */
-            #${formId} button[type="button"]:hover,
-            #${formId} .back-button:hover {
+            .${FORM_CLASSES.ACCELERATED} button[type="button"]:hover,
+            .${FORM_CLASSES.ACCELERATED} .back-button:hover {
               background: #4b5563 !important;
               transform: translateY(-1px) !important;
               box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3) !important;
             }
 
             /* Ensure buttons are inline but with spacing */
-            #${formId} button {
+            .${FORM_CLASSES.ACCELERATED} button {
               margin-left: 0 !important;
             }
 
-            #${formId} button + button {
+            .${FORM_CLASSES.ACCELERATED} button + button {
               margin-left: 1rem !important;
             }
 
@@ -273,8 +273,8 @@ export default function AcceleratedAppForm({
             /* ===== TEST STYLING FOR "Personal Information" LABEL ===== */
             
             /* Target the "Personal Information" header label */
-            #${formId} .form_header .form_label,
-            #${formId} #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
+            .${FORM_CLASSES.ACCELERATED} .form_header .form_label,
+            .${FORM_CLASSES.ACCELERATED} #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21 .form_label {
               color: #a32638 !important; /* Stevens red color */
               font-size: 1.25rem !important; /* Larger font size */
               font-weight: 700 !important; /* Bold */
@@ -288,16 +288,16 @@ export default function AcceleratedAppForm({
             }
             
             /* Remove gray background from parent container */
-            #${formId} #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
-            #${formId} .form_header {
+            .${FORM_CLASSES.ACCELERATED} #form_question_6ab6d516-ee1e-4066-8c7f-4f4872aadb21,
+            .${FORM_CLASSES.ACCELERATED} .form_header {
               background: transparent !important;
               background-color: transparent !important;
             }
             
             /* Mobile responsive - Tablet */
             @media (max-width: 1024px) {
-              #${formId} button[type="submit"],
-              #${formId} input[type="submit"] {
+              .${FORM_CLASSES.ACCELERATED} button[type="submit"],
+              .${FORM_CLASSES.ACCELERATED} input[type="submit"] {
                 padding: 0.75rem 1.5rem !important;
                 font-size: 14px !important;
               }
@@ -305,20 +305,20 @@ export default function AcceleratedAppForm({
             
             /* Mobile responsive - Mobile */
             @media (max-width: 768px) {
-              #${formId} {
+              .${FORM_CLASSES.ACCELERATED} {
                 font-size: 13px !important;
               }
               
-              #${formId} input,
-              #${formId} select,
-              #${formId} textarea {
+              .${FORM_CLASSES.ACCELERATED} input,
+              .${FORM_CLASSES.ACCELERATED} select,
+              .${FORM_CLASSES.ACCELERATED} textarea {
                 width: 100% !important;
                 max-width: 100% !important;
                 font-size: 16px !important;
               }
 
-              #${formId} button[type="submit"],
-              #${formId} input[type="submit"] {
+              .${FORM_CLASSES.ACCELERATED} button[type="submit"],
+              .${FORM_CLASSES.ACCELERATED} input[type="submit"] {
                 padding: 0.75rem 1.25rem !important;
                 font-size: 14px !important;
               }
@@ -326,8 +326,8 @@ export default function AcceleratedAppForm({
             
             /* Mobile responsive - Small Mobile */
             @media (max-width: 480px) {
-              #${formId} button[type="submit"],
-              #${formId} input[type="submit"] {
+              .${FORM_CLASSES.ACCELERATED} button[type="submit"],
+              .${FORM_CLASSES.ACCELERATED} input[type="submit"] {
                 padding: 0.75rem 1rem !important;
                 font-size: 13px !important;
               }
@@ -335,14 +335,19 @@ export default function AcceleratedAppForm({
           `}</style>
           <div className="bg-stevens-light-gray text-stevens-dark-gray ">
             <div
-              id={formId}
-              className="min-h-[600px] w-full">
+              className={`${SLATE_FORM_WRAPPER} ${FORM_CLASSES.ACCELERATED}`}
+            >
+              <div
+                id={formId}
+                className="min-h-[600px] w-full"
+              >
               <div className="flex items-center justify-center h-96 border-2 border-dashed border-stevens-light-gray rounded-stevens-md bg-stevens-white">
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stevens-red mx-auto mb-stevens-md"></div>
                   <p className="text-stevens-dark-gray font-stevens-medium">Loading Application Form...</p>
                   <p className="text-stevens-xs text-stevens-light-gray0 mt-stevens-sm">This may take a moment</p>
                 </div>
+              </div>
               </div>
             </div>
           </div>
