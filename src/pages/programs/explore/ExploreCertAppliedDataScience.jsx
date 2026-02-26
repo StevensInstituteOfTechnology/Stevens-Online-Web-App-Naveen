@@ -1,7 +1,7 @@
 import React from "react";
 import { KEY_DATES_SPRING2 } from "@/config/constants";
-import { ExploreTemplate } from "../../components/explore-pages";
-import { TuitionCardsHero } from "../../components/program-pages/primitives";
+import { ExploreTemplate } from "@/components/explore-pages";
+import { TuitionCardsHero } from "@/components/program-pages/primitives";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";

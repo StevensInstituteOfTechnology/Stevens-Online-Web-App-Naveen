@@ -1,6 +1,6 @@
 /**
  * Shared program readiness / recommendation questions.
- * Used by ProgramReadinessAssessment and ComparePrograms questionnaire.
+ * Used by ProgramReadinessAssessment and AllProgram questionnaire.
  *
  * POINT LOGIC (0-3 per answer):
  * - 3 = Strong fit: program directly aligns with this answer

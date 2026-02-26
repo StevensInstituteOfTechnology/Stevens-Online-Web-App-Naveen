@@ -2,1009 +2,1069 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://online.stevens.edu/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/asap/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/accelerated-application/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/tuition-and-financial-aid/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/online-mba/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/online-masters-computer-science-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/online-masters-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/online-masters-engineering-applied-data-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/certificates/enterprise-ai/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/certificates/applied-data-science-foundations/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://online.stevens.edu/compare-our-programs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://online.stevens.edu/explore-programs/</loc>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/events/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/online-learning-experience/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/admissions/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/request-information/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/workforce-hub/</loc>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/professionaleducation/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/Certificates</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/TuitionOutcomes</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/online-mba/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/online-masters-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/online-masters-computer-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/online-masters-eng-applied-data-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/ai-masters-computer-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/certificates/enterprise-ai/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/explore/certificates/applied-data-science-foundations/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/employer-sponsorship/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/corporate-partners/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/corporate-students/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/page-not-found/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://online.stevens.edu/blog/talk-to-employer-about-tuition-assistance/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/blog/the-agentic-shift-reliable-ai-architecture/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/blog/building-self-healing-ai-orchestrator-reflexion-patterns/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/blog/hidden-economics-ai-agents-token-costs-latency/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://online.stevens.edu/blog/alkis-vazacopoulos-on-business-analytics-turning-data-into-decisions/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/artificial-intelligence-and-innovation-in-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/best-time-to-earn-your-masters-in-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/big-data-jobs-skills-acquired-in-a-master/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/budgeting-to-pay-for-your-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/building-computer-systems-for-the-future-reza-peyrovian/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/c-suite-executives-top-msds-grads-business/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/coding-bootcamp-competing-today-job-market/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/computer-science-ai-innovation-for-future/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/computer-science-degree-requirements/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/computer-science-salaries-outlook-for-2023/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/computer-science-skills-developing-world/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/covid-19s-impact-on-mba-admissions-process/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/data-science-careers-for-stem-professionals/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/data-science-masters-benefits/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/data-science-masters-for-ai-future/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/do-you-need-a-master-degree-for-data-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/engineering-management-degree-admission/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/engineering-management-vs-mba/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/engineering-manager-or-tech-lead-choosing-your-path/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/engineering-manager-salary-guide/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/engineering-technology-masters-program/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/explore-computer-science-salary-and-job-outlook-2024/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/computer-science-salary-outlook-2025/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/finding-success-in-engineering-leadership/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/from-engineering-manager-program/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/gain-technical-depth-with-a-computer-science-masters-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/highest-paying-computer-science-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/how-immersion-enhances-the-stevens-online-mba-experience/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/how-to-balance-a-full-time-job-and-an-online-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/how-to-strengthen-your-online-mba-application/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/integration-of-artificial-intelligence-in-business-strategy/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/managing-engineers-unique-skill-sets/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/mba-career-paths-new-pursuits/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/mba-equips-leaders-with-financial-and-managerial-accounting-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/mba-program-fits-entrepreneurship-journey/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-computer-science-degree-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-data-science-vs-computer-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-distance-learning-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-engineering-management-requirements/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-learning-experience-at-stevens-institute-of-technology/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/online-mscs-develops-skills-required-for-remote-computer-science-jobs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/origins-of-engineering-management-mem-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/outlook-for-data-science-occupations/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/prepare-for-remote-computer-science-jobs-with-an-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/real-life-data-science-masters-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/remote-computer-jobs-online-msds-grads/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/safer-and-more-secure-software-design/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/steven-mscs-focus-areas/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/stevens-asap-application/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/stevens-institute-master-of-computer-science-program-who-is-a-good-fit/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/stevens-master-of-science-in-data-science-hands-on-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/stevens-online-mba-employer-tuition-assistance/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/submit-a-stronger-msds-application-start-with-application-walkthrough/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/supply-chain-management-sustainability/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/tech-management-jobs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/the-data-science-bubble-essential-for-you/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/the-top-data-science-trends-today/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/the-true-benefits-for-online-mba-graduates/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/top-best-data-science-programs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/top-mba-jobs-for-2025-graduates/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/top-online-master-engineering-curriculum/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/why-an-mscs-is-better-than-moocs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/why-computer-science-is-important/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/why-top-online-mba-programs-emphasize-technical-foundation/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/with-an-online-mba-jobs-become-more-accessible/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/blog/your-data-science-resume/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://online.stevens.edu/topics/ai-emerging-technology/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://online.stevens.edu/topics/uncategorized/talk-to-employer-about-tuition-assistance/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/topics/uncategorized/the-agentic-shift-reliable-ai-architecture/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/topics/uncategorized/building-self-healing-ai-orchestrator-reflexion-patterns/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://online.stevens.edu/topics/uncategorized/hidden-economics-ai-agents-token-costs-latency/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/alkis-vazacopoulos-on-business-analytics-turning-data-into-decisions/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/artificial-intelligence-and-innovation-in-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/best-time-to-earn-your-masters-in-engineering-management/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/big-data-jobs-skills-acquired-in-a-master/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/budgeting-to-pay-for-your-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/building-computer-systems-for-the-future-reza-peyrovian/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/c-suite-executives-top-msds-grads-business/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/coding-bootcamp-competing-today-job-market/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/computer-science-ai-innovation-for-future/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/computer-science-degree-requirements/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/computer-science-salaries-outlook-for-2023/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/computer-science-skills-developing-world/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/covid-19s-impact-on-mba-admissions-process/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/data-science-careers-for-stem-professionals/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/data-science-masters-benefits/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/data-science-masters-for-ai-future/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/do-you-need-a-master-degree-for-data-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/engineering-management-degree-admission/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/engineering-management-vs-mba/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/engineering-manager-or-tech-lead-choosing-your-path/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/engineering-manager-salary-guide/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/engineering-technology-masters-program/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/explore-computer-science-salary-and-job-outlook-2024/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/computer-science-salary-outlook-2025/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/finding-success-in-engineering-leadership/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/from-engineering-manager-program/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/gain-technical-depth-with-a-computer-science-masters-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/highest-paying-computer-science-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/how-immersion-enhances-the-stevens-online-mba-experience/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/how-to-balance-a-full-time-job-and-an-online-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/how-to-strengthen-your-online-mba-application/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/integration-of-artificial-intelligence-in-business-strategy/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/managing-engineers-unique-skill-sets/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/mba-career-paths-new-pursuits/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/mba-equips-leaders-with-financial-and-managerial-accounting-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/mba-program-fits-entrepreneurship-journey/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/online-computer-science-degree-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/online-data-science-vs-computer-science/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/online-distance-learning-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/online-engineering-management-requirements/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/online-learning-experience-at-stevens-institute-of-technology/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/online-mscs-develops-skills-required-for-remote-computer-science-jobs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/origins-of-engineering-management-mem-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/outlook-for-data-science-occupations/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/prepare-for-remote-computer-science-jobs-with-an-mscs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/real-life-data-science-masters-degree/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/remote-computer-jobs-online-msds-grads/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/safer-and-more-secure-software-design/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/steven-mscs-focus-areas/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/stevens-asap-application/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/stevens-institute-master-of-computer-science-program-who-is-a-good-fit/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/stevens-master-of-science-in-data-science-hands-on-skills/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/stevens-online-mba-employer-tuition-assistance/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/submit-a-stronger-msds-application-start-with-application-walkthrough/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/supply-chain-management-sustainability/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/tech-management-jobs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/the-data-science-bubble-essential-for-you/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/the-top-data-science-trends-today/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/the-true-benefits-for-online-mba-graduates/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/top-best-data-science-programs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/top-mba-jobs-for-2025-graduates/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/engineering-essentials/top-online-master-engineering-curriculum/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/why-an-mscs-is-better-than-moocs/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/mastering-computer-science/why-computer-science-is-important/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/why-top-online-mba-programs-emphasize-technical-foundation/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/online-mba-success/with-an-online-mba-jobs-become-more-accessible/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://online.stevens.edu/topics/uncategorized/your-data-science-resume/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

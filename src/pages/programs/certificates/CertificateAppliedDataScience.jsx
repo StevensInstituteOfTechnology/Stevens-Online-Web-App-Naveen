@@ -1,4 +1,4 @@
-import { CertificateTemplate } from "../../components/program-pages/templates";
+import { CertificateTemplate } from "@/components/program-pages/templates";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";

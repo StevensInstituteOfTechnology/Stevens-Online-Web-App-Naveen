@@ -3,6 +3,7 @@ export { default as CorporateStudents } from "./CorporateStudents";
 export { default as AlumniPGC } from "./AlumniPGC";
 export { default as EmployerSponsorship } from "./EmployerSponsorship";
 export { default as WorkforceDevelopmentHub } from "./WorkforceDevelopmentHub";
+export { default as WorkforceHub } from "./WorkforceHub";
 export { default as SiemensPage } from "./SiemensPage";
 export { default as PSEGPage } from "./PSEGPage";
 export { default as PSEGEnterpriseAIPage } from "./PSEGEnterpriseAIPage";

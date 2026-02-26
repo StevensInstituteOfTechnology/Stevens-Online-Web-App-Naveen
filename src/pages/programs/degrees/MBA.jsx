@@ -1,4 +1,4 @@
-import { DegreeTemplate } from "../../components/program-pages/templates";
+import { DegreeTemplate } from "@/components/program-pages/templates";
 import { KEY_DATES_SUMMER } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";

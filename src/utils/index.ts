@@ -6,6 +6,14 @@ export function createPageUrl(pageName: string) {
     if (normalized === '' || normalized === '/' || normalized === 'home') {
         return '/';
     }
+    // If URL has a hash fragment, add trailing slash only to the path part (before #)
+    const hashIndex = normalized.indexOf('#');
+    if (hashIndex !== -1) {
+        const path = normalized.slice(0, hashIndex);
+        const hash = normalized.slice(hashIndex);
+        const pathWithSlash = path.endsWith('/') ? path : path + '/';
+        return '/' + pathWithSlash + hash;
+    }
     return '/' + (normalized.endsWith('/') ? normalized : normalized + '/');
 }
 // For SEO friendly URLs

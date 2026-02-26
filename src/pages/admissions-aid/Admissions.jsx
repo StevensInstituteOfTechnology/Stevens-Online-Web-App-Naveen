@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { ArrowRight, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
-import LeadCaptureForm from "../../../components/forms/LeadCaptureForm";
+import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import {

@@ -1,5 +1,5 @@
-import { DegreeTemplate } from "../../components/program-pages/templates";
-import { TuitionCardsHero } from "../../components/program-pages/primitives";
+import { DegreeTemplate } from "@/components/program-pages/templates";
+import { TuitionCardsHero } from "@/components/program-pages/primitives";
 import { Award } from "lucide-react";
 import { KEY_DATES_SPRING2, BOOKING_URLS } from "@/config/constants";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";

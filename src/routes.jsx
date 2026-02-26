@@ -3,13 +3,15 @@ import "@/data/blogs.json";
 
 // Page imports
 import Home from "@/pages/Home";
+import RequestInfo from "@/pages/RequestInfo";
+import TuitionOutcomes from "@/pages/TuitionOutcomes";
 import {
   ASAP,
   AcceleratedApplication,
   Admissions,
   Tuition,
-  TuitionOutcomes,
-  RequestInfo,
+} from "@/pages/admissions-aid";
+import {
   WorkforceHub,
   CorporatePartners,
   CorporateStudents,
@@ -19,8 +21,9 @@ import {
   SiemensPage,
   PSEGPage,
   PSEGEnterpriseAIPage,
-} from "@/pages/discover";
-import { MBA, MSCS, MEM, MEADS, ComparePrograms } from "@/pages/degrees";
+} from "@/pages/workforce-development";
+import { MBA, MSCS, MEM, MEADS } from "@/pages/programs/degrees";
+import AllProgram from "@/pages/programs/AllProgram";
 import {
   ExploreMBA,
   ExploreMEM,
@@ -29,12 +32,12 @@ import {
   ExploreMSAI,
   ExploreCertEnterpriseAI,
   ExploreCertAppliedDataScience,
-} from "@/pages/explore";
+} from "@/pages/programs/explore";
 import {
   CertificateEnterpriseAI,
   CertificateAppliedDataScience,
   Certificates,
-} from "@/pages/certificates";
+} from "@/pages/programs/certificates";
 import {
   Blog,
   AIEmergingTechnology,
@@ -43,7 +46,7 @@ import {
   OnlineMBASuccess,
   OtherPrograms,
 } from "@/pages/blog";
-import { OnlineExperience, Events, StudentOutcomes } from "@/pages/about";
+import { OnlineExperience, Events, StudentOutcomes } from "@/pages/why-stevens";
 import ProfessionalEducation from "@/pages/ProfessionalEducation";
 import NotFound from "@/pages/NotFound";
 
@@ -276,7 +279,7 @@ export const routes = [
   // Explore Programs (formerly Compare Programs)
   {
     path: "/explore-programs/",
-    element: <ComparePrograms />,
+    element: <AllProgram />,
   },
   {
     path: "/compare-our-programs/",

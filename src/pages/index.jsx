@@ -25,7 +25,7 @@ const PAGES = {
   ExploreMSAI: "ExploreMSAI",
   ExploreCertEnterpriseAI: "ExploreCertEnterpriseAI",
   ExploreCertAppliedDataScience: "ExploreCertAppliedDataScience",
-  ComparePrograms: "ComparePrograms",
+  AllProgram: "AllProgram",
   Events: "Events",
   Blog: "Blog",
   EngineeringEssentials: "EngineeringEssentials",

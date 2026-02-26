@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
 import ProgramFilterGrid from "@/components/admissions/ProgramFilterGrid";
-import ProgramReadinessAssessment from "../../components/assessment/ProgramReadinessAssessment";
+import ProgramReadinessAssessment from "@/components/assessment/ProgramReadinessAssessment";
 import { PROGRAMS_DATA } from "@/data/programsData";
 import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
@@ -18,7 +18,7 @@ import {
   buildCanonicalUrl,
 } from "@/utils";
 
-export default function ComparePrograms() {
+export default function AllProgram() {
   usePageTracking({
     pageType: "programs_hub",
     additionalData: {

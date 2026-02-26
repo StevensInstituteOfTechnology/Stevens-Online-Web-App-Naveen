@@ -1,5 +1,5 @@
 import { KEY_DATES_SUMMER } from "@/config/constants";
-import { ExploreTemplate } from "../../components/explore-pages";
+import { ExploreTemplate } from "@/components/explore-pages";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { ProgramContextProvider } from "@/contexts/analytics/ProgramContext";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
