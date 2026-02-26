@@ -6,6 +6,7 @@ import {
   Facebook,
   Twitter,
   Linkedin,
+  ArrowRight,
 } from "lucide-react";
 import { format } from "date-fns";
 import ReactMarkdown from "react-markdown";
@@ -14,6 +15,7 @@ import {
   getThumbnailImageProps,
 } from "@/utils/responsiveImage";
 import { BOOKING_URLS } from "@/config/constants";
+import { Button } from "@/components/ui/button";
 
 // Structured Content Renderer Component
 const StructuredContentRenderer = ({ content }) => {
@@ -77,6 +79,37 @@ const StructuredContentRenderer = ({ content }) => {
                   </li>
                 ))}
               </ListTag>
+            );
+
+          case "cta":
+            const ctaUrl =
+              item.button_url === "SCHEDULE_CALL"
+                ? BOOKING_URLS.SCHEDULE_CALL
+                : item.button_url;
+            return (
+              <div
+                key={index}
+                className="bg-stevens-gray-50  p-stevens-lg md:p-stevens-xl my-stevens-xl text-center"
+              >
+                <h3 className="font-stevens-display text-stevens-xl md:text-stevens-2xl text-stevens-red mb-stevens-sm">
+                  {item.heading}
+                </h3>
+                <p className="text-stevens-dark-gray text-stevens-lg mb-stevens-lg leading-relaxed max-w-2xl mx-auto">
+                  {item.text}
+                </p>
+                <Button
+                  variant="filled-red"
+                  size="lg"
+                  asChild
+                  className="text-stevens-white"
+                  
+                >
+                  <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                    {item.button_text}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
             );
 
           default:
