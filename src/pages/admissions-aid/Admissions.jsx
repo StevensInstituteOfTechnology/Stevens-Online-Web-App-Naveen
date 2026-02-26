@@ -162,7 +162,7 @@ export default function Admissions() {
                       trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
                     }
                   >
-                    <Button className="w-full bg-stevens-black hover:bg-stevens-gray text-white gap-2 uppercase tracking-wider font-semibold">
+                    <Button className="w-full bg-stevens-red hover:bg-stevens-gray text-white gap-2 uppercase tracking-wider font-semibold">
                       Schedule Your Consultation
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -294,7 +294,7 @@ export default function Admissions() {
                     href={createPageUrl("accelerated-application")}
                     className="block mt-6"
                   >
-                    <Button className="w-full bg-stevens-red hover:bg-red-700 text-white gap-2 h-12 text-lg font-bold tracking-wide">
+                    <Button className="w-full bg-stevens-red hover:bg-stevens-gray text-white gap-2 h-12 text-lg font-bold tracking-wide">
                       Apply Now
                       <ArrowRight className="w-5 h-5" />
                     </Button>
@@ -308,15 +308,22 @@ export default function Admissions() {
                   <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
                     Have Questions About the Application Process?
                   </h3>
-                  <Link to="/request-info/">
+                  <a
+                    href={BOOKING_URLS.SCHEDULE_CALL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackConversion(CONVERSION_LABELS.SCHEDULE_CALL)
+                    }
+                  >
                     <Button
                       variant="outline-dark"
                       className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white"
                     >
-                      Get In Touch
+                      Schedule a Call
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
