@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl, buildCanonicalUrl } from "@/utils";
 import { CONTACT_INFO, BOOKING_URLS } from "@/config/constants";
@@ -134,6 +134,33 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
   const [expandedSubCategory, setExpandedSubCategory] = useState(null);
   const [expandedMobileMenus, setExpandedMobileMenus] = useState([]); // For mobile accordion
 
+  const megaMenuHoverTimerRef = useRef(null);
+  const MEGA_MENU_HOVER_DELAY = 150;
+
+  const scheduleMegaMenuHover = (target) => {
+    if (megaMenuHoverTimerRef.current) {
+      clearTimeout(megaMenuHoverTimerRef.current);
+      megaMenuHoverTimerRef.current = null;
+    }
+    // Instant switch when opening from nothing or when re-hovering current item
+    if (megaMenuHoveredItem === null || megaMenuHoveredItem === target) {
+      setMegaMenuHoveredItem(target);
+      return;
+    }
+    // Delay when switching between items (prevents accidental switch when moving to submenu)
+    megaMenuHoverTimerRef.current = setTimeout(() => {
+      setMegaMenuHoveredItem(target);
+      megaMenuHoverTimerRef.current = null;
+    }, MEGA_MENU_HOVER_DELAY);
+  };
+
+  const cancelMegaMenuHover = () => {
+    if (megaMenuHoverTimerRef.current) {
+      clearTimeout(megaMenuHoverTimerRef.current);
+      megaMenuHoverTimerRef.current = null;
+    }
+  };
+
   // Toggle accordion item on mobile
   const toggleMobileAccordion = (menuName) => {
     setExpandedMobileMenus((prev) =>
@@ -142,6 +169,13 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
         : [...prev, menuName]
     );
   };
+
+  // Clear hover timer when mega menu closes
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      cancelMegaMenuHover();
+    }
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     // Only run on client side
@@ -419,8 +453,9 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                             key={link.name}
                             className="group"
                             onMouseEnter={() =>
-                              !isMobile && setMegaMenuHoveredItem(link.name)
+                              !isMobile && scheduleMegaMenuHover(link.name)
                             }
+                            onMouseLeave={() => !isMobile && cancelMegaMenuHover()}
                           >
                             {/* Menu Item Header - Link for categoryLink items, button otherwise */}
                             <div className="flex items-center justify-between">
@@ -628,8 +663,9 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                           className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                           onClick={() => setMobileMenuOpen(false)}
                           onMouseEnter={() =>
-                            !isMobile && setMegaMenuHoveredItem(null)
+                            !isMobile && scheduleMegaMenuHover(null)
                           }
+                          onMouseLeave={() => !isMobile && cancelMegaMenuHover()}
                         >
                           {link.name}
                         </a>
@@ -640,8 +676,9 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                           className="block text-stevens-xl md:text-stevens-2xl font-stevens-display text-stevens-light-gray hover:text-stevens-white transition-colors duration-200 py-stevens-sm md:py-0"
                           onClick={() => setMobileMenuOpen(false)}
                           onMouseEnter={() =>
-                            !isMobile && setMegaMenuHoveredItem(null)
+                            !isMobile && scheduleMegaMenuHover(null)
                           }
+                          onMouseLeave={() => !isMobile && cancelMegaMenuHover()}
                         >
                           {link.name}
                         </Link>
@@ -650,7 +687,10 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                   </div>
 
                   {/* Middle Column - Sub-links for hovered item (Desktop Only) */}
-                  <div className="hidden md:block space-y-stevens-md min-h-[200px]">
+                  <div
+                    className="hidden md:block space-y-stevens-md min-h-[200px]"
+                    onMouseEnter={cancelMegaMenuHover}
+                  >
                     {megaMenuHoveredItem &&
                       megaMenuLinks
                         .find((link) => link.name === megaMenuHoveredItem)
@@ -735,7 +775,10 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
                   </div>
 
                   {/* Right Column - CPE Information (Hidden on small mobile, visible on tablet+) */}
-                  <div className="hidden sm:block space-y-stevens-lg pt-stevens-lg md:pt-0 border-t border-stevens-gray md:border-t-0">
+                  <div
+                    className="hidden sm:block space-y-stevens-lg pt-stevens-lg md:pt-0 border-t border-stevens-gray md:border-t-0"
+                    onMouseEnter={() => !isMobile && cancelMegaMenuHover()}
+                  >
                     <div>
                       <h3 className="text-stevens-lg md:text-stevens-xl font-stevens-display text-stevens-white mb-stevens-md">
                         College of Professional Education
