@@ -104,13 +104,30 @@ const megaMenuLinks = [
   { name: "Insights", page: "blog/" },
 ];
 
+/** Program and certificate pages use StickyNav (section nav); header scrolls away so only StickyNav sticks */
+const PAGES_WITH_STICKY_SECTION_NAV = [
+  "/online-mba",
+  "/online-masters-computer-science-mscs",
+  "/online-masters-engineering-management",
+  "/online-masters-engineering-applied-data-science",
+  "/certificates/enterprise-ai",
+  "/certificates/applied-data-science-foundations",
+];
+
+function isPageWithStickySectionNav(pathname) {
+  const path = (pathname || "").toLowerCase().replace(/\/$/, "") || "/";
+  return PAGES_WITH_STICKY_SECTION_NAV.some(
+    (p) => path === p || path.startsWith(p + "/")
+  );
+}
+
 export default function Layout({ children, currentPageName: _currentPageName }) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const initialWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const [isMobile, setIsMobile] = useState(initialWidth < 768);
-  const [_isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(initialWidth <= 1024);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuHoveredItem, setMegaMenuHoveredItem] = useState(null);
   const [expandedSubCategory, setExpandedSubCategory] = useState(null);
@@ -259,6 +276,11 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
     location.pathname === "/home" ||
     location.pathname === "/home/";
 
+  // Program/cert pages: header scrolls away on desktop (>1024px) so only StickyNav sticks; on tablet/mobile (≤1024px) header stays sticky
+  const hasStickySectionNav = isPageWithStickySectionNav(location.pathname);
+  const headerScrollsAway =
+    hasStickySectionNav && !isTabletOrMobile; // Only on desktop
+
   // Navbar should be transparent without logo only on home page when not scrolled AND mega menu is closed
   const showTransparentNav = isHomePage && !isScrolled && !mobileMenuOpen;
 
@@ -266,13 +288,17 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
     <div className="flex flex-col min-h-screen font-sans text-stevens-dark-gray">
       {/* Main Navigation Bar
           - Home page: fixed (for transparent overlay effect on hero)
+          - Program/cert pages, desktop (>1024px): relative (scrolls away; only StickyNav sticks)
+          - Program/cert pages, tablet/mobile (≤1024px): sticky (more vertical space)
           - Other pages: sticky (content flows below naturally, no overlap)
       */}
       <header
         className={`group z-[9998] ${
           isHomePage
             ? "fixed top-0 left-0 right-0" // Fixed for home page
-            : "sticky top-0" // Sticky for other pages
+            : headerScrollsAway
+              ? "relative" // Scrolls away on desktop (only StickyNav sticks)
+              : "sticky top-0" // Sticky for other pages and tablet/mobile
         } ${
           showTransparentNav
             ? "bg-transparent"

@@ -95,7 +95,7 @@ export const OverviewSection = forwardRef(function OverviewSection(
 
           {/* Overview Image */}
           <div className="mt-10">
-            <div className="relative w-full aspect-video overflow-hidden rounded-sm shadow-md bg-gray-100">
+            <div className="relative w-full aspect-video overflow-hidden shadow-md bg-gray-100">
               <img
                 src={overview.image || "/assets/images/home/home-1.webp"}
                 alt={overview.imageAlt || "Student learning online"}
