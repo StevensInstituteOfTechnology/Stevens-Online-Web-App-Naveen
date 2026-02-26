@@ -534,7 +534,7 @@ const programData = {
         cardPosition: "right",
         description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
         footnote:
-          "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
+          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
         buttonText: "Apply Now",
         url: "/accelerated-application/?program=meads",
       },
@@ -669,7 +669,7 @@ const programData = {
     },
     {
       q: "What is the Accelerated Application?",
-      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your resume or LinkedIn profile. Official transcripts are due within one year of enrollment. Bachelor's degree is required.",
+      a: "The Accelerated Application is a streamlined process designed for busy professionals. You can apply without recommendation letters—just upload unofficial transcripts and your resume or LinkedIn profile. Official transcripts are due within 2 months of enrollment. Bachelor's degree is required.",
     },
     {
       q: "How long does it take to complete the program?",

@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ArrowRight, DollarSign } from "lucide-react";
+import { ArrowRight, DollarSign, X, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { BOOKING_URLS, KEY_DATES_SPRING2 } from "@/config/constants";
@@ -23,7 +23,6 @@ import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 import { DeadlinesSection } from "@/components/shared/sections/DeadlinesSection";
 import { VideoSection } from "@/components/shared/sections/VideoSection";
-import ApplicationOptionsCards from "@/components/admissions/ApplicationOptionsCards";
 
 export default function Admissions() {
   usePageTracking({
@@ -81,46 +80,11 @@ export default function Admissions() {
       "*Applicants who apply by the early submit deadline and are admitted may be eligible for a $250 deposit waiver. Applicants who receive education assistance from employers or other tuition discounts are not eligible. Other eligibility conditions may apply.",
   };
 
-  // Application options data for ApplicationOptionsCards component
-  const applicationOptionsData = {
-    title: "",
-    options: [
-      {
-        title: "Standard Application",
-        subtitle:
-          "Prestige and rigor. A comprehensive review for the dedicated scholar.",
-        theme: "dark",
-        image: "/assets/images/shared/stevens-campus.webp",
-        featured: false,
-        description: `<ul class="list-disc pl-5 space-y-2"><li>Bachelor's degree required</li><li>Two letters of recommendation</li><li>Statement of purpose</li><li>Academic transcripts</li><li>Résumé</li></ul>`,
-        buttonText: "Apply Now",
-        url: "https://gradadmissions.stevens.edu/apply/?pk=GRNP",
-      },
-      {
-        title: "Accelerated Application",
-        subtitle:
-          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
-        theme: "light",
-        image: "/assets/images/shared/asap-hero.webp",
-        featured: true,
-        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote:
-          "Official transcripts will be due within one year of enrollment. Stevens may request additional documentation if needed.",
-        buttonText: "Apply Now",
-        url: createPageUrl("accelerated-application"),
-      },
-    ],
-    consultation: {
-      title: "Wondering Which Application Is Right for You?",
-      buttonText: "Get In Touch",
-      url: createPageUrl("RequestInfo"),
-    },
-  };
 
   const faqs = [
     {
-      q: "What is the difference between the standard application and the Accelerated application?",
-      a: "The standard application requires prospective students to complete and submit a full application, including all necessary documents such as transcripts, recommendation letters and personal statements, before being considered for admission. The Accelerated application allows students to bypass parts of the traditional process and get started immediately with a streamlined application. Bachelor's degree is required for both applications.",
+      q: "What is the Accelerated Application?",
+      a: "The Accelerated Application is a streamlined admissions process designed for busy professionals. It removes traditional barriers like recommendation letters, personal essays, and standardized test scores, so you can apply in minutes and start your Stevens graduate journey faster. A bachelor's degree is required.",
     },
     {
       q: "How does the Accelerated application benefit prospective students?",
@@ -216,7 +180,7 @@ export default function Admissions() {
               <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
                 Admissions Overview
               </h2>
-              <div className="prose prose-lg max-w-none text-stevens-dark-gray leading-relaxed space-y-stevens-lg pb-stevens-2xl">
+              <div className="prose prose-lg max-w-4xl text-stevens-dark-gray leading-relaxed space-y-stevens-lg pb-stevens-2xl text-center mx-auto">
                 <p>
                   Stevens is technology driven. Our faculty are experts in their
                   fields and experienced in industry. We deliver that expertise
@@ -225,23 +189,154 @@ export default function Admissions() {
                   DNA at Stevens.
                 </p>
                 <p>
-                  We offer multiple application options for students interested
-                  in our graduate programs, ensuring flexible entry points to
-                  match your needs and goals. Learn more below about application
-                  requirements for a multi-disciplinary, design-based, 100%
-                  online education from Stevens Institute of Technology.
+                  We've streamlined the path to your graduate degree. Our
+                  Accelerated Application is designed for busy professionals -
+                  skip the traditional hurdles and start your Stevens journey in
+                  minutes.
                 </p>
               </div>
 
-              <ApplicationOptionsCards {...applicationOptionsData} />
+              {/* Comparison: Traditional vs Stevens Accelerated */}
+              <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                {/* Traditional Application Card */}
+                <div className="bg-gray-100 border border-gray-200 rounded-lg p-8 lg:p-10 relative">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gray-300 rounded-t-lg" />
+                  <p className="text-stevens-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                    At most schools
+                  </p>
+                  <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-medium text-gray-400 mb-6">
+                    Traditional Graduate Application
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      "2-3 letters of recommendation",
+                      "Statement of purpose / personal essay",
+                      "GRE or GMAT scores",
+                      "Official transcripts",
+                      "Résumé or CV",
+                      "Application fee",
+                      "Weeks-long review process",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <X className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-gray-400 text-stevens-base">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Stevens Accelerated Application Card */}
+                <div className="bg-white border-2 border-stevens-red/20 rounded-lg p-8 lg:p-10 shadow-xl relative">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-lg" />
+                  <p className="text-stevens-xs font-semibold uppercase tracking-widest text-stevens-red mb-2">
+                    At Stevens
+                  </p>
+                  <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-medium text-stevens-dark-gray mb-6">
+                    Accelerated Application
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      {
+                        text: "No recommendation letters required",
+                        highlight: true,
+                      },
+                      {
+                        text: "No essays or personal statements",
+                        highlight: true,
+                      },
+                      {
+                        text: "No GRE or GMAT required",
+                        highlight: true,
+                      },
+                      {
+                        text: "Upload a copy of your transcripts",
+                        highlight: false,
+                      },
+                      {
+                        text: "Upload your résumé or link your LinkedIn",
+                        highlight: false,
+                      },
+                      {
+                        text: "No application fee",
+                        highlight: true,
+                      },
+                      {
+                        text: "Apply in minutes, not weeks",
+                        highlight: true,
+                      },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div
+                          className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                            item.highlight
+                              ? "bg-stevens-red"
+                              : "bg-emerald-500"
+                          }`}
+                        >
+                          <Check className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-stevens-dark-gray text-stevens-base">
+                          {item.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-stevens-xs text-gray-500 mt-6 italic">
+                    Official transcripts will be due within 2 months of
+                    enrollment. A bachelor's degree is required. Stevens may
+                    request additional documentation if needed.
+                  </p>
+                  <a
+                    href={createPageUrl("accelerated-application")}
+                    className="block mt-6"
+                  >
+                    <Button className="w-full bg-stevens-red hover:bg-red-700 text-white gap-2 h-12 text-lg font-bold tracking-wide">
+                      Apply Now
+                      <ArrowRight className="w-5 h-5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              {/* Consultation CTA */}
+              <div className="mt-10 max-w-6xl mx-auto">
+                <div className="bg-gray-100/95 rounded-xl border border-gray-200 px-6 py-5 lg:px-10 lg:py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12">
+                  <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
+                    Have Questions About the Application Process?
+                  </h3>
+                  <Link to="/request-info/">
+                    <Button
+                      variant="outline-dark"
+                      className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white"
+                    >
+                      Get In Touch
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Application Options Cards */}
-
         {/* Key Dates & Deadlines - Using shared DeadlinesSection component */}
         <DeadlinesSection keyDates={deadlinesData} />
+
+        {/* Why Choose Stevens - Video Section */}
+        <VideoSection
+          title="WHY CHOOSE STEVENS"
+          heading="Discover what makes Stevens a leader in graduate education"
+          description="Learn from our community why Stevens Institute of Technology stands out for working professionals seeking to advance their careers through technology-driven, flexible online programs."
+          youtubeVideoId="RLPsCcxwAz0"
+          youtubeQuality="hd1080"
+          ctaText="Explore our programs"
+          ctaLink={createPageUrl("explore-programs/") + "#explore-programs"}
+          showCTA={true}
+        />
 
         {/* Financial Aid Section */}
         <div className="py-stevens-section-sm lg:py-stevens-section bg-white">
@@ -291,17 +386,7 @@ export default function Admissions() {
           </div>
         </div>
 
-        {/* Why Choose Stevens - Video Section */}
-        <VideoSection
-          title="WHY CHOOSE STEVENS"
-          heading="Discover what makes Stevens a leader in graduate education"
-          description="Learn from our community why Stevens Institute of Technology stands out for working professionals seeking to advance their careers through technology-driven, flexible online programs."
-          youtubeVideoId="RLPsCcxwAz0"
-          youtubeQuality="hd1080"
-          ctaText="Explore our programs"
-          ctaLink={createPageUrl("explore-programs/") + "#explore-programs"}
-          showCTA={true}
-        />
+        
 
         {/* Admissions FAQ */}
         <div className="py-stevens-section-sm lg:py-stevens-section bg-stevens-white">
