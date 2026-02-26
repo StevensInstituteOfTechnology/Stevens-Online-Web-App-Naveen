@@ -53,11 +53,11 @@ const programData = {
     ],
 
     termStartDate: `${KEY_DATES_SUMMER.TERM.nameUppercase}: ${KEY_DATES_SUMMER.START_OF_CLASSES.date}`,
-    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>2 Immersions in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`,
+    details: `<ul><li>36–45 Credit Hours</li><li>12–15 Courses</li><li>7 Concentrations</li><li>100% Online</li><li>Optional On-Campus Experiences in the NYC Region</li><li>2.5–3 Year Completion Time*</li></ul><p class="text-xs mt-2">*Total time to complete the program may vary based on the number of credits taken each semester.</p>`,
   },
   overview: {
     title: "MBA Program Overview",
-    description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. With two on-site immersions near New York City, you'll also benefit from strong industry connections and a thriving network of alumni working across tech, finance, healthcare and more.</p>`,
+    description: `<p class="mb-4">The Online MBA at Stevens empowers ambitious professionals to lead in data-driven, technology-centric industries. Whether you're advancing within your organization or pivoting into a new field, our 100% online, part-time format allows you to learn on your schedule, without putting your career on hold.</p><p>Offering a unique edge in today's digital economy, the best MBA for technology in the NYC region provides practical expertise in analytics, strategy, leadership and emerging technologies - taught by faculty who are active in research and industry. You'll also have opportunities for optional on-campus immersive experiences near New York City, where you can build industry connections and expand your professional network.</p>`,
     keySkills: [
       "Marketing",
       "Financial Management",
@@ -206,7 +206,7 @@ const programData = {
   whyStevens: {
     variant: "splitWithVideo",
     title: "Why Choose an Online MBA from Stevens?",
-    description: `<p>The Stevens Online MBA delivers high-impact skills that employers seek across industries, especially in tech-forward roles. Our program combines rigorous academic coursework with real-world applications.</p><p>Develop leadership capabilities, analytical thinking, and collaborative skills that drive innovation. Choose from multiple concentrations and participate in on-campus immersions to enhance your learning experience.</p><p>Join a community of ambitious professionals who are transforming their careers with technology-focused business education.</p>`,
+    description: `<p>The Stevens Online MBA delivers high-impact skills that employers seek across industries, especially in tech-forward roles. Our program combines rigorous academic coursework with real-world applications.</p><p>Develop leadership capabilities, analytical thinking, and collaborative skills that drive innovation. Choose from multiple concentrations and explore optional on-campus immersive experiences to enhance your learning experience.</p><p>Join a community of ambitious professionals who are transforming their careers with technology-focused business education.</p>`,
     video: {
       src: "/assets/videos/Stevens Online MBA - 2.mp4",
       poster: "/assets/videos/video-cover-2.avif",
@@ -217,7 +217,7 @@ const programData = {
   },
   curriculum: {
     description:
-      "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you'll participate in two on-campus immersions where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
+      "The Stevens Online MBA is designed to give you breadth and depth in business and technology. You'll start with foundational courses that build core skills in strategy, finance, marketing and data analytics - equipping you with a strong, tech-infused base for leadership. Then, you'll customize your learning through concentrations and elective courses aligned with your career goals, whether you're focused on business intelligence, finance or project management. Along the way, you can participate in optional on-campus immersive experiences where you'll collaborate in person with faculty, peers (on-campus MBA students), industry leaders and business executives. The Stevens Online MBA is a part-time program designed for full-time working professionals, offering flexible online coursework along with access to resources and support to help you thrive academically, stay connected to the university community and benefit from learning opportunities beyond the classroom.",
     courseTabs: {
       foundations: {
         title: "Foundational Courses",
@@ -603,16 +603,16 @@ const programData = {
             </div>`,
       },
       immersions: {
-        title: "Immersion",
+        title: "On-Campus Experiences",
         content: `
-          <h4 class="course-section-header">IMMERSION</h4>
+          <h4 class="course-section-header">ON-CAMPUS EXPERIENCES</h4>
           
           <p class="text-stevens-base text-stevens-gray-700 leading-relaxed mb-stevens-lg">
-            One of the most invaluable components of the Online MBA program at Stevens is that it provides the opportunity to participate in two in-person industry immersions. These immersive learning experiences take place over two long weekends and occur on the Stevens Institute of Technology campus, just across the Hudson River from New York City.
+            The Online MBA program at Stevens offers opportunities to participate in optional on-campus immersive experiences in the New York City region. These in-person sessions are designed to complement online learning through real-world collaboration and industry engagement.
           </p>
           
           <p class="text-stevens-base text-stevens-gray-700 leading-relaxed mb-stevens-lg">
-            The Online MBA immersions complement online learning by furthering students' connections and knowledge in real-world settings.
+            Participation is optional, and specific offerings and schedules may vary by term.
           </p>
           
           <h5 class="font-stevens-bold text-stevens-lg text-stevens-gray-900 mb-stevens-md mt-stevens-xl">Benefits:</h5>
@@ -671,7 +671,7 @@ const programData = {
           
           <div class="bg-stevens-gray-50 border-l-4 border-stevens-primary p-stevens-lg rounded-stevens-sm mt-stevens-xl">
             <p class="text-stevens-sm text-stevens-gray-700 leading-relaxed">
-              Each immersion experience carries 1.5 credit hours and the related tuition. A total of 3 credit hours will count toward your degree upon completion of both immersions. Students are responsible for travel to the Hoboken area. Accommodations are included in the tuition cost.
+              Details such as format, timing, and any associated travel considerations are shared with students in advance of each on-campus experience.
             </p>
           </div>
         `,

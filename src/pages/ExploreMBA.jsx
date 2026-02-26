@@ -25,7 +25,7 @@ const ExploreMBA = () => {
     programCode: "mba",
     seo: {
       title: 'Online MBA | Stevens Institute of Technology',
-      description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, immersive NYC experience.',
+      description: 'Earn your 100% online MBA from Stevens Institute of Technology. Tech-driven curriculum, part-time for working professionals, with optional on-campus immersive experiences in the NYC region.',
       ogImage: '/assets/images/explore-mba/1-omba-hero-scaled.webp',
       url: '/explore/online-mba/'
     },
@@ -79,7 +79,7 @@ const ExploreMBA = () => {
     
     // Program Benefits
     programBenefitsTitle: "Program Benefits",
-    programBenefitsDescription: "In a global market increasingly reliant on technology, data and analytics, you need more than the traditional management toolkit. Learn to leverage business data to drive better decisions through the Master of Business Administration online program at Stevens Institute of Technology, which pairs the quality of our on-campus program with the flexibility of part-time study and remote coursework.<br/><br/>The Stevens Online MBA is an AACSB-accredited program that combines business knowledge with the technology and analytics necessary to excel in today's data-centric world. Our part-time online program offers tailored leadership development, individualized career services and two on-site immersions in the New York City region.",
+    programBenefitsDescription: "In a global market increasingly reliant on technology, data and analytics, you need more than the traditional management toolkit. Learn to leverage business data to drive better decisions through the Master of Business Administration online program at Stevens Institute of Technology, which pairs the quality of our on-campus program with the flexibility of part-time study and remote coursework.<br/><br/>The Stevens Online MBA is an AACSB-accredited program that combines business knowledge with the technology and analytics necessary to excel in today's data-centric world. Our part-time online program offers tailored leadership development, individualized career services and opportunities for optional on-campus immersive experiences and sessions in the New York City region.",
     programBenefitsImage: "/assets/images/explore-mba/2-explore-mba.webp",
     programBenefitsHighlights: [
       {
@@ -115,8 +115,8 @@ const ExploreMBA = () => {
         label: "Concentrations"
       },
       {
-        value: "2",
-        label: "Immersions"
+        value: "Optional",
+        label: "On-Campus Experiences"
       },
       {
         value: "100%",
@@ -170,11 +170,11 @@ const ExploreMBA = () => {
       },
       {
         question: "What is the program format?",
-        answer: "The Online MBA program offers 100% online courses and two in-person immersions in the NYC region."
+        answer: "The Online MBA program offers 100% online coursework, with optional on-campus immersive experiences and sessions in the NYC region."
       },
       {
-        question: "What are in-person immersions?",
-        answer: "Online MBA students are required to participate in two 1.5-credit immersions in the NYC region that will focus on a specific business area. These invaluable, weekend-long learning experiences provide a space for you to engage with faculty, peers and candidates from other Stevens business programs and learn directly from industry leaders and business executives."
+        question: "What are on-campus immersive experiences?",
+        answer: "Online MBA students may choose to participate in optional on-campus immersive experiences and sessions in the NYC region. These opportunities support in-person engagement with faculty, peers and candidates from other Stevens business programs, while providing direct access to industry leaders and business executives. Specific offerings and schedules may vary by term."
       },
       {
         question: "How long is the program?",
