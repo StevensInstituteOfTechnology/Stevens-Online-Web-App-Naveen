@@ -97,6 +97,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://online.stevens.edu/workforce-development/</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://online.stevens.edu/professionaleducation/</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
