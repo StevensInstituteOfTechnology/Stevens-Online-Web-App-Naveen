@@ -24,6 +24,7 @@ export const STATIC_ROUTES = [
   '/online-learning-experience/',
   '/admissions/',
   '/request-information/',
+  '/workforce-hub/',
   '/professionaleducation/', // Canonical: lowercase with trailing slash
   '/Certificates',
   '/TuitionOutcomes',

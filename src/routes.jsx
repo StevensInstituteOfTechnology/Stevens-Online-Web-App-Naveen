@@ -10,6 +10,7 @@ import {
   Tuition,
   TuitionOutcomes,
   RequestInfo,
+  WorkforceHub,
   CorporatePartners,
   CorporateStudents,
   AlumniPGC,
@@ -205,6 +206,16 @@ export const routes = [
   {
     path: "/requestinfo",
     element: <Navigate to="/request-information/" replace />,
+  },
+
+  // Workforce Hub (Discover)
+  {
+    path: "/workforce-hub/",
+    element: <WorkforceHub />,
+  },
+  {
+    path: "/workforce-hub",
+    element: <Navigate to="/workforce-hub/" replace />,
   },
 
   // MBA program

@@ -54,6 +54,7 @@ const workforceDevelopmentItems = [
   { name: "Corporate Partners", page: "corporate-partners/" },
   { name: "Corporate Students", page: "corporate-students/" },
   { name: "Alumni Workforce Development", page: "alumni-pgc/" },
+  { name: "Workforce Hub", page: "workforce-hub/" },
 ];
 
 const whyStevensItems = [
