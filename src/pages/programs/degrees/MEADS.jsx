@@ -598,31 +598,45 @@ const programData = {
       { value: "$24,000", label: "Total Program Cost" },
     ],
     description: `
-        <h3 class="font-stevens-headers font-bold text-stevens-xl mb-stevens-md">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
-        <p class="font-stevens-body mb-stevens-md">At $800 per credit ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
-        
-        <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-4 rounded-stevens-sm mb-4">
-          <p class="font-semibold text-stevens-dark-gray mb-2">💡 Strong Return on Investment</p>
-          <p class="text-stevens-sm">Data science professionals earn a median salary of $130,000+, with machine learning engineers earning even more. Your Stevens degree typically pays for itself within the first 1-2 years of graduation through increased earning potential.</p>
+      <div class="space-y-6">
+        <div class="text-center">
+          <h3 class="font-stevens-display text-2xl font-light text-stevens-dark-gray mb-3 tracking-tight">Exceptional Value for a Top-Tier AI & Data Science Degree</h3>
+          <p class="font-stevens-body text-stevens-dark-gray max-w-2xl mx-auto">At <strong>$800 per credit</strong> ($24,000 total for 30 credits), the M.Eng. in Applied Data Science represents outstanding value for a graduate engineering degree from a top-ranked institution.</p>
         </div>
-        
-        <div class="bg-stevens-light-gray border-l-4 border-stevens-red p-4 rounded-stevens-sm mb-4">
-          <p class="font-semibold text-stevens-dark-gray mb-2">💼 Financial Aid & Funding Options</p>
-          <p class="text-stevens-sm mb-3">Financial aid, grants, corporate discounts, and scholarships are available to help make your Stevens education more affordable. Many students receive funding support to reduce their out-of-pocket costs.</p>
-          <p class="text-stevens-sm">Apply by the <strong>priority deadline (${KEY_DATES_SPRING2.PRIORITY_SUBMIT.date})</strong> to maximize your funding opportunities.</p>
+
+        <div class="w-16 h-px bg-stevens-red mx-auto"></div>
+
+        <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <div class="border border-gray-200 p-5 text-left hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-8 h-8 flex items-center justify-center bg-stevens-red/10 text-stevens-red text-sm font-bold rounded-full shrink-0">$</span>
+              <p class="font-stevens-headers font-bold text-stevens-dark-gray text-base m-0">Strong Return on Investment</p>
+            </div>
+            <p class="text-stevens-sm text-stevens-dark-gray m-0 leading-relaxed">Data science professionals earn a median salary of <strong>$130,000+</strong>, with machine learning engineers earning even more. Your Stevens degree typically pays for itself within the first 1-2 years of graduation.</p>
+          </div>
+
+          <div class="border border-gray-200 p-5 text-left hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-8 h-8 flex items-center justify-center bg-stevens-red/10 text-stevens-red text-sm font-bold rounded-full shrink-0">%</span>
+              <p class="font-stevens-headers font-bold text-stevens-dark-gray text-base m-0">Financial Aid & Funding</p>
+            </div>
+            <p class="text-stevens-sm text-stevens-dark-gray m-0 mb-2 leading-relaxed">Financial aid, grants, corporate discounts, and scholarships are available to reduce your out-of-pocket costs.</p>
+            <p class="text-stevens-sm text-stevens-dark-gray m-0 leading-relaxed">Apply by the <strong>priority deadline (${KEY_DATES_SPRING2.PRIORITY_SUBMIT.date})</strong> to maximize funding opportunities.</p>
+          </div>
         </div>
-        
-        <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <a href="/request-information/" class="inline-block bg-stevens-red hover:bg-stevens-red-dark text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
+          <a href="/request-information/" class="inline-flex items-center justify-center font-stevens-body font-semibold tracking-wider bg-stevens-red text-white hover:bg-red-800 px-8 py-3 transition-all duration-200 text-center min-w-[200px]">
             Request Information
           </a>
-          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stevens-dark-gray hover:bg-stevens-dark-gray text-white font-semibold px-6 py-3 rounded-stevens-md transition-colors duration-stevens-normal text-center">
+          <a href="${BOOKING_URLS.SCHEDULE_CALL}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center font-stevens-body font-semibold tracking-wider border-2 border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white px-8 py-3 transition-all duration-200 text-center min-w-[200px]">
             Schedule a Call for Funding Details
           </a>
         </div>
-        
-        <p class="text-xs text-stevens-dark-gray mt-4">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
-      `,
+
+        <p class="text-[11px] text-gray-400 mt-6 pt-4 border-t border-gray-200 text-center m-0 italic">Tuition based on Spring & Summer 2026 rates. Tuition and fees are subject to change annually.</p>
+      </div>
+    `,
   },
   // ==================================================================
   events: {
