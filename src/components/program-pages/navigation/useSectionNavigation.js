@@ -151,12 +151,14 @@ export function useSectionNavigation({
         case "admissions":
           return (
             admissions &&
-            admissions.options &&
-            admissions.options.length > 0 &&
             !(
               admissions.variant === "combinedWithTuition" ||
               admissions.variant === "certificateWithDeadlines"
-            )
+            ) &&
+            ((admissions.options && admissions.options.length > 0) ||
+              (admissions.variant === "comparison" &&
+                admissions.traditional &&
+                admissions.accelerated))
           );
         case "tuition":
           return (

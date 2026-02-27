@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { FileText, ArrowRight } from 'lucide-react';
+import { FileText, ArrowRight, X, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
 import { Button } from '../../ui/button';
 import { Section } from '../primitives';
@@ -24,8 +24,15 @@ import { Section } from '../primitives';
  *    - Card positioned right by default (or left via cardPosition)
  *    - No consultation CTA bar
  *    - Used for MEADS and single-option pages
- * 
- * 4. Default (options layout):
+ *
+ * 4. "comparison":
+ *    - Two side-by-side panels: Traditional vs Accelerated Application
+ *    - Left: Traditional requirements with X icons
+ *    - Right: Stevens Accelerated with checkmarks, footnote, Apply Now button
+ *    - Optional intro text and consultation CTA
+ *    - Used for Admissions page and program pages (e.g., MBA)
+ *
+ * 5. Default (options layout):
  *    - Application options as cards (1-3 columns)
  *    - Optional alert message box
  *    - Optional consultation CTA
@@ -367,6 +374,121 @@ export const AdmissionsSection = forwardRef(function AdmissionsSection(
             </div>
           </div>
           </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Comparison layout - Traditional vs Accelerated Application (side-by-side panels)
+  // Used for Admissions page and program pages that want this comparison
+  if (admissions.variant === 'comparison' && admissions.traditional && admissions.accelerated) {
+    const { traditional, accelerated, intro, consultation } = admissions;
+
+    return (
+      <section
+        id="admissions"
+        ref={ref}
+        className="scroll-mt-20 relative bg-white py-16"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Title */}
+          <h2 className="font-stevens-display text-stevens-3xl md:text-stevens-4xl lg:text-stevens-5xl font-light uppercase tracking-wide text-stevens-dark-gray mb-stevens-xl text-center">
+            {admissions.title || 'Application'}
+          </h2>
+
+          {/* Intro Paragraph */}
+          {intro && (
+            <div className="prose prose-lg max-w-4xl text-stevens-dark-gray leading-relaxed space-y-stevens-lg pb-stevens-2xl text-center mx-auto">
+              <p>{intro}</p>
+            </div>
+          )}
+
+          {/* Comparison Panels */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {/* Traditional Application Card */}
+            <div className="bg-gray-100 border border-gray-200 rounded-lg p-8 lg:p-10 relative">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gray-300 rounded-t-lg" />
+              <p className="text-stevens-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                {traditional.label}
+              </p>
+              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-medium text-gray-400 mb-6">
+                {traditional.title}
+              </h3>
+              <ul className="space-y-4">
+                {traditional.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-gray-400 text-stevens-base">
+                      {typeof item === 'string' ? item : item.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Stevens Accelerated Application Card */}
+            <div className="bg-white border-2 border-stevens-red/20 rounded-lg p-8 lg:p-10 shadow-xl relative">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-stevens-red rounded-t-lg" />
+              <p className="text-stevens-xs font-semibold uppercase tracking-widest text-stevens-red mb-2">
+                {accelerated.label}
+              </p>
+              <h3 className="font-stevens-display text-stevens-2xl md:text-stevens-3xl font-medium text-stevens-dark-gray mb-6">
+                {accelerated.title}
+              </h3>
+              <ul className="space-y-4">
+                {accelerated.items.map((item, i) => {
+                  const { text, highlight } = typeof item === 'string' ? { text: item, highlight: true } : item;
+                  return (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                          highlight ? 'bg-stevens-red' : 'bg-emerald-500'
+                        }`}
+                      >
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-stevens-dark-gray text-stevens-base">{text}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+              {accelerated.footnote && (
+                <p className="text-stevens-xs text-gray-500 mt-6 italic">
+                  {accelerated.footnote}
+                </p>
+              )}
+              {accelerated.buttonText && accelerated.url && (
+                <a href={accelerated.url} className="block mt-6">
+                  <Button className="w-full bg-stevens-red hover:bg-stevens-dark-gray text-white gap-2 h-12 text-lg font-bold tracking-wide">
+                    {accelerated.buttonText}
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Consultation CTA */}
+          {consultation && (
+            <div className="mt-10 max-w-6xl mx-auto">
+              <div className="bg-gray-100/95 rounded-xl border border-gray-200 px-6 py-5 lg:px-10 lg:py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12">
+                <h3 className="text-lg lg:text-xl font-bold text-stevens-dark-gray text-center sm:text-left">
+                  {consultation.title}
+                </h3>
+                <a href={consultation.url} target={consultation.external ? '_blank' : undefined} rel={consultation.external ? 'noopener noreferrer' : undefined}>
+                  <Button
+                    variant="outline-dark"
+                    className="whitespace-nowrap px-8 bg-transparent border-stevens-dark-gray text-stevens-dark-gray hover:bg-stevens-dark-gray hover:text-white"
+                  >
+                    {consultation.buttonText}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     );

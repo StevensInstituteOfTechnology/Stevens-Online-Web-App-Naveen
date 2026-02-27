@@ -521,24 +521,46 @@ const programData = {
   },
   // ==================================================================
   admissions: {
-    variant: "singleImageCard",
+    variant: "comparison",
     title: "Application",
-    backgroundImage: "/assets/images/shared/asap-hero.webp",
-    options: [
-      {
-        title: "Accelerated Application",
-        subtitle:
-          "Fast-track your application with our new Accelerated App designed for busy professionals. The Accelerated App gets you started immediately:",
-        theme: "light",
-        featured: true,
-        cardPosition: "right",
-        description: `<ul class="list-disc pl-5 space-y-2"><li><strong>Recommendation Letters:</strong> Not Required</li><li><strong>Proof of Bachelor's Degree:</strong> Upload copy of transcripts</li><li><strong>Professional Background:</strong> Upload your résumé or link your LinkedIn profile</li></ul>`,
-        footnote:
-          "Official transcripts will be due within 2 months of enrollment. Stevens may request additional documentation if needed.",
-        buttonText: "Apply Now",
-        url: "/accelerated-application/?program=meads",
-      },
-    ],
+    intro:
+      "We've streamlined the path to your graduate degree. Our Accelerated Application is designed for busy professionals - skip the traditional hurdles and start your Stevens journey in minutes.",
+    traditional: {
+      label: "At most schools",
+      title: "Traditional Graduate Application",
+      items: [
+        "2-3 letters of recommendation",
+        "Statement of purpose / personal essay",
+        "GRE or GMAT scores",
+        "Official transcripts",
+        "Résumé or CV",
+        "Application fee",
+        "Weeks-long review process",
+      ],
+    },
+    accelerated: {
+      label: "At Stevens",
+      title: "Accelerated Application",
+      items: [
+        { text: "No recommendation letters required", highlight: true },
+        { text: "No essays or personal statements", highlight: true },
+        { text: "No GRE or GMAT required", highlight: true },
+        { text: "Upload a copy of your transcripts", highlight: false },
+        { text: "Upload your résumé or link your LinkedIn", highlight: false },
+        { text: "No application fee", highlight: true },
+        { text: "Apply in minutes, not weeks", highlight: true },
+      ],
+      footnote:
+        "Official transcripts will be due within 2 months of enrollment. A bachelor's degree is required. Stevens may request additional documentation if needed.",
+      buttonText: "Apply Now",
+      url: "/accelerated-application/?program=meads",
+    },
+    consultation: {
+      title: "Have Questions About the Application Process?",
+      buttonText: "Schedule a Call",
+      url: BOOKING_URLS.SCHEDULE_CALL,
+      external: true,
+    },
   },
   // ==================================================================
   keyDates: {
