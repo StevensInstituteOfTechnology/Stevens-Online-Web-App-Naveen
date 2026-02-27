@@ -436,7 +436,7 @@ export default function AllProgram() {
                 <tbody>
                   <tr className="border-t border-stevens-light-gray">
                     <td className="p-stevens-md">Online MBA</td>
-                    <td className="p-stevens-md">n/a</td>
+                    <td className="p-stevens-md">N/A</td>
                   </tr>
                   <tr className="border-t border-stevens-light-gray">
                     <td className="p-stevens-md">
@@ -446,7 +446,7 @@ export default function AllProgram() {
                   </tr>
                   <tr className="border-t border-stevens-light-gray">
                     <td className="p-stevens-md">Online MEM</td>
-                    <td className="p-stevens-md">n/a</td>
+                    <td className="p-stevens-md">N/A</td>
                   </tr>
                 </tbody>
               </table>
