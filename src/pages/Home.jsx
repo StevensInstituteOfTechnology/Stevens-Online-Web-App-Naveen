@@ -36,6 +36,13 @@ import { trackConversion, CONVERSION_LABELS } from "@/utils/gtmTracking";
 import { usePageTracking } from "@/hooks/analytics/usePageTracking";
 import { PageContextProvider } from "@/contexts/analytics/PageContext";
 
+// Stats section external links (update with your URLs)
+const STAT_LINKS = {
+  mem: "https://www.usnews.com/education/online-education/stevens-institute-of-technology-186867?edu-2294-variation-small-modal=true", // #7 Online Graduate Engineering Management - U.S. News 2026
+  usdla: "https://usdla.org/awards/2025-international-distance-learning-awards/", // 7x Winner 21st Century Award - USDLA
+  mba: "https://www.usnews.com/education/online-education/stevens-institute-of-technology-186867?edu-2294-variation-small-modal=true", // #16 Online MBA Business Analytics - U.S. News 2026
+};
+
 // Program showcase carousel data with real program information
 const programShowcaseData = [
   {
@@ -556,13 +563,16 @@ export default function Home() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3">
-              {/* Stat 1 */}
-              <motion.div
+              {/* Stat 1 - #7 MEM */}
+              <motion.a
+                href={STAT_LINKS.mem}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
+                className="group flex flex-col justify-between text-center py-12 lg:py-16 px-4 min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333] cursor-pointer transition-colors duration-200 hover:bg-white/5 relative"
               >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
@@ -579,15 +589,19 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. - U.S. News 2026
                 </p>
-              </motion.div>
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+              </motion.a>
 
-              {/* Stat 2 */}
-              <motion.div
+              {/* Stat 2 - 7x USDLA */}
+              <motion.a
+                href={STAT_LINKS.usdla}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333]"
+                className="group flex flex-col justify-between text-center py-12 lg:py-16 px-4 min-h-[280px] border-b md:border-b-0 md:border-r border-[#333333] cursor-pointer transition-colors duration-200 hover:bg-white/5 relative"
               >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
@@ -604,17 +618,19 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   USDLA Distance Learning
                 </p>
-              </motion.div>
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+              </motion.a>
 
-              {/* Stat 3 */}
-              
-
-              <motion.div
+              {/* Stat 3 - #16 MBA */}
+              <motion.a
+                href={STAT_LINKS.mba}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center py-12 lg:py-16 px-4 flex flex-col justify-between min-h-[280px] border-b md:border-b-0 border-[#333333]"
+                className="group flex flex-col justify-between text-center py-12 lg:py-16 px-4 min-h-[280px] border-b md:border-b-0 border-[#333333] cursor-pointer transition-colors duration-200 hover:bg-white/5 relative"
               >
                 <div>
                   <p className="font-stevens-display text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tight mb-6">
@@ -631,7 +647,8 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. - U.S. News 2026
                 </p>
-              </motion.div>
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+              </motion.a>
             </div>
           </div>
         </section>
