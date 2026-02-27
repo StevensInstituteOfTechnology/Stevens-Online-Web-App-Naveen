@@ -671,8 +671,8 @@ const programData = {
     quote:
       "The Online MBA has helped me gain a competitive edge because I go to school with so many different people who work in multiple industries, whether it's beauty, public health or government, and I think it has given me a sense of variety amongst the workforce and helped differentiate my network.",
     backgroundImage: "/assets/images/mba/mba-testimonial-background.webp",
-    bgPosition: "center 60%",
-    cardPosition: "right",
+    bgPosition: "center 50%",
+    cardPosition: "left",
   },
   careerOutcomes: {
     title: "Career Outcomes",

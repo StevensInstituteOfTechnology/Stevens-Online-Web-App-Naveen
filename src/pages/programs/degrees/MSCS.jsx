@@ -650,7 +650,7 @@ const programData = {
       "It’s a highly ranked school for a master’s in computer science, and that prestige has landed me my current job, before I finished my degree.",
     backgroundImage: "/assets/images/mscs/mscs-testimonial-background.webp",
     bgPosition: "center 60%", // Optional: adjust image position (default: "center 40%")
-    cardPosition: "right", // Optional: "left" or "right" (default: "right")
+    cardPosition: "left", // Optional: "left" or "right" (default: "right")
   },
   faculty: {
     description:

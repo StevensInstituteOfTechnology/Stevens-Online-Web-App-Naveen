@@ -27,7 +27,7 @@ export const StudentTestimonialSection = forwardRef(
     if (!studentTestimonial) return null;
 
     const cardPosition = studentTestimonial.cardPosition || "right";
-    const _isRight = cardPosition === "right";
+    const justifyClass = cardPosition === "right" ? "justify-end" : "justify-start";
     const backgroundImage =
       studentTestimonial.backgroundImage || DEFAULT_BACKGROUND;
 
@@ -108,7 +108,7 @@ export const StudentTestimonialSection = forwardRef(
           />
 
           {/* Content Container */}
-          <div className="relative z-10 max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl h-full flex items-center">
+          <div className={`relative z-10 max-w-7xl mx-auto px-stevens-md lg:px-stevens-xl h-full flex items-center ${justifyClass}`}>
             {/* Testimonial Card */}
             <div
               className={`

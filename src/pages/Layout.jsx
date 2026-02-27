@@ -198,7 +198,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
 
     const handleScrollNow = () => {
       const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 200);
+      setIsScrolled(scrollY > 80);
       setShowBackToTop(scrollY > 300);
     };
 
@@ -317,7 +317,7 @@ export default function Layout({ children, currentPageName: _currentPageName }) 
     hasStickySectionNav && !isTabletOrMobile; // Only on desktop
 
   // Navbar should be transparent without logo only on home page when not scrolled AND mega menu is closed
-  const showTransparentNav = isHomePage && !isScrolled && !mobileMenuOpen;
+  const showTransparentNav = isHomePage && !isScrolled && !mobileMenuOpen && !isMobile;
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-stevens-dark-gray">
