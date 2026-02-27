@@ -8,6 +8,7 @@ import {
   SkipBack,
   SkipForward,
 } from "lucide-react";
+import { getContentImageProps } from "@/utils/responsiveImage";
 
 const VideoPlayer = ({
   src,
@@ -225,6 +226,18 @@ const VideoPlayer = ({
         <track kind="captions" src="" srcLang="en" label="English" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Responsive poster overlay - replaces native poster for srcset support, hidden when playing */}
+      {poster && !isPlaying && (
+        <div className="absolute inset-0 z-[1]">
+          <img
+            {...getContentImageProps(poster, "800px")}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          />
+        </div>
+      )}
 
       {/* Video Overlay */}
       <div className="absolute inset-0 bg-black/20 flex items-center justify-center">

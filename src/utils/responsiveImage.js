@@ -23,12 +23,15 @@ const IMAGE_WIDTH_CONFIG = {
     '/request-info/request-info-hero': [400, 640, 800, 1024],
     '/alumni-pgc/alumni-pgc-hero': [400, 640, 800, 1024],
   },
-  // Content images with limited variants (400w, 640w only)
+  // Content images with limited variants
   content: {
     '/explore-mem/': [400, 640],
     '/explore-mscs/': [400, 640],
     '/shared/mem-program-card': [400, 640],
     '/shared/mscs-program-card': [400, 640],
+    // Overview images - mba only has 400w; meads has 400w, 640w
+    '/mba/mba-overview': [400],
+    '/meads/meads-overview': [400, 640],
   }
 };
 

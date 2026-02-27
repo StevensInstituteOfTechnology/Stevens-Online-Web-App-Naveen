@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { getContentImageProps } from "@/utils/responsiveImage";
 
 // Generic placeholder images for carousel slides
 const PLACEHOLDER_IMAGES = [
@@ -119,6 +120,12 @@ export const SkillCarousel = ({ modules }) => {
     return PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length];
   };
 
+  // Get responsive image props for a slide (module image or placeholder)
+  const getSlideImageProps = (index) => {
+    const imagePath = getSlideImage(index);
+    return getContentImageProps(imagePath, "600px");
+  };
+
   return (
     <div className="relative max-w-6xl mx-auto">
       {/* Main Carousel Card */}
@@ -144,7 +151,7 @@ export const SkillCarousel = ({ modules }) => {
                     }`}
                   >
                     <img
-                      src={getSlideImage(index)}
+                      {...getSlideImageProps(index)}
                       alt={module.title}
                       className="w-full h-full"
                       style={{

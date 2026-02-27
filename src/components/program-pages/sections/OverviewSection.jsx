@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { Section } from "../primitives";
 import { PromotionalCard } from "../../shared/cards/PromotionalCard";
+import { getContentImageProps } from "@/utils/responsiveImage";
 
 /**
  * OverviewSection - Program overview with simplified Quick Facts card
@@ -97,7 +98,10 @@ export const OverviewSection = forwardRef(function OverviewSection(
           <div className="mt-10">
             <div className="relative w-full aspect-video overflow-hidden shadow-md bg-gray-100">
               <img
-                src={overview.image || "/assets/images/home/home-1.webp"}
+                {...getContentImageProps(
+                  overview.image || "/assets/images/home/home-1.webp",
+                  "800px"
+                )}
                 alt={overview.imageAlt || "Student learning online"}
                 className="w-full h-full object-cover"
                 style={{
