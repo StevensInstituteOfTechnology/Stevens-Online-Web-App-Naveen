@@ -26,17 +26,39 @@ const IMAGE_WIDTH_CONFIG = {
   // Content images with limited variants
   content: {
     '/explore-mem/': [400, 640],
+    // MEM What You'll Learn concentration images
+    '/mem/mem-concentration-economics': [400],
+    '/mem/mem-concentration-leadership': [400],
+    '/mem/mem-concentration-operations': [400, 640, 800, 1024, 1280],
+    '/mem/mem-concentration-project-management': [400, 640, 800, 1024, 1280],
+    '/mem/mem-concentration-strategic': [400, 640, 800, 1024, 1280],
     '/explore-mscs/': [400, 640],
     '/shared/mem-program-card': [400, 640],
     '/shared/mscs-program-card': [400, 640],
-    // Overview images - mba only has 400w; meads has 400w, 640w
+    // MSCS What You'll Learn concentration images
+    '/mscs/mscs-concentration-enterprise-software': [400, 640],
+    '/mscs/mscs-concentration-mobile-cloud': [400, 640, 800, 1024, 1280],
+    '/mscs/mscs-concentration-agile': [400, 640, 800],
+    '/mscs/mscs-concentration-algorithms': [400, 640, 800, 1024, 1280],
+    '/mscs/mscs-concentration-machine-learning': [400, 640, 800],
+    // Overview images - mba only has 400w; meads has 400w, 640w; mem has 400w, 640w, 800w
     '/mba/mba-overview': [400],
     '/meads/meads-overview': [400, 640],
+    '/mem/mem-overview': [400, 640, 800],
+    // MBA What You'll Learn concentration images
+    '/mba/mba-concentration-finance': [400, 640],
+    '/mba/mba-concentration-project-analytics': [400, 640, 800, 1024, 1280],
+    '/mba/mba-concentration-business-ai': [400, 640, 800, 1024, 1280],
     // Certificate Applied Data Science - What You'll Learn module images
     // machine-learning has 400w only; mathematics has 400/640/800; python has full set
     '/certificate-applied-data-science/cert-ads-module-machine-learning': [400],
     '/certificate-applied-data-science/cert-ads-module-mathematics': [400, 640, 800],
     '/certificate-applied-data-science/cert-ads-module-python': [400, 640, 800, 1024, 1280],
+    // Certificate Enterprise AI - overview and What You'll Learn module images
+    '/certificate-enterprise-ai/cert-eai-overview': [400, 640, 800, 1024, 1280],
+    '/certificate-enterprise-ai/cert-eai-module-generative-ai': [400, 640, 800, 1024, 1280],
+    '/certificate-enterprise-ai/cert-eai-module-strategy': [400],
+    '/certificate-enterprise-ai/cert-eai-module-workflows': [400, 640, 800, 1024, 1280],
   }
 };
 
