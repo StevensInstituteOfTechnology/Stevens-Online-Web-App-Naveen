@@ -589,7 +589,7 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. - U.S. News 2026
                 </p>
-                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-100 xl:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
               </motion.a>
 
               {/* Stat 2 - 7x USDLA */}
@@ -618,7 +618,7 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   USDLA Distance Learning
                 </p>
-                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-100 xl:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
               </motion.a>
 
               {/* Stat 3 - #16 MBA */}
@@ -647,7 +647,7 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs text-stevens-white uppercase italic tracking-wider mt-6">
                   No. 1 in N.J. - U.S. News 2026
                 </p>
-                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
+                <ExternalLink className="absolute bottom-4 right-4 w-4 h-4 text-white/70 opacity-100 xl:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
               </motion.a>
             </div>
           </div>

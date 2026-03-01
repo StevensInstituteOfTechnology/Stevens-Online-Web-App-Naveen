@@ -32,6 +32,11 @@ const IMAGE_WIDTH_CONFIG = {
     // Overview images - mba only has 400w; meads has 400w, 640w
     '/mba/mba-overview': [400],
     '/meads/meads-overview': [400, 640],
+    // Certificate Applied Data Science - What You'll Learn module images
+    // machine-learning has 400w only; mathematics has 400/640/800; python has full set
+    '/certificate-applied-data-science/cert-ads-module-machine-learning': [400],
+    '/certificate-applied-data-science/cert-ads-module-mathematics': [400, 640, 800],
+    '/certificate-applied-data-science/cert-ads-module-python': [400, 640, 800, 1024, 1280],
   }
 };
 
